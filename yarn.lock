@@ -3663,6 +3663,7 @@ __metadata:
     "@iconscout/react-unicons": ^2.0.2
     "@snowball-tech/design-tokens": ^1.6.1
     "@snowball-tech/eslint-config": ^2.3.2
+    "@snowball-tech/fractal": "workspace:^"
     "@storybook/addon-a11y": ^7.0.22
     "@storybook/addon-essentials": ^7.0.22
     "@storybook/addon-interactions": ^7.0.22
@@ -3710,7 +3711,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/fractal@workspace:apps/fractal":
+"@snowball-tech/fractal@workspace:^, @snowball-tech/fractal@workspace:apps/fractal":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:apps/fractal"
   dependencies:
@@ -6867,6 +6868,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chromatic@npm:^6.19.8":
+  version: 6.19.8
+  resolution: "chromatic@npm:6.19.8"
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: 3f80373d9e77d3363924c274c8b9465b5f0ff835b7fb4a753848e37068a4564fa67ab205a4cf89820cf136fdefd637b54730819a5c376406a87bf8737ddf03ac
+  languageName: node
+  linkType: hard
+
 "ci-info@npm:^3.1.0, ci-info@npm:^3.2.0, ci-info@npm:^3.6.1, ci-info@npm:^3.7.1, ci-info@npm:^3.8.0":
   version: 3.8.0
   resolution: "ci-info@npm:3.8.0"
@@ -9484,6 +9496,7 @@ __metadata:
     "@types/is-ci": ^3.0.0
     "@types/node": ^20.3.1
     "@types/prettier": ^2.7.3
+    chromatic: ^6.19.8
     dotenv-cli: ^7.2.1
     eslint: ^8.43.0
     husky: ^8.0.3

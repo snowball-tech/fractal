@@ -11,8 +11,10 @@
       "outputs": ["dist/**"]
     },
     "build:storybook": {
-      "outputs": ["dist/**", "storybook-static/**"]
+      "dependsOn": ["^build"],
+      "outputs": ["storybook-static/**"]
     },
+    "chromatic:upload": {},
     "clean:storybook": {
       "cache": false
     },

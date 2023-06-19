@@ -35,7 +35,8 @@ const config: StorybookConfig = {
       url:
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:6007/'
-          : 'react/',
+          : 'https://main--64904be1d26151f4748a2ff2.chromatic.com',
+      // This is the Permalink for our React Storybook on Chromatic.
     },
   },
   staticDirs: [

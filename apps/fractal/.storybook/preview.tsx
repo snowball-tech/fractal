@@ -9,7 +9,7 @@ import { createGlobalStyle } from 'styled-components'
 import DocumentationTemplate from './DocumentationTemplate.mdx'
 import fractalTheme from './theme'
 
-import '../src/styles/global.css'
+import '../global.css'
 
 const GlobalStyles = createGlobalStyle`
   body {

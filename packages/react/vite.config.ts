@@ -13,6 +13,7 @@ export default defineConfig({
       formats: ['es'],
       name: 'Fractal',
     },
+
     rollupOptions: {
       external: ['react', 'react-dom', 'styled-components'],
       output: {
