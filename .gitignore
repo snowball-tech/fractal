@@ -63,3 +63,6 @@ next-env.d.ts
 
 # Pythagora project (https://pythagora.ai/).
 .pythagora
+
+# Storybook.
+storybook-static

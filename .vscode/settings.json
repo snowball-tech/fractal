@@ -88,10 +88,10 @@
     "**/storybook-static": true
   },
   "stylelint.validate": [
+    "html",
     "javascriptreact",
     "postcss",
-    "typescriptreact",
-    "html"
+    "typescriptreact"
   ],
   "typescript.format.enable": false,
   "typescript.preferences.quoteStyle": "single",
