@@ -50,7 +50,7 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@snowball-tech/eslint-config": "2.3.0",
+    "@snowball-tech/eslint-config": "^2.3.1",
     "@storybook/addon-a11y": "^7.0.22",
     "@storybook/addon-essentials": "^7.0.22",
     "@storybook/addon-interactions": "^7.0.22",
@@ -78,7 +78,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "@snowball-tech/design-tokens": "^1.5.2",
+    "@snowball-tech/design-tokens": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
