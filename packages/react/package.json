@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal-react",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "React component library based on Fractal - Snowball's design system",
   "private": true,
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
