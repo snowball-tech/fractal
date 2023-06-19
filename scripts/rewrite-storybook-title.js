@@ -3,7 +3,10 @@
 const fs = require('fs')
 const path = require('path')
 
-const STORYBOOK_PATH = path.resolve(__dirname, 'apps/fractal/storybook-static')
+const STORYBOOK_PATH = path.resolve(
+  __dirname,
+  '../apps/fractal/storybook-static',
+)
 
 /**
  * Change the generated index.html document title to "UI Documentation".

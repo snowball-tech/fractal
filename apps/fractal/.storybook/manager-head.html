@@ -54,6 +54,7 @@ build Snowball's products, apps, marketing contents and documentations"
 <meta name="theme-color" content="#ffffff" />
 
 <style>
+  /* stylelint-disable selector-class-pattern */
   .sidebar-item,
   .sidebar-item > svg[color='secondary'],
   .search-result-item--label,
@@ -65,6 +66,7 @@ build Snowball's products, apps, marketing contents and documentations"
   .sidebar-header button:hover,
   .sidebar-header button:focus,
   .sidebar-header button:active,
+  #storybook-explorer-tree,
   #storybook-explorer-tree button,
   #storybook-explorer-tree button:hover,
   #storybook-explorer-tree button:focus,
@@ -73,6 +75,7 @@ build Snowball's products, apps, marketing contents and documentations"
   button[data-action='collapse-ref'] span:first-of-type {
     color: white !important;
   }
+  /* stylelint-enable selector-class-pattern */
 
   #fractal--documentation {
     font-variant: small-caps;
@@ -105,7 +108,7 @@ build Snowball's products, apps, marketing contents and documentations"
 
   #storybook-explorer-tree > div[aria-expanded] {
     margin-top: 0;
-    padding-top: 0px;
+    padding-top: 0;
   }
 
   .docblock-argstable-body > tr > td,
