@@ -1,7 +1,7 @@
 # This GitHub action updates the Chromatic build everytime the `fractal-react`
 # package is updated.
 
-name: React UI Library
+name: Fractal/React
 
 on:
   push:
@@ -14,14 +14,14 @@ on:
 
 jobs:
   chromatic:
-    name: Deploying React UI Library Storybook to Chromatic
+    name: Deploying Fractal/React Storybook to Chromatic
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Get changed files from Design Tokens, Fractal and React UI Library
+      - name: Get changed files from Design Tokens, Fractal and React UI library
         id: changed-files-specific
         uses: tj-actions/changed-files@v36
         with:
@@ -31,9 +31,9 @@ jobs:
             apps/fractal/**
 
       - if: steps.changed-files-specific.outputs.any_changed != 'true'
-        name: No need to update Chromatic for React UI Library
+        name: No need to update Chromatic for Fractal/React
         run: |
-          echo "There are no changes in Design Tokens, Fractal or React UI Library."
+          echo "There are no changes in Design Tokens, Fractal or React UI library."
           echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
 
       - if: env.SKIP_CHROMATIC != 1
@@ -51,7 +51,7 @@ jobs:
         uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
       - if: env.SKIP_CHROMATIC != 1
-      - name: Setting up Git to access Freezer
+        name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
         run: ./scripts/setup-freezer.sh
@@ -86,4 +86,11 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal-react build:chromatic  --no-interactive
+          yarn workspace @snowball-tech/fractal-react build:chromatic
+          --no-interactive
+
+      - if: env.SKIP_CHROMATIC != 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: Storybook build log
+          path: ./packages/react/build-storybook.log

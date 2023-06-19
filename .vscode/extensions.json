@@ -22,6 +22,7 @@
     "gruntfuggly.todo-tree",
     "leizongmin.node-module-intellisense",
     "mattpocock.ts-error-translator",
+    "me-dutour-mathieu.vscode-github-actions",
     "meganrogge.template-string-converter",
     "mikestead.dotenv",
     "mrmlnc.vscode-json5",
@@ -44,9 +45,7 @@
     "visualstudioexptteam.vscodeintellicode",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
-
     "styled-components.vscode-styled-components",
     "stylelint.vscode-stylelint"
-
   ]
 }
