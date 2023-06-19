@@ -1,0 +1,53 @@
+# This is a Github Workflow that runs some security check for external users.
+
+name: Security
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.yarn/cache/**'
+      - yarn.lock
+  pull_request:
+    paths:
+      - '.yarn/cache/**'
+      - yarn.lock
+
+jobs:
+  security:
+    name: Check Yarn cache's integrity
+    runs-on: ubuntu-22.04
+    steps:
+      - if: github.actor == 'snowball-tech-bot' || github.actor == 'renovate[bot]'
+        name: Checking if user is a trusted bot
+        run: |
+          echo "User is a trusted bot user."
+          echo "IS_BOT_USER=1" >> $GITHUB_ENV
+
+      - if: env.IS_BOT_USER != 1
+        uses: tspascoal/get-user-teams-membership@v2
+        id: checkIsSnowballEngineeringTeamMember
+        with:
+          username: ${{ github.actor }}
+          team: engineering
+          GITHUB_TOKEN: ${{ secrets.MACHINE_GITHUB_TOKEN }}
+
+      - if: env.IS_BOT_USER || steps.checkIsSnowballEngineeringTeamMember.outputs.isTeamMember == 'true'
+        name: No need to check Yarn cache's integrity
+        run: |
+          echo "The author is a member of the Snowball engineering team or a trusted bot user."
+          echo "SKIP_INTEGRITY_CHECK=1" >> $GITHUB_ENV
+
+      - if: env.SKIP_INTEGRITY_CHECK != 1
+        uses: actions/checkout@v3
+
+      - if: env.SKIP_INTEGRITY_CHECK != 1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+
+      - if: env.SKIP_INTEGRITY_CHECK != 1
+        name: Checking Yarn cache's integrity
+        run: yarn install --check-cache --immutable --immutable-cache

@@ -1,0 +1,22 @@
+# This GitHub action updates the Chromatic build everytime the `fractal-react`
+# package is updated.
+
+name: React UI Library
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'apps/fractal/**'
+      - 'packages/react/**'
+
+jobs:
+  chromatic-deployment:
+    name: Skipping deployment of Storybook to Chromatic
+    runs-on: ubuntu-22.04
+    steps:
+      - name: No changes to deploy to Chromatic
+        run: |
+          echo "There are no changes impacting the Storybook. We don't need to
+          deploy it to Chromatic!"
