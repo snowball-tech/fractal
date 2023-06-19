@@ -45,13 +45,11 @@ module.exports = {
       buildPath: 'dist/web/react/',
       files: [
         {
-          // For Storybook type checking.
           destination: 'design-tokens.d.ts',
           format: 'typescript/es6-declarations',
         },
         {
-          // For Storybook usage.
-          destination: 'design-tokens.ts',
+          destination: 'design-tokens.js',
           format: 'javascript/es6',
         },
       ],
