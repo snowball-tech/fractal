@@ -45,7 +45,7 @@
   },
   "scripts": {
     "prebuild:chromatic": "yarn run -T turbo run update:fonts && yarn run clean:storybook",
-    "build:chromatic": "yarn run prebuild:chromatic && yarn run -T chromatic --build-script-name build:chromatic",
+    "build:chromatic": "yarn run prebuild:chromatic && yarn run -T chromatic --build-script-name build:storybook",
     "prebuild:storybook": "yarn run clean:storybook",
     "build:storybook": "yarn run prebuild:storybook && storybook build",
     "dev": "storybook dev -p 6007",
@@ -105,7 +105,7 @@
   },
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
-    "@snowball-tech/design-tokens": "^1.6.1",
+    "@snowball-tech/design-tokens": "^1.6.2",
     "@snowball-tech/fractal": "workspace:^",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
