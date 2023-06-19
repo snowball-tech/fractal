@@ -54,6 +54,11 @@ build Snowball's products, apps, marketing contents and documentations"
 <meta name="theme-color" content="#ffffff" />
 
 <style>
+  body {
+    background-color: hsl(46deg 100% 97%) !important;
+  }
+
+  /* stylelint-disable selector-class-pattern */
   .sidebar-item,
   .sidebar-item > svg[color='secondary'],
   .search-result-item--label,
@@ -63,17 +68,63 @@ build Snowball's products, apps, marketing contents and documentations"
   .search-result-clearHistory > svg,
   .search-result-clearHistory > span,
   .sidebar-header button:hover,
-  .sidebar-subheading button:hover,
-  .sidebar-subheading button:focus {
+  .sidebar-header button:focus,
+  .sidebar-header button:active,
+  #storybook-explorer-tree,
+  #storybook-explorer-tree button,
+  #storybook-explorer-tree button:hover,
+  #storybook-explorer-tree button:focus,
+  #storybook-explorer-tree button:active,
+  button[data-action='collapse-root'] span:first-of-type,
+  button[data-action='collapse-ref'] span:first-of-type {
     color: white !important;
+  }
+  /* stylelint-enable selector-class-pattern */
+
+  #fractal--documentation {
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bolder;
+  }
+
+  #fractal--documentation > svg {
+    margin-top: 6px;
+  }
+
+  .sidebar-subheading {
+    margin-top: 8px !important;
+  }
+
+  .sidebar-subheading > button[data-action='collapse-root'] {
+    text-transform: none !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+    padding-left: 4px !important;
+  }
+
+  button[data-action='collapse-ref'],
+  button[data-action='toggle-indicator'] {
+    font-variant: small-caps;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  #storybook-explorer-tree > div[aria-expanded] {
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .docblock-argstable-body > tr > td,
   #panel-tab-content {
     background-color: white !important;
   }
+
+  .sidebar-container {
+    background-color: black !important;
+  }
 </style>
 
 <script>
-  document.title = "Fractal - Snowball's design system";
+  document.title = "Fractal - Snowball's design system"
 </script>

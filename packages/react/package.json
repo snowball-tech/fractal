@@ -44,14 +44,15 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build:storybook": "storybook build && yarn run postbuild:storybook",
-    "postbuild:storybook": "../../scripts/copy-storybook.sh 'storybook-static' '../../apps/fractal/storybook-static/react'",
+    "prebuild:chromatic": "yarn run clean:storybook",
+    "build:chromatic": "yarn run prebuild:chromatic && storybook build",
+    "prebuild:storybook": "turbo run update:fonts",
+    "build:storybook": "yarn run prebuild:storybook && yarn run -T chromatic --build-script-name build:chromatic --exit-zero-on-changes",
     "dev": "storybook dev -p 6007",
     "dev:with-fonts": "turbo run update:fonts && yarn run dev",
     "clean:storybook": "rm -Rf storybook-static",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
-    "install:vercel": "./scripts/vercel.sh && yarn install",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
     "lint:fix": "yarn run lint:scripts:fix && yarn run lint:styles:fix",
     "lint:scripts": "yarn run -T eslint --cache .",
@@ -105,6 +106,7 @@
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
     "@snowball-tech/design-tokens": "^1.6.1",
+    "@snowball-tech/fractal": "workspace:^",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -1,11 +1,4 @@
-@import '@snowball-tech/design-tokens/dist/web/css/fonts.css';
-@import '@snowball-tech/design-tokens/dist/web/css/variables.css';
+/* eslint-disable */
 
-@layer base {
-  *,
-  *:before,
-  *:after {
-    border-width: 0;
-    border-style: solid;
-  }
-}
+/* stylelint-disable-next-line import-notation */
+@import '@snowball-tech/fractal/global.css';
