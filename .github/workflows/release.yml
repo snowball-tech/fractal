@@ -4,7 +4,7 @@
 # If everything pass and we are on the `main` branch, it also runs Semantic
 # Release.
 
-name: CI
+name: Release
 
 on:
   push:
