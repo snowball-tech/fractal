@@ -13,9 +13,14 @@ source "$(dirname "$0")/colors.sh"
 
 destination="$1"
 
+exitCode=0
+if [ -n "$CI" ]; then
+  exitCode=1
+fi
+
 if [ -z "$destination" ]; then
   echo "Usage: $0 <destination>"
-  exit 0
+  exit $exitCode
 fi
 
 TMP_DIR="$(dirname "$0")/tmp/freezer"
@@ -32,7 +37,7 @@ if [ $? -gt 0 ]; then
   warning "Unable to clone the Freezer repository."
   warning "Please make sure you have the appropriate GitHub token or SSH key and permissions to access the Freezer repository in the 'snowball-tech' organization."
 
-  exit 0
+  exit $exitCode
 fi
 
 cd "$TMP_DIR" > /dev/null 2>&1 || exit 0
@@ -44,7 +49,7 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the spare-checkout of the Freezer repository."
 
-  exit 0
+  exit $exitCode
 fi
 
 checkout=$(git checkout 2>&1)
@@ -54,7 +59,7 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the checkout of the fonts from the Freezer repository."
 
-  exit 0
+  exit $exitCode
 fi
 
 cd - > /dev/null 2>&1 || exit 5
@@ -68,7 +73,7 @@ if [ $? -gt 0 ]; then
   echo ""
   warning "$createDir"
 
-  exit 0
+  exit $exitCode
 fi
 
 copy=$(cp -r "$TMP_DIR/packages/fonts" "$destination" 2>&1)
@@ -78,7 +83,7 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the copy of the fonts from the Freezer repository to '$destination'."
 
-  exit 0
+  exit $exitCode
 fi
 
 bold_success "DONE"

@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal-react",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "React component library based on Fractal - Snowball's design system",
   "private": true,
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
@@ -45,7 +45,7 @@
   },
   "scripts": {
     "prebuild:chromatic": "yarn run -T turbo run update:fonts && yarn run clean:storybook",
-    "build:chromatic": "yarn run prebuild:chromatic && yarn run -T chromatic --build-script-name build:chromatic --exit-zero-on-changes",
+    "build:chromatic": "yarn run prebuild:chromatic && yarn run -T chromatic --build-script-name build:chromatic",
     "prebuild:storybook": "yarn run clean:storybook",
     "build:storybook": "yarn run prebuild:storybook && storybook build",
     "dev": "storybook dev -p 6007",
