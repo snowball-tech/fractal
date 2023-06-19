@@ -1,0 +1,25 @@
+# This is a Github Workflow that runs some security check for external users.
+
+name: Security
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.yarn/cache/**'
+      - yarn.lock
+  pull_request:
+    paths-ignore:
+      - '.yarn/cache/**'
+      - yarn.lock
+
+jobs:
+  security:
+    name: No Yarn cache's integrity check required
+    runs-on: ubuntu-22.04
+    steps:
+      - name: No need to check Yarn cache's integrity
+        run: |
+          echo "Dependencies have not been updated. There is no need to check
+          Yarn cache's integrity."
