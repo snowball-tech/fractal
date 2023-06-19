@@ -38,7 +38,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild": "yarn run clean && turbo run update:fonts",
+    "prebuild": "yarn run clean && yarn run -T turbo run update:fonts",
     "build": "yarn run prebuild && node ./src/build.js",
     "prebuild:fast": "yarn run clean",
     "build:fast": "yarn run prebuild:fast && node ./src/build.js",
