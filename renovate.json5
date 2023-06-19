@@ -1,0 +1,8 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+
+  // https://docs.renovatebot.com/configuration-options/#extends
+  extends: [
+    'github>snowball-tech/glacier//packages/renovate-config/default.json5',
+  ],
+}

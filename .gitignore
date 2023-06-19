@@ -1,0 +1,65 @@
+# Misc. MacOS
+**/*.DS_Store
+
+# Logs
+**/logs
+**/*.log
+**/npm-*.log*
+**/yarn-*.log*
+**/*.tsbuildinfo
+**/vite.config.ts.timestamp*
+
+# Local testing
+*.tgz
+
+# Cache
+**/.eslintcache
+**/.stylelintcache
+
+# Coverage
+**/coverage
+
+# Dependencies
+**/node_modules
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Next.JS
+**/.next
+next-env.d.ts
+
+# Production
+**/build
+**/out
+**/dist
+
+# Secret files
+**/.env*.local
+*.pem
+
+# Vercel
+**/.vercel
+
+# IDE
+**/.idea
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+**/.vscode/*
+# Let's keep the extensions.json file because it references all the recommended
+# extensions for this workspace. That way, newcomers will receive suggestions.
+!.vscode/extensions.json
+# Also keeps the settings file because it's critical for VSCode to properly work
+# in the mono-repository.
+!.vscode/settings.json
+# Files from the VSCode "SQLTools" extensions.
+**/*.session.sql
+
+# Pythagora project (https://pythagora.ai/).
+.pythagora

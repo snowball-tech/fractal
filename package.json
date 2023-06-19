@@ -1,0 +1,85 @@
+{
+  "name": "fractal",
+  "description": "Snowball's open-source design system mono-repository managed by Yarn 3 and TurboRepo",
+  "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
+  "private": true,
+  "contributors": [
+    "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "snowball",
+    "mono-repo",
+    "yarn",
+    "yarn3",
+    "turborepo",
+    "vercel",
+    "javascript",
+    "typescript",
+    "react",
+    "eslint",
+    "eslint-config",
+    "prettier",
+    "jest",
+    "testing-library",
+    "lodash",
+    "design-system",
+    "design-tokens",
+    "style-dictionary",
+    "storybook",
+    "figma",
+    "styleguide"
+  ],
+  "homepage": "https://github.com/snowball-tech/fractal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snowball-tech/fractal.git"
+  },
+  "bugs": "https://github.com/snowball-tech/fractal/issues",
+  "packageManager": "yarn@3.6.0",
+  "engines": {
+    "yarn": "^3.0.0",
+    "node": "^18.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "release": {
+    "extends": "@snowball-tech/semantic-release-config"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "format:root": "prettier --cache --check \"./!(apps|packages)\"",
+    "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
+    "lint:root": "eslint --cache \"./!(apps|packages)\"",
+    "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
+    "publish:all": "multi-semantic-release",
+    "setup": "yarn install && yarn setup:husky",
+    "setup:husky": "is-ci || yarn husky install",
+    "update:references": "workspaces-to-typescript-project-references --includesRoot"
+  },
+  "devDependencies": {
+    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.9.0",
+    "@qiwi/multi-semantic-release": "^6.7.0",
+    "@snowball-tech/eslint-config": "^2.3.0",
+    "@snowball-tech/prettier-config": "^1.1.5",
+    "@snowball-tech/semantic-release-config": "^1.2.1",
+    "@types/eslint": "^8.40.2",
+    "@types/is-ci": "^3.0.0",
+    "@types/node": "^20.3.1",
+    "@types/prettier": "^2.7.3",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "^8.42.0",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "semantic-release": "^21.0.5",
+    "ts-node": "^10.9.1",
+    "turbo": "1.10.3",
+    "typescript": "^5.1.3"
+  }
+}
