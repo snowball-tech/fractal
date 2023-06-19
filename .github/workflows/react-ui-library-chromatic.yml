@@ -1,7 +1,7 @@
 # This GitHub action updates the Chromatic build everytime the `fractal-react`
 # package is updated.
 
-name: React UI Library
+name: React UI Library - Chromatic
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
 
 jobs:
   chromatic-deployment:
-    name: Deploying Storybook to Chromatic
+    name: Deploying React UI Library Storybook to Chromatic
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3

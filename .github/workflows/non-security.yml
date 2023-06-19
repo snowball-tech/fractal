@@ -1,6 +1,6 @@
 # This is a Github Workflow that runs some security check for external users.
 
-name: Security
+name: Skip security
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
 
 jobs:
   security:
-    name: No Yarn cache's integrity check required
+    name: Checking Yarn cache's integrity
     runs-on: ubuntu-22.04
     steps:
       - name: No need to check Yarn cache's integrity

@@ -16,7 +16,7 @@ on:
 
 jobs:
   security:
-    name: Check Yarn cache's integrity
+    name: Checking Yarn cache's integrity
     runs-on: ubuntu-22.04
     steps:
       - if: github.actor == 'snowball-tech-bot' || github.actor == 'renovate[bot]'
