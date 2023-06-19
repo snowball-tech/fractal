@@ -1,0 +1,8 @@
+design-token:
+  - package/design-tokens/**
+
+fractal-react:
+  - package/react/**
+
+docs:
+  - apps/fractal/**
