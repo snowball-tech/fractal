@@ -31,6 +31,11 @@ jobs:
       - name: Starting TurboRepo local cache server
         uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
+      - name: Setting up Git to access Freezer
+        env:
+          FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
+        run: ./scripts/setup-freezer.sh
+
       - name: Building all packages
         run: yarn turbo run build
 
