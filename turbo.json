@@ -21,10 +21,10 @@
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "tokens/**", "config.js"],
-      "outputs": ["dist/"]
+      "outputs": ["dist/**"]
     },
     "update:fonts": {
-      "outputs": ["assets/fonts/"]
+      "outputs": ["assets/fonts/**"]
     },
     "format": {},
     "format:fix": {},
