@@ -3596,10 +3596,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "@snowball-tech/design-tokens@npm:1.6.1"
-  checksum: a6d31814214977f905243e4b76d9b8460beff9b81e9d004bf9c59aa40420e39f87eb7fb8fd1b878661c60b0324df06858f1af8a048833508383862b564311137
+"@snowball-tech/design-tokens@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "@snowball-tech/design-tokens@npm:1.6.2"
+  checksum: 8fa4582ae75032cb13541fa2a1456163b0ff3ed24d0bfb7542a61ed2c7d1d9946a19b909d95118c3495cc59747134e755e260ecb863ebeaf276937298caa3479
   languageName: node
   linkType: hard
 
@@ -3661,7 +3661,7 @@ __metadata:
   resolution: "@snowball-tech/fractal-react@workspace:packages/react"
   dependencies:
     "@iconscout/react-unicons": ^2.0.2
-    "@snowball-tech/design-tokens": ^1.6.1
+    "@snowball-tech/design-tokens": ^1.6.2
     "@snowball-tech/eslint-config": ^3.1.0
     "@snowball-tech/fractal": "workspace:^"
     "@storybook/addon-a11y": ^7.0.22
@@ -3715,7 +3715,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:apps/fractal"
   dependencies:
-    "@snowball-tech/design-tokens": ^1.6.1
+    "@snowball-tech/design-tokens": ^1.6.2
     "@snowball-tech/eslint-config": ^3.1.0
     "@storybook/addon-a11y": ^7.0.22
     "@storybook/addon-essentials": ^7.0.22
@@ -3750,14 +3750,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/prettier-config@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "@snowball-tech/prettier-config@npm:1.1.5"
+"@snowball-tech/prettier-config@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@snowball-tech/prettier-config@npm:1.2.0"
   dependencies:
     prettier: ^2.8.8
     prettier-plugin-organize-attributes: ^0.0.5
     prettier-plugin-sh: ^0.12.8
-  checksum: ea51176af72bc0eccbdb229c3e05b85f2e5d61bfd4a22558f4eb9abb1eb56f2d5b1a37a606962a462238fc10597657eb13bc7812b9ea386f53c4ab63c057aebf
+  checksum: d54eb2de59dfc454eaf87ddf204f93495fdbb0da816f29b4d508b6989a799a7e8e21e558d25267c51f2716121072cd9ed125c6daf3e0fda32440fefd35f9d4f8
   languageName: node
   linkType: hard
 
@@ -9489,7 +9489,7 @@ __metadata:
     "@monorepo-utils/workspaces-to-typescript-project-references": ^2.9.0
     "@qiwi/multi-semantic-release": ^6.7.0
     "@snowball-tech/eslint-config": ^3.1.0
-    "@snowball-tech/prettier-config": ^1.1.5
+    "@snowball-tech/prettier-config": ^1.2.0
     "@snowball-tech/semantic-release-config": ^1.2.1
     "@types/eslint": ^8.40.2
     "@types/is-ci": ^3.0.0

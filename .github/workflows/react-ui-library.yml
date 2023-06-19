@@ -23,7 +23,7 @@ jobs:
 
       - name: Setting up Git to access Freezer
         env:
-          FREEZER_TOKEN: ${{ secrets.FREEZER_FONTS_TOKEN }}
+          FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
         run: ./scripts/setup-freezer.sh
 
       - name: Get changed files from Design Tokens, Fractal and React UI Library
@@ -73,8 +73,17 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - if: env.SKIP_CHROMATIC != 1
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Building and publishing to Chromatic
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
-        run: yarn workspace @snowball-tech/fractal-react build:chromatic --exit-zero-on-changes
+        run: |
+          yarn workspace @snowball-tech/fractal-react build:chromatic
+          --exit-zero-on-changes --exit-once-uploaded --no-interactive
+
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'pull_request'
+        name: Building and publishing to Chromatic with Snapshot testing
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
+        run: |
+          yarn workspace @snowball-tech/fractal-react build:chromatic  --no-interactive
