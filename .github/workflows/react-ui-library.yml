@@ -28,7 +28,6 @@ jobs:
         id: changed-files-specific
         uses: tj-actions/changed-files@v36
         with:
-          since_last_remote_commit: true
           files: |
             packages/design-tokens/**
             packages/react/**
