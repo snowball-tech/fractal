@@ -11,8 +11,6 @@ module.exports = {
     '@snowball-tech/eslint-config/import',
     '@snowball-tech/eslint-config/typescript',
     '@snowball-tech/eslint-config/react',
-    '@snowball-tech/eslint-config/',
-    '@snowball-tech/eslint-config/testing-library',
     '@snowball-tech/eslint-config/lodash',
     'plugin:storybook/recommended',
     '@snowball-tech/eslint-config/perfectionist',

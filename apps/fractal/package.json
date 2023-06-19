@@ -41,10 +41,10 @@
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
     "lint:fix": "yarn run lint:scripts:fix && yarn run lint:styles:fix",
-    "lint:scripts": "yarn run -T eslint --cache . && ",
+    "lint:scripts": "yarn run -T eslint --cache .",
     "lint:scripts:fix": "yarn run -T eslint --cache --fix .",
-    "lint:styles": "yarn run -T stylelint --cache './**/*.{html,css,js,jsx,ts,tsx,mdx}'",
-    "lint:styles:fix": "yarn run -T stylelint --cache --fix './**/*.{html,css,js,jsx,ts,tsx,mdx}'",
+    "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
+    "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "types:check": "tsc --noEmit",
     "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
