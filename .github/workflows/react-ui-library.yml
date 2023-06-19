@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
 
       - name: Setting up Git to access Freezer
+        env:
+          SNOWBALL_BOT_TOKEN: ${{ secrets.MACHINE_GITHUB_TOKEN }}
         run: ./scripts/setup-freezer.sh
 
       - name: Get changed files from Design Tokens, Fractal and React UI Library
