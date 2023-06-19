@@ -1,0 +1,79 @@
+# This GitHub action updates the Chromatic build everytime the `fractal-react`
+# package is updated.
+
+name: React UI Library
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  chromatic:
+    name: Deploying React UI Library Storybook to Chromatic
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setting up Git to access Freezer
+        run: ./scripts/setup-freezer.sh
+
+      - name: Get changed files from Design Tokens, Fractal and React UI Library
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v36
+        with:
+          since_last_remote_commit: true
+          files: |
+            packages/design-tokens/**
+            packages/react/**
+            apps/fractal/**
+
+      - if: steps.changed-files-specific.outputs.any_changed != 'true'
+        name: No need to update Chromatic for React UI Library
+        run: |
+          echo "There are no changes in Design Tokens, Fractal or React UI Library."
+          echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
+
+      - if: env.SKIP_CHROMATIC != 1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Installing dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Starting TurboRepo local cache server
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Waiting for security to pass
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: Checking Yarn cache's integrity
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Waiting for quality to pass
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: Checking code quality
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Building and publishing to Chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
+        run: yarn workspace @snowball-tech/fractal-react build:chromatic --exit-zero-on-changes

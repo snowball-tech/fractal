@@ -3,7 +3,14 @@
 
 name: Quality
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
   quality:

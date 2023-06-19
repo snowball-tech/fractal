@@ -6,13 +6,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.yarn/cache/**'
-      - yarn.lock
   pull_request:
-    paths:
-      - '.yarn/cache/**'
-      - yarn.lock
+    branches:
+      - main
 
 jobs:
   security:
@@ -41,6 +37,24 @@ jobs:
 
       - if: env.SKIP_INTEGRITY_CHECK != 1
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - if: env.SKIP_INTEGRITY_CHECK != 1
+        name: Get updated dependencies or lockfile
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v36
+        with:
+          since_last_remote_commit: true
+          files: |
+            .yarn/**
+            yarn.lock
+
+      - if: env.SKIP_INTEGRITY_CHECK != 1 && steps.changed-files-specific.outputs.any_changed != 'true'
+        name: No need to check Yarn cache's integrity
+        run: |
+          echo "There are no updates of dependencies or lockfile."
+          echo "SKIP_INTEGRITY_CHECK=1" >> $GITHUB_ENV
 
       - if: env.SKIP_INTEGRITY_CHECK != 1
         uses: actions/setup-node@v3
