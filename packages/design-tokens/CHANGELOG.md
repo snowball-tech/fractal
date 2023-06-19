@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [1.6.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.6.1...@snowball-tech/design-tokens@1.6.2) (2023-06-19)
+
+### 👷 Build
+
+- fix call to Turbo ([269f8be](https://github.com/snowball-tech/fractal/commit/269f8be29bb62fc79f4dfd47cee53c61439c6a1e))
+
 ## @snowball-tech/design-tokens [1.6.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.6.0...@snowball-tech/design-tokens@1.6.1) (2023-06-19)
 
 ### 🐛 Bug Fixes
