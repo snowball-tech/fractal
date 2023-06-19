@@ -51,7 +51,7 @@
     "build": "turbo run build",
     "prebuild:storybook": "turbo run clean:storybook && ./scripts/setup-freezer.sh",
     "build:storybook": "yarn run prebuild:storybook && turbo run build:storybook --filter=@snowball-tech/fractal && turbo run build:storybook --filter=!@snowball-tech/fractal --parallel && yarn run postbuild:storybook",
-    "postbuild:storybook": "./scripts/rewrite-storybook-title.cjs",
+    "postbuild:storybook": "./scripts/rewrite-storybook-title.js",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
