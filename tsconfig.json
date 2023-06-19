@@ -39,6 +39,9 @@
   ],
   "references": [
     {
+      "path": "apps/fractal"
+    },
+    {
       "path": "packages/react"
     }
   ]

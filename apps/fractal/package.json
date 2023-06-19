@@ -1,7 +1,7 @@
 {
-  "name": "@snowball-tech/fractal-react",
+  "name": "@snowball-tech/fractal",
   "version": "1.0.0",
-  "description": "React component library based on Fractal - Snowball's design system",
+  "description": "Documentation for Fractal - Snowball's design system",
   "private": true,
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -12,14 +12,14 @@
     "snowball",
     "design-system",
     "fractal",
-    "react",
-    "styled-components"
+    "documentation",
+    "storybook"
   ],
-  "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/react",
+  "homepage": "https://github.com/snowball-tech/fractal/tree/main/apps/fractal",
   "repository": {
     "type": "git",
     "url": "https://github.com/snowball-tech/fractal.git",
-    "directory": "packages/react"
+    "directory": "apps/fractal"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
   "packageManager": "yarn@3.6.0",
@@ -28,37 +28,23 @@
     "node": "^18.0.0"
   },
   "type": "module",
-  "source": "src/index.ts",
-  "module": "dist/fractal-react.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/fractal-react.js"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "restricted"
   },
   "scripts": {
-    "build:storybook": "storybook build && yarn run postbuild:storybook",
-    "postbuild:storybook": "mv storybook-static ../../apps/fractal/react",
-    "dev": "storybook dev -p 6007",
+    "prebuild:storybook": "turbo run update:fonts",
+    "build:storybook": "yarn run prebuild:storybook && storybook build",
+    "dev": "storybook dev -p 6006",
     "dev:with-fonts": "turbo run update:fonts && yarn run dev",
     "clean:storybook": "rm -Rf storybook-static",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
-    "install:vercel": "./scripts/vercel.sh && yarn install",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
     "lint:fix": "yarn run lint:scripts:fix && yarn run lint:styles:fix",
     "lint:scripts": "yarn run -T eslint --cache . && ",
     "lint:scripts:fix": "yarn run -T eslint --cache --fix .",
     "lint:styles": "stylelint --cache './**/*.{html,css,jsx,tsx,mdx}'",
     "lint:styles:fix": "stylelint --cache --fix './**/*.{html,css,jsx,tsx,mdx}'",
-    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
     "types:check": "tsc --noEmit",
     "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
@@ -80,41 +66,24 @@
     "@storybook/theming": "^7.0.22",
     "@types/eslint": "^8.40.2",
     "@types/lodash": "^4.14.195",
-    "@types/prettier": "^2.7.3",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
-    "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.43.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
     "eslint-plugin-storybook": "^0.6.12",
-    "install": "^0.13.0",
-    "json": "^11.0.0",
-    "npm": "^9.7.1",
-    "postcss": "^8.4.24",
-    "postcss-styled-syntax": "^0.4.0",
-    "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.22",
     "storybook-addon-mock": "^4.0.0",
-    "stylelint": "^15.8.0",
-    "stylelint-config-standard": "^33.0.0",
     "typescript": "^5.1.3",
-    "vite": "^4.3.9",
-    "vite-plugin-dts": "^2.3.0",
-    "vite-plugin-lib": "^1.2.2"
+    "vite": "^4.3.9"
   },
   "dependencies": {
-    "@iconscout/react-unicons": "^2.0.2",
-    "@snowball-tech/design-tokens": "^1.5.2",
-    "lodash": "^4.17.21",
+    "@snowball-tech/design-tokens": "workspace:^",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.2-4007"
+    "react-dom": "^18.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.3"
+    "react-dom": "^18.2.0"
   }
 }
