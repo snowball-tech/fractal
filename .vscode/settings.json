@@ -1,0 +1,99 @@
+{
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json5]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.rulers": [80],
+    "editor.wordWrapColumn": 80,
+    "files.trimTrailingWhitespace": false
+  },
+  "[mdx]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true,
+    "source.fixAll.shellcheck": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.tabSize": 2,
+  "eslint.lintTask.enable": true,
+  "eslint.onIgnoredFiles": "warn",
+  "eslint.packageManager": "yarn",
+  "eslint.useESLintClass": true,
+  "eslint.validate": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "sql",
+    "typescript",
+    "typescriptreact",
+    "yaml"
+  ],
+  "eslint.workingDirectories": [
+    {
+      "pattern": "apps/**/*"
+    },
+    {
+      "pattern": "packages/**/*"
+    },
+    {
+      "pattern": "*"
+    }
+  ],
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "less.validate": false,
+  "markdownlint.config": {
+    "default": true,
+    "MD001": false,
+    "MD013": false,
+    "MD025": false,
+    "MD028": false,
+    "MD029": false,
+    "MD033": false
+  },
+  "prettier.prettierPath": "./node_modules/prettier",
+  "scss.validate": false,
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/out": true,
+    "**/storybook-static": true
+  },
+  "stylelint.validate": [
+    "javascriptreact",
+    "postcss",
+    "typescriptreact",
+    "html"
+  ],
+  "typescript.format.enable": false,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

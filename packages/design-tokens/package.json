@@ -1,0 +1,59 @@
+{
+  "name": "@snowball-tech/design-tokens",
+  "version": "1.5.2",
+  "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
+  "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
+  "contributors": [
+    "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "snowball",
+    "design-system",
+    "design-tokens",
+    "style-dictionary",
+    "figma",
+    "styleguide"
+  ],
+  "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/design-tokens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snowball-tech/fractal.git",
+    "directory": "packages/design-tokens"
+  },
+  "bugs": "https://github.com/snowball-tech/fractal/issues",
+  "packageManager": "yarn@3.6.0",
+  "engines": {
+    "yarn": "^3.0.0",
+    "node": "^18.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "prebuild": "yarn run clean && turbo run update:fonts",
+    "build": "yarn run prebuild && node ./src/build.js",
+    "prebuild:fast": "yarn run clean",
+    "build:fast": "yarn run prebuild:fast && node ./src/build.js",
+    "clean": "rm -Rf dist",
+    "dev": "nodemon -x \"yarn build\"",
+    "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
+    "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
+    "lint": "yarn run -T eslint --cache .",
+    "lint:fix": "yarn run -T eslint --cache --fix .",
+    "setup": "yarn && yarn run update:fonts",
+    "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
+    "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.195",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.22",
+    "ora": "5.4.1",
+    "style-dictionary": "^3.8.0"
+  }
+}

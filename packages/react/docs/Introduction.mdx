@@ -1,0 +1,93 @@
+import { ColorBrandBody } from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Fractal/Introduction" />
+
+# <img src="/images/logo_fractal.png" alt="Fractal's logo" width="50" /> Fractal
+
+---
+
+![Fractal design system](/images/cover_fractal.png)
+
+Fractal is [Snowball's](https://snowball.xyz) design system.
+
+It is a collection of assets, UI components and guidelines that are used to
+build products, apps, marketing contents and documentations.
+
+## 🧱 Foundations
+
+The base reference for Fractal is the
+[Figma
+project](https://www.figma.com/file/u70V0ocCmDeYMAAPf9Xfqa/❄%EF%B8%8F-Fractal-Design-System).  
+All tokens created in Figma are then transformed in the
+[`design-tokens`
+package](https://www.npmjs.com/package/@snowball-tech/design-tokens).  
+Finally, those design token are the used inside of the Fractal design system.
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> The design tokens abstraction ensure consistency throughout all the
+> products, websites and applications of Snowball.
+
+### Tech stack
+
+- The design principles and guidelines of Fractal are based on
+  [Figma](https://www.figma.com/file/u70V0ocCmDeYMAAPf9Xfqa/❄%EF%B8%8F-Fractal-Design-System).
+- The [design tokens](https://github.com/snowball-tech/glacier/tree/main/packages/design-tokens)
+  are derived using [Style Dictionary](https://amzn.github.io/style-dictionary/#/)
+  _(from Amazon)_.
+- The Fractal web UI components library is built in
+  [TypeScript](https://www.typescriptlang.org/) for [React](https://reactjs.org/)
+  applications and [styled-components](https://styled-components.com/) is used to
+  style all the components according to the design tokens.
+- This documentation website is built using [Storybook](https://storybook.js.org/)
+
+## 🛠️ Installation
+
+Simply run:
+
+```bash
+yarn add @snowball-tech/fractal
+```
+
+Or (if you use NPM):
+
+```bash
+npm install @snowball-tech/fractal
+```
+
+## 👩‍💻 Usage
+
+This design system **only** exposes an ESM bundle.
+
+To import a component, use the following pattern:
+
+```js
+import { Typography } from '@snowball-tech/fractal'
+```
+
+## ✍🏿 Contributing
+
+If you want to contribute to this design system, please read the [detailled
+documentation](https://github.com/snowball-tech/glacier/blob/main/packages/fractal/README.md)
+of the package
+
+You can also contribute to any package of the [Glacier open-source
+repository](https://github.com/snowball-tech/glacier)
+
+## 🤷‍♂️ Getting help
+
+If you have any questions or feedback, feel free to reach out to us using
+Glacier's [issues](https://github.com/snowball-tech/glacier/issues) or
+[discussions](https://github.com/snowball-tech/glacier/discussions).  
+You can also check the [troubleshooting
+documentation](https://github.com/snowball-tech/glacier/blob/main/docs/TROUBLESHOOTING.md)
+to see if your issue or question is already covered.
+
+## 💞 Feedback
+
+Don't forget that feedback is a gift.
+
+This is **always welcome and appreciated**!

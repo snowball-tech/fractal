@@ -1,0 +1,61 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "types:check": {
+      "outputs": []
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "build:storybook": {
+      "outputs": ["dist/**", "storybook-static/**"]
+    },
+    "@snowball-tech/design-tokens#build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tokens/**", "config.js"],
+      "outputs": ["assets/fonts", "dist/**"]
+    },
+    "update:fonts": {
+      "inputs": [],
+      "outputs": ["assets/fonts/*"]
+    },
+    "format": {},
+    "format:fix": {},
+    "//#format": {
+      "dependsOn": ["//#format:root"]
+    },
+    "//#format:fix": {
+      "dependsOn": ["//#format:root:fix"]
+    },
+    "//#format:root": {},
+    "//#format:root:fix": {},
+    "lint": {},
+    "lint:fix": {},
+    "lint:scripts": {},
+    "lint:scripts:fix": {},
+    "lint:styles": {},
+    "lint:styles:fix": {},
+    "//#lint": {
+      "dependsOn": ["//#lint:root"]
+    },
+    "//#lint:fix": {
+      "dependsOn": ["//#lint:root:fix"]
+    },
+    "//#lint:root": {},
+    "//#lint:root:fix": {}
+  },
+  "globalDependencies": [
+    ".env",
+    ".eslintignore",
+    ".eslintrc.js",
+    ".prettierignore",
+    ".prettierrc.js",
+    "package.json",
+    "tsconfig.json"
+  ]
+}

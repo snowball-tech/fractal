@@ -1,0 +1,11 @@
+@import '@snowball-tech/design-tokens/dist/web/css/fonts.css';
+@import '@snowball-tech/design-tokens/dist/web/css/variables.css';
+
+@layer base {
+  *,
+  *:before,
+  *:after {
+    border-width: 0;
+    border-style: solid;
+  }
+}
