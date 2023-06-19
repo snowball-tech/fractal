@@ -39,7 +39,6 @@
   "eslint.packageManager": "yarn",
   "eslint.useESLintClass": true,
   "eslint.validate": [
-    "css",
     "html",
     "javascript",
     "javascriptreact",
