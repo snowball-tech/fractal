@@ -1,5 +1,31 @@
 module.exports = {
+  allowEmptyInput: true,
+
   extends: ['stylelint-config-standard', 'stylelint-config-html'],
+
+  ignoreFiles: [
+    '.*',
+    '!.*.cjs',
+    '!.*.js',
+    '!.*.jsx',
+    '!.*.mjs',
+    '!.*.ts',
+    '!.*.tsx',
+    '!.github',
+    '!.storybook',
+    '!.vscode',
+    '.pnp.*',
+    '*.lock',
+    '*.tsbuildinfo',
+    '**/dist',
+    '**/build',
+    '**/out',
+    '**/storybook-static',
+    '**/coverage',
+    '**/node_modules',
+    '*.mdx',
+    'LICENSE',
+  ],
 
   overrides: [
     {
@@ -7,6 +33,10 @@ module.exports = {
       files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     },
   ],
+
+  reportDescriptionlessDisables: true,
+  reportInvalidScopeDisables: true,
+  reportNeedlessDisables: true,
 
   rules: {
     'declaration-empty-line-before': null,
