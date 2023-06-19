@@ -3596,10 +3596,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "@snowball-tech/design-tokens@npm:1.5.2"
-  checksum: 3fcc290b68d586d8d1dd0140514c01b1ba970179d2e8ef95bc4659e3dba17918390f07d41825b5fbdb014431a2fba4bd155fcd301bfb81b8e0ce3675a66c5763
+"@snowball-tech/design-tokens@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@snowball-tech/design-tokens@npm:1.6.0"
+  checksum: 38cc36d3254687d24981d82afbf24f11c0abb57ead6c3fd4700023c9ea756d91d51755287f30766ea634a7ecd70ee36ec34cddd9857256d1d7da524f3e526a29
   languageName: node
   linkType: hard
 
@@ -3615,9 +3615,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:2.3.0, @snowball-tech/eslint-config@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@snowball-tech/eslint-config@npm:2.3.0"
+"@snowball-tech/eslint-config@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@snowball-tech/eslint-config@npm:2.3.1"
   dependencies:
     "@next/eslint-plugin-next": ^13.4.6
     "@rushstack/eslint-patch": ^1.3.2
@@ -3652,7 +3652,7 @@ __metadata:
     eslint-plugin-yml: ^1.8.0
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 8d9121a4e95b2b80c98646d97682072b55776d076e7d94d3bca1c476305bf520c39c1f5f10467c655429c52c9b92f857c14f1ef00edac9a96c873c9734bedc54
+  checksum: 47b806763bb1121dbecdb76180656adbde162ef7dda5e46321bfbd168a397ed0678e17ee97c18270bb4c11b2475714999aa0c57f642907c3310da2a3bde5024d
   languageName: node
   linkType: hard
 
@@ -3661,8 +3661,8 @@ __metadata:
   resolution: "@snowball-tech/fractal-react@workspace:packages/react"
   dependencies:
     "@iconscout/react-unicons": ^2.0.2
-    "@snowball-tech/design-tokens": ^1.5.2
-    "@snowball-tech/eslint-config": 2.3.0
+    "@snowball-tech/design-tokens": ^1.6.0
+    "@snowball-tech/eslint-config": ^2.3.1
     "@storybook/addon-a11y": ^7.0.22
     "@storybook/addon-essentials": ^7.0.22
     "@storybook/addon-interactions": ^7.0.22
@@ -3698,7 +3698,7 @@ __metadata:
     react-dom: ^18.2.0
     storybook: ^7.0.22
     storybook-addon-mock: ^4.0.0
-    styled-components: ^6.0.0-rc.2-4007
+    styled-components: ^6.0.0-rc.3
     typescript: ^5.1.3
     vite: ^4.3.9
     vite-plugin-dts: ^2.3.0
@@ -3714,8 +3714,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:apps/fractal"
   dependencies:
-    "@snowball-tech/design-tokens": ^1.5.2
-    "@snowball-tech/eslint-config": 2.3.0
+    "@snowball-tech/design-tokens": ^1.6.0
+    "@snowball-tech/eslint-config": ^2.3.1
     "@storybook/addon-a11y": ^7.0.22
     "@storybook/addon-essentials": ^7.0.22
     "@storybook/addon-interactions": ^7.0.22
@@ -9476,7 +9476,7 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": ^2.9.0
     "@qiwi/multi-semantic-release": ^6.7.0
-    "@snowball-tech/eslint-config": ^2.3.0
+    "@snowball-tech/eslint-config": ^2.3.1
     "@snowball-tech/prettier-config": ^1.1.5
     "@snowball-tech/semantic-release-config": ^1.2.1
     "@types/eslint": ^8.40.2
@@ -16627,7 +16627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.0.0-rc.2-4007":
+"styled-components@npm:^6.0.0-rc.3":
   version: 6.0.0-rc.2-4007
   resolution: "styled-components@npm:6.0.0-rc.2-4007"
   dependencies:
