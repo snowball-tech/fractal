@@ -5,9 +5,7 @@
       "cache": false,
       "persistent": true
     },
-    "types:check": {
-      "outputs": []
-    },
+    "types:check": {},
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
@@ -15,14 +13,16 @@
     "build:storybook": {
       "outputs": ["dist/**", "storybook-static/**"]
     },
+    "clean:storybook": {
+      "cache": false
+    },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "tokens/**", "config.js"],
-      "outputs": ["assets/fonts", "dist/**"]
+      "outputs": ["dist/"]
     },
     "update:fonts": {
-      "inputs": [],
-      "outputs": ["assets/fonts/*"]
+      "outputs": ["assets/fonts/"]
     },
     "format": {},
     "format:fix": {},

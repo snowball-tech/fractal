@@ -236,18 +236,11 @@ documentation support for the whole design system.
 
 There are currently **3** packages available in Glacier:
 
-- **[docs](./apps/docs)**: the composable [Storybook](https://storybook.js.org/)
-  applications. This application is the main entrypoint of the Storybook of the
-  design system and will offer navigation to the other dedicated documentation
-  _(e.g. the one for the web components library, the one for the Android one, ...)_;
-
-- **[design](./apps/design)**: the Storybook documentation dedicated to the
-  design reference.
-  This one will be referenced by the main `docs` application above;
-
-- **[web](./apps/web)**: the Storybook documentation dedicated to the
-  web (React) components library.
-  This one will be referenced by the main `docs` application above;
+- **[fractal](./apps/docs)**: the composable
+  [Storybook](https://storybook.js.org/) applications.
+  This application is the main entrypoint of the Storybook of the design system
+  and will offer navigation to the other dedicated documentation _(e.g. the one
+  for the web components library, the one for the Android one, ...)_;
 
 #### Packages
 
@@ -261,8 +254,11 @@ There are currently **2** packages available in Fractal:
 - **[design-tokens](./packages/design-tokens)**: the list of design tokens
   defining the design system and to be used in all the apps _(web, mobile, ...)_
   and packages throughout the organization;
+
 - **[react](./packages/react)**: the React design system, made of components,
-  styles, icons, ... to be used in web (React) applications;
+  styles, icons, ... to be used in web (React) applications.
+  It also contains the Storybook documentation that will be reference by the
+  main `docs` application above;
 
 ### TypeScript
 

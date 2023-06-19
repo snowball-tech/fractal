@@ -12,6 +12,7 @@ module.exports = {
     '@snowball-tech/eslint-config/typescript',
     '@snowball-tech/eslint-config/react',
     '@snowball-tech/eslint-config/lodash',
+    'plugin:storybook/recommended',
     '@snowball-tech/eslint-config/perfectionist',
     '@snowball-tech/eslint-config/prettier',
   ],
@@ -20,8 +21,6 @@ module.exports = {
     project: ['./tsconfig.json'],
     tsconfigRootDir: __dirname,
   },
-
-  root: true,
 
   settings: {
     'import/resolver': {
