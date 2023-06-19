@@ -34,7 +34,15 @@ jobs:
       - name: Building all packages
         run: yarn turbo run build
 
-      - name: Wait for quality to pass
+      - name: Waiting for security to pass
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: Checking Yarn cache's integrity
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - name: Waiting for quality to pass
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
           ref: ${{ github.ref }}
@@ -42,7 +50,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-      - name: Publishing updated packages to NPM, Git and GitHub
+      - name: Publishing updated public packages to NPM, Git and GitHub
         env:
           GH_TOKEN: ${{ secrets.MACHINE_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.MACHINE_NPM_TOKEN }}
