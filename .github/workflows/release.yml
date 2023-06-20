@@ -34,7 +34,7 @@ jobs:
       - name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
-        run: ./scripts/setup-freezer.sh
+        run: yarn run setup:freezer
 
       - name: Building all packages
         run: yarn turbo run build

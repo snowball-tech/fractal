@@ -49,14 +49,15 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "prebuild:storybook": "turbo run clean:storybook && ./scripts/setup-freezer.sh",
+    "prebuild:storybook": "turbo run clean:storybook",
     "build:storybook": "yarn run prebuild:storybook && turbo run build:storybook --parallel",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
     "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
     "publish:all": "multi-semantic-release",
-    "setup": "yarn install && yarn setup:husky",
+    "setup": "yarn install && yarn setup:freezer && yarn setup:husky",
+    "setup:freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup:husky": "is-ci || yarn husky install",
     "update:references": "workspaces-to-typescript-project-references --includesRoot"
   },
