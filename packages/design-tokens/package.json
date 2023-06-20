@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.195",
-    "chalk": "4.1.2",
+    "chalk": "5.2.0",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.22",
     "ora": "5.4.1",
