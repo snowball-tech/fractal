@@ -33,6 +33,7 @@ module.exports = {
         'name/cti/kebab',
         'size/breakpoint-border-radius/px',
         'size/other/pxToRem',
+        'media-query/quote',
         'time/seconds',
         'content/icon',
         // Use CSS format that will output Hex or RGBA accordingly if the alpha
