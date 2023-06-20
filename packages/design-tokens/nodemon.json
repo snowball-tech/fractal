@@ -1,4 +1,4 @@
 {
-  "watch": ["tokens/", "src/", "assets/"],
+  "watch": ["tokens/", "src/", "assets/", "config.js"],
   "ext": "js,json,json5"
 }
