@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [2.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.8.0...@snowball-tech/design-tokens@2.0.0) (2023-06-20)
+
+### 💥 Breaking changes
+
+- **design-tokens:** update the breakpoints definition ([a82355b](https://github.com/snowball-tech/fractal/commit/a82355bd875c89c8b23e323c9e5394507cceb065))
+
+### ✨ Features
+
+- **design-tokens:** export the constants file ([7f68cc1](https://github.com/snowball-tech/fractal/commit/7f68cc1e8de10a4e89532f3965e367ef7eaf1e00))
+
 # @snowball-tech/design-tokens [1.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.7.0...@snowball-tech/design-tokens@1.8.0) (2023-06-20)
 
 ### ✨ Features
