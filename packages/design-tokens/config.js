@@ -43,6 +43,7 @@ module.exports = {
     },
     react: {
       ...BASE_OPTIONS,
+      actions: ['react/copy-constants'],
       buildPath: 'dist/web/react/',
       files: [
         {

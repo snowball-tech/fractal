@@ -6,7 +6,7 @@ module.exports = {
     md: 'md',
     lg: 'lg',
     xl: 'xl',
-    '2xl': '2xl',
+    xxl: 'xxl',
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 }
