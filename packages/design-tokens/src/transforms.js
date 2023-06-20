@@ -2,6 +2,7 @@ const StyleDictionary = require('style-dictionary')
 
 const {
   isBreakpointOrBorderOrRadiusSize,
+  isMediaQuery,
   isNotBreakpointNorBorderNorRadiusSize,
 } = require('./matchers')
 
@@ -16,6 +17,18 @@ StyleDictionary.registerTransform({
   matcher: isBreakpointOrBorderOrRadiusSize,
   name: 'size/breakpoint-border-radius/px',
   transformer: StyleDictionary.transform['size/px'].transformer,
+  type: 'value',
+})
+
+StyleDictionary.registerTransform({
+  matcher: isMediaQuery,
+  name: 'media-query/quote',
+  transformer: (token) => {
+    console.log(token)
+
+    return `'${token.value}'`
+  },
+  transitive: true,
   type: 'value',
 })
 

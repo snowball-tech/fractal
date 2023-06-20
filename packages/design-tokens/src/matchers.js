@@ -24,9 +24,17 @@ function isNotBreakpointNorBorderNorRadiusSize(token) {
   )
 }
 
+function isMediaQuery(token) {
+  return (
+    (!isIgnored(token) && token.attributes.category === 'mediaQuery') ||
+    token.original.group === 'mediaQuery'
+  )
+}
+
 module.exports = {
   isBreakpointOrBorderOrRadiusSize,
   isIgnored,
+  isMediaQuery,
   isNotBreakpointNorBorderNorRadiusSize,
   isSize,
 }
