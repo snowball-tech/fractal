@@ -54,7 +54,7 @@ repository relies on
   Such commit will lead to the creation of a new minor version.
 - 🐛 `fix`: a bug fix.
   Such commit will lead to the creation of a new patch version.
-- 💄 `fix` (or `ui` or `ux`): a change that only affect the visual identity of
+- 💄 `style` (or `ui` or `ux`): a change that only affect the visual identity of
   the product (fonts, color, spacing, ...).
   Such commit will lead to the creation of a new minor version.
 - ⚡️ `performance` (or `perf`): a code change that improves performance.
