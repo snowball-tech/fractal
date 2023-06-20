@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [1.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.6.2...@snowball-tech/design-tokens@1.7.0) (2023-06-20)
+
+### ✨ Features
+
+- **design-tokens:** support different typo size according to breakpoint ([df5a554](https://github.com/snowball-tech/fractal/commit/df5a5541effde6089e65300e88b55f6a268e7f11))
+
 ## @snowball-tech/design-tokens [1.6.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.6.1...@snowball-tech/design-tokens@1.6.2) (2023-06-19)
 
 ### 👷 Build
