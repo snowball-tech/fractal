@@ -17,7 +17,7 @@ concurrency:
 jobs:
   security:
     name: Checking Yarn cache's integrity
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - if: github.actor == 'snowball-tech-bot' || github.actor == 'renovate[bot]'
         name: Checking if user is a trusted bot
