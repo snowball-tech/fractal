@@ -1,5 +1,5 @@
-# This GitHub action updates the Chromatic build everytime the `fractal-react`
-# package is updated.
+# This GitHub action updates the Chromatic build everytime the Fractal
+# documentation or the React UI library is updated.
 
 name: Fractal/React
 
@@ -25,19 +25,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get changed files from Design Tokens, Fractal and React UI library
+      - name: Get changed files from Fractal or React UI library
         id: changed-files-specific
         uses: tj-actions/changed-files@v36
         with:
           files: |
-            packages/design-tokens/**
             packages/react/**
             apps/fractal/**
 
       - if: steps.changed-files-specific.outputs.any_changed != 'true'
         name: No need to update Chromatic for Fractal/React
         run: |
-          echo "There are no changes in Design Tokens, Fractal or React UI library."
+          echo "There are no changes in Fractal or React UI library."
           echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
 
       - if: env.SKIP_CHROMATIC != 1
