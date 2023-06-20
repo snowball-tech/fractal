@@ -38,19 +38,15 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild": "yarn run clean && yarn run -T turbo run update:fonts",
+    "prebuild": "yarn run clean",
     "build": "yarn run prebuild && node ./src/build.js",
-    "prebuild:fast": "yarn run clean",
-    "build:fast": "yarn run prebuild:fast && node ./src/build.js",
     "clean": "rm -Rf dist",
     "dev": "nodemon -x \"yarn build\"",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run -T eslint --cache .",
     "lint:fix": "yarn run -T eslint --cache --fix .",
-    "setup": "yarn && yarn run update:fonts",
-    "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
-    "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets"
+    "setup": "yarn install"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.195",
