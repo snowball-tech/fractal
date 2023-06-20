@@ -1,5 +1,7 @@
 /* eslint-disable no-secrets/no-secrets */
 
+const { breakpoints } = require('../src/constants')
+
 module.exports = {
   asset: {
     font: {
@@ -26,10 +28,11 @@ module.exports = {
   font: {
     family: {
       normal: {
-        value: '{asset.font.PolySans.value}, Segoe UI, Tahoma, Sans-Serif',
+        value:
+          '"{asset.font.PolySans.value}", "Segoe UI", "Tahoma", sans-serif',
       },
       wide: {
-        value: '{asset.font.PolySansWide.value}, Arial Black, Sans-Serif',
+        value: '"{asset.font.PolySansWide.value}", "Arial Black", sans-serif',
       },
     },
 
@@ -48,9 +51,15 @@ module.exports = {
         value: '{font.family.normal.value}',
       },
       fontSize: {
-        group: 'size',
-        value: 80,
-        'value_breakpoint-md': 48,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 48,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 80,
+        },
       },
       fontWeight: {
         value: '{font.weight.bold.value}',
@@ -59,9 +68,15 @@ module.exports = {
         value: 0,
       },
       lineHeight: {
-        group: 'size',
-        value: 96,
-        'value_breakpoint-md': 64,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 64,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 96,
+        },
       },
     },
 
@@ -72,9 +87,15 @@ module.exports = {
         value: '{font.family.normal.value}',
       },
       fontSize: {
-        group: 'size',
-        value: 72,
-        'value_breakpoint-md': 40,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 40,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 72,
+        },
       },
       fontWeight: {
         value: '{font.weight.bold.value}',
@@ -83,9 +104,15 @@ module.exports = {
         value: 0,
       },
       lineHeight: {
-        group: 'size',
-        value: 80,
-        'value_breakpoint-md': 48,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 48,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 80,
+        },
       },
     },
 
@@ -96,9 +123,15 @@ module.exports = {
         value: '{font.family.wide.value}',
       },
       fontSize: {
-        group: 'size',
-        value: 56,
-        'value_breakpoint-md': 32,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 32,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 56,
+        },
       },
       fontWeight: {
         value: '{font.weight.bold.value}',
@@ -107,9 +140,15 @@ module.exports = {
         value: 0,
       },
       lineHeight: {
-        group: 'size',
-        value: 64,
-        'value_breakpoint-md': 40,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 40,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 64,
+        },
       },
     },
 
@@ -120,9 +159,15 @@ module.exports = {
         value: '{font.family.normal.value}',
       },
       fontSize: {
-        group: 'size',
-        value: 40,
-        'value_breakpoint-md': 32,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 32,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 40,
+        },
       },
       fontWeight: {
         value: '{font.weight.bold.value}',
@@ -131,9 +176,15 @@ module.exports = {
         value: 0,
       },
       lineHeight: {
-        group: 'size',
-        value: 56,
-        'value_breakpoint-md': 44,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 44,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 56,
+        },
       },
     },
 
@@ -144,9 +195,15 @@ module.exports = {
         value: '{font.family.normal.value}',
       },
       fontSize: {
-        group: 'size',
-        value: 32,
-        'value_breakpoint-md': 28,
+        [breakpoints.xs]: {
+          group: 'size',
+          value: 28,
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        [breakpoints.md]: {
+          group: 'size',
+          value: 32,
+        },
       },
       fontWeight: {
         value: '{font.weight.bold.value}',
@@ -157,7 +214,6 @@ module.exports = {
       lineHeight: {
         group: 'size',
         value: 40,
-        'value_breakpoint-md': 40,
       },
     },
 

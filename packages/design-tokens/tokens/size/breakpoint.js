@@ -1,37 +1,39 @@
+const { breakpoints } = require('../../src/constants')
+
 module.exports = {
   size: {
     breakpoint: {
-      xs: {
-        group: 'spacing',
+      [breakpoints.xs]: {
+        group: 'size',
         value: 0,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      sm: {
-        group: 'spacing',
+      [breakpoints.sm]: {
+        group: 'size',
         value: 640,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      md: {
-        group: 'spacing',
+      [breakpoints.md]: {
+        group: 'size',
         value: 768,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      lg: {
-        group: 'spacing',
+      [breakpoints.lg]: {
+        group: 'size',
         value: 1024,
       },
 
-      xl: {
-        group: 'spacing',
+      [breakpoints.xl]: {
+        group: 'size',
         value: 1280,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      '2xl': {
-        group: 'spacing',
+      [breakpoints['2xl']]: {
+        group: 'size',
         value: 1536,
       },
     },
