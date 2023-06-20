@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [1.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.7.0...@snowball-tech/design-tokens@1.8.0) (2023-06-20)
+
+### ✨ Features
+
+- **design-tokens:** add generated media queries ([d38f5ed](https://github.com/snowball-tech/fractal/commit/d38f5edb9033f9bb47d6374bf45f10606e8a0169))
+
+### 🏗 Chores
+
+- **design-tokens:** fix the dev mode ([d72dd7a](https://github.com/snowball-tech/fractal/commit/d72dd7a173aff36c4d802a3e61ead7f6d9bf1a39))
+
 # @snowball-tech/design-tokens [1.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.6.2...@snowball-tech/design-tokens@1.7.0) (2023-06-20)
 
 ### ✨ Features
