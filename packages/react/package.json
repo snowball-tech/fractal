@@ -104,7 +104,7 @@
   },
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
-    "@snowball-tech/design-tokens": "^1.8.0",
+    "@snowball-tech/design-tokens": "^2.0.0",
     "@snowball-tech/fractal": "workspace:^",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
