@@ -1,56 +1,81 @@
 <style>
-  h1 {
-    font-family: var(--typography-display-2-font-family) !important;
-    font-size: var(--typography-display-2-font-size) !important;
-    font-weight: var(--typography-display-2-font-weight) !important;
-    line-height: var(--typography-display-2-line-height) !important;
-    letter-spacing: var(--typography-display-2-letter-spacing) !important;
+  .sbdocs-content > h1 {
+    font-family: var(--typography-heading-1-font-family);
+    font-size: var(--typography-heading-1-font-size-md);
+    font-weight: var(--typography-heading-1-font-weight);
+    line-height: var(--typography-heading-1-line-height-md);
+    letter-spacing: var(--typography-heading-1-letter-spacing);
   }
 
-  h2 {
-    font-family: var(--typography-heading-2-font-family) !important;
-    font-size: var(--typography-heading-2-font-size) !important;
-    font-weight: var(--typography-heading-2-font-weight) !important;
-    line-height: var(--typography-heading-2-line-height) !important;
-    letter-spacing: var(--typography-heading-2-letter-spacing) !important;
+  /* stylelint-disable-next-line selector-id-pattern */
+  #-fractal {
+    font-family: var(--typography-display-2-font-family);
+    font-size: var(--typography-display-2-font-size-md);
+    font-weight: var(--typography-display-2-font-weight);
+    line-height: var(--typography-display-2-line-height-md);
+    letter-spacing: var(--typography-display-2-letter-spacing);
   }
 
-  h3 {
-    font-family: var(--typography-heading-3-font-family) !important;
-    font-size: var(--typography-heading-3-font-size) !important;
-    font-weight: var(--typography-heading-3-font-weight) !important;
-    line-height: var(--typography-heading-3-line-height) !important;
-    letter-spacing: var(--typography-heading-3-letter-spacing) !important;
+  .sbdocs-content > h2 {
+    font-family: var(--typography-heading-2-font-family);
+    font-size: var(--typography-heading-2-font-size-xs);
+    font-weight: var(--typography-heading-2-font-weight);
+    line-height: var(--typography-heading-2-line-height);
+    letter-spacing: var(--typography-heading-2-letter-spacing);
   }
 
-  h4,
+  .sbdocs-content > h3 {
+    font-family: var(--typography-heading-3-font-family);
+    font-size: var(--typography-heading-3-font-size-md);
+    font-weight: var(--typography-heading-3-font-weight);
+    line-height: var(--typography-heading-3-line-height-md);
+    letter-spacing: var(--typography-heading-3-letter-spacing);
+  }
+
+  .sbdocs-content > h4,
   .sbdocs-subtitle {
-    font-family: var(--typography-heading-4-font-family) !important;
-    font-size: var(--typography-heading-4-font-size) !important;
-    font-weight: var(--typography-heading-4-font-weight) !important;
-    line-height: var(--typography-heading-4-line-height) !important;
-    letter-spacing: var(--typography-heading-4-letter-spacing) !important;
+    font-family: var(--typography-heading-4-font-family);
+    font-size: var(--typography-heading-4-font-size);
+    font-weight: var(--typography-heading-4-font-weight);
+    line-height: var(--typography-heading-4-line-height);
+    letter-spacing: var(--typography-heading-4-letter-spacing);
   }
 
-  body {
-    font-family: var(--typography-body-1-font-family) !important;
-    font-size: var(--typography-body-1-font-size) !important;
-    font-weight: var(--typography-body-1-font-weight) !important;
-    line-height: var(--typography-body-1-line-height) !important;
-    letter-spacing: var(--typography-body-1-letter-spacing) !important;
+  .sbdocs-content > *,
+  .sbdocs-content > ul > li {
+    font-family: var(--typography-body-1-font-family);
+    font-size: var(--typography-body-1-font-size);
+    font-weight: var(--typography-body-1-font-weight);
+    line-height: var(--typography-body-1-line-height);
+    letter-spacing: var(--typography-body-1-letter-spacing);
   }
 
-  a {
-    font-weight: var(--typography-body-1-link-font-weight) !important;
-    text-decoration: var(--typography-body-1-link-text-decoration) !important;
+  .sbdocs-content > * > a,
+  .sbdocs-content > a {
+    font-weight: var(--typography-body-1-link-font-weight);
+    text-decoration: var(--typography-body-1-link-text-decoration);
+  }
+
+  .sbdocs-content > blockquote > * {
+    font-family: var(--typography-body-2-font-family);
+    font-size: var(--typography-body-2-font-size);
+    font-weight: var(--typography-body-2-font-weight);
+    line-height: var(--typography-body-2-line-height);
+    letter-spacing: var(--typography-body-2-letter-spacing);
+  }
+
+  .sbdocs-content > blockquote > * > a,
+  .sbdocs-content > blockquote > a {
+    font-weight: var(--typography-body-2-link-font-weight);
+    text-decoration: var(--typography-body-2-link-text-decoration);
   }
 
   #stories,
   #typography-types,
   #props {
-    color: var(--color-base-black) !important;
-    border-bottom: var(--size-border-1) solid !important;
-    text-transform: none !important;
+    color: var(--color-base-black);
+    border-bottom: var(--size-border-1) solid;
+    text-transform: none;
   }
 
   .docblock-source {
@@ -63,6 +88,15 @@
   .docblock-source button,
   .docblock-code-toggle {
     background-color: var(--color-base-white) !important;
+  }
+
+  .docblock-argstable-body {
+    box-shadow: var(--shadow-brutal);
+  }
+
+  .docblock-argstable-body > tr > td:first-of-type,
+  .docblock-argstable-body > tr > td:last-of-type {
+    border-radius: var(--size-radius-rectangle) !important;
   }
 
   .sbdocs-preview {

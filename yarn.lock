@@ -3603,10 +3603,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "@snowball-tech/design-tokens@npm:1.8.0"
-  checksum: 3a6462ae947268d3f05bf29ddd90ca3ecca29ef65414a250db6ec526e814891dec5901fb2d7fd3176c58ae0e2f5a4988c57f059d63ba9b2d47b2b1515c61918e
+"@snowball-tech/design-tokens@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@snowball-tech/design-tokens@npm:2.0.0"
+  checksum: 0ad0f3e9eb145f4386bee34c1c94181c87edbbe7947b286edde8e9b83c856128294017e1b7b5eb75fb250af78ae9edd228a25ecdb7ab52ce53d3b5f15cd21d44
   languageName: node
   linkType: hard
 
@@ -3670,7 +3670,7 @@ __metadata:
   resolution: "@snowball-tech/fractal-react@workspace:packages/react"
   dependencies:
     "@iconscout/react-unicons": ^2.0.2
-    "@snowball-tech/design-tokens": ^1.8.0
+    "@snowball-tech/design-tokens": ^2.0.0
     "@snowball-tech/eslint-config": ^3.1.0
     "@snowball-tech/fractal": "workspace:^"
     "@storybook/addon-a11y": ^7.0.22
@@ -3723,7 +3723,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:apps/fractal"
   dependencies:
-    "@snowball-tech/design-tokens": ^1.8.0
+    "@snowball-tech/design-tokens": ^2.0.0
     "@snowball-tech/eslint-config": ^3.1.0
     "@storybook/addon-a11y": ^7.0.22
     "@storybook/addon-essentials": ^7.0.22
