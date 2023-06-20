@@ -25,8 +25,7 @@ function getLineHeight(variant: Variants, breakpoint: Breakpoint): string {
 }
 
 const StyledTypography = styled.div<TypographyProps>`
-  font-family: ${({ variant = DEFAULT_VARIANT }) =>
-    `var(--typography-${variant}-font-family)`};
+  font-family: 'Arial Black', serif;
   font-weight: ${({ variant = DEFAULT_VARIANT }) =>
     `var(--typography-${variant}-font-weight)`};
 
