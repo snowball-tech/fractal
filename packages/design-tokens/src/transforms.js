@@ -23,11 +23,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   matcher: isMediaQuery,
   name: 'media-query/quote',
-  transformer: (token) => {
-    console.log(token)
-
-    return `'${token.value}'`
-  },
+  transformer: (token) => `'${token.value}'`,
   transitive: true,
   type: 'value',
 })
