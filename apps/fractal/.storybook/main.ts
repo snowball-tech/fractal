@@ -3,10 +3,6 @@ import type { StorybookConfig } from '@storybook/react-vite'
 const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
-    {
-      name: '@storybook/addon-styling',
-      options: {},
-    },
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
