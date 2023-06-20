@@ -49,7 +49,7 @@ module.exports = {
         value: 1280,
       },
 
-      [breakpoints['2xl']]: {
+      [breakpoints.xxl]: {
         value: 1536,
       },
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
