@@ -1975,12 +1975,12 @@ __metadata:
   linkType: hard
 
 "@csstools/media-query-list-parser@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@csstools/media-query-list-parser@npm:2.1.0"
+  version: 2.1.1
+  resolution: "@csstools/media-query-list-parser@npm:2.1.1"
   peerDependencies:
-    "@csstools/css-parser-algorithms": ^2.1.1
+    "@csstools/css-parser-algorithms": ^2.2.0
     "@csstools/css-tokenizer": ^2.1.1
-  checksum: 854379ad108673eb3a2031a9ca1d3b5976d3234f715b3fc2a0a67b057a80fb4b34ec4888cfa7675fbd31418e4b939128cdbbe7c75b635f639ddbbb0a22847b6d
+  checksum: bd97737fe92669fa6e26aab0b28a1b82e0bb3992e548bfeb1a45d56007f2a2dfee70c2bb9c2092703680fed505ae1a71254bc0e103f7486bb7724d6c7193fa71
   languageName: node
   linkType: hard
 
@@ -4122,6 +4122,20 @@ __metadata:
   peerDependencies:
     semantic-release: ^21.0.0
   checksum: 781c12f7896367233225aa99b944d8d18aca54e9f6500e424cf374b9b385761c53bf9c653ef8acc890a2da705cda749b4c1696ba1970c83ad60803c787e034f7
+  languageName: node
+  linkType: hard
+
+"@snowball-tech/stylelint-config@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@snowball-tech/stylelint-config@npm:1.0.0"
+  dependencies:
+    postcss-html: ^1.5.0
+    stylelint: ^15.8.0
+    stylelint-config-html: ^1.1.0
+    stylelint-config-standard: ^33.0.0
+  peerDependencies:
+    stylelint: ^15.0.0
+  checksum: 0a1a30882697cbcc563c3bc0cbbf889f65fad3d0dcab920ca60d592441cf92e9f587383bf4499145fbc398169ed4b8d45cf9feea5a4d7bd676c81a33bad23083
   languageName: node
   linkType: hard
 
@@ -10339,6 +10353,7 @@ __metadata:
     "@snowball-tech/eslint-config": ^3.1.0
     "@snowball-tech/prettier-config": ^1.2.0
     "@snowball-tech/semantic-release-config": ^1.2.1
+    "@snowball-tech/stylelint-config": ^1.0.0
     "@types/eslint": ^8.40.2
     "@types/is-ci": ^3.0.0
     "@types/node": ^20.3.1
@@ -10349,13 +10364,10 @@ __metadata:
     husky: ^8.0.3
     is-ci: ^3.0.1
     lint-staged: ^13.2.2
-    postcss-html: ^1.5.0
     prettier: ^2.8.8
     pythagora: ^0.0.69
     semantic-release: ^21.0.5
     stylelint: ^15.8.0
-    stylelint-config-html: ^1.1.0
-    stylelint-config-standard: ^33.0.0
     ts-node: ^10.9.1
     turbo: 1.10.4
     typescript: ^5.1.3
