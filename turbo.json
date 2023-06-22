@@ -57,6 +57,7 @@
     ".eslintrc.js",
     ".prettierignore",
     ".prettierrc.js",
+    ".yarnrc.yml",
     "package.json",
     "tsconfig.json"
   ]

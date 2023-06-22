@@ -15,7 +15,7 @@ always pass and that they do not become obsoletes, irrelevant of flaky.
 
 ## Versioning
 
-All versioning of your packages must follow the
+All versioning of your packages and applications must follow the
 [SemVer definition](https://semver.org/).
 
 In SemVer definition, a version is defined as such: `X.Y.Z` with:
@@ -46,46 +46,46 @@ repository relies on
 ### Allowed types
 
 - 💥 `breaking` (or `break`): a change breaking the backward compatibility and/or
-  bringing a major modification in the way the package was used.
+  bringing a major modification in the way the package was used.  
   Such commit will lead to the creation of a new major version.
-- ✨ `feat`: a new feature.
+- ✨ `feat`: a new feature.  
   Such commit will lead to the creation of a new minor version.
-- 🔒️ `security`: a security update.
+- 🔒️ `security`: a security update.  
   Such commit will lead to the creation of a new minor version.
-- 🐛 `fix`: a bug fix.
+- 🐛 `fix`: a bug fix.  
   Such commit will lead to the creation of a new patch version.
 - 💄 `style` (or `ui` or `ux`): a change that only affect the visual identity of
-  the product (fonts, color, spacing, ...).
+  the product (fonts, color, spacing, ...).  
   Such commit will lead to the creation of a new minor version.
-- ⚡️ `performance` (or `perf`): a code change that improves performance.
+- ⚡️ `performance` (or `perf`): a code change that improves performance.  
   Such commit will lead to the creation of a new patch version.
-- 📝 `docs` (or `doc`): a documentation only changes.
+- 📝 `docs` (or `doc`): a documentation only changes.  
   Such commit will not lead to the creation of a new version.
 - 🏗 `chores` (or `chore`, `misc` or `other`): another type of change that don't
-  significantly modify the code.
+  significantly modify the code.  
   Such commit will not lead to the creation of a new version.
 - ♻️ `refactor`: a code change that neither fixes a bug nor adds a feature but
-  changes something in the code architecture or organization.
+  changes something in the code architecture or organization.  
   Such commit will lead to the creation of a new patch version.
-- 🚦 `tests` (or `test`): the addition or modification of tests.
+- 🚦 `tests` (or `test`): the addition or modification of tests.  
   Such commit will not lead to the creation of a new version.
 - 🎨 `format` (or `lint`): a change that do not affect the meaning of the code
-  (white-space, formatting, missing semi-colons, ...).
+  (white-space, formatting, missing semi-colons, ...).  
   Such commit will not lead to the creation of a new version.
-- 👷 `build`: a change that affect the build system or external dependencies.
+- 👷 `build`: a change that affect the build system or external dependencies.  
   Such commit will lead to the creation of a new patch version.
-- ⚙️ `ci`: a change to our CI configuration files and scripts.
+- ⚙️ `ci`: a change to our CI configuration files and scripts.  
   Such commit will lead to the creation of a new patch version.
-- 📦 `deps` (or `dev-deps`): an update to our dependencies.
+- 📦 `deps` (or `dev-deps`): an update to our dependencies.  
   Such commit will lead to the creation of a new patch version.
 - 🗃️ `metadata` (or `meta`): an update to metadata of the project (e.g.
-  `package.json`).
+  `package.json`).  
   Such commit will lead to the creation of a new patch version.
-- ⏪️ `revert`: reverts a previous commit.
+- ⏪️ `revert`: reverts a previous commit.  
   Such commit will lead to the creation of a new patch version.
-- 🔖 `release` (or `bump`): forces the release of a new version.
+- 🔖 `release` (or `bump`): forces the release of a new version.  
   Such commit will lead to the creation of a new patch version.
-- 🚧 `wip`: a changes that is still being worked on.
+- 🚧 `wip`: a changes that is still being worked on.  
   Such commit will not lead to the creation of a new version.
 
 ### Scope
@@ -96,7 +96,7 @@ This can be the package/application name or an even precise scope.
 
 ### Subject
 
-Concisely describe in one short sentence your change.
+Concisely describe in one short sentence your change.  
 Try to be meaningful and explicit in your subject.
 
 Your sentence should not start with an uppercase letter and should not end with
@@ -132,7 +132,7 @@ in order to keep the Git history more concise.
 ### Context
 
 Working on legacy is a part of our job. It will never end and we always have
-ongoing migrations. CSS, JS, HTML, design dystem components, .... Everything
+ongoing migrations. CSS, JS, HTML, design system components, .... Everything
 can be considered at some point "deprecated", "legacy" or "to be migrated". If
 we leave it that way, there are high chances that these pieces of code end up as
 what we like to call "tech debt".

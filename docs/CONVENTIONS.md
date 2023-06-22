@@ -3,7 +3,7 @@
 ## Code style
 
 Code style is enforced using Prettier, ESLint and all the configuration provided
-by the packages in this repository.
+by the [Glacier](https://github.com/snowball-tech/glacier) packages.
 
 See the [dedicated `TOOLING.md` documentation](./docs/TOOLING.md) for more
 information.
@@ -126,12 +126,21 @@ A good practice is to use methods offered by Lodash to ensure some conditions.
 ❌
 
 ```js
-if (array.length)
-if (0)
-if ('')
+if (someArray.length) {
+  // Do something
+}
+if (someNumber) {
+  // Do something
+}
+if (someString) {
+  // Do something
+}
 
 // Careful, this is true!
-if ({})
+const emptyObject = {}
+if (emptyObject) {
+  // Do something
+}
 ```
 
 ✅
@@ -139,7 +148,18 @@ if ({})
 ```js
 import isEmpty from 'lodash/fp/isEmpty'
 
-if (!isEmpty(array))
+if (!isEmpty(someArray)) {
+  // Do something
+}
+if (someNumber > 0) {
+  // Do something
+}
+if (!isEmpty(someString)) {
+  // Do something
+}
+if (!isEmpty(emptyObject)) {
+  // Do something
+}
 ```
 
 #### What's defined is not undefined
