@@ -65,4 +65,11 @@ next-env.d.ts
 .pythagora
 
 # Storybook.
-storybook-static
+**/storybook-static
+
+# Vercel.
+**/.vercel
+
+# Supabase.
+**/supabase/.branches
+**/supabase/.temp

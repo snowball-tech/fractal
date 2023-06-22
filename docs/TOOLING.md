@@ -7,8 +7,8 @@
 The mono-repository management is handled by Yarn v3 (Berry) workspaces.
 
 Those workspaces are defined in the root [`package.json`](./package.json) file.
-By default it defines the [`packages`](./packages) folder as the root of the
-workspaces.
+By default it defines the [`packages`](./packages) and [`apps`](./packages)
+folders as the root of the workspaces.
 
 You may edit this configuration to add new workspaces.
 
@@ -37,7 +37,7 @@ This mono-repository is based on [TurboRepo](https://turbo.build/repo) which is
 a tool that basically speed-up the tasks in a mono-repository.
 
 To fully use the potential of TurboRepo, you are expected to have in each of
-your packages the following scripts:
+your packages and applications the following scripts:
 
 - `build`: _**(if needed)**_ to build the package/application
 - `lint`: to check the linting of the package/application:
@@ -53,12 +53,70 @@ your packages the following scripts:
 
 These scripts will be automatically picked up by TurboRepo when running tasks
 such as `turbo lint` or `turbo build` from the root of the mono-repository or in
-each of the packages.
+each of the packages/applications.
 
 > **A quick note on `package.json` scripts**: as we are using Yarn v3 for the
 > mono-repository/workspace management, the automatic `pre<script>` and
 > `post<script>` hooks are not available. So you will have to call them yourself
 > in you actual script.
+
+## Vercel
+
+> To be able to do anything in Vercel, you'll have to make sure to have the
+> proper permissions on the Vercel
+> [`snowball-tech` team](https://vercel.com/snowball-tech). If it's not the
+> case, please reach out to someone that can help you with that
+
+If you want to deploy your application to Vercel, you will have to link your
+local folder with a Vercel project.
+
+To do so, go in your directory and run:
+
+```bash
+vercel link
+```
+
+or (if it's not globally available):
+
+```bash
+yarn run -T vercel link
+```
+
+Then follow the instructions to link your local directory to your Vercel
+project.
+
+Vercel is a great choice to deploy your application because it handles so much
+directly on it's own _(e.g. automatic deployment on commit)_. If you develop
+your application with the Next.JS framework, the integration is even greater and
+you can enjoy Analytics, Speed insight or direct Database integration in a
+breeze.
+
+### Environment variables
+
+Environment variables are handled using `.env` files. You can use multiple
+variations of `.env` files like `.env.local`
+_(which should never be committed in the repository because it contains secrets)_
+, `.env.development` for environment variable dedicated to the development
+server
+_(and that are not secret so can be shared with other developers by committing it in the repository)_
+or even `.env.production` to define environment variables dedicated to be used
+in production.
+
+If you are using Vercel _(and if you have linked you project)_, all environment
+variables can be directly handled via the Vercel interface, either
+[at the team level](https://vercel.com/teams/snowball-tech/settings/environment-variables)
+_(meaning these environment variables could be used by any Vercel project, granted that they are linked to them)_
+,or at the project level
+_(e.g. <https://vercel.com/snowball-tech/freezer-mc-poc/settings/environment-variables>)_
+where you can define project specific environment variable or link global ones.  
+Then when you have defined your environment variables for your project, you can
+simply run
+
+```bash
+vercel env pull
+```
+
+This will generate all the appropriate `.env` files for you.
 
 ## Dependencies
 
@@ -119,6 +177,7 @@ yarn run -T < dependency-name > [...parameters]
 The dependencies that are available at the root level are:
 
 - `ts-node`: to run TypeScript code directly
+- `vercel`: to handle anything related to Vercel
 - `multi-semantic-release` and `semantic-release`: to release multiple packages
 - `is-ci`: to check if you are in a CI environment
 - `eslint`: to lint your code
@@ -153,15 +212,17 @@ import isEmpty from 'lodash/fp/isEmpty'
 ```
 
 > Note that if you are using TypeScript and want to enjoying typeguards in some
-> functions (like `isEmpty` or `isString`) you should consider importing it from
-> the `fp` submodule like above.:
+> Lodash functions (like `isEmpty` or `isString`) you should consider importing
+> it from the `fp` submodule as demonstrated above.
 
 </details>
 </details>
 
 ## Convention enforcement
 
-This repository uses its own packages to enforce conventions and best practices.
+This repository is based on packages offered in the
+[Glacier](https://github.com/snowball-tech/glacier) mono-repository and
+distributed as open-source NPM packages in the `@snowball-tech` scope.
 
 Those package offers out of the box:
 
