@@ -64,7 +64,7 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.9.0",
     "@qiwi/multi-semantic-release": "^6.7.0",
-    "@snowball-tech/eslint-config": "^3.1.0",
+    "@snowball-tech/eslint-config": "^3.1.2",
     "@snowball-tech/prettier-config": "^1.2.0",
     "@snowball-tech/semantic-release-config": "^1.2.1",
     "@snowball-tech/stylelint-config": "^1.0.0",
@@ -81,9 +81,9 @@
     "prettier": "^2.8.8",
     "pythagora": "^0.0.69",
     "semantic-release": "^21.0.5",
-    "stylelint": "^15.8.0",
+    "stylelint": "^15.9.0",
     "ts-node": "^10.9.1",
-    "turbo": "1.10.4",
+    "turbo": "1.10.6",
     "typescript": "^5.1.3"
   }
 }
