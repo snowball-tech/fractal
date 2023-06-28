@@ -32,10 +32,10 @@
     "access": "restricted"
   },
   "scripts": {
-    "prebuild:storybook": "yarn run -T turbo run update:fonts",
+    "prebuild:storybook": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal",
     "build:storybook": "yarn run prebuild:storybook && storybook build",
     "dev": "storybook dev -p 6006",
-    "dev:with-fonts": "yarn run -T turbo run update:fonts && yarn run dev",
+    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal && yarn run dev",
     "clean:storybook": "rm -Rf storybook-static",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
