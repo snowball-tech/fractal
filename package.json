@@ -50,7 +50,7 @@
   "scripts": {
     "build": "turbo run build",
     "prebuild:storybook": "turbo run clean:storybook",
-    "build:storybook": "yarn run prebuild:storybook && turbo run build:storybook",
+    "build:storybook": "yarn run prebuild:storybook && turbo run build:storybook --concurrency=1",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
