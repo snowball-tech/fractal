@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "declarationDir": "./dist/types",
     "isolatedModules": true,

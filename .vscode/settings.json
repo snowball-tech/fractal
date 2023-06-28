@@ -44,6 +44,7 @@
     "json",
     "jsonc",
     "markdown",
+    "mdx",
     "sql",
     "typescript",
     "typescriptreact",

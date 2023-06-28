@@ -7,7 +7,7 @@ import type { Preview } from '@storybook/react'
 
 import DocumentationTemplate from './DocumentationTemplate.mdx'
 
-import '@snowball-tech/fractal/global.css'
+import '../src/styles/global.css'
 
 const preview = {
   parameters: {

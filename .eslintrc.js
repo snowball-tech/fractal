@@ -16,21 +16,5 @@ module.exports = {
     '@snowball-tech/eslint-config/prettier',
   ],
 
-  parserOptions: {
-    project: ['./tsconfig.json'],
-    tsconfigRootDir: __dirname,
-  },
-
   root: true,
-
-  settings: {
-    'import/resolver': {
-      [require.resolve('eslint-import-resolver-typescript')]: {
-        alwaysTryTypes: true,
-        typescript: {
-          project: ['./tsconfig.json'],
-        },
-      },
-    },
-  },
 }

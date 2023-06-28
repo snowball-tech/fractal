@@ -6,6 +6,7 @@ const meta = {
   argTypes: {
     children: { control: 'text' },
     element: {
+      control: 'text',
       table: {
         defaultValue: {
           details: [
@@ -54,17 +55,17 @@ export const Playground: Story = {
 export const Display: Story = {
   render: ({ children }) => (
     <>
-      <Typography variant={Variants.Display1}>
+      <Typography variant="display-1">
         {Variants.Display1}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Display2}>
+      <Typography variant="display-2">
         {Variants.Display2}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.DisplayWide}>
+      <Typography variant="display-wide">
         {Variants.DisplayWide}
         <br />
         {children}
@@ -76,23 +77,33 @@ export const Display: Story = {
 export const Headings: Story = {
   render: ({ children }) => (
     <>
-      <Typography variant={Variants.Heading1}>
+      <Typography variant="heading-1">
         {Variants.Heading1}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Heading2}>
+      <Typography variant="heading-2">
         {Variants.Heading2}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Heading3}>
+      <Typography variant="heading-3">
         {Variants.Heading3}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Heading4}>
+      <Typography variant="heading-3-link">
+        {Variants.Heading3Link}
+        <br />
+        {children}
+      </Typography>
+      <Typography variant="heading-4">
         {Variants.Heading4}
+        <br />
+        {children}
+      </Typography>
+      <Typography variant="heading-4-link">
+        {Variants.Heading4Link}
         <br />
         {children}
       </Typography>
@@ -103,22 +114,22 @@ export const Headings: Story = {
 export const Body1: Story = {
   render: ({ children }) => (
     <>
-      <Typography variant={Variants.Body1}>
+      <Typography variant="body-1">
         {Variants.Body1}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body1Median}>
+      <Typography variant="body-1-median">
         {Variants.Body1Median}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body1Bold}>
+      <Typography variant="body-1-bold">
         {Variants.Body1Bold}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body1Link}>
+      <Typography variant="body-1-link">
         {Variants.Body1Link}
         <br />
         {children}
@@ -130,22 +141,22 @@ export const Body1: Story = {
 export const Body2: Story = {
   render: ({ children }) => (
     <>
-      <Typography variant={Variants.Body2}>
+      <Typography variant="body-2">
         {Variants.Body2}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body2Median}>
+      <Typography variant="body-2-median">
         {Variants.Body2Median}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body2Bold}>
+      <Typography variant="body-2-bold">
         {Variants.Body2Bold}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.Body2Link}>
+      <Typography variant="body-2-link">
         {Variants.Body2Link}
         <br />
         {children}
@@ -157,17 +168,17 @@ export const Body2: Story = {
 export const Caption: Story = {
   render: ({ children }) => (
     <>
-      <Typography variant={Variants.CaptionMedian}>
+      <Typography variant="caption-median">
         {Variants.CaptionMedian}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.CaptionBold}>
+      <Typography variant="caption-bold">
         {Variants.CaptionBold}
         <br />
         {children}
       </Typography>
-      <Typography variant={Variants.CaptionLink}>
+      <Typography variant="caption-link">
         {Variants.CaptionLink}
         <br />
         {children}

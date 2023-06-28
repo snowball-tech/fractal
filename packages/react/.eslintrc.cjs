@@ -12,37 +12,20 @@ module.exports = {
     '@snowball-tech/eslint-config/typescript',
     '@snowball-tech/eslint-config/react',
     '@snowball-tech/eslint-config/lodash',
-    'plugin:storybook/recommended',
+    '@snowball-tech/eslint-config/storybook',
     '@snowball-tech/eslint-config/perfectionist',
     '@snowball-tech/eslint-config/prettier',
   ],
 
   parserOptions: {
-    project: [
-      './tsconfig.json',
-      './tsconfig.node.json',
-      './tsconfig.storybook.json',
-    ],
+    project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
-  },
-
-  plugins: ['react-refresh'],
-
-  rules: {
-    'react-refresh/only-export-components': 'warn',
   },
 
   settings: {
     'import/resolver': {
-      [require.resolve('eslint-import-resolver-typescript')]: {
-        alwaysTryTypes: true,
-        typescript: {
-          project: [
-            './tsconfig.json',
-            './tsconfig.node.json',
-            './tsconfig.storybook.json',
-          ],
-        },
+      typescript: {
+        project: ['./tsconfig.json', './tsconfig.node.json'],
       },
     },
   },

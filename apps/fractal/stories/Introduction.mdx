@@ -1,9 +1,8 @@
-import { ColorBrandBody } from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
 import { Meta } from '@storybook/blocks'
 
 <Meta title="Fractal" />
 
-# <img src="/images/logo_fractal.png" alt="Fractal's logo" width="50" /> Fractal
+# <img alt="Fractal's logo" src="/images/logo_fractal.png" width="50" /> Fractal
 
 ---
 
@@ -40,7 +39,7 @@ Finally, those design token are the used inside of the Fractal design system.
   _(from Amazon)_.
 - The Fractal web UI components library is built in
   [TypeScript](https://www.typescriptlang.org/) for [React](https://reactjs.org/)
-  applications and [styled-components](https://styled-components.com/) is used to
+  applications and [Panda CSS](https://panda-css.com/) is used to
   style all the components according to the design tokens.
 - This documentation website is built using [Storybook](https://storybook.js.org/)
 
@@ -49,13 +48,13 @@ Finally, those design token are the used inside of the Fractal design system.
 Simply run:
 
 ```bash
-yarn add @snowball-tech/fractal
+yarn add @snowball-tech/fractal-react
 ```
 
 Or (if you use NPM):
 
 ```bash
-npm install @snowball-tech/fractal
+npm install @snowball-tech/fractal-react
 ```
 
 ## 👩‍💻 Usage
@@ -65,7 +64,8 @@ This design system **only** exposes an ESM bundle.
 To import a component, use the following pattern:
 
 ```js
-import { Typography } from '@snowball-tech/fractal'
+// eslint-disable-next-line import/no-unresolved
+import { Typography } from '@snowball-tech/fractal-react'
 ```
 
 ## ✍🏿 Contributing

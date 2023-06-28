@@ -16,8 +16,14 @@
     "rootDir": "./",
     "target": "ESNext"
   },
-  "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"],
-  "files": ["global.d.ts"],
+  "include": [
+    "./*.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "src",
+    "styled-system"
+  ],
+  "files": [],
   "references": [
     {
       "path": "../../apps/fractal"

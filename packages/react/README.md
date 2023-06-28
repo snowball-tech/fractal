@@ -17,7 +17,7 @@ _(web applications, mobile applications, marketing content, documentations, ...)
 The code of this design system is written in
 [TypeScript](https://www.typescriptlang.org/) and is targeted to be used in
 [React](https://reactjs.org/) applications.
-[styled-components](https://styled-components.com/) is used to style all the
+[Panda CSS](https://panda-css.com/) is used to style all the
 components exposed here.
 
 Our documentation site is based on [Storybook](https://storybook.js.org/).
