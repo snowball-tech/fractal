@@ -60,7 +60,7 @@
     "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
-    "prepare": "panda codegen",
+    "postinstall": "panda codegen",
     "types:check": "tsc --noEmit",
     "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
