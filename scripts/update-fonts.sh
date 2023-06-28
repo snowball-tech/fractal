@@ -23,7 +23,7 @@ if [ -z "$destination" ]; then
   exit $exitCode
 fi
 
-TMP_DIR="$(dirname "$0")/tmp/freezer/$(date +'%Y%m%d_%H%M%S')"
+TMP_DIR="$(dirname "$0")/tmp/freezer/$(date +'%Y%m%d_%H%M%S')-$RANDOM"
 
 echo -n "$(bold_info "Trying to update the PolySans fonts... ")"
 
