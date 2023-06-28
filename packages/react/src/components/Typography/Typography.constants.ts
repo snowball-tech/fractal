@@ -1,3 +1,5 @@
+import type { ElementType } from 'react'
+
 export enum Variants {
   Body1 = 'body-1',
   Body1Bold = 'body-1-bold',
@@ -25,7 +27,9 @@ export enum Variants {
   Heading4Link = 'heading-4-link',
 }
 
-export const VARIANTS_MAPPING: Record<Variants, keyof JSX.IntrinsicElements> = {
+export const DEFAULT_VARIANT = Variants.Body1
+
+export const VARIANTS_MAPPING: Record<Variants, ElementType> = {
   [Variants.Body1]: 'p',
   [Variants.Body1Bold]: 'p',
   [Variants.Body1Link]: 'a',
@@ -51,3 +55,5 @@ export const VARIANTS_MAPPING: Record<Variants, keyof JSX.IntrinsicElements> = {
   [Variants.Heading4]: 'h4',
   [Variants.Heading4Link]: 'a',
 }
+
+export const DEFAULT_ELEMENT = 'p'

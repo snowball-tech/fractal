@@ -1,4 +1,4 @@
-/* eslint-disable */
+@layer reset, base, tokens, recipes, utilities;
 
 /* stylelint-disable-next-line import-notation */
 @import '@snowball-tech/fractal/global.css';
