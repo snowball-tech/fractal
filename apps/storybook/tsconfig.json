@@ -26,6 +26,7 @@
     "../../packages/react/**/*.ts",
     "../../packages/react/**/*.tsx"
   ],
+  "exclude": ["../../packages/react/dist"],
   "files": [],
   "references": [
     { "path": "./tsconfig.node.json" },

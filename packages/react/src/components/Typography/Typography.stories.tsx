@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Typography, Variants } from './index'
+import Typography from './Typography'
+import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 
 const meta = {
   argTypes: {
@@ -24,7 +25,7 @@ const meta = {
     variant: {
       options: Object.values(Variants),
       table: {
-        defaultValue: { summary: Variants.Body1 },
+        defaultValue: { summary: DEFAULT_VARIANT },
         type: { summary: Object.values(Variants).join('|') },
       },
     },

@@ -8,7 +8,9 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'typography',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    all: 'unset',
+  },
 
   defaultVariants: {
     variant: DEFAULT_VARIANT,
@@ -30,12 +32,12 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
 
           xs: {
             fontSize: `var(--typography-${variantName}-font-size-xs)`,
-            lineHeight: `var(--typography-${variantName}-line-height-xs)`,
+            lineHeight: `var(--typography-${variantName}-line-height-xs, var(--typography-${variantName}-line-height))`,
           },
           // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
           md: {
             fontSize: `var(--typography-${variantName}-font-size-md)`,
-            lineHeight: `var(--typography-${variantName}-line-height-md)`,
+            lineHeight: `var(--typography-${variantName}-line-height-md, var(--typography-${variantName}-line-height))`,
           },
         } as SystemStyleObject,
       }),
