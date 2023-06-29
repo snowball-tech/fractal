@@ -7,7 +7,7 @@ import type { Preview } from '@storybook/react'
 import DocumentationTemplate from './DocumentationTemplate.mdx'
 import fractalTheme from './theme'
 
-import '../global.css'
+import './global.css'
 
 const preview = {
   parameters: {

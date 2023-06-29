@@ -22,7 +22,11 @@ const meta = {
       },
     },
     variant: {
-      table: { defaultValue: { summary: Variants.Body1 } },
+      options: Object.values(Variants),
+      table: {
+        defaultValue: { summary: Variants.Body1 },
+        type: { summary: Object.values(Variants).join('|') },
+      },
     },
   },
   args: {
