@@ -1,5 +1,5 @@
 {
-  "name": "@snowball-tech/fractal",
+  "name": "@snowball-tech/fractal-storybook",
   "version": "1.0.0",
   "description": "Documentation for Fractal - Snowball's design system",
   "private": true,
@@ -15,11 +15,11 @@
     "documentation",
     "storybook"
   ],
-  "homepage": "https://github.com/snowball-tech/fractal/tree/main/apps/fractal",
+  "homepage": "https://github.com/snowball-tech/fractal/tree/main/apps/storybook",
   "repository": {
     "type": "git",
     "url": "https://github.com/snowball-tech/fractal.git",
-    "directory": "apps/fractal"
+    "directory": "apps/storybook"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
   "packageManager": "yarn@3.6.0",
@@ -32,11 +32,12 @@
     "access": "restricted"
   },
   "scripts": {
-    "prebuild:storybook": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal",
+    "build:chromatic": "yarn run -T chromatic --build-script-name build:storybook",
+    "prebuild:storybook": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal-storybook && yarn run clean:storybook",
     "build:storybook": "yarn run prebuild:storybook && storybook build",
-    "dev": "storybook dev -p 6006",
-    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal && yarn run dev",
-    "clean:storybook": "rm -Rf storybook-static",
+    "dev": "yarn run -T concurrently -k \"yarn workspace @snowball-tech/fractal-react run dev\" \"storybook dev -p 6006 --no-open\"",
+    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal-storybook && yarn run dev",
+    "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
@@ -46,11 +47,11 @@
     "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "types:check": "tsc --noEmit",
-    "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
+    "preupdate:fonts": "rm -Rf assets/fonts >/dev/null 2>&1 || true",
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@snowball-tech/eslint-config": "^4.0.0",
+    "@snowball-tech/eslint-config": "^4.0.1",
     "@storybook/addon-a11y": "^7.0.24",
     "@storybook/addon-essentials": "^7.0.24",
     "@storybook/addon-interactions": "^7.0.24",
@@ -72,11 +73,12 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.0.24",
     "storybook-addon-mock": "^4.0.0",
-    "typescript": "^5.1.5",
+    "typescript": "^5.1.6",
     "vite": "^4.3.9"
   },
   "dependencies": {
     "@snowball-tech/design-tokens": "^2.0.0",
+    "@snowball-tech/fractal-react": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

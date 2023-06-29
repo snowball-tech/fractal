@@ -14,7 +14,11 @@
     "rootDir": "./",
     "target": "ESNext"
   },
-  "include": ["stories", ".storybook/**/*.ts", ".storybook/**/*.tsx"],
+  "include": ["./*.ts", ".storybook/**/*.ts", ".storybook/**/*.tsx", "stories"],
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "../../packages/react"
+    }
+  ]
 }

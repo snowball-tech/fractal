@@ -16,4 +16,17 @@ module.exports = {
     '@snowball-tech/eslint-config/perfectionist',
     '@snowball-tech/eslint-config/prettier',
   ],
+
+  parserOptions: {
+    project: ['./tsconfig.json'],
+    tsconfigRootDir: __dirname,
+  },
+
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: ['./tsconfig.json'],
+      },
+    },
+  },
 }

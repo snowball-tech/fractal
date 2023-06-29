@@ -19,7 +19,7 @@ StyleDictionary.registerAction({
       `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader`,
     )
     console.log(
-      chalk.bold.green(`✔︎ ${destinationDirectory}/constants.js (ESM)`),
+      chalk.bold.green(`✔︎ ${destinationDirectory}constants.js (ESM)`),
     )
   },
   name: 'react/copy-constants',

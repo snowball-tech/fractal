@@ -81,26 +81,43 @@ build Snowball's products, apps, marketing contents and documentations"
   }
   /* stylelint-enable selector-class-pattern */
 
+  .sidebar-item > svg[color='primary'] {
+    color: #ff8acd !important;
+  }
+
+  .sidebar-item > svg[color='secondary'] {
+    color: #d6faff !important;
+  }
+
+  .sidebar-item[data-nodetype='document'] > svg {
+    color: #ffe959 !important;
+  }
+
+  .sidebar-item[data-selected='true'] > svg {
+    color: #76f7ae !important;
+  }
+
   #fractal--documentation {
-    font-variant: small-caps;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    font-weight: bolder;
+    margin-left: -12px;
+    margin-bottom: 8px;
   }
 
-  #fractal--documentation > svg {
-    margin-top: 6px;
-  }
-
-  .sidebar-subheading {
-    margin-top: 8px !important;
-  }
-
+  #fractal--documentation,
   .sidebar-subheading > button[data-action='collapse-root'] {
     text-transform: none;
     font-size: 0.85rem;
     letter-spacing: 1px;
-    padding-left: 4px;
+    font-weight: 800;
+  }
+
+  .sidebar-subheading {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  #fractal--documentation > svg {
+    margin-top: 4px;
   }
 
   button[data-action='collapse-ref'],

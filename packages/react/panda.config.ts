@@ -21,15 +21,16 @@ export default defineConfig({
   hash: process.env.NODE_ENV === 'production',
 
   include: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
-  jsxFactory: 'fractal',
 
+  jsxFactory: 'fractal',
   jsxFramework: 'react',
 
   minify: process.env.NODE_ENV === 'production',
 
   // Speed up build time in development only.
   optimize: process.env.NODE_ENV === 'production',
-  outdir: '@snowball-tech/fractal-react-system',
+
+  outdir: '@snowball-tech/panda-fractal-react',
 
   prefix: 'fractal',
 

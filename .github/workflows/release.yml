@@ -37,7 +37,7 @@ jobs:
         run: yarn run setup:freezer
 
       - name: Building all packages
-        run: yarn turbo run build
+        run: yarn run -T turbo run build
 
       - name: Waiting for security to pass
         uses: lewagon/wait-on-check-action@v1.3.1

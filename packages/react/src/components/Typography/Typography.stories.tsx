@@ -33,8 +33,8 @@ const meta = {
     componentSubtitle: '👮 Anything you say can be used against you',
     controls: { hideNoControlsWarning: true, include: ['children'] },
   },
-  // tags: ['autodocs'],
-  title: 'Typography/Typography',
+
+  title: 'React/Typography/Typography',
 } satisfies Meta<typeof Typography>
 
 export default meta

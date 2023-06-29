@@ -1,7 +1,7 @@
 # This GitHub action updates the Chromatic build everytime the Fractal
 # documentation or the React UI library is updated.
 
-name: Fractal/React
+name: Storybook
 
 on:
   push:
@@ -18,25 +18,25 @@ concurrency:
 
 jobs:
   chromatic:
-    name: Deploying Fractal/React Storybook to Chromatic
+    name: Deploying Fractal Storybook to Chromatic
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Get changed files from Fractal or React UI library
+      - name: Get changed files from Storybook or Fractal/React UI library
         id: changed-files-specific
         uses: tj-actions/changed-files@v36
         with:
           files: |
             packages/react/**
-            apps/fractal/**
+            apps/storybook/**
 
       - if: steps.changed-files-specific.outputs.any_changed != 'true'
-        name: No need to update Chromatic for Fractal/React
+        name: No need to update Chromatic
         run: |
-          echo "There are no changes in Fractal or React UI library."
+          echo "There are no changes in Storybook or Fractal/React UI library."
           echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
 
       - if: env.SKIP_CHROMATIC != 1
@@ -82,18 +82,17 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal-react build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
+          yarn workspace @snowball-tech/fractal-storybook build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'pull_request'
         name: Building and publishing to Chromatic with Snapshot testing
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal-react build:chromatic
-          --no-interactive
+          yarn workspace @snowball-tech/fractal-storybook build:chromatic --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1
         uses: actions/upload-artifact@v3
         with:
           name: Storybook build log
-          path: ./packages/react/build-storybook.log
+          path: ./apps/storybook/build-storybook.log

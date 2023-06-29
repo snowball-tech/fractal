@@ -40,8 +40,8 @@
   "scripts": {
     "prebuild": "yarn run clean",
     "build": "yarn run prebuild && node ./src/build.js",
-    "clean": "rm -Rf dist",
-    "dev": "nodemon -x \"yarn build\"",
+    "clean": "rm -Rf dist >/dev/null 2>&1 || true",
+    "dev": "yarn run -T nodemon -x \"yarn build\"",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run -T eslint --cache .",
@@ -52,7 +52,6 @@
     "@types/lodash": "^4.14.195",
     "chalk": "4.1.2",
     "lodash": "^4.17.21",
-    "nodemon": "^2.0.22",
     "ora": "5.4.1",
     "style-dictionary": "^3.8.0",
     "to-esm": "^2.27.3"

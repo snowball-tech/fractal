@@ -18,9 +18,6 @@ const config: StorybookConfig = {
     autodocs: 'tag',
     defaultName: 'Documentation',
   },
-  features: {
-    storyStoreV7: true,
-  },
   framework: {
     name: '@storybook/react-vite',
     options: {},
@@ -31,8 +28,9 @@ const config: StorybookConfig = {
   ],
   stories: [
     '../stories/**/*.mdx',
-    '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../../../packages/react/src/**/*.mdx',
+    '../../../packages/react/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
 }
 
