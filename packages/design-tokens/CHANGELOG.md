@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [2.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.0...@snowball-tech/design-tokens@2.0.1) (2023-06-29)
+
+### ♻️ Code Refactoring
+
+- move all storybook parts to a dedicated app ([00c53dd](https://github.com/snowball-tech/fractal/commit/00c53ddaa080c5274cdf082be5bb693170a19eca))
+
 # @snowball-tech/design-tokens [2.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@1.8.0...@snowball-tech/design-tokens@2.0.0) (2023-06-20)
 
 ### 💥 Breaking changes
