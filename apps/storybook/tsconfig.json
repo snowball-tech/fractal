@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declarationDir": "./dist/types",
+    "isolatedModules": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "rootDir": "./",
+    "target": "ESNext"
+  },
+  "include": ["./*.ts", ".storybook/**/*.ts", ".storybook/**/*.tsx", "stories"],
+  "files": [],
+  "references": [
+    {
+      "path": "../../packages/react"
+    }
+  ]
+}

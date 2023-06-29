@@ -16,7 +16,7 @@ _(web applications, mobile applications, marketing content, documentations, ...)
 
 The code of this design system is written in
 [TypeScript](https://www.typescriptlang.org/) and is targeted to be used in
-[React](https://reactjs.org/) applications.
+[React](https://reactjs.org/) applications.  
 [Panda CSS](https://panda-css.com/) is used to style all the
 components exposed here.
 
@@ -49,22 +49,22 @@ import { Typography } from '@snowball-tech/fractal-react'
 
 If you want to contribute, update or edit the design system:
 
-- First, install the needed dependencies:
+- First, setup the project
 
 ```bash
-yarn
+yarn setup
 ```
 
 Or (if you use NPM):
 
 ```bash
-npm install
+npm run setup
 ```
 
 - Start the development Storybook server:
 
 ```bash
-yarn dev
+yarn workspace @snowball-tech/fractal-storybook run dev
 ```
 
 > Storybook will launch, and when it's ready, it will open a browser tab
@@ -141,7 +141,8 @@ See [the dedicated `CONVENTIONS.md` documentation](../../docs/CONVENTIONS.md).
 ## Help and feedback
 
 If you have any questions or feedback, feel free to reach out to us using this
-repository [issues](https://github.com/snowball-tech/fractal/issues) or [discussions](https://github.com/snowball-tech/fractal/discussions).
+repository [issues](https://github.com/snowball-tech/fractal/issues) or
+[discussions](https://github.com/snowball-tech/fractal/discussions).
 
 You can also use the internal #engineering Slack channel if you are a member of
 the Snowball tech team.

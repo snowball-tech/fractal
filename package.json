@@ -48,9 +48,9 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
-    "build": "turbo run build",
-    "prebuild:storybook": "turbo run clean:storybook",
-    "build:storybook": "yarn run prebuild:storybook && turbo run build:storybook --parallel",
+    "build": "yarn run -T turbo run build",
+    "prebuild:storybook": "yarn run -T turbo run clean:storybook",
+    "build:storybook": "yarn run prebuild:storybook && yarn run -T turbo run build:storybook --parallel",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
@@ -64,26 +64,28 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.9.0",
     "@qiwi/multi-semantic-release": "^7.0.0",
-    "@snowball-tech/eslint-config": "^4.0.0",
+    "@snowball-tech/eslint-config": "^4.0.1",
     "@snowball-tech/prettier-config": "^1.2.0",
     "@snowball-tech/semantic-release-config": "^1.2.2",
-    "@snowball-tech/stylelint-config": "^1.0.1",
+    "@snowball-tech/stylelint-config": "^2.0.0",
     "@types/eslint": "^8.40.2",
     "@types/is-ci": "^3.0.0",
     "@types/node": "^20.3.2",
     "@types/prettier": "^2.7.3",
     "chromatic": "^6.19.9",
+    "concurrently": "^8.2.0",
     "dotenv-cli": "^7.2.1",
     "eslint": "^8.43.0",
     "husky": "^8.0.3",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.2.3",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "pythagora": "^0.0.71",
-    "semantic-release": "^21.0.5",
+    "semantic-release": "^21.0.6",
     "stylelint": "^15.9.0",
     "ts-node": "^10.9.1",
     "turbo": "1.10.6",
-    "typescript": "^5.1.5"
+    "typescript": "^5.1.6"
   }
 }

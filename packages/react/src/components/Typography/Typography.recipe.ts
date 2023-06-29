@@ -1,5 +1,5 @@
 import { defineRecipe } from '@pandacss/dev'
-import type { SystemStyleObject } from '@snowball-tech/fractal-react-system/types'
+import type { SystemStyleObject } from '@snowball-tech/panda-fractal-react/types'
 
 import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 

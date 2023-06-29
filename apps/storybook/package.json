@@ -1,0 +1,89 @@
+{
+  "name": "@snowball-tech/fractal-storybook",
+  "version": "1.0.0",
+  "description": "Documentation for Fractal - Snowball's design system",
+  "private": true,
+  "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
+  "contributors": [
+    "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "snowball",
+    "design-system",
+    "fractal",
+    "documentation",
+    "storybook"
+  ],
+  "homepage": "https://github.com/snowball-tech/fractal/tree/main/apps/storybook",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snowball-tech/fractal.git",
+    "directory": "apps/storybook"
+  },
+  "bugs": "https://github.com/snowball-tech/fractal/issues",
+  "packageManager": "yarn@3.6.0",
+  "engines": {
+    "yarn": "^3.0.0",
+    "node": "^18.0.0"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "build:chromatic": "yarn run -T chromatic --build-script-name build:storybook",
+    "prebuild:storybook": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal-storybook && yarn run clean:storybook",
+    "build:storybook": "yarn run prebuild:storybook && storybook build",
+    "dev": "yarn run -T concurrently -k \"yarn workspace @snowball-tech/fractal-react run dev\" \"storybook dev -p 6006 --no-open\"",
+    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal-storybook && yarn run dev",
+    "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
+    "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
+    "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
+    "lint": "yarn run lint:scripts && yarn run lint:styles",
+    "lint:fix": "yarn run lint:scripts:fix && yarn run lint:styles:fix",
+    "lint:scripts": "yarn run -T eslint --cache .",
+    "lint:scripts:fix": "yarn run -T eslint --cache --fix .",
+    "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
+    "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
+    "types:check": "tsc --noEmit",
+    "preupdate:fonts": "rm -Rf assets/fonts >/dev/null 2>&1 || true",
+    "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
+  },
+  "devDependencies": {
+    "@snowball-tech/eslint-config": "^4.0.1",
+    "@storybook/addon-a11y": "^7.0.24",
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-interactions": "^7.0.24",
+    "@storybook/addon-links": "^7.0.24",
+    "@storybook/addons": "^7.0.24",
+    "@storybook/blocks": "^7.0.24",
+    "@storybook/components": "^7.0.24",
+    "@storybook/manager-api": "^7.0.24",
+    "@storybook/react": "^7.0.24",
+    "@storybook/react-vite": "^7.0.24",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/theming": "^7.0.24",
+    "@types/eslint": "^8.40.2",
+    "@types/lodash": "^4.14.195",
+    "@types/prop-types": "^15.7.5",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "eslint": "^8.43.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.24",
+    "storybook-addon-mock": "^4.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@snowball-tech/design-tokens": "^2.0.0",
+    "@snowball-tech/fractal-react": "workspace:^",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

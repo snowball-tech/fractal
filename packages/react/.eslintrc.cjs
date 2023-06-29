@@ -18,14 +18,14 @@ module.exports = {
   ],
 
   parserOptions: {
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: ['./tsconfig.json'],
     tsconfigRootDir: __dirname,
   },
 
   settings: {
     'import/resolver': {
       typescript: {
-        project: ['./tsconfig.json', './tsconfig.node.json'],
+        project: ['./tsconfig.json'],
       },
     },
   },

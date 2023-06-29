@@ -1,7 +1,7 @@
 {
   "name": "@snowball-tech/fractal-react",
   "version": "0.0.1",
-  "description": "React component library based on Fractal - Snowball's design system",
+  "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "private": true,
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -13,7 +13,8 @@
     "design-system",
     "fractal",
     "react",
-    "styled-components"
+    "panda-css",
+    "radix-ui"
   ],
   "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/react",
   "repository": {
@@ -28,14 +29,9 @@
     "node": "^18.0.0"
   },
   "type": "module",
-  "source": "src/index.ts",
-  "module": "dist/fractal-react.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/fractal-react.js"
-    }
-  },
+  "source": "index.ts",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -44,13 +40,14 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild:chromatic": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal-react && yarn run clean:storybook",
-    "build:chromatic": "yarn run prebuild:chromatic && yarn run -T chromatic --build-script-name build:storybook",
-    "prebuild:storybook": "yarn run clean:storybook",
-    "build:storybook": "yarn run prebuild:storybook && storybook build",
-    "dev": "storybook dev -p 6007",
-    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal-react && yarn run dev",
-    "clean:storybook": "rm -Rf storybook-static",
+    "prebuild": "rm -Rf ./dist >/dev/null 2>&1 || true",
+    "build": "yarn run prebuild && yarn run build:library && yarn run build:styles",
+    "build:library": "yarn tsc --build tsconfig.build.json",
+    "build:styles": "yarn run build:styles:buildinfo && yarn run build:styles:css",
+    "build:styles:buildinfo": "yarn panda ship --outfile dist/fractal.buildinfo.json",
+    "build:styles:css": "yarn panda cssgen && yarn run postbuild:styles:css",
+    "postbuild:styles:css": "mv node_modules/@snowball-tech/panda-fractal-react/styles.css dist/fractal.css && cp node_modules/@snowball-tech/panda-fractal-react/global.css dist/global.css && (mkdir -p dist/tokens >/dev/null 2>&1 || true) && cp node_modules/@snowball-tech/panda-fractal-react/tokens/index.css dist/tokens/index.css",
+    "dev": "yarn run -T nodemon -x \"yarn run -T turbo run build:styles\"",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
@@ -60,52 +57,27 @@
     "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
-    "postinstall": "panda codegen",
-    "types:check": "tsc --noEmit",
-    "preupdate:fonts": "rm -Rf assets/fonts 2>&1 || true",
-    "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
+    "postinstall": "yarn panda codegen",
+    "prepare": "yarn run postinstall",
+    "setup": "yarn install && yarn run prepare",
+    "types:check": "tsc --noEmit"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.5.0",
-    "@snowball-tech/eslint-config": "^4.0.0",
-    "@storybook/addon-a11y": "^7.0.24",
-    "@storybook/addon-essentials": "^7.0.24",
-    "@storybook/addon-interactions": "^7.0.24",
-    "@storybook/addon-links": "^7.0.24",
-    "@storybook/addons": "^7.0.24",
-    "@storybook/blocks": "^7.0.24",
-    "@storybook/components": "^7.0.24",
-    "@storybook/manager-api": "^7.0.24",
-    "@storybook/react": "^7.0.24",
-    "@storybook/react-vite": "^7.0.24",
-    "@storybook/testing-library": "^0.2.0",
-    "@storybook/theming": "^7.0.24",
+    "@snowball-tech/eslint-config": "^4.0.1",
     "@types/eslint": "^8.40.2",
     "@types/lodash": "^4.14.195",
     "@types/prettier": "^2.7.3",
-    "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.43.0",
-    "install": "^0.13.0",
-    "json": "^11.0.0",
-    "npm": "^9.7.2",
     "postcss": "^8.4.24",
-    "postcss-styled-syntax": "^0.4.0",
     "prettier": "^2.8.8",
-    "prop-types": "^15.8.1",
-    "storybook": "^7.0.24",
-    "storybook-addon-mock": "^4.0.0",
-    "typescript": "^5.1.5",
-    "vite": "^4.3.9",
-    "vite-plugin-dts": "^2.3.0",
-    "vite-plugin-lib": "^1.2.2"
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
     "@snowball-tech/design-tokens": "^2.0.0",
-    "@snowball-tech/fractal": "workspace:^",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

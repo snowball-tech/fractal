@@ -1,14 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "declarationDir": "./dist/types",
     "isolatedModules": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "noEmit": true,
     "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"]
@@ -16,17 +14,7 @@
     "rootDir": "./",
     "target": "ESNext"
   },
-  "include": [
-    "./*.ts",
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
-    "src",
-    "styled-system"
-  ],
+  "include": ["./*.ts", "src/**/*.ts", "src/**/*.tsx"],
   "files": [],
-  "references": [
-    {
-      "path": "../../apps/fractal"
-    }
-  ]
+  "references": []
 }

@@ -1,0 +1,98 @@
+# This GitHub action updates the Chromatic build everytime the Fractal
+# documentation or the React UI library is updated.
+
+name: Storybook
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  chromatic:
+    name: Deploying Fractal Storybook to Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files from Storybook or Fractal/React UI library
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v36
+        with:
+          files: |
+            packages/react/**
+            apps/storybook/**
+
+      - if: steps.changed-files-specific.outputs.any_changed != 'true'
+        name: No need to update Chromatic
+        run: |
+          echo "There are no changes in Storybook or Fractal/React UI library."
+          echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
+
+      - if: env.SKIP_CHROMATIC != 1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Installing dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Starting TurboRepo local cache server
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Setting up Git to access Freezer
+        env:
+          FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
+        run: yarn run setup:freezer
+
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
+        name: Waiting for security to pass
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: Checking Yarn cache's integrity
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
+        name: Waiting for quality to pass
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: Checking code quality
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
+        name: Building and publishing to Chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
+        run: |
+          yarn workspace @snowball-tech/fractal-storybook build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
+
+      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'pull_request'
+        name: Building and publishing to Chromatic with Snapshot testing
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
+        run: |
+          yarn workspace @snowball-tech/fractal-storybook build:chromatic --no-interactive
+
+      - if: env.SKIP_CHROMATIC != 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: Storybook build log
+          path: ./apps/storybook/build-storybook.log

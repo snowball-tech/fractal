@@ -40,7 +40,7 @@
   "files": [],
   "references": [
     {
-      "path": "apps/fractal"
+      "path": "apps/storybook"
     },
     {
       "path": "packages/react"
