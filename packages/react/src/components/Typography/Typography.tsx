@@ -1,4 +1,4 @@
-import { typography } from '@snowball-tech/fractal-react-system/recipes'
+import { typography } from '@snowball-tech/panda-fractal-react/recipes'
 import { createElement } from 'react'
 
 import {
