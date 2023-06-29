@@ -49,6 +49,9 @@ export default defineConfig({
 
     extend: {
       recipes: {
+        checkboxIndicator: recipes.checkboxIndicator,
+        checkboxLabel: recipes.checkboxLabel,
+        checkboxRoot: recipes.checkboxRoot,
         typography: recipes.typography,
       },
     },

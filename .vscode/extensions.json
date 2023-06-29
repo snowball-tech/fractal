@@ -46,6 +46,7 @@
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
     "chakra-ui.panda-css-vscode",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "figma.figma-vscode-extension"
   ]
 }

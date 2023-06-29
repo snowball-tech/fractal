@@ -1,2 +1,2 @@
 export { default as Typography } from './Typography'
-export { Variants } from './Typography.constants'
+export { Variants as TypographyVariants } from './Typography.constants'
