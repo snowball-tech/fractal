@@ -7,7 +7,9 @@ module.exports = {
       secondary: { comment: 'Tone 0', value: '#000000' },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      bodyLight: { comment: 'Tone 90', value: '#FFFBF4' },
+      body: {
+        light: { comment: 'Tone 90', value: '#FFFBF4' },
+      },
     },
   },
 }
