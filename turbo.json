@@ -5,9 +5,22 @@
       "cache": false,
       "persistent": true
     },
-    "types:check": {},
     "build": {
       "dependsOn": ["^build"],
+      "inputs": [
+        "src/**",
+        "**/*.ts",
+        "**/*.cts",
+        "**/*.mts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.cjs",
+        "**/*.mjs",
+        "**/*.jsx",
+        "**/*.mdx",
+        "!.eslintrc.js",
+        "!.eslintrc.cjs"
+      ],
       "outputs": ["dist/**"]
     },
     "@snowball-tech/design-tokens#build": {
@@ -17,11 +30,39 @@
     },
     "@snowball-tech/fractal-react#build:styles": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**", "index.ts", "panda.config.ts"],
+      "inputs": [
+        "src/**",
+        "*.ts",
+        "*.cts",
+        "*.mts",
+        "*.tsx",
+        "*.js",
+        "*.cjs",
+        "*.mjs",
+        "*.jsx",
+        "*.mdx",
+        "!.eslintrc.js",
+        "!.eslintrc.cjs"
+      ],
       "outputs": ["dist/**"]
     },
     "build:storybook": {
       "dependsOn": ["^build"],
+      "inputs": [
+        ".storybook/**",
+        "stories/**",
+        "*.ts",
+        "*.cts",
+        "*.mts",
+        "*.tsx",
+        "*.js",
+        "*.cjs",
+        "*.mjs",
+        "*.jsx",
+        "*.mdx",
+        "!.eslintrc.js",
+        "!.eslintrc.cjs"
+      ],
       "outputs": ["storybook-static/**"]
     },
     "chromatic:upload": {},
@@ -29,7 +70,7 @@
       "cache": false
     },
     "update:fonts": {
-      "outputs": ["assets/fonts/**"]
+      "outputs": ["**/*.ttf", "**/*.woff", "**/*.woff2"]
     },
     "format": {},
     "format:fix": {},
@@ -54,16 +95,34 @@
       "dependsOn": ["//#lint:root:fix"]
     },
     "//#lint:root": {},
-    "//#lint:root:fix": {}
+    "//#lint:root:fix": {},
+    "types:check": {
+      "inputs": ["**/*.ts", "**/*.tsx"]
+    },
+    "@snowball-tech/fractal-storybook#types:check": {
+      "dependsOn": ["@snowball-tech/fractal-react#build"],
+      "inputs": [
+        ".storybook/**",
+        "stories/**",
+        "*.ts",
+        "*.cts",
+        "*.mts",
+        "*.tsx",
+        "*.js",
+        "*.cjs",
+        "*.mjs",
+        "*.jsx",
+        "*.mdx",
+        "!.eslintrc.js",
+        "!.eslintrc.cjs"
+      ]
+    }
   },
   "globalDependencies": [
-    ".env",
-    ".eslintignore",
-    ".eslintrc.js",
-    ".prettierignore",
-    ".prettierrc.js",
+    "**/.env*",
     ".yarnrc.yml",
-    "package.json",
-    "tsconfig.json"
+    "**/.gitignore",
+    "**/package.json",
+    "**/tsconfig*.json"
   ]
 }

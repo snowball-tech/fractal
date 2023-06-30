@@ -35,10 +35,10 @@ jobs:
         uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
       - name: Checking linter
-        run: yarn run -T  turbo run --continue lint
+        run: yarn run -T turbo run --continue lint
 
       - name: Checking format
-        run: yarn run -T  turbo run --continue format
+        run: yarn run -T turbo run --continue format
 
       - name: Checking typings
-        run: yarn run -T  turbo run --continue types:check
+        run: yarn run -T turbo run --continue types:check
