@@ -4042,9 +4042,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@snowball-tech/eslint-config@npm:4.0.1"
+"@snowball-tech/eslint-config@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@snowball-tech/eslint-config@npm:5.0.0"
   dependencies:
     "@next/eslint-plugin-next": ^13.4.7
     "@rushstack/eslint-patch": ^1.3.2
@@ -4081,7 +4081,7 @@ __metadata:
     prettier: ^2.8.8
   peerDependencies:
     eslint: ^8.0.0
-  checksum: f5a05daa7235f235b101bb098260ab6d5723e3fa9d8303375153e46a047933f8a65147aab550043c3cad049d472e26e4f8eaec3d99f7a2a43b338ae306d75a70
+  checksum: 982565462555eeb153c33db969a108fb4486a30e44cc49d7bed57f90d86b34ab91024d88d3565cac0f57087b755fcc63e8efb51e68ba2a2612155f50625fd2a3
   languageName: node
   linkType: hard
 
@@ -4093,7 +4093,7 @@ __metadata:
     "@pandacss/dev": ^0.5.0
     "@radix-ui/react-checkbox": ^1.0.4
     "@snowball-tech/design-tokens": ^2.0.2
-    "@snowball-tech/eslint-config": ^4.0.1
+    "@snowball-tech/eslint-config": ^5.0.0
     "@types/eslint": ^8.40.2
     "@types/lodash": ^4.14.195
     "@types/prettier": ^2.7.3
@@ -4117,7 +4117,7 @@ __metadata:
   resolution: "@snowball-tech/fractal-storybook@workspace:apps/storybook"
   dependencies:
     "@snowball-tech/design-tokens": ^2.0.2
-    "@snowball-tech/eslint-config": ^4.0.1
+    "@snowball-tech/eslint-config": ^5.0.0
     "@snowball-tech/fractal-react": "workspace:^"
     "@storybook/addon-a11y": ^7.0.24
     "@storybook/addon-essentials": ^7.0.24
@@ -4163,9 +4163,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/semantic-release-config@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@snowball-tech/semantic-release-config@npm:1.2.2"
+"@snowball-tech/semantic-release-config@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@snowball-tech/semantic-release-config@npm:2.0.0"
   dependencies:
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^10.0.1
@@ -4175,10 +4175,10 @@ __metadata:
     "@semantic-release/npm": ^10.0.4
     "@semantic-release/release-notes-generator": ^11.0.3
     lodash: ^4.17.21
-    semantic-release: ^21.0.5
+    semantic-release: ^21.0.6
   peerDependencies:
     semantic-release: ^21.0.0
-  checksum: e4bd722b6c29b9bf18bcce3fa2a5cfa069de970a18b0441a1b4975da5bc6fa16770a4b2ca828c497c47e74866943a32742b73173078dcb829e3ee6bd4cebec4b
+  checksum: fbf50cd4ae22b699cd3e8506f553bf9588d7f878a40a63e66e718b9e57a99895ee3f8a6de927d408e06f896694d44878eff8954203f080241ba408e461c382c0
   languageName: node
   linkType: hard
 
@@ -11541,9 +11541,9 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": ^2.9.0
     "@qiwi/multi-semantic-release": ^7.0.0
-    "@snowball-tech/eslint-config": ^4.0.1
+    "@snowball-tech/eslint-config": ^5.0.0
     "@snowball-tech/prettier-config": ^1.2.0
-    "@snowball-tech/semantic-release-config": ^1.2.2
+    "@snowball-tech/semantic-release-config": ^2.0.0
     "@snowball-tech/stylelint-config": ^2.0.0
     "@types/eslint": ^8.40.2
     "@types/is-ci": ^3.0.0

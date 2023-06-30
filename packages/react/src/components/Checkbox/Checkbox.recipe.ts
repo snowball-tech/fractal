@@ -31,16 +31,27 @@ export const checkboxRoot: ReturnType<typeof defineRecipe> = defineRecipe({
       (variants, variantName) => ({
         ...variants,
         [variantName]: {
-          '&:not(:is(:checked, [data-checked], [aria-checked=true]))': {
-            _groupHover: {
-              backgroundColor: `var(--color-decorative-${variantName}-90, var(--color-brand-body))`,
+          '&:not(:is(:checked, [data-checked], [aria-checked=true], :disabled, [disabled], [data-disabled]))':
+            {
+              _groupHover: {
+                backgroundColor:
+                  variantName === Variants.Black
+                    ? `var(--color-base-separator)`
+                    : `var(--color-decorative-${variantName}-90, var(--color-brand-body-light))`,
+              },
             },
-          },
 
           _checked: {
             backgroundColor: `var(--color-decorative-${variantName}-70, var(--color-brand-${variantName}, var(--color-base-${variantName}, var(--color-base-white))))`,
           },
-        } as SystemStyleObject,
+
+          _disabled: {
+            backgroundColor: `var(--color-base-separator)`,
+            borderColor: 'grey',
+            color: 'grey',
+            cursor: 'not-allowed',
+          },
+        },
       }),
       {} as Record<Variants, SystemStyleObject>,
     ),
@@ -52,7 +63,9 @@ export const checkboxIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'checkboxIndicator',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    color: 'var(--color-base-black)',
+  },
 
   defaultVariants: {
     variant: DEFAULT_VARIANT,
@@ -61,13 +74,25 @@ export const checkboxIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['RxCheckbox.indicator'],
 
   variants: {
-    variant: Object.values(Variants).reduce(
-      (variants, variantName) => ({
-        ...variants,
-        [variantName]: {} as SystemStyleObject,
-      }),
-      {} as Record<Variants, SystemStyleObject>,
-    ),
+    disabled: {
+      true: {
+        color: 'grey',
+      },
+    },
+
+    variant: {
+      ...Object.values(Variants).reduce(
+        (variants, variantName) => ({
+          ...variants,
+          [variantName]: {
+            ...(variantName === Variants.Black
+              ? { color: 'var(--color-base-white)' }
+              : {}),
+          },
+        }),
+        {} as Record<Variants, SystemStyleObject>,
+      ),
+    },
   },
 })
 
@@ -77,6 +102,7 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    color: 'var(--color-base-black)',
     cursor: 'pointer',
     maxWidth: '100%',
     overflow: 'auto',
@@ -92,12 +118,28 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['label'],
 
   variants: {
+    disabled: {
+      true: {
+        color: 'grey',
+        cursor: 'not-allowed',
+      },
+    },
+
+    required: {
+      true: {
+        '& > *': {
+          _after: {
+            color: 'var(--color-feedback-danger-50)',
+            content: '" *"',
+          },
+        },
+      },
+    },
+
     variant: Object.values(Variants).reduce(
       (variants, variantName) => ({
         ...variants,
-        [variantName]: {
-          color: `var(--color-decorative-${variantName}-50, var(--color-base-black))`,
-        } as SystemStyleObject,
+        [variantName]: {},
       }),
       {} as Record<Variants, SystemStyleObject>,
     ),

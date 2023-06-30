@@ -8,9 +8,7 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'typography',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {
-    all: 'unset',
-  },
+  base: {},
 
   defaultVariants: {
     variant: DEFAULT_VARIANT,
@@ -39,7 +37,7 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
             fontSize: `var(--typography-${variantName}-font-size-md)`,
             lineHeight: `var(--typography-${variantName}-line-height-md, var(--typography-${variantName}-line-height))`,
           },
-        } as SystemStyleObject,
+        },
       }),
       {} as Record<Variants, SystemStyleObject>,
     ),
