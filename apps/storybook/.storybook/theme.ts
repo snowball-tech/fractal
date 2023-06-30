@@ -1,7 +1,7 @@
 import {
   ColorBaseBlack,
   ColorBaseWhite,
-  ColorBrandBody,
+  ColorBrandBodyLight,
   ColorBrandPrimary,
   ColorBrandSecondary,
   FontFamilyNormal,
@@ -20,7 +20,7 @@ const theme: ThemeVars = create({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   appBg: ColorBrandSecondary,
-  appContentBg: ColorBrandBody,
+  appContentBg: ColorBrandBodyLight,
   barBg: ColorBrandPrimary,
   fontBase: FontFamilyNormal,
 

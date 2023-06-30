@@ -4022,10 +4022,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@snowball-tech/design-tokens@npm:2.0.0"
-  checksum: 0ad0f3e9eb145f4386bee34c1c94181c87edbbe7947b286edde8e9b83c856128294017e1b7b5eb75fb250af78ae9edd228a25ecdb7ab52ce53d3b5f15cd21d44
+"@snowball-tech/design-tokens@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@snowball-tech/design-tokens@npm:2.0.2"
+  checksum: 01223e2933b0d8f34cef6237106a27d9dbb80cd479db8c3408c765a4fd30995ce9ae88a9061258a7721fede653db55694779c10b419be96a79e10ad5b12b4f54
   languageName: node
   linkType: hard
 
@@ -4092,7 +4092,7 @@ __metadata:
     "@iconscout/react-unicons": ^2.0.2
     "@pandacss/dev": ^0.5.0
     "@radix-ui/react-checkbox": ^1.0.4
-    "@snowball-tech/design-tokens": ^2.0.0
+    "@snowball-tech/design-tokens": ^2.0.2
     "@snowball-tech/eslint-config": ^4.0.1
     "@types/eslint": ^8.40.2
     "@types/lodash": ^4.14.195
@@ -4116,7 +4116,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal-storybook@workspace:apps/storybook"
   dependencies:
-    "@snowball-tech/design-tokens": ^2.0.0
+    "@snowball-tech/design-tokens": ^2.0.2
     "@snowball-tech/eslint-config": ^4.0.1
     "@snowball-tech/fractal-react": "workspace:^"
     "@storybook/addon-a11y": ^7.0.24
