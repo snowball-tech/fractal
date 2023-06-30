@@ -1,3 +1,13 @@
+## @snowball-tech/design-tokens [2.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.1...@snowball-tech/design-tokens@2.0.2) (2023-06-30)
+
+### 🐛 Bug Fixes
+
+- **design-token:** rename some tokens and update body value ([3b8ca13](https://github.com/snowball-tech/fractal/commit/3b8ca134c9adc6b9e833d11e7215a51b38d05883))
+
+### ♻️ Code Refactoring
+
+- **design-tokens:** fix the naming of the body light token ([bb6f2cc](https://github.com/snowball-tech/fractal/commit/bb6f2cc110610c81cc6e869ad315488b1ecad19f))
+
 ## @snowball-tech/design-tokens [2.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.0...@snowball-tech/design-tokens@2.0.1) (2023-06-29)
 
 ### ♻️ Code Refactoring
