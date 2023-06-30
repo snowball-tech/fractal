@@ -1,5 +1,6 @@
+import { cx } from '@snowball-tech/panda-fractal-react/css'
 import { typography } from '@snowball-tech/panda-fractal-react/recipes'
-import { createElement } from 'react'
+import { type ElementType, createElement } from 'react'
 
 import {
   DEFAULT_ELEMENT,
@@ -19,10 +20,11 @@ export default function Typography({
   children,
   element,
   variant = DEFAULT_VARIANT,
+  ...attributes
 }: TypographyProps) {
   return createElement(
-    element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT,
-    { className: typography({ variant }) },
+    element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType),
+    { className: cx(attributes.className, typography({ variant })) },
     children,
   )
 }

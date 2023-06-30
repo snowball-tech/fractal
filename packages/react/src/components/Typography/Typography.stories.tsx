@@ -3,6 +3,12 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Typography from './Typography'
 import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 
+const perVariantStoriesParameters = {
+  controls: {
+    include: ['children'],
+  },
+}
+
 const meta = {
   argTypes: {
     children: { control: 'text' },
@@ -36,28 +42,27 @@ const meta = {
   component: Typography,
   parameters: {
     componentSubtitle: '👮 Anything you say can be used against you',
-    controls: { hideNoControlsWarning: true, include: ['children'] },
+    controls: {
+      expanded: true,
+      hideNoControlsWarning: true,
+      sort: 'requiredFirst',
+    },
   },
 
-  title: 'React/Typography/Typography',
+  title: 'React/Typography',
 } satisfies Meta<typeof Typography>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Typography>
 
 export const Playground: Story = {
   args: {
-    children: meta.args.children,
+    variant: DEFAULT_VARIANT,
   },
-  parameters: {
-    controls: { include: ['children', 'element', 'variant'] },
-  },
-  render: ({ children, ...args }) => (
-    <Typography {...args}>{children}</Typography>
-  ),
 }
 
 export const Display: Story = {
+  parameters: { ...perVariantStoriesParameters },
   render: ({ children }) => (
     <>
       <Typography variant="display-1">
@@ -80,6 +85,7 @@ export const Display: Story = {
 }
 
 export const Headings: Story = {
+  parameters: { ...perVariantStoriesParameters },
   render: ({ children }) => (
     <>
       <Typography variant="heading-1">
@@ -117,6 +123,7 @@ export const Headings: Story = {
 }
 
 export const Body1: Story = {
+  parameters: { ...perVariantStoriesParameters },
   render: ({ children }) => (
     <>
       <Typography variant="body-1">
@@ -144,6 +151,7 @@ export const Body1: Story = {
 }
 
 export const Body2: Story = {
+  parameters: { ...perVariantStoriesParameters },
   render: ({ children }) => (
     <>
       <Typography variant="body-2">
@@ -171,6 +179,7 @@ export const Body2: Story = {
 }
 
 export const Caption: Story = {
+  parameters: { ...perVariantStoriesParameters },
   render: ({ children }) => (
     <>
       <Typography variant="caption-median">

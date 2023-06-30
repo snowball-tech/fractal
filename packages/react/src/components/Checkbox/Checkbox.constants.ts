@@ -1,4 +1,5 @@
 export enum Variants {
+  Black = 'black',
   Blue = 'blue',
   Green = 'green',
   Pink = 'pink',
@@ -7,4 +8,4 @@ export enum Variants {
   Yellow = 'yellow',
 }
 
-export const DEFAULT_VARIANT = Variants.Pink
+export const DEFAULT_VARIANT = Variants.White
