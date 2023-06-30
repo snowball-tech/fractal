@@ -79,7 +79,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "@snowball-tech/design-tokens": "^2.0.0",
+    "@snowball-tech/design-tokens": "^2.0.2",
     "@snowball-tech/fractal-react": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
