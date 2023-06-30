@@ -158,8 +158,8 @@ Transforms can be used to transform:
   `colorBackgroundDangerHover`, `$color-background-danger-hover` or
   `--color-background-danger-hover`;
 - Value: for example, transform a color to a HSL or Hexadecimal value, ...
-  E.g. `#FFFBEE` can be transformed to `{ r: 255, g: 251, b: 238 }`,
-  `hsl(46, 100%, 97%)` or `rgba(255,251,238, 1)`;
+  E.g. `#FFFBF4` can be transformed to `{ r: 255, g: 251, b: 244 }`,
+  `hsl(38, 100%, 98%)` or `rgba(255, 251, 244, 1)`;
 - ...
 
 They can also be used to compute re-defined or metadata than can then be used in
@@ -202,7 +202,7 @@ Given the following JSON tokens definition:
   "color": {
     "base": {
       "light-yellow": {
-        "50": { "value": "#FFFBEE" }
+        "50": { "value": "#FFFBF4" }
       }
     },
     "background": {
