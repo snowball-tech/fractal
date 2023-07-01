@@ -39,7 +39,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild": "rm -Rf ./dist >/dev/null 2>&1 || true",
+    "prebuild": "rm -Rf ./dist >/dev/null 2>&1 || true && mkdir -p ./dist",
     "build": "yarn run prebuild && yarn run build:code && yarn run -T concurrently \"yarn run build:library\" \"yarn run build:info\" \"yarn run build:styles\"",
     "build:library": "yarn tsc --build tsconfig.build.json",
     "build:code": "yarn panda codegen",
