@@ -20,11 +20,11 @@ export default function Typography({
   children,
   element,
   variant = DEFAULT_VARIANT,
-  ...attributes
+  ...props
 }: TypographyProps) {
   return createElement(
     element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType),
-    { className: cx(attributes.className, typography({ variant })) },
+    { className: cx(props.className, typography({ variant })) },
     children,
   )
 }

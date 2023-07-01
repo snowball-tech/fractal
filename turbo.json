@@ -7,20 +7,6 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "inputs": [
-        "src/**",
-        "**/*.ts",
-        "**/*.cts",
-        "**/*.mts",
-        "**/*.tsx",
-        "**/*.js",
-        "**/*.cjs",
-        "**/*.mjs",
-        "**/*.jsx",
-        "**/*.mdx",
-        "!.eslintrc.js",
-        "!.eslintrc.cjs"
-      ],
       "outputs": ["dist/**"]
     },
     "@snowball-tech/design-tokens#build": {
@@ -30,39 +16,10 @@
     },
     "@snowball-tech/fractal-react#build:styles": {
       "dependsOn": ["^build"],
-      "inputs": [
-        "src/**",
-        "*.ts",
-        "*.cts",
-        "*.mts",
-        "*.tsx",
-        "*.js",
-        "*.cjs",
-        "*.mjs",
-        "*.jsx",
-        "*.mdx",
-        "!.eslintrc.js",
-        "!.eslintrc.cjs"
-      ],
       "outputs": ["dist/**"]
     },
     "build:storybook": {
       "dependsOn": ["^build"],
-      "inputs": [
-        ".storybook/**",
-        "stories/**",
-        "*.ts",
-        "*.cts",
-        "*.mts",
-        "*.tsx",
-        "*.js",
-        "*.cjs",
-        "*.mjs",
-        "*.jsx",
-        "*.mdx",
-        "!.eslintrc.js",
-        "!.eslintrc.cjs"
-      ],
       "outputs": ["storybook-static/**"]
     },
     "chromatic:upload": {},
@@ -96,33 +53,15 @@
     },
     "//#lint:root": {},
     "//#lint:root:fix": {},
-    "types:check": {
-      "inputs": ["**/*.ts", "**/*.tsx"]
-    },
+    "types:check": {},
     "@snowball-tech/fractal-storybook#types:check": {
-      "dependsOn": ["@snowball-tech/fractal-react#build"],
-      "inputs": [
-        ".storybook/**",
-        "stories/**",
-        "*.ts",
-        "*.cts",
-        "*.mts",
-        "*.tsx",
-        "*.js",
-        "*.cjs",
-        "*.mjs",
-        "*.jsx",
-        "*.mdx",
-        "!.eslintrc.js",
-        "!.eslintrc.cjs"
-      ]
+      "dependsOn": ["@snowball-tech/fractal-react#build"]
     }
   },
   "globalDependencies": [
     "**/.env*",
     ".yarnrc.yml",
     "**/.gitignore",
-    "**/package.json",
     "**/tsconfig*.json"
   ]
 }

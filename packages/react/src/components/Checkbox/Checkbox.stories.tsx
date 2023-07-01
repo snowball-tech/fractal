@@ -49,7 +49,9 @@ export const Playground: Story = {
   argTypes: {
     onCheckedChange: { table: { disable: true } },
   },
-  args: {},
+  args: {
+    variant: DEFAULT_VARIANT,
+  },
 }
 
 export const Checkboxes: Story = {
