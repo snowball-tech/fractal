@@ -1,3 +1,9 @@
+## @snowball-tech/fractal-react [1.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.1...@snowball-tech/fractal-react@1.0.2) (2023-07-01)
+
+### 👷 Build
+
+- **react:** fix the packing of the package ([9763413](https://github.com/snowball-tech/fractal/commit/9763413c04c21dad5f0db75ad527b6cec6466531))
+
 ## @snowball-tech/fractal-react [1.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.0...@snowball-tech/fractal-react@1.0.1) (2023-07-01)
 
 ### 📦 Dependencies
