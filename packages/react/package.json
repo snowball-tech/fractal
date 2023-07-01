@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.5.0",
-    "@snowball-tech/eslint-config": "^5.0.0",
+    "@snowball-tech/eslint-config": "^5.0.1",
     "@types/eslint": "^8.40.2",
     "@types/lodash": "^4.14.195",
     "@types/prettier": "^2.7.3",

@@ -9,6 +9,12 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "build:code": {
+      "outputs": ["styled-system"]
+    },
+    "@snowball-tech/fractal-react#build:code": {
+      "outputs": ["node_modules/@snowball-tech/panda-fractal-react"]
+    },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "tokens/**", "config.js"],
