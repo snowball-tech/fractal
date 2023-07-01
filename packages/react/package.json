@@ -57,9 +57,7 @@
     "lint:scripts:fix": "yarn run -T eslint --cache --fix .",
     "lint:styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "lint:styles:fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
-    "postinstall": "yarn panda codegen",
-    "prepare": "yarn run postinstall",
-    "setup": "yarn install && yarn run prepare",
+    "setup": "yarn install && yarn run build:code",
     "types:check": "tsc --noEmit"
   },
   "devDependencies": {
