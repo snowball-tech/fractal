@@ -1,8 +1,7 @@
 # Fractal - Snowball's design system
 
 <!-- prettier-ignore-start -->
-| [`design-tokens`](./packages/design-tokens) |
-[`fractal-react`](./packages/fractal-react) |
+| [`design-tokens`](./packages/design-tokens) | [`fractal-react`](./packages/fractal-react) |
 | - | - |
 | [![design-tokens](https://img.shields.io/npm/v/@snowball-tech/design-tokens)](https://www.npmjs.com/package/@snowball-tech/design-tokens) | [![fractal-react](https://img.shields.io/npm/v/@snowball-tech/fractal-react)](https://www.npmjs.com/package/@snowball-tech/fractal-react) |
 | ![design-tokens-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/design-tokens) | ![fractal-react-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/fractal-react) |
@@ -10,7 +9,7 @@
 | ![design-tokens-score](https://img.shields.io/npms-io/final-score/@snowball-tech/design-tokens) | ![fractal-react-score](https://img.shields.io/npms-io/final-score/@snowball-tech/fractal-react) |
 
 | Quality on `main` branch | Security on `main` branch | Release on `main` branch | Chromatic on `main` branch |
-| - | - |
+| - | - | - | - |
 | ![Quality](https://github.com/snowball-tech/fractal/actions/workflows/quality.yml/badge.svg?branch=main&event=push) | ![Security](https://github.com/snowball-tech/fractal/actions/workflows/security.yml/badge.svg?branch=main&event=push) | ![Release](https://github.com/snowball-tech/fractal/actions/workflows/release.yml/badge.svg?branch=main&event=push) | ![Chromatic](https://github.com/snowball-tech/fractal/actions/workflows/storybook.yml/badge.svg?branch=main&event=push) |
 <!-- prettier-ignore-end -->
 
