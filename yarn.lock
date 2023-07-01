@@ -4033,16 +4033,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@snowball-tech/eslint-config@npm:5.0.0"
+"@snowball-tech/eslint-config@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@snowball-tech/eslint-config@npm:5.0.1"
   dependencies:
     "@next/eslint-plugin-next": ^13.4.7
     "@rushstack/eslint-patch": ^1.3.2
     "@testing-library/dom": ^9.3.1
     "@typescript-eslint/eslint-plugin": ~5.60.1
     "@typescript-eslint/parser": ~5.60.1
-    eslint: ^8.43.0
+    eslint: ^8.44.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^8.8.0
@@ -4072,7 +4072,7 @@ __metadata:
     prettier: ^2.8.8
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 982565462555eeb153c33db969a108fb4486a30e44cc49d7bed57f90d86b34ab91024d88d3565cac0f57087b755fcc63e8efb51e68ba2a2612155f50625fd2a3
+  checksum: 8b70268dd0cacb7f566072c6ab7aa9c027f972954ac2bc8cf4b41f2c3eb382f1dc2ec64d7e8475ae7ddb0043a272b7a98cea56a1dcdb9ab0eda5f7b43013633c
   languageName: node
   linkType: hard
 
@@ -4084,7 +4084,7 @@ __metadata:
     "@pandacss/dev": ^0.5.0
     "@radix-ui/react-checkbox": ^1.0.4
     "@snowball-tech/design-tokens": 2.0.2
-    "@snowball-tech/eslint-config": ^5.0.0
+    "@snowball-tech/eslint-config": ^5.0.1
     "@types/eslint": ^8.40.2
     "@types/lodash": ^4.14.195
     "@types/prettier": ^2.7.3
@@ -4108,7 +4108,7 @@ __metadata:
   resolution: "@snowball-tech/fractal-storybook@workspace:apps/storybook"
   dependencies:
     "@snowball-tech/design-tokens": ^2.0.2
-    "@snowball-tech/eslint-config": ^5.0.0
+    "@snowball-tech/eslint-config": ^5.0.1
     "@snowball-tech/fractal-react": "workspace:^"
     "@storybook/addon-a11y": ^7.0.24
     "@storybook/addon-essentials": ^7.0.24
@@ -4173,9 +4173,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/stylelint-config@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@snowball-tech/stylelint-config@npm:2.0.0"
+"@snowball-tech/stylelint-config@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@snowball-tech/stylelint-config@npm:2.0.1"
   dependencies:
     postcss: ^8.4.24
     postcss-html: ^1.5.0
@@ -4185,7 +4185,7 @@ __metadata:
     stylelint-config-standard: ^33.0.0
   peerDependencies:
     stylelint: ^15.0.0
-  checksum: 08e126b1de21fa5c20391afd347c6d3ba01e1f98e38d35d3a4d1ea79fb75d9404234fde85b4831fe3da0b933d1b96cbc11e4a69253843835b1a83072a45ff6ed
+  checksum: 6977d22a86c8e45c078ac5338eeeb93c5187902c1a4af59115b6166c181625b25d824ab9b6702730d66b99ea918817e4fb0111553bc93b498deee77d7e92a098
   languageName: node
   linkType: hard
 
@@ -10711,7 +10711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.43.0, eslint@npm:^8.44.0":
+"eslint@npm:^8.44.0":
   version: 8.44.0
   resolution: "eslint@npm:8.44.0"
   dependencies:
@@ -11449,10 +11449,10 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": ^2.9.0
     "@qiwi/multi-semantic-release": ^7.0.0
-    "@snowball-tech/eslint-config": ^5.0.0
+    "@snowball-tech/eslint-config": ^5.0.1
     "@snowball-tech/prettier-config": ^1.2.0
     "@snowball-tech/semantic-release-config": ^2.0.0
-    "@snowball-tech/stylelint-config": ^2.0.0
+    "@snowball-tech/stylelint-config": ^2.0.1
     "@types/eslint": ^8.40.2
     "@types/is-ci": ^3.0.0
     "@types/node": ^20.3.3
