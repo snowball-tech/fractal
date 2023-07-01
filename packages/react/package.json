@@ -1,8 +1,7 @@
 {
   "name": "@snowball-tech/fractal-react",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
-  "private": true,
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
     "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
@@ -41,7 +40,7 @@
   },
   "scripts": {
     "prebuild": "rm -Rf ./dist >/dev/null 2>&1 || true",
-    "build": "yarn run prebuild && yarn run build:library && yarn run build:styles",
+    "build": "yarn run prebuild && yarn run build:code && yarn run -T concurrently \"yarn run build:library\" \"yarn run build:info\" \"yarn run build:styles\"",
     "build:library": "yarn tsc --build tsconfig.build.json",
     "build:code": "yarn panda codegen",
     "build:info": "yarn panda ship --outfile dist/fractal.buildinfo.json",
