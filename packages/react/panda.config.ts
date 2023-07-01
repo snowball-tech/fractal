@@ -12,30 +12,29 @@ import { Breakpoints } from './src/constants'
 import * as recipes from './src/recipes'
 
 export default defineConfig({
-  // Don't use base presets from PandaCSS.
-  eject: true,
+  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
+  // Don't use default theme from PandaCSS.
+  eject: true,
+  // Only import the base presets with useful resets and utilities.
+  presets: ['@pandacss/preset-base'],
+
+  // Use as a node_modules package.
   emitPackage: true,
+  outdir: '@snowball-tech/panda-fractal-react',
 
   // Produce a short hashed class name in production only.
   hash: process.env.NODE_ENV === 'production',
-
-  include: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
-
-  jsxFactory: 'fractal',
-  jsxFramework: 'react',
-
-  minify: process.env.NODE_ENV === 'production',
-
   // Speed up build time in development only.
   optimize: process.env.NODE_ENV === 'production',
+  minify: process.env.NODE_ENV === 'production',
 
-  outdir: '@snowball-tech/panda-fractal-react',
+  include: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
+  exclude: [],
 
   prefix: 'fractal',
-
-  // Only import the base presets with useful resets and utilities.
-  presets: ['@pandacss/preset-base'],
+  jsxFactory: 'fractal',
+  jsxFramework: 'react',
 
   theme: {
     breakpoints: {
@@ -57,4 +56,6 @@ export default defineConfig({
       },
     },
   },
+
+  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 })
