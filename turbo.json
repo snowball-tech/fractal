@@ -53,6 +53,12 @@
     },
     "//#lint:root": {},
     "//#lint:root:fix": {},
+    "@snowball-tech/fractal-react#lint": {
+      "dependsOn": ["build:code"]
+    },
+    "@snowball-tech/fractal-react#lint:fix": {
+      "dependsOn": ["build:code"]
+    },
     "types:check": {},
     "@snowball-tech/fractal-storybook#types:check": {
       "dependsOn": ["@snowball-tech/fractal-react#build"]
