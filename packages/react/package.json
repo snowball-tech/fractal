@@ -79,7 +79,7 @@
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
-    "@snowball-tech/design-tokens": "^2.0.2",
+    "@snowball-tech/design-tokens": "2.0.2",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
