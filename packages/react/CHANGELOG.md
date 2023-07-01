@@ -1,3 +1,13 @@
+## @snowball-tech/fractal-react [1.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.2...@snowball-tech/fractal-react@1.0.3) (2023-07-01)
+
+### 👷 Build
+
+- **react:** fix the packing of the package ([c54d01c](https://github.com/snowball-tech/fractal/commit/c54d01c514c56ab68c43c4fee53398a66157e6f2))
+
+### ⚙️ Continuous Integrations
+
+- **react:** fix dependencies when running turbo ([d78b985](https://github.com/snowball-tech/fractal/commit/d78b985c17f7197232939355cf17da3f42c418af))
+
 ## @snowball-tech/fractal-react [1.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.1...@snowball-tech/fractal-react@1.0.2) (2023-07-01)
 
 ### 👷 Build
