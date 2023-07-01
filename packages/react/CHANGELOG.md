@@ -1,3 +1,10 @@
+## @snowball-tech/fractal-react [1.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.0...@snowball-tech/fractal-react@1.0.1) (2023-07-01)
+
+### 📦 Dependencies
+
+- fix a dependency to design tokens ([9db51fe](https://github.com/snowball-tech/fractal/commit/9db51fe53959836976fd0a07da6745752c929783))
+- update dependencies and cleanup lockfile ([c341ea3](https://github.com/snowball-tech/fractal/commit/c341ea349ca176bb7d6569ec2233d82ec70e4b48))
+
 # @snowball-tech/fractal-react 1.0.0 (2023-07-01)
 
 ### ❓ Unknown changes
