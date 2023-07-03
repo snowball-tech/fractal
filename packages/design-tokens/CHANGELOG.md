@@ -1,3 +1,18 @@
+# @snowball-tech/design-tokens [3.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.0.0...@snowball-tech/design-tokens@3.1.0) (2023-07-03)
+
+### ✨ Features
+
+- **design-tokens:** add a disabled border color token ([ab0db0d](https://github.com/snowball-tech/fractal/commit/ab0db0da21da42e5ad508ec455b76ec864e59baf))
+- **design-tokens:** add global tokens for borders ([5db4e1e](https://github.com/snowball-tech/fractal/commit/5db4e1eca602eaaad3e698f1392ccea9866c7da9))
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix the color of disabled text token ([5d01bab](https://github.com/snowball-tech/fractal/commit/5d01babc470093d95b6ac5119b707a8f84aa3311))
+
+### 📝 Documentation
+
+- **design-tokens:** improve the comments of the shadow tokens ([fc50421](https://github.com/snowball-tech/fractal/commit/fc50421d34aa034cf285f0fd49cce27a8eb141fe))
+
 # @snowball-tech/design-tokens [3.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.1.0...@snowball-tech/design-tokens@3.0.0) (2023-07-03)
 
 ### 💥 Breaking changes
