@@ -81,14 +81,14 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal-storybook build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
+          yarn workspace @snowball-tech/fractal build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'pull_request'
         name: Building and publishing to Chromatic with Snapshot testing
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal-storybook build:chromatic --no-interactive
+          yarn workspace @snowball-tech/fractal build:chromatic --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1
         uses: actions/upload-artifact@v3
