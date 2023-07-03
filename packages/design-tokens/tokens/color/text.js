@@ -17,7 +17,7 @@ module.exports = {
       disabled: {
         comment: 'Text color of most disabled elements',
 
-        value: '#B7B1A6',
+        value: '{color.base.grey.70.value}',
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
@@ -45,7 +45,7 @@ module.exports = {
             comment:
               'Background color to use on disabled display elements (e.g. buttons).',
 
-            value: '{color.base.grey.50.value}',
+            value: '{color.text.disabled.value}',
           },
         },
         primary: {
@@ -98,7 +98,7 @@ module.exports = {
             comment:
               'Background color to use on disabled secondary elements (e.g. buttons).',
 
-            value: '{color.base.grey.50.value}',
+            value: '{color.text.disabled.value}',
           },
         },
       },
