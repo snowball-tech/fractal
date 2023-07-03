@@ -24,6 +24,19 @@ module.exports = {
       value: '{size.border.1.value} solid {color.border.disabled.value}',
     },
 
+    transparent: {
+      1: {
+        comment: 'A subtle border.',
+
+        value: '{size.border.1.value} solid {color.base.transparent.value}',
+      },
+      2: {
+        comment: 'A more obvious border.',
+
+        value: '{size.border.2.value} solid {color.base.transparent.value}',
+      },
+    },
+
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     button: {
       display: {
@@ -53,7 +66,7 @@ module.exports = {
         base: {
           comment: 'Shadow for primary buttons.',
 
-          value: '{border.none.value}',
+          value: '{border.transparent.value}',
         },
         hover: {
           comment: 'Shadow when hovering/focusing primary buttons.',
@@ -87,7 +100,7 @@ module.exports = {
         active: {
           comment: 'Shadow when clicking/activating secondary buttons.',
 
-          value: '{border.none.value}',
+          value: '{border.transparent.value}',
         },
         disabled: {
           comment: 'Shadow for disabled secondary buttons.',

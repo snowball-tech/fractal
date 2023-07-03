@@ -10,6 +10,8 @@ module.exports = {
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       separator: { comment: 'Tone 90', value: '#E2E2E2' },
+
+      transparent: { comment: 'Transparent', value: 'transparent' },
     },
   },
 }
