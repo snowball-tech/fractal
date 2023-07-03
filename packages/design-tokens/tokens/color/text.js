@@ -24,79 +24,75 @@ module.exports = {
       button: {
         display: {
           base: {
-            comment: 'Text color to use on display elements (e.g. buttons).',
+            comment: 'Text color to use on display buttons.',
 
             value: '{color.base.black.value}',
           },
           hover: {
             comment:
-              'Background color to use when hovering/focusing display elements (e.g. buttons).',
+              'Background color to use when hovering/focusing display buttons.',
 
             value: '{color.text.button.display.base.value}',
           },
           // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
           active: {
             comment:
-              'Background color to use when clicking/activating a display elements (e.g. buttons).',
+              'Background color to use when clicking/activating a display buttons.',
 
             value: '{color.text.button.display.base.value}',
           },
           disabled: {
-            comment:
-              'Background color to use on disabled display elements (e.g. buttons).',
+            comment: 'Background color to use on disabled display buttons.',
 
             value: '{color.text.disabled.value}',
           },
         },
         primary: {
           base: {
-            comment: 'Text color to use on primary elements (e.g. buttons).',
+            comment: 'Text color to use on primary buttons.',
 
             value: '{color.base.white.value}',
           },
           hover: {
             comment:
-              'Background color to use when hovering/focusing primary elements (e.g. buttons).',
+              'Background color to use when hovering/focusing primary buttons.',
 
             value: '{color.base.black.value}',
           },
           // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
           active: {
             comment:
-              'Background color to use when clicking/activating a primary elements (e.g. buttons).',
+              'Background color to use when clicking/activating a primary buttons.',
 
             value: '{color.text.button.primary.hover.value}',
           },
           disabled: {
-            comment:
-              'Background color to use on disabled primary elements (e.g. buttons).',
+            comment: 'Background color to use on disabled primary buttons.',
 
             value: '{color.text.button.primary.base.value}',
           },
         },
         secondary: {
           base: {
-            comment:
-              'Background color to use on secondary elements (e.g. buttons).',
+            comment: 'Background color to use on secondary buttons.',
 
             value: '{color.base.black.value}',
           },
           hover: {
             comment:
-              'Background color to use when hovering/focusing secondary elements (e.g. buttons).',
+              'Background color to use when hovering/focusing secondary buttons.',
 
             value: '{color.text.button.secondary.base.value}',
           },
           // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
           active: {
             comment:
-              'Background color to use when clicking/activating a secondary elements (e.g. buttons).',
+              'Background color to use when clicking/activating a secondary buttons.',
 
             value: '{color.base.white.value}',
           },
           disabled: {
-            comment:
-              'Background color to use on disabled secondary elements (e.g. buttons).',
+            comment: 'Background color to use on disabled secondary buttons.',
 
             value: '{color.text.disabled.value}',
           },
