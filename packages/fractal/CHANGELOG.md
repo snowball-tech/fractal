@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.3...@snowball-tech/fractal@1.0.4) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** fix the build in production and chromatic ([3256154](https://github.com/snowball-tech/fractal/commit/325615428c76082bb027b19dc032d73c270a22f9))
+
 ## @snowball-tech/fractal [1.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.2...@snowball-tech/fractal@1.0.3) (2023-07-03)
 
 ### 👷 Build
