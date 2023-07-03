@@ -29,8 +29,6 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     dts({
-      copyDtsFiles: true,
-      outDir: path.resolve(__dirname, 'dist'),
       staticImport: true,
     }),
   ],

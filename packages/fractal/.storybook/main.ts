@@ -3,12 +3,10 @@ import type { StorybookConfig } from '@storybook/react-vite'
 const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
+    '@storybook/addon-styling',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    // Add this one back when it support Storybook v7 as it could be nice to
-    // have.
-    // 'storybook-addon-designs',
     'storybook-addon-mock',
   ],
 

@@ -19,7 +19,8 @@ export default defineConfig({
   // Only import the base presets with useful resets and utilities.
   presets: ['@pandacss/preset-base'],
 
-  outdir: 'fractal-panda',
+  emitPackage: true,
+  outdir: '@snowball-tech/fractal-panda',
 
   // Produce a short hashed class name in production only.
   hash: process.env.NODE_ENV === 'production',
