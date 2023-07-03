@@ -1,3 +1,10 @@
+## @snowball-tech/design-tokens [3.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.2.0...@snowball-tech/design-tokens@3.2.1) (2023-07-03)
+
+### 🐛 Bug Fixes
+
+- **design-system:** fix transparent borders usage ([78afafa](https://github.com/snowball-tech/fractal/commit/78afafab4dbcb469165d1121a4678f8c8d497fcb))
+- **design-token:** use transparent border instead of removing it ([7c8a468](https://github.com/snowball-tech/fractal/commit/7c8a468a6869782ff245ffbff24f899300892a66))
+
 # @snowball-tech/design-tokens [3.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.1.0...@snowball-tech/design-tokens@3.2.0) (2023-07-03)
 
 ### ✨ Features
