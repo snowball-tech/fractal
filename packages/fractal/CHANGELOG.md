@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.6...@snowball-tech/fractal@1.0.7) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** build in production (minified) mode ([a44cd7f](https://github.com/snowball-tech/fractal/commit/a44cd7f8e786d00894b6024fc384382890c72f17))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 2.0.4
+
 ## @snowball-tech/fractal [1.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.5...@snowball-tech/fractal@1.0.6) (2023-07-03)
 
 ### 👷 Build
