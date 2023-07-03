@@ -8,7 +8,6 @@
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
-      "@/fractal-panda/*": ["./node_modules/@snowball-tech/fractal-panda/*"],
       "@/*": ["./src/*"]
     },
     "rootDir": "./",

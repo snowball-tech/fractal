@@ -1,7 +1,6 @@
+import { cx } from '@snowball-tech/fractal-panda/css'
+import { typography } from '@snowball-tech/fractal-panda/recipes'
 import { type ElementType, createElement } from 'react'
-
-import { cx } from '@/fractal-panda/css'
-import { typography } from '@/fractal-panda/recipes'
 
 import {
   DEFAULT_ELEMENT,

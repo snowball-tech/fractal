@@ -50,9 +50,9 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.195",
-    "chalk": "4.1.2",
+    "chalk": "^4.1.2",
     "lodash": "^4.17.21",
-    "ora": "5.4.1",
+    "ora": "^5.4.1",
     "style-dictionary": "^3.8.0",
     "to-esm": "^2.27.3"
   }

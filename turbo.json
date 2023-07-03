@@ -5,10 +5,6 @@
       "cache": false,
       "persistent": true
     },
-    "@snowball-tech/fractal#dev": {
-      "cache": false,
-      "persistent": true
-    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
@@ -28,17 +24,17 @@
     "@snowball-tech/fractal#build:info": {
       "outputs": ["dist/fractal.buildinfo.json"]
     },
-    "@snowball-tech/design-tokens#build": {
-      "dependsOn": ["^build"],
-      "inputs": ["src/**", "tokens/**", "config.js"],
-      "outputs": ["dist/**"]
-    },
     "@snowball-tech/fractal#build:styles": {
       "outputs": [
         "dist/fractal.css",
         "dist/global.css",
         "dist/tokens/index.css"
       ]
+    },
+    "@snowball-tech/design-tokens#build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tokens/**", "config.js"],
+      "outputs": ["dist/**"]
     },
     "build:storybook": {
       "outputs": ["storybook-static/**"]

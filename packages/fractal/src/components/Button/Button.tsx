@@ -1,7 +1,6 @@
+import { cx } from '@snowball-tech/fractal-panda/css'
+import { button } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
-
-import { cx } from '@/fractal-panda/css'
-import { button } from '@/fractal-panda/recipes'
 
 import { DEFAULT_SIZE, DEFAULT_VARIANT } from './Button.constants'
 import type { ButtonProps } from './Button.types'

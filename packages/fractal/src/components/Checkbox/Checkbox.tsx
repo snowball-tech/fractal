@@ -1,15 +1,14 @@
 import { UilCheck as CheckIcon } from '@iconscout/react-unicons'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
-import isFunction from 'lodash/fp/isFunction'
-import uniqueId from 'lodash/fp/uniqueId'
-import { useState } from 'react'
-
-import { css, cva, cx } from '@/fractal-panda/css'
+import { css, cva, cx } from '@snowball-tech/fractal-panda/css'
 import {
   checkboxIndicator,
   checkboxLabel,
   checkboxRoot,
-} from '@/fractal-panda/recipes'
+} from '@snowball-tech/fractal-panda/recipes'
+import isFunction from 'lodash/fp/isFunction'
+import uniqueId from 'lodash/fp/uniqueId'
+import { useState } from 'react'
 
 import { Typography } from '../Typography'
 import { DEFAULT_VARIANT } from './Checkbox.constants'
