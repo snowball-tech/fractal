@@ -108,7 +108,7 @@
     "storybook-addon-mock": "^4.0.0",
     "typescript": "^5.1.6",
     "vite": "^4.3.9",
-    "vite-plugin-dts": "^3.0.2",
+    "vite-plugin-dts": "^3.0.3",
     "vite-plugin-lib": "^1.2.3"
   },
   "dependencies": {

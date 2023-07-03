@@ -4135,9 +4135,9 @@ __metadata:
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
     "@types/lodash": ^4.14.195
-    chalk: 4.1.2
+    chalk: ^4.1.2
     lodash: ^4.17.21
-    ora: 5.4.1
+    ora: ^5.4.1
     style-dictionary: ^3.8.0
     to-esm: ^2.27.3
   languageName: unknown
@@ -4228,7 +4228,7 @@ __metadata:
     storybook-addon-mock: ^4.0.0
     typescript: ^5.1.6
     vite: ^4.3.9
-    vite-plugin-dts: ^3.0.2
+    vite-plugin-dts: ^3.0.3
     vite-plugin-lib: ^1.2.3
   peerDependencies:
     react: ^18.2.0
@@ -8548,16 +8548,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
-  languageName: node
-  linkType: hard
-
 "chalk@npm:5.2.0":
   version: 5.2.0
   resolution: "chalk@npm:5.2.0"
@@ -8573,6 +8563,16 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
+  languageName: node
+  linkType: hard
+
+"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -17354,7 +17354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:5.4.1, ora@npm:^5.4.1":
+"ora@npm:^5.4.1":
   version: 5.4.1
   resolution: "ora@npm:5.4.1"
   dependencies:
@@ -22242,9 +22242,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "vite-plugin-dts@npm:3.0.2"
+"vite-plugin-dts@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "vite-plugin-dts@npm:3.0.3"
   dependencies:
     "@microsoft/api-extractor": ^7.36.0
     "@rollup/pluginutils": ^5.0.2
@@ -22262,7 +22262,7 @@ __metadata:
       optional: true
     vite:
       optional: true
-  checksum: f9f5fb06bd27222c91f7f206b686afd30f9651aa713cc029c9454b70ec68eed854fe16f163abbb78c1858dc56b585197386f79154aebca66836265d7b3b255ee
+  checksum: f7f8397a94dea8233ba6cbd56e1d6ddc67daf23fac766b519341e357d63afa2377ab74ff51c3192b8db2297642609958ac35be2ca97a25a7edb07a43bc92b5f6
   languageName: node
   linkType: hard
 
