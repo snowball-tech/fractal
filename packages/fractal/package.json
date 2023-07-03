@@ -41,7 +41,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build:chromatic": "yarn run -T chromatic --build-script-name build:storybook",
+    "build:chromatic": "yarn run -T chromatic --build-script-name build:chromatic:storybook",
+    "build:chromatic:storybook": "yarn run -T turbo run build:storybook",
     "prebuild:storybook": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal && yarn run clean:storybook",
     "build:storybook": "yarn run prebuild:storybook && yarn storybook build",
     "prebuild": "yarn run clean:build && mkdir -p ./dist",
@@ -56,7 +57,7 @@
     "clean:fonts": "rm -Rf assets/fonts >/dev/null 2>&1 || true",
     "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
     "dev": "yarn storybook dev -p 6006 --no-open",
-    "dev:with-fonts": "yarn run -T turbo run update:fonts--filter=@snowball-tech/fractal && yarn run dev",
+    "dev:with-fonts": "yarn run -T turbo run update:fonts --filter=@snowball-tech/fractal && yarn run dev",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
