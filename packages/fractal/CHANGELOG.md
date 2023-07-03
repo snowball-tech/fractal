@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.0.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.10...@snowball-tech/fractal@1.0.11) (2023-07-03)
+
+### 📦 Dependencies
+
+- update all dependencies ([a96d008](https://github.com/snowball-tech/fractal/commit/a96d00811ab3c0fc95e46e3d59ae5a09f6646d00))
+
 ## @snowball-tech/fractal [1.0.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.9...@snowball-tech/fractal@1.0.10) (2023-07-03)
 
 ### 👷 Build
