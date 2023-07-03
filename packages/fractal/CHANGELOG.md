@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.5...@snowball-tech/fractal@1.0.6) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** use the node module way to expose panda code ([015eb43](https://github.com/snowball-tech/fractal/commit/015eb43bc712a041f9e5c8d9f46543a458c7f261))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 2.0.3
+
 ## @snowball-tech/fractal [1.0.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.4...@snowball-tech/fractal@1.0.5) (2023-07-03)
 
 ### 🐛 Bug Fixes
