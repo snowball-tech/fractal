@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.2...@snowball-tech/fractal@1.0.3) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** create the missing dist directory when needed ([ee4c712](https://github.com/snowball-tech/fractal/commit/ee4c7121af3bb6ee1891dacac67a2eabc0ad06e7))
+
+### ⚙️ Continuous Integrations
+
+- improve turbo configuration ([5ee694b](https://github.com/snowball-tech/fractal/commit/5ee694bb2acffffed5481c60b4cc332e6ec6c956))
+
 ## @snowball-tech/fractal [1.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.1...@snowball-tech/fractal@1.0.2) (2023-07-03)
 
 ### 👷 Build
