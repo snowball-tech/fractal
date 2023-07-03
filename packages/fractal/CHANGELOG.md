@@ -1,3 +1,18 @@
+## @snowball-tech/fractal [1.0.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.9...@snowball-tech/fractal@1.0.10) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** don't parallelize builds that depend on each other ([2647154](https://github.com/snowball-tech/fractal/commit/2647154a6a310286024c5dd416e7e580a6d720c9))
+- **fractal:** fix the loading of the panda node module ([dbecabd](https://github.com/snowball-tech/fractal/commit/dbecabd4777c57c992113ff887efaa6b3c89b0c2))
+
+### 📦 Dependencies
+
+- **fractal:** don't update to 3.0.0 yet ([e2a198b](https://github.com/snowball-tech/fractal/commit/e2a198b5edbd8df95e523aa3ca319e50d9140c53))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 3.1.0
+
 ## @snowball-tech/fractal [1.0.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.8...@snowball-tech/fractal@1.0.9) (2023-07-03)
 
 ### 📦 Dependencies
