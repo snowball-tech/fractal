@@ -36,8 +36,8 @@ export const checkboxRoot: ReturnType<typeof defineRecipe> = defineRecipe({
               _groupHover: {
                 backgroundColor:
                   variantName === Variants.Black
-                    ? `var(--color-base-separator)`
-                    : `var(--color-decorative-${variantName}-90, var(--color-brand-body-light))`,
+                    ? `var(--color-base-grey-50)`
+                    : `var(--color-decorative-${variantName}-90, var(--color-brand-${variantName}, var(--color-base-white)))`,
               },
             },
 
@@ -46,9 +46,9 @@ export const checkboxRoot: ReturnType<typeof defineRecipe> = defineRecipe({
           },
 
           _disabled: {
-            backgroundColor: `var(--color-base-separator)`,
-            borderColor: 'grey',
-            color: 'grey',
+            backgroundColor: `var(--color-background-disabled)`,
+            borderColor: 'var(--color-border-disabled)',
+            color: 'var(--color-text-disabled)',
             cursor: 'not-allowed',
           },
         },
@@ -64,7 +64,7 @@ export const checkboxIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    color: 'var(--color-base-black)',
+    color: 'var(--color-text-dark)',
   },
 
   defaultVariants: {
@@ -76,7 +76,7 @@ export const checkboxIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
   variants: {
     disabled: {
       true: {
-        color: 'grey',
+        color: 'var(--color-text-disabled)',
       },
     },
 
@@ -86,7 +86,7 @@ export const checkboxIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
           ...variants,
           [variantName]: {
             ...(variantName === Variants.Black
-              ? { color: 'var(--color-base-white)' }
+              ? { color: 'var(--color-text-light)' }
               : {}),
           },
         }),
@@ -102,7 +102,7 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    color: 'var(--color-base-black)',
+    color: 'var(--color-text-dark)',
     cursor: 'pointer',
     maxWidth: '100%',
     overflow: 'auto',
@@ -120,7 +120,7 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   variants: {
     disabled: {
       true: {
-        color: 'grey',
+        color: 'var(--color-text-disabled)',
         cursor: 'not-allowed',
       },
     },

@@ -84,7 +84,7 @@
     "lint-staged": "^13.2.3",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
-    "pythagora": "^0.0.72",
+    "pythagora": "^0.0.73",
     "semantic-release": "^21.0.6",
     "serve": "^14.2.0",
     "stylelint": "^15.9.0",

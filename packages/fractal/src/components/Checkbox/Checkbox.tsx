@@ -18,9 +18,9 @@ const checkboxContainer = cva({
   base: {
     alignItems: 'center',
     backgroundColor: 'var(--color-base-white)',
-    border: 'var(--size-border-1) solid var(--color-border-default)',
-    borderRadius: '8px',
-    color: 'var(--color-base-black)',
+    border: 'var(--border-1)',
+    borderRadius: 'var(--size-radius-medium)',
+    color: 'var(--color-text-dark)',
     display: 'flex',
     gap: 'var(--size-spacing-2)',
     p: 'var(--size-spacing-1)',
@@ -30,7 +30,8 @@ const checkboxContainer = cva({
     disabled: {
       true: {
         backgroundColor: 'var(--color-base-separator)',
-        color: 'grey',
+        border: 'var(--border-disabled)',
+        color: 'var(--color-background-disabled)',
         cursor: 'not-allowed',
       },
     },
