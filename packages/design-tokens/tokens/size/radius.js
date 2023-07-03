@@ -6,7 +6,12 @@ module.exports = {
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      radius: {
+      medium: {
+        value: 8,
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      large: {
         value: 16,
       },
 
