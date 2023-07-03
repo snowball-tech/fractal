@@ -5,6 +5,11 @@
       "cache": false,
       "persistent": true
     },
+    "@snowball-tech/fractal#dev": {
+      "dependsOn": ["update:fonts", "build:code"],
+      "cache": false,
+      "persistent": true
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
@@ -13,7 +18,7 @@
       "outputs": ["styled-system"]
     },
     "@snowball-tech/fractal#build:code": {
-      "outputs": ["fractal-panda"]
+      "outputs": ["fractal-panda/**"]
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
@@ -22,17 +27,27 @@
     },
     "@snowball-tech/fractal#build:styles": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": [
+        "dist/fractal.css",
+        "dist/global.css",
+        "dist/tokens/index.css"
+      ]
     },
     "build:storybook": {
       "dependsOn": ["^build"],
       "outputs": ["storybook-static/**"]
     },
     "@snowball-tech/fractal#build:storybook": {
-      "dependsOn": ["build:code", "build:styles"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["^build", "update:fonts", "build:code", "build:styles"],
+      "outputs": ["storybook-static/**"]
     },
     "chromatic:upload": {},
+    "clean:build": {
+      "cache": false
+    },
+    "clean:fonts": {
+      "cache": false
+    },
     "clean:storybook": {
       "cache": false
     },
