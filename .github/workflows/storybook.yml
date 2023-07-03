@@ -31,6 +31,15 @@ jobs:
         with:
           files: |
             packages/fractal/**
+            package.json
+            tsconfig.json
+            yarn.lock
+            .yarnrc
+            .yarn/**
+            .gitignore
+            scripts/**
+            .github/workflows/quality.yml
+            .github/workflows/storybook.yml
 
       - if: steps.changed-files-specific.outputs.any_changed != 'true'
         name: No need to update Chromatic
