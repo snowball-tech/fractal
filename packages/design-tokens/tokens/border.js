@@ -66,7 +66,7 @@ module.exports = {
         base: {
           comment: 'Shadow for primary buttons.',
 
-          value: '{border.transparent.value}',
+          value: '{border.transparent.2.value}',
         },
         hover: {
           comment: 'Shadow when hovering/focusing primary buttons.',
@@ -100,7 +100,7 @@ module.exports = {
         active: {
           comment: 'Shadow when clicking/activating secondary buttons.',
 
-          value: '{border.transparent.value}',
+          value: '{border.transparent.2.value}',
         },
         disabled: {
           comment: 'Shadow for disabled secondary buttons.',
