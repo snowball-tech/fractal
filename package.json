@@ -48,15 +48,18 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
-    "build": "yarn run -T turbo run build",
-    "prebuild:storybook": "yarn run -T turbo run clean:storybook",
-    "build:storybook": "yarn run prebuild:storybook && yarn run -T turbo run build:storybook --parallel",
+    "build": "yarn turbo run build",
+    "build:storybook": "yarn turbo run build:storybook --parallel",
+    "format": "yarn turbo run format --filter=!//",
+    "format:fix": "yarn turbo run format:fix --filter=!//",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
+    "lint": "yarn turbo run lint --filter=!//",
+    "lint:fix": "yarn turbo run lint:fix --filter=!//",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
     "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
     "publish:all": "multi-semantic-release",
-    "setup": "yarn install && yarn setup:freezer && yarn setup:husky",
+    "setup": "yarn install && yarn setup:freezer && yarn setup:husky && yarn turbo run setup --filter=!//",
     "setup:freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup:husky": "is-ci || yarn husky install",
     "update:references": "workspaces-to-typescript-project-references --includesRoot"

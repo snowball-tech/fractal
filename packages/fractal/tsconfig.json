@@ -8,7 +8,7 @@
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
-      "@/fractal-panda/*": ["./fractal-panda/*"],
+      "@/fractal-panda/*": ["./node_modules/@snowball-tech/fractal-panda/*"],
       "@/*": ["./src/*"]
     },
     "rootDir": "./",
@@ -22,7 +22,7 @@
     "./.storybook/*.ts",
     "./.storybook/*.tsx",
     "./stories",
-    "./fractal-panda"
+    "./node_modules/@snowball-tech/fractal-panda"
   ],
   "files": [],
   "references": []
