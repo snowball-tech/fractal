@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [1.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.12...@snowball-tech/fractal@1.1.0) (2023-07-03)
+
+### ✨ Features
+
+- **button:** implement the new button design ([afee22c](https://github.com/snowball-tech/fractal/commit/afee22ceead936be013aeb6e016d2730801fa257))
+
+### 🐛 Bug Fixes
+
+- **button:** fix the sizing of the button ([626fbb2](https://github.com/snowball-tech/fractal/commit/626fbb2ba1aae025f4cb84bc7bd0a4c97ca8da43))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 3.2.1
+
 ## @snowball-tech/fractal [1.0.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.11...@snowball-tech/fractal@1.0.12) (2023-07-03)
 
 ### Dependencies
