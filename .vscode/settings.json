@@ -52,13 +52,7 @@
   ],
   "eslint.workingDirectories": [
     {
-      "pattern": "apps/**/*"
-    },
-    {
-      "pattern": "packages/**/*"
-    },
-    {
-      "pattern": "*"
+      "mode": "auto"
     }
   ],
   "files.insertFinalNewline": true,

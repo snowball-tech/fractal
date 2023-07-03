@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "isolatedModules": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "paths": {
+      "@/fractal-panda/*": ["./fractal-panda/*"],
+      "@/*": ["./src/*"]
+    },
+    "rootDir": "./",
+    "target": "ESNext",
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "./*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "./.storybook/*.ts",
+    "./.storybook/*.tsx",
+    "./stories",
+    "./fractal-panda"
+  ],
+  "files": [],
+  "references": []
+}

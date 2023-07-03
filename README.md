@@ -1,12 +1,12 @@
 # Fractal - Snowball's design system
 
 <!-- prettier-ignore-start -->
-| [`design-tokens`](./packages/design-tokens) | [`fractal-react`](./packages/fractal-react) |
+| [`design-tokens`](./packages/design-tokens) | [`fractal`](./packages/fractal) |
 | - | - |
-| [![design-tokens](https://img.shields.io/npm/v/@snowball-tech/design-tokens)](https://www.npmjs.com/package/@snowball-tech/design-tokens) | [![fractal-react](https://img.shields.io/npm/v/@snowball-tech/fractal-react)](https://www.npmjs.com/package/@snowball-tech/fractal-react) |
-| ![design-tokens-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/design-tokens) | ![fractal-react-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/fractal-react) |
-| ![design-tokens-downloads](https://img.shields.io/npm/dt/@snowball-tech/design-tokens) | ![fractal-react-downloads](https://img.shields.io/npm/dt/@snowball-tech/fractal-react) |
-| ![design-tokens-score](https://img.shields.io/npms-io/final-score/@snowball-tech/design-tokens) | ![fractal-react-score](https://img.shields.io/npms-io/final-score/@snowball-tech/fractal-react) |
+| [![design-tokens](https://img.shields.io/npm/v/@snowball-tech/design-tokens)](https://www.npmjs.com/package/@snowball-tech/design-tokens) | [![fractal](https://img.shields.io/npm/v/@snowball-tech/fractal)](https://www.npmjs.com/package/@snowball-tech/fractal) |
+| ![design-tokens-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/design-tokens) | ![fractal-dependants](https://img.shields.io/librariesio/dependents/npm/@snowball-tech/fractal) |
+| ![design-tokens-downloads](https://img.shields.io/npm/dt/@snowball-tech/design-tokens) | ![fractal-downloads](https://img.shields.io/npm/dt/@snowball-tech/fractal) |
+| ![design-tokens-score](https://img.shields.io/npms-io/final-score/@snowball-tech/design-tokens) | ![fractal-score](https://img.shields.io/npms-io/final-score/@snowball-tech/fractal) |
 
 | Quality on `main` branch | Security on `main` branch | Release on `main` branch | Chromatic on `main` branch |
 | - | - | - | - |
@@ -236,13 +236,7 @@ Applications are located in the [apps](./apps) directory.
 This directory contains applications made to be published publicly as
 documentation support for the whole design system.
 
-There are currently **3** packages available in Glacier:
-
-- **[fractal](./apps/docs)**: the composable
-  [Storybook](https://storybook.js.org/) applications.
-  This application is the main entrypoint of the Storybook of the design system
-  and will offer navigation to the other dedicated documentation _(e.g. the one
-  for the web components library, the one for the Android one, ...)_;
+There are currently \*no applications in Fractal repository.
 
 #### Packages
 
@@ -257,10 +251,11 @@ There are currently **2** packages available in Fractal:
   defining the design system and to be used in all the apps _(web, mobile, ...)_
   and packages throughout the organization;
 
-- **[react](./packages/react)**: the React design system, made of components,
-  styles, icons, ... to be used in web (React) applications.
-  It also contains the Storybook documentation that will be reference by the
-  main `docs` application above;
+- **[fractal](./packages/fractal)**: the React component library, made of
+  components, styles, icons, ... based on Radix-UI and PandaCSS and to be used
+  in web (React) applications.  
+  It also contains the Storybook documentation that is uploaded to Chromatic and
+  the main documentation webiste.
 
 ### TypeScript
 

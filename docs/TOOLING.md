@@ -7,7 +7,7 @@
 The mono-repository management is handled by Yarn v3 (Berry) workspaces.
 
 Those workspaces are defined in the root [`package.json`](./package.json) file.
-By default it defines the [`packages`](./packages) and [`apps`](./packages)
+By default it defines the [`packages`](./packages) and [`apps`](./apps)
 folders as the root of the workspaces.
 
 You may edit this configuration to add new workspaces.
