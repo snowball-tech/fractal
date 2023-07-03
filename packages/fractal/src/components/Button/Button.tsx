@@ -2,7 +2,7 @@ import { cx } from '@snowball-tech/fractal-panda/css'
 import { button } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 
-import { DEFAULT_SIZE, DEFAULT_VARIANT } from './Button.constants'
+import { DEFAULT_VARIANT } from './Button.constants'
 import type { ButtonProps } from './Button.types'
 
 /**
@@ -12,13 +12,12 @@ export default function Button({
   children,
   disabled = false,
   onClick,
-  size = DEFAULT_SIZE,
   variant = DEFAULT_VARIANT,
   ...props
 }: ButtonProps) {
   return (
     <button
-      className={cx(props.className, button({ disabled, size, variant }))}
+      className={cx(props.className, button({ variant }))}
       disabled={disabled}
       {...(isFunction(onClick) ? { onClick: (event) => onClick(event) } : {})}
       {...props}
