@@ -1,7 +1,8 @@
 module.exports = {
-  color: {
+  size: {
     border: {
-      default: { value: '{color.brand.secondary.value}' },
+      1: { value: 1 },
+      2: { value: 2 },
     },
   },
 }
