@@ -1,3 +1,13 @@
+# @snowball-tech/fractal 1.0.0 (2023-07-03)
+
+### ♻️ Code Refactoring
+
+- rename fractal package and move storybook ([7936899](https://github.com/snowball-tech/fractal/commit/7936899146c903f5dc4317dfe4de8ee7fb42b3b5))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([1cd8427](https://github.com/snowball-tech/fractal/commit/1cd8427fee0224739aa2cdb2c22f1ff43832550b))
+
 ## @snowball-tech/fractal-react [1.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal-react@1.0.2...@snowball-tech/fractal-react@1.0.3) (2023-07-01)
 
 ### 👷 Build
