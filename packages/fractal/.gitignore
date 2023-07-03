@@ -4,3 +4,5 @@ assets/fonts*/PolySans*
 storybook-static*
 styled-system*
 fractal-panda*
+.vercel
+.env*.local

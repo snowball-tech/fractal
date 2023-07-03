@@ -88,5 +88,6 @@
     ".yarnrc.yml",
     "**/.gitignore",
     "**/tsconfig*.json"
-  ]
+  ],
+  "globalEnv": ["NODE_ENV", "VERCEL_ENV"]
 }

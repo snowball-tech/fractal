@@ -23,10 +23,16 @@ export default defineConfig({
   outdir: '@snowball-tech/fractal-panda',
 
   // Produce a short hashed class name in production only.
-  hash: process.env.NODE_ENV === 'production',
+  hash:
+    process.env.NODE_ENV === 'production' &&
+    process.env.VERCEL_ENV !== 'development',
   // Speed up build time in development only.
-  optimize: process.env.NODE_ENV === 'production',
-  minify: process.env.NODE_ENV === 'production',
+  optimize:
+    process.env.NODE_ENV === 'production' &&
+    process.env.VERCEL_ENV !== 'development',
+  minify:
+    process.env.NODE_ENV === 'production' &&
+    process.env.VERCEL_ENV !== 'development',
 
   include: ['./src/**/*.{js,jsx,ts,tsx,mdx}'],
   exclude: [],
