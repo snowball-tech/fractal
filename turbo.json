@@ -12,21 +12,25 @@
     "build:code": {
       "outputs": ["styled-system"]
     },
-    "@snowball-tech/fractal-react#build:code": {
-      "outputs": ["node_modules/@snowball-tech/panda-fractal-react"]
+    "@snowball-tech/fractal#build:code": {
+      "outputs": ["fractal-panda"]
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "tokens/**", "config.js"],
       "outputs": ["dist/**"]
     },
-    "@snowball-tech/fractal-react#build:styles": {
+    "@snowball-tech/fractal#build:styles": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
     "build:storybook": {
       "dependsOn": ["^build"],
       "outputs": ["storybook-static/**"]
+    },
+    "@snowball-tech/fractal#build:storybook": {
+      "dependsOn": ["build:code", "build:styles"],
+      "outputs": ["dist/**"]
     },
     "chromatic:upload": {},
     "clean:storybook": {
@@ -59,16 +63,13 @@
     },
     "//#lint:root": {},
     "//#lint:root:fix": {},
-    "@snowball-tech/fractal-react#lint": {
+    "@snowball-tech/fractal#lint": {
       "dependsOn": ["build:code"]
     },
-    "@snowball-tech/fractal-react#lint:fix": {
+    "@snowball-tech/fractal#lint:fix": {
       "dependsOn": ["build:code"]
     },
-    "types:check": {},
-    "@snowball-tech/fractal-storybook#types:check": {
-      "dependsOn": ["@snowball-tech/fractal-react#build"]
-    }
+    "types:check": {}
   },
   "globalDependencies": [
     "**/.env*",
