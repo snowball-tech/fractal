@@ -30,13 +30,13 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
           textDecoration: `var(--typography-${variantName}-text-decoration)`,
 
           xs: {
-            fontSize: `var(--typography-${variantName}-font-size-xs)`,
+            fontSize: `var(--typography-${variantName}-font-size-xs, var(--typography-${variantName}-font-size))`,
             lineHeight: `var(--typography-${variantName}-line-height-xs, var(--typography-${variantName}-line-height))`,
           },
           // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
           md: {
-            fontSize: `var(--typography-${variantName}-font-size-md)`,
-            lineHeight: `var(--typography-${variantName}-line-height-md, var(--typography-${variantName}-line-height))`,
+            fontSize: `var(--typography-${variantName}-font-size-md, var(--typography-${variantName}-font-size-xs, var(--typography-${variantName}-font-size)))`,
+            lineHeight: `var(--typography-${variantName}-line-height-md, var(--typography-${variantName}-line-height-xs, var(--typography-${variantName}-line-height)))`,
           },
         },
       }),
