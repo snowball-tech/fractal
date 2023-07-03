@@ -85,7 +85,8 @@
     "//#lint:root:fix": {},
     "setup": {
       "cache": false
-    }
+    },
+    "types:check": {}
   },
   "globalDependencies": [
     "**/.env*",
