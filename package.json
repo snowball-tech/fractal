@@ -48,8 +48,8 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
-    "build": "yarn turbo run build",
-    "build:storybook": "yarn turbo run build:storybook --parallel",
+    "build": "NODE_ENV=production yarn turbo run build",
+    "build:storybook": "NODE_ENV=production yarn turbo run build:storybook --parallel",
     "format": "yarn turbo run format --filter=!//",
     "format:fix": "yarn turbo run format:fix --filter=!//",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
@@ -86,6 +86,7 @@
     "prettier": "^2.8.8",
     "pythagora": "^0.0.72",
     "semantic-release": "^21.0.6",
+    "serve": "^14.2.0",
     "stylelint": "^15.9.0",
     "ts-node": "^10.9.1",
     "turbo": "^1.10.7",

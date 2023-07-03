@@ -11,6 +11,9 @@ on:
     branches:
       - main
 
+env:
+  NODE_ENV: production
+
 jobs:
   release:
     name: Releasing updated packages

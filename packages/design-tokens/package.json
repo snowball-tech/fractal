@@ -38,9 +38,9 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild": "yarn run clean",
-    "build": "yarn run prebuild && node ./src/build.js",
-    "clean": "rm -Rf dist >/dev/null 2>&1 || true",
+    "prebuild": "yarn run clean:build",
+    "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
+    "clean:build": "rm -Rf dist >/dev/null 2>&1 || true",
     "dev": "yarn run -T nodemon -x \"yarn build\"",
     "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
     "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
