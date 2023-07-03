@@ -1,3 +1,26 @@
+# @snowball-tech/design-tokens [3.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.1.0...@snowball-tech/design-tokens@3.0.0) (2023-07-03)
+
+### 💥 Breaking changes
+
+- **design-token:** move body out of brand and to background ([acceb4e](https://github.com/snowball-tech/fractal/commit/acceb4e684a8fdfccea30d605d1dde1cfbf36c91))
+
+### ✨ Features
+
+- **design-tokens:** add grey colors ([420a7b9](https://github.com/snowball-tech/fractal/commit/420a7b994507d2f59a52c0d407c084d64180587a))
+- **design-tokens:** add tokens for buttons ([7fc1f3a](https://github.com/snowball-tech/fractal/commit/7fc1f3aeffc00108f18ebbde1311d02d985b6e47))
+
+### 🐛 Bug Fixes
+
+- **design-token:** fix the color/size of border inversion ([d3e8959](https://github.com/snowball-tech/fractal/commit/d3e8959cbfa3f2c6015e37b02565fc2e9a15a2a7))
+
+### 📝 Documentation
+
+- **design-tokens:** improve comment of decorative colors ([7019514](https://github.com/snowball-tech/fractal/commit/7019514f798450adf79d5fc291de55886fc8ed3f))
+
+### 📦 Dependencies
+
+- fix dependencies ([2d72a9a](https://github.com/snowball-tech/fractal/commit/2d72a9ad0a02896b5349caa02b6bb02da60d7424))
+
 # @snowball-tech/design-tokens [2.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.4...@snowball-tech/design-tokens@2.1.0) (2023-07-03)
 
 ### ✨ Features
