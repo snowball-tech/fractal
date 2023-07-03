@@ -6,7 +6,6 @@
       "persistent": true
     },
     "build": {
-      "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
     "build:code": {
