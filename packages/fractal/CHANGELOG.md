@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.0.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.4...@snowball-tech/fractal@1.0.5) (2023-07-03)
+
+### 🐛 Bug Fixes
+
+- **typography:** fix the font size ([3911fe2](https://github.com/snowball-tech/fractal/commit/3911fe2f75f25aaef586e93eebfea486acc68a56))
+
 ## @snowball-tech/fractal [1.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.3...@snowball-tech/fractal@1.0.4) (2023-07-03)
 
 ### 👷 Build
