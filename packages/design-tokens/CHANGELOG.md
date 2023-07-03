@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [2.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.3...@snowball-tech/design-tokens@2.0.4) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** build in production (minified) mode ([a44cd7f](https://github.com/snowball-tech/fractal/commit/a44cd7f8e786d00894b6024fc384382890c72f17))
+
 ## @snowball-tech/design-tokens [2.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.2...@snowball-tech/design-tokens@2.0.3) (2023-07-03)
 
 ### 👷 Build
