@@ -23,5 +23,78 @@ module.exports = {
 
       value: '{size.border.1.value} solid {color.border.disabled.value}',
     },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    button: {
+      display: {
+        base: {
+          comment: 'Border for display buttons.',
+
+          value: '{border.1.value}',
+        },
+        hover: {
+          comment: 'Shadow when hovering/focusing display buttons.',
+
+          value: '{border.button.display.base.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        active: {
+          comment: 'Shadow when clicking/activating display buttons.',
+
+          value: '{border.button.display.base.value}',
+        },
+        disabled: {
+          comment: 'Shadow for disabled display buttons.',
+
+          value: '{border.disabled.value}',
+        },
+      },
+      primary: {
+        base: {
+          comment: 'Shadow for primary buttons.',
+
+          value: '{border.none.value}',
+        },
+        hover: {
+          comment: 'Shadow when hovering/focusing primary buttons.',
+
+          value: '{border.2.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        active: {
+          comment: 'Shadow when clicking/activating primary buttons.',
+
+          value: '{border.button.primary.base.value}',
+        },
+        disabled: {
+          comment: 'Shadow for disabled primary buttons.',
+
+          value: '{shadow.button.primary.base.value}',
+        },
+      },
+      secondary: {
+        base: {
+          comment: 'Shadow for secondary buttons.',
+
+          value: '{border.1.value}',
+        },
+        hover: {
+          comment: 'Shadow when hovering/focusing secondary buttons.',
+
+          value: '{border.2.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        active: {
+          comment: 'Shadow when clicking/activating secondary buttons.',
+
+          value: '{border.none.value}',
+        },
+        disabled: {
+          comment: 'Shadow for disabled secondary buttons.',
+
+          value: '{border.disabled.value}',
+        },
+      },
+    },
   },
 }
