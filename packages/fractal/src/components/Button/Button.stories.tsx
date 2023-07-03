@@ -1,22 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import Button from './Button'
-import {
-  DEFAULT_SIZE,
-  DEFAULT_VARIANT,
-  Sizes,
-  Variants,
-} from './Button.constants'
+import { DEFAULT_VARIANT, Variants } from './Button.constants'
 
 const meta = {
   argTypes: {
-    size: {
-      options: Object.values(Sizes),
-      table: {
-        defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(Sizes).join('|') },
-      },
-    },
     variant: {
       options: Object.values(Variants),
       table: {
@@ -50,7 +38,6 @@ export const Playground: Story = {
     onClick: { table: { disable: true } },
   },
   args: {
-    size: DEFAULT_SIZE,
     variant: DEFAULT_VARIANT,
   },
 }
@@ -64,50 +51,23 @@ export const Buttons: Story = {
         gap: 'var(--size-spacing-2)',
       }}
     >
-      <Button size="small" variant="primary">
-        Small primary button
-      </Button>
-      <Button size="medium" variant="primary">
-        Medium primary button
-      </Button>
-      <Button size="large" variant="primary">
-        Large primary button
+      <Button variant="display">&quot;Display&quot; button</Button>
+      <Button disabled variant="display">
+        &quot;Display&quot; disabled button
       </Button>
 
       <hr />
 
-      <Button size="small" variant="secondary">
-        Small secondary button
-      </Button>
-      <Button size="medium" variant="secondary">
-        Medium secondary button
-      </Button>
-      <Button size="large" variant="secondary">
-        Large secondary button
+      <Button variant="primary">Primary button</Button>
+      <Button disabled variant="primary">
+        Primary disabled button
       </Button>
 
       <hr />
 
-      <Button size="small" variant="tertiary">
-        Small tertiary button
-      </Button>
-      <Button size="medium" variant="tertiary">
-        Medium tertiary button
-      </Button>
-      <Button size="large" variant="tertiary">
-        Large tertiary button
-      </Button>
-
-      <hr />
-
-      <Button disabled size="small">
-        Small disabled button
-      </Button>
-      <Button disabled size="medium">
-        Medium disabled button
-      </Button>
-      <Button disabled size="large">
-        Large disabled button
+      <Button variant="secondary">Secondary button</Button>
+      <Button disabled variant="secondary">
+        Secondary disabled button
       </Button>
     </div>
   ),

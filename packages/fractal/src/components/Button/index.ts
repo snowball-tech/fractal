@@ -1,2 +1,2 @@
 export { default as Button } from './Button'
-export { Variants as ButonVariants } from './Button.constants'
+export { Variants as ButtonVariants } from './Button.constants'
