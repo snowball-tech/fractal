@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [3.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.1.0...@snowball-tech/design-tokens@3.2.0) (2023-07-03)
+
+### ✨ Features
+
+- **design-token:** add border tokens for the buttons ([1cd9c5d](https://github.com/snowball-tech/fractal/commit/1cd9c5d86c092675c1835880be316112b289a0a3))
+
+### 📝 Documentation
+
+- **design-tokens:** improve tokens comments ([54a3dc7](https://github.com/snowball-tech/fractal/commit/54a3dc70de7de72d468f40404393136e14789c2d))
+
 # @snowball-tech/design-tokens [3.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.0.0...@snowball-tech/design-tokens@3.1.0) (2023-07-03)
 
 ### ✨ Features
