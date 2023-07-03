@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.1...@snowball-tech/fractal@1.0.2) (2023-07-03)
+
+### 👷 Build
+
+- **fractal:** fix the building of storybook ([b57207e](https://github.com/snowball-tech/fractal/commit/b57207ee5034cf767712d6b57387211dbb0329a9))
+
 ## @snowball-tech/fractal [1.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.0...@snowball-tech/fractal@1.0.1) (2023-07-03)
 
 ### ⚙️ Continuous Integrations
