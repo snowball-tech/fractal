@@ -1,3 +1,11 @@
+# @snowball-tech/design-tokens [2.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.4...@snowball-tech/design-tokens@2.1.0) (2023-07-03)
+
+### ✨ Features
+
+- **design-token:** add a new radius token ([2aaf83d](https://github.com/snowball-tech/fractal/commit/2aaf83dc2057040a35d36141879b35522f50a30e))
+- **design-token:** add text color tokens ([7ac591f](https://github.com/snowball-tech/fractal/commit/7ac591fdb7c2c8b4443080f96ebe8c68dd8ef78c))
+- **design-tokens:** add a new shadow token ([42357d8](https://github.com/snowball-tech/fractal/commit/42357d81a64f1337d11a53a28310e493fe19b2f8))
+
 ## @snowball-tech/design-tokens [2.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@2.0.3...@snowball-tech/design-tokens@2.0.4) (2023-07-03)
 
 ### 👷 Build
