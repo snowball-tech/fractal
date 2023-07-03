@@ -45,7 +45,7 @@
     "prebuild:storybook": "NODE_ENV=production yarn run -T turbo run update:fonts build:code build:styles --filter=@snowball-tech/fractal --parallel",
     "build:storybook": "yarn run prebuild:storybook && NODE_ENV=production yarn storybook build",
     "prebuild": "yarn run clean:build && mkdir -p ./dist",
-    "build": "yarn run prebuild && yarn run -T turbo build:code build:info build:styles build:library --filter=@snowball-tech/fractal --parallel",
+    "build": "yarn run prebuild && yarn run -T turbo build:code build:info build:styles --filter=@snowball-tech/fractal --parallel && yarn run -T turbo build:library --filter=@snowball-tech/fractal",
     "build:library": "NODE_ENV=production yarn tsc --build tsconfig.build.json && echo 'Component library successfully built!'",
     "build:lib": "yarn run build:library",
     "build:code": "NODE_ENV=production yarn panda codegen && echo 'Panda code successfully generated!'",
