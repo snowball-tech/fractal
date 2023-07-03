@@ -69,7 +69,10 @@
     "@snowball-tech/fractal#lint:fix": {
       "dependsOn": ["build:code"]
     },
-    "types:check": {}
+    "types:check": {},
+    "@snowball-tech/fractal#types:check": {
+      "dependsOn": ["build:code"]
+    }
   },
   "globalDependencies": [
     "**/.env*",
