@@ -29,7 +29,7 @@ const checkboxContainer = cva({
   variants: {
     disabled: {
       true: {
-        backgroundColor: 'var(--color-base-separator)',
+        backgroundColor: 'var(--color-background-disabled)',
         border: 'var(--border-disabled)',
         color: 'var(--color-background-disabled)',
         cursor: 'not-allowed',
