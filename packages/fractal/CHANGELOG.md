@@ -1,3 +1,18 @@
+# @snowball-tech/fractal [1.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.1.1...@snowball-tech/fractal@1.2.0) (2023-07-04)
+
+### 🐛 Bug Fixes
+
+- **checkbox:** fix the disabled status ([6c406e2](https://github.com/snowball-tech/fractal/commit/6c406e2038e2b54474c3ca90fdbafbad089b6e70))
+- **fractal:** uniformize stories and factorise config ([596228e](https://github.com/snowball-tech/fractal/commit/596228ed62eda6fe1c0b92345a89c97e6c6a734d))
+
+### 💄 UI/UX
+
+- **button:** improve the style of button and the story ([84010fb](https://github.com/snowball-tech/fractal/commit/84010fbe4bb3a6ce72c71a51272e0b7b7587a3c8))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 3.3.0
+
 ## @snowball-tech/fractal [1.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.1.0...@snowball-tech/fractal@1.1.1) (2023-07-04)
 
 ### 🐛 Bug Fixes
