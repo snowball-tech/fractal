@@ -11,6 +11,8 @@ import type { ButtonProps } from './Button.types'
  */
 export default function Button({
   disabled = false,
+  icon,
+  iconPosition = 'right',
   label,
   onClick,
   variant = DEFAULT_VARIANT,
@@ -23,7 +25,11 @@ export default function Button({
       {...(isFunction(onClick) ? { onClick: (event) => onClick(event) } : {})}
       {...props}
     >
+      {icon && iconPosition === 'left' && icon}
+
       <Typography variant="body-1">{label}</Typography>
+
+      {icon && iconPosition === 'right' && icon}
     </button>
   )
 }

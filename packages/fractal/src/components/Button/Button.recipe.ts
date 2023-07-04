@@ -73,6 +73,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     boxSizing: 'border-box',
     cursor: 'pointer',
     display: 'flex',
+    gap: 'var(--size-spacing-2)',
     height: '48px',
     justifyContent: 'center',
     maxHeight: '48px',
