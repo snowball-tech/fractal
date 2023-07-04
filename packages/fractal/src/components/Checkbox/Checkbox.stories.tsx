@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { ComponentProps } from 'react'
 
 import Checkbox from './Checkbox'
 import { DEFAULT_VARIANT, Variants } from './Checkbox.constants'
+
+type CheckboxProps = ComponentProps<typeof Checkbox>
 
 const checkStateType = { type: { summary: "boolean | 'indeterminate'" } }
 
 const meta = {
   argTypes: {
+    asChild: { table: { disable: true } },
     checked: { table: { ...checkStateType } },
     defaultChecked: { table: { ...checkStateType } },
     onCheckedChange: {
@@ -33,17 +37,14 @@ const meta = {
     componentSubtitle: '???',
     controls: {
       exclude: ['checked'],
-      expanded: true,
-      hideNoControlsWarning: true,
-      sort: 'requiredFirst',
     },
   },
 
   title: 'Checkbox',
-} satisfies Meta<typeof Checkbox>
+} satisfies Meta<CheckboxProps>
 
 export default meta
-type Story = StoryObj<typeof Checkbox>
+type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   argTypes: {

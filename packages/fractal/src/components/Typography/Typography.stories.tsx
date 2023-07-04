@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { ComponentProps } from 'react'
 
 import Typography from './Typography'
 import { DEFAULT_VARIANT, Variants } from './Typography.constants'
+
+type TypographyProps = ComponentProps<typeof Typography>
 
 const perVariantStoriesParameters = {
   controls: {
@@ -42,18 +45,13 @@ const meta = {
   component: Typography,
   parameters: {
     componentSubtitle: '👮 Anything you say can be used against you',
-    controls: {
-      expanded: true,
-      hideNoControlsWarning: true,
-      sort: 'requiredFirst',
-    },
   },
 
   title: 'Typography',
-} satisfies Meta<typeof Typography>
+} satisfies Meta<TypographyProps>
 
 export default meta
-type Story = StoryObj<typeof Typography>
+type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: {
