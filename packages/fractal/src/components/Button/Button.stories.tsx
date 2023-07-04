@@ -14,8 +14,8 @@ const meta = {
     },
   },
   args: {
-    children: 'Click me please!',
     disabled: false,
+    label: 'Click me please!',
   },
   component: Button,
   parameters: {
@@ -51,24 +51,18 @@ export const Buttons: Story = {
         gap: 'var(--size-spacing-2)',
       }}
     >
-      <Button variant="display">&quot;Display&quot; button</Button>
-      <Button disabled variant="display">
-        &quot;Display&quot; disabled button
-      </Button>
+      <Button label='"Display" button' variant="display" />
+      <Button disabled label='"Display" disabled button' variant="display" />
 
       <hr />
 
-      <Button variant="primary">Primary button</Button>
-      <Button disabled variant="primary">
-        Primary disabled button
-      </Button>
+      <Button label="Primary button" variant="primary" />
+      <Button disabled label="Primary disabled button" variant="primary" />
 
       <hr />
 
-      <Button variant="secondary">Secondary button</Button>
-      <Button disabled variant="secondary">
-        Secondary disabled button
-      </Button>
+      <Button label="Secondary button" variant="secondary" />
+      <Button disabled label="Secondary disabled button" variant="secondary" />
     </div>
   ),
 }

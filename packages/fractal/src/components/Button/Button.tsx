@@ -2,6 +2,7 @@ import { cx } from '@snowball-tech/fractal-panda/css'
 import { button } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 
+import { Typography } from '../Typography'
 import { DEFAULT_VARIANT } from './Button.constants'
 import type { ButtonProps } from './Button.types'
 
@@ -9,8 +10,8 @@ import type { ButtonProps } from './Button.types'
  * `Button` component is used to allow a user to make an interaction.
  */
 export default function Button({
-  children,
   disabled = false,
+  label,
   onClick,
   variant = DEFAULT_VARIANT,
   ...props
@@ -22,7 +23,7 @@ export default function Button({
       {...(isFunction(onClick) ? { onClick: (event) => onClick(event) } : {})}
       {...props}
     >
-      {children}
+      <Typography variant="body-1">{label}</Typography>
     </button>
   )
 }

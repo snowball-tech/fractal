@@ -52,8 +52,7 @@
     "prebuild:info": "mkdir -p ./dist",
     "build:info": "yarn run prebuild:info && yarn panda ship --outfile dist/fractal.buildinfo.json && echo 'Panda build info successfully generated!'",
     "prebuild:styles": "mkdir -p ./dist",
-    "build:styles": "yarn run prebuild:styles && yarn panda cssgen && yarn run postbuild:styles && echo 'Panda static styles successfully generated!'",
-    "postbuild:styles": "mv node_modules/@snowball-tech/fractal-panda/styles.css dist/fractal.css && cp node_modules/@snowball-tech/fractal-panda/global.css dist/global.css && (mkdir -p dist/tokens >/dev/null 2>&1 || true) && cp node_modules/@snowball-tech/fractal-panda/tokens/index.css dist/tokens/index.css",
+    "build:styles": "yarn run prebuild:styles && yarn panda cssgen --outfile dist/fractal.css && echo 'Panda static styles successfully generated!'",
     "clean:build": "rm -Rf ./dist >/dev/null 2>&1 || true",
     "clean:fonts": "rm -Rf assets/fonts >/dev/null 2>&1 || true",
     "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
@@ -77,7 +76,7 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.5.0",
+    "@pandacss/dev": "^0.5.1",
     "@snowball-tech/eslint-config": "^5.1.0",
     "@storybook/addon-a11y": "^7.0.25",
     "@storybook/addon-essentials": "^7.0.25",
