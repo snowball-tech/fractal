@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.1.0...@snowball-tech/fractal@1.1.1) (2023-07-04)
+
+### 🐛 Bug Fixes
+
+- **button:** improve hover/focus states and update deps ([1e67ef2](https://github.com/snowball-tech/fractal/commit/1e67ef21543b392279f227824ac0536896294427))
+
 # @snowball-tech/fractal [1.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.0.12...@snowball-tech/fractal@1.1.0) (2023-07-03)
 
 ### ✨ Features
