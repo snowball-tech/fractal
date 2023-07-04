@@ -41,7 +41,7 @@ const config: StorybookConfig = {
     check: false,
     // Valid options are: 'react-docgen', 'react-docgen-typescript' or `false`.
     // See https://github.com/storybookjs/storybook/tree/next/code/addons/docs/react#typescript-props-with-react-docgen
-    reactDocgen: 'react-docgen',
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       include: ['**/**.ts', '**/**.tsx'],
       shouldExtractLiteralValuesFromEnum: true,

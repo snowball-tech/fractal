@@ -14,6 +14,8 @@ const preview = {
     actions: { argTypesRegex: '^on[A-Z].*' },
 
     controls: {
+      expanded: true,
+      hideNoControlsWarning: true,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
@@ -21,6 +23,9 @@ const preview = {
     },
 
     docs: {
+      controls: {
+        sort: 'requiredFirst',
+      },
       page: DocumentationTemplate,
       theme: {
         ...fractalTheme,
