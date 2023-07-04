@@ -4499,10 +4499,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:3.2.1":
-  version: 3.2.1
-  resolution: "@snowball-tech/design-tokens@npm:3.2.1"
-  checksum: 65a22250a1383fbc978760e39b8a6c01f2b61ff0eb47f55df14aea4224d4a9cdbbfe13cdd7cc2fbe0cd8a88c0a4d9ab6725d77d0b493535acf4055311485afdc
+"@snowball-tech/design-tokens@npm:3.3.0":
+  version: 3.3.0
+  resolution: "@snowball-tech/design-tokens@npm:3.3.0"
+  checksum: 7589510e98a3b1f96041030f446a9e9efc5417a7cf14bdf3307742f14a8c3458c336c70aa1158d6a0e316c093ee26254715e2731b637f9140b14e018a4730b06
   languageName: node
   linkType: hard
 
@@ -4569,7 +4569,7 @@ __metadata:
     "@iconscout/react-unicons": ^2.0.2
     "@pandacss/dev": ^0.5.1
     "@radix-ui/react-checkbox": ^1.0.4
-    "@snowball-tech/design-tokens": 3.2.1
+    "@snowball-tech/design-tokens": 3.3.0
     "@snowball-tech/eslint-config": ^5.1.0
     "@storybook/addon-a11y": ^7.0.25
     "@storybook/addon-essentials": ^7.0.25
