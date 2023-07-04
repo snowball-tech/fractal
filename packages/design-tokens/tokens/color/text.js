@@ -20,6 +20,12 @@ module.exports = {
         value: '{color.base.grey.70.value}',
       },
 
+      placeholder: {
+        comment: 'Text color for placeholders',
+
+        value: '{color.base.grey.50.value}',
+      },
+
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       button: {
         display: {

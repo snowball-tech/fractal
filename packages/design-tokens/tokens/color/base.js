@@ -9,8 +9,6 @@ module.exports = {
       white: { comment: 'White Tone 100', value: '#FFFFFF' },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      separator: { comment: 'Tone 90', value: '#E2E2E2' },
-
       transparent: { comment: 'Transparent', value: 'transparent' },
     },
   },
