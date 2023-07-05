@@ -42,8 +42,8 @@
     "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
     "clean:build": "rm -Rf dist >/dev/null 2>&1 || true",
     "dev": "yarn run -T nodemon -x \"yarn build\"",
-    "format": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --check .",
-    "format:fix": "yarn run -T prettier --ignore-path ../../.prettierignore --cache --write .",
+    "format": "yarn run -T prettier --cache --check .",
+    "format:fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run -T eslint --cache .",
     "lint:fix": "yarn run -T eslint --cache --fix .",
     "setup": "yarn install"
