@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [1.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.0...@snowball-tech/fractal@1.2.1) (2023-07-05)
+
+### 🎨 Code Style and Formatting
+
+- **typography:** fix some typos and formatting ([d7d1981](https://github.com/snowball-tech/fractal/commit/d7d1981bcce1a028318ae533fa449b1218eb5f89))
+
+### 🐛 Bug Fixes
+
+- **button:** properly unset default margins ([4347175](https://github.com/snowball-tech/fractal/commit/4347175e938e79d8c1290affdab369ec9a6e954e))
+
+### 👷 Build
+
+- **fractal:** properly bundle the package ([28d5e15](https://github.com/snowball-tech/fractal/commit/28d5e15adcc257bd72caee464b20f332edc9f50b))
+
 # @snowball-tech/fractal [1.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.1.1...@snowball-tech/fractal@1.2.0) (2023-07-04)
 
 ### 🐛 Bug Fixes
