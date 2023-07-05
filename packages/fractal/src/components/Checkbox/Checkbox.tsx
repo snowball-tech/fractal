@@ -10,7 +10,8 @@ import isFunction from 'lodash/fp/isFunction'
 import uniqueId from 'lodash/fp/uniqueId'
 import { useState } from 'react'
 
-import { Typography } from '../Typography'
+import { Typography } from '@/components/Typography'
+
 import { DEFAULT_VARIANT } from './Checkbox.constants'
 import type { CheckboxProps } from './Checkbox.types'
 
