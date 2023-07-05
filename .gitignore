@@ -73,3 +73,6 @@ next-env.d.ts
 
 # Misc.
 *.bak
+
+# PandaCSS.
+styled-system*
