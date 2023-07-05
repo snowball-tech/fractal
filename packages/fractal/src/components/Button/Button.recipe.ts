@@ -20,7 +20,7 @@ const variantsObject = Object.values(Variants).reduce(
       ...variants,
       [variantName]: {
         '&:not(:is(:active, [data-active]))': {
-          _focus: hoverFocus[variantName],
+          _focusVisible: hoverFocus[variantName],
           _hover: hoverFocus[variantName],
         },
 
@@ -66,6 +66,10 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       margin: 'unset',
     },
 
+    _active: {
+      transition: 'none',
+    },
+
     _disabled: {
       cursor: 'not-allowed',
     },
@@ -85,6 +89,9 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     px: 'var(--size-button-padding-horizontal)',
     py: 'var(--size-button-padding-vertical)',
     textAlign: 'center',
+    transitionDuration: '300ms',
+    transitionProperty: 'background-color, color',
+    transitionTimingFunction: 'ease-out',
   },
 
   defaultVariants: {
@@ -111,7 +118,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           },
         },
 
-        _focus: {
+        _focusVisible: {
           ...hoverFocus[Variants.Display],
           '&:not(:is(:disabled, [disabled], [data-disabled]))': {
             ...hoverFocus[Variants.Display]?.[
@@ -150,7 +157,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           },
         },
 
-        _focus: {
+        _focusVisible: {
           ...hoverFocus[Variants.Secondary],
           '&:not(:is(:disabled, [disabled], [data-disabled]))': {
             ...hoverFocus[Variants.Secondary]?.[
