@@ -41,7 +41,7 @@ npm install --save-dev @snowball-tech/design-tokens
 
 ### Web
 
-You should not use this package directly in your web application but use the Fractal/React UI Library (`📄 packages/react`) instead.
+You should not use this package directly in your web application but use the Fractal/React UI Library (`📄 packages/fractal`) instead.
 
 ## Development
 
@@ -191,8 +191,6 @@ We can output a standard CSS files with variables:
 ### Structure
 
 #### CTI (Category-Type-Item)
-
-<br/>
 
 <br/>
 
