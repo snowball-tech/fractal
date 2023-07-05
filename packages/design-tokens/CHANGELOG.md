@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [3.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.3.0...@snowball-tech/design-tokens@3.3.1) (2023-07-05)
+
+### 🏗 Chores
+
+- **deps:** update yarn to v3.6.1 ([#15](https://github.com/snowball-tech/fractal/issues/15)) ([475682a](https://github.com/snowball-tech/fractal/commit/475682a91a603f3b4290a12a4888d30e23592cf8))
+
 # @snowball-tech/design-tokens [3.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.2.1...@snowball-tech/design-tokens@3.3.0) (2023-07-04)
 
 ### ✨ Features
