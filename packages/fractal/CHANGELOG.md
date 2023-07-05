@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.2.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.5...@snowball-tech/fractal@1.2.6) (2023-07-05)
+
+### ⚙️ Continuous Integrations
+
+- update tooling ([35e17b9](https://github.com/snowball-tech/fractal/commit/35e17b981710fa5f06d78664b9425b9e6a759f6e))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 3.3.2
+
 ## @snowball-tech/fractal [1.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.4...@snowball-tech/fractal@1.2.5) (2023-07-05)
 
 ### 🏗 Chores
