@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.2.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.7...@snowball-tech/fractal@1.2.8) (2023-07-05)
+
+### 🐛 Bug Fixes
+
+- **button:** fix the transition for primary and secondary button ([#16](https://github.com/snowball-tech/fractal/issues/16)) ([75bb2c4](https://github.com/snowball-tech/fractal/commit/75bb2c49795cab7cab1c4639e8fc33ad91a5895c))
+
 ## @snowball-tech/fractal [1.2.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.6...@snowball-tech/fractal@1.2.7) (2023-07-05)
 
 ### 👷 Build
