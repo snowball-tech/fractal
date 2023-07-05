@@ -20,7 +20,7 @@ const variantsObject = Object.values(Variants).reduce(
       ...variants,
       [variantName]: {
         '&:not(:is(:active, [data-active]))': {
-          _focus: hoverFocus[variantName],
+          _focusVisible: hoverFocus[variantName],
           _hover: hoverFocus[variantName],
         },
 
@@ -118,7 +118,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           },
         },
 
-        _focus: {
+        _focusVisible: {
           ...hoverFocus[Variants.Display],
           '&:not(:is(:disabled, [disabled], [data-disabled]))': {
             ...hoverFocus[Variants.Display]?.[
@@ -157,7 +157,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           },
         },
 
-        _focus: {
+        _focusVisible: {
           ...hoverFocus[Variants.Secondary],
           '&:not(:is(:disabled, [disabled], [data-disabled]))': {
             ...hoverFocus[Variants.Secondary]?.[
