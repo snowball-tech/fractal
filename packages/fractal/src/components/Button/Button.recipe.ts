@@ -66,6 +66,10 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       margin: 'unset',
     },
 
+    _active: {
+      transition: 'none',
+    },
+
     _disabled: {
       cursor: 'not-allowed',
     },
@@ -85,6 +89,9 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     px: 'var(--size-button-padding-horizontal)',
     py: 'var(--size-button-padding-vertical)',
     textAlign: 'center',
+    transitionDuration: '300ms',
+    transitionProperty: 'background-color, color',
+    transitionTimingFunction: 'ease-out',
   },
 
   defaultVariants: {
