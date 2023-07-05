@@ -45,9 +45,9 @@ your packages and applications the following scripts:
 - `lint:fix`: to automatically fix some linting errors/warnings of the
   package/application: `yarn run -T eslint --cache --fix .`
 - `format`: to check the formatting of the package/application:
-  `yarn run -T prettier --ignore-path <path to root>/.prettierignore --cache --check .`
+  `yarn run -T prettier --cache --check .`
 - `format:fix`: to automatically fix the format of the package/application
-  `yarn run -T prettier --ignore-path <path to root>/.prettierignore --cache --write .`
+  `yarn run -T prettier --cache --write .`
 - `types:check`: _**(when using TypeScript)**_ to check the TypeScript
   compilation the package/application: `tsc --noEmit`
 

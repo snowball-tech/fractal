@@ -9,7 +9,8 @@
       "outputs": ["dist/**"]
     },
     "build:code": {
-      "outputs": ["styled-system"]
+      "outputs": ["styled-system"],
+      "inputs": ["panda.config.ts"]
     },
     "build:info": {
       "outputs": ["dist/*.buildinfo.json"]
@@ -21,7 +22,8 @@
       "outputs": ["dist/**/*.css"]
     },
     "@snowball-tech/fractal#build:code": {
-      "outputs": ["node_modules/@snowball-tech/fractal-panda/**"]
+      "outputs": ["node_modules/@snowball-tech/fractal-panda/**"],
+      "inputs": ["panda.config.ts"]
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
