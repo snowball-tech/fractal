@@ -35,7 +35,8 @@
     "**/.yarn/releases/**/*",
     "**/build",
     "**/dist",
-    "**/out"
+    "**/out",
+    "**/node_modules"
   ],
   "files": [],
   "references": [

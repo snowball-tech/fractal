@@ -10,10 +10,10 @@ const commonConfig: Options = {
     // eslint-disable-next-line no-param-reassign
     options.outbase = './'
   },
-  external: ['react', 'react-dom', '@snowball-tech/fractal-panda'],
+  external: ['react', 'react-dom'],
   format: 'esm',
   minify: true,
-  noExternal: [],
+  noExternal: ['@snowball-tech/fractal-panda'],
   outDir: './dist',
   replaceNodeEnv: true,
   sourcemap: true,
