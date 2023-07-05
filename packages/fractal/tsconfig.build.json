@@ -1,5 +1,9 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "incremental": false
+  },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "files": ["global.d.ts", "unicons.d.ts", "index.ts"],
   "exclude": ["src/**/*.stories.*", "src/**/*.mdx"],
