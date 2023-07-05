@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.2...@snowball-tech/fractal@1.2.3) (2023-07-05)
+
+### 📦 Dependencies
+
+- try the main branch of Panda to fix the cssgen issue ([9822b4d](https://github.com/snowball-tech/fractal/commit/9822b4d6718f42c0cd7872d8cfe9c8bda2c64a8e))
+
 ## @snowball-tech/fractal [1.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.1...@snowball-tech/fractal@1.2.2) (2023-07-05)
 
 ### 👷 Build
