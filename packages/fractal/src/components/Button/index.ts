@@ -1,2 +1,1 @@
-export { default as Button } from './Button'
-export { Variants as ButtonVariants } from './Button.constants'
+export { default as Button } from './Button.js'

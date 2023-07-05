@@ -15,20 +15,13 @@
       "outputs": ["dist/*.buildinfo.json"]
     },
     "build:library": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**/*.js"]
+    },
+    "build:styles": {
+      "outputs": ["dist/**/*.css"]
     },
     "@snowball-tech/fractal#build:code": {
       "outputs": ["node_modules/@snowball-tech/fractal-panda/**"]
-    },
-    "@snowball-tech/fractal#build:info": {
-      "outputs": ["dist/fractal.buildinfo.json"]
-    },
-    "@snowball-tech/fractal#build:styles": {
-      "outputs": [
-        "dist/fractal.css",
-        "dist/global.css",
-        "dist/tokens/index.css"
-      ]
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
