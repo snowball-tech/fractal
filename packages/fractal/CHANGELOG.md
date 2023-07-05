@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.3...@snowball-tech/fractal@1.2.4) (2023-07-05)
+
+### 🐛 Bug Fixes
+
+- **fractal:** add missing preset file ([944b374](https://github.com/snowball-tech/fractal/commit/944b3746d43c647cb94ae5e81b38759f40fbc5eb))
+
+### 👷 Build
+
+- **fractal:** ship a preset to make it work with buildinfo ([f22ede8](https://github.com/snowball-tech/fractal/commit/f22ede8b98f91235d1c1f88bdd87f62c2f2ef058))
+
 ## @snowball-tech/fractal [1.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.2...@snowball-tech/fractal@1.2.3) (2023-07-05)
 
 ### 📦 Dependencies
