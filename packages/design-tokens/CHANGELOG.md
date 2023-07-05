@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [3.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.3.1...@snowball-tech/design-tokens@3.3.2) (2023-07-05)
+
+### ⚙️ Continuous Integrations
+
+- update tooling ([35e17b9](https://github.com/snowball-tech/fractal/commit/35e17b981710fa5f06d78664b9425b9e6a759f6e))
+
 ## @snowball-tech/design-tokens [3.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.3.0...@snowball-tech/design-tokens@3.3.1) (2023-07-05)
 
 ### 🏗 Chores
