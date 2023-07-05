@@ -60,7 +60,10 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       alignItems: 'center',
       display: 'flex',
       justifyContent: 'center',
-      margin: 0,
+    },
+
+    '& > p': {
+      margin: 'unset',
     },
 
     _disabled: {
