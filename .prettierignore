@@ -20,6 +20,7 @@ LICENSE
 .pnp.*
 *.lock
 *.tsbuildinfo
+vite.config.ts.timestamp*
 
 **/dist
 **/out
@@ -29,4 +30,3 @@ LICENSE
 
 **/storybook-static
 **/styled-system
-**/fractal-panda
