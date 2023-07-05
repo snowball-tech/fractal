@@ -39,7 +39,6 @@ export default defineConfig([
   },
   {
     ...commonConfig,
-    bundle: false,
     entry: ['./fractal-panda.preset.ts'],
   },
 ])
