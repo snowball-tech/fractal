@@ -1,15 +1,6 @@
 import { defineConfig } from '@pandacss/dev'
-import {
-  SizeBreakpointLg,
-  SizeBreakpointMd,
-  SizeBreakpointSm,
-  SizeBreakpointXl,
-  SizeBreakpointXs,
-  SizeBreakpointXxl,
-} from '@snowball-tech/design-tokens'
 
-import { Breakpoints } from './src/constants'
-import * as recipes from './src/recipes'
+import fractalPreset from './fractal-panda.preset'
 
 export default defineConfig({
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
@@ -17,7 +8,7 @@ export default defineConfig({
   // Don't use default theme from PandaCSS.
   eject: true,
   // Only import the base presets with useful resets and utilities.
-  presets: ['@pandacss/preset-base'],
+  presets: [fractalPreset],
 
   emitPackage: true,
   outdir: '@snowball-tech/fractal-panda',
@@ -40,27 +31,6 @@ export default defineConfig({
   prefix: 'fractal',
   jsxFactory: 'fractal',
   jsxFramework: 'react',
-
-  theme: {
-    breakpoints: {
-      [Breakpoints.lg]: SizeBreakpointLg,
-      [Breakpoints.md]: SizeBreakpointMd,
-      [Breakpoints.sm]: SizeBreakpointSm,
-      [Breakpoints.xl]: SizeBreakpointXl,
-      [Breakpoints.xs]: SizeBreakpointXs,
-      [Breakpoints.xxl]: SizeBreakpointXxl,
-    },
-
-    extend: {
-      recipes: {
-        button: recipes.button,
-        checkboxIndicator: recipes.checkboxIndicator,
-        checkboxLabel: recipes.checkboxLabel,
-        checkboxRoot: recipes.checkboxRoot,
-        typography: recipes.typography,
-      },
-    },
-  },
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 })
