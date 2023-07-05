@@ -4,7 +4,7 @@ import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 
 export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Basic typography styles',
+  description: 'Basic typographic styles',
   name: 'typography',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
@@ -20,6 +20,7 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
     variant: Object.values(Variants).reduce(
       (variants, variantName) => ({
         ...variants,
+
         [variantName]: {
           fontFamily: `var(--typography-${variantName}-font-family)`,
           fontSize: `var(--typography-${variantName}-font-size)`,
