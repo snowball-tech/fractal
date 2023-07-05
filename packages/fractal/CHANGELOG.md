@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.1...@snowball-tech/fractal@1.2.2) (2023-07-05)
+
+### 👷 Build
+
+- **fractal:** make the panda generated lib not external ([ae0a901](https://github.com/snowball-tech/fractal/commit/ae0a90118211fcc20af0758392abc5ad39090ea7))
+
 ## @snowball-tech/fractal [1.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.0...@snowball-tech/fractal@1.2.1) (2023-07-05)
 
 ### 🎨 Code Style and Formatting
