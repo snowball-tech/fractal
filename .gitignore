@@ -42,9 +42,6 @@ next-env.d.ts
 **/.env*.local
 *.pem
 
-# Vercel
-**/.vercel
-
 # IDE
 **/.idea
 **/*.ntvs*
@@ -65,7 +62,7 @@ next-env.d.ts
 .pythagora
 
 # Storybook.
-**/storybook-static
+**/storybook-static*
 
 # Vercel.
 **/.vercel
