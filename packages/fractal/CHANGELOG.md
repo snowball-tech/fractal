@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.2.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.6...@snowball-tech/fractal@1.2.7) (2023-07-05)
+
+### 👷 Build
+
+- **fractal:** fix the building of the preset ([ccb713a](https://github.com/snowball-tech/fractal/commit/ccb713a253fdbe95d66f448ba9040ac8a29d23b4))
+
 ## @snowball-tech/fractal [1.2.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.5...@snowball-tech/fractal@1.2.6) (2023-07-05)
 
 ### ⚙️ Continuous Integrations
