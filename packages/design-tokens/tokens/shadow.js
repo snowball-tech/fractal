@@ -99,5 +99,30 @@ module.exports = {
         },
       },
     },
+
+    input: {
+      base: {
+        comment: 'Shadow for input fields.',
+
+        value: '{shadow.none}',
+      },
+      hover: {
+        comment: 'Shadow when hovering input fields.',
+
+        value: '{shadow.input.base.value}',
+      },
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      focus: {
+        comment: 'Shadow when focusing input fields.',
+
+        value: '{shadow.input.base.value}',
+      },
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      disabled: {
+        comment: 'Shadow for disabled input fields.',
+
+        value: '{shadow.input.base.value}',
+      },
+    },
   },
 }

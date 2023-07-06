@@ -92,9 +92,41 @@ module.exports = {
       },
 
       input: {
-        comment: 'Background color to use on input fields.',
+        base: {
+          comment: 'Background color to use on input fields.',
 
-        value: '{color.base.white.value}',
+          value: '{color.base.white.value}',
+        },
+        hover: {
+          comment: 'Background color to use when hovering input fields.',
+
+          value: '{color.background.input.base.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        focus: {
+          comment: 'Background color to use when focusing input fields.',
+
+          value: '{color.background.input.base.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment: 'Background color to use for disabled input fields.',
+
+          value: '{color.background.input.base.value}',
+        },
+
+        error: {
+          comment:
+            'Background color to use for input fields with "error" feedback.',
+
+          value: '{color.background.input.base.value}',
+        },
+        success: {
+          comment:
+            'Background color to use for input fields with "success" feedback.',
+
+          value: '{color.background.input.base.value}',
+        },
       },
     },
   },

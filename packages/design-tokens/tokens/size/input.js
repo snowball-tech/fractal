@@ -1,14 +1,14 @@
 module.exports = {
   size: {
-    button: {
+    input: {
       padding: {
         horizontal: {
-          comment: 'Horizontal padding for any button.',
+          comment: 'Horizontal padding for any input.',
 
-          value: '{size.spacing.3.value}',
+          value: '{size.spacing.2.value}',
         },
         vertical: {
-          comment: 'Vertical padding for any button.',
+          comment: 'Vertical padding for any input.',
 
           value: '{size.spacing.1.value}',
         },
