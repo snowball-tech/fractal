@@ -1,6 +1,6 @@
 module.exports = {
   color: {
-    text: {
+    icon: {
       dark: {
         comment: 'Icon color over light background.',
 
@@ -23,7 +23,7 @@ module.exports = {
       error: {
         comment: 'Icon color for error messages.',
 
-        value: '{color.feedback.error.50.value}',
+        value: '{color.feedback.danger.50.value}',
       },
       success: {
         comment: 'Icon color for success messages.',
