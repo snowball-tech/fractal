@@ -71,14 +71,14 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     _disabled: {
-      cursor: 'not-allowed',
+      cursor: 'var(--cursor-disabled)',
     },
 
     alignItems: 'center',
     all: 'unset',
     borderRadius: 'var(--size-radius-rounded)',
     boxSizing: 'border-box',
-    cursor: 'pointer',
+    cursor: 'var(--cursor-clickable)',
     display: 'flex',
     gap: 'var(--size-spacing-2)',
     height: '48px',

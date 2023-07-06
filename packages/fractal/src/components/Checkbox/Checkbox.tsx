@@ -33,7 +33,7 @@ const checkboxContainer = cva({
         backgroundColor: 'var(--color-background-disabled)',
         border: 'var(--border-disabled)',
         color: 'var(--color-background-disabled)',
-        cursor: 'not-allowed',
+        cursor: 'var(--cursor-disabled)',
       },
     },
   },

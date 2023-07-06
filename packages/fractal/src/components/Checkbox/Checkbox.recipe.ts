@@ -13,7 +13,7 @@ export const checkboxRoot: ReturnType<typeof defineRecipe> = defineRecipe({
     all: 'unset',
     backgroundColor: 'var(--color-base-white)',
     border: 'var(--size-border-2) solid var(--color-border-default)',
-    cursor: 'pointer',
+    cursor: 'var(--cursor-clickable)',
     display: 'flex',
     height: '24px',
     justifyContent: 'center',
@@ -49,7 +49,7 @@ export const checkboxRoot: ReturnType<typeof defineRecipe> = defineRecipe({
             backgroundColor: `var(--color-background-disabled)`,
             borderColor: 'var(--color-border-disabled)',
             color: 'var(--color-text-disabled)',
-            cursor: 'not-allowed',
+            cursor: 'var(--cursor-disabled)',
           },
         },
       }),
@@ -103,7 +103,7 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     color: 'var(--color-text-dark)',
-    cursor: 'pointer',
+    cursor: 'var(--cursor-clickable)',
     maxWidth: '100%',
     overflow: 'auto',
     overflowWrap: 'break-word',
@@ -121,7 +121,7 @@ export const checkboxLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     disabled: {
       true: {
         color: 'var(--color-text-disabled)',
-        cursor: 'not-allowed',
+        cursor: 'var(--cursor-disabled)',
       },
     },
 
