@@ -1,3 +1,14 @@
+# @snowball-tech/design-tokens [3.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.3.2...@snowball-tech/design-tokens@3.4.0) (2023-07-06)
+
+### ✨ Features
+
+- **design-tokens:** add `cursor` tokens ([aa47f36](https://github.com/snowball-tech/fractal/commit/aa47f360e6893a773ea7753e2a56dcb0f70f98ad))
+- **design-tokens:** add tokens for Input field ([248a71c](https://github.com/snowball-tech/fractal/commit/248a71cbc7ae6d7a77e9b474a017e73e58613541))
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix issues with some tokens naming ([d4c5ed6](https://github.com/snowball-tech/fractal/commit/d4c5ed6826cee951e27599392f4fc22ea4619987))
+
 ## @snowball-tech/design-tokens [3.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.3.1...@snowball-tech/design-tokens@3.3.2) (2023-07-05)
 
 ### ⚙️ Continuous Integrations
