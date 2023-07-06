@@ -30,7 +30,7 @@ module.exports = {
       error: {
         comment: 'Text color for error messages.',
 
-        value: '{color.feedback.error.50.value}',
+        value: '{color.feedback.danger.50.value}',
       },
       success: {
         comment: 'Text color for success messages.',

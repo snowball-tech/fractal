@@ -137,7 +137,7 @@ module.exports = {
       error: {
         comment: 'Border for input fields with "error" feedback.',
 
-        value: '{size.border.2.value} solid {color.feedback.error.50.value}',
+        value: '{size.border.2.value} solid {color.feedback.danger.50.value}',
       },
       success: {
         comment: 'Border for input fields with "success" feedback.',
