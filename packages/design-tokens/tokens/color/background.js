@@ -90,6 +90,12 @@ module.exports = {
           },
         },
       },
+
+      input: {
+        comment: 'Background color to use on input fields.',
+
+        value: '{color.base.white.value}',
+      },
     },
   },
 }
