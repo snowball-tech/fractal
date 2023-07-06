@@ -1,17 +1,22 @@
 module.exports = {
   size: {
     radius: {
-      rectangle: {
+      0: {
         value: 0,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      medium: {
+      xs: {
+        value: 4,
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      s: {
         value: 8,
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-      large: {
+      m: {
         value: 16,
       },
 
