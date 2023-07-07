@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 
-import Checkbox from './Checkbox'
-import { DEFAULT_VARIANT, Variants } from './Checkbox.constants'
+import InputCheckbox from './InputCheckbox'
+import { DEFAULT_VARIANT, Variants } from './InputCheckbox.constants'
 
-type CheckboxProps = ComponentProps<typeof Checkbox>
+type InputCheckboxProps = ComponentProps<typeof InputCheckbox>
 
 const checkStateType = { type: { summary: "boolean | 'indeterminate'" } }
 
@@ -32,7 +32,7 @@ const meta = {
     label: 'This is a checkbox',
     required: false,
   },
-  component: Checkbox,
+  component: InputCheckbox,
   parameters: {
     componentSubtitle: '???',
     controls: {
@@ -40,8 +40,8 @@ const meta = {
     },
   },
 
-  title: 'Checkbox',
-} satisfies Meta<CheckboxProps>
+  title: 'InputCheckbox',
+} satisfies Meta<InputCheckboxProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -64,43 +64,53 @@ export const Checkboxes: Story = {
         gap: 'var(--size-spacing-2)',
       }}
     >
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.White}"`}
         variant="white"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Black}"`}
         variant="black"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Blue}"`}
         variant="blue"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Green}"`}
         variant="green"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Pink}"`}
         variant="pink"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Purple}"`}
         variant="purple"
       />
-      <Checkbox
+      <InputCheckbox
         defaultChecked
         label={`Variant "${Variants.Yellow}"`}
         variant="yellow"
       />
-      <Checkbox defaultChecked disabled label={`Disabled`} variant="white" />
-      <Checkbox defaultChecked label={`Required`} required variant="white" />
+      <InputCheckbox
+        defaultChecked
+        disabled
+        label={`Disabled`}
+        variant="white"
+      />
+      <InputCheckbox
+        defaultChecked
+        label={`Required`}
+        required
+        variant="white"
+      />
     </div>
   ),
 }

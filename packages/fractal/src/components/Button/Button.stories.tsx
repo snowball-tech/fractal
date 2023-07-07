@@ -5,7 +5,7 @@ import {
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 
 import Button from './Button'
 import { DEFAULT_VARIANT, Variants } from './Button.constants'

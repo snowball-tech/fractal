@@ -1,8 +1,8 @@
-import type { ElementType, ReactNode } from 'react'
+import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
 
 import { Variants } from './Typography.constants'
 
-export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
+export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
   /** The text to display. */
   children: ReactNode
   /** The HTML element to use to display your text. */

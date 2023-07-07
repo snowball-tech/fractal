@@ -32,10 +32,15 @@ const fractalPreset = definePreset({
     extend: {
       recipes: {
         button: recipes.button,
-        checkboxIndicator: recipes.checkboxIndicator,
-        checkboxLabel: recipes.checkboxLabel,
-        checkboxRoot: recipes.checkboxRoot,
+        inputCheckboxCheckmark: recipes.inputCheckboxCheckmark,
+        inputCheckboxLabel: recipes.inputCheckboxLabel,
+        inputCheckbox: recipes.inputCheckbox,
         typography: recipes.typography,
+        inputTextField: recipes.inputTextField,
+        inputTextLabel: recipes.inputTextLabel,
+        inputTextIcon: recipes.inputTextIcon,
+        inputText: recipes.inputText,
+        inputTextMessage: recipes.inputTextMessage,
       },
     },
   },

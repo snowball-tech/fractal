@@ -1,6 +1,7 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
 import { button } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography'
 
@@ -16,6 +17,7 @@ export default function Button({
   iconPosition = 'right',
   label,
   onClick,
+  type = 'button',
   variant = DEFAULT_VARIANT,
   ...props
 }: ButtonProps) {
@@ -23,8 +25,9 @@ export default function Button({
     <button
       className={cx(props.className, button({ variant }))}
       disabled={disabled}
+      type={type}
       {...(isFunction(onClick) ? { onClick: (event) => onClick(event) } : {})}
-      {...props}
+      {...omit(['className'], props)}
     >
       {icon && iconPosition === 'left' && icon}
 

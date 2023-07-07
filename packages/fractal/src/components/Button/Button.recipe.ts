@@ -153,7 +153,8 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
               '&:not(:is(:disabled, [disabled], [data-disabled]))'
             ],
 
-            margin: '0 -1px',
+            margin:
+              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
           },
         },
 
@@ -164,7 +165,8 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
               '&:not(:is(:disabled, [disabled], [data-disabled]))'
             ],
 
-            margin: '0 -1px',
+            margin:
+              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
           },
         },
 
@@ -175,7 +177,8 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
               '&:not(:is(:disabled, [disabled], [data-disabled]))'
             ],
 
-            margin: '0 -1px',
+            margin:
+              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
           },
         },
       },
