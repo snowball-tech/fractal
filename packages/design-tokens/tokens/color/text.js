@@ -23,7 +23,7 @@ module.exports = {
       placeholder: {
         comment: 'Text color for placeholders.',
 
-        value: '{color.base.grey.50.value}',
+        value: '{color.base.grey.30.value}',
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
