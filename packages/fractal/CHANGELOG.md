@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.2...@snowball-tech/fractal@1.4.3) (2023-07-07)
+
+### 🐛 Bug Fixes
+
+- **input-text:** increase spacing between groups in story ([cae88c9](https://github.com/snowball-tech/fractal/commit/cae88c918102cb70bcbde361f46a2fd65804025b))
+
 ## @snowball-tech/fractal [1.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.1...@snowball-tech/fractal@1.4.2) (2023-07-07)
 
 ### 🐛 Bug Fixes
