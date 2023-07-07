@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [1.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.12...@snowball-tech/fractal@1.3.0) (2023-07-07)
+
+### ✨ Features
+
+- **input-text:** add the input text component ([3c4b856](https://github.com/snowball-tech/fractal/commit/3c4b856ad9d751c688636309c22a9e7f6133f8fc))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 4.1.0
+
 ## @snowball-tech/fractal [1.2.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.11...@snowball-tech/fractal@1.2.12) (2023-07-07)
 
 ### 📦 Dependencies
