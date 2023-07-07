@@ -9,6 +9,7 @@ import {
   inputTextField,
   inputTextIcon,
   inputTextLabel,
+  typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
@@ -71,7 +72,7 @@ export default function InputText({
 
   const inputElement = (
     <input
-      className={inputText()}
+      className={cx(inputText(), typography({ variant: 'body-1' }))}
       disabled={disabled}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       name={name}

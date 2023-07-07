@@ -1,6 +1,5 @@
 import {
   UilCancel as CancelIcon,
-  UilBan as ForbiddenIcon,
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
@@ -46,7 +45,6 @@ export const Playground: StoryObj<ButtonProps & { withIcon: boolean }> = {
       if: { arg: 'withIcon' },
       mapping: {
         Cancel: <CancelIcon />,
-        Forbidden: <ForbiddenIcon />,
         Send: <SendIcon />,
         Star: <StarIcon />,
       },
@@ -91,13 +89,13 @@ export const Buttons: Story = {
       <Button disabled label='"Display" disabled button' variant="display" />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<StarIcon />}
         label='"Display" disabled button with right icon'
         variant="display"
       />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<StarIcon />}
         iconPosition="left"
         label='"Display" disabled button with left icon'
         variant="display"
@@ -115,12 +113,12 @@ export const Buttons: Story = {
       <Button disabled label="Primary disabled button" />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<SendIcon />}
         label="Primary disabled button with right icon"
       />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<SendIcon />}
         iconPosition="left"
         label="Primary disabled button with left icon"
       />
@@ -142,13 +140,13 @@ export const Buttons: Story = {
       <Button disabled label="Secondary disabled button" variant="secondary" />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<CancelIcon />}
         label="Secondary disabled button with right icon"
         variant="secondary"
       />
       <Button
         disabled
-        icon={<ForbiddenIcon />}
+        icon={<CancelIcon />}
         iconPosition="left"
         label="Secondary disabled button with left icon"
         variant="secondary"
