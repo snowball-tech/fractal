@@ -58,7 +58,7 @@
     "clean:fonts": "rm -Rf assets/fonts >/dev/null 2>&1 || true",
     "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
     "predev": "yarn run -T turbo run update:fonts build:code --filter=@snowball-tech/fractal",
-    "dev": "yarn run predev && yarn storybook dev -p 6006 --no-open\"",
+    "dev": "yarn run predev && yarn storybook dev -p 6006 --no-open",
     "format": "yarn run -T prettier --cache --check .",
     "format:fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run lint:scripts && yarn run lint:styles",
@@ -117,7 +117,7 @@
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
-    "@snowball-tech/design-tokens": "3.4.1",
+    "@snowball-tech/design-tokens": "3.4.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
