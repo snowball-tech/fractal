@@ -28,7 +28,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get changed files from Fractal components library
+      - if: github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/')
+        name: Do not update Chromatic on Renovate PRs
+        run: echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
+
+      - if: env.SKIP_CHROMATIC != 1
+        name: Get changed files from Fractal components library
         id: changed-files-specific
         uses: tj-actions/changed-files@v37
         with:
@@ -44,7 +49,7 @@ jobs:
             .github/workflows/quality.yml
             .github/workflows/storybook.yml
 
-      - if: steps.changed-files-specific.outputs.any_changed != 'true'
+      - if: env.SKIP_CHROMATIC != 1 && steps.changed-files-specific.outputs.any_changed != 'true'
         name: No need to update Chromatic
         run: |
           echo "There are no changes in Fractal components library."
