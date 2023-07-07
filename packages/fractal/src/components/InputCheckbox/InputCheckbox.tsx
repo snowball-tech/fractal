@@ -2,25 +2,24 @@ import { UilCheck as CheckIcon } from '@iconscout/react-unicons'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
 import { css, cva, cx } from '@snowball-tech/fractal-panda/css'
 import {
-  checkboxIndicator,
-  checkboxLabel,
-  checkboxRoot,
+  inputCheckbox,
+  inputCheckboxCheckmark,
+  inputCheckboxLabel,
 } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useState } from 'react'
 
 import { Typography } from '@/components/Typography'
 
-import { DEFAULT_VARIANT } from './Checkbox.constants'
-import type { CheckboxProps } from './Checkbox.types'
+import { DEFAULT_VARIANT } from './InputCheckbox.constants'
+import type { InputCheckboxProps } from './InputCheckbox.types'
 
-const checkboxContainer = cva({
+const checkboxContainerClassName = cva({
   base: {
     alignItems: 'center',
     backgroundColor: 'var(--color-base-white)',
     border: 'var(--border-1)',
-    borderRadius: 'var(--size-radius-medium)',
+    borderRadius: 'var(--size-radius-s)',
     color: 'var(--color-text-dark)',
     display: 'flex',
     gap: 'var(--size-spacing-2)',
@@ -42,26 +41,24 @@ const checkboxContainer = cva({
 /**
  * `Checkbox` component is used to allow a user to make a binary choice.
  */
-export default function Checkbox({
+export default function InputCheckbox({
   checked,
   defaultChecked,
   disabled = false,
-  id = uniqueId('fractal-checkbox-'),
+  id = uniqueId('fractal-input-checkbox-'),
   label,
   name,
   onCheckedChange,
   required = false,
   value = 'on',
   variant = DEFAULT_VARIANT,
-}: CheckboxProps) {
-  const [htmlId] = useState(id)
-
+}: InputCheckboxProps) {
   return (
-    <div className={cx('group', checkboxContainer({ disabled }))}>
+    <div className={cx('group', checkboxContainerClassName({ disabled }))}>
       <RxCheckbox.Root
-        id={htmlId}
+        id={id}
         {...(checked !== undefined ? { checked } : {})}
-        className={checkboxRoot({ variant })}
+        className={inputCheckbox({ variant })}
         {...(defaultChecked !== undefined ? { defaultChecked } : {})}
         disabled={disabled}
         name={name}
@@ -72,15 +69,15 @@ export default function Checkbox({
           : {})}
       >
         <RxCheckbox.Indicator
-          className={checkboxIndicator({ disabled, variant })}
+          className={inputCheckboxCheckmark({ disabled, variant })}
         >
           <CheckIcon />
         </RxCheckbox.Indicator>
       </RxCheckbox.Root>
 
       <label
-        className={checkboxLabel({ disabled, required, variant })}
-        htmlFor={htmlId}
+        className={inputCheckboxLabel({ disabled, required, variant })}
+        htmlFor={id}
       >
         <Typography className={css({ m: 0 })} variant="body-1">
           {label}

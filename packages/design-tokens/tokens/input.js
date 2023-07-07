@@ -142,6 +142,13 @@ module.exports = {
           value: '{color.text.disabled.value}',
         },
 
+        placeholder: {
+          comment: 'Text color to use for input fields placeholder.',
+
+          value: '{color.text.placeholder.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         error: {
           comment: 'Text color to use for input fields with "error" feedback.',
 

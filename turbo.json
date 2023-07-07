@@ -49,6 +49,10 @@
     "update:fonts": {
       "outputs": ["**/*.ttf", "**/*.woff", "**/*.woff2"]
     },
+    "@snowball-tech/fractal#update:fonts": {
+      "outputs": ["assets/fonts/**"],
+      "inputs": ["../../scripts/update-fonts.sh"]
+    },
     "format": {},
     "format:fix": {},
     "//#format": {

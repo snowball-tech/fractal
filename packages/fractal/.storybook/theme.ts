@@ -3,7 +3,7 @@ import {
   ColorBackgroundBodyLight as ContentBackgroundColor,
   FontFamilyNormal as FontFamily,
   ColorBrandPrimary as PrimaryColor,
-  SizeRadiusLarge as Radius,
+  SizeRadiusM as Radius,
   ColorBrandSecondary as SecondaryColor,
   ColorBaseWhite as White,
 } from '@snowball-tech/design-tokens/dist/web/react/design-tokens'

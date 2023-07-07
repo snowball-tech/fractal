@@ -3,9 +3,9 @@ import type {
   CheckboxProps as RxCheckboxProps,
 } from '@radix-ui/react-checkbox'
 
-import { Variants } from './Checkbox.constants'
+import { Variants } from './InputCheckbox.constants'
 
-export interface CheckboxProps extends RxCheckboxProps {
+export interface InputCheckboxProps extends RxCheckboxProps {
   /**
    * The controlled checked state of the checkbox.
    *
@@ -17,22 +17,34 @@ export interface CheckboxProps extends RxCheckboxProps {
    * Use when you do not need to control its checked state.
    */
   defaultChecked?: CheckedState
-  /** When `true`, prevents the user from interacting with the checkbox. */
+  /** Prevents the user from interacting with the checkbox. */
   disabled?: boolean
-  /** A unique HTML id for the checkbox. */
+  /**
+   * A unique HTML id for the checkbox.
+   * This allows you to link the checkbox with a label.
+   *
+   * If none is given, one will be generated automatically.
+   */
   id?: string
   /** The label of the checkbox. */
   label: string
   /**
-   * The name of the checkbox. Submitted with its owning form as part of a
-   * name/value pair
+   * The name of the checkbox.
+   * It is used to reference the checkbox in a form submission.
    */
   name?: string
   /** Event handler called when the checked state of the checkbox changes. */
   onCheckedChange?: (checked: CheckedState) => void
-  /** When `true`, indicates that the user must check the checkbox before the owning form can be submitted. */
+  /**
+   * Indicates that the user must check the checkbox before continuing (e.g.
+   * sending a form).
+   */
   required?: boolean
-  /** The value given as data when submitted with a name. */
+  /**
+   * The value submitted in the submitted form.
+   *
+   * Default value (`on`) should be good most of the time.
+   */
   value?: string
   /** The variant of the checkbox (color) to use. */
   variant?: `${Variants}`
