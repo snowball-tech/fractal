@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.1...@snowball-tech/fractal@1.4.2) (2023-07-07)
+
+### 🐛 Bug Fixes
+
+- **fractal:** fix feedbacks on input and button ([8356688](https://github.com/snowball-tech/fractal/commit/8356688c09c5fad56a8d550391feef8fd96e2baa))
+
 ## @snowball-tech/fractal [1.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.0...@snowball-tech/fractal@1.4.1) (2023-07-07)
 
 ### Dependencies
