@@ -89,7 +89,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
       alignItems: 'flex-end',
       display: 'flex',
       gap: 'var(--size-spacing-2)',
-      marginBottom: 'var(--size-spacing-1)',
+      marginBottom: 'var(--size-spacing-2)',
     }}
   >
     {children}
