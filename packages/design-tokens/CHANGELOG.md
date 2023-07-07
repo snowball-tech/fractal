@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [4.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.4.1...@snowball-tech/design-tokens@4.0.0) (2023-07-07)
+
+### 💥 Breaking changes
+
+- **design-tokens:** add new grey color ([fe0d825](https://github.com/snowball-tech/fractal/commit/fe0d825925d36195409c2ea9058b1dbcdf7417a2))
+
+### Breaking changes
+
+- **design-tokens:** Refactor the organization of the tokens
+
 ## @snowball-tech/design-tokens [3.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.4.0...@snowball-tech/design-tokens@3.4.1) (2023-07-06)
 
 ### 🐛 Bug Fixes
