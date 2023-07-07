@@ -44,451 +44,461 @@ module.exports = {
   },
 
   typography: {
-    'display-1': {
-      comment: 'Use for marketing *(only)* number one punchlines',
+    display: {
+      1: {
+        comment: 'Use for marketing *(only)* number one punchlines',
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
-      },
-      fontSize: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 48,
+        fontFamily: {
+          value: '{font.family.normal.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 80,
+        fontSize: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 48,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 80,
+          },
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 64,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 96,
+          },
         },
       },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 64,
+
+      2: {
+        comment: 'Use for marketing *(only)* secondary punchlines',
+
+        fontFamily: {
+          value: '{font.family.normal.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 96,
+        fontSize: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 40,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 72,
+          },
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 48,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 80,
+          },
+        },
+      },
+
+      wide: {
+        comment: 'Use for marketing *(only)* highlights',
+
+        fontFamily: {
+          value: '{font.family.wide.value}',
+        },
+        fontSize: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 32,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 56,
+          },
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 40,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 64,
+          },
         },
       },
     },
 
-    'display-2': {
-      comment: 'Use for marketing *(only)* secondary punchlines',
+    heading: {
+      1: {
+        comment: 'Use for marketing and/or product H1',
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
+        fontFamily: {
+          value: '{font.family.normal.value}',
+        },
+        fontSize: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 32,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 40,
+          },
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 44,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 56,
+          },
+        },
       },
-      fontSize: {
-        [breakpoints.xs]: {
+
+      2: {
+        comment: 'Use for marketing and/or product H2',
+
+        fontFamily: {
+          value: '{font.family.normal.value}',
+        },
+        fontSize: {
+          [breakpoints.xs]: {
+            group: 'size',
+            value: 28,
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          [breakpoints.md]: {
+            group: 'size',
+            value: 32,
+          },
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
           group: 'size',
           value: 40,
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 72,
-        },
       },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 48,
-        },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 80,
-        },
-      },
-    },
 
-    'display-wide': {
-      comment: 'Use for marketing *(only)* highlights',
+      3: {
+        comment: 'Use for marketing and/or product H3',
 
-      fontFamily: {
-        value: '{font.family.wide.value}',
-      },
-      fontSize: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 32,
+        fontFamily: {
+          value: '{font.family.normal.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
+        fontSize: {
           group: 'size',
-          value: 56,
+          value: 24,
         },
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 40,
+        fontWeight: {
+          value: '{font.weight.bold.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 64,
+        letterSpacing: {
+          value: 0,
         },
-      },
-    },
-
-    'heading-1': {
-      comment: 'Use for marketing and/or product H1',
-
-      fontFamily: {
-        value: '{font.family.normal.value}',
-      },
-      fontSize: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 32,
-        },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 40,
-        },
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 44,
-        },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
-          group: 'size',
-          value: 56,
-        },
-      },
-    },
-
-    'heading-2': {
-      comment: 'Use for marketing and/or product H2',
-
-      fontFamily: {
-        value: '{font.family.normal.value}',
-      },
-      fontSize: {
-        [breakpoints.xs]: {
-          group: 'size',
-          value: 28,
-        },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        [breakpoints.md]: {
+        lineHeight: {
           group: 'size',
           value: 32,
         },
       },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        group: 'size',
-        value: 40,
-      },
-    },
 
-    'heading-3': {
-      comment: 'Use for marketing and/or product H3',
+      '3-link': {
+        comment: 'Use for marketing and/or product H3 links',
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
+        fontFamily: {
+          value: '{typography.heading.3.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.heading.3.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.heading.3.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.heading.3.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.heading.3.lineHeight.value}',
+        },
+        textDecoration: {
+          value: 'underline',
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: 24,
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        group: 'size',
-        value: 32,
-      },
-    },
 
-    'heading-3-link': {
-      comment: 'Use for marketing and/or product H3 links',
+      4: {
+        comment: 'Use for marketing and/or product H4',
 
-      fontFamily: {
-        value: '{typography.heading-3.fontFamily.value}',
+        fontFamily: {
+          value: '{font.family.normal.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: 20,
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          group: 'size',
+          value: 24,
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: '{typography.heading-3.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{typography.heading-3.fontWeight.value}',
-      },
-      letterSpacing: {
-        value: '{typography.heading-3.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.heading-3.lineHeight.value}',
-      },
-      textDecoration: {
-        value: 'underline',
-      },
-    },
 
-    'heading-4': {
-      comment: 'Use for marketing and/or product H4',
+      '4-link': {
+        comment: 'Use for marketing and/or product H4 links',
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: 20,
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        group: 'size',
-        value: 24,
-      },
-    },
-
-    'heading-4-link': {
-      comment: 'Use for marketing and/or product H4 links',
-
-      fontFamily: {
-        value: '{typography.heading-4.fontFamily.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: '{typography.heading-4.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{typography.heading-4.fontWeight.value}',
-      },
-      letterSpacing: {
-        value: '{typography.heading-4.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.heading-4.lineHeight.value}',
-      },
-      textDecoration: {
-        value: 'underline',
+        fontFamily: {
+          value: '{typography.heading.4.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.heading.4.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.heading.4.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.heading.4.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.heading.4.lineHeight.value}',
+        },
+        textDecoration: {
+          value: 'underline',
+        },
       },
     },
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    'body-1': {
-      comment: 'Use for marketing and/or product regular body text',
+    body: {
+      1: {
+        comment: 'Use for marketing and/or product regular body text',
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
+        fontFamily: {
+          value: '{font.family.normal.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: 16,
+        },
+        fontWeight: {
+          value: '{font.weight.standard.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          group: 'size',
+          value: 22,
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: 16,
-      },
-      fontWeight: {
-        value: '{font.weight.standard.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        group: 'size',
-        value: 22,
-      },
-    },
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    'body-1-median': {
-      comment: 'Use for marketing and/or product median body text',
 
-      fontFamily: {
-        value: '{typography.body-1.fontFamily.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-1.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{font.weight.median.value}',
-      },
-      letterSpacing: {
-        value: '{typography.body-1.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-1.lineHeight.value}',
-      },
-    },
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    'body-1-bold': {
-      comment: 'Use for marketing and/or product bold body text',
+      '1-median': {
+        comment: 'Use for marketing and/or product median body text',
 
-      fontFamily: {
-        value: '{typography.body-1.fontFamily.value}',
+        fontFamily: {
+          value: '{typography.body.1.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.1.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{font.weight.median.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.1.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.1.lineHeight.value}',
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-1.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: '{typography.body-1.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-1.lineHeight.value}',
-      },
-    },
-    'body-1-link': {
-      comment: 'Use for marketing and/or product links on body text',
 
-      fontFamily: {
-        value: '{typography.body-1-bold.fontFamily.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-1-bold.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{typography.body-1-bold.fontWeight.value}',
-      },
-      letterSpacing: {
-        value: '{typography.body-1-bold.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-1-bold.lineHeight.value}',
-      },
-      textDecoration: {
-        value: 'underline',
-      },
-    },
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      '1-bold': {
+        comment: 'Use for marketing and/or product bold body text',
 
-    'body-2': {
-      comment: 'Use for marketing and/or product regular low body text',
+        fontFamily: {
+          value: '{typography.body.1.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.1.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.1.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.1.lineHeight.value}',
+        },
+      },
 
-      fontFamily: {
-        value: '{font.family.normal.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: 14,
-      },
-      fontWeight: {
-        value: '{font.weight.standard.value}',
-      },
-      letterSpacing: {
-        value: 0,
-      },
-      lineHeight: {
-        group: 'size',
-        value: 20,
-      },
-    },
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    'body-2-median': {
-      comment: 'Use for marketing and/or product median low body text',
+      '1-link': {
+        comment: 'Use for marketing and/or product links on body text',
 
-      fontFamily: {
-        value: '{typography.body-2.fontFamily.value}',
+        fontFamily: {
+          value: '{typography.body.1-bold.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.1-bold.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.body.1-bold.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.1-bold.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.1-bold.lineHeight.value}',
+        },
+        textDecoration: {
+          value: 'underline',
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-2.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{font.weight.median.value}',
-      },
-      letterSpacing: {
-        value: '{typography.body-2.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-2.lineHeight.value}',
-      },
-    },
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    'body-2-bold': {
-      comment: 'Use for marketing and/or product bold low body text',
 
-      fontFamily: {
-        value: '{typography.body-2.fontFamily.value}',
-      },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-2.fontSize.value}',
-      },
-      fontWeight: {
-        value: '{font.weight.bold.value}',
-      },
-      letterSpacing: {
-        value: '{typography.body-2.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-2.lineHeight.value}',
-      },
-    },
-    'body-2-link': {
-      comment: 'Use for marketing and/or product links on low body text',
+      2: {
+        comment: 'Use for marketing and/or product regular low body text',
 
-      fontFamily: {
-        value: '{typography.body-2-bold.fontFamily.value}',
+        fontFamily: {
+          value: '{font.family.normal.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: 14,
+        },
+        fontWeight: {
+          value: '{font.weight.standard.value}',
+        },
+        letterSpacing: {
+          value: 0,
+        },
+        lineHeight: {
+          group: 'size',
+          value: 20,
+        },
       },
-      fontSize: {
-        group: 'size',
-        value: '{typography.body-2-bold.fontSize.value}',
+
+      '2-median': {
+        comment: 'Use for marketing and/or product median low body text',
+
+        fontFamily: {
+          value: '{typography.body.2.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.2.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{font.weight.median.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.2.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.2.lineHeight.value}',
+        },
       },
-      fontWeight: {
-        value: '{typography.body-2-bold.fontWeight.value}',
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      '2-bold': {
+        comment: 'Use for marketing and/or product bold low body text',
+
+        fontFamily: {
+          value: '{typography.body.2.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.2.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{font.weight.bold.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.2.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.2.lineHeight.value}',
+        },
       },
-      letterSpacing: {
-        value: '{typography.body-2-bold.letterSpacing.value}',
-      },
-      lineHeight: {
-        group: 'size',
-        value: '{typography.body-2-bold.lineHeight.value}',
-      },
-      textDecoration: {
-        value: 'underline',
+
+      '2-link': {
+        comment: 'Use for marketing and/or product links on low body text',
+
+        fontFamily: {
+          value: '{typography.body.2-bold.fontFamily.value}',
+        },
+        fontSize: {
+          group: 'size',
+          value: '{typography.body.2-bold.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.body.2-bold.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.body.2-bold.letterSpacing.value}',
+        },
+        lineHeight: {
+          group: 'size',
+          value: '{typography.body.2-bold.lineHeight.value}',
+        },
+        textDecoration: {
+          value: 'underline',
+        },
       },
     },
 
@@ -516,6 +526,7 @@ module.exports = {
         value: 16,
       },
     },
+
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     'caption-median': {
       comment: 'Use for marketing and/or product labels and captions',
@@ -538,6 +549,7 @@ module.exports = {
         value: '{typography.caption.lineHeight.value}',
       },
     },
+
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     'caption-bold': {
       comment: 'Use for marketing and/or product bold labels and captions',
@@ -560,6 +572,7 @@ module.exports = {
         value: '{typography.caption.lineHeight.value}',
       },
     },
+
     'caption-link': {
       comment:
         'Use for marketing and/or product links on labels and/or captions',

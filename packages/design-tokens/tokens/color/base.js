@@ -5,6 +5,7 @@ module.exports = {
       grey: {
         50: { comment: 'Grey Tone 50', value: '#B7B1A6' },
         70: { comment: 'Grey Tone 70', value: '#DDD9D4' },
+        90: { comment: 'Grey Tone 90', value: '#F5F1EC' },
       },
       white: { comment: 'White Tone 100', value: '#FFFFFF' },
 
