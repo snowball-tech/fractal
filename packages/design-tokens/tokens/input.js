@@ -60,7 +60,7 @@ module.exports = {
         disabled: {
           comment: 'Background color to use for disabled input fields.',
 
-          value: '{color.background.disabled.value}',
+          value: '{color.base.grey.90.value}',
         },
 
         error: {

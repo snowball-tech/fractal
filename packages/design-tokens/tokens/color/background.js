@@ -9,7 +9,7 @@ module.exports = {
         comment:
           'Background color to use on most disabled elements (e.g. buttons).',
 
-        value: '{color.base.grey.90.value}',
+        value: '{color.base.grey.70.value}',
       },
     },
   },

@@ -24,6 +24,7 @@ module.exports = {
           value: '{border.disabled.value}',
         },
       },
+
       primary: {
         base: {
           comment: 'Border for primary buttons.',
@@ -47,6 +48,7 @@ module.exports = {
           value: '{shadow.button.primary.base.value}',
         },
       },
+
       secondary: {
         base: {
           comment: 'Border for secondary buttons.',
@@ -101,6 +103,7 @@ module.exports = {
             value: '{color.background.button.display.base.value}',
           },
         },
+
         primary: {
           base: {
             comment: 'Background color to use on primary buttons.',
@@ -126,6 +129,7 @@ module.exports = {
             value: '{color.background.disabled.value}',
           },
         },
+
         secondary: {
           base: {
             comment: 'Background color to use on secondary buttons.',
@@ -181,6 +185,7 @@ module.exports = {
             value: '{color.icon.disabled.value}',
           },
         },
+
         primary: {
           base: {
             comment: 'Icon color to use on primary buttons.',
@@ -206,6 +211,7 @@ module.exports = {
             value: '{color.icon.button.primary.base.value}',
           },
         },
+
         secondary: {
           base: {
             comment: 'Icon color to use on secondary buttons.',
@@ -261,6 +267,7 @@ module.exports = {
             value: '{color.text.disabled.value}',
           },
         },
+
         primary: {
           base: {
             comment: 'Text color to use on primary buttons.',
@@ -286,6 +293,7 @@ module.exports = {
             value: '{color.text.button.primary.base.value}',
           },
         },
+
         secondary: {
           base: {
             comment: 'Text color to use on secondary buttons.',
@@ -342,6 +350,7 @@ module.exports = {
           value: '{shadow.none.value}',
         },
       },
+
       primary: {
         base: {
           comment: 'Shadow for primary elements (e.g. buttons).',
@@ -367,6 +376,7 @@ module.exports = {
           value: '{shadow.button.primary.base.value}',
         },
       },
+
       secondary: {
         base: {
           comment: 'Shadow for secondary elements (e.g. buttons).',
@@ -403,6 +413,7 @@ module.exports = {
 
           value: '{size.spacing.3.value}',
         },
+
         vertical: {
           comment: 'Vertical padding for any button.',
 
