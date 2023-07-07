@@ -63,7 +63,7 @@
     "update:references": "workspaces-to-typescript-project-references --includesRoot"
   },
   "devDependencies": {
-    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.9.0",
+    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.2",
     "@qiwi/multi-semantic-release": "^7.0.0",
     "@snowball-tech/eslint-config": "^5.1.3",
     "@snowball-tech/prettier-config": "^1.3.3",

@@ -3173,30 +3173,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monorepo-utils/package-utils@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "@monorepo-utils/package-utils@npm:2.9.0"
+"@monorepo-utils/package-utils@npm:^2.10.2":
+  version: 2.10.2
+  resolution: "@monorepo-utils/package-utils@npm:2.10.2"
   dependencies:
     globby: ^11.0.1
     load-json-file: ^6.2.0
     upath: ^2.0.1
     yaml: ^2.1.3
-  checksum: 6d167ad9f402bab8c4bfa11b1a6bdd741e1d9d4745ced6b58eae34a6d4f74fd033578f42657ff72aedac442499ac5890e15c0cb94820d3b9873361778925728e
+  checksum: fa8ff74b63a5760bb5088c1897f2e82c77d8c5e60858141d354b434fcefdf19a8d590721ddec328821fecfe8797018bdb79ad20be02a19d168859d19f03823ad
   languageName: node
   linkType: hard
 
-"@monorepo-utils/workspaces-to-typescript-project-references@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "@monorepo-utils/workspaces-to-typescript-project-references@npm:2.9.0"
+"@monorepo-utils/workspaces-to-typescript-project-references@npm:^2.10.2":
+  version: 2.10.2
+  resolution: "@monorepo-utils/workspaces-to-typescript-project-references@npm:2.10.2"
   dependencies:
-    "@monorepo-utils/package-utils": ^2.9.0
+    "@monorepo-utils/package-utils": ^2.10.2
     comment-json: ^3.0.3
     meow: ^7.1.1
     semver-match: 0.1.1
     upath: ^2.0.1
   bin:
     workspaces-to-typescript-project-references: bin/cmd.js
-  checksum: 0cd4ceaaddaa5fe0398578c164cf718056a8158f5576538f8b57606cb6919cdf50f165ba7091c88ce4dc21336572dba8cfddba3b9392183d2e7d3dda6c19230b
+  checksum: 076575a837a6a928e029eeac284278e2953638a60632264d60e2efcdb216fba1d8de4fc2a74ab598ad71663a87cc595cbe3b8732da7d4845b44f1fb321a4da74
   languageName: node
   linkType: hard
 
@@ -4623,10 +4623,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:4.0.0":
-  version: 4.0.0
-  resolution: "@snowball-tech/design-tokens@npm:4.0.0"
-  checksum: 1c477f6051a449f6abbc6dcfd8d6dbce7a39cfc24326134ffbcb26097359f8c90134a20aca2fde1d0933032268c7736e3f9739c602f48ba8903a338d9e43c6dd
+"@snowball-tech/design-tokens@npm:4.1.0":
+  version: 4.1.0
+  resolution: "@snowball-tech/design-tokens@npm:4.1.0"
+  checksum: c4ea6e80f3dd95fa01c149d9c30416375ece03af22fa58b4f2cd8b34f8efd2f0f4918108e5e1546c3aec44fcf6eceba8925005c0ea4f9289193655b8061eb220
   languageName: node
   linkType: hard
 
@@ -4694,7 +4694,7 @@ __metadata:
     "@pandacss/dev": 0.0.0-dev-20230706152136
     "@radix-ui/react-checkbox": ^1.0.4
     "@radix-ui/react-form": ^0.0.3
-    "@snowball-tech/design-tokens": 4.0.0
+    "@snowball-tech/design-tokens": 4.1.0
     "@snowball-tech/eslint-config": ^5.1.3
     "@storybook/addon-a11y": ^7.0.26
     "@storybook/addon-essentials": ^7.0.26
@@ -13677,7 +13677,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fractal@workspace:."
   dependencies:
-    "@monorepo-utils/workspaces-to-typescript-project-references": ^2.9.0
+    "@monorepo-utils/workspaces-to-typescript-project-references": ^2.10.2
     "@qiwi/multi-semantic-release": ^7.0.0
     "@snowball-tech/eslint-config": ^5.1.3
     "@snowball-tech/prettier-config": ^1.3.3
