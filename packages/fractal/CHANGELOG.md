@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [1.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.3.0...@snowball-tech/fractal@1.4.0) (2023-07-07)
+
+### ✨ Features
+
+- **input-text:** finish inputText ([54c9abf](https://github.com/snowball-tech/fractal/commit/54c9abf2b0c359c2836f507a41b9ad73fb7c1ab6))
+
 # @snowball-tech/fractal [1.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.2.12...@snowball-tech/fractal@1.3.0) (2023-07-07)
 
 ### ✨ Features
