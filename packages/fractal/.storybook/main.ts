@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+import { mergeConfig } from 'vite'
 
 const config: StorybookConfig = {
   addons: [
@@ -43,12 +44,25 @@ const config: StorybookConfig = {
     // See https://github.com/storybookjs/storybook/tree/next/code/addons/docs/react#typescript-props-with-react-docgen
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      include: ['**/**.ts', '**/**.tsx'],
+      include: ['./src/**/**.ts', './src/**/**.tsx'],
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
       skipChildrenPropWithoutDoc: false,
     },
     skipBabel: true,
+  },
+
+  async viteFinal(viteConfig) {
+    return mergeConfig(viteConfig, {
+      // Customize the Vite config for Storybook
+      optimizeDeps: {
+        include: [
+          '@snowball-tech/fractal-panda/css',
+          '@snowball-tech/fractal-panda/jsx',
+          '@snowball-tech/fractal-panda/recipes',
+        ],
+      },
+    })
   },
 }
 

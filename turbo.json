@@ -23,7 +23,7 @@
     },
     "@snowball-tech/fractal#build:code": {
       "outputs": ["node_modules/@snowball-tech/fractal-panda/**"],
-      "inputs": ["panda.config.ts"]
+      "inputs": ["panda.config.ts", "'src/**/*.{js,jsx,ts,tsx,mdx}'"]
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
@@ -47,7 +47,7 @@
       "cache": false
     },
     "update:fonts": {
-      "outputs": ["**/*.ttf", "**/*.woff", "**/*.woff2"]
+      "outputs": ["**/*.{ttf,woff,woff2}"]
     },
     "@snowball-tech/fractal#update:fonts": {
       "outputs": ["assets/fonts/**"],

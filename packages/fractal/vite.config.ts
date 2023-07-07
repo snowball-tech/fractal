@@ -2,8 +2,7 @@ import path from 'node:path'
 
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
-import { tsconfigPaths } from 'vite-plugin-lib'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +14,7 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', '@snowball-tech/fractal-panda'],
       output: {
         globals: {
           react: 'React',
@@ -25,11 +24,5 @@ export default defineConfig({
     },
   },
 
-  plugins: [
-    react(),
-    tsconfigPaths(),
-    dts({
-      staticImport: true,
-    }),
-  ],
+  plugins: [react(), tsconfigPaths()],
 })
