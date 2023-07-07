@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [4.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.1.0...@snowball-tech/design-tokens@4.1.1) (2023-07-07)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix some feedback about colors ([e4e0f9c](https://github.com/snowball-tech/fractal/commit/e4e0f9cfb43a4af02a828778c7db81e389ca0994))
+
 # @snowball-tech/design-tokens [4.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.0.0...@snowball-tech/design-tokens@4.1.0) (2023-07-07)
 
 ### ✨ Features
