@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [4.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.0.0...@snowball-tech/design-tokens@4.1.0) (2023-07-07)
+
+### ✨ Features
+
+- **input-text:** add the input text component ([3c4b856](https://github.com/snowball-tech/fractal/commit/3c4b856ad9d751c688636309c22a9e7f6133f8fc))
+
+### 🐛 Bug Fixes
+
+- **design-token:** fix the name of the normal style token ([4bfbd92](https://github.com/snowball-tech/fractal/commit/4bfbd92612604530cd70e293c0dbd1646bd5f1a1))
+
 # @snowball-tech/design-tokens [4.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@3.4.1...@snowball-tech/design-tokens@4.0.0) (2023-07-07)
 
 ### 💥 Breaking changes
