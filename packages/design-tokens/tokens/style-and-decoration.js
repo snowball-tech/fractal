@@ -44,7 +44,7 @@ module.exports = {
       placeholder: {
         comment: 'Text style for placeholders.',
 
-        value: '{style.text.normal.value}',
+        value: '{style.text.default.value}',
       },
     },
   },
