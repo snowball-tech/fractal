@@ -3,6 +3,53 @@ import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
 import { DEFAULT_VARIANT, Variants } from './InputCheckbox.constants'
 
+export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    description: 'Checkbox container',
+    name: 'inputCheckboxContainer',
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['InputCheckbox'],
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {
+      alignItems: 'center',
+      backgroundColor: 'var(--color-base-white)',
+      border: 'var(--border-1)',
+      borderRadius: 'var(--size-radius-s)',
+      color: 'var(--color-text-dark)',
+      display: 'flex',
+      gap: 'var(--size-spacing-2)',
+      p: 'var(--size-spacing-1)',
+      pr: 'var(--size-spacing-2)',
+    },
+
+    variants: {
+      disabled: {
+        false: {},
+        true: {
+          backgroundColor: 'var(--color-background-disabled)',
+          border: 'var(--border-disabled)',
+          color: 'var(--color-background-disabled)',
+          cursor: 'var(--cursor-disabled)',
+        },
+      },
+
+      required: {
+        false: {},
+        true: {},
+      },
+
+      variant: Object.values(Variants).reduce(
+        (variants, variantName) => ({
+          ...variants,
+          [variantName]: {},
+        }),
+        {} as Record<Variants, SystemStyleObject>,
+      ),
+    },
+  })
+
 export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Checkbox',
   name: 'inputCheckbox',
@@ -122,6 +169,7 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
 
     defaultVariants: {
       disabled: false,
+      required: false,
       variant: DEFAULT_VARIANT,
     },
 
@@ -135,6 +183,7 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
       },
 
       required: {
+        false: {},
         true: {
           '& > *': {
             _after: {

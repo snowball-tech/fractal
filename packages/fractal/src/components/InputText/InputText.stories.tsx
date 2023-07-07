@@ -173,6 +173,36 @@ export const TextInputs: Story = {
       {separator}
 
       <Wrapper>
+        <InputText
+          defaultValue="This is a correct value"
+          success="Congratulations!"
+        />
+
+        <InputText
+          defaultValue="With the icon on the left"
+          iconPosition="left"
+          label="This is a correct value"
+          success="Congratulations!"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          defaultValue="This is an invalid value"
+          error="Oops, there's an error!"
+        />
+
+        <InputText
+          defaultValue="With the icon on the left"
+          error="Oops, there's an error!"
+          iconPosition="left"
+          label="This is an invalid value"
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
         <InputText disabled />
         <InputText
           disabled
@@ -343,36 +373,6 @@ export const TextInputs: Story = {
           description="This is the description"
           label="This is the label"
           readOnly
-        />
-      </Wrapper>
-
-      {separator}
-
-      <Wrapper>
-        <InputText
-          defaultValue="This is a correct value"
-          success="Congratulations!"
-        />
-
-        <InputText
-          defaultValue="With the icon on the left"
-          iconPosition="left"
-          label="This is a correct value"
-          success="Congratulations!"
-        />
-      </Wrapper>
-
-      <Wrapper>
-        <InputText
-          defaultValue="This is an invalid value"
-          error="Oops, there's an error!"
-        />
-
-        <InputText
-          defaultValue="With the icon on the left"
-          error="Oops, there's an error!"
-          iconPosition="left"
-          label="This is an invalid value"
         />
       </Wrapper>
     </RxForm.Root>

@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     asChild: { table: { disable: true } },
     checked: { table: { ...checkStateType } },
-    defaultChecked: { table: { ...checkStateType } },
+    defaultChecked: { control: 'boolean', table: { ...checkStateType } },
     onCheckedChange: {
       table: {
         control: false,

@@ -25,28 +25,11 @@ export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    '.group.disabled &, .group.readonly &': {
+      cursor: 'unset',
+    },
+
     cursor: 'var(--cursor-clickable)',
-  },
-
-  defaultVariants: {
-    disabled: false,
-    readonly: false,
-  },
-
-  variants: {
-    disabled: {
-      false: {},
-      true: {
-        cursor: 'unset',
-      },
-    },
-
-    readonly: {
-      false: {},
-      true: {
-        cursor: 'unset',
-      },
-    },
   },
 })
 
@@ -59,67 +42,31 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    '.group.disabled &': {
+      color: `var(--color-icon-input-disabled)`,
+    },
+    '.group.error &': {
+      color: `var(--color-icon-input-error)`,
+    },
+
+    '.group.icon-left &': {
+      left: 'var(--size-spacing-1)',
+    },
+    '.group.icon-right &': {
+      right: 'var(--size-spacing-1)',
+    },
+
+    '.group.successfull &': {
+      color: `var(--color-icon-input-success)`,
+    },
+
     display: 'flex',
     position: 'absolute',
     right: 'var(--size-spacing-1)',
     top: '50%',
     transform: 'translateY(-50%)',
+
     width: 'fit-content',
-  },
-
-  compoundVariants: [
-    {
-      css: {
-        right: 'var(--size-spacing-2)',
-      },
-      position: 'right',
-      readonly: true,
-    },
-  ],
-
-  defaultVariants: {
-    disabled: false,
-    error: false,
-    position: 'right',
-    readonly: false,
-    success: false,
-  },
-
-  variants: {
-    disabled: {
-      false: {},
-      true: {
-        color: `var(--color-icon-input-disabled)`,
-      },
-    },
-
-    error: {
-      false: {},
-      true: {
-        color: `var(--color-icon-input-error)`,
-      },
-    },
-
-    position: {
-      left: {
-        left: 'var(--size-spacing-1)',
-      },
-      right: {
-        right: 'var(--size-spacing-1)',
-      },
-    },
-
-    readonly: {
-      false: {},
-      true: {},
-    },
-
-    success: {
-      false: {},
-      true: {
-        color: `var(--color-icon-input-success)`,
-      },
-    },
   },
 })
 
@@ -134,7 +81,7 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     '&:not(:is(:disabled, [disabled], [data-disabled]))': {
       _readOnly: {
-        backgroundColor: `var(--color-background-input-base)`,
+        backgroundColor: `var(--color-background-input-disabled)`,
         border: `var(--border-input-disabled)`,
         color: `var(--color-text-input-base)`,
         cursor: 'unset',
@@ -164,14 +111,31 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
         },
       },
 
+    '.group.error &': {
+      border: `var(--border-input-error)`,
+    },
+    '.group.icon-left &': {
+      pl: 'var(--size-spacing-5)',
+    },
+    '.group.icon-right &': {
+      pr: 'var(--size-spacing-5)',
+    },
+    '.group.successfull &': {
+      border: `var(--border-input-success)`,
+    },
+
     _disabled: {
-      backgroundColor: `var(--color-base-grey-70)`,
+      backgroundColor: `var(--color-background-input-disabled)`,
       border: `var(--border-input-disabled)`,
       color: `var(--color-text-input-disabled)`,
       cursor: 'var(--cursor-disabled)',
       shadow: `var(--shadow-input-disabled)`,
     },
 
+    _placeholder: {
+      color: `var(--color-text-placeholder)`,
+      fontStyle: 'var(--style-text-placeholder)',
+    },
     all: 'unset',
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
@@ -181,54 +145,11 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     cursor: 'var(--cursor-clickable)',
     height: '48px',
     maxHeight: '48px',
+    minWidth: '305px',
     outline: 'none',
     px: 'var(--size-spacing-2)',
     shadow: `var(--shadow-input-base)`,
+
     transition: 'border-color 300ms ease-out',
-  },
-
-  defaultVariants: {
-    error: false,
-    icon: 'none',
-    success: false,
-  },
-
-  variants: {
-    error: {
-      false: {},
-      true: {
-        border: `var(--border-input-error)`,
-      },
-    },
-
-    icon: {
-      left: {
-        pl: 'var(--size-spacing-5)',
-      },
-      none: {},
-      right: {
-        pr: 'var(--size-spacing-5)',
-      },
-    },
-
-    success: {
-      false: {},
-      true: {
-        border: `var(--border-input-success)`,
-      },
-    },
-  },
-})
-
-export const inputTextMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input description or error/success message',
-  name: 'inputTextMessage',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {
-    margin: 0,
   },
 })
