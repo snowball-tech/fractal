@@ -2,7 +2,7 @@ import {
   UilCancel as CancelIcon,
   UilCheckCircle as CheckCircleIcon,
   UilExclamationCircle as ExclamationCircleIcon,
-  UilBan as ForbiddenIcon,
+  UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
 import * as RxForm from '@radix-ui/react-form'
@@ -54,7 +54,7 @@ export const Playground: StoryObj<InputTextProps & { withIcon: boolean }> = {
         Cancel: <CancelIcon />,
         Check: <CheckCircleIcon />,
         Error: <ExclamationCircleIcon />,
-        Forbidden: <ForbiddenIcon />,
+        Send: <SendIcon />,
         Star: <StarIcon />,
       },
       options: ['Cancel', 'Check', 'Error', 'Forbidden', 'Star'],
@@ -228,19 +228,19 @@ export const TextInputs: Story = {
       <Wrapper>
         <InputText
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           label="Disabled input text with right icon"
         />
         <InputText
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           label="Disabled input text with right icon"
           placeholder="And the placeholder"
         />
         <InputText
           defaultValue="And a value"
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           label="Disabled input text with right icon"
         />
       </Wrapper>
@@ -248,13 +248,13 @@ export const TextInputs: Story = {
       <Wrapper>
         <InputText
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<CancelIcon />}
           iconPosition="left"
           label="Disabled input text with left icon"
         />
         <InputText
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<CancelIcon />}
           iconPosition="left"
           label="Disabled input text with left icon"
           placeholder="And the placeholder"
@@ -262,7 +262,7 @@ export const TextInputs: Story = {
         <InputText
           defaultValue="And a value"
           disabled
-          icon={<ForbiddenIcon />}
+          icon={<CancelIcon />}
           iconPosition="left"
           label="Disabled input text with left icon"
         />
@@ -315,19 +315,19 @@ export const TextInputs: Story = {
 
       <Wrapper>
         <InputText
-          icon={<ForbiddenIcon />}
+          icon={<SendIcon />}
           label="Read-only input text with right icon"
           readOnly
         />
         <InputText
-          icon={<ForbiddenIcon />}
+          icon={<SendIcon />}
           label="Read-only input text with right icon"
           placeholder="And the placeholder"
           readOnly
         />
         <InputText
           defaultValue="And a value"
-          icon={<ForbiddenIcon />}
+          icon={<SendIcon />}
           label="Read-only input text with right icon"
           readOnly
         />
@@ -335,13 +335,13 @@ export const TextInputs: Story = {
 
       <Wrapper>
         <InputText
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           iconPosition="left"
           label="Read-only input text with left icon"
           readOnly
         />
         <InputText
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           iconPosition="left"
           label="Read-only input text with left icon"
           placeholder="And the placeholder"
@@ -349,7 +349,7 @@ export const TextInputs: Story = {
         />
         <InputText
           defaultValue="And a value"
-          icon={<ForbiddenIcon />}
+          icon={<StarIcon />}
           iconPosition="left"
           label="Read-only input text with left icon"
           readOnly
