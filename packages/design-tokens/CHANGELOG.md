@@ -1,3 +1,15 @@
+# @snowball-tech/design-tokens [4.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.1.1...@snowball-tech/design-tokens@4.2.0) (2023-07-10)
+
+### ✨ Features
+
+- **design-token:** add select tokens ([90416f5](https://github.com/snowball-tech/fractal/commit/90416f53ed2f2f601d5074bfa4d8d78fde4ecec6))
+
+### 🐛 Bug Fixes
+
+- **design-token:** add missing token for gap between select and dropdown ([37739be](https://github.com/snowball-tech/fractal/commit/37739be57d1dcf361b61b3ed7de6633b2c0f20ce))
+- **design-token:** fix the shadow design token for input ([f389b14](https://github.com/snowball-tech/fractal/commit/f389b14cb366519d1a7c1363b144c8677b5566a6))
+- **design-tokens:** fix a typo ([d08fac2](https://github.com/snowball-tech/fractal/commit/d08fac2524a843a998a627818c30dcbd547d4f15))
+
 ## @snowball-tech/design-tokens [4.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.1.0...@snowball-tech/design-tokens@4.1.1) (2023-07-07)
 
 ### 🐛 Bug Fixes
