@@ -48,11 +48,13 @@ const fractalPreset = definePreset({
         selectContainer: recipes.selectContainer,
         selectDescription: recipes.selectDescription,
         selectDropdown: recipes.selectDropdown,
+        selectIndicator: recipes.selectIndicator,
         selectItem: recipes.selectItem,
         selectItemGroup: recipes.selectItemGroup,
         selectItemSeparator: recipes.selectItemSeparator,
         selectLabel: recipes.selectLabel,
         selectTrigger: recipes.selectTrigger,
+        selectValue: recipes.selectValue,
 
         typography: recipes.typography,
       },

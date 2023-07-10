@@ -49,12 +49,6 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '& > *': {
-      alignSelf: 'center',
-    },
-    '& > span:not([aria-hidden])': {
-      flexGrow: 1,
-    },
     '& > span[aria-hidden], & > span[aria-hidden] > svg': {
       height: '100%',
     },
@@ -65,22 +59,20 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-      '&:is(:focus-visible, [data-focus-visible]), &:focus-within': {
+      _focus: {
         backgroundColor: `var(--color-background-select-focus)`,
         border: `var(--border-select-focus)`,
         color: `var(--color-text-select-focus)`,
-        margin: '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
+        pl: 'calc(var(--size-select-padding-horizontal) - 0.085rem)',
         shadow: `var(--shadow-select-focus)`,
       },
 
-      '&:not(:is(:focus, [data-focus]))': {
-        _groupHover: {
-          backgroundColor: `var(--color-background-select-hover)`,
-          border: `var(--border-select-hover)`,
-          color: `var(--color-text-select-hover)`,
-          margin: '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
-          shadow: `var(--shadow-select-hover)`,
-        },
+      _groupHover: {
+        backgroundColor: `var(--color-background-select-hover)`,
+        border: `var(--border-select-hover)`,
+        color: `var(--color-text-select-hover)`,
+        pl: 'calc(var(--size-select-padding-horizontal) - 0.085rem)',
+        shadow: `var(--shadow-select-hover)`,
       },
     },
 
@@ -109,6 +101,50 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     shadow: `var(--shadow-select-base)`,
 
     transition: 'border-color 300ms ease-out',
+  },
+})
+
+export const selectValue: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Select currently selected value (or placeholder)',
+  name: 'selectValue',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['Select'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    alignSelf: 'center',
+    flexGrow: 1,
+  },
+})
+
+export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Select status indicator (arrow)',
+  name: 'selectIndicator',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['Select'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    '& > svg': {
+      height: '100%',
+    },
+
+    '.group.opened &': {
+      transform: 'rotate(180deg)',
+    },
+
+    '.trigger:focus &': {
+      mr: '-0.085rem',
+    },
+    _groupHover: {
+      mr: '-0.085rem',
+    },
+
+    alignSelf: 'center',
+    height: '100%',
+    transition: 'transform 300ms ease-out',
   },
 })
 
