@@ -116,6 +116,7 @@
     "vite-tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
+    "@ark-ui/react": "^0.7.2",
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-form": "^0.0.3",
