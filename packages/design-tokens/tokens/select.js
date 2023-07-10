@@ -292,6 +292,13 @@ module.exports = {
           value: '{size.spacing.1.value}',
         },
       },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      gap: {
+        comment: 'Spacing to use between the select and the dropdown',
+
+        value: '{size.spacing.1.value}',
+      },
     },
 
     options: {
