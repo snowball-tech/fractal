@@ -44,7 +44,8 @@ const meta = {
   },
   component: Typography,
   parameters: {
-    componentSubtitle: '👮 Anything you say can be used against you',
+    componentSubtitle:
+      "🐉 No. Your scroll must have a typo. That can't be! - Mushu - Mulan II",
   },
 
   title: 'Typography',
