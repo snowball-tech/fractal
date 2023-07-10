@@ -52,7 +52,7 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     '& > span[aria-hidden], & > span[aria-hidden] > svg': {
       height: '100%',
     },
-    '&[data-placeholder] > span:not([aria-hidden])': {
+    '&[data-placeholder] > div > span': {
       color: `var(--color-text-select-placeholder)`,
       fontStyle: 'var(--style-text-placeholder)',
     },

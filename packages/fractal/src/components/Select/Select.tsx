@@ -38,8 +38,9 @@ export default function Select({
   id = uniqueId('fractal-select-'),
   label,
   name,
-  onOpenChange,
-  onValueChange,
+  onClose,
+  onOpen,
+  onSelect,
   open,
   placeholder,
   required = false,
@@ -82,16 +83,23 @@ export default function Select({
         required={required}
         {...(open !== undefined ? { open } : {})}
         {...(value !== undefined ? { value } : {})}
-        {...(isFunction(onValueChange)
+        {...(isFunction(onSelect)
           ? {
-              onValueChange: (newValue: string) => onValueChange(newValue),
+              onValueChange: (newValue: string) => onSelect(newValue),
             }
           : {})}
-        {...(isFunction(onOpenChange)
+        {...(isFunction(onOpen) || isFunction(onClose)
           ? {
               onOpenChange: (isOpened: boolean) => {
                 setIsOpen(isOpened)
-                onOpenChange(isOpened)
+
+                if (isOpened) {
+                  onOpen?.()
+
+                  return
+                }
+
+                onClose?.()
               },
             }
           : {})}
