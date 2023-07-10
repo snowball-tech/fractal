@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.2.0...@snowball-tech/design-tokens@5.0.0) (2023-07-10)
+
+### 💥 Breaking changes
+
+- **design-tokens:** output the borders in rem ([14ca1b1](https://github.com/snowball-tech/fractal/commit/14ca1b11cd9358d2af4ff8b9266555ecce34929f))
+
 # @snowball-tech/design-tokens [4.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.1.1...@snowball-tech/design-tokens@4.2.0) (2023-07-10)
 
 ### ✨ Features
