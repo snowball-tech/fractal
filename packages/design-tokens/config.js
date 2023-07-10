@@ -31,7 +31,7 @@ module.exports = {
       transforms: [
         'attribute/cti',
         'name/cti/kebab',
-        'size/breakpoint-border-radius/px',
+        'size/breakpoint-radius/px',
         'size/other/pxToRem',
         'media-query/quote',
         'time/seconds',
@@ -58,7 +58,7 @@ module.exports = {
       transforms: [
         'attribute/cti',
         'name/cti/pascal',
-        'size/breakpoint-border-radius/px',
+        'size/breakpoint-radius/px',
         'size/other/pxToRem',
         // Use HSL instead of HEX to automatically support Alpha channel.
         'color/hsl',

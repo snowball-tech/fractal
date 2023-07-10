@@ -1,21 +1,21 @@
 const StyleDictionary = require('style-dictionary')
 
 const {
-  isBreakpointOrBorderOrRadiusSize,
+  isBreakpointOrRadiusSize,
   isMediaQuery,
-  isNotBreakpointNorBorderNorRadiusSize,
+  isNotBreakpointNorRadiusSize,
 } = require('./matchers')
 
 StyleDictionary.registerTransform({
-  matcher: isNotBreakpointNorBorderNorRadiusSize,
+  matcher: isNotBreakpointNorRadiusSize,
   name: 'size/other/pxToRem',
   transformer: StyleDictionary.transform['size/pxToRem'].transformer,
   type: 'value',
 })
 
 StyleDictionary.registerTransform({
-  matcher: isBreakpointOrBorderOrRadiusSize,
-  name: 'size/breakpoint-border-radius/px',
+  matcher: isBreakpointOrRadiusSize,
+  name: 'size/breakpoint-radius/px',
   transformer: StyleDictionary.transform['size/px'].transformer,
   type: 'value',
 })
