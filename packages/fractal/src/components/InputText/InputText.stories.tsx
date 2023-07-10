@@ -30,11 +30,12 @@ const meta = {
     label: 'This is the label',
     placeholder: 'This is the placeholder',
     readOnly: false,
+    required: false,
     type: 'text',
   },
   component: InputText,
   parameters: {
-    componentSubtitle: '???',
+    componentSubtitle: '🤖 Malfunction, need input! - Johnny 5 - Short Circuit',
     controls: {
       exclude: ['standalone', 'value'],
     },
@@ -197,6 +198,11 @@ export const TextInputs: Story = {
           error="Oops, there's an error!"
           iconPosition="left"
           label="This is an invalid value"
+        />
+        <InputText
+          error="You must enter a value!"
+          label="Required input text"
+          required
         />
       </Wrapper>
 
