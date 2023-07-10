@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [1.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.7.0...@snowball-tech/fractal@1.7.1) (2023-07-10)
+
+### ♻️ Code Refactoring
+
+- **fractal:** use the new border offset token ([1587787](https://github.com/snowball-tech/fractal/commit/1587787ae46fbb2056d6193e3c8b03e990b1716e))
+
 # @snowball-tech/fractal [1.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.6.0...@snowball-tech/fractal@1.7.0) (2023-07-10)
 
 ### 💄 UI/UX
