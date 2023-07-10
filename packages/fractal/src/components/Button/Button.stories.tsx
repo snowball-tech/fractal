@@ -30,7 +30,8 @@ const meta = {
   },
   component: Button,
   parameters: {
-    componentSubtitle: '???',
+    componentSubtitle:
+      "👨‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
   },
 
   title: 'Button',
@@ -48,7 +49,7 @@ export const Playground: StoryObj<ButtonProps & { withIcon: boolean }> = {
         Send: <SendIcon />,
         Star: <StarIcon />,
       },
-      options: ['Cancel', 'Forbidden', 'Send', 'Star'],
+      options: ['Cancel', 'Send', 'Star'],
     },
     iconPosition: {
       if: { arg: 'withIcon' },
