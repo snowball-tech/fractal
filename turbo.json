@@ -23,12 +23,13 @@
     },
     "@snowball-tech/fractal#build:code": {
       "outputs": ["node_modules/@snowball-tech/fractal-panda/**"],
-      "inputs": ["panda.config.ts", "'src/**/*.{js,jsx,ts,tsx,mdx}'"]
+      "outputMode": "new-only"
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "tokens/**", "config.js"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "outputMode": "new-only"
     },
     "build:storybook": {
       "outputs": ["storybook-static/**"]
@@ -47,11 +48,13 @@
       "cache": false
     },
     "update:fonts": {
-      "outputs": ["**/*.{ttf,woff,woff2}"]
+      "outputs": ["**/*.{ttf,woff,woff2}"],
+      "outputMode": "new-only"
     },
     "@snowball-tech/fractal#update:fonts": {
       "outputs": ["assets/fonts/**"],
-      "inputs": ["../../scripts/update-fonts.sh"]
+      "inputs": ["../../scripts/update-fonts.sh"],
+      "outputMode": "new-only"
     },
     "format": {},
     "format:fix": {},

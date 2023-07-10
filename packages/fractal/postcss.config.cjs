@@ -1,5 +1,4 @@
 module.exports = {
-  plugins: {
-    '@pandacss/dev/postcss': {},
-  },
+  // eslint-disable-next-line global-require
+  plugins: [require('@pandacss/dev/postcss')()],
 }

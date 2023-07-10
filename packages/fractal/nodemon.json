@@ -1,4 +1,0 @@
-{
-  "ignore": ["dist", "eslintrc.csj", ".gitignore", "*.stories.*"],
-  "ext": "js,jsx,ts,tsx,css,json,cjs,mjs,cts,mts"
-}
