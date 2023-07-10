@@ -13,6 +13,13 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      '&.disabled': {
+        backgroundColor: 'var(--color-background-disabled)',
+        border: 'var(--border-disabled)',
+        color: 'var(--color-background-disabled)',
+        cursor: 'var(--cursor-disabled)',
+      },
+
       alignItems: 'center',
       backgroundColor: 'var(--color-base-white)',
       border: 'var(--border-1)',
@@ -24,22 +31,11 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
       pr: 'var(--size-spacing-2)',
     },
 
+    defaultVariants: {
+      variant: DEFAULT_VARIANT,
+    },
+
     variants: {
-      disabled: {
-        false: {},
-        true: {
-          backgroundColor: 'var(--color-background-disabled)',
-          border: 'var(--border-disabled)',
-          color: 'var(--color-background-disabled)',
-          cursor: 'var(--cursor-disabled)',
-        },
-      },
-
-      required: {
-        false: {},
-        true: {},
-      },
-
       variant: Object.values(Variants).reduce(
         (variants, variantName) => ({
           ...variants,
@@ -116,22 +112,18 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      '.group.disabled &': {
+        color: 'var(--color-text-disabled)',
+      },
+
       color: 'var(--color-text-dark)',
     },
 
     defaultVariants: {
-      disabled: false,
       variant: DEFAULT_VARIANT,
     },
 
     variants: {
-      disabled: {
-        false: {},
-        true: {
-          color: 'var(--color-text-disabled)',
-        },
-      },
-
       variant: {
         ...Object.values(Variants).reduce(
           (variants, variantName) => ({
@@ -158,42 +150,30 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      '.group.disabled &': {
+        color: 'var(--color-text-disabled)',
+        cursor: 'var(--cursor-disabled)',
+      },
+      '.group.required &': {
+        _after: {
+          color: 'var(--color-feedback-danger-50)',
+          content: '" *"',
+        },
+      },
+
       color: 'var(--color-text-dark)',
       cursor: 'var(--cursor-clickable)',
-      maxWidth: '100%',
+      flexGrow: 1,
       overflow: 'auto',
       overflowWrap: 'break-word',
       py: 'var(--size-spacing-2)',
-      width: '100%',
     },
 
     defaultVariants: {
-      disabled: false,
-      required: false,
       variant: DEFAULT_VARIANT,
     },
 
     variants: {
-      disabled: {
-        false: {},
-        true: {
-          color: 'var(--color-text-disabled)',
-          cursor: 'var(--cursor-disabled)',
-        },
-      },
-
-      required: {
-        false: {},
-        true: {
-          '& > *': {
-            _after: {
-              color: 'var(--color-feedback-danger-50)',
-              content: '" *"',
-            },
-          },
-        },
-      },
-
       variant: Object.values(Variants).reduce(
         (variants, variantName) => ({
           ...variants,
