@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.0.0...@snowball-tech/design-tokens@5.0.1) (2023-07-10)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix the value of the border offset ([7aa464d](https://github.com/snowball-tech/fractal/commit/7aa464da4621143608f0a35ae705ff7e4fbf29e5))
+
 # @snowball-tech/design-tokens [5.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@4.2.0...@snowball-tech/design-tokens@5.0.0) (2023-07-10)
 
 ### 💥 Breaking changes
