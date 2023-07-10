@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [1.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.6.0...@snowball-tech/fractal@1.7.0) (2023-07-10)
+
+### 💄 UI/UX
+
+- **fractal:** fix the content offset with border transition ([36b4210](https://github.com/snowball-tech/fractal/commit/36b4210fed0c80b881d3ceb2098632523c795623))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.0.0
+
 # @snowball-tech/fractal [1.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.5.0...@snowball-tech/fractal@1.6.0) (2023-07-10)
 
 ### ✨ Features
