@@ -6,11 +6,11 @@
       "persistent": true
     },
     "build": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "outputMode": "new-only"
     },
     "build:code": {
-      "outputs": ["styled-system"],
-      "inputs": ["panda.config.ts"]
+      "cache": false
     },
     "build:info": {
       "outputs": ["dist/*.buildinfo.json"]
@@ -20,10 +20,6 @@
     },
     "build:styles": {
       "outputs": ["dist/**/*.css"]
-    },
-    "@snowball-tech/fractal#build:code": {
-      "outputs": ["node_modules/@snowball-tech/fractal-panda/**"],
-      "outputMode": "new-only"
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
