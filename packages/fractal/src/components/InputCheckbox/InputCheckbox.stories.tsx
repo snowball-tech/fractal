@@ -67,16 +67,6 @@ export const Checkboxes: Story = {
     >
       <InputCheckbox
         defaultChecked
-        label={`Variant "${Variants.White}"`}
-        variant="white"
-      />
-      <InputCheckbox
-        defaultChecked
-        label={`Variant "${Variants.Black}"`}
-        variant="black"
-      />
-      <InputCheckbox
-        defaultChecked
         label={`Variant "${Variants.Blue}"`}
         variant="blue"
       />
@@ -100,18 +90,8 @@ export const Checkboxes: Story = {
         label={`Variant "${Variants.Yellow}"`}
         variant="yellow"
       />
-      <InputCheckbox
-        defaultChecked
-        disabled
-        label={`Disabled`}
-        variant="white"
-      />
-      <InputCheckbox
-        defaultChecked
-        label={`Required`}
-        required
-        variant="white"
-      />
+      <InputCheckbox defaultChecked disabled label={`Disabled`} />
+      <InputCheckbox defaultChecked label={`Required`} required />
     </div>
   ),
 }
