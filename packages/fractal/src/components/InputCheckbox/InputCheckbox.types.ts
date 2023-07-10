@@ -23,7 +23,7 @@ export interface InputCheckboxProps extends RxCheckboxProps {
   /**
    * A unique HTML id for the checkbox.
    *
-   * This allows you to link the checkbox with a label.
+   * This allows to link the checkbox with a label.
    *
    * If none is given, one will be generated automatically.
    */
@@ -34,6 +34,8 @@ export interface InputCheckboxProps extends RxCheckboxProps {
    * The name of the checkbox.
    *
    * It is used to reference the checkbox in a form submission.
+   *
+   * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
   /** Event handler called when the checked state of the checkbox changes. */
