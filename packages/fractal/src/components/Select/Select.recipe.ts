@@ -63,7 +63,7 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
         backgroundColor: `var(--color-background-select-focus)`,
         border: `var(--border-select-focus)`,
         color: `var(--color-text-select-focus)`,
-        pl: 'calc(var(--size-select-padding-horizontal) - 0.085rem)',
+        pl: 'calc(var(--size-select-padding-horizontal) - var(--size-border-offset))',
         shadow: `var(--shadow-select-focus)`,
       },
 
@@ -71,7 +71,7 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
         backgroundColor: `var(--color-background-select-hover)`,
         border: `var(--border-select-hover)`,
         color: `var(--color-text-select-hover)`,
-        pl: 'calc(var(--size-select-padding-horizontal) - 0.085rem)',
+        pl: 'calc(var(--size-select-padding-horizontal) - var(--size-border-offset))',
         shadow: `var(--shadow-select-hover)`,
       },
     },
@@ -136,10 +136,10 @@ export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     '.trigger:focus &': {
-      mr: '-0.085rem',
+      mr: '-var(--size-border-offset)',
     },
     _groupHover: {
-      mr: '-0.085rem',
+      mr: '-var(--size-border-offset)',
     },
 
     alignSelf: 'center',
