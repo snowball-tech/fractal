@@ -34,7 +34,8 @@ const meta = {
   },
   component: InputCheckbox,
   parameters: {
-    componentSubtitle: '???',
+    componentSubtitle:
+      '🐦 Checking in with the morning report. - Zazu - The Lion King',
     controls: {
       exclude: ['checked'],
     },
