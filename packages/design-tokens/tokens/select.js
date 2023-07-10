@@ -123,7 +123,7 @@ module.exports = {
         disabled: {
           comment: "Background color to use for disabled selects' options.",
 
-          value: '{color.options.base.value}',
+          value: '{color.background.options.base.value}',
         },
       },
     },
