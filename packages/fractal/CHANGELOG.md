@@ -1,3 +1,35 @@
+# @snowball-tech/fractal [1.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.3...@snowball-tech/fractal@1.5.0) (2023-07-10)
+
+### 🎨 Code Style and Formatting
+
+- **button:** uniformize styling and improve doc ([3182a91](https://github.com/snowball-tech/fractal/commit/3182a91004dcae7675abb615a74d6e53908b9e58))
+
+### ✨ Features
+
+- **input-text:** add required field ([d814ba5](https://github.com/snowball-tech/fractal/commit/d814ba5f40f093432acf4d0135c487471275ea6f))
+
+### 📝 Documentation
+
+- **checkbox:** improve documentation ([a5f6e65](https://github.com/snowball-tech/fractal/commit/a5f6e65eb45859ac119fcbd577215553987d15c8))
+- **typography:** improve documentation ([e5bdd62](https://github.com/snowball-tech/fractal/commit/e5bdd6242d20644a025dac85e027112fc10bf9f4))
+
+### 🏗 Chores
+
+- fix HMR in storybook ([4acf6a1](https://github.com/snowball-tech/fractal/commit/4acf6a10295c72ad9872ad40c49345a8e80cc0a8))
+
+### 👷 Build
+
+- **fractal:** fix building of the lib ([d32a405](https://github.com/snowball-tech/fractal/commit/d32a40588e261e1b99757cd3bbb0183ea63612cd))
+- **fractal:** fix the cleanup of the build directory ([c55bdf0](https://github.com/snowball-tech/fractal/commit/c55bdf095b8fabb8ce3dcce6bb8e2c2a3e17e3f0))
+
+### 📦 Dependencies
+
+- update dependencies ([7682a20](https://github.com/snowball-tech/fractal/commit/7682a20768c6ef32d8d85c89a0da5ca4d3931e0c))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 4.2.0
+
 ## @snowball-tech/fractal [1.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.2...@snowball-tech/fractal@1.4.3) (2023-07-07)
 
 ### 🐛 Bug Fixes
