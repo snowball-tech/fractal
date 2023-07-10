@@ -65,7 +65,7 @@ export default function InputText({
     !isEmpty(iconToDisplay) ? `icon-${iconPosition}` : '',
     readOnly ? 'readonly' : '',
     required ? 'required' : '',
-    isSuccessful ? 'successfull' : '',
+    isSuccessful ? 'success' : '',
   )
 
   const inputElement = (

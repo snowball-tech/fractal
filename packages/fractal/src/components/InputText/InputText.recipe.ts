@@ -60,7 +60,7 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
     '.group.icon-right &': {
       right: 'var(--size-spacing-1)',
     },
-    '.group.successfull &': {
+    '.group.success &': {
       color: `var(--color-icon-input-success)`,
     },
 
@@ -96,21 +96,28 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     '&:not(:is(:disabled, [disabled], [data-disabled], :read-only, [data-read-only]))':
       {
         '&:not(:is(:focus, [data-focus]))': {
+          '.group.icon-left:is(:hover, [data-hover]) &': {
+            pl: 'calc(var(--size-spacing-5) - 0.085rem)',
+          },
+
           _groupHover: {
             backgroundColor: `var(--color-background-input-hover)`,
             border: `var(--border-input-hover)`,
             color: `var(--color-text-input-hover)`,
-            margin:
-              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
+            pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
             shadow: `var(--shadow-input-hover)`,
           },
         },
 
         _focus: {
+          '.group.icon-left &': {
+            pl: 'calc(var(--size-spacing-5) - 0.085rem)',
+          },
+
           backgroundColor: `var(--color-background-input-focus)`,
           border: `var(--border-input-focus)`,
           color: `var(--color-text-input-focus)`,
-          margin: '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
+          pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
           shadow: `var(--shadow-input-focus)`,
         },
       },
@@ -124,8 +131,15 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     '.group.icon-right &': {
       pr: 'var(--size-spacing-5)',
     },
-    '.group.successfull &': {
+    '.group.success &': {
       border: `var(--border-input-success)`,
+    },
+
+    '.group.success &, .group.error &': {
+      pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
+    },
+    '.group.success.icon-left &, .group.error.icon-left &': {
+      pl: 'calc(var(--size-spacing-5) - 0.085rem)',
     },
 
     _disabled: {

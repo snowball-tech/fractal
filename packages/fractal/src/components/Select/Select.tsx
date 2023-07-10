@@ -1,3 +1,5 @@
+'use client'
+
 import { UilAngleDown as AngleDownIcon } from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSelect from '@radix-ui/react-select'
@@ -6,14 +8,17 @@ import {
   selectContainer,
   selectDescription,
   selectDropdown,
+  selectIndicator,
   selectLabel,
   selectTrigger,
+  selectValue,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
+import { useState } from 'react'
 
 import type { SelectProps } from './Select.types'
 
@@ -41,20 +46,18 @@ export default function Select({
   value,
   ...props
 }: SelectProps) {
+  const [isOpen, setIsOpen] = useState(open)
+
   const groupClassNames = cx(
     'group',
     selectContainer(),
     props.className,
     disabled ? 'disabled' : '',
     required ? 'required' : '',
+    isOpen ? 'opened' : 'closed',
   )
 
-  const dropdownClassNames = cx(
-    'group',
-    selectDropdown(),
-    disabled ? 'disabled' : '',
-    required ? 'required' : '',
-  )
+  const dropdownClassNames = cx('group', selectDropdown())
 
   return (
     <div className={groupClassNames}>
@@ -86,23 +89,33 @@ export default function Select({
           : {})}
         {...(isFunction(onOpenChange)
           ? {
-              onOpenChange: (isOpened: boolean) => onOpenChange(isOpened),
+              onOpenChange: (isOpened: boolean) => {
+                setIsOpen(isOpened)
+                onOpenChange(isOpened)
+              },
             }
           : {})}
         // Be careful, arguments of `omit` from lodash FP are flipped!
         {...omit(['autoComplete', 'className', 'dir'], props)}
       >
         <RxSelect.Trigger
-          className={cx(typography({ variant: 'body-1' }), selectTrigger())}
-        >
-          {isEmpty(displayedValue) ? (
-            <RxSelect.Value placeholder={placeholder} />
-          ) : (
-            <RxSelect.Value placeholder={placeholder}>
-              {displayedValue}
-            </RxSelect.Value>
+          className={cx(
+            'trigger',
+            typography({ variant: 'body-1' }),
+            selectTrigger(),
           )}
-          <RxSelect.Icon>
+        >
+          <div className={selectValue()}>
+            {isEmpty(displayedValue) ? (
+              <RxSelect.Value placeholder={placeholder} />
+            ) : (
+              <RxSelect.Value placeholder={placeholder}>
+                {displayedValue}
+              </RxSelect.Value>
+            )}
+          </div>
+
+          <RxSelect.Icon className={selectIndicator()}>
             <AngleDownIcon />
           </RxSelect.Icon>
         </RxSelect.Trigger>

@@ -121,15 +121,10 @@ export const Playground: Story = {
       control: 'radio',
       mapping: {
         'Grouped items': itemsWithGroups,
-        'Mixed items and groups (with separators)':
-          itemsWithGroupsAndSeparators,
+        'Mixed items': itemsWithGroupsAndSeparators,
         'Simple items': items,
       },
-      options: [
-        'Simple items',
-        'Grouped items',
-        'Mixed items and groups (with separators)',
-      ],
+      options: ['Simple items', 'Grouped items', 'Mixed items'],
     },
   },
   args: {

@@ -27,8 +27,8 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
       color: 'var(--color-text-dark)',
       display: 'flex',
       gap: 'var(--size-spacing-2)',
-      p: 'var(--size-spacing-1)',
-      pr: 'var(--size-spacing-2)',
+      p: 'var(--size-spacing-2)',
+      shadow: 'var(--shadow-brutal-1)',
     },
 
     defaultVariants: {
@@ -59,11 +59,12 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
     all: 'unset',
     backgroundColor: 'var(--color-base-white)',
     border: 'var(--size-border-2) solid var(--color-border-default)',
+    borderRadius: 'var(--size-radius-xs)',
     cursor: 'var(--cursor-clickable)',
     display: 'flex',
-    height: '24px',
+    height: '20px',
     justifyContent: 'center',
-    width: '24px',
+    width: '20px',
   },
 
   defaultVariants: {
@@ -112,6 +113,11 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      '& > svg': {
+        height: '20px',
+        width: '20px',
+      },
+
       '.group.disabled &': {
         color: 'var(--color-text-disabled)',
       },
@@ -166,7 +172,6 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
       flexGrow: 1,
       overflow: 'auto',
       overflowWrap: 'break-word',
-      py: 'var(--size-spacing-2)',
     },
 
     defaultVariants: {
