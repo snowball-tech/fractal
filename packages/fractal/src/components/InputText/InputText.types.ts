@@ -29,6 +29,14 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode
   /** The position of the icon in the input text. */
   iconPosition?: 'left' | 'right'
+  /**
+   * A unique HTML id for the input text.
+   *
+   * This allows to link the input text with a label.
+   *
+   * If none is given, one will be generated automatically.
+   */
+  id?: string
   /** The label of the input text. */
   label?: string
   /**
@@ -36,7 +44,7 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
    *
    * It is used to reference the input text in a form submission.
    *
-   * If none is given, one will be automatically generated.
+   * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
   /** Event handler called when the input text value is changed. */

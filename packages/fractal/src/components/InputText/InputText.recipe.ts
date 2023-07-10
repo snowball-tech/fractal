@@ -151,7 +151,7 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     maxHeight: '48px',
     minWidth: '305px',
     outline: 'none',
-    px: 'var(size-input-padding-horizontal)',
+    px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
 
     transition: 'border-color 300ms ease-out',
