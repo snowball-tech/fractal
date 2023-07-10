@@ -13,7 +13,9 @@ type ButtonProps = ComponentProps<typeof Button>
 
 const meta = {
   argTypes: {
+    dir: { table: { disable: true } },
     onClick: { control: false },
+    onLongClick: { control: false },
     variant: {
       options: Object.values(Variants),
       table: {
@@ -27,6 +29,7 @@ const meta = {
     icon: 'Send',
     iconPosition: 'right',
     label: 'Click me please!',
+    type: 'button',
   },
   component: Button,
   parameters: {
@@ -54,7 +57,6 @@ export const Playground: StoryObj<ButtonProps & { withIcon: boolean }> = {
     iconPosition: {
       if: { arg: 'withIcon' },
     },
-    onClick: { table: { disable: true } },
     withIcon: {
       control: 'boolean',
       description: 'Add an icon to the button',
