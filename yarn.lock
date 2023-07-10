@@ -4922,10 +4922,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@snowball-tech/design-tokens@npm:4.2.0"
-  checksum: 35a4ce7f825e889dba16619d61d128a51e127ed847bf124474eb4ec92eaf87162d6dc17999997359134eadb3c3853fe0dfbea1d83f65a90e294b29652a8dfcc2
+"@snowball-tech/design-tokens@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@snowball-tech/design-tokens@npm:5.0.0"
+  checksum: c39849323953219d51915f8ca473b77fa67b6cbdba23244390624908129f2cd388f9f5a070ed2c713cc1581fd231484744c6a476f80c1e9b048fc4a1a049e2d6
   languageName: node
   linkType: hard
 
@@ -4995,7 +4995,7 @@ __metadata:
     "@radix-ui/react-form": ^0.0.3
     "@radix-ui/react-label": ^2.0.2
     "@radix-ui/react-select": ^1.2.2
-    "@snowball-tech/design-tokens": 4.2.0
+    "@snowball-tech/design-tokens": 5.0.0
     "@snowball-tech/eslint-config": ^5.1.3
     "@storybook/addon-a11y": ^7.0.26
     "@storybook/addon-essentials": ^7.0.26
@@ -13826,7 +13826,7 @@ __metadata:
     lint-staged: ^13.2.3
     nodemon: ^3.0.1
     prettier: ^3.0.0
-    pythagora: ^0.0.75
+    pythagora: ^0.0.76
     semantic-release: ^21.0.7
     serve: ^14.2.0
     stylelint: ^15.10.1
@@ -21180,9 +21180,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pythagora@npm:^0.0.75":
-  version: 0.0.75
-  resolution: "pythagora@npm:0.0.75"
+"pythagora@npm:^0.0.76":
+  version: 0.0.76
+  resolution: "pythagora@npm:0.0.76"
   dependencies:
     "@babel/generator": ^7.22.3
     "@babel/parser": ^7.22.3
@@ -21199,7 +21199,7 @@ __metadata:
     uuid: ^9.0.0
   bin:
     pythagora: src/bin/run.js
-  checksum: 9b7280f7abf0bd13fe280401fcb5d48e228c03030858ae35a0407bf2f317b5dbfcab7fa949c7e326c2e4ac9352165a4f2fff3c3a0a8156aa2515e843ac196645
+  checksum: bed2c2895c23a6db687f4987eb5323b4efe9cf388b7fe7dbed282853f1d90c000490c170fff9eb8742fa5eacab5ee9ccef5d136d1d3c2af84cc60b019d04f83e
   languageName: node
   linkType: hard
 
