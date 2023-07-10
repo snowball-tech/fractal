@@ -6,9 +6,9 @@ module.exports = {
 
       offset: {
         comment:
-          'Use this value to offset elements when switching from a border-1 to a border-2 border',
+          'Use this value (0.085rem) to offset elements when switching from a border-1 to a border-2 border',
 
-        value: '0.085rem',
+        value: 1.36,
       },
     },
   },
