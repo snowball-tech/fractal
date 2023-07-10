@@ -14,13 +14,15 @@ export interface InputCheckboxProps extends RxCheckboxProps {
   checked?: CheckedState
   /**
    * The checked state of the checkbox when it is initially rendered.
-   * Use when you do not need to control its checked state.
+   *
+   * Use this when you do not need to control its checked state.
    */
   defaultChecked?: CheckedState
   /** Prevents the user from interacting with the checkbox. */
   disabled?: boolean
   /**
    * A unique HTML id for the checkbox.
+   *
    * This allows you to link the checkbox with a label.
    *
    * If none is given, one will be generated automatically.
@@ -30,6 +32,7 @@ export interface InputCheckboxProps extends RxCheckboxProps {
   label: string
   /**
    * The name of the checkbox.
+   *
    * It is used to reference the checkbox in a form submission.
    */
   name?: string
