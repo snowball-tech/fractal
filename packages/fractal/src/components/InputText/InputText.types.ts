@@ -1,9 +1,12 @@
 import type { AllHTMLAttributes, FormEventHandler, ReactNode } from 'react'
 
 export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
+  /** Indicates if the input text must be focused on render. */
+  autoFocus?: boolean
   /**
    * The value of the input text when it is initially rendered.
-   * Use when you do not need to control its value.
+   *
+   * Use this when you do not need to control its value.
    */
   defaultValue?: string
   /** An helpful message to describe the input text to the user. */
@@ -12,11 +15,13 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   disabled?: boolean
   /**
    * An error message to display below the input if there is an error.
+   *
    * This will also change the display of the input to give an error feedback
    * (red border and special red icon).
    *
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
+   *
    * The icon (if there is one) will also be replaced  by a specific error icon.
    */
   error?: string
@@ -28,6 +33,7 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   label?: string
   /**
    * The name of the input text.
+   *
    * It is used to reference the input text in a form submission.
    *
    * If none is given, one will be automatically generated.
@@ -35,8 +41,12 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   name?: string
   /** Event handler called when the input text value is changed. */
   onChange?: FormEventHandler<HTMLInputElement>
+  /** A string to display when the input text is empty. */
+  placeholder?: string
   /** Prevents the user to change the value of the input text. */
   readOnly?: boolean
+  /** Indicates if the input text must be filled. */
+  required?: boolean
   /**
    * Indicates if you want to use the input in a standalone mode, i.e without
    * wrapping it with a `RadixUI.Form.Field` element.
@@ -44,6 +54,7 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   standalone?: boolean
   /**
    * A message to display when the input text has a valid value.
+   *
    * This will also change the display of the input to give an success feedback
    * (green border and special green icon).
    *
@@ -53,6 +64,7 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
   success?: string
   /**
    * The type of the input text.
+   *
    * Must be a valid HTML5 type for an `&lt;input /&gt;` element.
    *
    * Note that some valid HTML5 type for an `&lt;input /&gt;` element are not
@@ -63,7 +75,6 @@ export interface InputTextProps extends AllHTMLAttributes<HTMLInputElement> {
    * `&lt;InputTelephone /&gt;`, `&lt;DatePicker /&gt;`, ...).
    */
   type?: 'email' | 'password' | 'search' | 'text' | 'url'
-
   /**
    * The controlled value of the input text.
    *

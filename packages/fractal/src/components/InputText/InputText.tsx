@@ -3,12 +3,15 @@ import {
   UilExclamationCircle as ExclamationCircleIcon,
 } from '@iconscout/react-unicons'
 import * as RxForm from '@radix-ui/react-form'
+import { Label as RxLabel } from '@radix-ui/react-label'
 import { css, cx } from '@snowball-tech/fractal-panda/css'
 import {
   inputText,
+  inputTextDescription,
   inputTextField,
   inputTextIcon,
   inputTextLabel,
+  inputTextMessage,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
@@ -17,14 +20,13 @@ import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import type { ReactNode } from 'react'
 
-import { Typography } from '@/components/Typography'
-
 import type { InputTextProps } from './InputText.types'
 
 /**
  * `InputText` component is used to take text values from the user.
  */
 export default function InputText({
+  autoFocus = false,
   defaultValue,
   description,
   disabled = false,
@@ -34,7 +36,9 @@ export default function InputText({
   label,
   name = uniqueId('fractal-input-text-'),
   onChange,
+  placeholder,
   readOnly = false,
+  required = false,
   standalone = false,
   success,
   type = 'text',
@@ -55,28 +59,26 @@ export default function InputText({
     'group',
     inputTextField(),
     props.className,
+    disabled ? 'disabled' : '',
     isInError ? 'error' : '',
-    isSuccessful ? 'successfull' : '',
     !isEmpty(iconToDisplay) ? `icon-${iconPosition}` : '',
     readOnly ? 'readonly' : '',
-    disabled ? 'disabled' : '',
-  )
-
-  const messageClassName = css({ margin: 0 })
-
-  const labelContent = (
-    <Typography className={css({ margin: 0 })} variant="body-1">
-      {label}
-    </Typography>
+    required ? 'required' : '',
+    isSuccessful ? 'successfull' : '',
   )
 
   const inputElement = (
     <input
-      className={cx(inputText(), typography({ variant: 'body-1' }))}
+      // eslint-disable-next-line jsx-a11y/no-autofocus
+      autoFocus={autoFocus}
+      className={cx(typography({ variant: 'body-1' }), inputText())}
       disabled={disabled}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
+      id={name}
       name={name}
+      placeholder={placeholder}
       readOnly={readOnly}
+      required={required}
       type={type}
       value={value}
       {...(isFunction(onChange)
@@ -93,34 +95,53 @@ export default function InputText({
     <div className={css({ position: 'relative' })}>
       {children}
 
-      {iconToDisplay && <div className={inputTextIcon()}>{iconToDisplay}</div>}
+      {iconToDisplay ? (
+        <div className={inputTextIcon()}>{iconToDisplay}</div>
+      ) : (
+        false
+      )}
     </div>
   )
 
   return standalone ? (
     <div className={groupClassNames}>
-      <label className={inputTextLabel()} htmlFor={name}>
-        {labelContent}
-      </label>
+      {!isEmpty(label) ? (
+        <RxLabel
+          className={cx(typography({ variant: 'body-1' }), inputTextLabel())}
+          htmlFor={name}
+        >
+          {label}
+        </RxLabel>
+      ) : (
+        false
+      )}
 
       <InputWithIcon>{inputElement}</InputWithIcon>
 
-      {!isEmpty(description) && !isInError && !isSuccessful && (
-        <Typography className={messageClassName} variant="caption-median">
+      {!isEmpty(description) && !isInError && !isSuccessful ? (
+        <div
+          className={cx(
+            typography({ variant: 'caption-median' }),
+            inputTextDescription(),
+          )}
+        >
           {description}
-        </Typography>
+        </div>
+      ) : (
+        false
       )}
 
-      {isInError && (
-        <Typography className={messageClassName} variant="caption-median">
-          {error}
-        </Typography>
-      )}
-
-      {isSuccessful && (
-        <Typography className={messageClassName} variant="caption-median">
-          {success}
-        </Typography>
+      {isInError || isSuccessful ? (
+        <div
+          className={cx(
+            typography({ variant: 'caption-median' }),
+            inputTextMessage(),
+          )}
+        >
+          {isInError ? error : success}
+        </div>
+      ) : (
+        false
       )}
     </div>
   ) : (
@@ -129,36 +150,46 @@ export default function InputText({
       name={name}
       serverInvalid={!isEmpty(error)}
     >
-      {!isEmpty(label) && (
-        <RxForm.Label className={inputTextLabel()}>{labelContent}</RxForm.Label>
+      {!isEmpty(label) ? (
+        <RxForm.Label
+          className={cx(typography({ variant: 'body-1' }), inputTextLabel())}
+        >
+          {label}
+        </RxForm.Label>
+      ) : (
+        false
       )}
 
       <InputWithIcon>
         <RxForm.Control asChild>{inputElement}</RxForm.Control>
       </InputWithIcon>
 
-      {!isEmpty(description) && !isInError && !isSuccessful && (
-        <RxForm.Message forceMatch>
-          <Typography className={messageClassName} variant="caption-median">
-            {description}
-          </Typography>
+      {!isEmpty(description) && !isInError && !isSuccessful ? (
+        <RxForm.Message
+          className={cx(
+            typography({ variant: 'caption-median' }),
+            inputTextDescription(),
+          )}
+          forceMatch
+        >
+          {description}
         </RxForm.Message>
+      ) : (
+        false
       )}
 
-      {isInError && (
-        <RxForm.Message forceMatch>
-          <Typography className={messageClassName} variant="caption-median">
-            {error}
-          </Typography>
+      {isInError || isSuccessful ? (
+        <RxForm.Message
+          className={cx(
+            typography({ variant: 'caption-median' }),
+            inputTextMessage(),
+          )}
+          forceMatch
+        >
+          {isInError ? error : success}
         </RxForm.Message>
-      )}
-
-      {isSuccessful && (
-        <RxForm.Message forceMatch>
-          <Typography className={messageClassName} variant="caption-median">
-            {success}
-          </Typography>
-        </RxForm.Message>
+      ) : (
+        false
       )}
     </RxForm.Field>
   )

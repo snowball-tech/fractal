@@ -28,6 +28,12 @@ export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     '.group.disabled &, .group.readonly &': {
       cursor: 'unset',
     },
+    '.group.required &': {
+      _after: {
+        color: 'var(--color-feedback-danger-50)',
+        content: '" *"',
+      },
+    },
 
     cursor: 'var(--cursor-clickable)',
   },
@@ -48,14 +54,12 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
     '.group.error &': {
       color: `var(--color-icon-input-error)`,
     },
-
     '.group.icon-left &': {
       left: 'var(--size-spacing-1)',
     },
     '.group.icon-right &': {
       right: 'var(--size-spacing-1)',
     },
-
     '.group.successfull &': {
       color: `var(--color-icon-input-success)`,
     },
@@ -152,4 +156,27 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
 
     transition: 'border-color 300ms ease-out',
   },
+})
+
+export const inputTextDescription: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    description: 'Input text description',
+    name: 'inputTextDescription',
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['InputText'],
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {},
+  })
+
+export const inputTextMessage: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Input text message',
+  name: 'inputTextMessage',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputText'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {},
 })
