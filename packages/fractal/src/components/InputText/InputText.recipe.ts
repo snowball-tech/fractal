@@ -97,27 +97,27 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       {
         '&:not(:is(:focus, [data-focus]))': {
           '.group.icon-left:is(:hover, [data-hover]) &': {
-            pl: 'calc(var(--size-spacing-5) - 0.085rem)',
+            pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
           },
 
           _groupHover: {
             backgroundColor: `var(--color-background-input-hover)`,
             border: `var(--border-input-hover)`,
             color: `var(--color-text-input-hover)`,
-            pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
+            pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
             shadow: `var(--shadow-input-hover)`,
           },
         },
 
         _focus: {
           '.group.icon-left &': {
-            pl: 'calc(var(--size-spacing-5) - 0.085rem)',
+            pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
           },
 
           backgroundColor: `var(--color-background-input-focus)`,
           border: `var(--border-input-focus)`,
           color: `var(--color-text-input-focus)`,
-          pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
+          pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
           shadow: `var(--shadow-input-focus)`,
         },
       },
@@ -136,10 +136,10 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     '.group.success &, .group.error &': {
-      pl: 'calc(var(--size-input-padding-horizontal) - 0.085rem)',
+      pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
     },
     '.group.success.icon-left &, .group.error.icon-left &': {
-      pl: 'calc(var(--size-spacing-5) - 0.085rem)',
+      pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
     },
 
     _disabled: {
