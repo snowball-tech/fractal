@@ -33,8 +33,9 @@ export default function InputText({
   error,
   icon,
   iconPosition = 'right',
+  id = uniqueId('fractal-input-text-'),
   label,
-  name = uniqueId('fractal-input-text-'),
+  name,
   onChange,
   placeholder,
   readOnly = false,
@@ -74,8 +75,8 @@ export default function InputText({
       className={cx(typography({ variant: 'body-1' }), inputText())}
       disabled={disabled}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
-      id={name}
-      name={name}
+      id={id}
+      name={name || id}
       placeholder={placeholder}
       readOnly={readOnly}
       required={required}
@@ -108,7 +109,7 @@ export default function InputText({
       {!isEmpty(label) ? (
         <RxLabel
           className={cx(typography({ variant: 'body-1' }), inputTextLabel())}
-          htmlFor={name}
+          htmlFor={id}
         >
           {label}
         </RxLabel>
@@ -147,7 +148,7 @@ export default function InputText({
   ) : (
     <RxForm.Field
       className={groupClassNames}
-      name={name}
+      name={name || id}
       serverInvalid={!isEmpty(error)}
     >
       {!isEmpty(label) ? (
