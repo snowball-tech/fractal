@@ -89,8 +89,9 @@ const meta = {
         },
       },
     },
-    onOpenChange: { control: false },
-    onValueChange: { control: false },
+    onClose: { control: false },
+    onOpen: { control: false },
+    onSelect: { control: false },
   },
   args: {
     autoFocus: false,

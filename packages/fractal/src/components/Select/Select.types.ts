@@ -4,7 +4,8 @@ import type {
 } from '@radix-ui/react-select'
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
-export interface SelectProps extends AllHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps
+  extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'onSelect'> {
   /** Indicates if autocompletion is possible in this select. */
   autoComplete?: string
   /** Indicates if the select must be opened on render. */
@@ -65,10 +66,12 @@ export interface SelectProps extends AllHTMLAttributes<HTMLSelectElement> {
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
+  /** Event handler called when the select dropdown is closed. */
+  onClose?: () => void
   /** Event handler called when the select dropdown is opened. */
-  onOpenChange?: (isOpen: boolean) => void
-  /** Event handler called when the selected value is changed. */
-  onValueChange?: (newValue: string) => void
+  onOpen?: () => void
+  /** Event handler called when a value is selected. */
+  onSelect?: (newValue: string) => void
   /**
    * The controlled open state of the select.
    *
