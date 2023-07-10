@@ -169,7 +169,7 @@ module.exports = {
       base: {
         comment: 'Shadow for input fields.',
 
-        value: '{shadow.none}',
+        value: '{shadow.none.value}',
       },
       hover: {
         comment: 'Shadow when hovering input fields.',
