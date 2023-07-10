@@ -1,3 +1,14 @@
+# @snowball-tech/fractal [1.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.5.0...@snowball-tech/fractal@1.6.0) (2023-07-10)
+
+### ✨ Features
+
+- **select:** implement the Select component ([984f774](https://github.com/snowball-tech/fractal/commit/984f77426d054d1586537b07909b18cb354fdf94))
+
+### 🐛 Bug Fixes
+
+- **checkbox:** fix some issues ([d11bf74](https://github.com/snowball-tech/fractal/commit/d11bf74bee92cae946412654ca83de31f9ff2c7d))
+- **input-text:** fix some issues ([fe2e078](https://github.com/snowball-tech/fractal/commit/fe2e078943c0956c9a053ea585623710716e0990))
+
 # @snowball-tech/fractal [1.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.4.3...@snowball-tech/fractal@1.5.0) (2023-07-10)
 
 ### 🎨 Code Style and Formatting
