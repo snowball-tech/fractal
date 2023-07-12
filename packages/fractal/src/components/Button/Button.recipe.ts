@@ -66,7 +66,6 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     _fullWidth: {
-      maxWidth: 'unset',
       width: '100%',
     },
 
@@ -80,7 +79,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     height: '48px',
     justifyContent: 'center',
     maxHeight: '48px',
-    maxWidth: 'fit-content',
+    maxWidth: '100%',
     outline: 'none',
     px: 'var(--size-button-padding-horizontal)',
     py: 'var(--size-button-padding-vertical)',
@@ -88,6 +87,7 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
     transitionDuration: '300ms',
     transitionProperty: 'background-color, color',
     transitionTimingFunction: 'ease-out',
+    width: 'fit-content',
   },
 
   defaultVariants: {
