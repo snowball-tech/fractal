@@ -34,7 +34,7 @@ const meta = {
   component: Button,
   parameters: {
     componentSubtitle:
-      "👨‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
+      "👨‍🚀 Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
   },
 
   title: 'Button',

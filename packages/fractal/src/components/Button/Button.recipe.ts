@@ -1,52 +1,43 @@
+/* eslint-disable no-underscore-dangle */
+
 import { defineRecipe } from '@pandacss/dev'
 import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
 import { DEFAULT_VARIANT, Variants } from './Button.constants'
 
-const hoverFocus: { [K in Variants]?: SystemStyleObject } = {}
+export const GROUP_NAME = 'button'
 
-const variantsObject = Object.values(Variants).reduce(
-  (variants, variantName) => {
-    hoverFocus[variantName] = {
-      '&:not(:is(:disabled, [disabled], [data-disabled]))': {
+const variants = Object.values(Variants).reduce(
+  (allVariants, variantName) => ({
+    ...allVariants,
+    [variantName]: {
+      _activeNotDisabled: {
+        backgroundColor: `var(--color-background-button-${variantName}-active)`,
+        border: `var(--border-button-${variantName}-active)`,
+        color: `var(--color-text-button-${variantName}-active)`,
+        shadow: `var(--shadow-button-${variantName}-active)`,
+      },
+
+      _disabled: {
+        backgroundColor: `var(--color-background-button-${variantName}-disabled)`,
+        border: `var(--border-button-${variantName}-disabled)`,
+        color: `var(--color-text-button-${variantName}-disabled)`,
+        shadow: `var(--shadow-button-${variantName}-disabled)`,
+      },
+
+      _hoverFocusNotDisabled: {
         backgroundColor: `var(--color-background-button-${variantName}-hover)`,
         border: `var(--border-button-${variantName}-hover)`,
         color: `var(--color-text-button-${variantName}-hover)`,
         shadow: `var(--shadow-button-${variantName}-hover)`,
       },
-    }
 
-    return {
-      ...variants,
-      [variantName]: {
-        '&:not(:is(:active, [data-active]))': {
-          _focusVisible: hoverFocus[variantName],
-          _hover: hoverFocus[variantName],
-        },
-
-        _active: {
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            backgroundColor: `var(--color-background-button-${variantName}-active)`,
-            border: `var(--border-button-${variantName}-active)`,
-            color: `var(--color-text-button-${variantName}-active)`,
-            shadow: `var(--shadow-button-${variantName}-active)`,
-          },
-        },
-
-        _disabled: {
-          backgroundColor: `var(--color-background-button-${variantName}-disabled)`,
-          border: `var(--border-button-${variantName}-disabled)`,
-          color: `var(--color-text-button-${variantName}-disabled)`,
-          shadow: `var(--shadow-button-${variantName}-disabled)`,
-        },
-
-        backgroundColor: `var(--color-background-button-${variantName}-base)`,
-        border: `var(--border-button-${variantName}-base)`,
-        color: `var(--color-text-button-${variantName}-base)`,
-        shadow: `var(--shadow-button-${variantName}-base)`,
-      },
-    }
-  },
+      backgroundColor: `var(--color-background-button-${variantName}-base)`,
+      border: `var(--border-button-${variantName}-base)`,
+      color: `var(--color-text-button-${variantName}-base)`,
+      shadow: `var(--shadow-button-${variantName}-base)`,
+    },
+  }),
   {} as Record<Variants, SystemStyleObject>,
 )
 
@@ -100,86 +91,36 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
 
   variants: {
     variant: {
-      ...variantsObject,
-
+      ...variants,
       [Variants.Display]: {
-        ...variantsObject[Variants.Display],
+        ...variants[Variants.Display],
+        _activeNotDisabled: {
+          ...variants[Variants.Display]._activeNotDisabled,
 
-        _active: {
-          // eslint-disable-next-line no-underscore-dangle
-          ...variantsObject[Variants.Display]?._active,
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            // eslint-disable-next-line no-underscore-dangle
-            ...variantsObject[Variants.Display]?._active?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
-
-            transform: 'translate(-2px, 4px)',
-          },
+          transform: 'translate(-2px, 4px)',
         },
 
-        _focusVisible: {
-          ...hoverFocus[Variants.Display],
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            ...hoverFocus[Variants.Display]?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
+        _hoverFocusNotDisabled: {
+          ...variants[Variants.Display]._hoverFocusNotDisabled,
 
-            transform: 'translate(0, -2px)',
-          },
-        },
-
-        _hover: {
-          ...hoverFocus[Variants.Display],
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            ...hoverFocus[Variants.Display]?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
-
-            transform: 'translate(0, -2px)',
-          },
+          transform: 'translate(0, -2px)',
         },
       },
 
       [Variants.Secondary]: {
-        ...variantsObject[Variants.Secondary],
+        ...variants[Variants.Secondary],
+        _activeNotDisabled: {
+          ...variants[Variants.Secondary]._activeNotDisabled,
 
-        _active: {
-          // eslint-disable-next-line no-underscore-dangle
-          ...variantsObject[Variants.Secondary]?._active,
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            // eslint-disable-next-line no-underscore-dangle
-            ...variantsObject[Variants.Secondary]?._active?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
-
-            margin:
-              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
-          },
+          mr: 'calc(var(--size-border-offset) * -1)',
+          pl: 'calc(var(--size-button-padding-horizontal) - var(--size-border-offset))',
         },
 
-        _focusVisible: {
-          ...hoverFocus[Variants.Secondary],
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            ...hoverFocus[Variants.Secondary]?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
+        _hoverFocusNotDisabled: {
+          ...variants[Variants.Secondary]._hoverFocusNotDisabled,
 
-            margin:
-              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
-          },
-        },
-
-        _hover: {
-          ...hoverFocus[Variants.Secondary],
-          '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-            ...hoverFocus[Variants.Secondary]?.[
-              '&:not(:is(:disabled, [disabled], [data-disabled]))'
-            ],
-
-            margin:
-              '0 calc((var(--size-border-2) - var(--size-border-1)) * -1)',
-          },
+          mr: 'calc(var(--size-border-offset) * -1)',
+          pl: 'calc(var(--size-button-padding-horizontal) - var(--size-border-offset))',
         },
       },
     },
