@@ -95,6 +95,18 @@ export function extendConditions(
     groupIconRight: '.group.icon-right &',
     peerIconRight: '.peer.icon-right ~ &',
 
+    fullWidth: '&.full-width',
+    groupFullWidth: '.group.full-width &',
+    peerFullWidth: '.peer.full-width ~ &',
+
+    opened: '&.opened',
+    groupOpened: '.group.opened &',
+    peerOpened: '.peer.opened ~ &',
+
+    closed: '&.closed',
+    groupClosed: '.group.closed &',
+    peerClosed: '.peer.closed ~ &',
+
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   }
 
