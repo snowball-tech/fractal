@@ -35,7 +35,7 @@ const meta = {
   component: InputCheckbox,
   parameters: {
     componentSubtitle:
-      '🐦 Checking in with the morning report. - Zazu - The Lion King',
+      '🦜 Checking in with the morning report. - Zazu - The Lion King',
     controls: {
       exclude: ['checked'],
     },
@@ -48,9 +48,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  argTypes: {
-    onCheckedChange: { table: { disable: true } },
-  },
   args: {
     variant: DEFAULT_VARIANT,
   },

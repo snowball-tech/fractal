@@ -13,7 +13,10 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 
+import { PREFIX } from '@/constants'
+
 import { DEFAULT_VARIANT } from './InputCheckbox.constants'
+import { GROUP_NAME } from './InputCheckbox.recipe'
 import type { InputCheckboxProps } from './InputCheckbox.types'
 
 /**
@@ -33,7 +36,7 @@ export default function InputCheckbox({
   ...props
 }: InputCheckboxProps) {
   const groupClassNames = cx(
-    'group',
+    `${PREFIX}-${GROUP_NAME}`,
     inputCheckboxContainer({ variant }),
     props.className,
     disabled ? 'disabled' : '',

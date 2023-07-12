@@ -3,6 +3,8 @@ import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
 import { DEFAULT_VARIANT, Variants } from './InputCheckbox.constants'
 
+export const GROUP_NAME = 'input-checkbox'
+
 export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
     description: 'Checkbox container',
@@ -13,7 +15,7 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      '&.disabled': {
+      _disabled: {
         backgroundColor: 'var(--color-background-disabled)',
         border: 'var(--border-disabled)',
         color: 'var(--color-background-disabled)',
@@ -76,14 +78,9 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
       (variants, variantName) => ({
         ...variants,
         [variantName]: {
-          '&:not(:is(:checked, [data-checked], [aria-checked=true], :disabled, [disabled], [data-disabled]))':
+          '.fractal-input-checkbox:is(:hover, [data-hover]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:not(:is(:checked, [data-checked], [aria-checked=true]))':
             {
-              _groupHover: {
-                backgroundColor:
-                  variantName === Variants.Black
-                    ? `var(--color-base-grey-50)`
-                    : `var(--color-decorative-${variantName}-90, var(--color-brand-${variantName}, var(--color-base-white)))`,
-              },
+              backgroundColor: `var(--color-decorative-${variantName}-90, var(--color-brand-${variantName}, var(--color-base-white)))`,
             },
 
           _checked: {
@@ -118,7 +115,7 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
         width: '20px',
       },
 
-      '.group.disabled &': {
+      _inputCheckboxDisabled: {
         color: 'var(--color-text-disabled)',
       },
 
@@ -134,11 +131,7 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
         ...Object.values(Variants).reduce(
           (variants, variantName) => ({
             ...variants,
-            [variantName]: {
-              ...(variantName === Variants.Black
-                ? { color: 'var(--color-text-light)' }
-                : {}),
-            },
+            [variantName]: {},
           }),
           {} as Record<Variants, SystemStyleObject>,
         ),
@@ -156,11 +149,12 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      '.group.disabled &': {
+      _inputCheckboxDisabled: {
         color: 'var(--color-text-disabled)',
         cursor: 'var(--cursor-disabled)',
       },
-      '.group.required &': {
+
+      _inputCheckboxRequired: {
         _after: {
           color: 'var(--color-feedback-danger-50)',
           content: '" *"',
