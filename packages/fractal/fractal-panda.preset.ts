@@ -1,4 +1,5 @@
 import { definePreset } from '@pandacss/dev'
+import basePreset from '@pandacss/preset-base'
 import {
   SizeBreakpointLg,
   SizeBreakpointMd,
@@ -8,8 +9,24 @@ import {
   SizeBreakpointXxl,
 } from '@snowball-tech/design-tokens'
 
-import { Breakpoints } from '@/constants'
-import * as recipes from '@/recipes'
+import * as ButtonRecipes from '@/components/Button/Button.recipe'
+import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
+import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
+import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
+import * as SelectRecipes from '@/components/Select/Select.recipe'
+import * as TypographyRecipes from '@/components/Typography/Typography.recipe'
+
+import { extendConditions } from './src/conditions'
+import { Breakpoints, PREFIX } from './src/constants'
+
+const GROUPS = {
+  button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
+  inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
+  inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
+  inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
+  select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
+  typography: `${PREFIX}-${TypographyRecipes.GROUP_NAME}`,
+}
 
 const fractalPreset = definePreset({
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
@@ -18,6 +35,8 @@ const fractalPreset = definePreset({
   eject: true,
   // Only import the base presets with useful resets and utilities.
   presets: ['@pandacss/preset-base'],
+
+  conditions: extendConditions(basePreset.conditions, GROUPS),
 
   theme: {
     breakpoints: {
@@ -31,32 +50,40 @@ const fractalPreset = definePreset({
 
     extend: {
       recipes: {
-        button: recipes.button,
+        button: ButtonRecipes.button,
 
-        inputCheckbox: recipes.inputCheckbox,
-        inputCheckboxCheckmark: recipes.inputCheckboxCheckmark,
-        inputCheckboxContainer: recipes.inputCheckboxContainer,
-        inputCheckboxLabel: recipes.inputCheckboxLabel,
+        inputCheckbox: InputCheckboxRecipes.inputCheckbox,
+        inputCheckboxCheckmark: InputCheckboxRecipes.inputCheckboxCheckmark,
+        inputCheckboxContainer: InputCheckboxRecipes.inputCheckboxContainer,
+        inputCheckboxLabel: InputCheckboxRecipes.inputCheckboxLabel,
 
-        inputText: recipes.inputText,
-        inputTextDescription: recipes.inputTextDescription,
-        inputTextField: recipes.inputTextField,
-        inputTextIcon: recipes.inputTextIcon,
-        inputTextLabel: recipes.inputTextLabel,
-        inputTextMessage: recipes.inputTextMessage,
+        inputDateContainer: InputDateRecipes.inputDateContainer,
+        inputDateDay: InputDateRecipes.inputDateDay,
+        inputDateFields: InputDateRecipes.inputDateFields,
+        inputDateLabel: InputDateRecipes.inputDateLabel,
+        inputDateMessage: InputDateRecipes.inputDateMessage,
+        inputDateMonth: InputDateRecipes.inputDateMonth,
+        inputDateYear: InputDateRecipes.inputDateYear,
 
-        selectContainer: recipes.selectContainer,
-        selectDescription: recipes.selectDescription,
-        selectDropdown: recipes.selectDropdown,
-        selectIndicator: recipes.selectIndicator,
-        selectItem: recipes.selectItem,
-        selectItemGroup: recipes.selectItemGroup,
-        selectItemSeparator: recipes.selectItemSeparator,
-        selectLabel: recipes.selectLabel,
-        selectTrigger: recipes.selectTrigger,
-        selectValue: recipes.selectValue,
+        inputText: InputTextRecipes.inputText,
+        inputTextDescription: InputTextRecipes.inputTextDescription,
+        inputTextField: InputTextRecipes.inputTextField,
+        inputTextIcon: InputTextRecipes.inputTextIcon,
+        inputTextLabel: InputTextRecipes.inputTextLabel,
+        inputTextMessage: InputTextRecipes.inputTextMessage,
 
-        typography: recipes.typography,
+        selectContainer: SelectRecipes.selectContainer,
+        selectDescription: SelectRecipes.selectDescription,
+        selectDropdown: SelectRecipes.selectDropdown,
+        selectIndicator: SelectRecipes.selectIndicator,
+        selectItem: SelectRecipes.selectItem,
+        selectItemGroup: SelectRecipes.selectItemGroup,
+        selectItemSeparator: SelectRecipes.selectItemSeparator,
+        selectLabel: SelectRecipes.selectLabel,
+        selectTrigger: SelectRecipes.selectTrigger,
+        selectValue: SelectRecipes.selectValue,
+
+        typography: TypographyRecipes.typography,
       },
     },
   },

@@ -8,13 +8,13 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: path.resolve(__dirname, 'index.ts'),
       formats: ['es'],
       name: 'Fractal',
     },
 
     rollupOptions: {
-      external: ['react', 'react-dom', '@snowball-tech/fractal-panda'],
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',
