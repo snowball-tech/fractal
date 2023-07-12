@@ -2,21 +2,27 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const GROUP_NAME = 'input-text'
 
-export const inputTextField: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Form field for text input',
-  name: 'inputTextField',
+export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
+  {
+    description: 'Input text container',
+    name: 'inputTextContainer',
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['InputText'],
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 'var(--size-spacing-1)',
-    width: 'fit-content',
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {
+      _fullWidth: {
+        width: '100%',
+      },
+
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--size-spacing-1)',
+      width: 'fit-content',
+    },
   },
-})
+)
 
 export const inputTextLabel = defineRecipe({
   description: 'Text input label',
@@ -42,36 +48,20 @@ export const inputTextLabel = defineRecipe({
   },
 })
 
-export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input (optional) icon or error/success icon',
-  name: 'inputTextIcon',
+export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Input text & icon wrapper',
+  name: 'inputTextWrapper',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   jsx: ['InputText'],
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    _inputTextDisabled: {
-      color: `var(--color-icon-input-disabled)`,
-    },
-    _inputTextIconLeft: {
-      left: 'var(--size-spacing-1)',
-    },
-    _inputTextIconRight: {
-      right: 'var(--size-spacing-1)',
-    },
-    _inputTextInvalid: {
-      color: `var(--color-icon-input-error)`,
-    },
-    _inputTextValid: {
-      color: `var(--color-icon-input-success)`,
+    _inputTextFullWidth: {
+      width: '100%',
     },
 
-    display: 'flex',
-    position: 'absolute',
-    right: 'var(--size-spacing-1)',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    position: 'relative',
     width: 'fit-content',
   },
 })
@@ -85,6 +75,11 @@ export const inputText = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    _inputTextFullWidth: {
+      width: '100%',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _disabled: {
       backgroundColor: `var(--color-background-input-disabled)`,
       border: `var(--border-input-disabled)`,
@@ -178,6 +173,45 @@ export const inputText = defineRecipe({
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
     transition: 'border-color 300ms ease-out',
+  },
+})
+
+export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Text input (optional) icon or error/success icon',
+  name: 'inputTextIcon',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputText'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    _inputTextFullWidth: {
+      width: '100%',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    _inputTextDisabled: {
+      color: `var(--color-icon-input-disabled)`,
+    },
+    _inputTextIconLeft: {
+      left: 'var(--size-spacing-1)',
+    },
+    _inputTextIconRight: {
+      right: 'var(--size-spacing-1)',
+    },
+    _inputTextInvalid: {
+      color: `var(--color-icon-input-error)`,
+    },
+    _inputTextValid: {
+      color: `var(--color-icon-input-success)`,
+    },
+
+    display: 'flex',
+    position: 'absolute',
+    right: 'var(--size-spacing-1)',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: 'fit-content',
   },
 })
 

@@ -29,6 +29,8 @@ export interface InputTextProps
    * The icon (if there is one) will also be replaced  by a specific error icon.
    */
   error?: boolean | string
+  /** Indicates if the input text should take all the available width. */
+  fullWidth?: boolean
   /** The icon to display in the input text (if any). */
   icon?: ReactNode
   /** The position of the icon in the input text. */
