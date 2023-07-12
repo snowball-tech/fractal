@@ -1,20 +1,13 @@
 import type { StorybookConfig } from '@storybook/react-vite'
-import { mergeConfig } from 'vite'
 
 const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-styling',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-addon-mock',
   ],
-
-  core: {
-    builder: '@storybook/builder-vite',
-    enableCrashReports: true,
-  },
 
   docs: {
     autodocs: 'tag',
@@ -50,19 +43,6 @@ const config: StorybookConfig = {
       skipChildrenPropWithoutDoc: false,
     },
     skipBabel: true,
-  },
-
-  async viteFinal(viteConfig) {
-    return mergeConfig(viteConfig, {
-      // Customize the Vite config for Storybook
-      optimizeDeps: {
-        include: [
-          '@snowball-tech/fractal-panda/css',
-          '@snowball-tech/fractal-panda/jsx',
-          '@snowball-tech/fractal-panda/recipes',
-        ],
-      },
-    })
   },
 }
 
