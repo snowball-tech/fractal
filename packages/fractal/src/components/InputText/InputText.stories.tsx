@@ -186,6 +186,15 @@ export const TextInputs: Story = {
         />
       </Wrapper>
 
+      <Wrapper>
+        <InputText
+          defaultValue="A value"
+          description="And a description"
+          fullWidth
+          label="This is a full width input text with a label"
+        />
+      </Wrapper>
+
       {separator}
 
       <Wrapper>

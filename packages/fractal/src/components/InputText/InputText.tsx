@@ -3,14 +3,15 @@ import {
   UilExclamationCircle as ExclamationCircleIcon,
 } from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import { css, cx } from '@snowball-tech/fractal-panda/css'
+import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   inputText,
+  inputTextContainer,
   inputTextDescription,
-  inputTextField,
   inputTextIcon,
   inputTextLabel,
   inputTextMessage,
+  inputTextWrapper,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
@@ -33,6 +34,7 @@ export default function InputText({
   description,
   disabled = false,
   error,
+  fullWidth = false,
   icon,
   iconPosition = 'right',
   id = uniqueId('fractal-input-text-'),
@@ -62,9 +64,10 @@ export default function InputText({
 
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
-    inputTextField(),
+    inputTextContainer(),
     props.className,
     disabled ? 'disabled' : '',
+    fullWidth ? 'full-width' : '',
     isInError ? 'invalid' : '',
     !isEmpty(iconToDisplay) ? `icon-${iconPosition}` : '',
     readOnly ? 'readonly' : '',
@@ -95,7 +98,7 @@ export default function InputText({
         false
       )}
 
-      <div className={css({ position: 'relative', width: 'fit-content' })}>
+      <div className={inputTextWrapper()}>
         <input
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
