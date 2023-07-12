@@ -5,21 +5,22 @@ import {
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
-import * as RxForm from '@radix-ui/react-form'
+import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import InputText from './InputText'
 
 type InputTextProps = ComponentProps<typeof InputText>
 
-const meta = {
+const meta: Meta<InputTextProps> = {
   argTypes: {
+    defaultValue: { control: 'text' },
     onChange: {
       control: false,
-      table: {
-        type: { summary: '`(event: ChangeEvent<HTMLInputElement>) => void`' },
-      },
+    },
+    onRawChange: {
+      control: false,
     },
   },
   args: {
@@ -34,10 +35,30 @@ const meta = {
     type: 'text',
   },
   component: InputText,
+  decorators: [
+    function WithArgs(Story, context) {
+      const [, setArgs] = useArgs<typeof context.args>()
+
+      const onChange = (newValue: string) => {
+        context.args.onChange?.(newValue)
+
+        // Check if the component is controlled.
+        if (context.args.value !== undefined) {
+          setArgs({ value: newValue })
+        }
+      }
+
+      const onRawChange = (event: ChangeEvent<HTMLInputElement>) => {
+        context.args.onRawChange?.(event)
+      }
+
+      return <Story args={{ ...context.args, onChange, onRawChange }} />
+    },
+  ],
   parameters: {
     componentSubtitle: '🤖 Malfunction, need input! - Johnny 5 - Short Circuit',
     controls: {
-      exclude: ['standalone', 'value'],
+      exclude: ['value'],
     },
   },
 
@@ -58,19 +79,18 @@ export const Playground: StoryObj<InputTextProps & { withIcon: boolean }> = {
         Send: <SendIcon />,
         Star: <StarIcon />,
       },
-      options: ['Cancel', 'Check', 'Error', 'Forbidden', 'Star'],
+      options: ['Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
     iconPosition: {
       if: { arg: 'withIcon' },
     },
-    onChange: { table: { disable: true } },
     withIcon: {
       control: 'boolean',
       description: 'Add an icon to the input text',
     },
   },
   args: {
-    standalone: true,
+    value: '',
     withIcon: false,
   },
 }
@@ -99,12 +119,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 
 export const TextInputs: Story = {
   render: () => (
-    <RxForm.Root
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <>
       <Wrapper>
         <InputText />
         <InputText placeholder="This is the placeholder" />
@@ -381,6 +396,6 @@ export const TextInputs: Story = {
           readOnly
         />
       </Wrapper>
-    </RxForm.Root>
+    </>
   ),
 }
