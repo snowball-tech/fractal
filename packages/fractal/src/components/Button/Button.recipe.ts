@@ -65,6 +65,11 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       cursor: 'var(--cursor-disabled)',
     },
 
+    _fullWidth: {
+      maxWidth: 'unset',
+      width: '100%',
+    },
+
     alignItems: 'center',
     all: 'unset',
     borderRadius: 'var(--size-radius-rounded)',
@@ -125,4 +130,12 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       },
     },
   },
+})
+
+export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Button label',
+  name: 'buttonLabel',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {},
 })

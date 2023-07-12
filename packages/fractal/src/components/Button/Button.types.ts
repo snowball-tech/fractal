@@ -9,6 +9,8 @@ export interface ButtonProps
   dir?: PressableProps['dir']
   /** Prevents the user from interacting with the button. */
   disabled?: boolean
+  /** Indicates if the button should take all the available width. */
+  fullWidth?: boolean
   /** The icon to display in the button (if any). */
   icon?: ReactNode
   /** The position of the icon in the button. */
