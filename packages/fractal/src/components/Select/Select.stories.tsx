@@ -1,3 +1,4 @@
+import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
@@ -68,7 +69,7 @@ const itemsWithGroupsAndSeparators = (
   </>
 )
 
-const meta = {
+const meta: Meta<SelectProps> = {
   argTypes: {
     autoComplete: { table: { disable: true } },
     autoFocus: { table: { disable: true } },
@@ -102,6 +103,23 @@ const meta = {
     required: false,
   },
   component: Select,
+  decorators: [
+    function WithArgs(Story, context) {
+      const [, setArgs] = useArgs<typeof context.args>()
+
+      const onSelect = (newValue: string) => {
+        context.args.onSelect?.(newValue)
+
+        setArgs({ value: newValue })
+      }
+
+      return (
+        <div style={{ maxWidth: '300px' }}>
+          <Story args={{ ...context.args, onSelect }} />
+        </div>
+      )
+    },
+  ],
   parameters: {
     componentSubtitle:
       '🚀 Failure is not an option - Gene Kranz (NASA Flight Director) - Apollo 13',
@@ -130,5 +148,6 @@ export const Playground: Story = {
   },
   args: {
     children: 'Simple items',
+    fullWidth: true,
   },
 }

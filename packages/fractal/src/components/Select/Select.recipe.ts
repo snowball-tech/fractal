@@ -1,5 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
+export const GROUP_NAME = 'select'
+
 export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select container',
   name: 'selectContainer',
@@ -9,6 +11,10 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    _fullWidth: {
+      width: '100%',
+    },
+
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--size-spacing-1)',
@@ -16,7 +22,7 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
+export const selectLabel = defineRecipe({
   description: 'Select label',
   name: 'selectLabel',
 
@@ -25,10 +31,11 @@ export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '.group.disabled &, .group.readonly &': {
+    _selectDisable: {
       cursor: 'unset',
     },
-    '.group.required &': {
+
+    _selectRequired: {
       _after: {
         color: 'var(--color-feedback-danger-50)',
         content: '" *"',
@@ -40,7 +47,7 @@ export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
+export const selectTrigger = defineRecipe({
   description: 'Select trigger (selected value/placeholder)',
   name: 'selectTrigger',
 
@@ -57,8 +64,16 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
       fontStyle: 'var(--style-text-placeholder)',
     },
 
+    _selectDisabled: {
+      backgroundColor: `var(--color-background-select-disabled)`,
+      border: `var(--border-select-disabled)`,
+      color: `var(--color-text-select-disabled)`,
+      cursor: 'var(--cursor-disabled)',
+      shadow: `var(--shadow-select-disabled)`,
+    },
+
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    '&:not(:is(:disabled, [disabled], [data-disabled]))': {
+    _selectNotDisabled: {
       _focus: {
         backgroundColor: `var(--color-background-select-focus)`,
         border: `var(--border-select-focus)`,
@@ -67,21 +82,13 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
         shadow: `var(--shadow-select-focus)`,
       },
 
-      _groupHover: {
+      _selectHover: {
         backgroundColor: `var(--color-background-select-hover)`,
         border: `var(--border-select-hover)`,
         color: `var(--color-text-select-hover)`,
         pl: 'calc(var(--size-select-padding-horizontal) - var(--size-border-offset))',
         shadow: `var(--shadow-select-hover)`,
       },
-    },
-
-    _disabled: {
-      backgroundColor: `var(--color-background-select-disabled)`,
-      border: `var(--border-select-disabled)`,
-      color: `var(--color-text-select-disabled)`,
-      cursor: 'var(--cursor-disabled)',
-      shadow: `var(--shadow-select-disabled)`,
     },
 
     alignItems: 'center',
@@ -95,7 +102,6 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     display: 'flex',
     height: '48px',
     maxHeight: '48px',
-    minWidth: '305px',
     outline: 'none',
     px: 'var(--size-select-padding-horizontal)',
     shadow: `var(--shadow-select-base)`,
@@ -118,7 +124,7 @@ export const selectValue: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
+export const selectIndicator = defineRecipe({
   description: 'Select status indicator (arrow)',
   name: 'selectIndicator',
 
@@ -131,14 +137,15 @@ export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
       height: '100%',
     },
 
-    '.group.opened &': {
+    _selectHover: {
+      mr: '-var(--size-border-offset)',
+    },
+
+    _selectOpened: {
       transform: 'rotate(180deg)',
     },
 
-    '.trigger:focus &': {
-      mr: '-var(--size-border-offset)',
-    },
-    _groupHover: {
+    _selectTriggerFocus: {
       mr: '-var(--size-border-offset)',
     },
 
@@ -196,7 +203,11 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '&:not(:is(:disabled, [disabled], [data-disabled]))': {
+    _disabled: {
+      color: `var(--color-text-select-disabled)`,
+    },
+
+    _writable: {
       '&:nth-of-type(1), &:nth-of-type(5n+1)': {
         _focusVisible: {
           backgroundColor: `var(--color-background-options-hover-1)`,
@@ -237,10 +248,6 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
           backgroundColor: `var(--color-background-options-hover-5)`,
         },
       },
-    },
-
-    _disabled: {
-      color: `var(--color-text-select-disabled)`,
     },
 
     borderRadius: 'var(--size-radius-s)',

@@ -47,6 +47,8 @@ export interface SelectProps
       'collisionBoundary' | 'hideWhenDetached' | 'sticky'
     >
   >
+  /** Indicates if the select should take all the available width. */
+  fullWidth?: boolean
   /**
    * A unique HTML id for the select.
    *
