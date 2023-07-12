@@ -20,6 +20,9 @@ import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import { useState } from 'react'
 
+import { PREFIX } from '@/constants'
+
+import { GROUP_NAME } from './Select.recipe'
 import type { SelectProps } from './Select.types'
 
 /**
@@ -35,6 +38,7 @@ export default function Select({
   disabled = false,
   displayedValue,
   dropdown = {},
+  fullWidth = false,
   id = uniqueId('fractal-select-'),
   label,
   name,
@@ -50,15 +54,32 @@ export default function Select({
   const [isOpen, setIsOpen] = useState(open)
 
   const groupClassNames = cx(
-    'group',
+    `${PREFIX}-${GROUP_NAME}`,
     selectContainer(),
     props.className,
     disabled ? 'disabled' : '',
+    fullWidth ? 'full-width' : '',
     required ? 'required' : '',
     isOpen ? 'opened' : 'closed',
   )
 
-  const dropdownClassNames = cx('group', selectDropdown())
+  const handleSelect = (newValue: string) => {
+    if (isFunction(onSelect)) {
+      onSelect(newValue)
+    }
+  }
+
+  const handleDropdownToggle = (isOpened: boolean) => {
+    setIsOpen(isOpened)
+
+    if (isOpened && isFunction(onOpen)) {
+      onOpen()
+    }
+
+    if (!isOpened && isFunction(onClose)) {
+      onClose()
+    }
+  }
 
   return (
     <div className={groupClassNames}>
@@ -83,32 +104,14 @@ export default function Select({
         required={required}
         {...(open !== undefined ? { open } : {})}
         {...(value !== undefined ? { value } : {})}
-        {...(isFunction(onSelect)
-          ? {
-              onValueChange: (newValue: string) => onSelect(newValue),
-            }
-          : {})}
-        {...(isFunction(onOpen) || isFunction(onClose)
-          ? {
-              onOpenChange: (isOpened: boolean) => {
-                setIsOpen(isOpened)
-
-                if (isOpened) {
-                  onOpen?.()
-
-                  return
-                }
-
-                onClose?.()
-              },
-            }
-          : {})}
+        onOpenChange={handleDropdownToggle}
+        onValueChange={handleSelect}
         // Be careful, arguments of `omit` from lodash FP are flipped!
         {...omit(['autoComplete', 'className', 'dir'], props)}
       >
         <RxSelect.Trigger
           className={cx(
-            'trigger',
+            `${PREFIX}-${GROUP_NAME}-trigger`,
             typography({ variant: 'body-1' }),
             selectTrigger(),
           )}
@@ -131,7 +134,7 @@ export default function Select({
         <RxSelect.Portal>
           <RxSelect.Content
             align="center"
-            className={dropdownClassNames}
+            className={cx('fractal-select-dropdown', selectDropdown())}
             position="popper"
             side="bottom"
             {...dropdown}
