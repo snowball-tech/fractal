@@ -1,5 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
+export const GROUP_NAME = 'input-text'
+
 export const inputTextField: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Form field for text input',
   name: 'inputTextField',
@@ -16,7 +18,7 @@ export const inputTextField: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
+export const inputTextLabel = defineRecipe({
   description: 'Text input label',
   name: 'inputTextLabel',
 
@@ -25,10 +27,11 @@ export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '.group.disabled &, .group.readonly &': {
+    _inputTextNotWritable: {
       cursor: 'unset',
     },
-    '.group.required &': {
+
+    _inputTextRequired: {
       _after: {
         color: 'var(--color-feedback-danger-50)',
         content: '" *"',
@@ -48,19 +51,19 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '.group.disabled &': {
+    _inputTextDisabled: {
       color: `var(--color-icon-input-disabled)`,
     },
-    '.group.error &': {
-      color: `var(--color-icon-input-error)`,
-    },
-    '.group.icon-left &': {
+    _inputTextIconLeft: {
       left: 'var(--size-spacing-1)',
     },
-    '.group.icon-right &': {
+    _inputTextIconRight: {
       right: 'var(--size-spacing-1)',
     },
-    '.group.success &': {
+    _inputTextInvalid: {
+      color: `var(--color-icon-input-error)`,
+    },
+    _inputTextValid: {
       color: `var(--color-icon-input-success)`,
     },
 
@@ -69,12 +72,11 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
     right: 'var(--size-spacing-1)',
     top: '50%',
     transform: 'translateY(-50%)',
-
     width: 'fit-content',
   },
 })
 
-export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
+export const inputText = defineRecipe({
   description: 'Text input',
   name: 'inputText',
 
@@ -83,65 +85,6 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '&:not(:is(:disabled, [disabled], [data-disabled]))': {
-      _readOnly: {
-        backgroundColor: `var(--color-background-input-disabled)`,
-        border: `var(--border-input-disabled)`,
-        color: `var(--color-text-input-base)`,
-        cursor: 'unset',
-        shadow: `var(--shadow-input-disabled)`,
-      },
-    },
-
-    '&:not(:is(:disabled, [disabled], [data-disabled], :read-only, [data-read-only]))':
-      {
-        '&:not(:is(:focus, [data-focus]))': {
-          '.group.icon-left:is(:hover, [data-hover]) &': {
-            pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
-          },
-
-          _groupHover: {
-            backgroundColor: `var(--color-background-input-hover)`,
-            border: `var(--border-input-hover)`,
-            color: `var(--color-text-input-hover)`,
-            pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
-            shadow: `var(--shadow-input-hover)`,
-          },
-        },
-
-        _focus: {
-          '.group.icon-left &': {
-            pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
-          },
-
-          backgroundColor: `var(--color-background-input-focus)`,
-          border: `var(--border-input-focus)`,
-          color: `var(--color-text-input-focus)`,
-          pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
-          shadow: `var(--shadow-input-focus)`,
-        },
-      },
-
-    '.group.error &': {
-      border: `var(--border-input-error)`,
-    },
-    '.group.icon-left &': {
-      pl: 'var(--size-spacing-5)',
-    },
-    '.group.icon-right &': {
-      pr: 'var(--size-spacing-5)',
-    },
-    '.group.success &': {
-      border: `var(--border-input-success)`,
-    },
-
-    '.group.success &, .group.error &': {
-      pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
-    },
-    '.group.success.icon-left &, .group.error.icon-left &': {
-      pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
-    },
-
     _disabled: {
       backgroundColor: `var(--color-background-input-disabled)`,
       border: `var(--border-input-disabled)`,
@@ -150,10 +93,78 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       shadow: `var(--shadow-input-disabled)`,
     },
 
+    _readOnlyNotDisabled: {
+      backgroundColor: `var(--color-background-input-disabled)`,
+      border: `var(--border-input-disabled)`,
+      color: `var(--color-text-input-base)`,
+      cursor: 'text',
+      shadow: `var(--shadow-input-disabled)`,
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    _inputTextIconLeft: {
+      pl: 'var(--size-spacing-5)',
+    },
+    _inputTextIconRight: {
+      pr: 'var(--size-spacing-5)',
+    },
+
+    _inputTextInvalid: {
+      border: `var(--border-input-error)`,
+    },
+    _inputTextValid: {
+      border: `var(--border-input-success)`,
+    },
+    _inputTextValidOrInvalid: {
+      pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
+    },
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    '.fractal-input-text.icon-left:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &':
+      {
+        pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
+      },
+
     _placeholder: {
       color: `var(--color-text-placeholder)`,
       fontStyle: 'var(--style-text-placeholder)',
     },
+
+    _writable: {
+      '.fractal-input-text.icon-left:is(:hover, [data-hover]) &, .fractal-input-text.icon-left &:is(:focus, [data-focus])':
+        {
+          pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
+        },
+      '.fractal-input-text:is(:hover, [data-hover]) &, .fractal-input-text &:is(:focus, [data-focus])':
+        {
+          mr: 'calc(var(--size-border-offset) * -1)',
+          pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
+        },
+      '.fractal-input-text:is(:hover, [data-hover]) &:not(:is(:focus, [data-focus]))':
+        {
+          backgroundColor: `var(--color-background-input-hover)`,
+          border: `var(--border-input-hover)`,
+          color: `var(--color-text-input-hover)`,
+          shadow: `var(--shadow-input-hover)`,
+        },
+      '.fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &:is(:focus, [data-focus])':
+        {
+          mr: 0,
+        },
+
+      '.fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid):is(:hover, [data-hover]) &, .fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &:is(:focus, [data-focus])':
+        {
+          mr: 0,
+        },
+
+      _focus: {
+        backgroundColor: `var(--color-background-input-focus)`,
+        border: `var(--border-input-focus)`,
+        color: `var(--color-text-input-focus)`,
+        mr: 'calc(var(--size-border-offset) * -2)',
+        shadow: `var(--shadow-input-focus)`,
+      },
+    },
+
     all: 'unset',
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
@@ -163,11 +174,9 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     cursor: 'var(--cursor-clickable)',
     height: '48px',
     maxHeight: '48px',
-    minWidth: '305px',
     outline: 'none',
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
-
     transition: 'border-color 300ms ease-out',
   },
 })
