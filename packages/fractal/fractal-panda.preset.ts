@@ -25,6 +25,7 @@ const GROUPS = {
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
+  selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
   typography: `${PREFIX}-${TypographyRecipes.GROUP_NAME}`,
 }
 
@@ -51,6 +52,7 @@ const fractalPreset = definePreset({
     extend: {
       recipes: {
         button: ButtonRecipes.button,
+        buttonLabel: ButtonRecipes.buttonLabel,
 
         inputCheckbox: InputCheckboxRecipes.inputCheckbox,
         inputCheckboxCheckmark: InputCheckboxRecipes.inputCheckboxCheckmark,
@@ -66,11 +68,12 @@ const fractalPreset = definePreset({
         inputDateYear: InputDateRecipes.inputDateYear,
 
         inputText: InputTextRecipes.inputText,
+        inputTextContainer: InputTextRecipes.inputTextContainer,
         inputTextDescription: InputTextRecipes.inputTextDescription,
-        inputTextField: InputTextRecipes.inputTextField,
         inputTextIcon: InputTextRecipes.inputTextIcon,
         inputTextLabel: InputTextRecipes.inputTextLabel,
         inputTextMessage: InputTextRecipes.inputTextMessage,
+        inputTextWrapper: InputTextRecipes.inputTextWrapper,
 
         selectContainer: SelectRecipes.selectContainer,
         selectDescription: SelectRecipes.selectDescription,
