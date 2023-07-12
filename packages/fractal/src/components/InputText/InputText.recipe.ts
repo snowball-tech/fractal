@@ -19,6 +19,7 @@ export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--size-spacing-1)',
+      maxWidth: '100%',
       width: 'fit-content',
     },
   },
@@ -61,6 +62,7 @@ export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
       width: '100%',
     },
 
+    maxWidth: '100%',
     position: 'relative',
     width: 'fit-content',
   },
@@ -169,6 +171,7 @@ export const inputText = defineRecipe({
     cursor: 'var(--cursor-clickable)',
     height: '48px',
     maxHeight: '48px',
+    maxWidth: '100%',
     outline: 'none',
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
@@ -185,13 +188,13 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    _inputTextFullWidth: {
-      width: '100%',
-    },
-
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _inputTextDisabled: {
       color: `var(--color-icon-input-disabled)`,
+    },
+
+    _inputTextFullWidth: {
+      width: '100%',
     },
     _inputTextIconLeft: {
       left: 'var(--size-spacing-1)',
@@ -207,6 +210,7 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     display: 'flex',
+    maxWidth: '100%',
     position: 'absolute',
     right: 'var(--size-spacing-1)',
     top: '50%',

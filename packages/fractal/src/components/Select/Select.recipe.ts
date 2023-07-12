@@ -18,6 +18,7 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--size-spacing-1)',
+    maxWidth: '100%',
     width: 'fit-content',
   },
 })
