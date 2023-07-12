@@ -4,7 +4,10 @@ import { button, typography } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
+import { PREFIX } from '@/constants'
+
 import { DEFAULT_VARIANT } from './Button.constants'
+import { GROUP_NAME } from './Button.recipe'
 import type { ButtonProps } from './Button.types'
 
 /**
@@ -21,12 +24,17 @@ export default function Button({
   variant = DEFAULT_VARIANT,
   ...props
 }: ButtonProps) {
-  const buttonClassNames = cx(button({ variant }), props.className)
+  const buttonClassNames = cx(
+    `${PREFIX}-${GROUP_NAME}`,
+    button({ variant }),
+    props.className,
+  )
 
   return (
     <Pressable
       className={buttonClassNames}
       disabled={disabled}
+      preventFocusOnPress
       type={type}
       {...(isFunction(onClick) ? { onPress: (event) => onClick(event) } : {})}
       {...(isFunction(onLongClick)
