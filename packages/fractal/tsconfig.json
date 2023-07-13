@@ -21,7 +21,8 @@
     "./.storybook/*.ts",
     "./.storybook/*.tsx",
     "./stories",
-    "./node_modules/@snowball-tech/fractal-panda"
+    "./node_modules/@snowball-tech/fractal-panda",
+    "src/components/InputPhone/InputPhone.types.ts"
   ],
   "files": [],
   "references": []

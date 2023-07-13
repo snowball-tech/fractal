@@ -193,9 +193,6 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
       color: `var(--color-icon-input-disabled)`,
     },
 
-    _inputTextFullWidth: {
-      width: '100%',
-    },
     _inputTextIconLeft: {
       left: 'var(--size-spacing-1)',
     },

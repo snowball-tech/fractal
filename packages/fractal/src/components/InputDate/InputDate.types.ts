@@ -1,3 +1,5 @@
+import { HTMLAttributes } from 'react'
+
 export type DateFormat = {
   day?: number
   month?: number
@@ -18,7 +20,7 @@ export type Descriptions = {
 
 export interface InputDateProps
   extends Omit<
-    React.HTMLAttributes<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement>,
     'defaultValue' | 'onChange' | 'placeholder'
   > {
   /** Indicates if the first empty date field must be focused on render. */
@@ -64,8 +66,8 @@ export interface InputDateProps
   name?: string
   /** Event handler called when the date value is changed. */
   onChange?: (newDate: DateFormat) => void
-  /** Event handler called when one of the field of the date is changed. */
-  onFieldChange?: (type: 'day' | 'month' | 'year', newDay: number) => void
+  /** Event handler called when one of the field of the date input is changed. */
+  onFieldChange?: (type: keyof DateFormat, newDay: number) => void
   /**
    * A string to display in each of the date field when the value is
    * empty.
@@ -76,7 +78,7 @@ export interface InputDateProps
   /** Indicates if the date input must be filled. */
   required?: boolean
   /**
-   * A message to display when the birth dae input has a valid value.
+   * A message to display when the date input has a valid value.
    *
    * This will also change the display of the input to give an success feedback
    * (green border).

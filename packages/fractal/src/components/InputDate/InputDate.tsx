@@ -22,9 +22,9 @@ import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './InputDate.recipe'
-import type { InputDateProps } from './InputDate.types'
+import type { DateFormat, InputDateProps } from './InputDate.types'
 
-function isValid(type: 'day' | 'month' | 'year', value: number) {
+function isValid(type: keyof DateFormat, value: number) {
   if (!isNumber(value) || Number.isNaN(value)) {
     return false
   }
@@ -45,7 +45,8 @@ function isValid(type: 'day' | 'month' | 'year', value: number) {
 }
 
 /**
- * `InputText` component is used to take text values from the user.
+ * `InputDate` component is used to allow the user to enter a date using 3
+ * separate day/month/year fields.
  */
 export default function InputDate({
   autoFocus = false,
@@ -88,7 +89,7 @@ export default function InputDate({
     isSuccessful ? 'success' : '',
   )
 
-  const handleChange = (newValue: string, type: 'day' | 'month' | 'year') => {
+  const handleChange = (newValue: string, type: keyof DateFormat) => {
     const newValueAsInt = parseInt(newValue, 10)
     if (!isValid(type, newValueAsInt)) {
       setErrors({ ...errors, [type]: true })
@@ -147,7 +148,7 @@ export default function InputDate({
           success={isSuccessful}
           type="number"
           {...(value?.day !== undefined ? { value: value.day } : {})}
-          onChange={(newValue) => handleChange(newValue, 'day')}
+          onChange={(newDay) => handleChange(newDay, 'day')}
         />
 
         <InputText
@@ -171,7 +172,7 @@ export default function InputDate({
           success={isSuccessful}
           type="number"
           {...(value?.month !== undefined ? { value: value.month } : {})}
-          onChange={(newValue) => handleChange(newValue, 'month')}
+          onChange={(newMonth) => handleChange(newMonth, 'month')}
         />
 
         <InputText
@@ -194,7 +195,7 @@ export default function InputDate({
           success={isSuccessful}
           type="number"
           {...(value?.year !== undefined ? { value: value.year } : {})}
-          onChange={(newValue) => handleChange(newValue, 'year')}
+          onChange={(newYear) => handleChange(newYear, 'year')}
         />
       </div>
 

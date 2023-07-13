@@ -18,7 +18,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import type { ChangeEvent } from 'react'
+import { type ChangeEvent, type ForwardedRef, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -28,28 +28,31 @@ import type { InputTextProps } from './InputText.types'
 /**
  * `InputText` component is used to take text values from the user.
  */
-export default function InputText({
-  autoFocus = false,
-  defaultValue,
-  description,
-  disabled = false,
-  error,
-  fullWidth = false,
-  icon,
-  iconPosition = 'right',
-  id = uniqueId('fractal-input-text-'),
-  label,
-  name,
-  onChange,
-  onRawChange,
-  placeholder,
-  readOnly = false,
-  required = false,
-  success,
-  type = 'text',
-  value,
-  ...props
-}: InputTextProps) {
+function InputText(
+  {
+    autoFocus = false,
+    defaultValue,
+    description,
+    disabled = false,
+    error,
+    fullWidth = false,
+    icon,
+    iconPosition = 'right',
+    id = uniqueId('fractal-input-text-'),
+    label,
+    name,
+    onChange,
+    onRawChange,
+    placeholder,
+    readOnly = false,
+    required = false,
+    success,
+    type = 'text',
+    value,
+    ...props
+  }: InputTextProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
   const hasErrorMessage = !isEmpty(error)
   const isInError = hasErrorMessage || error === true
   const hasSuccessMessage = !isEmpty(success)
@@ -106,6 +109,7 @@ export default function InputText({
           disabled={disabled}
           {...(defaultValue !== undefined ? { defaultValue } : {})}
           id={id}
+          ref={ref}
           name={name || id}
           placeholder={placeholder}
           readOnly={readOnly}
@@ -152,3 +156,5 @@ export default function InputText({
     </div>
   )
 }
+
+export default forwardRef(InputText)

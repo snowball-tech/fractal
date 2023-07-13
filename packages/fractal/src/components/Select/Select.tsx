@@ -2,12 +2,16 @@
 
 import { UilAngleDown as AngleDownIcon } from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
+import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'
-import { cx } from '@snowball-tech/fractal-panda/css'
+import { css, cx } from '@snowball-tech/fractal-panda/css'
 import {
   selectContainer,
   selectDescription,
   selectDropdown,
+  selectDropdownScrollViewport,
+  selectDropdownScrollbar,
+  selectDropdownScrollbarThumbs,
   selectIndicator,
   selectLabel,
   selectTrigger,
@@ -134,14 +138,44 @@ export default function Select({
         <RxSelect.Portal>
           <RxSelect.Content
             align="center"
-            className={cx('fractal-select-dropdown', selectDropdown())}
+            className={cx(
+              `${PREFIX}-${GROUP_NAME}-dropdown`,
+              selectDropdown(),
+              ...(dropdown?.className?.split(' ') || []),
+            )}
             position="popper"
             side="bottom"
-            {...dropdown}
+            {...omit(['className'], dropdown)}
           >
-            <RxSelect.ScrollUpButton />
-            <RxSelect.Viewport>{items}</RxSelect.Viewport>
-            <RxSelect.ScrollDownButton />
+            <RxScrollArea.Root
+              className={css({
+                height: '100%',
+                overflow: 'hidden',
+                width: '100%',
+              })}
+              {...(dir !== undefined ? { dir } : {})}
+              type="hover"
+            >
+              <RxSelect.Viewport asChild>
+                <RxScrollArea.Viewport
+                  className={selectDropdownScrollViewport()}
+                  style={{
+                    overflowY: undefined,
+                  }}
+                >
+                  {items}
+                </RxScrollArea.Viewport>
+              </RxSelect.Viewport>
+
+              <RxScrollArea.Scrollbar
+                className={selectDropdownScrollbar()}
+                orientation="vertical"
+              >
+                <RxScrollArea.Thumb
+                  className={selectDropdownScrollbarThumbs()}
+                />
+              </RxScrollArea.Scrollbar>
+            </RxScrollArea.Root>
           </RxSelect.Content>
         </RxSelect.Portal>
       </RxSelect.Root>

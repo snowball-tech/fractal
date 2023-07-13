@@ -94,7 +94,7 @@ export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
 })
 
 export const inputDateMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Date text message',
+  description: 'Date input text message (error or success)',
   name: 'inputDateMessage',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects

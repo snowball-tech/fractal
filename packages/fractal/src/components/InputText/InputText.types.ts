@@ -2,17 +2,17 @@ import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
 export interface InputTextProps
   extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange'> {
-  /** Indicates if the input text must be focused on render. */
+  /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
   /**
-   * The value of the input text when it is initially rendered.
+   * The value of the text input when it is initially rendered.
    *
    * Use this when you do not need to control its value.
    */
   defaultValue?: number | string
-  /** An helpful message to describe the input text to the user. */
+  /** An helpful message to describe the text input to the user. */
   description?: string
-  /** Prevents the user from interacting with the input text. */
+  /** Prevents the user from interacting with the text input. */
   disabled?: boolean
   /**
    * If a boolean: indicates that the field is in error.
@@ -29,50 +29,50 @@ export interface InputTextProps
    * The icon (if there is one) will also be replaced  by a specific error icon.
    */
   error?: boolean | string
-  /** Indicates if the input text should take all the available width. */
+  /** Indicates if the text input should take all the available width. */
   fullWidth?: boolean
-  /** The icon to display in the input text (if any). */
+  /** The icon to display in the text input (if any). */
   icon?: ReactNode
-  /** The position of the icon in the input text. */
+  /** The position of the icon in the text input. */
   iconPosition?: 'left' | 'right'
   /**
-   * A unique HTML id for the input text.
+   * A unique HTML id for the text input.
    *
-   * This allows to link the input text with a label.
+   * This allows to link the text input with a label.
    *
    * If none is given, one will be generated automatically.
    */
   id?: string
-  /** The label of the input text. */
+  /** The label of the text input. */
   label?: string
   /**
-   * The name of the input text.
+   * The name of the text input.
    *
-   * It is used to reference the input text in a form submission.
+   * It is used to reference the text input in a form submission.
    *
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
   /**
-   * Event handler called when the input text value is changed with the new
+   * Event handler called when the text input value is changed with the new
    * string value.
    */
   onChange?: (newValue: string) => void
   /**
-   * Event handler called when the input text value is changed with the raw
+   * Event handler called when the text input value is changed with the raw
    * event.
    */
   onRawChange?: (event: ChangeEvent<HTMLInputElement>) => void
-  /** A string to display when the input text is empty. */
+  /** A string to display when the text input is empty. */
   placeholder?: string
-  /** Prevents the user to change the value of the input text. */
+  /** Prevents the user to change the value of the text input. */
   readOnly?: boolean
-  /** Indicates if the input text must be filled. */
+  /** Indicates if the text input must be filled. */
   required?: boolean
   /**
    * If a boolean: indicates that the field is in success.
    *
-   * If a string: a message to display when the input text has a valid value.
+   * If a string: a message to display when the text input has a valid value.
    *
    * This will also change the display of the input to give an success feedback
    * (green border and special green icon).
@@ -82,7 +82,7 @@ export interface InputTextProps
    */
   success?: boolean | string
   /**
-   * The type of the input text.
+   * The type of the text input.
    *
    * Must be a valid HTML5 type for an `&lt;input /&gt;` element.
    *
@@ -95,7 +95,7 @@ export interface InputTextProps
    */
   type?: 'email' | 'number' | 'password' | 'search' | 'text' | 'url'
   /**
-   * The controlled value of the input text.
+   * The controlled value of the text input.
    *
    * Must be used in conjunction with `onChange`.
    */

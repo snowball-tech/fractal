@@ -125,7 +125,7 @@ export const selectValue: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const selectIndicator = defineRecipe({
+export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select status indicator (arrow)',
   name: 'selectIndicator',
 
@@ -168,6 +168,7 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: `var(--color-background-select-base)`,
     border: `var(--border-select-base)`,
     borderRadius: 'var(--size-radius-s)',
+    maxHeight: 'var(--radix-select-content-available-height)',
     mt: 'var(--size-dropdown-gap)',
     padding:
       'var(--size-dropdown-padding-vertical) var(--size-dropdown-padding-horizontal)',
@@ -208,7 +209,7 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
       color: `var(--color-text-select-disabled)`,
     },
 
-    _writable: {
+    _notDisabled: {
       '&:nth-of-type(1), &:nth-of-type(5n+1)': {
         _focusVisible: {
           backgroundColor: `var(--color-background-options-hover-1)`,
@@ -285,3 +286,75 @@ export const selectDescription: ReturnType<typeof defineRecipe> = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
 })
+
+export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    description: 'Select dropdown scroll viewport',
+    name: 'selectDropdownScrollViewport',
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['Select'],
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {
+      height: '100%',
+      maxHeight: 'var(--radix-select-content-available-height)',
+      width: '100%',
+    },
+  })
+
+export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    description: 'Select dropdown scrollbar',
+    name: 'selectDropdownScrollbar',
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['Select'],
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {
+      '&[data-orientation="vertical"]': {
+        width: '5px',
+      },
+
+      _hover: { backgroundColor: ' var(--color-base-grey-70)' },
+
+      backgroundColor: 'var(--color-base-grey-90)',
+      borderRadius: 'var(--size-radius-s)',
+      display: 'flex',
+      padding: '2px',
+      touchAction: 'none',
+      transition: 'background-color 300ms ease-out',
+      userSelect: 'none',
+    },
+  })
+
+export const selectDropdownScrollbarThumbs: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    description: 'Select dropdown scrollbar thumbs',
+    // eslint-disable-next-line no-secrets/no-secrets
+    name: 'selectDropdownScrollbarThumbs',
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    jsx: ['Select'],
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    base: {
+      _before: {
+        content: '""',
+        height: '100%',
+        left: '50%',
+        minHeight: '44px',
+        minWidth: '44px',
+        position: 'absolute',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+      },
+
+      background: 'var(--color-base-grey-30)',
+      borderRadius: 'var(--size-radius-s)',
+      flex: 1,
+      position: 'relative',
+    },
+  })
