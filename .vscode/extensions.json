@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "aaron-bond.better-comments",
     "bierner.github-markdown-preview",
     "bierner.markdown-checkbox",
     "bierner.markdown-emoji",
@@ -17,7 +16,6 @@
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
     "github.copilot",
-    "github.vscode-github-actions",
     "github.vscode-pull-request-github",
     "gruntfuggly.todo-tree",
     "leizongmin.node-module-intellisense",

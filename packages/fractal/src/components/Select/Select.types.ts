@@ -45,7 +45,7 @@ export interface SelectProps
     Pick<
       RxSelectContentProps,
       'collisionBoundary' | 'hideWhenDetached' | 'sticky'
-    >
+    > & { className?: string }
   >
   /** Indicates if the select should take all the available width. */
   fullWidth?: boolean

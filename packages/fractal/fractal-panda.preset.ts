@@ -12,6 +12,7 @@ import {
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
+import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as TypographyRecipes from '@/components/Typography/Typography.recipe'
@@ -23,6 +24,7 @@ const GROUPS = {
   button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
+  inputPhone: `${PREFIX}-${InputPhoneRecipes.GROUP_NAME}`,
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
@@ -67,6 +69,19 @@ const fractalPreset = definePreset({
         inputDateMonth: InputDateRecipes.inputDateMonth,
         inputDateYear: InputDateRecipes.inputDateYear,
 
+        inputPhoneContainer: InputPhoneRecipes.inputPhoneContainer,
+        inputPhoneDescription: InputPhoneRecipes.inputPhoneDescription,
+        inputPhoneFields: InputPhoneRecipes.inputPhoneFields,
+        inputPhoneLabel: InputPhoneRecipes.inputPhoneLabel,
+        inputPhoneMessage: InputPhoneRecipes.inputPhoneMessage,
+        inputPhoneNumber: InputPhoneRecipes.inputPhoneNumber,
+        inputPhoneNumberInputText: InputPhoneRecipes.inputPhoneNumberInputText,
+        inputPhoneNumberPrefixHelper:
+          InputPhoneRecipes.inputPhoneNumberPrefixHelper,
+        inputPhonePrefix: InputPhoneRecipes.inputPhonePrefix,
+        inputPhonePrefixDropdown: InputPhoneRecipes.inputPhonePrefixDropdown,
+        inputPhonePrefixSearch: InputPhoneRecipes.inputPhonePrefixSearch,
+
         inputText: InputTextRecipes.inputText,
         inputTextContainer: InputTextRecipes.inputTextContainer,
         inputTextDescription: InputTextRecipes.inputTextDescription,
@@ -78,6 +93,11 @@ const fractalPreset = definePreset({
         selectContainer: SelectRecipes.selectContainer,
         selectDescription: SelectRecipes.selectDescription,
         selectDropdown: SelectRecipes.selectDropdown,
+        selectDropdownScrollbar: SelectRecipes.selectDropdownScrollbar,
+        selectDropdownScrollbarThumbs:
+          SelectRecipes.selectDropdownScrollbarThumbs,
+        selectDropdownScrollViewport:
+          SelectRecipes.selectDropdownScrollViewport,
         selectIndicator: SelectRecipes.selectIndicator,
         selectItem: SelectRecipes.selectItem,
         selectItemGroup: SelectRecipes.selectItemGroup,
