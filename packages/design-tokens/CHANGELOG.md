@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.1...@snowball-tech/design-tokens@5.1.2) (2023-07-17)
+
+### 🐛 Bug Fixes
+
+- **design-token:** fix disabled checkbox label color ([528d1ed](https://github.com/snowball-tech/fractal/commit/528d1ed809b38a72a9e81d910cf616cbc61f2323))
+
 ## @snowball-tech/design-tokens [5.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.0...@snowball-tech/design-tokens@5.1.1) (2023-07-17)
 
 ### 🐛 Bug Fixes
