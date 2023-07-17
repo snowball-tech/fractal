@@ -45,7 +45,7 @@ export const inputDateLabel = defineRecipe({
 })
 
 export const inputDateFields: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'A date input field',
+  description: 'The date fields wrapper',
   name: 'inputDateFields',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
@@ -55,8 +55,23 @@ export const inputDateFields: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     display: 'flex',
     gap: 'var(--size-spacing-1)',
-    maxWidth: 'calc(2rem + (var(--size-input-padding-horizontal) * 2) + 2rem)!',
+    maxWidth: '100px!',
     width: 'fit-content',
+  },
+})
+
+export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'A date input field',
+  name: 'inputDateField',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputDate'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
+      display: 'none',
+    },
   },
 })
 
