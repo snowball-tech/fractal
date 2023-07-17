@@ -1,0 +1,197 @@
+module.exports = {
+  border: {
+    checkbox: {
+      primary: {
+        comment: 'Border for primary variant of checkbox/radio fields.',
+
+        value: '{border.1.value}',
+      },
+      secondary: {
+        comment: 'Border for secondary variant of checkbox/radio fields.',
+
+        value: '{border.checkbox.primary.value}',
+      },
+      tertiary: {
+        comment: 'Border for secondary variant of checkbox/radio fields.',
+
+        value: '{border.none.value}',
+      },
+    },
+  },
+
+  color: {
+    background: {
+      checkbox: {
+        primary: {
+          comment:
+            'Background color to use for primary variant of checkbox/radio fields.',
+
+          value: '{color.base.white}',
+        },
+        secondary: {
+          comment:
+            'Background color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.background.checkbox.primary.value}',
+        },
+        tertiary: {
+          comment:
+            'Background color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.base.none.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment:
+            'Background color to use for disabled checkbox/radio fields.',
+
+          value: 'inherit',
+        },
+      },
+    },
+
+    box: {
+      checkbox: {
+        primary: {
+          comment:
+            'Box color to use for primary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.primary.value}',
+        },
+        secondary: {
+          comment:
+            'Box color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.secondary.value}',
+        },
+        tertiary: {
+          comment:
+            'Box color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.tertiary.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment: 'Box color to use for disabled checkbox/radio fields.',
+
+          value: '{color.base.grey.70.value}',
+        },
+      },
+    },
+
+    mark: {
+      checkbox: {
+        primary: {
+          comment:
+            'Checkmark color to use for primary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.primary.value}',
+        },
+        secondary: {
+          comment:
+            'Checkmark color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.secondary.value}',
+        },
+        tertiary: {
+          comment:
+            'Checkmark color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.tertiary.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment: 'Box color to use for disabled checkbox/radio fields.',
+
+          value: '{color.text.checkbox.disabled.value}',
+        },
+      },
+    },
+
+    text: {
+      checkbox: {
+        primary: {
+          comment:
+            'Text (label) color to use for primary variant of checkbox/radio fields.',
+
+          value: '{color.text.dark.value}',
+        },
+        secondary: {
+          comment:
+            'Text (label) color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.primary.value}',
+        },
+        tertiary: {
+          comment:
+            'Text (label) color to use for secondary variant of checkbox/radio fields.',
+
+          value: '{color.text.checkbox.primary.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment: 'Box color to use for disabled checkbox/radio fields.',
+
+          value: '{color.base.grey.50.value}',
+        },
+      },
+    },
+  },
+
+  shadow: {
+    checkbox: {
+      checkbox: {
+        primary: {
+          comment: 'Shadow for primary variant of checkbox/radio fields.',
+
+          value: '{shadow.brutal.1.value}',
+        },
+        secondary: {
+          comment: 'Shadow for secondary variant of checkbox/radio fields.',
+
+          value: '{shadow.none.value}',
+        },
+        tertiary: {
+          comment: 'Shadow for secondary variant of checkbox/radio fields.',
+
+          value: '{shadow.none.value}',
+        },
+
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        disabled: {
+          comment: 'Shadow for disabled checkbox/radio fields.',
+
+          value: 'inherit',
+        },
+      },
+    },
+  },
+
+  size: {
+    checkbox: {
+      padding: {
+        horizontal: {
+          comment: 'Horizontal padding for checkbox/radio fields.',
+
+          value: '{size.spacing.2.value}',
+        },
+        vertical: {
+          comment: 'Vertical padding for checkbox/radio fields.',
+
+          value: '{size.spacing.2.value}',
+        },
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      gap: {
+        comment: 'Gap between checkbox and label.',
+
+        value: '{size.spacing.2.value}',
+      },
+    },
+  },
+}
