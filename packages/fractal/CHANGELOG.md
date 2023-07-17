@@ -1,3 +1,41 @@
+# @snowball-tech/fractal [1.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.7.2...@snowball-tech/fractal@1.8.0) (2023-07-17)
+
+### ✨ Features
+
+- **button:** add fullWidth prop ([0bdb20a](https://github.com/snowball-tech/fractal/commit/0bdb20aa246b95d13983f373900d14c80a6dd5f6))
+- **button:** improve button component and styles ([c2762c2](https://github.com/snowball-tech/fractal/commit/c2762c28942bba0bae3f15f0641a19693cce28ef))
+- **button:** use ArkUI pressable ([131e33c](https://github.com/snowball-tech/fractal/commit/131e33c45afb5a7cd06a483fefb531b9e82f8230))
+- **checkbox:** remove unused variants ([4979906](https://github.com/snowball-tech/fractal/commit/4979906f8a7af401d98521fe574d78eb50c821f2))
+- **input-date:** add the input date component ([a2148dc](https://github.com/snowball-tech/fractal/commit/a2148dcf891f7355d128a559a65b237bd2717ae5))
+- **input-phone:** implement the input phone component ([3e10556](https://github.com/snowball-tech/fractal/commit/3e1055661d561a7f10b6e17bda2fa8feea3f8460))
+- **input-text:** add fullWidth prop ([fab3548](https://github.com/snowball-tech/fractal/commit/fab3548368204595afeb40f322d9d99940026661))
+- **select:** add fullWidth prop ([f534196](https://github.com/snowball-tech/fractal/commit/f534196f6b54868c378764b62d0a871729b41037))
+
+### 🐛 Bug Fixes
+
+- **input-date:** polish the sizes and behavior of the component ([3d80ea6](https://github.com/snowball-tech/fractal/commit/3d80ea66d119acbb56eeb5f01a282b58790b3a76))
+- **select:** improve event handlers ([a3be64d](https://github.com/snowball-tech/fractal/commit/a3be64dd6890d97f830d5c0bac406884ec17be59))
+
+### 💄 UI/UX
+
+- add new conditions ([d3ddb46](https://github.com/snowball-tech/fractal/commit/d3ddb46b12da6f5496de8568a99b5d4ae1461a02))
+- **checkbox:** improve recipes and component ([e331996](https://github.com/snowball-tech/fractal/commit/e3319967d0954b6b4c0fdf503580fd0e183a0a4d))
+- **input-text:** improve recipes and component ([98c358f](https://github.com/snowball-tech/fractal/commit/98c358f1820e2cf9d5701aaac38066ab140418ae))
+- **typography:** improve recipes ([c5f8965](https://github.com/snowball-tech/fractal/commit/c5f8965edbc032005ff97078656b234687fba33c))
+
+### ⚙️ Continuous Integrations
+
+- fix storybook in local and HMR ([16a167c](https://github.com/snowball-tech/fractal/commit/16a167ce1be9cb36d99d55811f064cdab898a9dd))
+
+### 📦 Dependencies
+
+- update dependencies ([8686c5a](https://github.com/snowball-tech/fractal/commit/8686c5a67f1f879b626e369f9acbe55334afd903))
+- update dependencies ([06c41d3](https://github.com/snowball-tech/fractal/commit/06c41d3b5089147f1a22b60a23b8070ed55108b3))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.1.0
+
 ## @snowball-tech/fractal [1.7.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.7.1...@snowball-tech/fractal@1.7.2) (2023-07-10)
 
 ### Dependencies
