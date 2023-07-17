@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.0.1...@snowball-tech/design-tokens@5.1.0) (2023-07-17)
+
+### ✨ Features
+
+- **design-tokens:** add tokens for checkbox/radio ([e00123e](https://github.com/snowball-tech/fractal/commit/e00123e7b02dbda058f53651c573680c3e82d934))
+
 ## @snowball-tech/design-tokens [5.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.0.0...@snowball-tech/design-tokens@5.0.1) (2023-07-10)
 
 ### 🐛 Bug Fixes
