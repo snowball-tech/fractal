@@ -40,6 +40,8 @@ jobs:
         run: yarn run setup:freezer
 
       - name: Building all packages
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
         run: yarn run -T turbo run build
 
       - name: Waiting for security to pass
