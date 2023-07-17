@@ -3,7 +3,7 @@ import type {
   CheckboxProps as RxCheckboxProps,
 } from '@radix-ui/react-checkbox'
 
-import { Variants } from './InputCheckbox.constants'
+import { Colors, Variants } from './InputCheckbox.constants'
 
 export interface InputCheckboxProps extends RxCheckboxProps {
   /**
@@ -12,6 +12,8 @@ export interface InputCheckboxProps extends RxCheckboxProps {
    * Must be used in conjunction with `onCheckedChange`.
    */
   checked?: CheckedState
+  /** The color of the checkbox to use. */
+  color?: `${Colors}`
   /**
    * The checked state of the checkbox when it is initially rendered.
    *
@@ -20,6 +22,8 @@ export interface InputCheckboxProps extends RxCheckboxProps {
   defaultChecked?: CheckedState
   /** Prevents the user from interacting with the checkbox. */
   disabled?: boolean
+  /** Indicates if the checkbox should take all the available width. */
+  fullWidth?: boolean
   /**
    * A unique HTML id for the checkbox.
    *
@@ -51,6 +55,6 @@ export interface InputCheckboxProps extends RxCheckboxProps {
    * Default value (`on`) should be good most of the time.
    */
   value?: string
-  /** The variant of the checkbox (color) to use. */
+  /** The variant of the checkbox to use. */
   variant?: `${Variants}`
 }

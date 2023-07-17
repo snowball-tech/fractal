@@ -15,7 +15,7 @@ import uniqueId from 'lodash/fp/uniqueId'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_VARIANT } from './InputCheckbox.constants'
+import { DEFAULT_COLOR, DEFAULT_VARIANT } from './InputCheckbox.constants'
 import { GROUP_NAME } from './InputCheckbox.recipe'
 import type { InputCheckboxProps } from './InputCheckbox.types'
 
@@ -24,8 +24,10 @@ import type { InputCheckboxProps } from './InputCheckbox.types'
  */
 export default function InputCheckbox({
   checked,
+  color = DEFAULT_COLOR,
   defaultChecked,
   disabled = false,
+  fullWidth = false,
   id = uniqueId('fractal-input-checkbox-'),
   label,
   name,
@@ -37,9 +39,10 @@ export default function InputCheckbox({
 }: InputCheckboxProps) {
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
-    inputCheckboxContainer({ variant }),
+    inputCheckboxContainer({ color, variant }),
     props.className,
     disabled ? 'disabled' : '',
+    fullWidth ? 'full-width' : '',
     required ? 'required' : '',
   )
 
@@ -48,7 +51,7 @@ export default function InputCheckbox({
       <RxCheckbox.Root
         id={id}
         {...(checked !== undefined ? { checked } : {})}
-        className={inputCheckbox({ variant })}
+        className={inputCheckbox({ color, variant })}
         {...(defaultChecked !== undefined ? { defaultChecked } : {})}
         disabled={disabled}
         name={name || id}
@@ -59,7 +62,9 @@ export default function InputCheckbox({
           : {})}
         {...omit(['className'], props)}
       >
-        <RxCheckbox.Indicator className={inputCheckboxCheckmark({ variant })}>
+        <RxCheckbox.Indicator
+          className={inputCheckboxCheckmark({ color, variant })}
+        >
           <CheckIcon />
         </RxCheckbox.Indicator>
       </RxCheckbox.Root>
@@ -67,7 +72,7 @@ export default function InputCheckbox({
       <RxLabel
         className={cx(
           typography({ variant: 'body-1' }),
-          inputCheckboxLabel({ variant }),
+          inputCheckboxLabel({ color, variant }),
         )}
         htmlFor={id}
       >

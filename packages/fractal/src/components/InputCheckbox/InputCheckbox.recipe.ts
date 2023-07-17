@@ -1,7 +1,12 @@
 import { defineRecipe } from '@pandacss/dev'
 import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
-import { DEFAULT_VARIANT, Variants } from './InputCheckbox.constants'
+import {
+  Colors,
+  DEFAULT_COLOR,
+  DEFAULT_VARIANT,
+  Variants,
+} from './InputCheckbox.constants'
 
 export const GROUP_NAME = 'input-checkbox'
 
@@ -15,33 +20,47 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      _disabled: {
-        backgroundColor: 'var(--color-background-disabled)',
-        border: 'var(--border-disabled)',
-        color: 'var(--color-background-disabled)',
-        cursor: 'var(--cursor-disabled)',
+      _fullWidth: {
+        width: '100%',
       },
 
       alignItems: 'center',
-      backgroundColor: 'var(--color-base-white)',
-      border: 'var(--border-1)',
       borderRadius: 'var(--size-radius-s)',
-      color: 'var(--color-text-dark)',
       display: 'flex',
-      gap: 'var(--size-spacing-2)',
-      p: 'var(--size-spacing-2)',
-      shadow: 'var(--shadow-brutal-1)',
+      gap: 'var(--size-checkbox-gap)',
+      px: 'var(--size-checkbox-padding-horizontal)',
+      py: 'var(--size-checkbox-padding-vertical)',
+      width: 'fit-content',
     },
 
     defaultVariants: {
+      color: DEFAULT_COLOR,
       variant: DEFAULT_VARIANT,
     },
 
     variants: {
+      color: Object.values(Colors).reduce(
+        (colors, colorName) => ({
+          ...colors,
+          [colorName]: {},
+        }),
+        {} as Record<Colors, SystemStyleObject>,
+      ),
+
       variant: Object.values(Variants).reduce(
         (variants, variantName) => ({
           ...variants,
-          [variantName]: {},
+          [variantName]: {
+            _disabled: {
+              color: 'var(--color-text-checkbox-disabled)',
+              cursor: 'var(--cursor-disabled)',
+            },
+
+            backgroundColor: `var(--color-background-checkbox-${variantName})`,
+            border: `var(--border-checkbox-${variantName})`,
+            color: `var(--color-text-checkbox-${variantName})`,
+            shadow: `var(--shadow-checkbox-checkbox-${variantName})`,
+          },
         }),
         {} as Record<Variants, SystemStyleObject>,
       ),
@@ -70,29 +89,43 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 
   defaultVariants: {
-    variant: DEFAULT_VARIANT,
+    color: DEFAULT_COLOR,
   },
 
   variants: {
+    color: Object.values(Colors).reduce(
+      (colors, colorName) => ({
+        ...colors,
+        [colorName]: {
+          '.fractal-input-checkbox:is(:hover, [data-hover]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:not(:is(:checked, [data-checked], [aria-checked=true]))':
+            {
+              backgroundColor: `var(--color-decorative-${colorName}-90, var(--color-brand-${colorName}, var(--color-base-white)))`,
+            },
+
+          _checked: {
+            backgroundColor: `var(--color-decorative-${colorName}-70, var(--color-brand-${colorName}, var(--color-base-${colorName}, var(--color-base-white))))`,
+          },
+
+          _inputCheckboxDisabled: {
+            borderColor: 'var(--color-box-checkbox-disabled)',
+            color: 'var(--color-box-checkbox-disabled)',
+            cursor: 'var(--cursor-disabled)',
+          },
+        },
+      }),
+      {} as Record<Colors, SystemStyleObject>,
+    ),
+
     variant: Object.values(Variants).reduce(
       (variants, variantName) => ({
         ...variants,
         [variantName]: {
-          '.fractal-input-checkbox:is(:hover, [data-hover]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:not(:is(:checked, [data-checked], [aria-checked=true]))':
-            {
-              backgroundColor: `var(--color-decorative-${variantName}-90, var(--color-brand-${variantName}, var(--color-base-white)))`,
-            },
-
-          _checked: {
-            backgroundColor: `var(--color-decorative-${variantName}-70, var(--color-brand-${variantName}, var(--color-base-${variantName}, var(--color-base-white))))`,
-          },
-
           _disabled: {
-            backgroundColor: `var(--color-background-disabled)`,
-            borderColor: 'var(--color-border-disabled)',
-            color: 'var(--color-text-disabled)',
+            color: 'var(--color-box-checkbox-disabled)',
             cursor: 'var(--cursor-disabled)',
           },
+
+          color: `var(--color-box-checkbox-${variantName})`,
         },
       }),
       {} as Record<Variants, SystemStyleObject>,
@@ -114,28 +147,37 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
         height: '20px',
         width: '20px',
       },
-
-      _inputCheckboxDisabled: {
-        color: 'var(--color-text-disabled)',
-      },
-
-      color: 'var(--color-text-dark)',
     },
 
     defaultVariants: {
-      variant: DEFAULT_VARIANT,
+      color: DEFAULT_COLOR,
     },
 
     variants: {
-      variant: {
-        ...Object.values(Variants).reduce(
-          (variants, variantName) => ({
-            ...variants,
-            [variantName]: {},
+      color: {
+        ...Object.values(Colors).reduce(
+          (colors, colorName) => ({
+            ...colors,
+            [colorName]: {},
           }),
-          {} as Record<Variants, SystemStyleObject>,
+          {} as Record<Colors, SystemStyleObject>,
         ),
       },
+
+      variant: Object.values(Variants).reduce(
+        (variants, variantName) => ({
+          ...variants,
+          [variantName]: {
+            _inputCheckboxDisabled: {
+              color: 'var(--color-mark-checkbox-disabled)',
+              cursor: 'var(--cursor-disabled)',
+            },
+
+            color: `var(--color-mark-checkbox-${variantName})`,
+          },
+        }),
+        {} as Record<Variants, SystemStyleObject>,
+      ),
     },
   })
 
@@ -149,11 +191,6 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      _inputCheckboxDisabled: {
-        color: 'var(--color-text-disabled)',
-        cursor: 'var(--cursor-disabled)',
-      },
-
       _inputCheckboxRequired: {
         _after: {
           color: 'var(--color-feedback-danger-50)',
@@ -161,7 +198,6 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
         },
       },
 
-      color: 'var(--color-text-dark)',
       cursor: 'var(--cursor-clickable)',
       flexGrow: 1,
       overflow: 'auto',
@@ -169,14 +205,29 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
     },
 
     defaultVariants: {
-      variant: DEFAULT_VARIANT,
+      color: DEFAULT_COLOR,
     },
 
     variants: {
+      color: Object.values(Colors).reduce(
+        (colors, colorName) => ({
+          ...colors,
+          [colorName]: {},
+        }),
+        {} as Record<Colors, SystemStyleObject>,
+      ),
+
       variant: Object.values(Variants).reduce(
         (variants, variantName) => ({
           ...variants,
-          [variantName]: {},
+          [variantName]: {
+            _inputCheckboxDisabled: {
+              color: 'var(--color-text-checkbox-disabled)',
+              cursor: 'var(--cursor-disabled)',
+            },
+
+            color: `var(--color-text-checkbox-${variantName})`,
+          },
         }),
         {} as Record<Variants, SystemStyleObject>,
       ),
