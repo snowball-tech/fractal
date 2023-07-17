@@ -38,7 +38,7 @@ module.exports = {
           comment:
             'Background color to use for secondary variant of checkbox/radio fields.',
 
-          value: '{color.base.none.value}',
+          value: '{color.base.transparent.value}',
         },
 
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
@@ -159,13 +159,6 @@ module.exports = {
           comment: 'Shadow for secondary variant of checkbox/radio fields.',
 
           value: '{shadow.none.value}',
-        },
-
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        disabled: {
-          comment: 'Shadow for disabled checkbox/radio fields.',
-
-          value: 'inherit',
         },
       },
     },
