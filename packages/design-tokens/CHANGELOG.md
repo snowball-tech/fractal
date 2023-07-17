@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.0...@snowball-tech/design-tokens@5.1.1) (2023-07-17)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix checkbox tertiary bg color ([f9a3cd3](https://github.com/snowball-tech/fractal/commit/f9a3cd35218d66d9fa8c459914446a756d71ec47))
+
 # @snowball-tech/design-tokens [5.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.0.1...@snowball-tech/design-tokens@5.1.0) (2023-07-17)
 
 ### ✨ Features
