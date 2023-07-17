@@ -136,7 +136,7 @@ module.exports = {
         disabled: {
           comment: 'Box color to use for disabled checkbox/radio fields.',
 
-          value: '{color.base.grey.50.value}',
+          value: '{color.base.grey.70.value}',
         },
       },
     },
