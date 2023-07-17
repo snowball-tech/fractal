@@ -63,6 +63,7 @@ const fractalPreset = definePreset({
 
         inputDateContainer: InputDateRecipes.inputDateContainer,
         inputDateDay: InputDateRecipes.inputDateDay,
+        inputDateField: InputDateRecipes.inputDateField,
         inputDateFields: InputDateRecipes.inputDateFields,
         inputDateLabel: InputDateRecipes.inputDateLabel,
         inputDateMessage: InputDateRecipes.inputDateMessage,

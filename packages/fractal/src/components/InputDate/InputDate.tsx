@@ -5,6 +5,7 @@ import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   inputDateContainer,
   inputDateDay,
+  inputDateField,
   inputDateFields,
   inputDateLabel,
   inputDateMessage,
@@ -93,11 +94,9 @@ export default function InputDate({
     const newValueAsInt = parseInt(newValue, 10)
     if (!isValid(type, newValueAsInt)) {
       setErrors({ ...errors, [type]: true })
-
-      return
+    } else {
+      setErrors({ ...errors, [type]: false })
     }
-
-    setErrors({ ...errors, [type]: false })
 
     if (isFunction(onChange)) {
       onChange({
@@ -130,7 +129,7 @@ export default function InputDate({
           id={`${id}-day`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
-          className={inputDateDay()}
+          className={cx(inputDateDay(), inputDateField())}
           {...(defaultValue?.day !== undefined
             ? { defaultValue: defaultValue.day }
             : {})}
@@ -154,7 +153,7 @@ export default function InputDate({
         <InputText
           id={`${id}-month`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          className={inputDateMonth()}
+          className={cx(inputDateMonth(), inputDateField())}
           {...(defaultValue?.month !== undefined
             ? { defaultValue: defaultValue.month }
             : {})}
@@ -178,7 +177,7 @@ export default function InputDate({
         <InputText
           id={`${id}-year`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          className={inputDateYear()}
+          className={cx(inputDateYear(), inputDateField())}
           {...(defaultValue?.year !== undefined
             ? { defaultValue: defaultValue.year }
             : {})}
