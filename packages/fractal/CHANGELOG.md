@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [1.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.8.1...@snowball-tech/fractal@1.9.0) (2023-07-17)
+
+### ✨ Features
+
+- **input-checkbox:** update the checkbox ([7944b79](https://github.com/snowball-tech/fractal/commit/7944b79afb0ad1cd37353b9c1e39a4d68f7e2082))
+
 ## @snowball-tech/fractal [1.8.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.8.0...@snowball-tech/fractal@1.8.1) (2023-07-17)
 
 ### Dependencies
