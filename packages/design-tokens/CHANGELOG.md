@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.0...@snowball-tech/design-tokens@5.2.1) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix radio token ([31a726e](https://github.com/snowball-tech/fractal/commit/31a726e465895e6d6e5c7308c55ae46cfa6e15c0))
+
 # @snowball-tech/design-tokens [5.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.2...@snowball-tech/design-tokens@5.2.0) (2023-07-18)
 
 ### ✨ Features
