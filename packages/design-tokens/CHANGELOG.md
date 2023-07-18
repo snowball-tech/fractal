@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.2...@snowball-tech/design-tokens@5.2.0) (2023-07-18)
+
+### ✨ Features
+
+- **design-token:** add token for automatic coloring of radio buttons ([66c9906](https://github.com/snowball-tech/fractal/commit/66c99063ef97c5fd92ffa8e7235866343656eb6c))
+
 ## @snowball-tech/design-tokens [5.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.1.1...@snowball-tech/design-tokens@5.1.2) (2023-07-17)
 
 ### 🐛 Bug Fixes
