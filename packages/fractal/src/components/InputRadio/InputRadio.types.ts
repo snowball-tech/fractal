@@ -4,11 +4,9 @@ import {
 } from '@radix-ui/react-radio-group'
 import type { ReactNode } from 'react'
 
-import { Colors, Variants } from './InputRadio.constants'
+import { Variants } from './InputRadio.constants'
 
 export interface InputRadioProps extends RxRadioProps {
-  /** The color of the radio button to use. */
-  color?: `${Colors}`
   /** Prevents the user from interacting with the radio button. */
   disabled?: boolean
   /** Indicates if the radio button should take all the available width. */

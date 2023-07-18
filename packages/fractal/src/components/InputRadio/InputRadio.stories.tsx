@@ -19,11 +19,11 @@ const children = (
 
 const childrenWithDisabled = (
   <>
-    <InputRadio label="Luke Skywalker" value="skywalker" />
+    <InputRadio disabled label="Luke Skywalker" value="skywalker" />
     <InputRadio label="Obi-Wan Kenobi" value="kenobi" />
     <InputRadio disabled label="Yoda" value="yoda" />
     <InputRadio label="Mace Windoo" value="windoo" />
-    <InputRadio disabled label="Qui-Gon Jin" value="jin" />
+    <InputRadio label="Qui-Gon Jin" value="jin" />
   </>
 )
 
