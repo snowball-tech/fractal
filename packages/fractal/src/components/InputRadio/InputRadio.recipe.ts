@@ -72,7 +72,7 @@ export const inputRadioContainer = defineRecipe({
   },
 })
 
-export const inputRadio = defineRecipe({
+export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Radio',
   name: 'inputRadio',
 
