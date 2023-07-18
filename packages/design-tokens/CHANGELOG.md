@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.2...@snowball-tech/design-tokens@5.2.3) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **radio:** only one color on hover and selected ([91f9fa8](https://github.com/snowball-tech/fractal/commit/91f9fa8161604e8dad5ace9b633e46fae5d3cd23))
+
 ## @snowball-tech/design-tokens [5.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.1...@snowball-tech/design-tokens@5.2.2) (2023-07-18)
 
 ### 🐛 Bug Fixes
