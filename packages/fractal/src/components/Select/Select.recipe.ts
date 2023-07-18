@@ -253,6 +253,7 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     borderRadius: 'var(--size-radius-s)',
+    cursor: 'var(--cursor-clickable)',
     outline: 'none',
     padding:
       'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
