@@ -207,6 +207,7 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     _disabled: {
       color: `var(--color-text-select-disabled)`,
+      cursor: 'var(--cursor-disabled)',
     },
 
     _notDisabled: {
