@@ -36,6 +36,7 @@
   "editor.tabSize": 2,
   "eslint.lintTask.enable": true,
   "eslint.onIgnoredFiles": "warn",
+  "eslint.run": "onSave",
   "eslint.useESLintClass": true,
   "eslint.validate": [
     "html",
