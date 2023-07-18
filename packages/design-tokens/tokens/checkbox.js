@@ -51,60 +51,18 @@ module.exports = {
       },
       radio: {
         hover: {
-          1: {
-            comment:
-              'Background color to use when hovering first (and 5n+1th) radio button in a group',
-            value: '{color.decorative.pink.90.value}',
-          },
-          2: {
-            comment:
-              'Background color to use when hovering second (and 5n+2th) radio button in a group',
-            value: '{color.decorative.yellow.90.value}',
-          },
-          3: {
-            comment:
-              'Background color to use when hovering third (and 5n+3th) radio button in a group',
-            value: '{color.decorative.green.90.value}',
-          },
-          4: {
-            comment:
-              'Background color to use when hovering fourth (and 5n+4th) radio button in a group',
-            value: '{color.decorative.blue.90.value}',
-          },
-          5: {
-            comment:
-              'Background color to use when hovering fifth (and 5n+5th) radio button in a group',
-            value: '{color.decorative.purple.90.value}',
-          },
+          comment:
+            'Background color to use when hovering a radio button in a group',
+
+          value: '{color.decorative.pink.90.value}',
         },
 
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         checked: {
-          1: {
-            comment:
-              'Background color to use when the first (and 5n+1th) radio button in a group is selected',
-            value: '{color.decorative.pink.70.value}',
-          },
-          2: {
-            comment:
-              'Background color to use when the second (and 5n+2th) radio button in a group is selected',
-            value: '{color.decorative.yellow.70.value}',
-          },
-          3: {
-            comment:
-              'Background color to use when the third (and 5n+3th) radio button in a group is selected',
-            value: '{color.decorative.green.70.value}',
-          },
-          4: {
-            comment:
-              'Background color to use when the fourth (and 5n+4th) radio button in a group is selected',
-            value: '{color.decorative.blue.70.value}',
-          },
-          5: {
-            comment:
-              'Background color to use when the fifth (and 5n+5th) radio button in a group is selected',
-            value: '{color.decorative.purple.70.value}',
-          },
+          comment:
+            'Background color to use when a radio button in a group is selected',
+
+          value: '{color.brand.primary.value',
         },
       },
     },
