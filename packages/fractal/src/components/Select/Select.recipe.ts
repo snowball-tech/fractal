@@ -28,7 +28,7 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const selectLabel = defineRecipe({
+export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select label',
   name: 'selectLabel',
 
@@ -37,7 +37,7 @@ export const selectLabel = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    _selectDisable: {
+    _selectDisabled: {
       cursor: 'unset',
     },
 
@@ -53,7 +53,7 @@ export const selectLabel = defineRecipe({
   },
 })
 
-export const selectTrigger = defineRecipe({
+export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select trigger (selected value/placeholder)',
   name: 'selectTrigger',
 
@@ -79,20 +79,18 @@ export const selectTrigger = defineRecipe({
     },
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    _selectNotDisabled: {
-      _focus: {
+    _notDisabled: {
+      '&[data-state="open"]': {
         backgroundColor: `var(--color-background-select-focus)`,
         border: `var(--border-select-focus)`,
         color: `var(--color-text-select-focus)`,
-        pl: 'calc(var(--size-select-padding-horizontal) - var(--size-border-offset))',
         shadow: `var(--shadow-select-focus)`,
       },
 
-      _selectHover: {
+      _hover: {
         backgroundColor: `var(--color-background-select-hover)`,
         border: `var(--border-select-hover)`,
         color: `var(--color-text-select-hover)`,
-        pl: 'calc(var(--size-select-padding-horizontal) - var(--size-border-offset))',
         shadow: `var(--shadow-select-hover)`,
       },
     },
@@ -143,16 +141,8 @@ export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
       height: '100%',
     },
 
-    _selectHover: {
-      mr: '-var(--size-border-offset)',
-    },
-
     _selectOpened: {
       transform: 'rotate(180deg)',
-    },
-
-    _selectTriggerFocus: {
-      mr: '-var(--size-border-offset)',
     },
 
     alignSelf: 'center',

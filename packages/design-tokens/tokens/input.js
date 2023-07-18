@@ -9,13 +9,13 @@ module.exports = {
       hover: {
         comment: 'Border when hovering input fields.',
 
-        value: '{border.2.value}',
+        value: '{border.input.base.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       focus: {
         comment: 'Border when focusing input fields.',
 
-        value: '{size.border.2.value} solid {color.border.primary.value}',
+        value: '{size.border.1.value} solid {color.border.primary.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       disabled: {
@@ -27,12 +27,12 @@ module.exports = {
       error: {
         comment: 'Border for input fields with "error" feedback.',
 
-        value: '{size.border.2.value} solid {color.feedback.danger.50.value}',
+        value: '{size.border.1.value} solid {color.feedback.danger.50.value}',
       },
       success: {
         comment: 'Border for input fields with "success" feedback.',
 
-        value: '{size.border.2.value} solid {color.feedback.success.50.value}',
+        value: '{size.border.1.value} solid {color.feedback.success.50.value}',
       },
     },
   },
@@ -174,19 +174,30 @@ module.exports = {
       hover: {
         comment: 'Shadow when hovering input fields.',
 
-        value: '{shadow.input.base.value}',
+        value: 'inset 0 0 0 1px {color.border.default.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       focus: {
         comment: 'Shadow when focusing input fields.',
 
-        value: '{shadow.input.base.value}',
+        value: 'inset 0 0 0 1px {color.border.primary.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       disabled: {
         comment: 'Shadow for disabled input fields.',
 
         value: '{shadow.input.base.value}',
+      },
+
+      error: {
+        comment: 'Shadow for input fields with "error" feedback.',
+
+        value: 'inset 0 0 0 1px {color.feedback.danger.50.value}',
+      },
+      success: {
+        comment: 'Shadow for input fields with "success" feedback.',
+
+        value: 'inset 0 0 0 1px {color.feedback.success.50.value}',
       },
     },
   },

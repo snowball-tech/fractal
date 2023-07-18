@@ -22,7 +22,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -55,7 +55,11 @@ export default function Select({
   value,
   ...props
 }: SelectProps) {
-  const [isOpen, setIsOpen] = useState(open)
+  const [isOpen, setIsOpen] = useState(open || false)
+
+  useEffect(() => {
+    setIsOpen(open || false)
+  }, [open])
 
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
@@ -91,6 +95,7 @@ export default function Select({
         <RxLabel
           className={cx(typography({ variant: 'body-1' }), selectLabel())}
           htmlFor={id}
+          onClick={() => setIsOpen(true)}
         >
           {label}
         </RxLabel>
@@ -105,8 +110,8 @@ export default function Select({
         {...(dir !== undefined ? { dir } : {})}
         disabled={disabled}
         name={name || id}
+        open={isOpen}
         required={required}
-        {...(open !== undefined ? { open } : {})}
         {...(value !== undefined ? { value } : {})}
         onOpenChange={handleDropdownToggle}
         onValueChange={handleSelect}
@@ -114,6 +119,7 @@ export default function Select({
         {...omit(['className'], props)}
       >
         <RxSelect.Trigger
+          id={id}
           className={cx(
             `${PREFIX}-${GROUP_NAME}-trigger`,
             typography({ variant: 'body-1' }),

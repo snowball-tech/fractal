@@ -58,13 +58,13 @@ module.exports = {
         hover: {
           comment: 'Border when hovering/focusing secondary buttons.',
 
-          value: '{border.2.value}',
+          value: '{border.button.secondary.base.value}',
         },
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         active: {
           comment: 'Border when clicking/activating secondary buttons.',
 
-          value: '{border.transparent.2.value}',
+          value: '{border.button.secondary.base.value}',
         },
         disabled: {
           comment: 'Border for disabled secondary buttons.',
@@ -327,25 +327,23 @@ module.exports = {
     button: {
       display: {
         base: {
-          comment: 'Shadow for display elements (e.g. buttons).',
+          comment: 'Shadow for display buttons.',
 
           value: '{shadow.brutal.1.value}',
         },
         hover: {
-          comment:
-            'Shadow when hovering/focusing display elements (e.g. buttons).',
+          comment: 'Shadow when hovering/focusing display buttons.',
 
           value: '{shadow.brutal.2.value}',
         },
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         active: {
-          comment:
-            'Shadow when clicking/activating display elements (e.g. buttons).',
+          comment: 'Shadow when clicking/activating display buttons.',
 
           value: '{shadow.none.value}',
         },
         disabled: {
-          comment: 'Shadow for disabled display elements (e.g. buttons).',
+          comment: 'Shadow for disabled display buttons.',
 
           value: '{shadow.none.value}',
         },
@@ -353,25 +351,23 @@ module.exports = {
 
       primary: {
         base: {
-          comment: 'Shadow for primary elements (e.g. buttons).',
+          comment: 'Shadow for primary buttons.',
 
           value: '{shadow.none.value}',
         },
         hover: {
-          comment:
-            'Shadow when hovering/focusing primary elements (e.g. buttons).',
+          comment: 'Shadow when hovering/focusing primary buttons.',
 
           value: '{shadow.button.primary.base.value}',
         },
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         active: {
-          comment:
-            'Shadow when clicking/activating primary elements (e.g. buttons).',
+          comment: 'Shadow when clicking/activating primary buttons.',
 
           value: '{shadow.button.primary.base.value}',
         },
         disabled: {
-          comment: 'Shadow for disabled primary elements (e.g. buttons).',
+          comment: 'Shadow for disabled primary buttons.',
 
           value: '{shadow.button.primary.base.value}',
         },
@@ -379,25 +375,23 @@ module.exports = {
 
       secondary: {
         base: {
-          comment: 'Shadow for secondary elements (e.g. buttons).',
+          comment: 'Shadow for secondary buttons.',
 
           value: '{shadow.none.value}',
         },
         hover: {
-          comment:
-            'Shadow when hovering/focusing secondary elements (e.g. buttons).',
+          comment: 'Shadow when hovering/focusing secondary buttons.',
 
-          value: '{shadow.button.secondary.base.value}',
+          value: 'inset 0 0 0 1px {color.border.default.value}',
         },
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         active: {
-          comment:
-            'Shadow when clicking/activating secondary elements (e.g. buttons).',
+          comment: 'Shadow when clicking/activating secondary buttons.',
 
-          value: '{shadow.button.secondary.base.value}',
+          value: '{shadow.button.secondary.hover.value}',
         },
         disabled: {
-          comment: 'Shadow for disabled secondary elements (e.g. buttons).',
+          comment: 'Shadow for disabled secondary buttons.',
 
           value: '{shadow.button.secondary.base.value}',
         },
