@@ -72,6 +72,10 @@ export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
     '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
       display: 'none',
     },
+
+    '& input[type=number]': {
+      MozAppearance: 'textfield',
+    },
   },
 })
 
@@ -83,7 +87,9 @@ export const inputDateDay: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['InputDate'],
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    minWidth: '64px',
+  },
 })
 
 export const inputDateMonth: ReturnType<typeof defineRecipe> = defineRecipe({
@@ -94,7 +100,9 @@ export const inputDateMonth: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['InputDate'],
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    minWidth: '64px',
+  },
 })
 
 export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
@@ -105,7 +113,9 @@ export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['InputDate'],
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    minWidth: '80px',
+  },
 })
 
 export const inputDateMessage: ReturnType<typeof defineRecipe> = defineRecipe({
