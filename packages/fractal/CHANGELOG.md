@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [1.10.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.3...@snowball-tech/fractal@1.10.4) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- fix sizes problems in various components ([c6dcdf6](https://github.com/snowball-tech/fractal/commit/c6dcdf66a73d294a09f6bbd49241b40633338821))
+- **input-phone:** only allow certain chars in phone input ([125c52f](https://github.com/snowball-tech/fractal/commit/125c52f02781bcfb319892c25199404d7dc18667))
+
 ## @snowball-tech/fractal [1.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.2...@snowball-tech/fractal@1.10.3) (2023-07-18)
 
 ### 🐛 Bug Fixes
