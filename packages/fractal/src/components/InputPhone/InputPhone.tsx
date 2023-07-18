@@ -350,6 +350,7 @@ export default function InputPhone({
           }
           iconPosition="left"
           name={`${name || id}-number`}
+          pattern="[0-9()- ]"
           placeholder={actualPlaceholder ?? ''}
           readOnly={readOnly}
           required={required}
