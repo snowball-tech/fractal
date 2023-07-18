@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.3...@snowball-tech/design-tokens@5.2.4) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **fractal:** fix all borders induced movements ([0b41f4f](https://github.com/snowball-tech/fractal/commit/0b41f4feea5ef31cd873fd263d4e8f2cd723b6d7))
+
 ## @snowball-tech/design-tokens [5.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.2...@snowball-tech/design-tokens@5.2.3) (2023-07-18)
 
 ### 🐛 Bug Fixes
