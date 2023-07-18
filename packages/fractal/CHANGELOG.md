@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [1.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.2...@snowball-tech/fractal@1.10.3) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **input-date:** remove spinner in Firefox ([f4c9108](https://github.com/snowball-tech/fractal/commit/f4c91087bc39e9180d7d4380a25078b6d08b61e7))
+- **select:** add a "disable" cursor on disabled items ([e554785](https://github.com/snowball-tech/fractal/commit/e554785bf9b7da1d9a62b5d218d503ad21db9533))
+
 ## @snowball-tech/fractal [1.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.1...@snowball-tech/fractal@1.10.2) (2023-07-18)
 
 ### 🐛 Bug Fixes
