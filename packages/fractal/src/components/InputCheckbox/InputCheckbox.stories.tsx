@@ -61,6 +61,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: {
+    color: DEFAULT_COLOR,
     variant: DEFAULT_VARIANT,
   },
 }

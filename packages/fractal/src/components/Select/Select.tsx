@@ -111,7 +111,7 @@ export default function Select({
         onOpenChange={handleDropdownToggle}
         onValueChange={handleSelect}
         // Be careful, arguments of `omit` from lodash FP are flipped!
-        {...omit(['autoComplete', 'className', 'dir'], props)}
+        {...omit(['className'], props)}
       >
         <RxSelect.Trigger
           className={cx(
