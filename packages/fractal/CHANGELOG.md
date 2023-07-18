@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [1.10.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.4...@snowball-tech/fractal@1.10.5) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **fractal:** fix all borders induced movements ([0b41f4f](https://github.com/snowball-tech/fractal/commit/0b41f4feea5ef31cd873fd263d4e8f2cd723b6d7))
+
+### 👷 Build
+
+- **fractal:** fix a missing type annotation ([ba99272](https://github.com/snowball-tech/fractal/commit/ba992728e132b54a84e48432c86772d99d17aa3a))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.2.4
+
 ## @snowball-tech/fractal [1.10.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.3...@snowball-tech/fractal@1.10.4) (2023-07-18)
 
 ### 🐛 Bug Fixes
