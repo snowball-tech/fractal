@@ -142,10 +142,6 @@ export const inputPhoneNumberInputText: ReturnType<typeof defineRecipe> =
       '& input': {
         pl: 'calc(var(--size-spacing-5) + var(--size-spacing-1))!',
       },
-
-      '&:is(:hover, [data-hover]) input, & input:is(:focus, [data-focus])': {
-        pl: 'calc(var(--size-spacing-5) + var(--size-spacing-1) - var(--size-border-offset))!',
-      },
     },
   })
 

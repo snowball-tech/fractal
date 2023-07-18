@@ -53,6 +53,19 @@ export function extendConditions(
     peerHoverFocusNotDisabled:
       '.peer:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) ~',
 
+    hoverChecked:
+      '&:is(:hover, [data-hover], :checked, [data-checked], .checked)',
+    groupHoverChecked:
+      '.group:is(:hover, [data-hover], :checked, [data-checked], .checked) &',
+    peerHoverChecked:
+      '.peer:is(:hover, [data-hover], :checked, [data-checked], .checked) ~',
+    hoverNotChecked:
+      '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked))',
+    groupHoverNotChecked:
+      '.group:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked)) &',
+    peerHoverNotChecked:
+      '.peer:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked)) ~',
+
     hoverFocusWritable:
       '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly))',
     groupHoverFocusWritable:

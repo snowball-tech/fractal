@@ -29,49 +29,48 @@ export const inputRadioGroup: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const inputRadioContainer: ReturnType<typeof defineRecipe> =
-  defineRecipe({
-    description: 'Radio container',
-    name: 'inputRadioContainer',
+export const inputRadioContainer = defineRecipe({
+  description: 'Radio container',
+  name: 'inputRadioContainer',
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputRadio'],
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputRadio'],
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    base: {
-      '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
-        {
-          color: 'var(--color-text-checkbox-disabled)!',
-          cursor: 'var(--cursor-disabled)',
-        },
-
-      _fullWidth: {
-        maxWidth: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
-        width: '100%',
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, &:is(:disabled, [disabled], [data-disabled], .disabled)':
+      {
+        color: 'var(--color-text-checkbox-disabled)!',
+        cursor: 'var(--cursor-disabled)',
       },
 
-      alignItems: 'center',
-      borderRadius: 'var(--size-radius-s)',
-      display: 'flex',
-      gap: 'var(--size-checkbox-gap)',
-      px: 'var(--size-checkbox-padding-horizontal)',
-      py: 'var(--size-checkbox-padding-vertical)',
-      width: 'fit-content',
-
-      ...Object.values(Variants).reduce(
-        (variants, variantName) => ({
-          ...variants,
-          [`&.variant-${variantName}`]: {
-            backgroundColor: `var(--color-background-checkbox-${variantName})`,
-            border: `var(--border-checkbox-${variantName})`,
-            color: `var(--color-text-checkbox-${variantName})`,
-            shadow: `var(--shadow-checkbox-checkbox-${variantName})`,
-          },
-        }),
-        {} as Record<Variants, SystemStyleObject>,
-      ),
+    _fullWidth: {
+      maxWidth: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
+      width: '100%',
     },
-  })
+
+    alignItems: 'center',
+    borderRadius: 'var(--size-radius-s)',
+    display: 'flex',
+    gap: 'var(--size-checkbox-gap)',
+    px: 'var(--size-checkbox-padding-horizontal)',
+    py: 'var(--size-checkbox-padding-vertical)',
+    width: 'fit-content',
+
+    ...Object.values(Variants).reduce(
+      (variants, variantName) => ({
+        ...variants,
+        [`&.variant-${variantName}`]: {
+          backgroundColor: `var(--color-background-checkbox-${variantName})`,
+          border: `var(--border-checkbox-${variantName})`,
+          color: `var(--color-text-checkbox-${variantName})`,
+          shadow: `var(--shadow-checkbox-checkbox-${variantName})`,
+        },
+      }),
+      {} as Record<Variants, SystemStyleObject>,
+    ),
+  },
+})
 
 export const inputRadio = defineRecipe({
   description: 'Radio',
@@ -82,11 +81,6 @@ export const inputRadio = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '.fractal-input-radio:is(:hover, [data-hover]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:not(:is(:checked, [data-checked], [aria-checked=true]))':
-      {
-        backgroundColor: `var(--color-background-radio-hover)`,
-      },
-
     '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
       {
         borderColor: 'var(--color-box-checkbox-disabled)',
@@ -100,6 +94,12 @@ export const inputRadio = defineRecipe({
           backgroundColor: `var(--color-background-radio-checked)`,
         },
       },
+
+    _hoverNotChecked: {
+      _notDisabled: {
+        backgroundColor: `var(--color-background-radio-hover)`,
+      },
+    },
 
     alignItems: 'center',
     all: 'unset',

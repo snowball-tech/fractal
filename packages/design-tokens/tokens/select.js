@@ -15,7 +15,7 @@ module.exports = {
       focus: {
         comment: 'Border when focusing selects.',
 
-        value: '{border.input.focus.value}',
+        value: '{size.border.1.value} solid {color.border.primary.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       disabled: {
@@ -219,13 +219,13 @@ module.exports = {
       hover: {
         comment: 'Shadow when hovering selects.',
 
-        value: '{shadow.select.base.value}',
+        value: 'inset 0 0 0 1px {color.border.default.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       focus: {
         comment: 'Shadow when focusing selects.',
 
-        value: '{shadow.select.base.value}',
+        value: 'inset 0 0 0 1px {color.border.primary.value}',
       },
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       disabled: {

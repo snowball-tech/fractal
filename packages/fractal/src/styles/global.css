@@ -1,6 +1,10 @@
+/* stylelint-disable-next-line import-notation */
+@import 'normalize.css' layer(reset);
+
+@layer fractal;
 @layer reset, base, tokens, recipes, utilities;
 
 /* stylelint-disable-next-line import-notation */
-@import '@snowball-tech/design-tokens/dist/web/css/fonts.css';
+@import '@snowball-tech/design-tokens/dist/web/css/fonts.css' layer(fractal);
 /* stylelint-disable-next-line import-notation */
-@import '@snowball-tech/design-tokens/dist/web/css/variables.css';
+@import '@snowball-tech/design-tokens/dist/web/css/variables.css' layer(fractal);

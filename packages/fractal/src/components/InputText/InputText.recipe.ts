@@ -78,7 +78,7 @@ export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const inputText = defineRecipe({
+export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Text input',
   name: 'inputText',
 
@@ -118,18 +118,12 @@ export const inputText = defineRecipe({
 
     _inputTextInvalid: {
       border: `var(--border-input-error)`,
+      shadow: `var(--shadow-input-error)`,
     },
     _inputTextValid: {
       border: `var(--border-input-success)`,
+      shadow: `var(--shadow-input-success)`,
     },
-    _inputTextValidOrInvalid: {
-      pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
-    },
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    '.fractal-input-text.icon-left:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &':
-      {
-        pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
-      },
 
     _placeholder: {
       color: `var(--color-text-placeholder)`,
@@ -137,38 +131,18 @@ export const inputText = defineRecipe({
     },
 
     _writable: {
-      '.fractal-input-text.icon-left:is(:hover, [data-hover]) &, .fractal-input-text.icon-left &:is(:focus, [data-focus])':
-        {
-          pl: 'calc(var(--size-spacing-5) - var(--size-border-offset))',
-        },
-      '.fractal-input-text:is(:hover, [data-hover]) &, .fractal-input-text &:is(:focus, [data-focus])':
-        {
-          mr: 'calc(var(--size-border-offset) * -1)',
-          pl: 'calc(var(--size-input-padding-horizontal) - var(--size-border-offset))',
-        },
-      '.fractal-input-text:is(:hover, [data-hover]) &:not(:is(:focus, [data-focus]))':
-        {
-          backgroundColor: `var(--color-background-input-hover)`,
-          border: `var(--border-input-hover)`,
-          color: `var(--color-text-input-hover)`,
-          shadow: `var(--shadow-input-hover)`,
-        },
-      '.fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &:is(:focus, [data-focus])':
-        {
-          mr: 0,
-        },
-
-      '.fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid):is(:hover, [data-hover]) &, .fractal-input-text:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &:is(:focus, [data-focus])':
-        {
-          mr: 0,
-        },
-
       _focus: {
         backgroundColor: `var(--color-background-input-focus)`,
         border: `var(--border-input-focus)`,
         color: `var(--color-text-input-focus)`,
-        mr: 'calc(var(--size-border-offset) * -2)',
         shadow: `var(--shadow-input-focus)`,
+      },
+
+      _hoverNotFocus: {
+        backgroundColor: `var(--color-background-input-hover)`,
+        border: `var(--border-input-hover)`,
+        color: `var(--color-text-input-hover)`,
+        shadow: `var(--shadow-input-hover)`,
       },
     },
 

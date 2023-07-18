@@ -111,23 +111,6 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           transform: 'translate(0, -2px)',
         },
       },
-
-      [Variants.Secondary]: {
-        ...variants[Variants.Secondary],
-        _activeNotDisabled: {
-          ...variants[Variants.Secondary]._activeNotDisabled,
-
-          mr: 'calc(var(--size-border-offset) * -1)',
-          pl: 'calc(var(--size-button-padding-horizontal) - var(--size-border-offset))',
-        },
-
-        _hoverFocusNotDisabled: {
-          ...variants[Variants.Secondary]._hoverFocusNotDisabled,
-
-          mr: 'calc(var(--size-border-offset) * -1)',
-          pl: 'calc(var(--size-button-padding-horizontal) - var(--size-border-offset))',
-        },
-      },
     },
   },
 })
