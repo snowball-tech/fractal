@@ -56,6 +56,8 @@ export interface InputDateProps
   id?: string
   /** The label of the date input. */
   label?: string
+  /** The maximum year that can be entered. */
+  maxYear?: number
   /**
    * The name of the date input.
    *

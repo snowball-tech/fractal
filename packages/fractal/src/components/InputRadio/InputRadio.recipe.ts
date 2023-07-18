@@ -109,6 +109,8 @@ export const inputRadio = defineRecipe({
     display: 'flex',
     height: '20px',
     justifyContent: 'center',
+    minHeight: '20px',
+    minWidth: '20px',
     width: '20px',
 
     ...Object.values(Variants).reduce(
