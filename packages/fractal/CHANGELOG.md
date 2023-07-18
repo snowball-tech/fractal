@@ -1,3 +1,10 @@
+# @snowball-tech/fractal [1.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.9.4...@snowball-tech/fractal@1.10.0) (2023-07-18)
+
+### ✨ Features
+
+- **radio:** add radio input and radio group components ([853f274](https://github.com/snowball-tech/fractal/commit/853f27428abfae4474ebb57dc61beaef4a1ba47a))
+- **radio:** add the radio button component ([769fb56](https://github.com/snowball-tech/fractal/commit/769fb565c948cb095c54468f62af322ae3f67d1e))
+
 ## @snowball-tech/fractal [1.9.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.9.3...@snowball-tech/fractal@1.9.4) (2023-07-18)
 
 ### 📦 Dependencies
