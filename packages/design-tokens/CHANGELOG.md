@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.1...@snowball-tech/design-tokens@5.2.2) (2023-07-18)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix the hover and selected color ([2be3d17](https://github.com/snowball-tech/fractal/commit/2be3d17a699bef20af45afc187ed40552e259f06))
+
 ## @snowball-tech/design-tokens [5.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.0...@snowball-tech/design-tokens@5.2.1) (2023-07-18)
 
 ### 🐛 Bug Fixes
