@@ -76,6 +76,8 @@ export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
     '& input[type=number]': {
       MozAppearance: 'textfield',
     },
+
+    width: 'fit-content',
   },
 })
 
@@ -114,7 +116,9 @@ export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    minWidth: '80px',
+    '& input': {
+      width: 'unset!',
+    },
   },
 })
 

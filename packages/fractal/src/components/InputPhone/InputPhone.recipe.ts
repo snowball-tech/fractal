@@ -51,9 +51,16 @@ export const inputPhoneFields: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    sm: {
+      flexDirection: 'row',
+      width: 'fit-content',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     display: 'flex',
+    flexDirection: 'column',
     gap: 'var(--size-spacing-1)',
-    width: 'fit-content',
+    maxWidth: '100%',
   },
 })
 
@@ -66,7 +73,11 @@ export const inputPhonePrefix: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    width: '110px!',
+    sm: {
+      width: '110px!',
+    },
+
+    width: '100%',
   },
 })
 
@@ -80,7 +91,12 @@ export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      width: 'fit-content!',
+      sm: {
+        width: 'fit-content!',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      maxWidth: '100%',
     },
   })
 
@@ -142,7 +158,9 @@ export const inputPhoneNumber: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    width: 'calc(12rem + (var(--size-input-padding-horizontal) * 2))!',
+    sm: {
+      width: 'calc(12rem + (var(--size-input-padding-horizontal) * 2))!',
+    },
   },
 })
 

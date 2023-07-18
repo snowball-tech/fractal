@@ -16,11 +16,16 @@ export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
         width: '100%',
       },
 
+      sm: {
+        width: 'fit-content',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--size-spacing-1)',
       maxWidth: '100%',
-      width: 'fit-content',
+      width: '100%',
     },
   },
 )
@@ -62,9 +67,14 @@ export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
       width: '100%',
     },
 
+    sm: {
+      width: 'fit-content',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     maxWidth: '100%',
     position: 'relative',
-    width: 'fit-content',
+    width: '100%',
   },
 })
 
@@ -162,6 +172,11 @@ export const inputText = defineRecipe({
       },
     },
 
+    sm: {
+      width: 'unset',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     all: 'unset',
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
@@ -176,6 +191,7 @@ export const inputText = defineRecipe({
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
     transition: 'border-color 300ms ease-out',
+    width: '100%',
   },
 })
 

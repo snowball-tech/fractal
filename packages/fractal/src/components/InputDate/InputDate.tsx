@@ -57,6 +57,7 @@ export default function InputDate({
   error,
   id = uniqueId('fractal-input-date-'),
   label,
+  maxYear = 2099,
   name,
   onChange,
   onFieldChange,
@@ -129,7 +130,7 @@ export default function InputDate({
           id={`${id}-day`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
-          className={cx(inputDateDay(), inputDateField())}
+          className={cx(inputDateField(), inputDateDay())}
           {...(defaultValue?.day !== undefined
             ? { defaultValue: defaultValue.day }
             : {})}
@@ -153,7 +154,7 @@ export default function InputDate({
         <InputText
           id={`${id}-month`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          className={cx(inputDateMonth(), inputDateField())}
+          className={cx(inputDateField(), inputDateMonth())}
           {...(defaultValue?.month !== undefined
             ? { defaultValue: defaultValue.month }
             : {})}
@@ -177,13 +178,14 @@ export default function InputDate({
         <InputText
           id={`${id}-year`}
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          className={cx(inputDateYear(), inputDateField())}
+          className={cx(inputDateField(), inputDateYear())}
           {...(defaultValue?.year !== undefined
             ? { defaultValue: defaultValue.year }
             : {})}
           description={descriptions?.year ?? ''}
           disabled={disabled}
           error={errors.year || hasErrorMessage}
+          max={maxYear}
           maxLength={4}
           min={1900}
           name={`${name || id}-year`}

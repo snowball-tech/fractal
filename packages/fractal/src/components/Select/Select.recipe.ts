@@ -15,11 +15,16 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
       width: '100%',
     },
 
+    sm: {
+      width: 'fit-content',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--size-spacing-1)',
     maxWidth: '100%',
-    width: 'fit-content',
+    width: '100%',
   },
 })
 
