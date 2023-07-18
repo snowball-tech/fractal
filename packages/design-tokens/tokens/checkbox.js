@@ -62,7 +62,7 @@ module.exports = {
           comment:
             'Background color to use when a radio button in a group is selected',
 
-          value: '{color.brand.primary.value',
+          value: '{color.brand.primary.value}',
         },
       },
     },

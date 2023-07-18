@@ -107,6 +107,11 @@ export function extendConditions(
     groupClosed: '.group.closed &',
     peerClosed: '.peer.closed ~ &',
 
+    checkedNotDisabled:
+      '&:is(:checked, [data-checked], [aria-checked=true]):not(:is(:disabled, [disabled], .disabled))',
+    checkedDisabled:
+      '&:is(:checked, [data-checked], [aria-checked=true]):is(:disabled, [disabled], .disabled)',
+
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   }
 

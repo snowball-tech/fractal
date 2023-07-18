@@ -15,7 +15,6 @@ import { useContext } from 'react'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_COLOR } from './InputRadio.constants'
 import { GROUP_NAME } from './InputRadio.recipe'
 import type { InputRadioProps } from './InputRadio.types'
 import { InputRadioVariantContext } from './InputRadioVariantContext'
@@ -27,7 +26,6 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  * You must use this component with the `InputRadioGroup` component.
  */
 export default function InputRadio({
-  color = DEFAULT_COLOR,
   disabled = false,
   fullWidth = false,
   id = uniqueId('fractal-input-checkbox-'),
@@ -39,9 +37,8 @@ export default function InputRadio({
 
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
-    inputRadioContainer({ color }),
+    inputRadioContainer(),
     `variant-${variant}`,
-    `color-${color}`,
     props.className,
     disabled ? 'disabled' : '',
     fullWidth ? 'full-width' : '',
@@ -51,21 +48,18 @@ export default function InputRadio({
     <div className={groupClassNames}>
       <RxRadio.Item
         id={id}
-        className={inputRadio({ color })}
+        className={inputRadio()}
         disabled={disabled}
         value={value}
         {...omit(['className'], props)}
       >
-        <RxRadio.Indicator className={inputRadioCheckmark({ color })}>
+        <RxRadio.Indicator className={inputRadioCheckmark()}>
           <CheckIcon />
         </RxRadio.Indicator>
       </RxRadio.Item>
 
       <RxLabel
-        className={cx(
-          typography({ variant: 'body-1' }),
-          inputRadioLabel({ color }),
-        )}
+        className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
         htmlFor={id}
       >
         {label}
