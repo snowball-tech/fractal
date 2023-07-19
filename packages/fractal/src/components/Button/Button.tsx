@@ -44,7 +44,7 @@ function Button(
       {...(props.id !== undefined ? { id: props.id } : {})}
       ref={ref}
       className={buttonClassNames}
-      {...(props.dir !== undefined ? { dir: props.dir } : {})}
+      {...(props.dir !== undefined ? { dir: props.dir as 'ltr' | 'rtl' } : {})}
       disabled={disabled}
       preventFocusOnPress
       type={type}

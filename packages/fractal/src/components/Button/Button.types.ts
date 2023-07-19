@@ -5,8 +5,6 @@ import { Variants } from './Button.constants'
 
 export interface ButtonProps
   extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'onClick'> {
-  /** The reading direction of the button. */
-  dir?: PressableProps['dir']
   /** Prevents the user from interacting with the button. */
   disabled?: boolean
   /** Indicates if the button should take all the available width. */
