@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [1.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.6...@snowball-tech/fractal@1.11.0) (2023-07-19)
+
+### ✨ Features
+
+- add forwarded ref to all components ([4309088](https://github.com/snowball-tech/fractal/commit/430908826f91b61079b843716cfad62d0877570b))
+
+### 📦 Dependencies
+
+- update dependencies ([f572046](https://github.com/snowball-tech/fractal/commit/f572046381089c445c7c5b36f05202426cf18550))
+
 ## @snowball-tech/fractal [1.10.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.5...@snowball-tech/fractal@1.10.6) (2023-07-18)
 
 ### 📦 Dependencies
