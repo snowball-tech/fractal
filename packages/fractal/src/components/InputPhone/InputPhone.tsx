@@ -94,7 +94,7 @@ function InputPhone(
     },
   }))
 
-  const searchInput = useRef<HTMLInputElement>(null)
+  const searchInputRef = useRef<HTMLInputElement>(null)
   const [keepFocus, setKeepFocus] = useState(false)
 
   const [search, setSearch] = useState('')
@@ -270,8 +270,8 @@ function InputPhone(
 
   const handleSearchBlur = () => {
     if (keepFocus) {
-      if (searchInput.current) {
-        searchInput.current.focus()
+      if (searchInputRef.current) {
+        searchInputRef.current.focus()
       }
 
       setKeepFocus(false)
@@ -315,7 +315,7 @@ function InputPhone(
           >
             <>
               <InputText
-                ref={searchInput}
+                ref={searchInputRef}
                 className={inputPhonePrefixSearch()}
                 fullWidth
                 {...(placeholder !== undefined

@@ -9,6 +9,7 @@ import {
   SizeBreakpointXxl,
 } from '@snowball-tech/design-tokens'
 
+import * as AutocompleteRecipes from '@/components/Autocomplete/Autocomplete.recipe'
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
@@ -22,6 +23,7 @@ import { extendConditions } from './src/conditions'
 import { Breakpoints, PREFIX } from './src/constants'
 
 const GROUPS = {
+  autocomplete: `${PREFIX}-${AutocompleteRecipes.GROUP_NAME}`,
   button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
@@ -55,7 +57,28 @@ const fractalPreset = definePreset({
     },
 
     extend: {
+      keyframes: {
+        spin: {
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
+      },
+
       recipes: {
+        autocompleteContainer: AutocompleteRecipes.autocompleteContainer,
+        autocompleteDescription: AutocompleteRecipes.autocompleteDescription,
+        autocompleteDropdown: AutocompleteRecipes.autocompleteDropdown,
+        autocompleteEmpty: AutocompleteRecipes.autocompleteEmpty,
+        autocompleteInput: AutocompleteRecipes.autocompleteInput,
+        autocompleteItem: AutocompleteRecipes.autocompleteItem,
+        autocompleteItemGroup: AutocompleteRecipes.autocompleteItemGroup,
+        autocompleteItemSeparator:
+          AutocompleteRecipes.autocompleteItemSeparator,
+        autocompleteLabel: AutocompleteRecipes.autocompleteLabel,
+        autocompleteLoading: AutocompleteRecipes.autocompleteLoading,
+        autocompleteMessage: AutocompleteRecipes.autocompleteMessage,
+
         button: ButtonRecipes.button,
         buttonLabel: ButtonRecipes.buttonLabel,
 
