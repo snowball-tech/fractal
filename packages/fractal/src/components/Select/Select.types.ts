@@ -1,7 +1,4 @@
-import type {
-  SelectContentProps as RxSelectContentProps,
-  SelectProps as RxSelectProps,
-} from '@radix-ui/react-select'
+import type { SelectContentProps as RxSelectContentProps } from '@radix-ui/react-select'
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
 export interface SelectProps
@@ -18,8 +15,6 @@ export interface SelectProps
   defaultValue?: string
   /** An helpful message to describe the select to the user. */
   description?: string
-  /** The reading direction of the select. */
-  dir?: RxSelectProps['dir']
   /** Prevents the user from interacting with the select. */
   disabled?: boolean
   /**

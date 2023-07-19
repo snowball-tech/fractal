@@ -19,7 +19,6 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
 export default function InputRadioGroup({
   children: radioButtons,
   defaultValue,
-  dir,
   disabled = false,
   fullWidth = false,
   name = uniqueId('fractal-input-radio-group-'),
@@ -43,7 +42,6 @@ export default function InputRadioGroup({
   return (
     <RxRadio.Root
       className={groupClassNames}
-      {...(dir !== undefined ? { dir } : {})}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
       name={name}

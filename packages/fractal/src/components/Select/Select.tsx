@@ -39,7 +39,6 @@ function Select(
     children: items,
     defaultValue,
     description,
-    dir,
     disabled = false,
     displayedValue,
     dropdown = {},
@@ -110,7 +109,9 @@ function Select(
         {...(defaultValue !== undefined ? { defaultValue } : {})}
         defaultOpen={autoFocus}
         {...(autoComplete !== undefined ? { autoComplete } : {})}
-        {...(dir !== undefined ? { dir } : {})}
+        {...(props.dir !== undefined
+          ? { dir: props.dir as RxSelect.Direction }
+          : {})}
         disabled={disabled}
         name={name || id}
         open={isOpen}
@@ -119,7 +120,7 @@ function Select(
         onOpenChange={handleDropdownToggle}
         onValueChange={handleSelect}
         // Be careful, arguments of `omit` from lodash FP are flipped!
-        {...omit(['className'], props)}
+        {...omit(['className', 'dir'], props)}
       >
         <RxSelect.Trigger
           id={id}
@@ -163,7 +164,9 @@ function Select(
                 overflow: 'hidden',
                 width: '100%',
               })}
-              {...(dir !== undefined ? { dir } : {})}
+              {...(props.dir !== undefined
+                ? { dir: props.dir as RxScrollArea.Direction }
+                : {})}
               type="hover"
             >
               <RxSelect.Viewport asChild>

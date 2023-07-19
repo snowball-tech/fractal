@@ -33,8 +33,6 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
    * selected radio button).
    */
   defaultValue?: string
-  /** The reading direction of the radio group. */
-  dir?: RxRadioGroupProps['dir']
   /**
    * Prevents the user from interacting with any of the radio button in the
    * radio group.
