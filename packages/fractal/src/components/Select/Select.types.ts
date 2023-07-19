@@ -3,8 +3,6 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 export interface SelectProps
   extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'onSelect'> {
-  /** Indicates if autocompletion is possible in this select. */
-  autoComplete?: string
   /** Indicates if the select must be opened on render. */
   autoFocus?: boolean
   /**
@@ -26,7 +24,7 @@ export interface SelectProps
    */
   displayedValue?: ReactNode
   /**
-   * Options to tweak the position the select dropdown.
+   * Options to tweak the position of the select dropdown.
    *
    * - `collisionBoundary` is the container or list of containers) used to
    *   compute collision (if none is given, then the viewport is used);

@@ -162,7 +162,7 @@ export const inputPhoneNumber: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const inputPhoneDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Phone input text message',
+    description: 'Phone input description',
     name: 'inputPhoneDescription',
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects

@@ -315,12 +315,12 @@ function InputPhone(
           >
             <>
               <InputText
+                ref={searchInput}
                 className={inputPhonePrefixSearch()}
                 fullWidth
                 {...(placeholder !== undefined
                   ? { placeholder: searchPlaceholder }
                   : {})}
-                ref={searchInput}
                 icon={<SearchIcon />}
                 iconPosition="left"
                 value={search}
