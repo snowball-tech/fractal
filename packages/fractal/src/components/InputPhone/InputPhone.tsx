@@ -25,7 +25,15 @@ import examples from 'libphonenumber-js/mobile/examples'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  type ForwardedRef,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
 
 import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
@@ -47,26 +55,45 @@ import type {
  * `InputPhone` component is used to allow the user to enter a phone number
  * (with or without a prefix).
  */
-export default function InputPhone({
-  autoFocus = false,
-  defaultValue,
-  description,
-  disabled = false,
-  error,
-  id = uniqueId('fractal-input-phone-'),
-  label,
-  name,
-  onChange,
-  placeholder,
-  readOnly = false,
-  required = false,
-  searchPlaceholder,
-  success,
-  updateOnInvalid = true,
-  value,
-  withPrefix = true,
-  ...props
-}: InputPhoneProps) {
+function InputPhone(
+  {
+    autoFocus = false,
+    defaultValue,
+    description,
+    disabled = false,
+    error,
+    id = uniqueId('fractal-input-phone-'),
+    label,
+    name,
+    onChange,
+    placeholder,
+    readOnly = false,
+    required = false,
+    searchPlaceholder,
+    success,
+    updateOnInvalid = true,
+    value,
+    withPrefix = true,
+    ...props
+  }: InputPhoneProps,
+  ref: ForwardedRef<{
+    phone: HTMLInputElement | null
+    prefix: HTMLButtonElement | null
+  }>,
+) {
+  const phoneRef = useRef<HTMLInputElement>(null)
+  const prefixRef = useRef<HTMLButtonElement>(null)
+
+  useImperativeHandle(ref, () => ({
+    get phone() {
+      return phoneRef.current
+    },
+
+    get prefix() {
+      return prefixRef.current
+    },
+  }))
+
   const searchInput = useRef<HTMLInputElement>(null)
   const [keepFocus, setKeepFocus] = useState(false)
 
@@ -268,6 +295,7 @@ export default function InputPhone({
         {withPrefix ? (
           <Select
             id={`${id}-prefix`}
+            ref={prefixRef}
             className={inputPhonePrefix()}
             disabled={disabled}
             displayedValue={
@@ -326,6 +354,7 @@ export default function InputPhone({
 
         <InputText
           id={`${id}-number`}
+          ref={phoneRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus && !withPrefix}
           className={cx(
@@ -388,3 +417,5 @@ export default function InputPhone({
     </div>
   )
 }
+
+export default forwardRef(InputPhone)
