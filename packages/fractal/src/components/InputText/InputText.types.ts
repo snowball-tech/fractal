@@ -77,8 +77,10 @@ export interface InputTextProps
    * This will also change the display of the input to give an success feedback
    * (green border and special green icon).
    *
-   * Note that the icon (if there is one) will be replaced by a specific success
-   * icon.
+   * Note that the description (if there is one) will be replaced by the success
+   * message when provided.
+   *
+   * The icon (if there is one) will be replaced by a specific success icon.
    */
   success?: boolean | string
   /**

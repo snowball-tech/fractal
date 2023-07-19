@@ -219,7 +219,7 @@ export const inputTextDescription: ReturnType<typeof defineRecipe> =
   })
 
 export const inputTextMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Input text message',
+  description: 'Input text message (error or success)',
   name: 'inputTextMessage',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects

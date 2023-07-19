@@ -34,7 +34,6 @@ import type { SelectProps } from './Select.types'
  */
 function Select(
   {
-    autoComplete,
     autoFocus = false,
     children: items,
     defaultValue,
@@ -108,7 +107,6 @@ function Select(
       <RxSelect.Root
         {...(defaultValue !== undefined ? { defaultValue } : {})}
         defaultOpen={autoFocus}
-        {...(autoComplete !== undefined ? { autoComplete } : {})}
         {...(props.dir !== undefined
           ? { dir: props.dir as RxSelect.Direction }
           : {})}
@@ -120,7 +118,7 @@ function Select(
         onOpenChange={handleDropdownToggle}
         onValueChange={handleSelect}
         // Be careful, arguments of `omit` from lodash FP are flipped!
-        {...omit(['className', 'dir'], props)}
+        {...omit(['autoComplete', 'className', 'dir'], props)}
       >
         <RxSelect.Trigger
           id={id}

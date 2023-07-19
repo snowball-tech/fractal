@@ -11862,6 +11862,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-functions-list@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "css-functions-list@npm:3.2.0"
+  checksum: fe912ea852fad500aef9a4f04db9a0371c7b0eb1ac1a45fbd8df0156ae0538cee7492ebd620b9bb502fe5bf2b5ed3bf3c16b6659cf67c7144eff0b597bcc3891
+  languageName: node
+  linkType: hard
+
 "css-tree@npm:^2.3.1":
   version: 2.3.1
   resolution: "css-tree@npm:2.3.1"
@@ -15023,7 +15030,7 @@ __metadata:
     pythagora: ^0.0.78
     semantic-release: ^21.0.7
     serve: ^14.2.0
-    stylelint: ^15.10.1
+    stylelint: ^15.10.2
     ts-node: ^10.9.1
     turbo: ^1.10.8
     typescript: ^5.1.6
@@ -24842,6 +24849,56 @@ __metadata:
   bin:
     stylelint: bin/stylelint.mjs
   checksum: 8eeae81fe4ed2dfc580d7c401806dbb058c14631abfafd0821db32f1e649aee62e3d39dda3462c6122826df91bd9799409be926e91b55b007622f51e44eb94c1
+  languageName: node
+  linkType: hard
+
+"stylelint@npm:^15.10.2":
+  version: 15.10.2
+  resolution: "stylelint@npm:15.10.2"
+  dependencies:
+    "@csstools/css-parser-algorithms": ^2.3.0
+    "@csstools/css-tokenizer": ^2.1.1
+    "@csstools/media-query-list-parser": ^2.1.2
+    "@csstools/selector-specificity": ^3.0.0
+    balanced-match: ^2.0.0
+    colord: ^2.9.3
+    cosmiconfig: ^8.2.0
+    css-functions-list: ^3.2.0
+    css-tree: ^2.3.1
+    debug: ^4.3.4
+    fast-glob: ^3.3.0
+    fastest-levenshtein: ^1.0.16
+    file-entry-cache: ^6.0.1
+    global-modules: ^2.0.0
+    globby: ^11.1.0
+    globjoin: ^0.1.4
+    html-tags: ^3.3.1
+    ignore: ^5.2.4
+    import-lazy: ^4.0.0
+    imurmurhash: ^0.1.4
+    is-plain-object: ^5.0.0
+    known-css-properties: ^0.27.0
+    mathml-tag-names: ^2.1.3
+    meow: ^10.1.5
+    micromatch: ^4.0.5
+    normalize-path: ^3.0.0
+    picocolors: ^1.0.0
+    postcss: ^8.4.25
+    postcss-resolve-nested-selector: ^0.1.1
+    postcss-safe-parser: ^6.0.0
+    postcss-selector-parser: ^6.0.13
+    postcss-value-parser: ^4.2.0
+    resolve-from: ^5.0.0
+    string-width: ^4.2.3
+    strip-ansi: ^6.0.1
+    style-search: ^0.1.0
+    supports-hyperlinks: ^3.0.0
+    svg-tags: ^1.0.0
+    table: ^6.8.1
+    write-file-atomic: ^5.0.1
+  bin:
+    stylelint: bin/stylelint.mjs
+  checksum: 1a7dc0385bddc604f6633340dd3eb58dfc8860e677576d7ad688a94064140d73fd70ea21038994a9f8884457098ee297ce625bbddd9477cde35faa4bf7aff848
   languageName: node
   linkType: hard
 
