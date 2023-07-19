@@ -120,6 +120,8 @@
     "@ark-ui/react": "^0.8.1",
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-compose-refs": "^1.0.1",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@radix-ui/react-form": "^0.0.3",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-radio-group": "^1.1.3",

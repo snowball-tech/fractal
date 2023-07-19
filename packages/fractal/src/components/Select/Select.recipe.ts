@@ -163,7 +163,8 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: `var(--color-background-select-base)`,
     border: `var(--border-select-base)`,
     borderRadius: 'var(--size-radius-s)',
-    maxHeight: 'var(--radix-select-content-available-height)',
+    maxHeight:
+      'calc(var(--radix-popper-available-height) - var(--size-spacing-2))',
     mt: 'var(--size-dropdown-gap)',
     padding:
       'var(--size-dropdown-padding-vertical) var(--size-dropdown-padding-horizontal)',
@@ -295,7 +296,10 @@ export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       height: '100%',
-      maxHeight: 'var(--radix-select-content-available-height)',
+      maxHeight:
+        'calc(var(--radix-popper-available-height) - var(--size-spacing-2))',
+      overflow: 'auto',
+      position: 'relative',
       width: '100%',
     },
   })

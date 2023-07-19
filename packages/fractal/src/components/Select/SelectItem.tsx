@@ -9,9 +9,9 @@ import type { SelectItemProps } from './Select.types'
 /**
  * `SelectItem` component is used to display choices of a `Select` component.
  */
-const SelectItem = forwardRef(function SelectItem(
+function SelectItem(
   { children: item, disabled = false, value, ...props }: SelectItemProps,
-  forwardedRef: ForwardedRef<HTMLDivElement>,
+  ref: ForwardedRef<HTMLDivElement>,
 ) {
   const itemClassNames = cx(
     typography({ variant: 'body-1' }),
@@ -22,16 +22,16 @@ const SelectItem = forwardRef(function SelectItem(
 
   return (
     <RxSelect.Item
+      ref={ref}
       className={itemClassNames}
       disabled={disabled}
       value={value}
       {...omit(['className'], props)}
-      ref={forwardedRef}
     >
       <RxSelect.ItemText>{item}</RxSelect.ItemText>
       <RxSelect.ItemIndicator />
     </RxSelect.Item>
   )
-})
+}
 
-export default SelectItem
+export default forwardRef(SelectItem)

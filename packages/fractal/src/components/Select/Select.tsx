@@ -4,7 +4,7 @@ import { UilAngleDown as AngleDownIcon } from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'
-import { css, cx } from '@snowball-tech/fractal-panda/css'
+import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   selectContainer,
   selectDescription,
@@ -22,7 +22,13 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { type ForwardedRef, forwardRef, useEffect, useState } from 'react'
+import {
+  type ForwardedRef,
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -56,6 +62,8 @@ function Select(
   }: SelectProps,
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
   const [isOpen, setIsOpen] = useState(open || false)
 
   useEffect(() => {
@@ -90,8 +98,20 @@ function Select(
     }
   }
 
+  const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
+    (event) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
+      }
+
+      if (containerRef?.current?.contains(target as Element)) {
+        event.preventDefault()
+      }
+    }
+
   return (
-    <div className={groupClassNames}>
+    <div ref={containerRef} className={groupClassNames}>
       {!isEmpty(label) ? (
         <RxLabel
           className={cx(typography({ variant: 'body-1' }), selectLabel())}
@@ -154,17 +174,22 @@ function Select(
             )}
             position="popper"
             side="bottom"
+            style={{
+              display: undefined,
+              overflow: 'hidden',
+            }}
             {...omit(['className'], dropdown)}
+            onPointerDownOutside={handlePointerDownOutside}
           >
             <RxScrollArea.Root
-              className={css({
-                height: '100%',
-                overflow: 'hidden',
-                width: '100%',
-              })}
               {...(props.dir !== undefined
                 ? { dir: props.dir as RxScrollArea.Direction }
                 : {})}
+              style={{
+                maxHeight:
+                  'calc(var(--radix-popper-available-height) - var(--size-spacing-4))',
+                overflow: 'hidden',
+              }}
               type="hover"
             >
               <RxSelect.Viewport asChild>
