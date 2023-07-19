@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [1.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.11.0...@snowball-tech/fractal@1.12.0) (2023-07-19)
+
+### ✨ Features
+
+- **autocomplete:** add the autocomplete component ([ca48bab](https://github.com/snowball-tech/fractal/commit/ca48bab4d90c99d8401643806181ac6a9a876b06))
+
+### 🐛 Bug Fixes
+
+- fix various issues and formatting in components ([5255097](https://github.com/snowball-tech/fractal/commit/5255097d828f6a9066b10641bfa4e15b2ed0e73d))
+
+### ♻️ Code Refactoring
+
+- remove all dir props ([cfdf70f](https://github.com/snowball-tech/fractal/commit/cfdf70fed51822ff0285e872f98c3898b51909b3))
+
 # @snowball-tech/fractal [1.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.10.6...@snowball-tech/fractal@1.11.0) (2023-07-19)
 
 ### ✨ Features
