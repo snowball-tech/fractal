@@ -12,6 +12,7 @@ import {
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
+import { type ForwardedRef, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -22,21 +23,24 @@ import type { InputCheckboxProps } from './InputCheckbox.types'
 /**
  * `Checkbox` component is used to allow a user to make a binary choice.
  */
-export default function InputCheckbox({
-  checked,
-  color = DEFAULT_COLOR,
-  defaultChecked,
-  disabled = false,
-  fullWidth = false,
-  id = uniqueId('fractal-input-checkbox-'),
-  label,
-  name,
-  onCheckedChange,
-  required = false,
-  value = 'on',
-  variant = DEFAULT_VARIANT,
-  ...props
-}: InputCheckboxProps) {
+function InputCheckbox(
+  {
+    checked,
+    color = DEFAULT_COLOR,
+    defaultChecked,
+    disabled = false,
+    fullWidth = false,
+    id = uniqueId('fractal-input-checkbox-'),
+    label,
+    name,
+    onCheckedChange,
+    required = false,
+    value = 'on',
+    variant = DEFAULT_VARIANT,
+    ...props
+  }: InputCheckboxProps,
+  ref: ForwardedRef<HTMLButtonElement>,
+) {
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
     inputCheckboxContainer({ color, variant }),
@@ -50,6 +54,7 @@ export default function InputCheckbox({
     <div className={groupClassNames}>
       <RxCheckbox.Root
         id={id}
+        ref={ref}
         {...(checked !== undefined ? { checked } : {})}
         className={inputCheckbox({ color, variant })}
         {...(defaultChecked !== undefined ? { defaultChecked } : {})}
@@ -81,3 +86,5 @@ export default function InputCheckbox({
     </div>
   )
 }
+
+export default forwardRef(InputCheckbox)

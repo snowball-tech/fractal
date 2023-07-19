@@ -4,6 +4,7 @@ import { button, typography } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
+import { type ForwardedRef, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -14,18 +15,21 @@ import type { ButtonProps } from './Button.types'
 /**
  * `Button` component is used to allow a user to make an interaction.
  */
-export default function Button({
-  disabled = false,
-  fullWidth = false,
-  icon,
-  iconPosition = 'right',
-  label,
-  onClick,
-  onLongClick,
-  type = 'button',
-  variant = DEFAULT_VARIANT,
-  ...props
-}: ButtonProps) {
+function Button(
+  {
+    disabled = false,
+    fullWidth = false,
+    icon,
+    iconPosition = 'right',
+    label,
+    onClick,
+    onLongClick,
+    type = 'button',
+    variant = DEFAULT_VARIANT,
+    ...props
+  }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>,
+) {
   const buttonClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
     button({ variant }),
@@ -37,7 +41,10 @@ export default function Button({
 
   return (
     <Pressable
+      {...(props.id !== undefined ? { id: props.id } : {})}
+      ref={ref}
       className={buttonClassNames}
+      {...(props.dir !== undefined ? { dir: props.dir } : {})}
       disabled={disabled}
       preventFocusOnPress
       type={type}
@@ -45,7 +52,7 @@ export default function Button({
       {...(isFunction(onLongClick)
         ? { onLongPress: (event) => onLongClick(event) }
         : {})}
-      {...omit(['className', 'dir'], props)}
+      {...omit(['className', 'dir', 'id'], props)}
     >
       {icon && iconPosition === 'left' && icon}
 
@@ -55,3 +62,5 @@ export default function Button({
     </Pressable>
   )
 }
+
+export default forwardRef(Button)

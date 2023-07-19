@@ -22,7 +22,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useEffect, useState } from 'react'
+import { type ForwardedRef, forwardRef, useEffect, useState } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -32,29 +32,32 @@ import type { SelectProps } from './Select.types'
 /**
  * `Select` component is used to offer the user choices they can select.
  */
-export default function Select({
-  autoComplete,
-  autoFocus = false,
-  children: items,
-  defaultValue,
-  description,
-  dir,
-  disabled = false,
-  displayedValue,
-  dropdown = {},
-  fullWidth = false,
-  id = uniqueId('fractal-select-'),
-  label,
-  name,
-  onClose,
-  onOpen,
-  onSelect,
-  open,
-  placeholder,
-  required = false,
-  value,
-  ...props
-}: SelectProps) {
+function Select(
+  {
+    autoComplete,
+    autoFocus = false,
+    children: items,
+    defaultValue,
+    description,
+    dir,
+    disabled = false,
+    displayedValue,
+    dropdown = {},
+    fullWidth = false,
+    id = uniqueId('fractal-select-'),
+    label,
+    name,
+    onClose,
+    onOpen,
+    onSelect,
+    open,
+    placeholder,
+    required = false,
+    value,
+    ...props
+  }: SelectProps,
+  ref: ForwardedRef<HTMLButtonElement>,
+) {
   const [isOpen, setIsOpen] = useState(open || false)
 
   useEffect(() => {
@@ -120,6 +123,7 @@ export default function Select({
       >
         <RxSelect.Trigger
           id={id}
+          ref={ref}
           className={cx(
             `${PREFIX}-${GROUP_NAME}-trigger`,
             typography({ variant: 'body-1' }),
@@ -201,3 +205,5 @@ export default function Select({
     </div>
   )
 }
+
+export default forwardRef(Select)

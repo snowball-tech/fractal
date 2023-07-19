@@ -17,7 +17,13 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useState } from 'react'
+import {
+  type ForwardedRef,
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
 
 import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
@@ -49,25 +55,50 @@ function isValid(type: keyof DateFormat, value: number) {
  * `InputDate` component is used to allow the user to enter a date using 3
  * separate day/month/year fields.
  */
-export default function InputDate({
-  autoFocus = false,
-  defaultValue,
-  descriptions,
-  disabled = false,
-  error,
-  id = uniqueId('fractal-input-date-'),
-  label,
-  maxYear = 2099,
-  name,
-  onChange,
-  onFieldChange,
-  placeholders,
-  readOnly = false,
-  required = false,
-  success,
-  value,
-  ...props
-}: InputDateProps) {
+function InputDate(
+  {
+    autoFocus = false,
+    defaultValue,
+    descriptions,
+    disabled = false,
+    error,
+    id = uniqueId('fractal-input-date-'),
+    label,
+    maxYear = 2099,
+    name,
+    onChange,
+    onFieldChange,
+    placeholders,
+    readOnly = false,
+    required = false,
+    success,
+    value,
+    ...props
+  }: InputDateProps,
+  ref: ForwardedRef<{
+    day: HTMLInputElement | null
+    month: HTMLInputElement | null
+    year: HTMLInputElement | null
+  }>,
+) {
+  const dayRef = useRef<HTMLInputElement | null>(null)
+  const monthRef = useRef<HTMLInputElement | null>(null)
+  const yearRef = useRef<HTMLInputElement | null>(null)
+
+  useImperativeHandle(ref, () => ({
+    get day() {
+      return dayRef.current
+    },
+
+    get month() {
+      return monthRef.current
+    },
+
+    get year() {
+      return yearRef.current
+    },
+  }))
+
   const [errors, setErrors] = useState<{
     day: boolean
     month: boolean
@@ -128,6 +159,7 @@ export default function InputDate({
       <div className={cx('fields', inputDateFields())}>
         <InputText
           id={`${id}-day`}
+          ref={dayRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
           className={cx(inputDateField(), inputDateDay())}
@@ -153,6 +185,7 @@ export default function InputDate({
 
         <InputText
           id={`${id}-month`}
+          ref={monthRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           className={cx(inputDateField(), inputDateMonth())}
           {...(defaultValue?.month !== undefined
@@ -177,6 +210,7 @@ export default function InputDate({
 
         <InputText
           id={`${id}-year`}
+          ref={yearRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           className={cx(inputDateField(), inputDateYear())}
           {...(defaultValue?.year !== undefined
@@ -215,3 +249,5 @@ export default function InputDate({
     </div>
   )
 }
+
+export default forwardRef(InputDate)

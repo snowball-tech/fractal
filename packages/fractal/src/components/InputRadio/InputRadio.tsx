@@ -11,7 +11,7 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { useContext } from 'react'
+import { type ForwardedRef, forwardRef, useContext } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -25,14 +25,17 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  *
  * You must use this component with the `InputRadioGroup` component.
  */
-export default function InputRadio({
-  disabled = false,
-  fullWidth = false,
-  id = uniqueId('fractal-input-checkbox-'),
-  label,
-  value,
-  ...props
-}: InputRadioProps) {
+function InputRadio(
+  {
+    disabled = false,
+    fullWidth = false,
+    id = uniqueId('fractal-input-checkbox-'),
+    label,
+    value,
+    ...props
+  }: InputRadioProps,
+  ref: ForwardedRef<HTMLButtonElement>,
+) {
   const variant = useContext(InputRadioVariantContext)
 
   const groupClassNames = cx(
@@ -48,6 +51,7 @@ export default function InputRadio({
     <div className={groupClassNames}>
       <RxRadio.Item
         id={id}
+        ref={ref}
         className={inputRadio()}
         disabled={disabled}
         value={value}
@@ -67,3 +71,5 @@ export default function InputRadio({
     </div>
   )
 }
+
+export default forwardRef(InputRadio)
