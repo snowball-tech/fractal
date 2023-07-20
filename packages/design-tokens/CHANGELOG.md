@@ -1,3 +1,10 @@
+## @snowball-tech/design-tokens [5.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.4...@snowball-tech/design-tokens@5.2.5) (2023-07-20)
+
+### 🐛 Bug Fixes
+
+- **design-tokens:** fix the breakpoints max media query ([2c4dc09](https://github.com/snowball-tech/fractal/commit/2c4dc09bb025903f9124c4a1cd4f64d29e17f877))
+- **design-tokens:** update colors design tokens ([2152a3e](https://github.com/snowball-tech/fractal/commit/2152a3efacda857d91e13beca3b05eb11ba664cb))
+
 ## @snowball-tech/design-tokens [5.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.3...@snowball-tech/design-tokens@5.2.4) (2023-07-18)
 
 ### 🐛 Bug Fixes
