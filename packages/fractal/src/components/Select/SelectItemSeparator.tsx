@@ -6,12 +6,10 @@ import omit from 'lodash/fp/omit'
 import { SelectItemSeparatorProps } from './Select.types'
 
 /**
- * `SelectItemGroup` component is used to display `SelectItem` grouped under a
- * common label with nice formatting.
+ * `SelectItemSeparator` component is used to add a visual separation inside of
+ * the dropdown of a `Select` component.
  */
-export default function SelectItemGroup({
-  ...props
-}: SelectItemSeparatorProps) {
+export const SelectItemSeparator = ({ ...props }: SelectItemSeparatorProps) => {
   const itemSeparatorClassNames = cx(selectItemSeparator(), props.className)
 
   return (
@@ -21,3 +19,6 @@ export default function SelectItemGroup({
     />
   )
 }
+SelectItemSeparator.displayName = 'SelectItemSeparator'
+
+export default SelectItemSeparator

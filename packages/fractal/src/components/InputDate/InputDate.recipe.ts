@@ -55,7 +55,6 @@ export const inputDateFields: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     display: 'flex',
     gap: 'var(--size-spacing-1)',
-    maxWidth: '100px!',
     width: 'fit-content',
   },
 })
@@ -77,6 +76,7 @@ export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
       MozAppearance: 'textfield',
     },
 
+    maxWidth: '100px!',
     width: 'fit-content',
   },
 })

@@ -13,10 +13,10 @@ import type { InputRadioGroupProps } from './InputRadio.types'
 import { InputRadioVariantContext } from './InputRadioVariantContext'
 
 /**
- * `InputRadioGroup` component is used to group multiple `InputRadio` together
- * to have the "only one selected" behavior.
+ * `InputRadioGroup` component is used to group multiple `InputRadio` components
+ * together to have the "only one selected" behavior.
  */
-export default function InputRadioGroup({
+export const InputRadioGroup = ({
   children: radioButtons,
   defaultValue,
   disabled = false,
@@ -28,7 +28,7 @@ export default function InputRadioGroup({
   value,
   variant = DEFAULT_VARIANT,
   ...props
-}: InputRadioGroupProps) {
+}: InputRadioGroupProps) => {
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}-group`,
     inputRadioGroup(),
@@ -61,3 +61,6 @@ export default function InputRadioGroup({
     </RxRadio.Root>
   )
 }
+InputRadioGroup.displayName = 'InputRadioGroup'
+
+export default InputRadioGroup

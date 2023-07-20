@@ -36,6 +36,10 @@ export function extendConditions(
       '.group:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) &',
     peerWritable:
       '.peer:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) ~ &',
+    groupNotWritable:
+      '.group:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly) &',
+    peerNotWritable:
+      '.peer:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly) ~ &',
 
     hoverFocus: '&:is(:hover, [data-hover], :focus, [data-focus])',
     hoverNotFocus: '&:is(:hover, [data-hover]):not(:is(:focus, [data-focus]))',
@@ -96,17 +100,17 @@ export function extendConditions(
     groupRequired: '.group:is(:required, [required], .required) &',
     peerRequired: '.peer:is(:required, [required], .required) ~ &',
 
-    icon: '&:is(.icon,.icon-left,.icon-right)',
-    groupIcon: '.group:is(.icon,.icon-left,.icon-right) &',
-    peerIcon: '.peer:is(.icon,.icon-left,.icon-right) ~ &',
+    addendum: '&:is(.addendum,.prefix,.suffix)',
+    groupAddendum: '.group:is(.addendum,.prefix,.suffix) &',
+    peerAddendum: '.peer:is(.addendum,.prefix,.suffix) ~ &',
 
-    iconLeft: '&.icon-left',
-    groupIconLeft: '.group.icon-left &',
-    peerIconLeft: '.peer.icon-left ~ &',
+    prefix: '&.prefix',
+    groupPrefix: '.group.prefix &',
+    peerPrefix: '.peer.prefix ~ &',
 
-    iconRight: '&.icon-right',
-    groupIconRight: '.group.icon-right &',
-    peerIconRight: '.peer.icon-right ~ &',
+    suffix: '&.suffix',
+    groupSuffix: '.group.suffix &',
+    peerSuffix: '.peer.suffix ~ &',
 
     fullWidth: '&.full-width',
     groupFullWidth: '.group.full-width &',

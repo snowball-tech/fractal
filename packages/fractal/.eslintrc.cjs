@@ -22,6 +22,10 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
 
+  rules: {
+    'import/no-named-as-default': 'off',
+  },
+
   settings: {
     'import/resolver': {
       typescript: {

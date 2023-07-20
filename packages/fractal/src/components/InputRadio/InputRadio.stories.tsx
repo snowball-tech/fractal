@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps } from 'react'
+import kebabCase from 'lodash/fp/kebabCase'
+import type { ComponentProps, ReactNode } from 'react'
+
+import { jedis, others, siths } from '@/mocks'
 
 import InputRadio from './InputRadio'
 import { DEFAULT_VARIANT, Variants } from './InputRadio.constants'
@@ -7,43 +10,48 @@ import InputRadioGroup from './InputRadioGroup'
 
 type InputRadioGroupProps = ComponentProps<typeof InputRadioGroup>
 
-const children = (
-  <>
-    <InputRadio label="Luke Skywalker" value="skywalker" />
-    <InputRadio label="Obi-Wan Kenobi" value="kenobi" />
-    <InputRadio label="Yoda" value="yoda" />
-    <InputRadio label="Mace Windoo" value="windoo" />
-    <InputRadio label="Qui-Gon Jin" value="jin" />
-  </>
-)
+function asRadio(list: Array<string>, fullWidth = false): ReactNode {
+  return list.map((item, index) => {
+    const value = kebabCase(item)
+    const disabled = (index + 1) % 3 === 0
 
-const childrenWithDisabled = (
-  <>
-    <InputRadio disabled label="Luke Skywalker" value="skywalker" />
-    <InputRadio label="Obi-Wan Kenobi" value="kenobi" />
-    <InputRadio disabled label="Yoda" value="yoda" />
-    <InputRadio label="Mace Windoo" value="windoo" />
-    <InputRadio label="Qui-Gon Jin" value="jin" />
-  </>
-)
+    return (
+      <InputRadio
+        key={value}
+        disabled={disabled}
+        fullWidth={fullWidth}
+        label={item}
+        value={value}
+      />
+    )
+  })
+}
 
-const fullWidthChildren = (
+const jedisItems = asRadio(jedis)
+const jedisItemsFullWidth = asRadio(jedis, true)
+const sithsItems = asRadio(siths)
+const sithsItemsFullWidth = asRadio(siths, true)
+const othersItems = asRadio(others)
+const othersItemsFullWidth = asRadio(others, true)
+
+const items = (
   <>
-    <InputRadio fullWidth label="Luke Skywalker" value="skywalker" />
-    <InputRadio fullWidth label="Obi-Wan Kenobi" value="kenobi" />
-    <InputRadio fullWidth label="Yoda" value="yoda" />
-    <InputRadio fullWidth label="Mace Windoo" value="windoo" />
-    <InputRadio fullWidth label="Qui-Gon Jin" value="jin" />
+    {jedisItemsFullWidth}
+    {sithsItemsFullWidth}
+    {othersItemsFullWidth}
   </>
 )
 
 const meta = {
   argTypes: {
     asChild: { table: { disable: true } },
+    children: {
+      table: { type: { summary: 'InputRadio | Array<InputRadio>' } },
+    },
     onValueChange: {
       table: {
         control: false,
-        type: { summary: '(value: string) => void' },
+        type: { summary: '(newValue: string) => void' },
       },
     },
     variant: {
@@ -55,7 +63,7 @@ const meta = {
     },
   },
   args: {
-    children: fullWidthChildren,
+    children: items,
     disabled: false,
     fullWidth: false,
     required: false,
@@ -68,7 +76,7 @@ const meta = {
     },
   },
 
-  title: 'InputRadio',
+  title: 'Atoms/Input/Radio',
 } satisfies Meta<InputRadioGroupProps>
 
 export default meta
@@ -85,6 +93,7 @@ const separator = (
   <hr
     style={{
       margin: 'var(--size-spacing-3) 0',
+      marginTop: 0,
       width: '100%',
     }}
   />
@@ -93,62 +102,58 @@ const separator = (
 export const Primary: Story = {
   render: () => (
     <>
+      <h1>Horizontal</h1>
+      {separator}
+
+      <h3>Who is the best Jedi?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="yoda"
         orientation="horizontal"
         variant="primary"
       >
-        {children}
+        {jedisItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who is the worst Sith?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="emperor-palpatine"
         disabled
         orientation="horizontal"
         variant="primary"
       >
-        {children}
+        {sithsItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who shot first?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
-        orientation="horizontal"
-        variant="primary"
-      >
-        {childrenWithDisabled}
-      </InputRadioGroup>
-
-      {separator}
-
-      <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="han-solo"
         fullWidth
         orientation="horizontal"
         variant="primary"
       >
-        {fullWidthChildren}
+        {othersItemsFullWidth}
       </InputRadioGroup>
 
+      <h1>Vertical</h1>
       {separator}
 
-      <InputRadioGroup defaultValue="skywalker" variant="primary">
-        {children}
+      <h3>Who is the best Jedi?</h3>
+      <InputRadioGroup defaultValue="yoda" variant="primary">
+        {jedisItems}
       </InputRadioGroup>
 
-      {separator}
-
-      <InputRadioGroup defaultValue="skywalker" variant="primary">
-        {fullWidthChildren}
+      <h3>Who is the worst Sith?</h3>
+      <InputRadioGroup
+        defaultValue="emperor-palpatine"
+        disabled
+        variant="primary"
+      >
+        {sithsItemsFullWidth}
       </InputRadioGroup>
 
-      {separator}
-
-      <InputRadioGroup defaultValue="skywalker" fullWidth variant="primary">
-        {fullWidthChildren}
+      <h3>Who shot first?</h3>
+      <InputRadioGroup defaultValue="han-solo" fullWidth variant="primary">
+        {othersItemsFullWidth}
       </InputRadioGroup>
     </>
   ),
@@ -157,56 +162,58 @@ export const Primary: Story = {
 export const Secondary: Story = {
   render: () => (
     <>
+      <h1>Horizontal</h1>
+      {separator}
+
+      <h3>Who is the best Jedi?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="yoda"
         orientation="horizontal"
         variant="secondary"
       >
-        {children}
+        {jedisItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who is the worst Sith?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="emperor-palpatine"
         disabled
         orientation="horizontal"
         variant="secondary"
       >
-        {children}
+        {sithsItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who shot first?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
-        orientation="horizontal"
-        variant="secondary"
-      >
-        {childrenWithDisabled}
-      </InputRadioGroup>
-
-      {separator}
-
-      <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="han-solo"
         fullWidth
         orientation="horizontal"
         variant="secondary"
       >
-        {fullWidthChildren}
+        {othersItems}
       </InputRadioGroup>
 
+      <h1>Vertical</h1>
       {separator}
 
-      <InputRadioGroup defaultValue="skywalker" variant="secondary">
-        {fullWidthChildren}
+      <h3>Who is the best Jedi?</h3>
+      <InputRadioGroup defaultValue="yoda" variant="secondary">
+        {jedisItems}
       </InputRadioGroup>
 
-      {separator}
+      <h3>Who is the worst Sith?</h3>
+      <InputRadioGroup
+        defaultValue="emperor-palpatine"
+        disabled
+        variant="secondary"
+      >
+        {sithsItemsFullWidth}
+      </InputRadioGroup>
 
-      <InputRadioGroup defaultValue="skywalker" fullWidth variant="secondary">
-        {fullWidthChildren}
+      <h3>Who shot first?</h3>
+      <InputRadioGroup defaultValue="han-solo" fullWidth variant="secondary">
+        {othersItems}
       </InputRadioGroup>
     </>
   ),
@@ -215,50 +222,58 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   render: () => (
     <>
+      <h1>Horizontal</h1>
+      {separator}
+
+      <h3>Who is the best Jedi?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="yoda"
         orientation="horizontal"
         variant="tertiary"
       >
-        {children}
+        {jedisItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who is the worst Sith?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="emperor-palpatine"
         disabled
         orientation="horizontal"
         variant="tertiary"
       >
-        {children}
+        {sithsItems}
       </InputRadioGroup>
 
-      {separator}
-
+      <h3>Who shot first?</h3>
       <InputRadioGroup
-        defaultValue="skywalker"
-        orientation="horizontal"
-        variant="tertiary"
-      >
-        {childrenWithDisabled}
-      </InputRadioGroup>
-
-      {separator}
-
-      <InputRadioGroup
-        defaultValue="skywalker"
+        defaultValue="han-solo"
         fullWidth
         orientation="horizontal"
         variant="tertiary"
       >
-        {fullWidthChildren}
+        {othersItems}
       </InputRadioGroup>
 
+      <h1>Vertical</h1>
       {separator}
 
-      <InputRadioGroup defaultValue="skywalker" variant="tertiary">
-        {fullWidthChildren}
+      <h3>Who is the best Jedi?</h3>
+      <InputRadioGroup defaultValue="yoda" variant="tertiary">
+        {jedisItems}
+      </InputRadioGroup>
+
+      <h3>Who is the worst Sith?</h3>
+      <InputRadioGroup
+        defaultValue="emperor-palpatine"
+        disabled
+        variant="tertiary"
+      >
+        {sithsItemsFullWidth}
+      </InputRadioGroup>
+
+      <h3>Who shot first?</h3>
+      <InputRadioGroup defaultValue="han-solo" fullWidth variant="tertiary">
+        {othersItems}
       </InputRadioGroup>
     </>
   ),

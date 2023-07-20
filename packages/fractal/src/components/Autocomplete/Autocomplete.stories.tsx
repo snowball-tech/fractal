@@ -1,9 +1,18 @@
-import { UilSearchAlt as SearchIcon } from '@iconscout/react-unicons'
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@iconscout/react-unicons'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import isEmpty from 'lodash/fp/isEmpty'
-import { type ComponentProps } from 'react'
+import kebabCase from 'lodash/fp/kebabCase'
+import type { ComponentProps, ReactNode } from 'react'
+
+import { jedis, others, siths } from '@/mocks'
 
 import Autocomplete from './Autocomplete'
 import AutocompleteEmpty from './AutocompleteEmpty'
@@ -14,21 +23,117 @@ import AutocompleteLoading from './AutocompleteLoading'
 
 type AutocompleteProps = ComponentProps<typeof Autocomplete>
 
+function asItem(list: Array<string>, withDisabled = false): ReactNode {
+  return list.map((item, index) => {
+    const value = kebabCase(item)
+    const disabled = (index + 1) % 3 === 0 && withDisabled
+
+    return (
+      <AutocompleteItem key={value} disabled={disabled} value={value}>
+        {item}
+      </AutocompleteItem>
+    )
+  })
+}
+
+const jedisItems = asItem(jedis)
+const sithsItems = asItem(siths)
+const othersItems = asItem(others, true)
+
+const items = (
+  <>
+    {jedisItems}
+    {sithsItems}
+    {othersItems}
+  </>
+)
+
+const itemsWithGroups = (
+  <>
+    <AutocompleteItemGroup label="Jedis">{jedisItems}</AutocompleteItemGroup>
+    <AutocompleteItemGroup label="Siths">{sithsItems}</AutocompleteItemGroup>
+    <AutocompleteItemGroup label="Others">{othersItems}</AutocompleteItemGroup>
+  </>
+)
+
+const itemsWithGroupsAndSeparators = (
+  <>
+    <AutocompleteItemGroup label="Jedis">{jedisItems}</AutocompleteItemGroup>
+    <AutocompleteItemGroup label="Siths">{sithsItems}</AutocompleteItemGroup>
+    <AutocompleteItemSeparator />
+    {othersItems}
+  </>
+)
+
 const meta: Meta<AutocompleteProps> = {
   argTypes: {
-    onChange: { control: false },
-    onClose: { control: false },
-    onInputChange: {
-      control: false,
+    children: {
+      control: 'radio',
+      mapping: {
+        Empty: (
+          <AutocompleteEmpty>
+            This indicates that there are no item matching your search!
+          </AutocompleteEmpty>
+        ),
+        'Grouped items': itemsWithGroups,
+        Loading: (
+          <AutocompleteLoading>
+            This indicates that your search is loading...
+          </AutocompleteLoading>
+        ),
+        'Mixed items': itemsWithGroupsAndSeparators,
+        'Simple items': items,
+      },
+      options: [
+        'Empty',
+        'Loading',
+        'Simple items',
+        'Grouped items',
+        'Mixed items',
+      ],
+      table: {
+        type: {
+          summary:
+            'AutocompleteEmpty | AutocompleteLoading | AutocompleteItem | AutocompleteItemGroup | AutocompleteItemSeparator | Array<AutocompleteItem | AutocompleteItemGroup | AutocompleteItemSeparator>',
+        },
+      },
     },
-    onOpen: { control: false },
+    defaultValue: { control: 'text' },
+    onRawChange: {
+      table: { disable: true },
+    },
+    prefix: {
+      mapping: {
+        Cancel: <CancelIcon />,
+        Check: <CheckCircleIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+        Send: <SendIcon />,
+        Star: <StarIcon />,
+      },
+      options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
+    suffix: {
+      mapping: {
+        Cancel: <CancelIcon />,
+        Check: <CheckCircleIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+        Send: <SendIcon />,
+        Star: <StarIcon />,
+      },
+      options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
+    type: { table: { disable: true } },
   },
   args: {
     autoFocus: false,
-    description: 'This is a description',
+    description: 'Find any character or planet in Star Wars',
     disabled: false,
-    label: 'This is the label',
-    placeholder: 'This is the placeholder',
+    fullWidth: false,
+    label: 'Search the Star Wars universe',
+    placeholder: 'Enter your search',
+    prefix: 'Search',
     readOnly: false,
     required: false,
   },
@@ -135,16 +240,16 @@ const meta: Meta<AutocompleteProps> = {
     componentSubtitle:
       '🧑‍🚀 Our mission with Andy is complete, Woody - Buzz Lightyear - Toy Story 3',
     controls: {
-      exclude: ['value'],
+      exclude: ['dropdown', 'open', 'type', 'value'],
     },
   },
 
-  title: 'Autocomplete',
+  title: 'Molecules/Autocomplete',
 } satisfies Meta<AutocompleteProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { icon: <SearchIcon />, value: '' },
+  args: { value: '' },
 }

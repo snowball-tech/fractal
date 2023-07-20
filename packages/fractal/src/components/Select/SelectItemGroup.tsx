@@ -9,14 +9,14 @@ import omit from 'lodash/fp/omit'
 import type { SelectItemGroupProps } from './Select.types'
 
 /**
- * `SelectItemGroup` component is used to display `SelectItem` grouped under a
- * common label with nice formatting.
+ * `SelectItemGroup` component is used to group `SelectItem` components inside
+ * of the dropdown of a `Select` component.
  */
-export default function SelectItemGroup({
+export const SelectItemGroup = ({
   children: items,
   label,
   ...props
-}: SelectItemGroupProps) {
+}: SelectItemGroupProps) => {
   const itemGroupClassNames = cx(
     typography({ variant: 'body-1' }),
     selectItemGroup(),
@@ -34,3 +34,6 @@ export default function SelectItemGroup({
     </RxSelect.Group>
   )
 }
+SelectItemGroup.displayName = 'SelectItemGroup'
+
+export default SelectItemGroup

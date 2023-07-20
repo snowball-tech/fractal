@@ -10,18 +10,19 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isBoolean from 'lodash/fp/isBoolean'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import type { AutocompleteLoadingProps } from './Autocomplete.types'
 
 /**
- * `AutocompleteLoading` component is used to display a loader in the
- * `Autocomplete` dropdown when data is loading.
+ * `AutocompleteLoading` component is used to display a loader in the dropdown
+ * of an `Autocomplete` component.
  */
-function AutocompleteLoading(
-  { children, icon = true, spin = true, ...props }: AutocompleteLoadingProps,
-  ref: ForwardedRef<HTMLDivElement>,
-) {
+export const AutocompleteLoading = ({
+  children,
+  icon = true,
+  spin = true,
+  ...props
+}: AutocompleteLoadingProps) => {
   const loadingClassNames = cx(
     typography({ variant: 'body-1' }),
     autocompleteLoading(),
@@ -32,7 +33,6 @@ function AutocompleteLoading(
 
   return (
     <RxDropdownMenu.Item
-      ref={ref}
       className={loadingClassNames}
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
@@ -54,5 +54,6 @@ function AutocompleteLoading(
     </RxDropdownMenu.Item>
   )
 }
+AutocompleteLoading.displayName = 'AutocompleteLoading'
 
-export default forwardRef(AutocompleteLoading)
+export default AutocompleteLoading

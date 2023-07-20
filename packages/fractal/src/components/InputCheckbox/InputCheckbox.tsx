@@ -21,70 +21,76 @@ import { GROUP_NAME } from './InputCheckbox.recipe'
 import type { InputCheckboxProps } from './InputCheckbox.types'
 
 /**
- * `Checkbox` component is used to allow a user to make a binary choice.
+ * `InputCheckbox` component is used to allow a user to make a binary choice.
  */
-function InputCheckbox(
-  {
-    checked,
-    color = DEFAULT_COLOR,
-    defaultChecked,
-    disabled = false,
-    fullWidth = false,
-    id = uniqueId('fractal-input-checkbox-'),
-    label,
-    name,
-    onCheckedChange,
-    required = false,
-    value = 'on',
-    variant = DEFAULT_VARIANT,
-    ...props
-  }: InputCheckboxProps,
-  ref: ForwardedRef<HTMLButtonElement>,
-) {
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    inputCheckboxContainer({ color, variant }),
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-    required ? 'required' : '',
-  )
+export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
+  (
+    {
+      checked,
+      color = DEFAULT_COLOR,
+      defaultChecked,
+      disabled = false,
+      fullWidth = false,
+      id = uniqueId('fractal-input-checkbox-'),
+      label,
+      name,
+      onCheckedChange,
+      required = false,
+      value = 'on',
+      variant = DEFAULT_VARIANT,
+      ...props
+    }: InputCheckboxProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
+    const groupClassNames = cx(
+      `${PREFIX}-${GROUP_NAME}`,
+      inputCheckboxContainer({ color, variant }),
+      props.className,
+      disabled ? 'disabled' : '',
+      fullWidth ? 'full-width' : '',
+      required ? 'required' : '',
+    )
 
-  return (
-    <div className={groupClassNames}>
-      <RxCheckbox.Root
-        id={id}
-        ref={ref}
-        {...(checked !== undefined ? { checked } : {})}
-        className={inputCheckbox({ color, variant })}
-        {...(defaultChecked !== undefined ? { defaultChecked } : {})}
-        disabled={disabled}
-        name={name || id}
-        required={required}
-        value={value}
-        {...(isFunction(onCheckedChange)
-          ? { onCheckedChange: (checkedState) => onCheckedChange(checkedState) }
-          : {})}
-        {...omit(['className'], props)}
-      >
-        <RxCheckbox.Indicator
-          className={inputCheckboxCheckmark({ color, variant })}
+    return (
+      <div className={groupClassNames}>
+        <RxCheckbox.Root
+          id={id}
+          ref={ref}
+          {...(checked !== undefined ? { checked } : {})}
+          className={inputCheckbox({ color, variant })}
+          {...(defaultChecked !== undefined ? { defaultChecked } : {})}
+          disabled={disabled}
+          name={name || id}
+          required={required}
+          value={value}
+          {...(isFunction(onCheckedChange)
+            ? {
+                onCheckedChange: (checkedState) =>
+                  onCheckedChange(checkedState),
+              }
+            : {})}
+          {...omit(['className'], props)}
         >
-          <CheckIcon />
-        </RxCheckbox.Indicator>
-      </RxCheckbox.Root>
+          <RxCheckbox.Indicator
+            className={inputCheckboxCheckmark({ color, variant })}
+          >
+            <CheckIcon />
+          </RxCheckbox.Indicator>
+        </RxCheckbox.Root>
 
-      <RxLabel
-        className={cx(
-          typography({ variant: 'body-1' }),
-          inputCheckboxLabel({ color, variant }),
-        )}
-        htmlFor={id}
-      >
-        {label}
-      </RxLabel>
-    </div>
-  )
-}
+        <RxLabel
+          className={cx(
+            typography({ variant: 'body-1' }),
+            inputCheckboxLabel({ color, variant }),
+          )}
+          htmlFor={id}
+        >
+          {label}
+        </RxLabel>
+      </div>
+    )
+  },
+)
+InputCheckbox.displayName = 'InputCheckbox'
 
-export default forwardRef(InputCheckbox)
+export default InputCheckbox

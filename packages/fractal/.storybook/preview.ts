@@ -9,7 +9,7 @@ import fractalTheme from './theme'
 
 import '../src/styles/global.css'
 
-const preview = {
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
 
@@ -23,6 +23,9 @@ const preview = {
     },
 
     docs: {
+      argTypes: {
+        sort: 'requiredFirst',
+      },
       controls: {
         sort: 'requiredFirst',
       },
@@ -34,7 +37,20 @@ const preview = {
         textInverseColor: ColorBaseWhite,
       },
     },
+
+    options: {
+      storySort: {
+        order: [
+          'Guidelines',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Templates',
+          'Pages',
+        ],
+      },
+    },
   },
-} as Preview
+}
 
 export default preview

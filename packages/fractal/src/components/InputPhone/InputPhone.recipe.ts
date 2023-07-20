@@ -28,10 +28,10 @@ export const inputPhoneLabel = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    _inputDateNotWritable: {
+    _inputPhoneNotWritable: {
       cursor: 'unset',
     },
-    _inputDateRequired: {
+    _inputPhoneRequired: {
       _after: {
         color: 'var(--color-feedback-danger-50)',
         content: '" *"',

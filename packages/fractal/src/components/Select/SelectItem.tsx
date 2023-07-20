@@ -2,17 +2,19 @@ import * as RxSelect from '@radix-ui/react-select'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import { selectItem, typography } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import type { SelectItemProps } from './Select.types'
 
 /**
- * `SelectItem` component is used to display choices of a `Select` component.
+ * `SelectItem` component is used to display choices inside of the dropdown of a
+ * `Select` component.
  */
-function SelectItem(
-  { children: item, disabled = false, value, ...props }: SelectItemProps,
-  ref: ForwardedRef<HTMLDivElement>,
-) {
+export const SelectItem = ({
+  children: item,
+  disabled = false,
+  value,
+  ...props
+}: SelectItemProps) => {
   const itemClassNames = cx(
     typography({ variant: 'body-1' }),
     selectItem(),
@@ -22,7 +24,6 @@ function SelectItem(
 
   return (
     <RxSelect.Item
-      ref={ref}
       className={itemClassNames}
       disabled={disabled}
       value={value}
@@ -33,5 +34,6 @@ function SelectItem(
     </RxSelect.Item>
   )
 }
+SelectItem.displayName = 'SelectItem'
 
-export default forwardRef(SelectItem)
+export default SelectItem

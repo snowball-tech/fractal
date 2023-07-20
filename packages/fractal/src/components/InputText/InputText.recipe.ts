@@ -30,7 +30,7 @@ export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
   },
 )
 
-export const inputTextLabel = defineRecipe({
+export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Text input label',
   name: 'inputTextLabel',
 
@@ -87,10 +87,6 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    _inputTextFullWidth: {
-      width: '100%',
-    },
-
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _disabled: {
       backgroundColor: `var(--color-background-input-disabled)`,
@@ -100,34 +96,38 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       shadow: `var(--shadow-input-disabled)`,
     },
 
-    _readOnlyNotDisabled: {
-      backgroundColor: `var(--color-background-input-disabled)`,
-      border: `var(--border-input-disabled)`,
-      color: `var(--color-text-input-base)`,
-      cursor: 'text',
-      shadow: `var(--shadow-input-disabled)`,
-    },
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    _inputTextIconLeft: {
-      pl: 'var(--size-spacing-5)',
-    },
-    _inputTextIconRight: {
-      pr: 'var(--size-spacing-5)',
+    _inputTextFullWidth: {
+      width: '100%',
     },
 
     _inputTextInvalid: {
       border: `var(--border-input-error)`,
       shadow: `var(--shadow-input-error)`,
     },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    _inputTextPrefix: {
+      pl: 'var(--size-spacing-5)',
+    },
+    _inputTextSuffix: {
+      pr: 'var(--size-spacing-5)',
+    },
+
     _inputTextValid: {
       border: `var(--border-input-success)`,
       shadow: `var(--shadow-input-success)`,
     },
-
     _placeholder: {
       color: `var(--color-text-placeholder)`,
       fontStyle: 'var(--style-text-placeholder)',
+    },
+
+    _readOnlyNotDisabled: {
+      backgroundColor: `var(--color-background-input-disabled)`,
+      border: `var(--border-input-disabled)`,
+      color: `var(--color-text-input-base)`,
+      cursor: 'unset',
+      shadow: `var(--shadow-input-disabled)`,
     },
 
     _writable: {
@@ -146,12 +146,9 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       },
     },
 
-    sm: {
-      width: 'unset',
-    },
-
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     all: 'unset',
+
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
     borderRadius: 'var(--size-radius-s)',
@@ -164,31 +161,59 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     outline: 'none',
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
+    sm: {
+      width: 'unset',
+    },
     transition: 'border-color 300ms ease-out',
     width: '100%',
   },
 })
 
-export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input (optional) icon or error/success icon',
-  name: 'inputTextIcon',
+export const inputTextAddendum: ReturnType<typeof defineRecipe> = defineRecipe({
+  description:
+    'Text input (optional) addendum (prefix/suffix) and/or error/success icon',
+  name: 'inputTextAddendum',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   jsx: ['InputText'],
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _inputTextDisabled: {
       color: `var(--color-icon-input-disabled)`,
     },
 
-    _inputTextIconLeft: {
-      left: 'var(--size-spacing-1)',
-    },
-    _inputTextIconRight: {
-      right: 'var(--size-spacing-1)',
-    },
+    display: 'flex',
+    maxWidth: '100%',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    width: 'fit-content',
+  },
+})
+
+export const inputTextPrefix: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Text input (optional) prefix',
+  name: 'inputTextPrefix',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputText'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    left: 'var(--size-spacing-1)',
+  },
+})
+
+export const inputTextSuffix: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Text input (optional) suffix and/or error/success icon',
+  name: 'inputTextSuffix',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['InputText'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
     _inputTextInvalid: {
       color: `var(--color-icon-input-error)`,
     },
@@ -196,13 +221,7 @@ export const inputTextIcon: ReturnType<typeof defineRecipe> = defineRecipe({
       color: `var(--color-icon-input-success)`,
     },
 
-    display: 'flex',
-    maxWidth: '100%',
-    position: 'absolute',
     right: 'var(--size-spacing-1)',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: 'fit-content',
   },
 })
 
