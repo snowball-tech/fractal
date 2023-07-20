@@ -1,3 +1,28 @@
+# @snowball-tech/fractal [1.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.12.0...@snowball-tech/fractal@1.13.0) (2023-07-20)
+
+### ✨ Features
+
+- **fractal:** reorder stories and add atoms ([e202d48](https://github.com/snowball-tech/fractal/commit/e202d480e8ca72f29ffa7c025f3be9e3dab3ab36))
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** add missing icon prop ([98113c1](https://github.com/snowball-tech/fractal/commit/98113c1b77b67cdc205da2d1e4615d5830ee27ef))
+- **autocomplete:** fix the prefix in the story ([7af2749](https://github.com/snowball-tech/fractal/commit/7af2749ab2aed213bae23c1e0834010f677b4032))
+- **autocomplete:** remove icon prop and use prefix/suffix instead ([cfad72c](https://github.com/snowball-tech/fractal/commit/cfad72c14ffe0259a48914ae8192b64c6caff042))
+- **fractal:** add missing types ([5a09b30](https://github.com/snowball-tech/fractal/commit/5a09b30056507e73885b26b27cfaa56071c2c061))
+
+### ♻️ Code Refactoring
+
+- uniformize and reorganize the stories ([7b8fbff](https://github.com/snowball-tech/fractal/commit/7b8fbff0dd22252f75a2807f9c0abd619a34e157))
+
+### 📦 Dependencies
+
+- update dependencies ([8ac88d4](https://github.com/snowball-tech/fractal/commit/8ac88d4a898d9ce05880aef94b97f5b8d68b7b24))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.2.5
+
 # @snowball-tech/fractal [1.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.11.0...@snowball-tech/fractal@1.12.0) (2023-07-19)
 
 ### ✨ Features
