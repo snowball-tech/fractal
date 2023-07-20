@@ -5,6 +5,8 @@ export interface SelectProps
   extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'onSelect'> {
   /** Indicates if the select must be opened on render. */
   autoFocus?: boolean
+  /** The elements to display in the select dropdown. */
+  children?: ReactNode
   /**
    * The selected option of the select when it is initially rendered.
    *
@@ -75,6 +77,8 @@ export interface SelectProps
   open?: boolean
   /** A text to display when there is no selected value. */
   placeholder?: string
+  /** Prevents the user to change the selected value. */
+  readOnly?: boolean
   /** Indicates if a value must be selected. */
   required?: boolean
   /**

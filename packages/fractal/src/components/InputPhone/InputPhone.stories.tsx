@@ -1,16 +1,28 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 
 import InputPhone from './InputPhone'
 import type { PhoneNumber } from './InputPhone.types'
 
 type InputPhoneProps = ComponentProps<typeof InputPhone>
 
+const phoneNumberFormat = '{ countryCode?: string, number: string }'
+
 const meta: Meta<InputPhoneProps> = {
   argTypes: {
+    defaultValue: {
+      table: {
+        type: { summary: phoneNumberFormat },
+      },
+    },
     onChange: {
       control: false,
+      table: {
+        type: {
+          summary: `(newPhoneNumber: ${phoneNumberFormat}, isValid?: boolean) => void`,
+        },
+      },
     },
   },
   args: {
@@ -35,7 +47,19 @@ const meta: Meta<InputPhoneProps> = {
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {
-          setArgs({ value: newPhoneNumber })
+          if (!isValid) {
+            setArgs({
+              error: 'The phone number is not valid',
+              success: '',
+              value: newPhoneNumber,
+            })
+          } else {
+            setArgs({
+              error: '',
+              success: 'The phone number is valid',
+              value: newPhoneNumber,
+            })
+          }
         }
       }
 
@@ -49,12 +73,98 @@ const meta: Meta<InputPhoneProps> = {
     },
   },
 
-  title: 'InputPhone',
+  title: 'Atoms/Input/Phone',
 } satisfies Meta<InputPhoneProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: { countryCode: 'AC', number: '+247612457832' } },
+  args: { value: { number: '' } },
+}
+
+const separator = (
+  <hr
+    style={{
+      margin: 'var(--size-spacing-3) 0',
+      width: '100%',
+    }}
+  />
+)
+
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <div
+    style={{
+      alignItems: 'flex-start',
+      display: 'flex',
+      gap: 'var(--size-spacing-2)',
+      marginBottom: 'var(--size-spacing-2)',
+    }}
+  >
+    {children}
+  </div>
+)
+
+export const Examples: Story = {
+  render: () => (
+    <>
+      <Wrapper>
+        <InputPhone label="Empty" />
+        <InputPhone label="Required" required />
+      </Wrapper>
+
+      <Wrapper>
+        <InputPhone
+          defaultValue={{ countryCode: 'AC', number: '+24712345678' }}
+          label="With value"
+        />
+        <InputPhone
+          description="This is a description"
+          label="With descriptions and placeholders"
+          placeholder="This is a placeholder"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputPhone
+          description="This is a description"
+          disabled
+          label="Disabled"
+          placeholder="This is a placeholder"
+        />
+        <InputPhone
+          defaultValue={{ countryCode: 'AC', number: '+24712345678' }}
+          description="This is a description"
+          disabled
+          label="Disabled with value"
+        />
+        <InputPhone
+          defaultValue={{ countryCode: 'AC', number: '+24712345678' }}
+          description="This is a description"
+          label="Read-only with value"
+          readOnly
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputPhone
+          defaultValue={{ countryCode: 'FR', number: '+33654' }}
+          description="This is a description"
+          error="The phone number is not valid"
+          label="Invalid phone number"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputPhone
+          defaultValue={{ countryCode: 'FR', number: '+33687542196' }}
+          description="This is a description"
+          label="Valid phone number"
+          success="The phone number is valid"
+        />
+      </Wrapper>
+    </>
+  ),
 }

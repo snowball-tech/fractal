@@ -1,6 +1,9 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps } from 'react'
+import kebabCase from 'lodash/fp/kebabCase'
+import type { ComponentProps, ReactNode } from 'react'
+
+import { jedis, others, siths } from '@/mocks'
 
 import Select from './Select'
 import SelectItem from './SelectItem'
@@ -9,63 +12,44 @@ import SelectItemSeparator from './SelectItemSeparator'
 
 type SelectProps = ComponentProps<typeof Select>
 
-const jedis = (
-  <>
-    <SelectItem value="kenobi">Obi-Wan Kenobi</SelectItem>
-    <SelectItem value="skywalker">Luke Skywalker</SelectItem>
-  </>
-)
+function asItem(list: Array<string>, disabled = false): ReactNode {
+  return list.map((item) => {
+    const value = kebabCase(item)
 
-const siths = (
-  <>
-    <SelectItem value="palpatine">Emperor Palpatine</SelectItem>
-    <SelectItem value="sidious">Darth Sidious</SelectItem>
-    <SelectItem value="vader">Darth Vader</SelectItem>
-  </>
-)
+    return (
+      <SelectItem key={value} disabled={disabled} value={value}>
+        {item}
+      </SelectItem>
+    )
+  })
+}
 
-const others = (
-  <>
-    <SelectItem value="amidala">Padme Amidala</SelectItem>
-    <SelectItem value="r2d2">R2D2</SelectItem>
-    <SelectItem disabled value="c3po">
-      C3PO
-    </SelectItem>
-    <SelectItem value="chewbacca">Chewbacca</SelectItem>
-    <SelectItem value="solo">Han Solo</SelectItem>
-    <SelectItem disabled value="jabba">
-      Jabba the Hut
-    </SelectItem>
-  </>
-)
+const jedisItems = asItem(jedis)
+const sithsItems = asItem(siths, true)
+const othersItems = asItem(others)
 
 const items = (
   <>
-    {jedis}
-    {siths}
-    {others}
+    {jedisItems}
+    {sithsItems}
+    {othersItems}
   </>
 )
 
 const itemsWithGroups = (
   <>
-    <SelectItemGroup label="Jedis">{jedis}</SelectItemGroup>
-
-    <SelectItemGroup label="Siths">{siths}</SelectItemGroup>
-
-    <SelectItemGroup label="Others">{others}</SelectItemGroup>
+    <SelectItemGroup label="Jedis">{jedisItems}</SelectItemGroup>
+    <SelectItemGroup label="Siths">{sithsItems}</SelectItemGroup>
+    <SelectItemGroup label="Others">{othersItems}</SelectItemGroup>
   </>
 )
 
 const itemsWithGroupsAndSeparators = (
   <>
-    <SelectItemGroup label="Jedis">{jedis}</SelectItemGroup>
-
-    <SelectItemGroup label="Siths">{siths}</SelectItemGroup>
-
+    <SelectItemGroup label="Jedis">{jedisItems}</SelectItemGroup>
+    <SelectItemGroup label="Siths">{sithsItems}</SelectItemGroup>
     <SelectItemSeparator />
-
-    {others}
+    {othersItems}
   </>
 )
 
@@ -74,11 +58,20 @@ const meta: Meta<SelectProps> = {
     autoComplete: { table: { disable: true } },
     autoFocus: { table: { disable: true } },
     children: {
-      description:
-        "The `<SelectItem>`s, `<SelectGroup />`s and `<SelectSeparator />` to display to the user in the select's dropdown",
-      table: { type: { summary: 'ReactNode' } },
+      control: 'radio',
+      mapping: {
+        'Grouped items': itemsWithGroups,
+        'Mixed items': itemsWithGroupsAndSeparators,
+        'Simple items': items,
+      },
+      options: ['Simple items', 'Grouped items', 'Mixed items'],
+      table: {
+        type: {
+          summary:
+            'SelectItem | SelectItemGroup | SelectItemSeparator | Array<SelectItem | SelectItemGroup | SelectItemSeparator>',
+        },
+      },
     },
-    dir: { table: { disable: true } },
     displayedValue: { control: false },
     dropdown: {
       table: {
@@ -96,10 +89,11 @@ const meta: Meta<SelectProps> = {
   },
   args: {
     autoFocus: false,
-    description: 'This is the description',
+    description: "Be careful, it's a trap!",
     disabled: false,
-    label: 'This is the label',
-    placeholder: 'This is the placeholder',
+    fullWidth: false,
+    label: 'Who is the best Star Wars character?',
+    placeholder: 'May the force be with you!',
     required: false,
   },
   component: Select,
@@ -124,28 +118,17 @@ const meta: Meta<SelectProps> = {
     componentSubtitle:
       '🚀 Failure is not an option - Gene Kranz (NASA Flight Director) - Apollo 13',
     controls: {
-      exclude: ['dropdown', 'value'],
+      exclude: ['dropdown', 'open', 'value'],
     },
   },
 
-  title: 'Select',
+  title: 'Atoms/Select',
 } satisfies Meta<SelectProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  argTypes: {
-    children: {
-      control: 'radio',
-      mapping: {
-        'Grouped items': itemsWithGroups,
-        'Mixed items': itemsWithGroupsAndSeparators,
-        'Simple items': items,
-      },
-      options: ['Simple items', 'Grouped items', 'Mixed items'],
-    },
-  },
   args: {
     children: 'Simple items',
     fullWidth: true,

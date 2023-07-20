@@ -37,7 +37,7 @@ const config: StorybookConfig = {
     // See https://github.com/storybookjs/storybook/tree/next/code/addons/docs/react#typescript-props-with-react-docgen
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      include: ['./src/**/**.ts', './src/**/**.tsx'],
+      include: ['./src/**/*.ts', './src/**/*.tsx'],
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
       skipChildrenPropWithoutDoc: false,

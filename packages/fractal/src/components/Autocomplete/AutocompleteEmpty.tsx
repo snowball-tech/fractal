@@ -5,18 +5,17 @@ import {
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import type { AutocompleteEmptyProps } from './Autocomplete.types'
 
 /**
- * `AutocompleteLoading` component is used to display a loader in the
- * `Autocomplete` dropdown when data is loading.
+ * `AutocompleteEmpty` component is used to display an empty state inside of the
+ * dropdown of an `Autocomplete` component.
  */
-function AutocompleteEmpty(
-  { children, ...props }: AutocompleteEmptyProps,
-  ref: ForwardedRef<HTMLDivElement>,
-) {
+export const AutocompleteEmpty = ({
+  children,
+  ...props
+}: AutocompleteEmptyProps) => {
   const emptyClassNames = cx(
     typography({ variant: 'body-1' }),
     autocompleteEmpty(),
@@ -25,7 +24,6 @@ function AutocompleteEmpty(
 
   return (
     <RxDropdownMenu.Item
-      ref={ref}
       className={emptyClassNames}
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
@@ -34,5 +32,6 @@ function AutocompleteEmpty(
     </RxDropdownMenu.Item>
   )
 }
+AutocompleteEmpty.displayName = 'AutocompleteEmpty'
 
-export default forwardRef(AutocompleteEmpty)
+export default AutocompleteEmpty

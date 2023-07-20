@@ -6,8 +6,7 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { InputTextProps } from '../InputText/InputText.types'
 
-export interface AutocompleteProps
-  extends Omit<InputTextProps, 'iconPosition' | 'onSelect'> {
+export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
   /** Indicates if the autocomplete input must be focused on render. */
   autoFocus?: boolean
   /** The elements to display in the autocomplete dropdown. */
@@ -49,16 +48,11 @@ export interface AutocompleteProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    *
-   * The icon (if there is one) will also be replaced  by a specific error icon.
+   * The suffix (if there is one) will also be replaced  by a specific error icon.
    */
   error?: string
   /** Indicates if the autocomplete should take all the available width. */
   fullWidth?: boolean
-  /**
-   * The icon to display in the autocomplete input (if any) at the left
-   * position.
-   */
-  icon?: ReactNode
   /**
    * A unique HTML id for the autocomplete.
    *
@@ -77,7 +71,10 @@ export interface AutocompleteProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the input is changed or a value is selected. */
+  /**
+   * Event handler called when the autocomplete input value is changed or a
+   * value is selected.
+   */
   onChange?: (newValue: string) => void
   /** Event handler called when the autocomplete dropdown is closed. */
   onClose?: () => void
@@ -92,6 +89,8 @@ export interface AutocompleteProps
   open?: boolean
   /** A string to display when the autocomplete is empty. */
   placeholder?: string
+  /** The prefix (icon or text) to display to the left of the autocomplete. */
+  prefix?: ReactNode
   /** Prevents the user to change the value of the autocomplete. */
   readOnly?: boolean
   /** Indicates if the autocomplete must be filled. */
@@ -105,13 +104,15 @@ export interface AutocompleteProps
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
    *
-   * The icon (if there is one) will be replaced by a specific success icon.
+   * The suffix (if there is one) will be replaced by a specific success icon.
    */
   success?: string
+  /** The suffix (icon or text) to display to the right of the autocomplete. */
+  suffix?: ReactNode
   /**
    * The controlled value of the autocomplete.
    *
-   * Must be used in conjunction with `onInputChange`.
+   * Must be used in conjunction with `onChange`.
    */
   value?: number | string
 }

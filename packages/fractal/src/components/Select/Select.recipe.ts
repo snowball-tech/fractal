@@ -70,11 +70,11 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
       fontStyle: 'var(--style-text-placeholder)',
     },
 
-    _selectDisabled: {
+    '.fractal-select.readonly &': {
       backgroundColor: `var(--color-background-select-disabled)`,
       border: `var(--border-select-disabled)`,
-      color: `var(--color-text-select-disabled)`,
-      cursor: 'var(--cursor-disabled)',
+      color: `var(--color-text-select-base)`,
+      cursor: 'unset',
       shadow: `var(--shadow-select-disabled)`,
     },
 
@@ -93,6 +93,14 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
         color: `var(--color-text-select-hover)`,
         shadow: `var(--shadow-select-hover)`,
       },
+    },
+
+    _selectDisabled: {
+      backgroundColor: `var(--color-background-select-disabled)`,
+      border: `var(--border-select-disabled)`,
+      color: `var(--color-text-select-disabled)`,
+      cursor: 'var(--cursor-disabled)',
+      shadow: `var(--shadow-select-disabled)`,
     },
 
     alignItems: 'center',
@@ -268,7 +276,7 @@ export const selectItemSeparator: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
-      backgroundColor: 'var(--color-brand-separator)',
+      backgroundColor: 'var(--color-stroke-separator)',
       height: 'var(--size-border-1)',
       my: 'var(--size-options-padding-vertical)',
     },

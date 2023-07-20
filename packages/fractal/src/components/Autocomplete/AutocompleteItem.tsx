@@ -6,18 +6,19 @@ import {
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import type { AutocompleteItemProps } from './Autocomplete.types'
 
 /**
- * `AutocompleteItem` component is used to display choices of an `Autocomplete`
- * component.
+ * `AutocompleteItem` component is used to display choices inside of the
+ * dropdown of an `Autocomplete` component.
  */
-function AutocompleteItem(
-  { children: item, disabled = false, value, ...props }: AutocompleteItemProps,
-  ref: ForwardedRef<HTMLDivElement>,
-) {
+export const AutocompleteItem = ({
+  children: item,
+  disabled = false,
+  value,
+  ...props
+}: AutocompleteItemProps) => {
   const itemClassNames = cx(
     typography({ variant: 'body-1' }),
     selectItem(),
@@ -28,7 +29,6 @@ function AutocompleteItem(
 
   return (
     <RxDropdownMenu.Item
-      ref={ref}
       className={itemClassNames}
       {...(value !== undefined ? { 'data-value': value } : {})}
       disabled={disabled}
@@ -38,5 +38,6 @@ function AutocompleteItem(
     </RxDropdownMenu.Item>
   )
 }
+AutocompleteItem.displayName = 'AutocompleteItem'
 
-export default forwardRef(AutocompleteItem)
+export default AutocompleteItem

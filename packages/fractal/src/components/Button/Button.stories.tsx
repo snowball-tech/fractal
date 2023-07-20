@@ -13,9 +13,6 @@ type ButtonProps = ComponentProps<typeof Button>
 
 const meta = {
   argTypes: {
-    dir: { table: { disable: true } },
-    onClick: { control: false },
-    onLongClick: { control: false },
     variant: {
       options: Object.values(Variants),
       table: {
@@ -26,9 +23,10 @@ const meta = {
   },
   args: {
     disabled: false,
+    fullWidth: false,
     icon: 'Send',
     iconPosition: 'right',
-    label: 'Click me please!',
+    label: 'Punch it, Chewie!',
     type: 'button',
   },
   component: Button,
@@ -37,7 +35,7 @@ const meta = {
       "🧑‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
   },
 
-  title: 'Button',
+  title: 'Atoms/Button',
 } satisfies Meta<ButtonProps>
 
 export default meta
@@ -68,15 +66,6 @@ export const Playground: StoryObj<ButtonProps & { withIcon: boolean }> = {
   },
 }
 
-const separator = (
-  <hr
-    style={{
-      margin: 'var(--size-spacing-3) 0',
-      width: '100%',
-    }}
-  />
-)
-
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <div
     style={{
@@ -90,7 +79,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
   </div>
 )
 
-export const Buttons: Story = {
+export const Display: Story = {
   render: () => (
     <>
       <Wrapper>
@@ -132,9 +121,13 @@ export const Buttons: Story = {
           variant="display"
         />
       </Wrapper>
+    </>
+  ),
+}
 
-      {separator}
-
+export const Primary: Story = {
+  render: () => (
+    <>
       <Wrapper>
         <Button label="Primary button" />
         <Button icon={<SendIcon />} label="Primary button with right icon" />
@@ -163,9 +156,13 @@ export const Buttons: Story = {
       <Wrapper>
         <Button fullWidth label="Full width primary button" />
       </Wrapper>
+    </>
+  ),
+}
 
-      {separator}
-
+export const Secondary: Story = {
+  render: () => (
+    <>
       <Wrapper>
         <Button label="Secondary button" variant="secondary" />
         <Button

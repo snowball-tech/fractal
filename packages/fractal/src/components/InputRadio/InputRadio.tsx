@@ -25,51 +25,54 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  *
  * You must use this component with the `InputRadioGroup` component.
  */
-function InputRadio(
-  {
-    disabled = false,
-    fullWidth = false,
-    id = uniqueId('fractal-input-checkbox-'),
-    label,
-    value,
-    ...props
-  }: InputRadioProps,
-  ref: ForwardedRef<HTMLButtonElement>,
-) {
-  const variant = useContext(InputRadioVariantContext)
+export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
+  (
+    {
+      disabled = false,
+      fullWidth = false,
+      id = uniqueId('fractal-input-checkbox-'),
+      label,
+      value,
+      ...props
+    }: InputRadioProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
+    const variant = useContext(InputRadioVariantContext)
 
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    inputRadioContainer(),
-    `variant-${variant}`,
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-  )
+    const groupClassNames = cx(
+      `${PREFIX}-${GROUP_NAME}`,
+      inputRadioContainer(),
+      `variant-${variant}`,
+      props.className,
+      disabled ? 'disabled' : '',
+      fullWidth ? 'full-width' : '',
+    )
 
-  return (
-    <div className={groupClassNames}>
-      <RxRadio.Item
-        id={id}
-        ref={ref}
-        className={inputRadio()}
-        disabled={disabled}
-        value={value}
-        {...omit(['className'], props)}
-      >
-        <RxRadio.Indicator className={inputRadioCheckmark()}>
-          <CheckIcon />
-        </RxRadio.Indicator>
-      </RxRadio.Item>
+    return (
+      <div className={groupClassNames}>
+        <RxRadio.Item
+          id={id}
+          ref={ref}
+          className={inputRadio()}
+          disabled={disabled}
+          value={value}
+          {...omit(['className'], props)}
+        >
+          <RxRadio.Indicator className={inputRadioCheckmark()}>
+            <CheckIcon />
+          </RxRadio.Indicator>
+        </RxRadio.Item>
 
-      <RxLabel
-        className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
-        htmlFor={id}
-      >
-        {label}
-      </RxLabel>
-    </div>
-  )
-}
+        <RxLabel
+          className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
+          htmlFor={id}
+        >
+          {label}
+        </RxLabel>
+      </div>
+    )
+  },
+)
+InputRadio.displayName = 'InputRadio'
 
-export default forwardRef(InputRadio)
+export default InputRadio

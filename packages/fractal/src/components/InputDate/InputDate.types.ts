@@ -18,6 +18,12 @@ export type Descriptions = {
   year?: string
 }
 
+export type CombinedRefs = {
+  day: HTMLInputElement | null
+  month: HTMLInputElement | null
+  year: HTMLInputElement | null
+}
+
 export interface InputDateProps
   extends Omit<
     HTMLAttributes<HTMLDivElement>,

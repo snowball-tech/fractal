@@ -41,7 +41,8 @@ const meta = {
   },
   args: {
     disabled: false,
-    label: 'This is a checkbox',
+    fullWidth: false,
+    label: 'Han shot first',
     required: false,
   },
   component: InputCheckbox,
@@ -49,11 +50,11 @@ const meta = {
     componentSubtitle:
       '🦜 Checking in with the morning report. - Zazu - The Lion King',
     controls: {
-      exclude: ['checked'],
+      exclude: ['asChild', 'checked'],
     },
   },
 
-  title: 'InputCheckbox',
+  title: 'Atoms/Input/Checkbox',
 } satisfies Meta<InputCheckboxProps>
 
 export default meta
@@ -88,34 +89,105 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
   </div>
 )
 
-export const Checkboxes: Story = {
+export const Primary: Story = {
   render: () => (
     <>
       <Wrapper>
         <InputCheckbox label="Primary" variant="primary" />
-        <InputCheckbox label="Secondary" variant="secondary" />
-        <InputCheckbox label="Tertiary" variant="tertiary" />
+        <InputCheckbox
+          defaultChecked
+          label="Checked primary"
+          variant="primary"
+        />
+        <InputCheckbox label={`Required primary`} required variant="primary" />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox disabled label={`Disabled primary`} />
-        <InputCheckbox
-          disabled
-          label={`Disabled secondary`}
-          variant="secondary"
-        />
-        <InputCheckbox
-          disabled
-          label={`Disabled tertiary`}
-          variant="tertiary"
-        />
-      </Wrapper>
-
-      <Wrapper>
+        <InputCheckbox disabled label={`Disabled primary`} variant="primary" />
         <InputCheckbox
           defaultChecked
           disabled
           label={`Disabled checked primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox fullWidth label="Full width primary" variant="primary" />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputCheckbox
+          color="pink"
+          defaultChecked
+          label={`"${Colors.Pink}" primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="yellow"
+          defaultChecked
+          label={`"${Colors.Yellow}" primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="green"
+          defaultChecked
+          label={`"${Colors.Green}" primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="blue"
+          defaultChecked
+          label={`"${Colors.Blue}" primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="purple"
+          defaultChecked
+          label={`"${Colors.Purple}" primary`}
+          variant="primary"
+        />
+      </Wrapper>
+    </>
+  ),
+}
+
+export const Secondary: Story = {
+  render: () => (
+    <>
+      <Wrapper>
+        <InputCheckbox label="Secondary" variant="secondary" />
+        <InputCheckbox
+          defaultChecked
+          label="Checked secondary"
+          variant="secondary"
+        />
+        <InputCheckbox
+          label={`Required secondary`}
+          required
+          variant="secondary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          disabled
+          label={`Disabled secondary`}
+          variant="secondary"
         />
         <InputCheckbox
           defaultChecked
@@ -123,20 +195,75 @@ export const Checkboxes: Story = {
           label={`Disabled checked secondary`}
           variant="secondary"
         />
+      </Wrapper>
+
+      <Wrapper>
         <InputCheckbox
+          fullWidth
+          label="Full width secondary"
+          variant="secondary"
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputCheckbox
+          color="pink"
           defaultChecked
-          disabled
-          label={`Disabled checked tertiary`}
-          variant="tertiary"
+          label={`"${Colors.Pink}" secondary`}
+          variant="secondary"
         />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox label={`Required primary`} required />
         <InputCheckbox
-          label={`Required secondary`}
-          required
+          color="yellow"
+          defaultChecked
+          label={`"${Colors.Yellow}" secondary`}
           variant="secondary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="green"
+          defaultChecked
+          label={`"${Colors.Green}" secondary`}
+          variant="secondary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="blue"
+          defaultChecked
+          label={`"${Colors.Blue}" secondary`}
+          variant="secondary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          color="purple"
+          defaultChecked
+          label={`"${Colors.Purple}" secondary`}
+          variant="secondary"
+        />
+      </Wrapper>
+    </>
+  ),
+}
+
+export const Tertiary: Story = {
+  render: () => (
+    <>
+      <Wrapper>
+        <InputCheckbox label="Tertiary" variant="tertiary" />
+        <InputCheckbox
+          defaultChecked
+          label="Checked tertiary"
+          variant="tertiary"
         />
         <InputCheckbox
           label={`Required tertiary`}
@@ -146,15 +273,19 @@ export const Checkboxes: Story = {
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox fullWidth label="Full width primary" />
-      </Wrapper>
-      <Wrapper>
         <InputCheckbox
-          fullWidth
-          label="Full width secondary"
-          variant="secondary"
+          disabled
+          label={`Disabled tertiary`}
+          variant="tertiary"
+        />
+        <InputCheckbox
+          defaultChecked
+          disabled
+          label={`Disabled checked tertiary`}
+          variant="tertiary"
         />
       </Wrapper>
+
       <Wrapper>
         <InputCheckbox
           fullWidth
@@ -169,34 +300,12 @@ export const Checkboxes: Story = {
         <InputCheckbox
           color="pink"
           defaultChecked
-          label={`"${Colors.Pink}" primary`}
-        />
-        <InputCheckbox
-          color="pink"
-          defaultChecked
-          label={`"${Colors.Pink}" secondary`}
-          variant="secondary"
-        />
-        <InputCheckbox
-          color="pink"
-          defaultChecked
           label={`"${Colors.Pink}" tertiary`}
           variant="tertiary"
         />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox
-          color="yellow"
-          defaultChecked
-          label={`"${Colors.Yellow}" primary`}
-        />
-        <InputCheckbox
-          color="yellow"
-          defaultChecked
-          label={`"${Colors.Yellow}" secondary`}
-          variant="secondary"
-        />
         <InputCheckbox
           color="yellow"
           defaultChecked
@@ -209,17 +318,6 @@ export const Checkboxes: Story = {
         <InputCheckbox
           color="green"
           defaultChecked
-          label={`"${Colors.Green}" primary`}
-        />
-        <InputCheckbox
-          color="green"
-          defaultChecked
-          label={`"${Colors.Green}" secondary`}
-          variant="secondary"
-        />
-        <InputCheckbox
-          color="green"
-          defaultChecked
           label={`"${Colors.Green}" tertiary`}
           variant="tertiary"
         />
@@ -229,34 +327,12 @@ export const Checkboxes: Story = {
         <InputCheckbox
           color="blue"
           defaultChecked
-          label={`"${Colors.Blue}" primary`}
-        />
-        <InputCheckbox
-          color="blue"
-          defaultChecked
-          label={`"${Colors.Blue}" secondary`}
-          variant="secondary"
-        />
-        <InputCheckbox
-          color="blue"
-          defaultChecked
           label={`"${Colors.Blue}" tertiary`}
           variant="tertiary"
         />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox
-          color="purple"
-          defaultChecked
-          label={`"${Colors.Purple}" primary`}
-        />
-        <InputCheckbox
-          color="purple"
-          defaultChecked
-          label={`"${Colors.Purple}" secondary`}
-          variant="secondary"
-        />
         <InputCheckbox
           color="purple"
           defaultChecked

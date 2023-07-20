@@ -38,198 +38,203 @@ import type { SelectProps } from './Select.types'
 /**
  * `Select` component is used to offer the user choices they can select.
  */
-function Select(
-  {
-    autoFocus = false,
-    children: items,
-    defaultValue,
-    description,
-    disabled = false,
-    displayedValue,
-    dropdown = {},
-    fullWidth = false,
-    id = uniqueId('fractal-select-'),
-    label,
-    name,
-    onClose,
-    onOpen,
-    onSelect,
-    open,
-    placeholder,
-    required = false,
-    value,
-    ...props
-  }: SelectProps,
-  ref: ForwardedRef<HTMLButtonElement>,
-) {
-  const containerRef = useRef<HTMLDivElement>(null)
+export const Select = forwardRef<HTMLButtonElement, SelectProps>(
+  (
+    {
+      autoFocus = false,
+      children: items,
+      defaultValue,
+      description,
+      disabled = false,
+      displayedValue,
+      dropdown = {},
+      fullWidth = false,
+      id = uniqueId('fractal-select-'),
+      label,
+      name,
+      onClose,
+      onOpen,
+      onSelect,
+      open,
+      placeholder,
+      readOnly = false,
+      required = false,
+      value,
+      ...props
+    }: SelectProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
+    const containerRef = useRef<HTMLDivElement>(null)
 
-  const [isOpen, setIsOpen] = useState(open || false)
+    const [isOpen, setIsOpen] = useState(open || false)
 
-  useEffect(() => {
-    setIsOpen(open || false)
-  }, [open])
+    useEffect(() => {
+      setIsOpen(open || false)
+    }, [open])
 
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    selectContainer(),
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-    required ? 'required' : '',
-    isOpen ? 'opened' : 'closed',
-  )
+    const groupClassNames = cx(
+      `${PREFIX}-${GROUP_NAME}`,
+      selectContainer(),
+      props.className,
+      disabled ? 'disabled' : '',
+      fullWidth ? 'full-width' : '',
+      readOnly ? 'readonly' : '',
+      required ? 'required' : '',
+      isOpen ? 'opened' : 'closed',
+    )
 
-  const handleSelect = (newValue: string) => {
-    if (isFunction(onSelect)) {
-      onSelect(newValue)
-    }
-  }
-
-  const handleDropdownToggle = (isOpened: boolean) => {
-    setIsOpen(isOpened)
-
-    if (isOpened && isFunction(onOpen)) {
-      onOpen()
-    }
-
-    if (!isOpened && isFunction(onClose)) {
-      onClose()
-    }
-  }
-
-  const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
-    (event) => {
-      const { target } = event
-      if (target === window || target === null || target === undefined) {
-        return
-      }
-
-      if (containerRef?.current?.contains(target as Element)) {
-        event.preventDefault()
+    const handleSelect = (newValue: string) => {
+      if (isFunction(onSelect)) {
+        onSelect(newValue)
       }
     }
 
-  return (
-    <div ref={containerRef} className={groupClassNames}>
-      {!isEmpty(label) ? (
-        <RxLabel
-          className={cx(typography({ variant: 'body-1' }), selectLabel())}
-          htmlFor={id}
-          onClick={() => setIsOpen(true)}
-        >
-          {label}
-        </RxLabel>
-      ) : (
-        false
-      )}
+    const handleDropdownToggle = (isOpened: boolean) => {
+      setIsOpen(isOpened)
 
-      <RxSelect.Root
-        {...(defaultValue !== undefined ? { defaultValue } : {})}
-        defaultOpen={autoFocus}
-        {...(props.dir !== undefined
-          ? { dir: props.dir as RxSelect.Direction }
-          : {})}
-        disabled={disabled}
-        name={name || id}
-        open={isOpen}
-        required={required}
-        {...(value !== undefined ? { value } : {})}
-        onOpenChange={handleDropdownToggle}
-        onValueChange={handleSelect}
-        // Be careful, arguments of `omit` from lodash FP are flipped!
-        {...omit(['autoComplete', 'className', 'dir'], props)}
-      >
-        <RxSelect.Trigger
-          id={id}
-          ref={ref}
-          className={cx(
-            `${PREFIX}-${GROUP_NAME}-trigger`,
-            typography({ variant: 'body-1' }),
-            selectTrigger(),
-          )}
-        >
-          <div className={selectValue()}>
-            {isEmpty(displayedValue) ? (
-              <RxSelect.Value placeholder={placeholder} />
-            ) : (
-              <RxSelect.Value placeholder={placeholder}>
-                {displayedValue}
-              </RxSelect.Value>
-            )}
-          </div>
+      if (isOpened && isFunction(onOpen)) {
+        onOpen()
+      }
 
-          <RxSelect.Icon className={selectIndicator()}>
-            <AngleDownIcon />
-          </RxSelect.Icon>
-        </RxSelect.Trigger>
+      if (!isOpened && isFunction(onClose)) {
+        onClose()
+      }
+    }
 
-        <RxSelect.Portal>
-          <RxSelect.Content
-            align="center"
-            className={cx(
-              `${PREFIX}-${GROUP_NAME}-dropdown`,
-              selectDropdown(),
-              ...(dropdown?.className?.split(' ') || []),
-            )}
-            position="popper"
-            side="bottom"
-            style={{
-              display: undefined,
-              overflow: 'hidden',
-            }}
-            {...omit(['className'], dropdown)}
-            onPointerDownOutside={handlePointerDownOutside}
+    const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
+      (event) => {
+        const { target } = event
+        if (target === window || target === null || target === undefined) {
+          return
+        }
+
+        if (containerRef?.current?.contains(target as Element)) {
+          event.preventDefault()
+        }
+      }
+
+    return (
+      <div ref={containerRef} className={groupClassNames}>
+        {!isEmpty(label) ? (
+          <RxLabel
+            className={cx(typography({ variant: 'body-1' }), selectLabel())}
+            htmlFor={id}
+            onClick={() => setIsOpen(true)}
           >
-            <RxScrollArea.Root
-              {...(props.dir !== undefined
-                ? { dir: props.dir as RxScrollArea.Direction }
-                : {})}
+            {label}
+          </RxLabel>
+        ) : (
+          false
+        )}
+
+        <RxSelect.Root
+          {...(defaultValue !== undefined ? { defaultValue } : {})}
+          defaultOpen={autoFocus}
+          {...(props.dir !== undefined
+            ? { dir: props.dir as RxSelect.Direction }
+            : {})}
+          disabled={disabled || readOnly || false}
+          name={name || id}
+          open={isOpen}
+          required={required}
+          {...(value !== undefined ? { value } : {})}
+          onOpenChange={handleDropdownToggle}
+          onValueChange={handleSelect}
+          // Be careful, arguments of `omit` from lodash FP are flipped!
+          {...omit(['autoComplete', 'className', 'dir'], props)}
+        >
+          <RxSelect.Trigger
+            id={id}
+            ref={ref}
+            className={cx(
+              `${PREFIX}-${GROUP_NAME}-trigger`,
+              typography({ variant: 'body-1' }),
+              selectTrigger(),
+            )}
+          >
+            <div className={selectValue()}>
+              {isEmpty(displayedValue) ? (
+                <RxSelect.Value placeholder={placeholder} />
+              ) : (
+                <RxSelect.Value placeholder={placeholder}>
+                  {displayedValue}
+                </RxSelect.Value>
+              )}
+            </div>
+
+            <RxSelect.Icon className={selectIndicator()}>
+              <AngleDownIcon />
+            </RxSelect.Icon>
+          </RxSelect.Trigger>
+
+          <RxSelect.Portal>
+            <RxSelect.Content
+              align="center"
+              className={cx(
+                `${PREFIX}-${GROUP_NAME}-dropdown`,
+                selectDropdown(),
+                ...(dropdown?.className?.split(' ') || []),
+              )}
+              position="popper"
+              side="bottom"
               style={{
-                maxHeight:
-                  'calc(var(--radix-popper-available-height) - var(--size-spacing-4))',
+                display: undefined,
                 overflow: 'hidden',
               }}
-              type="hover"
+              {...omit(['className'], dropdown)}
+              onPointerDownOutside={handlePointerDownOutside}
             >
-              <RxSelect.Viewport asChild>
-                <RxScrollArea.Viewport
-                  className={selectDropdownScrollViewport()}
-                  style={{
-                    overflowY: undefined,
-                  }}
-                >
-                  {items}
-                </RxScrollArea.Viewport>
-              </RxSelect.Viewport>
-
-              <RxScrollArea.Scrollbar
-                className={selectDropdownScrollbar()}
-                orientation="vertical"
+              <RxScrollArea.Root
+                {...(props.dir !== undefined
+                  ? { dir: props.dir as RxScrollArea.Direction }
+                  : {})}
+                style={{
+                  maxHeight:
+                    'calc(var(--radix-popper-available-height) - var(--size-spacing-4))',
+                  overflow: 'hidden',
+                }}
+                type="hover"
               >
-                <RxScrollArea.Thumb
-                  className={selectDropdownScrollbarThumbs()}
-                />
-              </RxScrollArea.Scrollbar>
-            </RxScrollArea.Root>
-          </RxSelect.Content>
-        </RxSelect.Portal>
-      </RxSelect.Root>
+                <RxSelect.Viewport asChild>
+                  <RxScrollArea.Viewport
+                    className={selectDropdownScrollViewport()}
+                    style={{
+                      overflowY: undefined,
+                    }}
+                  >
+                    {items}
+                  </RxScrollArea.Viewport>
+                </RxSelect.Viewport>
 
-      {!isEmpty(description) ? (
-        <div
-          className={cx(
-            typography({ variant: 'caption-median' }),
-            selectDescription(),
-          )}
-        >
-          {description}
-        </div>
-      ) : (
-        false
-      )}
-    </div>
-  )
-}
+                <RxScrollArea.Scrollbar
+                  className={selectDropdownScrollbar()}
+                  orientation="vertical"
+                >
+                  <RxScrollArea.Thumb
+                    className={selectDropdownScrollbarThumbs()}
+                  />
+                </RxScrollArea.Scrollbar>
+              </RxScrollArea.Root>
+            </RxSelect.Content>
+          </RxSelect.Portal>
+        </RxSelect.Root>
 
-export default forwardRef(Select)
+        {!isEmpty(description) ? (
+          <div
+            className={cx(
+              typography({ variant: 'caption-median' }),
+              selectDescription(),
+            )}
+          >
+            {description}
+          </div>
+        ) : (
+          false
+        )}
+      </div>
+    )
+  },
+)
+Select.displayName = 'Select'
+
+export default Select

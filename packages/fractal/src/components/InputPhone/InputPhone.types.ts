@@ -18,6 +18,11 @@ export type Prefix = {
   prefix: string
 }
 
+export type CombinedRefs = {
+  phone: HTMLInputElement | null
+  prefix: HTMLButtonElement | null
+}
+
 export interface InputPhoneProps
   extends Omit<
     HTMLAttributes<HTMLDivElement>,
@@ -67,21 +72,22 @@ export interface InputPhoneProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /**
-   * Event handler called when the phone value is changed.
-   *
-   * The new value is sent in the `PhoneNumber` format containing the country
-   * code (`countryCode`) and the internationally formatted phone number
-   * (`number`).
-   */
+  /** Event handler called when the phone value is changed. */
   onChange?: (newPhoneNumber: PhoneNumber, isValid?: boolean) => void
-  /** A string to display when the text input is empty. */
+  /**
+   * A string to display when the text input is empty.
+   *
+   * Note that when a prefix is selected, the placeholder is automatically
+   * replaced by an example of a valid number format (if there is one).
+   */
   placeholder?: string
   /** Prevents the user to change the value of the phone input. */
   readOnly?: boolean
   /** Indicates if the phone input must be filled. */
   required?: boolean
-  /** The placeholder to display in the search bar. */
+  /**
+   * The placeholder to display in the search bar of the prefix select dropdown.
+   */
   searchPlaceholder?: string
   /**
    * A message to display when the phone input has a valid value.

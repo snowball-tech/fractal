@@ -21,7 +21,7 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _fullWidth: {
-        width: '100%',
+        width: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
       },
 
       alignItems: 'center',

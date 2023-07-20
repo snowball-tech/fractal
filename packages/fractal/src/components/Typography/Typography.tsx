@@ -10,21 +10,24 @@ import {
 import type { TypographyProps } from './Typography.types'
 
 /**
- * `Typography` component is the corner stone of Fractal. It defines and boxes
- * allowed text styles throughout your UI.
+ * `Typography` component is the corner stone of Fractal. It defines and
+ * restricts allowed text styles throughout your UI.
  *
  * Using this component ensure you to have a consistent and accessible
  * experience.
  */
-export default function Typography({
+export const Typography = ({
   children,
   element,
   variant = DEFAULT_VARIANT,
   ...props
-}: TypographyProps) {
+}: TypographyProps) => {
   return createElement(
     element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType),
     { className: cx(props.className, typography({ variant })) },
     children,
   )
 }
+Typography.displayName = 'Typography'
+
+export default Typography

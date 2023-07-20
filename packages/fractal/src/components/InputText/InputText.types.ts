@@ -1,7 +1,7 @@
 import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
 export interface InputTextProps
-  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
   /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
   /**
@@ -26,15 +26,11 @@ export interface InputTextProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    *
-   * The icon (if there is one) will also be replaced  by a specific error icon.
+   * The suffix (if there is one) will also be replaced  by a specific error icon.
    */
   error?: boolean | string
   /** Indicates if the text input should take all the available width. */
   fullWidth?: boolean
-  /** The icon to display in the text input (if any). */
-  icon?: ReactNode
-  /** The position of the icon in the text input. */
-  iconPosition?: 'left' | 'right'
   /**
    * A unique HTML id for the text input.
    *
@@ -59,12 +55,14 @@ export interface InputTextProps
    */
   onChange?: (newValue: string) => void
   /**
-   * Event handler called when the text input value is changed with the raw
-   * event.
+   * Event handler called with the raw event. when the text input value is
+   * changed.
    */
   onRawChange?: (event: ChangeEvent<HTMLInputElement>) => void
   /** A string to display when the text input is empty. */
   placeholder?: string
+  /** The prefix (icon or text) to display to the left of the text input. */
+  prefix?: ReactNode
   /** Prevents the user to change the value of the text input. */
   readOnly?: boolean
   /** Indicates if the text input must be filled. */
@@ -80,20 +78,15 @@ export interface InputTextProps
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
    *
-   * The icon (if there is one) will be replaced by a specific success icon.
+   * The suffix (if there is one) will be replaced by a specific success icon.
    */
   success?: boolean | string
+  /** The suffix (icon or text) to display to the right of the text input. */
+  suffix?: ReactNode
   /**
    * The type of the text input.
    *
-   * Must be a valid HTML5 type for an `&lt;input /&gt;` element.
-   *
-   * Note that some valid HTML5 type for an `&lt;input /&gt;` element are not
-   * supported in this component because they are not relevant for a text input
-   * (e.g. `checkbox`, `tel`, `date`, `week`, ...).
-   * If you need a specific type, please use the appropriate component instead
-   * (e.g. `&lt;InputCheckbox /&gt;`, `&lt;InputTelephone /&gt;`,
-   * `&lt;DatePicker /&gt;`, ...).
+   * Must be a valid HTML5 type for an `input` element.
    */
   type?: 'email' | 'number' | 'password' | 'search' | 'text' | 'url'
   /**
