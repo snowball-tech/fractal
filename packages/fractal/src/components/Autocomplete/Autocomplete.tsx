@@ -52,7 +52,6 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       dropdown = {},
       error,
       fullWidth = false,
-      icon,
       id = uniqueId('fractal-autocomplete-'),
       label,
       name,
@@ -177,7 +176,6 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
           error={hasErrorMessage}
           fullWidth={fullWidth}
           name={name || id}
-          prefix={icon}
           {...(placeholder !== undefined ? { placeholder } : {})}
           readOnly={readOnly}
           required={required}
@@ -186,6 +184,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
           {...(value !== undefined ? { value } : {})}
           onBlur={handleInputBlur}
           onChange={handleInputChange}
+          {...omit(['className'], props)}
         />
 
         <RxDropdownMenu.Root
