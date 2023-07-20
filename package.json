@@ -82,12 +82,12 @@
     "lint-staged": "^13.2.3",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.0",
-    "pythagora": "^0.0.78",
+    "pythagora": "^0.0.79",
     "semantic-release": "^21.0.7",
     "serve": "^14.2.0",
     "stylelint": "^15.10.2",
     "ts-node": "^10.9.1",
-    "turbo": "^1.10.8",
+    "turbo": "^1.10.9",
     "typescript": "^5.1.6"
   }
 }
