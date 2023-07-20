@@ -2,7 +2,14 @@ module.exports = {
   color: {
     background: {
       body: {
-        light: { comment: 'Yellowish White Tone 90', value: '#FFFBF4' },
+        dark: {
+          comment: 'Black',
+          value: '{color.brand.body.dark}',
+        },
+        light: {
+          comment: 'Yellowish White Tone 90',
+          value: '{color.brand.body.light}',
+        },
       },
 
       disabled: {
