@@ -19,7 +19,7 @@ export const inputPhoneContainer: ReturnType<typeof defineRecipe> =
     },
   })
 
-export const inputPhoneLabel = defineRecipe({
+export const inputPhoneLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Label for phone input',
   name: 'inputPhoneLabel',
 

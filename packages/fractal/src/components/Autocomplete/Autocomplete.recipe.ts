@@ -29,7 +29,7 @@ export const autocompleteContainer: ReturnType<typeof defineRecipe> =
     },
   })
 
-export const autocompleteLabel = defineRecipe({
+export const autocompleteLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Label for autocomplete',
   name: 'autocompleteLabel',
 
