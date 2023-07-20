@@ -35,7 +35,7 @@ const meta = {
       "🧑‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
   },
 
-  title: 'Atoms/Button',
+  title: 'Molecules/Button',
 } satisfies Meta<ButtonProps>
 
 export default meta

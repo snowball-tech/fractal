@@ -1,0 +1,249 @@
+import * as DesignTokens from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
+import { ColorItem, ColorPalette, Meta } from '@storybook/blocks'
+
+<Meta title="Atoms/Colors" />
+
+# Colors
+
+---
+
+For accessibility and consistency reasons, we use a limited color palette.
+
+The
+colors are divided into four categories:
+
+- **Neutral colors** are used for text, borders, and backgrounds.
+- **Brand colors** are used for the main elements of the interface, such as
+  buttons, links, and icons;
+- **Decorative colors** can only be used in illustration and low hierarchy
+  backgrounds;
+- **Feedback colors** are used to highlight feedbacks for the user;
+
+## Neutral colors
+
+Those colors are the basic colors of the interface.
+
+They are mostly used for texts, strokes, borders and some backgrounds.
+
+### Base colors
+
+<ColorPalette>
+  <ColorItem
+    colors={{ Black: DesignTokens.ColorBaseBlack }}
+    title="color.base.black"
+  />
+  <ColorItem
+    colors={{ White: DesignTokens.ColorBaseWhite }}
+    title="color.base.white"
+  />
+  <ColorItem
+    colors={{
+      '.30': DesignTokens.ColorBaseGrey30,
+      '.50': DesignTokens.ColorBaseGrey50,
+      '.70': DesignTokens.ColorBaseGrey70,
+      '.90': DesignTokens.ColorBaseGrey90,
+    }}
+    title="color.base.grey"
+  />
+</ColorPalette>
+
+### Backgrounds
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      'Yellowish White-90': DesignTokens.ColorBackgroundBodyLight,
+    }}
+    subtitle="Use for page body background (only) in light mode. Never use for card backgrounds."
+    title="color.background.body.light"
+  />
+  <ColorItem
+    colors={{
+      Black: DesignTokens.ColorBackgroundBodyDark,
+    }}
+    subtitle="Use for page body background in dark mode but also for secondary elements backgrounds. Never use for card backgrounds."
+    title="color.background.body.dark"
+  />
+  <ColorItem
+    colors={{
+      'Grey-70': DesignTokens.ColorBackgroundDisabled,
+    }}
+    subtitle="Use for disabled elements background"
+    title="color.background.disabled"
+  />
+</ColorPalette>
+
+### Strokes, separators and borders
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      Black: DesignTokens.ColorBorderDefault,
+    }}
+    subtitle="Use for most elements borders"
+    title="color.border.default"
+  />
+  <ColorItem
+    colors={{
+      'Grey-50': DesignTokens.ColorBorderDisabled,
+    }}
+    subtitle="Use for disabled elements borders"
+    title="color.border.disabled"
+  />
+  <ColorItem
+    colors={{
+      'Grey-70': DesignTokens.ColorStrokeSeparator,
+    }}
+    subtitle="Use for separators"
+    title="color.stroke.separator"
+  />
+</ColorPalette>
+
+### Text and icons
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      Black: DesignTokens.ColorTextDark,
+    }}
+    subtitle="Use for text and icons color on light and colored backgrounds"
+    title="color.text.dark"
+  />
+  <ColorItem
+    colors={{
+      White: DesignTokens.ColorTextLight,
+    }}
+    subtitle="Use for text and icons color on dark backgrounds"
+    title="color.text.light"
+  />
+  <ColorItem
+    colors={{
+      'Grey-50': DesignTokens.ColorTextDisabled,
+    }}
+    subtitle="Use for text and icons color off disabled elements"
+    title="color.text.disabled"
+  />
+  <ColorItem
+    colors={{
+      'Grey-30': DesignTokens.ColorTextDisabled,
+    }}
+    subtitle="Use for placeholders"
+    title="color.text.placeholder"
+  />
+</ColorPalette>
+
+## Brand colors
+
+Those are the main colors of the interface, representing the Snowball's
+identity.
+
+<ColorPalette>
+  <ColorItem
+    colors={{ 'Pink-50': DesignTokens.ColorBrandPrimary }}
+    subtitle="Use for covers, headers background, primary elements background and for secondary active element background or borders. Never use for text and/or icons colors on light background or for strokes and/or separators"
+    title="color.brand.primary"
+  />
+  <ColorItem
+    colors={{ Black: DesignTokens.ColorBrandSecondary }}
+    title="color.brand.secondary"
+  />
+</ColorPalette>
+
+## Decorative colors
+
+Those lightly shaded colors are mainly used for illustration and low hierarchy
+backgrounds. They can also be used on hovers and active states.
+
+However, you should never use those colors as text and/or icons colors, strokes,
+border and/or separator and background for interactive elements _(e.g. buttons)_.
+
+> ##### ⚠️ **Attention**
+>
+> ---
+>
+> Decorative Colors have low contrast color on light background, meaning they
+> have a low accessibility performance for some users with visibility issues.  
+> So these colors can be used for decoration **ONLY**, never use it for actions,
+> interaction neither text colors. Only for static backgrounds with low
+> hierarchy!
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorDecorativeBlue50,
+      '.70': DesignTokens.ColorDecorativeBlue70,
+      '.90': DesignTokens.ColorDecorativeBlue90,
+    }}
+    title="color.decorative.blue"
+  />
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorDecorativeGreen50,
+      '.70': DesignTokens.ColorDecorativeGreen70,
+      '.90': DesignTokens.ColorDecorativeGreen90,
+    }}
+    title="color.decorative.green"
+  />
+  <ColorItem
+    colors={{
+      '.70': DesignTokens.ColorDecorativePink70,
+      '.90': DesignTokens.ColorDecorativePink90,
+    }}
+    subtitle="Never use Pink-50 for decorative purpose as it's the brand's primary color"
+    title="color.decorative.pink"
+  />
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorDecorativePurple50,
+      '.70': DesignTokens.ColorDecorativePurple70,
+      '.90': DesignTokens.ColorDecorativePurple90,
+    }}
+    title="color.decorative.purple"
+  />
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorDecorativeYellow50,
+      '.70': DesignTokens.ColorDecorativeYellow70,
+      '.90': DesignTokens.ColorDecorativeYellow90,
+    }}
+    title="color.decorative.yellow"
+  />
+</ColorPalette>
+
+## Feedback colors
+
+Those colors are meant to be used to give feedback to the user after an action
+or an interaction _(e.g. as borders, toast background, text color, ...)_.
+
+In particular, `.50` tones are used as text/icon and border color when giving a
+feedback.
+
+> ##### ⚠️ **Attention**
+>
+> ---
+>
+> You should use these colors only in the context of a feedback.
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorFeedbackSuccess50,
+    }}
+    subtitle="Never use Green-90 for feedback purpose as it's already a decorative color"
+    title="color.feedback.success"
+  />
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorFeedbackWarning50,
+      '.90': DesignTokens.ColorFeedbackWarning90,
+    }}
+    title="color.feedback.warning"
+  />
+  <ColorItem
+    colors={{
+      '.50': DesignTokens.ColorFeedbackDanger50,
+      '.90': DesignTokens.ColorFeedbackDanger90,
+    }}
+    title="color.feedback.danger"
+  />
+</ColorPalette>

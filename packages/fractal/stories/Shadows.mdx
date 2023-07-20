@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Atoms/Shadows, borders and radii" />
+
+# Shadows, borders and radii
+
+---
+
+Our design is greatly inspired by the
+[Neobrutalist](https://bootcamp.uxdesign.cc/the-neubrutalism-or-neo-brutalism-ui-design-trend-641714825fed)
+trend.
+
+This trend is particularly notable by the usage of heavy shadow and borders
+and outstanding radii.
+
+## Shadows
+
+We use shadows to create a sense of depth and hierarchy.
+
+> ##### ✍️ Note
+>
+> ---
+>
+> When using shadows, you should **ALWAYS** use radius or rounded shapes (see
+> [below](#radius)) and a border (see [below](#borders).
+
+3 shadows level are available:
+
+- `shadow.brutal.2` for a proeminent shadow.  
+  This can be used with `border.1` or `border.2` borders.
+
+<div className="example-block shadow-brutal-2 border-2 radius-m">
+  This is a `shadow.brutal.2` block with `border.2` borders and `radius.m`
+  radius.
+</div>
+
+- `shadow.brutal.1` for a more subtle shadow.  
+  This can **only** be used with `border.1` borders.
+
+<div className="example-block shadow-brutal-1 border-1 radius-s">
+  This is a `shadow.brutal.1` block with `border.1` borders and `radius.s`
+  radius.
+</div>
+
+- `shadow.none` for no shadow at all.
+
+<div className="example-block border-1 radius-xs">
+  This is a `shadow.none` block with `border.1` borders and `radius.xs` radius.
+</div>
+
+## Borders
+
+3 levels of borders are available:
+
+- `border.2` for a bulky border.
+
+<div className="example-block border-2">This is a `border.2` block.</div>
+
+- `border.1` for a more light border.
+
+<div className="example-block border-1">This is a `border.1` block.</div>
+
+- `border.none` for no border at all.
+
+<div className="example-block">This is a `border.none` block.</div>
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> Most of the time, borders will be `solid` and black.  
+> For more information about border colors, go to the "Colors" page.
+
+## Radii
+
+Because the world is better when angles are smoother, you can use 4 different
+levels of border radius:
+
+- `size.radius.rounded` for extremely rounded angles.  
+  _This one is also ideal to create circles._
+
+<div className="example-block border-1 radius-rounded">
+  This is a `size.radius.rounded` block with a `border.1` border.
+</div>
+
+- `size.radius.m` for heavily rounded angles.
+
+<div className="example-block border-1 radius-m">
+  This is a `size.radius.m` block with a `border.1` border.
+</div>
+
+- `size.radius.s` for lightly rounded angles.
+
+<div className="example-block border-1 radius-s">
+  This is a `size.radius.s` block with a `border.1` border.
+</div>
+
+- `size.radius.xs` for barely rounded angles.
+
+<div className="example-block border-1 radius-xs">
+  This is a `size.radius.xs` block with a `border.1` border.
+</div>
+
+- `size.radius.0` for sharp angles.
+
+<div className="example-block border-1 radius-0">
+  This is a `size.radius.0` block with a `border.1` border.
+</div>

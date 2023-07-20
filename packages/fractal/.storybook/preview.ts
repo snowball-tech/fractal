@@ -40,14 +40,8 @@ const preview: Preview = {
 
     options: {
       storySort: {
-        order: [
-          'Guidelines',
-          'Atoms',
-          'Molecules',
-          'Organisms',
-          'Templates',
-          'Pages',
-        ],
+        method: 'alphabetical',
+        order: ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages'],
       },
     },
   },

@@ -47,7 +47,7 @@ const meta = {
       "🐉 No. Your scroll must have a typo. That can't be! - Mushu - Mulan II",
   },
 
-  title: 'Atoms/Typography',
+  title: 'Molecules/Typography',
 } satisfies Meta<TypographyProps>
 
 export default meta

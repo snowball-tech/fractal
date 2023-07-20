@@ -122,7 +122,7 @@ const meta: Meta<SelectProps> = {
     },
   },
 
-  title: 'Atoms/Select',
+  title: 'Molecules/Select',
 } satisfies Meta<SelectProps>
 
 export default meta

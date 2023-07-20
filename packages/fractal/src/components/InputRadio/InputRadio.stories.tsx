@@ -76,7 +76,7 @@ const meta = {
     },
   },
 
-  title: 'Atoms/Input/Radio',
+  title: 'Molecules/Input/Radio',
 } satisfies Meta<InputRadioGroupProps>
 
 export default meta

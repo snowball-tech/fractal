@@ -54,7 +54,7 @@ const meta = {
     },
   },
 
-  title: 'Atoms/Input/Checkbox',
+  title: 'Molecules/Input/Checkbox',
 } satisfies Meta<InputCheckboxProps>
 
 export default meta
