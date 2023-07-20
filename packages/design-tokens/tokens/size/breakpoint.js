@@ -1,3 +1,5 @@
+const isEmpty = require('lodash/fp/isEmpty')
+
 const { breakpoints } = require('../../src/constants')
 
 const mediaQuery = {
@@ -5,6 +7,8 @@ const mediaQuery = {
   to: {},
 }
 Object.values(breakpoints).forEach((breakpoint, i) => {
+  const nextBreakpoint = Object.values(breakpoints)[i + 1]
+
   const upTo = {}
   Object.values(breakpoints).forEach((secondaryBreakpoint, j) => {
     if (j > i) {
@@ -17,8 +21,11 @@ Object.values(breakpoints).forEach((breakpoint, i) => {
   mediaQuery.from[breakpoint] = {
     value: `(min-width: {size.breakpoint.${breakpoint}.value})`,
   }
-  mediaQuery.to[breakpoint] = {
-    value: `(max-width: {size.breakpoint.${breakpoint}.value})`,
+
+  if (!isEmpty(nextBreakpoint)) {
+    mediaQuery.to[breakpoint] = {
+      value: `(max-width: {size.breakpoint.${nextBreakpoint}.value})`,
+    }
   }
   mediaQuery[breakpoint] = { upTo }
 })
