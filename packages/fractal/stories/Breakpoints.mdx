@@ -1,0 +1,60 @@
+import * as DesignTokens from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
+import { Meta } from '@storybook/blocks'
+import isEmpty from 'lodash/fp/isEmpty'
+import startCase from 'lodash/fp/startCase'
+
+import { Breakpoints } from '../src/constants'
+
+<Meta title="Atoms/Breakpoints" />
+
+# Breakpoints
+
+---
+
+To provide to the user the best experience possible whatever its device and
+screen size is, all the product design should be
+[responsive](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design).
+
+To do so, a set of breakpoints is defined to adapt the layout of the product to
+the size of the screen of the user.
+
+<table style={{ textAlign: 'center', width: '100%' }}>
+  <thead>
+    <tr>
+      <th>Breakpoint name</th>
+      <th>Min width</th>
+      <th>Max width</th>
+      <th>Media queries</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.values(Breakpoints).map((breakpointName, index) => {
+      const pascalCaseBreakpointName = startCase(breakpointName)
+
+      const nextBreakpointName = Object.values(Breakpoints)[index + 1]
+      const pascalCaseNextBreakpointName = startCase(nextBreakpointName ?? '')
+
+      const minWidth = DesignTokens[
+        `SizeBreakpoint${pascalCaseBreakpointName}`
+      ]
+      const maxWidth = !isEmpty(nextBreakpointName)
+        ? `${parseInt(DesignTokens[`SizeBreakpoint${pascalCaseNextBreakpointName}`], 10) - 1}px`
+        : '∞'
+
+      return (
+      <tr key={breakpointName}>
+        <td><strong>{breakpointName}</strong></td>
+        <td>
+          {minWidth}
+        </td>
+        <td>{maxWidth}</td>
+        <td>
+          <code>{DesignTokens[`MediaQueryFrom${pascalCaseBreakpointName}`]}</code>
+          <br />
+          <code>{DesignTokens[`MediaQueryTo${pascalCaseNextBreakpointName}`]}</code>
+        </td>
+      </tr>
+    )})}
+
+  </tbody>
+</table>

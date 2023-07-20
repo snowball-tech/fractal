@@ -1,0 +1,56 @@
+import * as icons from '@iconscout/react-unicons'
+import { Meta } from '@storybook/blocks'
+import { createElement } from 'react'
+
+<Meta title="Atoms/Iconography" />
+
+# Iconography
+
+---
+
+Fractal uses the [Unicons icon library](https://iconscout.com/unicons) in the
+[Line version (free)](https://iconscout.com/unicons/explore/line).
+
+## Usage
+
+The `@iconscout/react-unicons` package is available as a Fractal dependency so
+you can import any Line icon in your React components and use it as any other
+React component:
+
+```jsx
+import { UilIcons } from '@iconscout/react-unicons'
+```
+
+A good practice is to rename the imported icon in the `<Name>Icon` format, for
+example:
+
+```jsx
+import { UilHeart as HeartIcon } from '@iconscout/react-unicons'
+```
+
+## Available icons
+
+> ##### 💡 Tips
+>
+> ---
+>
+> In the examples below, hover your mouse pointer over each icon to see its
+> name.  
+> Click on an icon to copy its name to your clipboard.
+
+<div className="icons">
+  {Object.entries(icons).map(([iconName, icon], index) => (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div
+      key={index}
+      className="icon"
+      title={iconName}
+      onClick={() => {
+        navigator.clipboard.writeText(iconName)
+      }}
+    >
+      <div className="icon-name">{iconName}</div>
+      {createElement(icon, { size: 56 })}
+    </div>
+  ))}
+</div>

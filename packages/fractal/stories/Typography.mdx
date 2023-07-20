@@ -1,0 +1,176 @@
+import { Meta, Typeset } from '@storybook/blocks'
+
+<Meta title="Atoms/Typography" />
+
+# Typography
+
+---
+
+## Font family
+
+Snowball's design took the side of using a close source and strongly marked font
+called [PolySans](https://wearegradient.net/polysans/).
+
+We use the `Standard` and `Wide` versions of this font in `400`, `600` and `800`
+in both `normal` and `italic` styles.
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> When you download the open-source packages from Snowball's repository like
+> [Fractal](https://github.com/snowball-tech/fractal) or
+> [Glacier](https://github.com/snowball-tech/glacier), this font is
+> _(obviously)_ not packaged.  
+> If you want to use a close fallback, you can use:
+>
+> ```css
+> .poly-sans-fallback {
+>   font-family: 'Segoe UI', 'Tahoma', sans-serif;
+> }
+> .poly-sans-wide-fallback {
+>   font-family: 'Arial Black', sans-serif;
+> }
+> ```
+
+## Levels
+
+You can use 4 levels of typography in Fractal:
+
+- **Display** are used for desktop and mobile marketing headings and punchlines.  
+  It is subdivised in 2 levels, corresponding to each `<hX />` element.  
+  There is also a separate `wide` variation.
+- **Heading** are used for desktop and mobile product headings, titles and
+  punchlines.  
+  It is subdivised in 4 levels, corresponding to each `<hX />` element.  
+  Levels 3 and 4 are also available in `link` variations
+- **Body** are used for desktop and mobile standard paragraphs and contents.  
+  It is subdivised in 2 levels _(regular and low)_.  
+  Each is available in normal, `median`, `bold` and `link` variations.
+- **Caption** are used for desktop and mobile captions and small texts.
+  It comes in 3 variations: `median`, `bold` and `link`.
+
+## Usage
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> For a better showcase of the available typography, see the `<Typography />`
+> component in the "Atoms" section.
+
+### Display
+
+**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Weights:** `800` (bold)
+
+#### Desktop
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[80, 72]}
+  fontWeight={{
+    bold: 800,
+    median: 600,
+    regular: 400,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+#### Mobile
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[48, 40]}
+  fontWeight={{
+    bold: 800,
+    median: 600,
+    regular: 400,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+### Display Wide
+
+**Font:** `PolySansWide, "Arial Black", sans-serif`  
+**Weights:** `800` (bold)
+
+#### Desktop
+
+<Typeset
+  fontFamily={`PolySansWide, "Arial Black", sans-serif`}
+  fontSizes={[56]}
+  fontWeight={{
+    bold: 800,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+#### Mobile
+
+<Typeset
+  fontFamily={`PolySansWide, "Arial Black", sans-serif`}
+  fontSizes={[32]}
+  fontWeight={{
+    bold: 800,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+### Heading
+
+**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Weights:** `800` (bold)
+
+#### Desktop
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[40, 32, 24, 20]}
+  fontWeight={{
+    bold: 800,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+#### Mobile
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[32, 28, 24, 20]}
+  fontWeight={{
+    bold: 800,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+### Body
+
+**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Weights:** `400` (regular), `600` (median), `800` (bold)
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={{
+    bold: 800,
+    median: 600,
+    regular: 400,
+  }}
+  sampleText="May the force be with you!"
+/>
+
+### Caption
+
+**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Weights:** `600` (median), `800` (bold)
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[12]}
+  fontWeight={{
+    bold: 800,
+    median: 600,
+  }}
+  sampleText="May the force be with you!"
+/>
