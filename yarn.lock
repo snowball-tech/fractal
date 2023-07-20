@@ -5507,7 +5507,7 @@ __metadata:
     tsup: ^7.1.0
     typescript: ^5.1.6
     vercel: ^31.0.4
-    vite: ^4.4.4
+    vite: ^4.4.5
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
     react: ^18.2.0
@@ -15092,12 +15092,12 @@ __metadata:
     lint-staged: ^13.2.3
     nodemon: ^3.0.1
     prettier: ^3.0.0
-    pythagora: ^0.0.78
+    pythagora: ^0.0.79
     semantic-release: ^21.0.7
     serve: ^14.2.0
     stylelint: ^15.10.2
     ts-node: ^10.9.1
-    turbo: ^1.10.8
+    turbo: ^1.10.9
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
@@ -22428,9 +22428,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pythagora@npm:^0.0.78":
-  version: 0.0.78
-  resolution: "pythagora@npm:0.0.78"
+"pythagora@npm:^0.0.79":
+  version: 0.0.79
+  resolution: "pythagora@npm:0.0.79"
   dependencies:
     "@babel/generator": ^7.22.3
     "@babel/parser": ^7.22.3
@@ -22447,7 +22447,7 @@ __metadata:
     uuid: ^9.0.0
   bin:
     pythagora: src/bin/run.js
-  checksum: 8aeeca905193edd204fb0cb904b5a7219c4bbfa7024956b331b55fc1ebf38b260599a77a5fea25c3f8aed842964bc8b11881504e14f0968e1b2351b9bb2edc82
+  checksum: dc744dc020630518ba330919ab09d46eafafa6decf1b25eebf40ef83aef393835dab1fc0878de10b3e6089bcfc5879d7c5039efe36f6f7dbd80a386bdbb1ccf5
   languageName: node
   linkType: hard
 
@@ -25750,58 +25750,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-darwin-64@npm:1.10.8"
+"turbo-darwin-64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-darwin-64@npm:1.10.9"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-darwin-arm64@npm:1.10.8"
+"turbo-darwin-arm64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-darwin-arm64@npm:1.10.9"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-linux-64@npm:1.10.8"
+"turbo-linux-64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-linux-64@npm:1.10.9"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-linux-arm64@npm:1.10.8"
+"turbo-linux-arm64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-linux-arm64@npm:1.10.9"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-windows-64@npm:1.10.8"
+"turbo-windows-64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-windows-64@npm:1.10.9"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.10.8":
-  version: 1.10.8
-  resolution: "turbo-windows-arm64@npm:1.10.8"
+"turbo-windows-arm64@npm:1.10.9":
+  version: 1.10.9
+  resolution: "turbo-windows-arm64@npm:1.10.9"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.10.8":
-  version: 1.10.8
-  resolution: "turbo@npm:1.10.8"
+"turbo@npm:^1.10.9":
+  version: 1.10.9
+  resolution: "turbo@npm:1.10.9"
   dependencies:
-    turbo-darwin-64: 1.10.8
-    turbo-darwin-arm64: 1.10.8
-    turbo-linux-64: 1.10.8
-    turbo-linux-arm64: 1.10.8
-    turbo-windows-64: 1.10.8
-    turbo-windows-arm64: 1.10.8
+    turbo-darwin-64: 1.10.9
+    turbo-darwin-arm64: 1.10.9
+    turbo-linux-64: 1.10.9
+    turbo-linux-arm64: 1.10.9
+    turbo-windows-64: 1.10.9
+    turbo-windows-arm64: 1.10.9
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -25817,7 +25817,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 9fd2f9b17461a688e200329c4d910969e828b22c375e88759cd0e59f96db7aac115d289ed20af42db23030b4a4ae0334d1a37bf0a5caf2fdc8a618476742238f
+  checksum: 667867c3ea6ecf59cafe494e1bd4da8564bdae4ea735a14813656b2784a909fb69f12f8c6cdb140ca490c602fd11dc186b5d426af6a451ba51a487e73b742731
   languageName: node
   linkType: hard
 
@@ -26787,13 +26787,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.4":
-  version: 4.4.4
-  resolution: "vite@npm:4.4.4"
+"vite@npm:^4.4.5":
+  version: 4.4.5
+  resolution: "vite@npm:4.4.5"
   dependencies:
     esbuild: ^0.18.10
     fsevents: ~2.3.2
-    postcss: ^8.4.25
+    postcss: ^8.4.26
     rollup: ^3.25.2
   peerDependencies:
     "@types/node": ">= 14"
@@ -26823,7 +26823,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 51c208e53680fa46f7166e49b037625ae43d507f85f1fd3da7e290263bccb77d5f8c466fe82746285927620afeeff949ac3b8e1b6a7b4fe7bfe11419729256b4
+  checksum: 825d8c13511b764710ca503e603746e20a7cb963194033dc606c46b1650a0d8986b577ba92507b54143cbf467032e9868ea04913a86a8fcb88b69c5b8551938b
   languageName: node
   linkType: hard
 
