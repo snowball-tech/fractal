@@ -53,6 +53,8 @@ export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
   error?: string
   /** Indicates if the autocomplete should take all the available width. */
   fullWidth?: boolean
+  /** The icon to display on the left of the autocomplete input field. */
+  icon?: ReactNode
   /**
    * A unique HTML id for the autocomplete.
    *
