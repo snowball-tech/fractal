@@ -45,7 +45,7 @@ module.exports = {
         disabled: {
           comment: 'Border for disabled primary buttons.',
 
-          value: '{shadow.button.primary.base.value}',
+          value: '{border.button.primary.base.value}',
         },
       },
 
