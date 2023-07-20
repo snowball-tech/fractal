@@ -21,7 +21,7 @@ export const inputDateContainer: ReturnType<typeof defineRecipe> = defineRecipe(
   },
 )
 
-export const inputDateLabel = defineRecipe({
+export const inputDateLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Label for date input',
   name: 'inputDateLabel',
 
