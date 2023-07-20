@@ -5390,10 +5390,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:5.2.4":
-  version: 5.2.4
-  resolution: "@snowball-tech/design-tokens@npm:5.2.4"
-  checksum: 5382293fe37b1f671513ec3f10ceba8f55b040f1d9ddda7e69c363c97a86d5ed416a61e1f36118fa887e41905e30281a9a285026bc31f655c093496d0c5f9deb
+"@snowball-tech/design-tokens@npm:5.2.5":
+  version: 5.2.5
+  resolution: "@snowball-tech/design-tokens@npm:5.2.5"
+  checksum: a98e2c1bc3b6306e93da81d01d1beccc76dce9cb617f3df9298bfcce4a4f3bcff74f2f1984d9ef672fd2ab24450b1b876541fe23453624fb886140dc91beb646
   languageName: node
   linkType: hard
 
@@ -5470,7 +5470,7 @@ __metadata:
     "@radix-ui/react-scroll-area": ^1.0.4
     "@radix-ui/react-select": ^1.2.2
     "@simbathesailor/use-what-changed": ^2.0.0
-    "@snowball-tech/design-tokens": 5.2.4
+    "@snowball-tech/design-tokens": 5.2.5
     "@snowball-tech/eslint-config": ^5.1.4
     "@storybook/addon-a11y": ^7.1.0
     "@storybook/addon-essentials": ^7.1.0
