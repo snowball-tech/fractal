@@ -2,6 +2,7 @@ import {
   UilCancel as CancelIcon,
   UilCheckCircle as CheckCircleIcon,
   UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
@@ -108,6 +109,7 @@ const meta: Meta<AutocompleteProps> = {
         Check: <CheckCircleIcon />,
         Error: <ExclamationCircleIcon />,
         None: undefined,
+        Search: <SearchIcon />,
         Send: <SendIcon />,
         Star: <StarIcon />,
       },
@@ -119,6 +121,7 @@ const meta: Meta<AutocompleteProps> = {
         Check: <CheckCircleIcon />,
         Error: <ExclamationCircleIcon />,
         None: undefined,
+        Search: <SearchIcon />,
         Send: <SendIcon />,
         Star: <StarIcon />,
       },
