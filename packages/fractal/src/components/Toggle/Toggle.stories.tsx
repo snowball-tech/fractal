@@ -1,6 +1,10 @@
 import {
-  UilThumbsUp as ThumbsUpIcon,
-  UilTimes as TimesIcon,
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps, ReactNode } from 'react'
@@ -12,6 +16,18 @@ type ToggleProps = ComponentProps<typeof Toggle>
 
 const meta = {
   argTypes: {
+    icon: {
+      mapping: {
+        Cancel: <CancelIcon />,
+        Check: <CheckCircleIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+        Search: <SearchIcon />,
+        Send: <SendIcon />,
+        Star: <StarIcon />,
+      },
+      options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
     variant: {
       options: Object.values(Variants),
       table: {
@@ -24,12 +40,16 @@ const meta = {
   args: {
     disabled: false,
     fullWidth: false,
+    icon: 'None',
     label: 'Compact trash',
   },
   component: Toggle,
   parameters: {
     componentSubtitle:
       "🌋 The, hum... toggle switch isn't, hum... toggling, ahah! - Stanley - Meet the Robinson",
+    controls: {
+      exclude: ['toggled'],
+    },
   },
 
   title: 'Molecules/Toggle/Toggle',
@@ -38,25 +58,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: StoryObj<ToggleProps & { withIcon: boolean }> = {
-  argTypes: {
-    icon: {
-      if: { arg: 'withIcon' },
-      mapping: {
-        ThumbsUp: <ThumbsUpIcon />,
-        Times: <TimesIcon />,
-      },
-      options: ['ThumbsUp', 'Times'],
-    },
-    withIcon: {
-      control: 'boolean',
-      description: 'Add an icon to the toggle',
-    },
-  },
-  args: {
-    withIcon: false,
-  },
-}
+export const Playground: Story = {}
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <div
@@ -76,7 +78,7 @@ export const Primary: Story = {
     <>
       <Wrapper>
         <Toggle label="Primary toggle" />
-        <Toggle icon={<ThumbsUpIcon />} label="Primary toggle with icon" />
+        <Toggle icon={<StarIcon />} label="Primary toggle with icon" />
         <Toggle defaultToggled label="Primary toggle toggled" />
       </Wrapper>
 
@@ -84,7 +86,7 @@ export const Primary: Story = {
         <Toggle disabled label="Primary disabled toggle" />
         <Toggle
           disabled
-          icon={<TimesIcon />}
+          icon={<CancelIcon />}
           label="Primary disabled toggle with icon"
         />
         <Toggle
@@ -101,7 +103,7 @@ export const Primary: Story = {
       <Wrapper>
         <Toggle
           fullWidth
-          icon={<ThumbsUpIcon />}
+          icon={<StarIcon />}
           label="Full width primary toggle with icon"
         />
       </Wrapper>
@@ -110,7 +112,7 @@ export const Primary: Story = {
         <Toggle
           defaultToggled
           fullWidth
-          icon={<ThumbsUpIcon />}
+          icon={<CancelIcon />}
           label="Full width primary toggle with icon toggled"
         />
       </Wrapper>

@@ -61,4 +61,6 @@ export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
   icon?: ReactNode
   /** The label of the toggle. */
   label: string
+  /** The value submitted in the submitted form. */
+  value: string
 }

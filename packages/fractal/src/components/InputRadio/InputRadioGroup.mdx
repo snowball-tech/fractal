@@ -4,13 +4,14 @@ import {
   Description,
   Meta,
   Primary,
+  Stories,
   Subtitle,
   Title,
 } from '@storybook/blocks'
 
-import * as InputRadioStories from './InputRadio.stories'
+import * as InputRadioGroupStories from './InputRadioGroup.stories'
 
-<Meta of={InputRadioStories} />
+<Meta of={InputRadioGroupStories} />
 
 <Title />
 
@@ -23,9 +24,11 @@ import * as InputRadioStories from './InputRadio.stories'
 ## Props
 
 On top of all the props, attributes and event handler you can set on a
-`<button />` element, the component accepts the following props:
+`<div />` element, the component accepts the following props:
 
 <ArgTypes />
+
+<Stories includePrimary={false} title="Radios" />
 
 ## Playground
 

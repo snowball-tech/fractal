@@ -89,6 +89,7 @@ const meta: Meta<SelectProps> = {
   },
   args: {
     autoFocus: false,
+    children: 'Simple items',
     description: "Be careful, it's a trap!",
     disabled: false,
     fullWidth: false,
@@ -128,9 +129,4 @@ const meta: Meta<SelectProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {
-  args: {
-    children: 'Simple items',
-    fullWidth: true,
-  },
-}
+export const Playground: Story = {}

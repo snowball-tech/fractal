@@ -1,5 +1,8 @@
 import {
   UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@iconscout/react-unicons'
@@ -13,6 +16,18 @@ type ButtonProps = ComponentProps<typeof Button>
 
 const meta = {
   argTypes: {
+    icon: {
+      mapping: {
+        Cancel: <CancelIcon />,
+        Check: <CheckCircleIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+        Search: <SearchIcon />,
+        Send: <SendIcon />,
+        Star: <StarIcon />,
+      },
+      options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
     variant: {
       options: Object.values(Variants),
       table: {
@@ -41,28 +56,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: StoryObj<ButtonProps & { withIcon: boolean }> = {
-  argTypes: {
-    icon: {
-      if: { arg: 'withIcon' },
-      mapping: {
-        Cancel: <CancelIcon />,
-        Send: <SendIcon />,
-        Star: <StarIcon />,
-      },
-      options: ['Cancel', 'Send', 'Star'],
-    },
-    iconPosition: {
-      if: { arg: 'withIcon' },
-    },
-    withIcon: {
-      control: 'boolean',
-      description: 'Add an icon to the button',
-    },
-  },
+export const Playground: Story = {
   args: {
     variant: DEFAULT_VARIANT,
-    withIcon: false,
   },
 }
 
