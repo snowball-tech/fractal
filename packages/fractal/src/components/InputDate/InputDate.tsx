@@ -1,5 +1,9 @@
 'use client'
 
+import {
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+} from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
@@ -233,6 +237,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             required={required}
             size={2}
             success={isSuccessful}
+            suffix={errors.day ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.day !== undefined ? { value: value.day } : {})}
             onChange={(newDay) => handleChange(newDay, 'day')}
@@ -258,6 +263,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             required={required}
             size={2}
             success={isSuccessful}
+            suffix={errors.month ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.month !== undefined ? { value: value.month } : {})}
             onChange={(newMonth) => handleChange(newMonth, 'month')}
@@ -283,6 +289,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             required={required}
             size={4}
             success={isSuccessful}
+            suffix={
+              // eslint-disable-next-line no-nested-ternary
+              errors.year || hasErrorMessage ? (
+                <ExclamationCircleIcon />
+              ) : isSuccessful ? (
+                <CheckCircleIcon />
+              ) : undefined
+            }
             type="number"
             {...(value?.year !== undefined ? { value: value.year } : {})}
             onChange={(newYear) => handleChange(newYear, 'year')}

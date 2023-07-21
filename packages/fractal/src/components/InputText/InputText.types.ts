@@ -21,12 +21,10 @@ export interface InputTextProps
    * error.
    *
    * This will also change the display of the input to give an error feedback
-   * (red border and special red icon).
+   * (red border and red suffix).
    *
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
-   *
-   * The suffix (if there is one) will also be replaced  by a specific error icon.
    */
   error?: boolean | string
   /** Indicates if the text input should take all the available width. */
@@ -73,12 +71,10 @@ export interface InputTextProps
    * If a string: a message to display when the text input has a valid value.
    *
    * This will also change the display of the input to give an success feedback
-   * (green border and special green icon).
+   * (green border and green suffix.
    *
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
-   *
-   * The suffix (if there is one) will be replaced by a specific success icon.
    */
   success?: boolean | string
   /** The suffix (icon or text) to display to the right of the text input. */
