@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [1.13.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.13.0...@snowball-tech/fractal@1.13.1) (2023-07-21)
+
+### 📝 Documentation
+
+- **typography:** fix the section name ([9b482a5](https://github.com/snowball-tech/fractal/commit/9b482a5c3c35b706c291646a62c99a0ba30878be))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.3.0
+
 # @snowball-tech/fractal [1.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.12.0...@snowball-tech/fractal@1.13.0) (2023-07-20)
 
 ### ✨ Features
