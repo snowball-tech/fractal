@@ -1,3 +1,18 @@
+# @snowball-tech/fractal [1.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.13.1...@snowball-tech/fractal@1.14.0) (2023-07-21)
+
+### ✨ Features
+
+- **toggle-group:** add a toggle group item ([ed28ce9](https://github.com/snowball-tech/fractal/commit/ed28ce92c7beb5d6e51c930f41b59a96763d7a99))
+- **toggle:** add the toggle component ([75226a0](https://github.com/snowball-tech/fractal/commit/75226a0b09c0de3b6e7bb4bbb723ea51525eaa8d))
+
+### 📝 Documentation
+
+- **fractal:** add documentation for all sub components ([4109962](https://github.com/snowball-tech/fractal/commit/4109962b59dd3dd2ec86afbc78a984e780572fd3))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.4.0
+
 ## @snowball-tech/fractal [1.13.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.13.0...@snowball-tech/fractal@1.13.1) (2023-07-21)
 
 ### 📝 Documentation
