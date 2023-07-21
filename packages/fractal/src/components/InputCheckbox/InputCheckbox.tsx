@@ -21,7 +21,7 @@ import { GROUP_NAME } from './InputCheckbox.recipe'
 import type { InputCheckboxProps } from './InputCheckbox.types'
 
 /**
- * `InputCheckbox` component is used to allow a user to make a binary choice.
+ * `InputCheckbox` component is used to allow the user to make a binary choice.
  */
 export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
   (

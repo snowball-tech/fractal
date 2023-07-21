@@ -1,6 +1,10 @@
 import { Pressable } from '@ark-ui/react'
 import { cx } from '@snowball-tech/fractal-panda/css'
-import { button, typography } from '@snowball-tech/fractal-panda/recipes'
+import {
+  button,
+  buttonLabel,
+  typography,
+} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -13,7 +17,7 @@ import { GROUP_NAME } from './Button.recipe'
 import type { ButtonProps } from './Button.types'
 
 /**
- * `Button` component is used to allow a user to make an interaction.
+ * `Button` component is used to allow the user to make an interaction.
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -36,7 +40,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       button({ variant }),
       fullWidth ? 'full-width' : '',
       disabled ? 'disabled' : '',
-      !isEmpty(icon) ? `icon-${iconPosition}` : '',
+      !isEmpty(icon)
+        ? `addendum ${iconPosition === 'right' ? 'suffix' : 'prefix'}`
+        : '',
       props.className,
     )
 
@@ -59,7 +65,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {icon && iconPosition === 'left' && icon}
 
-        <span className={typography({ variant: 'body-1' })}>{label}</span>
+        <span className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
+          {label}
+        </span>
 
         {icon && iconPosition === 'right' && icon}
       </Pressable>

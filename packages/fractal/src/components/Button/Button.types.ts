@@ -9,7 +9,7 @@ export interface ButtonProps
   disabled?: boolean
   /** Indicates if the button should take all the available width. */
   fullWidth?: boolean
-  /** The icon to display in the button (if any). */
+  /** The icon to display in the button. */
   icon?: ReactNode
   /** The position of the icon in the button. */
   iconPosition?: 'left' | 'right'
