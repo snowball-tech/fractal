@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.14.0...@snowball-tech/fractal@2.0.0) (2023-07-21)
+
+### 💥 Breaking changes
+
+- **input-text:** don't force the suffix when in error or success ([441456c](https://github.com/snowball-tech/fractal/commit/441456cfee5d394c0d9fbf57bf3509bd3a04a2ef))
+
 # @snowball-tech/fractal [1.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@1.13.1...@snowball-tech/fractal@1.14.0) (2023-07-21)
 
 ### ✨ Features
