@@ -6,25 +6,6 @@ import type { ReactNode } from 'react'
 
 import { Variants } from './InputRadio.constants'
 
-export interface InputRadioProps extends RxRadioProps {
-  /** Prevents the user from interacting with the radio button. */
-  disabled?: boolean
-  /** Indicates if the radio button should take all the available width. */
-  fullWidth?: boolean
-  /**
-   * A unique HTML id for the radio button.
-   *
-   * This allows to link the radio button with a label.
-   *
-   * If none is given, one will be generated automatically.
-   */
-  id?: string
-  /** The label of the radio button. */
-  label: string
-  /** The value submitted in the submitted form. */
-  value: string
-}
-
 export interface InputRadioGroupProps extends RxRadioGroupProps {
   /** The radio buttons to display inside of the radio group. */
   children: ReactNode
@@ -38,7 +19,7 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
    * radio group.
    */
   disabled?: boolean
-  /** Indicates if the radio group  should take all the available width. */
+  /** Indicates if the radio group should take all the available width. */
   fullWidth?: boolean
   /**
    * The name of the radio group.
@@ -70,4 +51,23 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
   value?: string
   /** The variant of the radio button to use. */
   variant?: `${Variants}`
+}
+
+export interface InputRadioProps extends RxRadioProps {
+  /** Prevents the user from interacting with the radio button. */
+  disabled?: boolean
+  /** Indicates if the radio button should take all the available width. */
+  fullWidth?: boolean
+  /**
+   * A unique HTML id for the radio button.
+   *
+   * This allows to link the radio button with a label.
+   *
+   * If none is given, one will be generated automatically.
+   */
+  id?: string
+  /** The label of the radio button. */
+  label: string
+  /** The value submitted in the submitted form. */
+  value: string
 }

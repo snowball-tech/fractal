@@ -12,7 +12,7 @@ const variants = Object.values(Variants).reduce(
     ...allVariants,
     [variantName]: {
       _activeNotDisabled: {
-        _notPressed: {
+        _notToggled: {
           backgroundColor: `var(--color-background-toggle-${variantName}-active)`,
           border: `var(--border-toggle-${variantName}-active)`,
           color: `var(--color-text-toggle-${variantName}-active)`,
@@ -28,7 +28,7 @@ const variants = Object.values(Variants).reduce(
       },
 
       _hoverFocusNotDisabled: {
-        _notPressed: {
+        _notToggled: {
           backgroundColor: `var(--color-background-toggle-${variantName}-hover)`,
           border: `var(--border-toggle-${variantName}-hover)`,
           color: `var(--color-text-toggle-${variantName}-hover)`,
@@ -111,16 +111,16 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
       [Variants.Primary]: {
         ...variants[Variants.Primary],
         _activeNotDisabled: {
-          _notPressed: {
-            ...variants[Variants.Primary]._activeNotDisabled._notPressed,
+          _notToggled: {
+            ...variants[Variants.Primary]._activeNotDisabled?._notToggled,
 
             transform: 'translate(-2px, 4px)',
           },
         },
 
         _hoverFocusNotDisabled: {
-          _notPressed: {
-            ...variants[Variants.Primary]._hoverFocusNotDisabled._notPressed,
+          _notToggled: {
+            ...variants[Variants.Primary]._hoverFocusNotDisabled?._notToggled,
 
             transform: 'translate(0, -2px)',
           },

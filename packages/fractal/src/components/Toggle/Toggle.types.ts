@@ -14,7 +14,7 @@ export interface ToggleProps
   disabled?: boolean
   /** Indicates if the toggle should take all the available width. */
   fullWidth?: boolean
-  /** The icon to display in the left n the toggle. */
+  /** The icon to display in the left of the toggle. */
   icon?: ReactNode
   /** The label of the toggle. */
   label: string

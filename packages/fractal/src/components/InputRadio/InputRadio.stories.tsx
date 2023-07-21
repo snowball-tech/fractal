@@ -31,7 +31,6 @@ const jedisItems = asRadio(jedis)
 const jedisItemsFullWidth = asRadio(jedis, true)
 const sithsItems = asRadio(siths)
 const sithsItemsFullWidth = asRadio(siths, true)
-const othersItems = asRadio(others)
 const othersItemsFullWidth = asRadio(others, true)
 
 const items = (
@@ -46,6 +45,7 @@ const meta = {
   argTypes: {
     asChild: { table: { disable: true } },
     children: {
+      control: false,
       table: { type: { summary: 'InputRadio | Array<InputRadio>' } },
     },
     onValueChange: {
@@ -85,6 +85,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     orientation: 'vertical',
+    value: '',
     variant: DEFAULT_VARIANT,
   },
 }
@@ -191,7 +192,7 @@ export const Secondary: Story = {
         orientation="horizontal"
         variant="secondary"
       >
-        {othersItems}
+        {othersItemsFullWidth}
       </InputRadioGroup>
 
       <h1>Vertical</h1>
@@ -213,7 +214,7 @@ export const Secondary: Story = {
 
       <h3>Who shot first?</h3>
       <InputRadioGroup defaultValue="han-solo" fullWidth variant="secondary">
-        {othersItems}
+        {othersItemsFullWidth}
       </InputRadioGroup>
     </>
   ),
@@ -251,7 +252,7 @@ export const Tertiary: Story = {
         orientation="horizontal"
         variant="tertiary"
       >
-        {othersItems}
+        {othersItemsFullWidth}
       </InputRadioGroup>
 
       <h1>Vertical</h1>
@@ -273,7 +274,7 @@ export const Tertiary: Story = {
 
       <h3>Who shot first?</h3>
       <InputRadioGroup defaultValue="han-solo" fullWidth variant="tertiary">
-        {othersItems}
+        {othersItemsFullWidth}
       </InputRadioGroup>
     </>
   ),

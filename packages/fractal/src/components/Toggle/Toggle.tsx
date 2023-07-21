@@ -41,11 +41,11 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     const buttonClassNames = cx(
       `${PREFIX}-${GROUP_NAME}`,
       toggle({ variant }),
-      fullWidth ? 'full-width' : '',
+      props.className,
       disabled ? 'disabled' : '',
+      fullWidth ? 'full-width' : '',
       defaultToggled || toggled ? 'toggled' : '',
       !isEmpty(icon) ? `addendum prefix` : '',
-      props.className,
     )
 
     const handleToggle = (newToggled: boolean) => {

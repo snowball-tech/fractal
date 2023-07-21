@@ -32,7 +32,7 @@ const meta = {
       "🌋 The, hum... toggle switch isn't, hum... toggling, ahah! - Stanley - Meet the Robinson",
   },
 
-  title: 'Molecules/Toggle',
+  title: 'Molecules/Toggle/Toggle',
 } satisfies Meta<ToggleProps>
 
 export default meta
