@@ -424,12 +424,29 @@ export const Validations: Story = {
           description="This is the description, not a success message"
           success
         />
+      </Wrapper>
 
+      <Wrapper>
         <InputText
           defaultValue="With a prefix"
           label="This is a success"
           prefix={<StarIcon />}
           success="Congratulations!"
+        />
+
+        <InputText
+          defaultValue="With a suffix"
+          label="This is a success"
+          success="Congratulations!"
+          suffix={<StarIcon />}
+        />
+
+        <InputText
+          defaultValue="With a prefix and a suffix"
+          label="This is a success"
+          prefix={<StarIcon />}
+          success="Congratulations!"
+          suffix={<CheckCircleIcon />}
         />
       </Wrapper>
 
@@ -455,12 +472,29 @@ export const Validations: Story = {
           description="This is the description, not an error message"
           error
         />
+      </Wrapper>
 
+      <Wrapper>
         <InputText
           defaultValue="With a prefix"
           error="Oops, there's an error!"
           label="There is an error"
           prefix={<StarIcon />}
+        />
+
+        <InputText
+          defaultValue="With a suffix"
+          error="Oops, there's an error!"
+          label="There is an error"
+          suffix={<StarIcon />}
+        />
+
+        <InputText
+          defaultValue="With a prefix and a suffix"
+          error="Oops, there's an error!"
+          label="There is an error"
+          prefix={<StarIcon />}
+          suffix={<ExclamationCircleIcon />}
         />
       </Wrapper>
 

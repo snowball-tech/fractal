@@ -1,7 +1,3 @@
-import {
-  UilCheckCircle as CheckCircleIcon,
-  UilExclamationCircle as ExclamationCircleIcon,
-} from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
@@ -61,13 +57,6 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const hasSuccessMessage = !isEmpty(success)
     const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
-    let suffixToDisplay = suffix
-    if (isInError) {
-      suffixToDisplay = <ExclamationCircleIcon />
-    } else if (isSuccessful) {
-      suffixToDisplay = <CheckCircleIcon />
-    }
-
     const groupClassNames = cx(
       `${PREFIX}-${GROUP_NAME}`,
       inputTextContainer(),
@@ -75,9 +64,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       disabled ? 'disabled' : '',
       fullWidth ? 'full-width' : '',
       isInError ? 'invalid' : '',
-      !isEmpty(prefix) || !isEmpty(suffixToDisplay) ? `addendum` : '',
+      !isEmpty(prefix) || !isEmpty(suffix) ? `addendum` : '',
       !isEmpty(prefix) ? `prefix` : '',
-      !isEmpty(suffixToDisplay) ? `suffix` : '',
+      !isEmpty(suffix) ? `suffix` : '',
       readOnly ? 'readonly' : '',
       required ? 'required' : '',
       isSuccessful ? 'valid' : '',
@@ -134,9 +123,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             {...omit(['className'], props)}
           />
 
-          {suffixToDisplay ? (
+          {suffix ? (
             <div className={cx(inputTextAddendum(), inputTextSuffix())}>
-              {suffixToDisplay}
+              {suffix}
             </div>
           ) : (
             false

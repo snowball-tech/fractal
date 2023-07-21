@@ -1,6 +1,10 @@
 'use client'
 
-import { UilSearchAlt as SearchIcon } from '@iconscout/react-unicons'
+import {
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
+} from '@iconscout/react-unicons'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
@@ -380,6 +384,14 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             readOnly={readOnly}
             required={required}
             success={isSuccessful}
+            suffix={
+              // eslint-disable-next-line no-nested-ternary
+              hasErrorMessage ? (
+                <ExclamationCircleIcon />
+              ) : isSuccessful ? (
+                <CheckCircleIcon />
+              ) : undefined
+            }
             value={number}
             onChange={(newNumber) => handleNumberChange(newNumber)}
           />
