@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.3.0...@snowball-tech/design-tokens@5.4.0) (2023-07-21)
+
+### ✨ Features
+
+- **toggle:** add the toggle component ([75226a0](https://github.com/snowball-tech/fractal/commit/75226a0b09c0de3b6e7bb4bbb723ea51525eaa8d))
+
 # @snowball-tech/design-tokens [5.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.2.5...@snowball-tech/design-tokens@5.3.0) (2023-07-21)
 
 ### ✨ Features
