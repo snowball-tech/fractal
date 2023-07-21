@@ -124,8 +124,8 @@ export interface AutocompleteLoadingProps
   /**
    * Indicates if you want to display an icon.
    *
-   * You can pass either a boolean to use the default icon or an icon of your
-   * choice.
+   * You can pass either a boolean to use/disable the default icon or an icon of
+   * your choice.
    */
   icon?: ReactNode | boolean
   /** Indicates if you want the icon to spin. */

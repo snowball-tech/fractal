@@ -23,7 +23,7 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  * `InputRadio` component is used to allow the user to make a single choice
  * amongst a group of multiple choices.
  *
- * You must use this component with the `InputRadioGroup` component.
+ * You must use this component within the `InputRadioGroup` component.
  */
 export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
   (
