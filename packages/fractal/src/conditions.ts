@@ -85,6 +85,19 @@ export function extendConditions(
     groupValid: '.group:is(:valid, [valid], .valid) &',
     peerValid: '.peer:is(:valid, [valid], .valid) ~ &',
 
+    toggled: '&:is([aria-pressed="true"], [data-state="on"], .toggled)',
+    groupToggled:
+      '.group:is([aria-pressed="true"], [data-state="on"], .toggled) &',
+    peerToggled:
+      '.peer:is([aria-pressed="true"], [data-state="on"], .toggled) ~ &',
+
+    toggledNotDisabled:
+      '&:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled))',
+    groupToggledNotDisabled:
+      '.group:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled)) &',
+    peerToggledNotDisabled:
+      '.peer:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled)) ~ &',
+
     invalid: '&:is(:invalid, [invalid], .invalid)',
     groupInvalid: '.group:is(:invalid, [invalid], .invalid) &',
     peerInvalid: '.peer:is(:invalid, [invalid], .invalid) ~ &',

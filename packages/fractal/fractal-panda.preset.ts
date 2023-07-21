@@ -17,6 +17,7 @@ import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
 import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
+import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
 import * as TypographyRecipes from '@/components/Typography/Typography.recipe'
 
 import { extendConditions } from './src/conditions'
@@ -33,6 +34,7 @@ const GROUPS = {
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
+  toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
   typography: `${PREFIX}-${TypographyRecipes.GROUP_NAME}`,
 }
 
@@ -140,6 +142,9 @@ const fractalPreset = definePreset({
         selectLabel: SelectRecipes.selectLabel,
         selectTrigger: SelectRecipes.selectTrigger,
         selectValue: SelectRecipes.selectValue,
+
+        toggle: ToggleRecipes.toggle,
+        toggleLabel: ToggleRecipes.toggleLabel,
 
         typography: TypographyRecipes.typography,
       },

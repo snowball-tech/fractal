@@ -16,7 +16,7 @@ information it stores. It also has a value that is shared across all
 platforms _(web, iOS, Android, ...)_.
 For example, `color.background.danger.hover` tells us which color
 to use when drawing the background of an interactive component with a `danger`
-variant, as it is hovered by a user.
+variant, as it is hovered by the user.
 
 Design tokens are used to keep consistency across all platforms
 _(website, mobile apps, marketing, ...)_ and ensure a pleasant user and

@@ -20,7 +20,7 @@ import type { InputRadioProps } from './InputRadio.types'
 import { InputRadioVariantContext } from './InputRadioVariantContext'
 
 /**
- * `InputRadio` component is used to allow a user to make a single choice
+ * `InputRadio` component is used to allow the user to make a single choice
  * amongst a group of multiple choices.
  *
  * You must use this component with the `InputRadioGroup` component.
