@@ -65,9 +65,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ark-ui/react@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "@ark-ui/react@npm:0.8.1"
+"@ark-ui/react@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@ark-ui/react@npm:0.9.0"
   dependencies:
     "@zag-js/accordion": 0.12.0
     "@zag-js/anatomy": 0.12.0
@@ -105,7 +105,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: db027596fd912e5079d4b7c35560bc2cabd3c2e9e83ccf8cc3e6aa087d940c1f72c352ddbabc39dd62bd8a05e185ae8257403b7ccebf224909b193acf628b06c
+  checksum: ba41c2a9bb9d43c4af8627150bbd1a11af125ba838c60b6216ce382523f3e2d23acb790b25cb371abf5fe35b1ad34086325022e9ba015c4211e2f7e1de91480b
   languageName: node
   linkType: hard
 
@@ -5505,7 +5505,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:packages/fractal"
   dependencies:
-    "@ark-ui/react": ^0.8.1
+    "@ark-ui/react": ^0.9.0
     "@iconscout/react-unicons": ^2.0.2
     "@pandacss/dev": ^0.7.0
     "@pandacss/preset-base": ^0.7.0
