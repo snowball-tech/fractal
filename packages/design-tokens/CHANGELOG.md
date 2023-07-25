@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.4.0...@snowball-tech/design-tokens@5.5.0) (2023-07-25)
+
+### ✨ Features
+
+- **design-tokens:** add feedback success 90 color ([802d857](https://github.com/snowball-tech/fractal/commit/802d857e53a05eae85bfd0df38ce38a641429538))
+
 # @snowball-tech/design-tokens [5.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.3.0...@snowball-tech/design-tokens@5.4.0) (2023-07-21)
 
 ### ✨ Features
