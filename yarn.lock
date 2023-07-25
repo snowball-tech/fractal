@@ -5438,10 +5438,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@snowball-tech/design-tokens@npm:5.4.0"
-  checksum: f52ef9d91d415659cd59eef003dfab15c0d68d9bf1c4b7e5886d6cd9243e8f23bba24fd7c5ad2031f7384eb8d58c7cb2380fd448c1b6f59af968d1a9e7da6cf0
+"@snowball-tech/design-tokens@npm:5.5.0":
+  version: 5.5.0
+  resolution: "@snowball-tech/design-tokens@npm:5.5.0"
+  checksum: cbb55b0abfb68caa292c5200a93b970a0cb69e56711d3b8405971e7c37553d0d5d835dd87dd4945498406de2726b8c4c27a4d6ef78634b917c91c933e9ef68e3
   languageName: node
   linkType: hard
 
@@ -5520,7 +5520,7 @@ __metadata:
     "@radix-ui/react-toggle": ^1.0.3
     "@radix-ui/react-toggle-group": ^1.0.4
     "@simbathesailor/use-what-changed": ^2.0.0
-    "@snowball-tech/design-tokens": 5.4.0
+    "@snowball-tech/design-tokens": 5.5.0
     "@snowball-tech/eslint-config": ^5.1.4
     "@storybook/addon-a11y": ^7.1.1
     "@storybook/addon-essentials": ^7.1.1
@@ -5560,6 +5560,7 @@ __metadata:
     vite: ^4.4.7
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
+    "@iconscout/react-unicons": ^2.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown
