@@ -9,6 +9,7 @@ module.exports = {
       },
       success: {
         50: { comment: 'Tone 50', value: '#3CD39D' },
+        90: { comment: 'Tone 90', value: '#CFFCE3' },
       },
       warning: {
         50: { comment: 'Tone 50', value: '#FF9F69' },
