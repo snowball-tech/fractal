@@ -10,7 +10,7 @@ const commonConfig: Options = {
     // eslint-disable-next-line no-param-reassign
     options.outbase = './'
   },
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', '@iconscout/react-unicons'],
   format: 'esm',
   minify: true,
   noExternal: ['@snowball-tech/fractal-panda'],
