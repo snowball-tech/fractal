@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [2.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.0.1...@snowball-tech/fractal@2.0.2) (2023-07-25)
+
+### 📝 Documentation
+
+- **colors:** add feedback success 90 ([efa71a5](https://github.com/snowball-tech/fractal/commit/efa71a5bc6bd42c1f0681c91c1ebb48da51938de))
+- **typography:** mention the creators of the font ([df3d829](https://github.com/snowball-tech/fractal/commit/df3d82992fd607d914befae113963bec72540c2b))
+
+### 👷 Build
+
+- **fractal:** don't ship unicons with DS ([64579a9](https://github.com/snowball-tech/fractal/commit/64579a9eda8b67acbd3e88f8aa72709ec385dc0e))
+
 ## @snowball-tech/fractal [2.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.0.0...@snowball-tech/fractal@2.0.1) (2023-07-25)
 
 ### 📦 Dependencies
