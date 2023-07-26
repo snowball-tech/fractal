@@ -49,7 +49,7 @@
     "setup": "yarn install"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.195",
+    "@types/lodash": "^4.14.196",
     "chalk": "^4.1.2",
     "lodash": "^4.17.21",
     "ora": "^5.4.1",
