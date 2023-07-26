@@ -21,6 +21,7 @@ export {
   SelectItemGroup,
   SelectItemSeparator,
 } from './Select/index.js'
+export { Stepper } from './Stepper/index.js'
 export { Toggle } from './Toggle/index.js'
 export { ToggleGroup, ToggleGroupItem } from './ToggleGroup/index.js'
 export { Typography } from './Typography/index.js'
