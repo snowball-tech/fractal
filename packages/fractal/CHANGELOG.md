@@ -1,3 +1,21 @@
+# @snowball-tech/fractal [2.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.0.2...@snowball-tech/fractal@2.1.0) (2023-07-26)
+
+### ✨ Features
+
+- **input-pin-code:** add the `InputPinCode` component ([476af31](https://github.com/snowball-tech/fractal/commit/476af31f97e291588abe49139757fb8c4b733d23))
+
+### 📝 Documentation
+
+- **input-date:** improve a prop description ([55e2a22](https://github.com/snowball-tech/fractal/commit/55e2a221d82776daaefe71545953234bf524e32e))
+
+### 📦 Dependencies
+
+- update dependencies ([c99dd84](https://github.com/snowball-tech/fractal/commit/c99dd8463d3d85cff37c482d6ac7f14f5bdc5dd4))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.5.1
+
 ## @snowball-tech/fractal [2.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.0.1...@snowball-tech/fractal@2.0.2) (2023-07-25)
 
 ### 📝 Documentation
