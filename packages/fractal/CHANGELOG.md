@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.2.0...@snowball-tech/fractal@2.2.1) (2023-07-26)
+
+### 🐛 Bug Fixes
+
+- **card:** expand the rest of the props ([6663c3e](https://github.com/snowball-tech/fractal/commit/6663c3ed1fc748e11628bf702d3e221f2ea99fed))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.6.0
+
 # @snowball-tech/fractal [2.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.1.0...@snowball-tech/fractal@2.2.0) (2023-07-26)
 
 ### ✨ Features
