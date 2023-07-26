@@ -29,7 +29,7 @@ export interface InputDateProps
     HTMLAttributes<HTMLDivElement>,
     'defaultValue' | 'onChange' | 'placeholder'
   > {
-  /** Indicates if the first empty date field must be focused on render. */
+  /** Indicates if the day field must be focused on render. */
   autoFocus?: boolean
   /**
    * The value of the date input when it is initially rendered.
