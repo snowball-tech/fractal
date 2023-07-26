@@ -3,7 +3,7 @@ import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
 import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 
-export const GROUP_NAME = 'select'
+export const GROUP_NAME = 'typography'
 
 export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Basic typographic styles',
