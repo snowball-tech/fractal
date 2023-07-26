@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.1.0...@snowball-tech/fractal@2.2.0) (2023-07-26)
+
+### ✨ Features
+
+- **card:** add the `Card` component ([7ab4661](https://github.com/snowball-tech/fractal/commit/7ab4661905bde7004a1c12816175e5d9ae65db76))
+
+### 🐛 Bug Fixes
+
+- **typography:** fix the group name ([9618e6c](https://github.com/snowball-tech/fractal/commit/9618e6c3d4683662dc3f01366985a1f199a7b8e5))
+
 # @snowball-tech/fractal [2.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.0.2...@snowball-tech/fractal@2.1.0) (2023-07-26)
 
 ### ✨ Features
