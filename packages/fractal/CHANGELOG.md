@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.3.0...@snowball-tech/fractal@2.3.1) (2023-07-26)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.7.0
+
 # @snowball-tech/fractal [2.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.2.1...@snowball-tech/fractal@2.3.0) (2023-07-26)
 
 ### ✨ Features
