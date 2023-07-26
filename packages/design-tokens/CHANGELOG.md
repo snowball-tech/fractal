@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.6.0...@snowball-tech/design-tokens@5.7.0) (2023-07-26)
+
+### ✨ Features
+
+- **design-tokens:** add the stepper tokens ([d81f7ec](https://github.com/snowball-tech/fractal/commit/d81f7ecd0c46e9e931864d1bc4f70013709b2323))
+
 # @snowball-tech/design-tokens [5.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.5.1...@snowball-tech/design-tokens@5.6.0) (2023-07-26)
 
 ### ✨ Features
