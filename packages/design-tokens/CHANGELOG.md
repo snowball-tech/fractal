@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.5.1...@snowball-tech/design-tokens@5.6.0) (2023-07-26)
+
+### ✨ Features
+
+- **design-token:** add tokens for loader sizes ([fc0194c](https://github.com/snowball-tech/fractal/commit/fc0194ca32d40e07693797b7d4f2d7a52cf78293))
+
 ## @snowball-tech/design-tokens [5.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.5.0...@snowball-tech/design-tokens@5.5.1) (2023-07-26)
 
 ### 📦 Dependencies
