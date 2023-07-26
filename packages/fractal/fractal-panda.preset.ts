@@ -14,6 +14,7 @@ import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
 import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
+import * as InputPinCodeRecipes from '@/components/InputPinCode/InputPinCode.recipe'
 import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
@@ -30,6 +31,7 @@ const GROUPS = {
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
   inputPhone: `${PREFIX}-${InputPhoneRecipes.GROUP_NAME}`,
+  inputPinCode: `${PREFIX}-${InputPinCodeRecipes.GROUP_NAME}`,
   inputRadio: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}`,
   inputRadioGroup: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}-group`,
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
@@ -113,6 +115,13 @@ const fractalPreset = definePreset({
         inputPhonePrefix: InputPhoneRecipes.inputPhonePrefix,
         inputPhonePrefixDropdown: InputPhoneRecipes.inputPhonePrefixDropdown,
         inputPhonePrefixSearch: InputPhoneRecipes.inputPhonePrefixSearch,
+
+        inputPinCodeContainer: InputPinCodeRecipes.inputPinCodeContainer,
+        inputPinCodeDescription: InputPinCodeRecipes.inputPinCodeDescription,
+        inputPinCodeField: InputPinCodeRecipes.inputPinCodeField,
+        inputPinCodeFields: InputPinCodeRecipes.inputPinCodeFields,
+        inputPinCodeLabel: InputPinCodeRecipes.inputPinCodeLabel,
+        inputPinCodeMessage: InputPinCodeRecipes.inputPinCodeMessage,
 
         inputRadio: InputRadioRecipes.inputRadio,
         inputRadioCheckmark: InputRadioRecipes.inputRadioCheckmark,
