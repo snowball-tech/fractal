@@ -11,6 +11,7 @@ import {
 
 import * as AutocompleteRecipes from '@/components/Autocomplete/Autocomplete.recipe'
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
+import * as CardRecipes from '@/components/Card/Card.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
 import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
@@ -28,6 +29,7 @@ import { Breakpoints, PREFIX } from './src/constants'
 const GROUPS = {
   autocomplete: `${PREFIX}-${AutocompleteRecipes.GROUP_NAME}`,
   button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
+  card: `${PREFIX}-${CardRecipes.GROUP_NAME}`,
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
   inputPhone: `${PREFIX}-${InputPhoneRecipes.GROUP_NAME}`,
@@ -88,6 +90,8 @@ const fractalPreset = definePreset({
 
         button: ButtonRecipes.button,
         buttonLabel: ButtonRecipes.buttonLabel,
+
+        card: CardRecipes.card,
 
         inputCheckbox: InputCheckboxRecipes.inputCheckbox,
         inputCheckboxCheckmark: InputCheckboxRecipes.inputCheckboxCheckmark,
