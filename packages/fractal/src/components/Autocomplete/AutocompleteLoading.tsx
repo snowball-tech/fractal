@@ -1,7 +1,3 @@
-import {
-  UilHourglass as LoadingIcon,
-  UilSpinner as SpinnerIcon,
-} from '@iconscout/react-unicons'
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
@@ -10,6 +6,8 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isBoolean from 'lodash/fp/isBoolean'
 import omit from 'lodash/fp/omit'
+
+import { Loader } from '@/components/Loader'
 
 import type { AutocompleteLoadingProps } from './Autocomplete.types'
 
@@ -28,7 +26,7 @@ export const AutocompleteLoading = ({
     autocompleteLoading(),
     props.className,
     icon ? 'with-icon' : '',
-    spin ? 'spin' : '',
+    spin && icon !== true ? 'spin' : '',
   )
 
   return (
@@ -38,15 +36,7 @@ export const AutocompleteLoading = ({
       {...omit(['className', 'disabled', 'onSelect'], props)}
     >
       {/* eslint-disable-next-line no-nested-ternary */}
-      {icon && isBoolean(icon) ? (
-        spin ? (
-          <SpinnerIcon />
-        ) : (
-          <LoadingIcon />
-        )
-      ) : (
-        false
-      )}
+      {icon && isBoolean(icon) ? <Loader /> : false}
 
       {icon && !isBoolean(icon) ? icon : false}
 
