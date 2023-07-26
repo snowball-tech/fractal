@@ -18,6 +18,7 @@ import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
 import * as InputPinCodeRecipes from '@/components/InputPinCode/InputPinCode.recipe'
 import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
+import * as LoaderRecipes from '@/components/Loader/Loader.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
 import * as ToggleGroupRecipes from '@/components/ToggleGroup/ToggleGroup.recipe'
@@ -37,6 +38,7 @@ const GROUPS = {
   inputRadio: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}`,
   inputRadioGroup: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}-group`,
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
+  loader: `${PREFIX}-${LoaderRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
   toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
@@ -142,6 +144,8 @@ const fractalPreset = definePreset({
         inputTextLabel: InputTextRecipes.inputTextLabel,
         inputTextMessage: InputTextRecipes.inputTextMessage,
         inputTextWrapper: InputTextRecipes.inputTextWrapper,
+
+        loader: LoaderRecipes.loader,
 
         selectContainer: SelectRecipes.selectContainer,
         selectDescription: SelectRecipes.selectDescription,
