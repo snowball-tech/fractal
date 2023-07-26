@@ -1,3 +1,14 @@
+# @snowball-tech/fractal [2.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.2.1...@snowball-tech/fractal@2.3.0) (2023-07-26)
+
+### ✨ Features
+
+- **autocomplete:** use the newly created loader ([eabbff9](https://github.com/snowball-tech/fractal/commit/eabbff91250f8c79743883b0423f63d04456982d))
+- **loader:** add the `Loader` component ([f3dea31](https://github.com/snowball-tech/fractal/commit/f3dea31d280da603bf71141ea08028f222a873b2))
+
+### 🐛 Bug Fixes
+
+- **fractal:** add missing exports for new components ([6c7c46b](https://github.com/snowball-tech/fractal/commit/6c7c46bc5ca6fb6932dd780d124e27ddd1bea08b))
+
 ## @snowball-tech/fractal [2.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.2.0...@snowball-tech/fractal@2.2.1) (2023-07-26)
 
 ### 🐛 Bug Fixes
