@@ -142,6 +142,10 @@ export function extendConditions(
     checkedDisabled:
       '&:is(:checked, [data-checked], [aria-checked=true]):is(:disabled, [disabled], .disabled)',
 
+    completed: '&:is([data-completed="true"], .completed)',
+    groupCompleted: '.group:is([data-completed="true"], .completed) &',
+    peerCompleted: '.peer:is([data-completed="true"], .completed) ~ &',
+
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   }
 

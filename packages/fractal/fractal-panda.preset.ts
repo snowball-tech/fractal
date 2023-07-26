@@ -20,6 +20,7 @@ import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as LoaderRecipes from '@/components/Loader/Loader.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
+import * as StepperRecipes from '@/components/Stepper/Stepper.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
 import * as ToggleGroupRecipes from '@/components/ToggleGroup/ToggleGroup.recipe'
 import * as TypographyRecipes from '@/components/Typography/Typography.recipe'
@@ -162,6 +163,9 @@ const fractalPreset = definePreset({
         selectLabel: SelectRecipes.selectLabel,
         selectTrigger: SelectRecipes.selectTrigger,
         selectValue: SelectRecipes.selectValue,
+
+        stepper: StepperRecipes.stepper,
+        step: StepperRecipes.step,
 
         toggle: ToggleRecipes.toggle,
         toggleGroup: ToggleGroupRecipes.toggleGroup,
