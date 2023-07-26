@@ -1,5 +1,6 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
 import { card, typography } from '@snowball-tech/fractal-panda/recipes'
+import omit from 'lodash/fp/omit'
 
 import { DEFAULT_COLOR } from './Card.constants'
 import type { CardProps } from './Card.types'
@@ -20,6 +21,7 @@ export const Card = ({
         card({ color }),
         typography({ variant: 'body-1' }),
       )}
+      {...omit(['className'], props)}
     >
       {children}
     </div>
