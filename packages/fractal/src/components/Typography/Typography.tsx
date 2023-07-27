@@ -1,5 +1,6 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
 import { typography } from '@snowball-tech/fractal-panda/recipes'
+import omit from 'lodash/fp/omit'
 import { type ElementType, createElement } from 'react'
 
 import {
@@ -24,7 +25,10 @@ export const Typography = ({
 }: TypographyProps) => {
   return createElement(
     element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType),
-    { className: cx(props.className, typography({ variant })) },
+    {
+      className: cx(props.className, typography({ variant })),
+      ...omit(['className'], props),
+    },
     children,
   )
 }
