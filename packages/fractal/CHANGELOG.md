@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [2.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.0...@snowball-tech/fractal@2.4.1) (2023-07-27)
+
+### 👷 Build
+
+- actually run the postbuild job ([b69a677](https://github.com/snowball-tech/fractal/commit/b69a6772b529ff0bfd851a454e79e34d7482fff4))
+- add CSS compression ([742a8ac](https://github.com/snowball-tech/fractal/commit/742a8ac00d058f174749ff0871803ad4c02dfa26))
+
 # @snowball-tech/fractal [2.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.3.1...@snowball-tech/fractal@2.4.0) (2023-07-27)
 
 ### ✨ Features
