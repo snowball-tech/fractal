@@ -11,6 +11,12 @@ export interface ButtonProps
   fullWidth?: boolean
   /** The icon to display in the button. */
   icon?: ReactNode
+  /**
+   * Indicates if you want to only display the icon.
+   * The label still is mandatory and will be used as an `aria-label` for
+   * accessibility.
+   */
+  iconOnly?: boolean
   /** The position of the icon in the button. */
   iconPosition?: 'left' | 'right'
   /** The label of the button. */
