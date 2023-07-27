@@ -5538,13 +5538,13 @@ __metadata:
     "@types/lodash": ^4.14.196
     "@types/prettier": ^2.7.3
     "@types/prop-types": ^15.7.5
-    "@types/react": ^18.2.16
+    "@types/react": ^18.2.17
     "@types/react-dom": ^18.2.7
     "@vitejs/plugin-react-swc": ^3.3.2
     country-flag-icons: ^1.5.7
     csso-cli: ^4.0.2
     eslint: ^8.45.0
-    libphonenumber-js: ^1.10.37
+    libphonenumber-js: ^1.10.38
     lodash: ^4.17.21
     normalize.css: ^8.0.1
     postcss: ^8.4.27
@@ -5557,7 +5557,7 @@ __metadata:
     storybook-addon-mock: ^4.1.0
     tsup: ^7.1.0
     typescript: ^5.1.6
-    vercel: ^31.1.0
+    vercel: ^31.1.1
     vite: ^4.4.7
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
@@ -7389,14 +7389,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.16":
-  version: 18.2.16
-  resolution: "@types/react@npm:18.2.16"
+"@types/react@npm:^18.2.17":
+  version: 18.2.17
+  resolution: "@types/react@npm:18.2.17"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 3d4fdc12509e0098e0dbb4bacdea53e8ccc6632e9df63d9f2711c77aa81ce3b2bb9c76d087f284034b25fd7245680167f4832bf6e4df960c5af2634b52adfd0c
+  checksum: 150516b31bd98b635e4a56bcf2af007330b35cccb6e35e902f46a47f0e81e30c46cdacc095e91051bdf2f33e4846e7e62fd51b67e064dc7d15c00e15dfa449d5
   languageName: node
   linkType: hard
 
@@ -7846,10 +7846,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:3.9.1":
-  version: 3.9.1
-  resolution: "@vercel/next@npm:3.9.1"
-  checksum: 7ec12a731b951f1eaf7cb00c5a49785cb24fe8c5f31b3de80a49a3366ac177c92c54d93ff53ea9d60f75baafb5be23b7800dafae5a23bd6f4918afdd97f6c13b
+"@vercel/next@npm:3.9.2":
+  version: 3.9.2
+  resolution: "@vercel/next@npm:3.9.2"
+  checksum: da6c9d4dc2eefade3916328c5a8f5843460dd1ade16e1bb51326875863c94bc442bc518d8e02c3e784a72a056c3ae1b06b83096b10e5cd944d490f3dfb9ce94b
   languageName: node
   linkType: hard
 
@@ -18395,10 +18395,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.10.37":
-  version: 1.10.37
-  resolution: "libphonenumber-js@npm:1.10.37"
-  checksum: c28f7623226d6ab33c48044f12e772d35dfdbebae53e89434840f64da92e92736fa547a47b48d99050f225d921df71d9827848f78d6c62a063dec4c44dad1b1b
+"libphonenumber-js@npm:^1.10.38":
+  version: 1.10.38
+  resolution: "libphonenumber-js@npm:1.10.38"
+  checksum: dc7adb8e081d525b4ef7589aea97a8f620eafa5a5d8a64987f696e20262e8bd40bd91ff3282cf5798148ebfcd158fd55cdcb377328438f05513e5430fe9605a1
   languageName: node
   linkType: hard
 
@@ -26707,14 +26707,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^31.1.0":
-  version: 31.1.0
-  resolution: "vercel@npm:31.1.0"
+"vercel@npm:^31.1.1":
+  version: 31.1.1
+  resolution: "vercel@npm:31.1.1"
   dependencies:
     "@vercel/build-utils": 6.8.2
     "@vercel/go": 2.5.1
     "@vercel/hydrogen": 0.0.64
-    "@vercel/next": 3.9.1
+    "@vercel/next": 3.9.2
     "@vercel/node": 2.15.6
     "@vercel/python": 3.1.60
     "@vercel/redwood": 1.1.15
@@ -26724,7 +26724,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: c8a5fa0fe8b0f748b888bf0a356335aff0d62e086b4e0956ab6acbdacfc681f85270e5077773847df793232b129a976a15fed47dfeaeb587fabd7bd850983c70
+  checksum: e597c16da23a7c378e884c5a568802b1b58287cbd1ed4822743abef74b44b5ae4ba6eb9f656a5d668ebb5630e2bd53860ddc62415365de71c19b8a7967f79b96
   languageName: node
   linkType: hard
 
