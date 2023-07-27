@@ -51,6 +51,10 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       margin: 'unset',
     },
 
+    '&.icon-only': {
+      width: '48px',
+    },
+
     _active: {
       transition: 'none',
     },
@@ -123,5 +127,17 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+  },
+})
+
+export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
+  description: 'Button icon',
+  name: 'buttonIcon',
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  base: {
+    height: '24px',
+    mt: 'var(--size-spacing-half)',
+    width: '24px',
   },
 })

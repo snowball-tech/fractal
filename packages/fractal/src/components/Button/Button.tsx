@@ -2,6 +2,7 @@ import { Pressable } from '@ark-ui/react'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   button,
+  buttonIcon,
   buttonLabel,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
@@ -25,6 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       fullWidth = false,
       icon,
+      iconOnly = false,
       iconPosition = 'right',
       label,
       onClick,
@@ -43,6 +45,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       !isEmpty(icon)
         ? `addendum ${iconPosition === 'right' ? 'suffix' : 'prefix'}`
         : '',
+      iconOnly ? 'icon-only' : '',
       props.className,
     )
 
@@ -50,6 +53,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Pressable
         {...(props.id !== undefined ? { id: props.id } : {})}
         ref={ref}
+        aria-label={label}
         className={buttonClassNames}
         {...(props.dir !== undefined
           ? { dir: props.dir as 'ltr' | 'rtl' }
@@ -61,17 +65,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...(isFunction(onLongClick)
           ? { onLongPress: (event) => onLongClick(event) }
           : {})}
-        aria-label={label}
         title={label}
         {...omit(['className', 'dir', 'id'], props)}
       >
-        {icon && iconPosition === 'left' && icon}
+        {icon && iconPosition === 'left' ? (
+          <div className={buttonIcon()}>{icon}</div>
+        ) : (
+          false
+        )}
 
-        <div className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
-          {label}
-        </div>
+        {!iconOnly ? (
+          <div className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
+            {label}
+          </div>
+        ) : (
+          false
+        )}
 
-        {icon && iconPosition === 'right' && icon}
+        {icon && iconPosition === 'right' ? (
+          <div className={buttonIcon()}>{icon}</div>
+        ) : (
+          false
+        )}
       </Pressable>
     )
   },

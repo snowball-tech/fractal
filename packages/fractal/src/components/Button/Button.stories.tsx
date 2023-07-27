@@ -40,6 +40,7 @@ const meta = {
     disabled: false,
     fullWidth: false,
     icon: 'Send',
+    iconOnly: false,
     iconPosition: 'right',
     label: 'Punch it, Chewie!',
     type: 'button',
