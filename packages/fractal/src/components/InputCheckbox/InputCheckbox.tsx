@@ -1,5 +1,6 @@
 import { UilCheck as CheckIcon } from '@iconscout/react-unicons'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
+import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
@@ -12,7 +13,7 @@ import {
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { type ForwardedRef, forwardRef } from 'react'
+import { type ForwardedRef, MouseEvent, forwardRef, useRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -42,6 +43,9 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     }: InputCheckboxProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const checkboxRef = useRef<HTMLButtonElement>(null)
+    const combinedRef = composeRefs(ref, checkboxRef)
+
     const groupClassNames = cx(
       `${PREFIX}-${GROUP_NAME}`,
       inputCheckboxContainer({ color, variant }),
@@ -51,11 +55,17 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       required ? 'required' : '',
     )
 
+    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+      if (event.target) {
+        ;(event.target as HTMLButtonElement).blur()
+      }
+    }
+
     return (
       <div className={groupClassNames}>
         <RxCheckbox.Root
           id={id}
-          ref={ref}
+          ref={combinedRef}
           {...(checked !== undefined ? { checked } : {})}
           className={inputCheckbox({ color, variant })}
           {...(defaultChecked !== undefined ? { defaultChecked } : {})}
@@ -63,12 +73,8 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
           name={name || id}
           required={required}
           value={value}
-          {...(isFunction(onCheckedChange)
-            ? {
-                onCheckedChange: (checkedState) =>
-                  onCheckedChange(checkedState),
-              }
-            : {})}
+          onClick={handleClick}
+          {...(isFunction(onCheckedChange) ? { onCheckedChange } : {})}
           {...omit(['className'], props)}
         >
           <RxCheckbox.Indicator

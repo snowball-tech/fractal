@@ -57,9 +57,9 @@ export const ToggleGroupItem = forwardRef<
       >
         {icon}
 
-        <span className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
+        <div className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
           {label}
-        </span>
+        </div>
       </RxToggleGroup.Item>
     )
   },

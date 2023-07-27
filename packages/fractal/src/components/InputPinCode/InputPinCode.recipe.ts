@@ -12,11 +12,16 @@ export const inputPinCodeContainer: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      sm: {
+        width: 'fit-content',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--size-spacing-1)',
       maxWidth: '100%',
-      width: 'fit-content',
+      width: '100%',
     },
   })
 
@@ -53,9 +58,14 @@ export const inputPinCodeFields: ReturnType<typeof defineRecipe> = defineRecipe(
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      sm: {
+        width: 'fit-content',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       gap: 'var(--size-spacing-1)',
-      width: 'fit-content',
+      width: '100%',
     },
   },
 )
@@ -69,6 +79,14 @@ export const inputPinCodeField: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
+    '& .fractal-inputTextContainer': {
+      px: 0,
+    },
+
+    '& input': {
+      px: 0,
+    },
+
     '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
       display: 'none',
     },
@@ -77,7 +95,18 @@ export const inputPinCodeField: ReturnType<typeof defineRecipe> = defineRecipe({
       MozAppearance: 'textfield',
     },
 
-    maxWidth: '100px!',
+    _suffix: {
+      maxWidth: 'calc(64px + (var(--size-spacing-5) / 2))!',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    maxWidth: '64px!',
+    minWidth: '20px',
+    sm: {
+      '& input': {
+        px: 'var(--size-input-padding-horizontal)',
+      },
+    },
     textAlign: 'center',
     width: 'fit-content',
   },

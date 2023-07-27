@@ -72,9 +72,9 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       >
         {icon}
 
-        <span className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
+        <div className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
           {label}
-        </span>
+        </div>
       </RxToggle.Root>
     )
   },

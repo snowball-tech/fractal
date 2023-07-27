@@ -1,3 +1,4 @@
+import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
@@ -41,7 +42,7 @@ const items = (
   </>
 )
 
-const meta = {
+const meta: Meta<InputRadioGroupProps> = {
   argTypes: {
     asChild: { table: { disable: true } },
     children: {
@@ -69,6 +70,22 @@ const meta = {
     required: false,
   },
   component: InputRadioGroup,
+  decorators: [
+    function WithArgs(Story, context) {
+      const [, setArgs] = useArgs<typeof context.args>()
+
+      const onValueChange = (newValue: string) => {
+        context.args.onValueChange?.(newValue)
+
+        // Check if the component is controlled.
+        if (context.args.value !== undefined) {
+          setArgs({ value: newValue })
+        }
+      }
+
+      return <Story args={{ ...context.args, onValueChange }} />
+    },
+  ],
   parameters: {
     controls: {
       exclude: ['value'],
