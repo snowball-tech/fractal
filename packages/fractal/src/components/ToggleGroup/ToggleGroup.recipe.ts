@@ -14,6 +14,11 @@ export const toggleGroup: ReturnType<typeof defineRecipe> = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '&[data-orientation="horizontal"]': {
+      sm: {
+        flexWrap: 'nowrap',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       flexDirection: 'row',
       flexWrap: 'wrap',
     },
