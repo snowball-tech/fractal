@@ -10,3 +10,5 @@ export enum Sizes {
 }
 
 export const DEFAULT_SIZE = Sizes.M
+
+export const DURATION = '3.5s'
