@@ -24,6 +24,7 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
+  type ChangeEvent,
   type ForwardedRef,
   forwardRef,
   useEffect,
@@ -100,17 +101,20 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       isSuccessful ? 'success' : '',
     )
 
-    const handleInputChange = (newValue: string) => {
+    const handleInputChange = (
+      event: ChangeEvent<HTMLInputElement>,
+      newValue: string,
+    ) => {
       if (!isOpen) {
         setKeepFocus(true)
       }
 
       if (isFunction(onInputChange)) {
-        onInputChange(newValue)
+        onInputChange(event, newValue)
       }
 
       if (isFunction(onChange)) {
-        onChange(newValue)
+        onChange(event, newValue)
       }
     }
 

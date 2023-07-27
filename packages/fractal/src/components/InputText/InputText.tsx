@@ -39,7 +39,6 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       label,
       name,
       onChange,
-      onRawChange,
       placeholder,
       prefix,
       readOnly = false,
@@ -73,12 +72,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     )
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-      if (isFunction(onRawChange)) {
-        onRawChange(event)
-      }
-
       if (isFunction(onChange)) {
-        onChange(event.target.value)
+        onChange(event, event.target.value)
       }
     }
 

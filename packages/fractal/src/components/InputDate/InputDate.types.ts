@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { ChangeEvent, HTMLAttributes } from 'react'
 
 export type DateFormat = {
   day?: number
@@ -73,9 +73,13 @@ export interface InputDateProps
    */
   name?: string
   /** Event handler called when the date value is changed. */
-  onChange?: (newDate: DateFormat) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newDate: DateFormat) => void
   /** Event handler called when one of the field of the date input is changed. */
-  onFieldChange?: (type: keyof DateFormat, newDay: number) => void
+  onFieldChange?: (
+    event: ChangeEvent<HTMLInputElement>,
+    type: keyof DateFormat,
+    newDay: number,
+  ) => void
   /**
    * A string to display in each of the date field when the value is
    * empty.

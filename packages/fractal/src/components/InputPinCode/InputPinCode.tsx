@@ -1,5 +1,3 @@
-'use client'
-
 import {
   UilCheckCircle as CheckCircleIcon,
   UilExclamationCircle as ExclamationCircleIcon,
@@ -22,7 +20,7 @@ import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 import uniqueId from 'lodash/fp/uniqueId'
-import type { FocusEvent } from 'react'
+import { type ChangeEvent, type FocusEvent, type KeyboardEvent } from 'react'
 
 import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
@@ -48,6 +46,7 @@ export const InputPinCode = ({
   onChange,
   onFieldChange,
   onFocus,
+  onKeyDown,
   placeholders,
   readOnly = false,
   required = false,
@@ -55,6 +54,8 @@ export const InputPinCode = ({
   value,
   ...props
 }: InputPinCodeProps) => {
+  let skipFocusChange = false
+
   const hasErrorMessage = !isEmpty(error)
   const hasSuccessMessage = !isEmpty(success)
 
@@ -72,7 +73,11 @@ export const InputPinCode = ({
     isSuccessful ? 'success' : '',
   )
 
-  const handleChange = (newValue: string, index: number) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement>,
+    newValue: string,
+    index: number,
+  ) => {
     const newValueAsInt = parseInt(newValue, 10)
 
     if (
@@ -89,29 +94,34 @@ export const InputPinCode = ({
       oldCode.substring(0, index) + newValue + oldCode.substring(index + 1)
 
     if (isFunction(onChange)) {
-      onChange(newCode)
+      onChange(event, newCode)
     }
 
     if (isFunction(onFieldChange)) {
-      onFieldChange(index, newValueAsInt)
+      onFieldChange(event, index, newValueAsInt)
+    }
+
+    const input = event.target
+    if (input) {
+      input.select()
+    }
+
+    if (skipFocusChange) {
+      skipFocusChange = false
+
+      return
     }
 
     if (index < length - 1) {
       const nextIndex = Math.min(newCode.length, index + 1)
-      console.log(nextIndex)
       const nextInput = document.getElementById(
         `${id}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
       }
-    } else {
-      const input = document.getElementById(
-        `${id}-${index}`,
-      ) as HTMLInputElement
-      if (input) {
-        input.blur()
-      }
+    } else if (input) {
+      input.blur()
     }
   }
 
@@ -126,7 +136,52 @@ export const InputPinCode = ({
       onFocus(event, index)
     }
 
-    event.target.select()
+    if (event.target) {
+      event.target.select()
+    }
+  }
+
+  const handleKeyDown = (
+    event: KeyboardEvent<HTMLInputElement>,
+    index: number,
+  ) => {
+    if (isFunction(onKeyDown)) {
+      onKeyDown(event, index)
+    }
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        if (index > 0) {
+          const previousInput = document.getElementById(
+            `${id}-${index - 1}`,
+          ) as HTMLInputElement
+          if (previousInput) {
+            previousInput.focus()
+          }
+        }
+        event.preventDefault()
+        break
+
+      case 'ArrowRight':
+        if (index < length - 1) {
+          const nextInput = document.getElementById(
+            `${id}-${index + 1}`,
+          ) as HTMLInputElement
+          if (nextInput) {
+            nextInput.focus()
+          }
+        }
+        event.preventDefault()
+        break
+
+      case 'ArrowUp':
+      case 'ArrowDown':
+        skipFocusChange = true
+        break
+
+      default:
+        break
+    }
   }
 
   return (
@@ -190,8 +245,9 @@ export const InputPinCode = ({
                 }
               : {})}
             onBlur={(event) => handleBlur(event, index)}
-            onChange={(newDigit) => handleChange(newDigit, index)}
+            onChange={(event, newDigit) => handleChange(event, newDigit, index)}
             onFocus={(event) => handleFocus(event, index)}
+            onKeyDown={(event) => handleKeyDown(event, index)}
             {...omit(['className'], props)}
           />
         ))}

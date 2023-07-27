@@ -51,12 +51,7 @@ export interface InputTextProps
    * Event handler called when the text input value is changed with the new
    * string value.
    */
-  onChange?: (newValue: string) => void
-  /**
-   * Event handler called with the raw event. when the text input value is
-   * changed.
-   */
-  onRawChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void
   /** A string to display when the text input is empty. */
   placeholder?: string
   /** The prefix (icon or text) to display to the left of the text input. */

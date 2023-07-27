@@ -1,4 +1,4 @@
-import type { FocusEvent } from 'react'
+import type { ChangeEvent, FocusEvent, KeyboardEvent } from 'react'
 
 import type { InputTextProps } from '@/components/InputText/InputText.types'
 
@@ -8,7 +8,7 @@ export interface InputPinCodeProps
     | 'fullWidth'
     | 'onBlur'
     | 'onFocus'
-    | 'onRawChange'
+    | 'onKeyDown'
     | 'placeholder'
     | 'prefix'
     | 'suffix'
@@ -63,17 +63,26 @@ export interface InputPinCodeProps
    */
   onBlur?: (event: FocusEvent<HTMLInputElement>, index: number) => void
   /** Event handler called when the pin code value is changed. */
-  onChange?: (newCode: string) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newCode: string) => void
   /**
    * Event handler called when one of the field of the pin code input is
    * changed.
    */
-  onFieldChange?: (newDigit: number, index: number) => void
+  onFieldChange?: (
+    event: ChangeEvent<HTMLInputElement>,
+    newDigit: number,
+    index: number,
+  ) => void
   /**
    * Event handler called when one of the field of the pin code input is
    * focused.
    */
   onFocus?: (event: FocusEvent<HTMLInputElement>, index: number) => void
+  /**
+   * Event handler called when a key is pressed in one of the field of the pin
+   * code input.
+   */
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>, index: number) => void
   /**
    * A string to display in each of the digit field when the value is
    * empty.

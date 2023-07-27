@@ -84,7 +84,7 @@ export interface SelectProps
   /**
    * The controlled value of the select.
    *
-   * Must be used in conjunction with `onChange`.
+   * Must be used in conjunction with `onSelect`.
    */
   value?: string
 }
