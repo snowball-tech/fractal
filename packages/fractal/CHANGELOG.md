@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.0...@snowball-tech/fractal@2.5.1) (2023-07-27)
+
+### 🐛 Bug Fixes
+
+- **groups:** fix wrapping in horizontal mode ([90756ae](https://github.com/snowball-tech/fractal/commit/90756ae8be513e1f5c8b5a68f06eed90191d3ca5))
+
+### 📝 Documentation
+
+- **button:** add example of icon only buttons ([0033576](https://github.com/snowball-tech/fractal/commit/0033576ed3dbec301fcd0ac2c32ca0995cbda2dc))
+
 # @snowball-tech/fractal [2.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.2...@snowball-tech/fractal@2.5.0) (2023-07-27)
 
 ### ✨ Features
