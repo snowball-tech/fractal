@@ -41,7 +41,14 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages'],
+        order: [
+          'Fractal',
+          'Atoms',
+          'Molecules',
+          'Organisms',
+          'Templates',
+          'Pages',
+        ],
       },
     },
   },
