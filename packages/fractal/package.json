@@ -46,7 +46,7 @@
     "prebuild:storybook": "yarn run -T turbo run update:fonts build:code build:styles --filter=@snowball-tech/fractal --parallel",
     "build:storybook": "yarn run prebuild:storybook && yarn storybook build",
     "prebuild": "yarn run clean:build && mkdir -p ./dist",
-    "build": "yarn run prebuild && yarn run -T turbo build:code build:info build:styles --filter=@snowball-tech/fractal --parallel && yarn run -T turbo build:library --filter=@snowball-tech/fractal",
+    "build": "yarn run prebuild && yarn run -T turbo build:code build:info build:styles --filter=@snowball-tech/fractal --parallel && yarn run -T turbo build:library --filter=@snowball-tech/fractal && yarn run postbuild",
     "postbuild": "yarn run csso --comments none --input dist/fractal.css --source-map file --output dist/fractal.css --stat && yarn run build:stats",
     "build:stats": "./scripts/build-stats.sh",
     "prebuild:library": "mkdir -p ./dist",
