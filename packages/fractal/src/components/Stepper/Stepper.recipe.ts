@@ -19,7 +19,7 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
   },
 })
 
-export const step = defineRecipe({
+export const step: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'A step',
   name: 'step',
 
