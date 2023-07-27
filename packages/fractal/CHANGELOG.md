@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [2.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.3.1...@snowball-tech/fractal@2.4.0) (2023-07-27)
+
+### ✨ Features
+
+- **fractal:** add better keyboard controls to Pin and Date ([eeb29f4](https://github.com/snowball-tech/fractal/commit/eeb29f426763ad07095e416935516579523afe23))
+- **stepper:** add the `Stepper` component ([2f300fd](https://github.com/snowball-tech/fractal/commit/2f300fd58855294b5b7334d3804fb23d4c1897e9))
+
+### 🐛 Bug Fixes
+
+- **fractal:** fix responsivity of all components ([eac5854](https://github.com/snowball-tech/fractal/commit/eac58541581ece4117507c76aef9bb1ebb99c857))
+- **fractal:** fix the landing page of the storybook ([b5c197a](https://github.com/snowball-tech/fractal/commit/b5c197a5306fd0d6efe5ba1bb0f83c6e3dda07bd))
+- **loader:** slow down the loader ([78811f5](https://github.com/snowball-tech/fractal/commit/78811f56f9f9a5756180b58d9656110b1163107f))
+- **stepper:** fix the type of the recipe ([5243a62](https://github.com/snowball-tech/fractal/commit/5243a62c0419c44566742cf81fec9e79ac4c0b2c))
+
 ## @snowball-tech/fractal [2.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.3.0...@snowball-tech/fractal@2.3.1) (2023-07-26)
 
 ### Dependencies
