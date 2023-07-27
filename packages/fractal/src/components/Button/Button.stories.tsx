@@ -93,6 +93,12 @@ export const Display: Story = {
           label='"Display" button with left icon'
           variant="display"
         />
+        <Button
+          icon={<StarIcon />}
+          iconOnly
+          label='"Display" button with icon only'
+          variant="display"
+        />
       </Wrapper>
 
       <Wrapper>
@@ -108,6 +114,13 @@ export const Display: Story = {
           icon={<StarIcon />}
           iconPosition="left"
           label='"Display" disabled button with left icon'
+          variant="display"
+        />
+        <Button
+          disabled
+          icon={<StarIcon />}
+          iconOnly
+          label='"Display" disabled button with icon only'
           variant="display"
         />
       </Wrapper>
@@ -127,12 +140,17 @@ export const Primary: Story = {
   render: () => (
     <>
       <Wrapper>
-        <Button label="Primary button" />
+        <Button label="Primary button" variant="primary" />
         <Button icon={<SendIcon />} label="Primary button with right icon" />
         <Button
           icon={<SendIcon />}
           iconPosition="left"
           label="Primary button with left icon"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly
+          label="Primary button with icon only"
         />
       </Wrapper>
 
@@ -148,6 +166,12 @@ export const Primary: Story = {
           icon={<SendIcon />}
           iconPosition="left"
           label="Primary disabled button with left icon"
+        />
+        <Button
+          disabled
+          icon={<SendIcon />}
+          iconOnly
+          label="Primary disabled button with icon only"
         />
       </Wrapper>
 
@@ -174,6 +198,12 @@ export const Secondary: Story = {
           label="Secondary button with left icon"
           variant="secondary"
         />
+        <Button
+          icon={<CancelIcon />}
+          iconOnly
+          label="Secondary button with icon only"
+          variant="secondary"
+        />
       </Wrapper>
 
       <Wrapper>
@@ -193,6 +223,13 @@ export const Secondary: Story = {
           icon={<CancelIcon />}
           iconPosition="left"
           label="Secondary disabled button with left icon"
+          variant="secondary"
+        />
+        <Button
+          disabled
+          icon={<CancelIcon />}
+          iconOnly
+          label="Secondary disabled button with icon only"
           variant="secondary"
         />
       </Wrapper>

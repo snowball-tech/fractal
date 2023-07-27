@@ -40,7 +40,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonClassNames = cx(
       `${PREFIX}-${GROUP_NAME}`,
       button({ variant }),
-      fullWidth ? 'full-width' : '',
+      fullWidth && !iconOnly ? 'full-width' : '',
       disabled ? 'disabled' : '',
       !isEmpty(icon)
         ? `addendum ${iconPosition === 'right' ? 'suffix' : 'prefix'}`
