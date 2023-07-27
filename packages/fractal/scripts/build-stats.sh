@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Enable globstar expansion to make glob path below work.
+shopt -s globstar
+# And also enable extended glob syntax to exclude some files below.
+shopt -s extglob
+
 # shellcheck disable=SC2181
 
 # Compute and display stats about the built Fractal package
@@ -19,8 +24,8 @@ fi
 
 # Total size
 totalSize=$(du -sh ./dist | awk '{print $1}')
-jsSize=$(du -ch ./dist/**/*.js | grep total$ | awk '{print $1}')
-cssSize=$(du -ch ./dist/*.css | grep total$ | awk '{print $1}')
+jsSize=$(du -ch ./dist/**/!(chunk).js | grep total$ | awk '{print $1}')
+cssSize=$(du -ch ./dist/**/*.css | grep total$ | awk '{print $1}')
 mapsSize=$(du -ch ./dist/**/*.map | grep total$ | awk '{print $1}')
 typesSize=$(du -ch ./dist/**/*.d.ts | grep total$ | awk '{print $1}')
 chunksSize=$(du -ch ./dist/*.js | grep total$ | awk '{print $1}')
