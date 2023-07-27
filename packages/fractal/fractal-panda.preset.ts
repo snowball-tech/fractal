@@ -12,6 +12,7 @@ import {
 import * as AutocompleteRecipes from '@/components/Autocomplete/Autocomplete.recipe'
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as CardRecipes from '@/components/Card/Card.recipe'
+import * as HeaderRecipes from '@/components/Header/Header.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
 import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
@@ -93,8 +94,14 @@ const fractalPreset = definePreset({
 
         button: ButtonRecipes.button,
         buttonLabel: ButtonRecipes.buttonLabel,
+        buttonIcon: ButtonRecipes.buttonIcon,
 
         card: CardRecipes.card,
+
+        header: HeaderRecipes.header,
+        headerBackButton: HeaderRecipes.headerBackButton,
+        headerTitle: HeaderRecipes.headerTitle,
+        headerMenu: HeaderRecipes.headerMenu,
 
         inputCheckbox: InputCheckboxRecipes.inputCheckbox,
         inputCheckboxCheckmark: InputCheckboxRecipes.inputCheckboxCheckmark,
