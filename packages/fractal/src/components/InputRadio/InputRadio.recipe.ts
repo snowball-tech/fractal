@@ -16,6 +16,7 @@ export const inputRadioGroup: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     '&[data-orientation="horizontal"]': {
       flexDirection: 'row',
+      flexWrap: 'wrap',
     },
 
     _fullWidth: {
@@ -25,6 +26,7 @@ export const inputRadioGroup: ReturnType<typeof defineRecipe> = defineRecipe({
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--size-spacing-3)',
+    maxWidth: '100%',
     width: 'fit-content',
   },
 })
@@ -53,6 +55,7 @@ export const inputRadioContainer = defineRecipe({
     borderRadius: 'var(--size-radius-s)',
     display: 'flex',
     gap: 'var(--size-checkbox-gap)',
+    maxWidth: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
     px: 'var(--size-checkbox-padding-horizontal)',
     py: 'var(--size-checkbox-padding-vertical)',
     width: 'fit-content',

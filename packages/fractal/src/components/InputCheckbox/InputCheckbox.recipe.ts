@@ -96,16 +96,15 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
       (colors, colorName) => ({
         ...colors,
         [colorName]: {
+          '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked, :disabled, [data-disabled], .disabled))':
+            {
+              backgroundColor: `var(--color-decorative-${colorName}-90, var(--color-brand-${colorName}, var(--color-base-white)))`,
+            },
+
           '.fractal-input-checkbox:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:is(:checked, [data-checked], [aria-checked=true])':
             {
               backgroundColor: `var(--color-decorative-${colorName}-70, var(--color-brand-${colorName}, var(--color-base-${colorName}, var(--color-base-white))))`,
             },
-
-          _hoverNotChecked: {
-            _notDisabled: {
-              backgroundColor: `var(--color-decorative-${colorName}-90, var(--color-brand-${colorName}, var(--color-base-white)))`,
-            },
-          },
 
           _inputCheckboxDisabled: {
             borderColor: 'var(--color-box-checkbox-disabled)',

@@ -58,12 +58,6 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '& > *': {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'center',
-    },
-
     '& > p': {
       margin: 'unset',
     },
@@ -94,7 +88,6 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
     outline: 'none',
     px: 'var(--size-button-padding-horizontal)',
     py: 'var(--size-button-padding-vertical)',
-    textAlign: 'center',
     transitionDuration: '300ms',
     transitionProperty: 'background-color, color',
     transitionTimingFunction: 'ease-out',
@@ -135,5 +128,15 @@ export const toggleLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'toggleLabel',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  base: {},
+  base: {
+    flex: 1,
+    maxHeight: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden',
+    pt: 'var(--size-spacing-half)',
+    textAlign: 'center',
+    textOverflow: 'ellipsis',
+    verticalAlign: 'middle',
+    whiteSpace: 'nowrap',
+  },
 })

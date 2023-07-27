@@ -110,6 +110,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
     style={{
       alignItems: 'flex-end',
       display: 'flex',
+      flexWrap: 'wrap',
       gap: 'var(--size-spacing-2)',
       marginBottom: 'var(--size-spacing-2)',
     }}

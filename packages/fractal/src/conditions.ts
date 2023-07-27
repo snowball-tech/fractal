@@ -9,142 +9,59 @@ export function extendConditions(
 
     activeNotDisabled:
       '&:is(:active, [data-active]):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
-    activeDisabled:
-      '&:is(:active, [data-active], :disabled, [disabled], [data-disabled], .disabled)',
     groupActiveNotDisabled:
       '.group:is(:active, [data-active]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) &,',
-    groupActiveDisabled:
-      '.group:is(:active, [data-active], :disabled, [disabled], [data-disabled], .disabled) &',
-    peerActiveNotDisabled:
-      '.peer:is(:active, [data-active]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) ~ &',
-    peerActiveDisabled:
-      '.peer:is(:active, [data-active], :disabled, [disabled], [data-disabled], .disabled) ~ &',
 
-    readOnly: '&:is(:read-only, [data-read-only], .readonly)',
-    groupReadOnly: '.group:is(:read-only, [data-read-only], .readonly) &',
-    peerReadOnly: '.peer:is(:read-only, [data-read-only], .readonly) ~ &',
     readOnlyNotDisabled:
       '&:is(:read-only, [data-read-only], .readonly):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
-    groupReadOnlyNotDisabled:
-      '.group:is(:read-only, [data-read-only], .readonly):not(:is(:disabled, [disabled], [data-disabled], .disabled)) &',
-    peerReadOnlyNotDisabled:
-      '.peer:is(:read-only, [data-read-only], .readonly):not(:is(:disabled, [disabled], [data-disabled], .disabled)) ~ &',
 
     writable:
       '&:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly))',
-    groupWritable:
-      '.group:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) &',
-    peerWritable:
-      '.peer:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) ~ &',
     groupNotWritable:
       '.group:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly) &',
-    peerNotWritable:
-      '.peer:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly) ~ &',
 
-    hoverFocus: '&:is(:hover, [data-hover], :focus, [data-focus])',
+    hoverNotChecked:
+      '&:is(:hover, [data-hover]):not(:is(:checked, [data-checked], .checked))',
+
     hoverNotFocus: '&:is(:hover, [data-hover]):not(:is(:focus, [data-focus]))',
-    groupHoverFocus: '.group:is(:hover, [data-hover], :focus, [data-focus]) &',
-    groupHoverNotFocus:
-      '.group:is(:hover, [data-hover]):not(:is(:focus, [data-focus])) &',
-    peerHoverFocus: '.peer:is(:hover, [data-hover], :focus, [data-focus]) ~ &',
-    peerHoverNotFocus:
-      '.peer:is(:hover, [data-hover]):not(:is(:focus, [data-focus])) ~ &',
-
     hoverFocusNotDisabled:
       '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
-    groupHoverFocusNotDisabled:
-      '.group:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) &',
-    peerHoverFocusNotDisabled:
-      '.peer:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) ~',
 
-    hoverChecked:
-      '&:is(:hover, [data-hover], :checked, [data-checked], .checked)',
-    groupHoverChecked:
-      '.group:is(:hover, [data-hover], :checked, [data-checked], .checked) &',
-    peerHoverChecked:
-      '.peer:is(:hover, [data-hover], :checked, [data-checked], .checked) ~',
-    hoverNotChecked:
-      '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked))',
-    groupHoverNotChecked:
-      '.group:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked)) &',
-    peerHoverNotChecked:
-      '.peer:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked)) ~',
-
-    hoverFocusWritable:
-      '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly))',
-    groupHoverFocusWritable:
-      '.group:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) &',
-    peerHoverFocusWritable:
-      '.peer:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly)) ~',
+    checkedNotDisabled:
+      '&:is(:checked, [data-checked], [aria-checked=true]):not(:is(:disabled, [disabled], .disabled))',
 
     disabled: '&:is(:disabled, [disabled], .disabled)',
     groupDisabled: '.group:is(:disabled, [disabled], .disabled) &',
-    peerDisabled: '.peer:is(:disabled, [disabled], .disabled) ~ &',
 
     valid: '&:is(:valid, [valid], .valid)',
     groupValid: '.group:is(:valid, [valid], .valid) &',
     peerValid: '.peer:is(:valid, [valid], .valid) ~ &',
 
-    toggled: '&:is([aria-pressed="true"], [data-state="on"], .toggled)',
-    groupToggled:
-      '.group:is([aria-pressed="true"], [data-state="on"], .toggled) &',
-    peerToggled:
-      '.peer:is([aria-pressed="true"], [data-state="on"], .toggled) ~ &',
-
-    toggledNotDisabled:
-      '&:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled))',
-    groupToggledNotDisabled:
-      '.group:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled)) &',
-    peerToggledNotDisabled:
-      '.peer:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled)) ~ &',
-
     invalid: '&:is(:invalid, [invalid], .invalid)',
     groupInvalid: '.group:is(:invalid, [invalid], .invalid) &',
     peerInvalid: '.peer:is(:invalid, [invalid], .invalid) ~ &',
 
-    validOrInvalid:
-      '&:is(:valid, [valid], .valid, :invalid, [invalid], .invalid)',
-    groupValidOrInvalid:
-      '.group:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) &',
-    peerValidOrInvalid:
-      '.peer:is(:valid, [valid], .valid, :invalid, [invalid], .invalid) ~ &',
+    toggled: '&:is([aria-pressed="true"], [data-state="on"], .toggled)',
+
+    toggledNotDisabled:
+      '&:is([aria-pressed="true"], [data-state="on"], .toggled):not(:is(:disabled, [disabled], .disabled))',
 
     required: '&:is(:required, [required], .required)',
     groupRequired: '.group:is(:required, [required], .required) &',
-    peerRequired: '.peer:is(:required, [required], .required) ~ &',
-
-    addendum: '&:is(.addendum,.prefix,.suffix)',
-    groupAddendum: '.group:is(.addendum,.prefix,.suffix) &',
-    peerAddendum: '.peer:is(.addendum,.prefix,.suffix) ~ &',
 
     prefix: '&.prefix',
     groupPrefix: '.group.prefix &',
-    peerPrefix: '.peer.prefix ~ &',
 
     suffix: '&.suffix',
     groupSuffix: '.group.suffix &',
-    peerSuffix: '.peer.suffix ~ &',
 
     fullWidth: '&.full-width',
     groupFullWidth: '.group.full-width &',
-    peerFullWidth: '.peer.full-width ~ &',
 
     opened: '&.opened',
     groupOpened: '.group.opened &',
-    peerOpened: '.peer.opened ~ &',
-
-    closed: '&.closed',
-    groupClosed: '.group.closed &',
-    peerClosed: '.peer.closed ~ &',
-
-    checkedNotDisabled:
-      '&:is(:checked, [data-checked], [aria-checked=true]):not(:is(:disabled, [disabled], .disabled))',
-    checkedDisabled:
-      '&:is(:checked, [data-checked], [aria-checked=true]):is(:disabled, [disabled], .disabled)',
 
     completed: '&:is([data-completed="true"], .completed)',
-    groupCompleted: '.group:is([data-completed="true"], .completed) &',
-    peerCompleted: '.peer:is([data-completed="true"], .completed) ~ &',
 
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   }

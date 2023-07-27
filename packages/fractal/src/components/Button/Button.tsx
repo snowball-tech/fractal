@@ -61,13 +61,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...(isFunction(onLongClick)
           ? { onLongPress: (event) => onLongClick(event) }
           : {})}
+        aria-label={label}
+        title={label}
         {...omit(['className', 'dir', 'id'], props)}
       >
         {icon && iconPosition === 'left' && icon}
 
-        <span className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
+        <div className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
           {label}
-        </span>
+        </div>
 
         {icon && iconPosition === 'right' && icon}
       </Pressable>

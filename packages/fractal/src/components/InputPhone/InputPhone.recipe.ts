@@ -12,10 +12,16 @@ export const inputPhoneContainer: ReturnType<typeof defineRecipe> =
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
+      sm: {
+        width: 'unset',
+      },
+
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--size-spacing-1)',
       maxWidth: '100%',
+      width: '100%',
     },
   })
 
