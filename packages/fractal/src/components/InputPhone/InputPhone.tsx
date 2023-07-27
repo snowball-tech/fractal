@@ -328,7 +328,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   prefix={<SearchIcon />}
                   value={search}
                   onBlur={handleSearchBlur}
-                  onChange={handleSearch}
+                  onChange={(_, newSearch) => handleSearch(newSearch, true)}
                 />
 
                 {prefixes.map(
@@ -393,7 +393,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               ) : undefined
             }
             value={number}
-            onChange={(newNumber) => handleNumberChange(newNumber)}
+            onChange={(_, newNumber) => handleNumberChange(newNumber)}
           />
         </div>
 

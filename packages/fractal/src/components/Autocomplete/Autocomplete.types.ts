@@ -2,7 +2,7 @@ import type {
   DropdownMenuContentProps as RxDropdownMenuContentProps,
   DropdownMenuItemProps as RxDropdownMenuItemProps,
 } from '@radix-ui/react-dropdown-menu'
-import type { AllHTMLAttributes, ReactNode } from 'react'
+import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
 import { InputTextProps } from '../InputText/InputText.types'
 
@@ -73,14 +73,17 @@ export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
    * Event handler called when the autocomplete input value is changed or a
    * value is selected.
    */
-  onChange?: (newValue: string) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void
   /** Event handler called when the autocomplete dropdown is closed. */
   onClose?: () => void
   /**
    * Event handler called when the autocomplete input value is changed with the
    * new string value.
    */
-  onInputChange?: (newValue: string) => void
+  onInputChange?: (
+    event: ChangeEvent<HTMLInputElement>,
+    newValue: string,
+  ) => void
   /** Event handler called when the autocomplete dropdown is opened. */
   onOpen?: () => void
   /** Indicates if the dropdown should be opened at the beginning. */

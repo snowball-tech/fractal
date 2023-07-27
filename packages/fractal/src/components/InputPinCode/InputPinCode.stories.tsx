@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import InputPinCode from './InputPinCode'
 
@@ -22,8 +22,11 @@ const meta: Meta<InputPinCodeProps> = {
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
-      const onChange = (newCode: string) => {
-        context.args.onChange?.(newCode)
+      const onChange = (
+        event: ChangeEvent<HTMLInputElement>,
+        newCode: string,
+      ) => {
+        context.args.onChange?.(event, newCode)
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {
@@ -38,7 +41,7 @@ const meta: Meta<InputPinCodeProps> = {
     componentSubtitle:
       '🥷 Do they have a code clearance? - Darth Vader - Star Wars: Episode VI - Return of the Jedi.',
     controls: {
-      exclude: ['onRawChange', 'value'],
+      exclude: ['value'],
     },
   },
 
@@ -77,7 +80,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 export const Examples = () => {
   const [{ value = '' }, setArgs] = useArgs()
 
-  const handleChange = (newCode: string) => {
+  const handleChange = (_: ChangeEvent<HTMLInputElement>, newCode: string) => {
     setArgs({ value: newCode })
   }
 

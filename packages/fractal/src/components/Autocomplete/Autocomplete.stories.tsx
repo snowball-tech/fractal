@@ -11,7 +11,7 @@ import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import isEmpty from 'lodash/fp/isEmpty'
 import kebabCase from 'lodash/fp/kebabCase'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
 
@@ -100,9 +100,6 @@ const meta: Meta<AutocompleteProps> = {
       },
     },
     defaultValue: { control: 'text' },
-    onRawChange: {
-      table: { disable: true },
-    },
     prefix: {
       mapping: {
         Cancel: <CancelIcon />,
@@ -157,8 +154,11 @@ const meta: Meta<AutocompleteProps> = {
         })
       }
 
-      const onChange = (newValue: string) => {
-        context.args.onChange?.(newValue)
+      const onChange = (
+        event: ChangeEvent<HTMLInputElement>,
+        newValue: string,
+      ) => {
+        context.args.onChange?.(event, newValue)
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {

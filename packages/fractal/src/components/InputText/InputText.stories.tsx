@@ -20,9 +20,6 @@ const meta: Meta<InputTextProps> = {
     onChange: {
       control: false,
     },
-    onRawChange: {
-      control: false,
-    },
     prefix: {
       mapping: {
         Cancel: <CancelIcon />,
@@ -65,8 +62,11 @@ const meta: Meta<InputTextProps> = {
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
-      const onChange = (newValue: string) => {
-        context.args.onChange?.(newValue)
+      const onChange = (
+        event: ChangeEvent<HTMLInputElement>,
+        newValue: string,
+      ) => {
+        context.args.onChange?.(event, newValue)
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {
@@ -74,11 +74,7 @@ const meta: Meta<InputTextProps> = {
         }
       }
 
-      const onRawChange = (event: ChangeEvent<HTMLInputElement>) => {
-        context.args.onRawChange?.(event)
-      }
-
-      return <Story args={{ ...context.args, onChange, onRawChange }} />
+      return <Story args={{ ...context.args, onChange }} />
     },
   ],
   parameters: {

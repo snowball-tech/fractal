@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps, ReactNode } from 'react'
+import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import InputDate from './InputDate'
 import type { DateFormat } from './InputDate.types'
@@ -24,14 +24,16 @@ const meta: Meta<InputDateProps> = {
     onChange: {
       control: false,
       table: {
-        type: { summary: `(newDate: ${dateFormat}) => void` },
+        type: {
+          summary: `(event: ChangeEvent<HTMLInputElement>, newDate: ${dateFormat}) => void`,
+        },
       },
     },
     onFieldChange: {
       control: false,
       table: {
         type: {
-          summary: `(type: 'day' | 'month' | 'year', newValue: number) => void`,
+          summary: `(event: ChangeEvent<HTMLInputElement>, type: 'day' | 'month' | 'year', newValue: number) => void`,
         },
       },
     },
@@ -69,8 +71,11 @@ const meta: Meta<InputDateProps> = {
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
-      const onChange = (newDate: DateFormat) => {
-        context.args.onChange?.(newDate)
+      const onChange = (
+        event: ChangeEvent<HTMLInputElement>,
+        newDate: DateFormat,
+      ) => {
+        context.args.onChange?.(event, newDate)
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {
