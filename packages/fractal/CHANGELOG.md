@@ -1,3 +1,18 @@
+# @snowball-tech/fractal [2.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.2...@snowball-tech/fractal@2.5.0) (2023-07-27)
+
+### ✨ Features
+
+- **button:** add icon only mode ([a943325](https://github.com/snowball-tech/fractal/commit/a9433257c638ceee48bc2c7bfad12c2a26115a12))
+- **header:** add the header component ([fd5c56b](https://github.com/snowball-tech/fractal/commit/fd5c56b5bcb84c19f470c0df13b3d4dc0acefdb4))
+
+### 🐛 Bug Fixes
+
+- **typography:** spread the remaining props ([ced16fc](https://github.com/snowball-tech/fractal/commit/ced16fc300a5fc04aac01be4036b0e28a18a60d0))
+
+### 📦 Dependencies
+
+- update dependencies ([05bcd08](https://github.com/snowball-tech/fractal/commit/05bcd089d52ee4b166d91d6a2af6b9502c67ccdf))
+
 ## @snowball-tech/fractal [2.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.1...@snowball-tech/fractal@2.4.2) (2023-07-27)
 
 ### 👷 Build
