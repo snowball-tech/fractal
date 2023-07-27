@@ -10,13 +10,14 @@ export const loader: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'loader',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['Loader'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
 
   defaultVariants: {
     size: DEFAULT_SIZE,
   },
-
-  jsx: ['Loader'],
 
   variants: {
     size: Object.values(Sizes).reduce(

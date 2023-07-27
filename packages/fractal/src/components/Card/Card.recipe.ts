@@ -10,6 +10,9 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'card',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['Card'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     borderRadius: 'var(--size-radius-s)',
     padding: 'var(--size-spacing-2)',
@@ -18,8 +21,6 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   defaultVariants: {
     color: DEFAULT_COLOR,
   },
-
-  jsx: ['Card'],
 
   variants: {
     color: Object.values(Colors).reduce(
