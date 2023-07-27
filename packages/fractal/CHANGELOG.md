@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.1...@snowball-tech/fractal@2.4.2) (2023-07-27)
+
+### 👷 Build
+
+- fix the build output file ([dbe0254](https://github.com/snowball-tech/fractal/commit/dbe0254b4e5ba6cbc58a9905168ef8ef017509f0))
+
 ## @snowball-tech/fractal [2.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.4.0...@snowball-tech/fractal@2.4.1) (2023-07-27)
 
 ### 👷 Build
