@@ -10,13 +10,14 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
   name: 'typography',
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  jsx: ['Typography'],
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
 
   defaultVariants: {
     variant: DEFAULT_VARIANT,
   },
-
-  jsx: ['Typography'],
 
   variants: {
     variant: Object.values(Variants).reduce(
