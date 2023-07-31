@@ -10,7 +10,7 @@
       "outputMode": "new-only"
     },
     "build:code": {
-      "cache": false
+      "outputs": ["node_modules/@snowball-tech/fractal-panda"]
     },
     "build:info": {
       "outputs": ["dist/*.buildinfo.json"]

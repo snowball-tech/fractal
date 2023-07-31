@@ -4,13 +4,6 @@ export const GROUP_NAME = 'input-pincode'
 
 export const inputPinCodeContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Container for pin code input',
-    name: 'inputPinCodeContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPinCode'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       sm: {
         width: 'fit-content',
@@ -23,16 +16,13 @@ export const inputPinCodeContainer: ReturnType<typeof defineRecipe> =
       maxWidth: '100%',
       width: '100%',
     },
+
+    className: 'inputPinCodeContainer',
+    description: 'Container for pin code input',
+    jsx: ['InputPinCode'],
   })
 
 export const inputPinCodeLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Label for pin code input',
-  name: 'inputPinCodeLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPinCode'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputPinCodeNotWritable: {
       cursor: 'unset',
@@ -46,17 +36,14 @@ export const inputPinCodeLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
     cursor: 'var(--cursor-clickable)',
   },
+
+  className: 'inputPinCodeLabel',
+  description: 'Label for pin code input',
+  jsx: ['InputPinCode'],
 })
 
 export const inputPinCodeFields: ReturnType<typeof defineRecipe> = defineRecipe(
   {
-    description: 'The date fields wrapper',
-    name: 'inputPinCodeFields',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPinCode'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       sm: {
         width: 'fit-content',
@@ -67,17 +54,14 @@ export const inputPinCodeFields: ReturnType<typeof defineRecipe> = defineRecipe(
       gap: 'var(--size-spacing-1)',
       width: '100%',
     },
+
+    className: 'inputPinCodeFields',
+    description: 'The date fields wrapper',
+    jsx: ['InputPinCode'],
   },
 )
 
 export const inputPinCodeField: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'A pin code input field',
-  name: 'inputPinCodeField',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPinCode'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& .fractal-inputTextContainer': {
       px: 0,
@@ -110,28 +94,26 @@ export const inputPinCodeField: ReturnType<typeof defineRecipe> = defineRecipe({
     textAlign: 'center',
     width: 'fit-content',
   },
+
+  className: 'inputPinCodeField',
+  description: 'A pin code input field',
+  jsx: ['InputPinCode'],
 })
 
 export const inputPinCodeDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Input pin code description',
-    name: 'inputPinCodeDescription',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPinCode'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'inputPinCodeDescription',
+    description: 'Input pin code description',
+    jsx: ['InputPinCode'],
   })
 
 export const inputPinCodeMessage: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Pin code input text message (error or success)',
-    name: 'inputPinCodeMessage',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPinCode'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'inputPinCodeMessage',
+    description: 'Pin code input text message (error or success)',
+    jsx: ['InputPinCode'],
   })

@@ -3,13 +3,6 @@ import { defineRecipe } from '@pandacss/dev'
 export const GROUP_NAME = 'stepper'
 
 export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Container for the steps of the stepper',
-  name: 'stepper',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Stepper'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     display: 'flex',
     flexDirection: 'row',
@@ -17,16 +10,13 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100%',
     width: 'fit-content',
   },
+
+  className: 'stepper',
+  description: 'Container for the steps of the stepper',
+  jsx: ['Stepper'],
 })
 
 export const step: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'A step',
-  name: 'step',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Stepper'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '.fractal-stepper.highlighted &': {
       _active: {
@@ -52,4 +42,8 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
     height: '16px',
     width: '40px',
   },
+
+  className: 'step',
+  description: 'A step',
+  jsx: ['Stepper'],
 })

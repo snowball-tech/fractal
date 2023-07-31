@@ -4,13 +4,6 @@ export const GROUP_NAME = 'input-phone'
 
 export const inputPhoneContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Container for phone input',
-    name: 'inputPhoneContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       sm: {
         width: 'unset',
@@ -23,16 +16,13 @@ export const inputPhoneContainer: ReturnType<typeof defineRecipe> =
       maxWidth: '100%',
       width: '100%',
     },
+
+    className: 'inputPhoneContainer',
+    description: 'Container for phone input',
+    jsx: ['InputPhone'],
   })
 
 export const inputPhoneLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Label for phone input',
-  name: 'inputPhoneLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPhone'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputPhoneNotWritable: {
       cursor: 'unset',
@@ -46,16 +36,13 @@ export const inputPhoneLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
     cursor: 'var(--cursor-clickable)',
   },
+
+  className: 'inputPhoneLabel',
+  description: 'Label for phone input',
+  jsx: ['InputPhone'],
 })
 
 export const inputPhoneFields: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'A phone input field',
-  name: 'inputPhoneFields',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPhone'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     sm: {
       flexDirection: 'row',
@@ -68,16 +55,13 @@ export const inputPhoneFields: ReturnType<typeof defineRecipe> = defineRecipe({
     gap: 'var(--size-spacing-1)',
     maxWidth: '100%',
   },
+
+  className: 'inputPhoneFields',
+  description: 'A phone input field',
+  jsx: ['InputPhone'],
 })
 
 export const inputPhonePrefix: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The phone input "prefix" field',
-  name: 'inputPhonePrefix',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPhone'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     sm: {
       width: '110px!',
@@ -85,17 +69,14 @@ export const inputPhonePrefix: ReturnType<typeof defineRecipe> = defineRecipe({
 
     width: '100%',
   },
+
+  className: 'inputPhonePrefix',
+  description: 'The phone input "prefix" field',
+  jsx: ['InputPhone'],
 })
 
 export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: `The phone input "prefix" field's dropdown`,
-    name: 'inputPhonePrefixDropdown',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       sm: {
         width: 'fit-content!',
@@ -104,87 +85,73 @@ export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       maxWidth: '100%',
     },
+
+    className: 'inputPhonePrefixDropdown',
+    description: `The phone input "prefix" field's dropdown`,
+    jsx: ['InputPhone'],
   })
 
 export const inputPhonePrefixSearch: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Phone input "prefix" search',
-    name: 'inputPhonePrefixSearch',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       mb: 'var(--size-spacing-1)',
     },
+
+    className: 'inputPhonePrefixSearch',
+    description: 'Phone input "prefix" search',
+    jsx: ['InputPhone'],
   })
 
 export const inputPhoneNumberPrefixHelper: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'The phone input "number" field prefix helper',
-    name: 'inputPhoneNumberPrefixHelper',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       textAlign: 'right',
       width: '36px',
     },
+
+    className: 'inputPhoneNumberPrefixHelper',
+    description: 'The phone input "number" field prefix helper',
+    jsx: ['InputPhone'],
   })
 
 export const inputPhoneNumberInputText: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'The phone input "number" field input text',
-    name: 'inputPhoneNumberInputText',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       '& input': {
         pl: 'calc(var(--size-spacing-5) + var(--size-spacing-1))!',
       },
     },
+
+    className: 'inputPhoneNumberInputText',
+    description: 'The phone input "number" field input text',
+    jsx: ['InputPhone'],
   })
 
 export const inputPhoneNumber: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The phone input "number" field',
-  name: 'inputPhoneNumber',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPhone'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     sm: {
       width: 'calc(12rem + (var(--size-input-padding-horizontal) * 2))!',
     },
   },
+
+  className: 'inputPhoneNumber',
+  description: 'The phone input "number" field',
+  jsx: ['InputPhone'],
 })
 
 export const inputPhoneDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Phone input description',
-    name: 'inputPhoneDescription',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputPhone'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'inputPhoneDescription',
+    description: 'Phone input description',
+    jsx: ['InputPhone'],
   })
 
 export const inputPhoneMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Phone input text message (error or success)',
-  name: 'inputPhoneMessage',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputPhone'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'inputPhoneMessage',
+  description: 'Phone input text message (error or success)',
+  jsx: ['InputPhone'],
 })

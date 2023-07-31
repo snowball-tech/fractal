@@ -5,13 +5,6 @@ import { defineRecipe } from '@pandacss/dev'
 export const GROUP_NAME = 'toggle-group'
 
 export const toggleGroup: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Toggle group',
-  name: 'toggleGroup',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['ToggleGroup'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '&[data-orientation="horizontal"]': {
       sm: {
@@ -33,4 +26,8 @@ export const toggleGroup: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100%',
     width: 'fit-content',
   },
+
+  className: 'toggleGroup',
+  description: 'Toggle group',
+  jsx: ['ToggleGroup'],
 })

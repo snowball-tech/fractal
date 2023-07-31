@@ -4,13 +4,6 @@ export const GROUP_NAME = 'input-text'
 
 export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
   {
-    description: 'Input text container',
-    name: 'inputTextContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputText'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _fullWidth: {
         width: '100%',
@@ -27,17 +20,14 @@ export const inputTextContainer: ReturnType<typeof defineRecipe> = defineRecipe(
       maxWidth: '100%',
       width: '100%',
     },
+
+    className: 'inputTextContainer',
+    description: 'Input text container',
+    jsx: ['InputText'],
   },
 )
 
 export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input label',
-  name: 'inputTextLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputTextNotWritable: {
       cursor: 'unset',
@@ -52,16 +42,13 @@ export const inputTextLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
     cursor: 'var(--cursor-clickable)',
   },
+
+  className: 'inputTextLabel',
+  description: 'Text input label',
+  jsx: ['InputText'],
 })
 
 export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Input text & icon wrapper',
-  name: 'inputTextWrapper',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputTextFullWidth: {
       width: '100%',
@@ -76,18 +63,14 @@ export const inputTextWrapper: ReturnType<typeof defineRecipe> = defineRecipe({
     position: 'relative',
     width: '100%',
   },
+
+  className: 'inputTextWrapper',
+  description: 'Input text & icon wrapper',
+  jsx: ['InputText'],
 })
 
 export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input',
-  name: 'inputText',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _disabled: {
       backgroundColor: `var(--color-background-input-disabled)`,
       border: `var(--border-input-disabled)`,
@@ -105,7 +88,6 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       shadow: `var(--shadow-input-error)`,
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     _inputTextPrefix: {
       pl: 'var(--size-spacing-5)',
     },
@@ -146,9 +128,12 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
       },
     },
 
+    sm: {
+      width: 'unset',
+    },
+
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     all: 'unset',
-
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
     borderRadius: 'var(--size-radius-s)',
@@ -161,23 +146,16 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     outline: 'none',
     px: 'var(--size-input-padding-horizontal)',
     shadow: `var(--shadow-input-base)`,
-    sm: {
-      width: 'unset',
-    },
     transition: 'border-color 300ms ease-out',
     width: '100%',
   },
+
+  className: 'inputText',
+  description: 'Text input',
+  jsx: ['InputText'],
 })
 
 export const inputTextAddendum: ReturnType<typeof defineRecipe> = defineRecipe({
-  description:
-    'Text input (optional) addendum (prefix/suffix) and/or error/success icon',
-  name: 'inputTextAddendum',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputTextDisabled: {
       color: `var(--color-icon-input-disabled)`,
@@ -190,29 +168,24 @@ export const inputTextAddendum: ReturnType<typeof defineRecipe> = defineRecipe({
     transform: 'translateY(-50%)',
     width: 'fit-content',
   },
+
+  className: 'inputTextAddendum',
+  description:
+    'Text input (optional) addendum (prefix/suffix) and/or error/success icon',
+  jsx: ['InputText'],
 })
 
 export const inputTextPrefix: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input (optional) prefix',
-  name: 'inputTextPrefix',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     left: 'var(--size-spacing-1)',
   },
+
+  className: 'inputTextPrefix',
+  description: 'Text input (optional) prefix',
+  jsx: ['InputText'],
 })
 
 export const inputTextSuffix: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Text input (optional) suffix and/or error/success icon',
-  name: 'inputTextSuffix',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputTextInvalid: {
       color: `var(--color-icon-input-error)`,
@@ -223,27 +196,25 @@ export const inputTextSuffix: ReturnType<typeof defineRecipe> = defineRecipe({
 
     right: 'var(--size-spacing-1)',
   },
+
+  className: 'inputTextSuffix',
+  description: 'Text input (optional) suffix and/or error/success icon',
+  jsx: ['InputText'],
 })
 
 export const inputTextDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Input text description',
-    name: 'inputTextDescription',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputText'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'inputTextDescription',
+    description: 'Input text description',
+    jsx: ['InputText'],
   })
 
 export const inputTextMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Input text message (error or success)',
-  name: 'inputTextMessage',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputText'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'inputTextMessage',
+  description: 'Input text message (error or success)',
+  jsx: ['InputText'],
 })

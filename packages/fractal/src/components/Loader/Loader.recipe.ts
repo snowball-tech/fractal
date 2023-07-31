@@ -6,13 +6,6 @@ import { DEFAULT_SIZE, Sizes } from './Loader.constants'
 export const GROUP_NAME = 'loader'
 
 export const loader: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Loader',
-  name: 'loader',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Loader'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
 
   defaultVariants: {
@@ -32,4 +25,9 @@ export const loader: ReturnType<typeof defineRecipe> = defineRecipe({
       {} as Record<Sizes, SystemStyleObject>,
     ),
   },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'loader',
+  description: 'Loader',
+  jsx: ['Loader'],
 })

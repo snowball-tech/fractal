@@ -4,13 +4,6 @@ export const GROUP_NAME = 'input-date'
 
 export const inputDateContainer: ReturnType<typeof defineRecipe> = defineRecipe(
   {
-    description: 'Container for date input',
-    name: 'inputDateContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputDate'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       display: 'flex',
       flexDirection: 'column',
@@ -18,17 +11,14 @@ export const inputDateContainer: ReturnType<typeof defineRecipe> = defineRecipe(
       maxWidth: '100%',
       width: 'fit-content',
     },
+
+    className: 'inputDateContainer',
+    description: 'Container for date input',
+    jsx: ['InputDate'],
   },
 )
 
 export const inputDateLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Label for date input',
-  name: 'inputDateLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _inputDateNotWritable: {
       cursor: 'unset',
@@ -42,31 +32,25 @@ export const inputDateLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
     cursor: 'var(--cursor-clickable)',
   },
+
+  className: 'inputDateLabel',
+  description: 'Label for date input',
+  jsx: ['InputDate'],
 })
 
 export const inputDateFields: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The date fields wrapper',
-  name: 'inputDateFields',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     display: 'flex',
     gap: 'var(--size-spacing-1)',
     width: 'fit-content',
   },
+
+  className: 'inputDateFields',
+  description: 'The date fields wrapper',
+  jsx: ['InputDate'],
 })
 
 export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'A date input field',
-  name: 'inputDateField',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
       display: 'none',
@@ -79,56 +63,48 @@ export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100px!',
     width: 'fit-content',
   },
+
+  className: 'inputDateField',
+  description: 'A date input field',
+  jsx: ['InputDate'],
 })
 
 export const inputDateDay: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The date input "day" field',
-  name: 'inputDateDay',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     minWidth: '64px',
   },
+
+  className: 'inputDateDay',
+  description: 'The date input "day" field',
+  jsx: ['InputDate'],
 })
 
 export const inputDateMonth: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The date input "month" field',
-  name: 'inputDateMonth',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     minWidth: '64px',
   },
+
+  className: 'inputDateMonth',
+  description: 'The date input "month" field',
+  jsx: ['InputDate'],
 })
 
 export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The date input "year" field',
-  name: 'inputDateYear',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& input': {
       width: 'unset!',
     },
   },
+
+  className: 'inputDateYear',
+  description: 'The date input "year" field',
+  jsx: ['InputDate'],
 })
 
 export const inputDateMessage: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Date input text message (error or success)',
-  name: 'inputDateMessage',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputDate'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'inputDateMessage',
+  description: 'Date input text message (error or success)',
+  jsx: ['InputDate'],
 })

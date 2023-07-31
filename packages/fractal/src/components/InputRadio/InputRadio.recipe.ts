@@ -6,13 +6,6 @@ import { Variants } from './InputRadio.constants'
 export const GROUP_NAME = 'input-radio'
 
 export const inputRadioGroup: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Radio group',
-  name: 'inputRadioGroup',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputRadioGroup'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '&[data-orientation="horizontal"]': {
       sm: {
@@ -34,16 +27,13 @@ export const inputRadioGroup: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100%',
     width: 'fit-content',
   },
+
+  className: 'inputRadioGroup',
+  description: 'Radio group',
+  jsx: ['InputRadioGroup'],
 })
 
 export const inputRadioContainer = defineRecipe({
-  description: 'Radio container',
-  name: 'inputRadioContainer',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputRadio'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, &:is(:disabled, [disabled], [data-disabled], .disabled)':
       {
@@ -78,15 +68,13 @@ export const inputRadioContainer = defineRecipe({
       {} as Record<Variants, SystemStyleObject>,
     ),
   },
+
+  className: 'inputRadioContainer',
+  description: 'Radio container',
+  jsx: ['InputRadio'],
 })
 
 export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Radio',
-  name: 'inputRadio',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputRadio'],
-
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
@@ -131,17 +119,14 @@ export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
       {} as Record<Variants, SystemStyleObject>,
     ),
   },
+
+  className: 'inputRadio',
+  description: 'Radio',
+  jsx: ['InputRadio'],
 })
 
 export const inputRadioCheckmark: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Radio checkmark',
-    name: 'inputRadioCheckmark',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputRadio'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       '& > svg': {
         height: '20px',
@@ -164,16 +149,13 @@ export const inputRadioCheckmark: ReturnType<typeof defineRecipe> =
         {} as Record<Variants, SystemStyleObject>,
       ),
     },
+
+    className: 'inputRadioCheckmark',
+    description: 'Radio checkmark',
+    jsx: ['InputRadio'],
   })
 
 export const inputRadioLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Radio label',
-  name: 'inputRadioLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputRadio'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
       {
@@ -203,4 +185,8 @@ export const inputRadioLabel: ReturnType<typeof defineRecipe> = defineRecipe({
       {} as Record<Variants, SystemStyleObject>,
     ),
   },
+
+  className: 'inputRadioLabel',
+  description: 'Radio label',
+  jsx: ['InputRadio'],
 })
