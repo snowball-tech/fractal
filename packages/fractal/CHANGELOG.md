@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.1...@snowball-tech/fractal@2.5.2) (2023-07-31)
+
+### 🐛 Bug Fixes
+
+- fix the breaking change in panda lib ([f9d822d](https://github.com/snowball-tech/fractal/commit/f9d822df4ae3dc31dc92cde3b6d708933ce8763e))
+
+### 📦 Dependencies
+
+- update dependencies ([10ba8a5](https://github.com/snowball-tech/fractal/commit/10ba8a5faf0a6afb058b33af8416e17a372a0886))
+
 ## @snowball-tech/fractal [2.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.0...@snowball-tech/fractal@2.5.1) (2023-07-27)
 
 ### 🐛 Bug Fixes
