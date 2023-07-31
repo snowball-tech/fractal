@@ -12,13 +12,6 @@ export const GROUP_NAME = 'input-checkbox'
 
 export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Checkbox container',
-    name: 'inputCheckboxContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputCheckbox'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _fullWidth: {
         width: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
@@ -65,16 +58,14 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
         {} as Record<Variants, SystemStyleObject>,
       ),
     },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    className: 'inputCheckboxContainer',
+    description: 'Checkbox container',
+    jsx: ['InputCheckbox'],
   })
 
 export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Checkbox',
-  name: 'inputCheckbox',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['InputCheckbox'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     alignItems: 'center',
     all: 'unset',
@@ -131,17 +122,15 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
       {} as Record<Variants, SystemStyleObject>,
     ),
   },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'inputCheckbox',
+  description: 'Checkbox',
+  jsx: ['InputCheckbox'],
 })
 
 export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Checkbox checkmark',
-    name: 'inputCheckboxCheckmark',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputCheckbox'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       '& > svg': {
         height: '20px',
@@ -179,17 +168,15 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
         {} as Record<Variants, SystemStyleObject>,
       ),
     },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    className: 'inputCheckboxCheckmark',
+    description: 'Checkbox checkmark',
+    jsx: ['InputCheckbox'],
   })
 
 export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
   {
-    description: 'Checkbox label',
-    name: 'inputCheckboxLabel',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['InputCheckbox'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _inputCheckboxRequired: {
         _after: {
@@ -232,5 +219,10 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
         {} as Record<Variants, SystemStyleObject>,
       ),
     },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    className: 'inputCheckboxLabel',
+    description: 'Checkbox label',
+    jsx: ['InputCheckbox'],
   },
 )

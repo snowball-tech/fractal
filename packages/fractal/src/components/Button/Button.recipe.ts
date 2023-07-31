@@ -42,10 +42,6 @@ const variants = Object.values(Variants).reduce(
 )
 
 export const button: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Button',
-  name: 'button',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& > p': {
       margin: 'unset',
@@ -110,13 +106,14 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
       },
     },
   },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'button',
+  description: 'Button',
+  jsx: ['Button'],
 })
 
 export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Button label',
-  name: 'buttonLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     flex: 1,
     maxHeight: '100%',
@@ -128,16 +125,20 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
   },
+
+  className: 'buttonLabel',
+  description: 'Button label',
+  jsx: ['Button'],
 })
 
 export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Button icon',
-  name: 'buttonIcon',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     height: '24px',
     mt: 'var(--size-spacing-half)',
     width: '24px',
   },
+
+  className: 'buttonIcon',
+  description: 'Button icon',
+  jsx: ['Button'],
 })

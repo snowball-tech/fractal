@@ -6,13 +6,6 @@ import { DEFAULT_VARIANT, Variants } from './Typography.constants'
 export const GROUP_NAME = 'typography'
 
 export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Basic typographic styles',
-  name: 'typography',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Typography'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
 
   defaultVariants: {
@@ -46,4 +39,9 @@ export const typography: ReturnType<typeof defineRecipe> = defineRecipe({
       {} as Record<Variants, SystemStyleObject>,
     ),
   },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'typography',
+  description: 'Basic typographic styles',
+  jsx: ['Typography'],
 })

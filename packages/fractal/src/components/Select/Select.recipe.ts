@@ -3,13 +3,6 @@ import { defineRecipe } from '@pandacss/dev'
 export const GROUP_NAME = 'select'
 
 export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select container',
-  name: 'selectContainer',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _fullWidth: {
       width: '100%',
@@ -26,16 +19,13 @@ export const selectContainer: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100%',
     width: '100%',
   },
+
+  className: 'selectContainer',
+  description: 'Select container',
+  jsx: ['Select'],
 })
 
 export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select label',
-  name: 'selectLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _selectDisabled: {
       cursor: 'unset',
@@ -51,16 +41,13 @@ export const selectLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     cursor: 'var(--cursor-clickable)',
     display: 'block',
   },
+
+  className: 'selectLabel',
+  description: 'Select label',
+  jsx: ['Select'],
 })
 
 export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select trigger (selected value/placeholder)',
-  name: 'selectTrigger',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& > span[aria-hidden], & > span[aria-hidden] > svg': {
       height: '100%',
@@ -117,33 +104,26 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     outline: 'none',
     px: 'var(--size-select-padding-horizontal)',
     shadow: `var(--shadow-select-base)`,
-
     transition: 'border-color 300ms ease-out',
   },
+
+  className: 'selectTrigger',
+  description: 'Select trigger (selected value/placeholder)',
+  jsx: ['Select'],
 })
 
 export const selectValue: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select currently selected value (or placeholder)',
-  name: 'selectValue',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     alignSelf: 'center',
     flexGrow: 1,
   },
+
+  className: 'selectValue',
+  description: 'Select currently selected value (or placeholder)',
+  jsx: ['Select'],
 })
 
 export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select status indicator (arrow)',
-  name: 'selectIndicator',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& > svg': {
       height: '100%',
@@ -157,16 +137,13 @@ export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
     height: '100%',
     transition: 'transform 300ms ease-out',
   },
+
+  className: 'selectIndicator',
+  description: 'Select status indicator (arrow)',
+  jsx: ['Select'],
 })
 
 export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select dropdown',
-  name: 'selectDropdown',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     backgroundColor: `var(--color-background-select-base)`,
     border: `var(--border-select-base)`,
@@ -178,16 +155,13 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
       'var(--size-dropdown-padding-vertical) var(--size-dropdown-padding-horizontal)',
     width: 'var(--radix-popper-anchor-width)',
   },
+
+  className: 'selectDropdown',
+  description: 'Select dropdown',
+  jsx: ['Select'],
 })
 
 export const selectItemGroup: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select options group',
-  name: 'selectItemGroup',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     '& > :first-child': {
       color: `var(--color-text-select-placeholder)`,
@@ -198,16 +172,13 @@ export const selectItemGroup: ReturnType<typeof defineRecipe> = defineRecipe({
       'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
     py: 0,
   },
+
+  className: 'selectItemGroup',
+  description: 'Select options group',
+  jsx: ['Select'],
 })
 
 export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select option',
-  name: 'selectItem',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _disabled: {
       color: `var(--color-text-select-disabled)`,
@@ -264,44 +235,35 @@ export const selectItem: ReturnType<typeof defineRecipe> = defineRecipe({
       'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
     transition: 'background-color 300ms ease-out',
   },
+
+  className: 'selectItem',
+  description: 'Select option',
+  jsx: ['Select'],
 })
 
 export const selectItemSeparator: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Select options separator',
-    name: 'selectItemSeparator',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Select'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       backgroundColor: 'var(--color-stroke-separator)',
       height: 'var(--size-border-1)',
       my: 'var(--size-options-padding-vertical)',
     },
+
+    className: 'selectItemSeparator',
+    description: 'Select options separator',
+    jsx: ['Select'],
   })
 
 export const selectDescription: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Select description',
-  name: 'selectDescription',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Select'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'selectDescription',
+  description: 'Select description',
+  jsx: ['Select'],
 })
 
 export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Select dropdown scroll viewport',
-    name: 'selectDropdownScrollViewport',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Select'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       height: '100%',
       maxHeight:
@@ -310,23 +272,22 @@ export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
       position: 'relative',
       width: '100%',
     },
+
+    className: 'selectDropdownScrollViewport',
+    description: 'Select dropdown scroll viewport',
+    jsx: ['Select'],
   })
 
 export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Select dropdown scrollbar',
-    name: 'selectDropdownScrollbar',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Select'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       '&[data-orientation="vertical"]': {
         width: '5px',
       },
 
-      _hover: { backgroundColor: ' var(--color-base-grey-70)' },
+      _hover: {
+        backgroundColor: ' var(--color-base-grey-70)',
+      },
 
       backgroundColor: 'var(--color-base-grey-90)',
       borderRadius: 'var(--size-radius-s)',
@@ -336,18 +297,14 @@ export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
       transition: 'background-color 300ms ease-out',
       userSelect: 'none',
     },
+
+    className: 'selectDropdownScrollbar',
+    description: 'Select dropdown scrollbar',
+    jsx: ['Select'],
   })
 
 export const selectDropdownScrollbarThumbs: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Select dropdown scrollbar thumbs',
-    // eslint-disable-next-line no-secrets/no-secrets
-    name: 'selectDropdownScrollbarThumbs',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Select'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _before: {
         content: '""',
@@ -366,4 +323,9 @@ export const selectDropdownScrollbarThumbs: ReturnType<typeof defineRecipe> =
       flex: 1,
       position: 'relative',
     },
+
+    // eslint-disable-next-line no-secrets/no-secrets
+    className: 'selectDropdownScrollbarThumbs',
+    description: 'Select dropdown scrollbar thumbs',
+    jsx: ['Select'],
   })

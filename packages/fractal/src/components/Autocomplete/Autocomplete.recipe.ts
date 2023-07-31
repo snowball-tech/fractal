@@ -4,13 +4,6 @@ export const GROUP_NAME = 'autocomplete'
 
 export const autocompleteContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Container for autocomplete',
-    name: 'autocompleteContainer',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['AutoComplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       _fullWidth: {
         width: '100%',
@@ -27,16 +20,13 @@ export const autocompleteContainer: ReturnType<typeof defineRecipe> =
       maxWidth: '100%',
       width: '100%',
     },
+
+    className: 'autocompleteContainer',
+    description: 'Container for autocomplete',
+    jsx: ['AutoComplete'],
   })
 
 export const autocompleteLabel: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Label for autocomplete',
-  name: 'autocompleteLabel',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['AutoComplete'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     _autocompleteNotWritable: {
       cursor: 'unset',
@@ -50,78 +40,60 @@ export const autocompleteLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
     cursor: 'var(--cursor-clickable)',
   },
+
+  className: 'autocompleteLabel',
+  description: 'Label for autocomplete',
+  jsx: ['AutoComplete'],
 })
 
 export const autocompleteInput: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'The input field of the autocomplete',
-  name: 'autocompleteInput',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Autocomplete'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'autocompleteInput',
+  description: 'The input field of the autocomplete',
+  jsx: ['Autocomplete'],
 })
 
 export const autocompleteDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'The dropdown of the autocomplete',
-    name: 'autocompleteDropdown',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       mt: 'calc(var(--size-spacing-1) * -0.75)!',
       width: 'calc(var(--radix-popper-anchor-width) - var(--size-spacing-2))!',
     },
+
+    className: 'autocompleteDropdown',
+    description: 'The dropdown of the autocomplete',
+    jsx: ['Autocomplete'],
   })
 
 export const autocompleteItemGroup: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Autocomplete items group',
-    name: 'autocompleteItemGroup',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'autocompleteItemGroup',
+    description: 'Autocomplete items group',
+    jsx: ['Autocomplete'],
   })
 
 export const autocompleteItem: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Autocomplete item',
-  name: 'autocompleteItem',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Autocomplete'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {},
+
+  className: 'autocompleteItem',
+  description: 'Autocomplete item',
+  jsx: ['Autocomplete'],
 })
 
 export const autocompleteItemSeparator: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Autocomplete item separator',
-    name: 'autocompleteItemSeparator',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {},
+
+    className: 'autocompleteItemSeparator',
+    description: 'Autocomplete item separator',
+    jsx: ['Autocomplete'],
   })
 
 export const autocompleteLoading: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Autocomplete loading indicator',
-    name: 'autocompleteLoading',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       '& > svg': {
         minWidth: '24px',
@@ -139,48 +111,43 @@ export const autocompleteLoading: ReturnType<typeof defineRecipe> =
       padding:
         'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
     },
+
+    className: 'autocompleteLoading',
+    description: 'Autocomplete loading indicator',
+    jsx: ['Autocomplete'],
   })
 
 export const autocompleteEmpty: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Autocomplete empty indicator',
-  name: 'autocompleteEmpty',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Autocomplete'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     borderRadius: 'var(--size-radius-s)',
     outline: 'none',
     padding:
       'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
   },
+
+  className: 'autocompleteEmpty',
+  description: 'Autocomplete empty indicator',
+  jsx: ['Autocomplete'],
 })
 
 export const autocompleteDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Autocomplete description',
-    name: 'autocompleteDescription',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       mt: 'calc(var(--size-spacing-1) * -2)',
     },
+
+    className: 'autocompleteDescription',
+    description: 'Autocomplete description',
+    jsx: ['Autocomplete'],
   })
 
 export const autocompleteMessage: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    description: 'Autocomplete text message (error or success)',
-    name: 'autocompleteMessage',
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    jsx: ['Autocomplete'],
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     base: {
       mt: 'calc(var(--size-spacing-1) * -2)',
     },
+
+    className: 'autocompleteMessage',
+    description: 'Autocomplete text message (error or success)',
+    jsx: ['Autocomplete'],
   })

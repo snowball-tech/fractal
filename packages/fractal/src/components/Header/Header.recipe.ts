@@ -3,13 +3,6 @@ import { defineRecipe } from '@pandacss/dev'
 export const GROUP_NAME = 'header'
 
 export const header: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Header',
-  name: 'header',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Header'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     alignItems: 'center',
     backgroundColor: 'var(--color-brand-primary)',
@@ -23,30 +16,24 @@ export const header: ReturnType<typeof defineRecipe> = defineRecipe({
       '0 var(--size-spacing-3) var(--size-spacing-1) var(--size-spacing-3)',
     width: '100%',
   },
+
+  className: 'header',
+  description: 'Header',
+  jsx: ['Header'],
 })
 
 export const headerBackButton: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Header back button',
-  name: 'headerBackButton',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Header'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     height: '24px',
     width: '24px',
   },
+
+  className: 'headerBackButton',
+  description: 'Header back button',
+  jsx: ['Header'],
 })
 
 export const headerTitle: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Header title',
-  name: 'headerTitle',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Header'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     flex: 1,
     margin: 0,
@@ -54,16 +41,13 @@ export const headerTitle: ReturnType<typeof defineRecipe> = defineRecipe({
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
   },
+
+  className: 'headerTitle',
+  description: 'Header title',
+  jsx: ['Header'],
 })
 
 export const headerMenu: ReturnType<typeof defineRecipe> = defineRecipe({
-  description: 'Header menu',
-  name: 'headerMenu',
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  jsx: ['Header'],
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
     sm: {
       '.device-macbook-pro &': {
@@ -74,4 +58,8 @@ export const headerMenu: ReturnType<typeof defineRecipe> = defineRecipe({
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     justifySelf: 'flex-end',
   },
+
+  className: 'headerMenu',
+  description: 'Header menu',
+  jsx: ['Header'],
 })
