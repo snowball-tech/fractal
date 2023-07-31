@@ -10,16 +10,20 @@
       "outputMode": "new-only"
     },
     "build:code": {
-      "outputs": ["node_modules/@snowball-tech/fractal-panda"]
+      "outputs": ["node_modules/@snowball-tech/fractal-panda"],
+      "outputMode": "new-only"
     },
     "build:info": {
-      "outputs": ["dist/*.buildinfo.json"]
+      "outputs": ["dist/*.buildinfo.json"],
+      "outputMode": "new-only"
     },
     "build:library": {
-      "outputs": ["dist/**/*.js"]
+      "outputs": ["dist/**/*.js"],
+      "outputMode": "new-only"
     },
     "build:styles": {
-      "outputs": ["dist/**/*.css"]
+      "outputs": ["dist/**/*.css"],
+      "outputMode": "new-only"
     },
     "@snowball-tech/design-tokens#build": {
       "dependsOn": ["^build"],
