@@ -41,22 +41,62 @@ module.exports = {
       },
 
       6: {
-        value: 56,
+        value: 48,
       },
 
       7: {
-        value: 64,
+        value: 56,
       },
 
       8: {
-        value: 80,
+        value: 64,
       },
 
       9: {
-        value: 120,
+        value: 72,
       },
 
       10: {
+        value: 80,
+      },
+
+      11: {
+        value: 88,
+      },
+
+      12: {
+        value: 96,
+      },
+
+      13: {
+        value: 104,
+      },
+
+      14: {
+        value: 112,
+      },
+
+      15: {
+        value: 120,
+      },
+
+      16: {
+        value: 128,
+      },
+
+      17: {
+        value: 136,
+      },
+
+      18: {
+        value: 144,
+      },
+
+      19: {
+        value: 152,
+      },
+
+      20: {
         value: 160,
       },
     },
