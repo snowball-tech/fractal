@@ -1,5 +1,8 @@
 const StyleDictionary = require('style-dictionary')
 
+const isNumber = require('lodash/fp/isNumber')
+const isString = require('lodash/fp/isString')
+
 const {
   isBreakpointOrRadiusSize,
   isMediaQuery,
@@ -9,14 +12,46 @@ const {
 StyleDictionary.registerTransform({
   matcher: isNotBreakpointNorRadiusSize,
   name: 'size/other/pxToRem',
-  transformer: StyleDictionary.transform['size/pxToRem'].transformer,
+  transformer: (token, options) => {
+    if (isString(token.value) && token.value.endsWith('%')) {
+      return token.value
+    }
+
+    const floatValue = parseFloat(token.value)
+    if (!isNumber(floatValue) || Number.isNaN(floatValue)) {
+      return token.value
+    }
+
+    if (floatValue === 0) {
+      return '0'
+    }
+
+    const baseFontSize = (options && options.basePxFontSize) || 16
+
+    return `${floatValue / baseFontSize}rem`
+  },
   type: 'value',
 })
 
 StyleDictionary.registerTransform({
   matcher: isBreakpointOrRadiusSize,
   name: 'size/breakpoint-radius/px',
-  transformer: StyleDictionary.transform['size/px'].transformer,
+  transformer: (token) => {
+    if (isString(token.value) && token.value.endsWith('%')) {
+      return token.value
+    }
+
+    const floatValue = parseFloat(token.value)
+    if (!isNumber(floatValue) || Number.isNaN(floatValue)) {
+      return token.value
+    }
+
+    if (floatValue === 0) {
+      return '0'
+    }
+
+    return `${floatValue}px`
+  },
   type: 'value',
 })
 

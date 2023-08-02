@@ -1,7 +1,6 @@
 module.exports = {
   size: {
     loader: {
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       xs: {
         value: '{size.spacing.3.value}',
       },
