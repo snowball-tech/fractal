@@ -20,6 +20,7 @@ import * as InputPinCodeRecipes from '@/components/InputPinCode/InputPinCode.rec
 import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as LoaderRecipes from '@/components/Loader/Loader.recipe'
+import * as LogoRecipes from '@/components/Logo/Logo.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as StepperRecipes from '@/components/Stepper/Stepper.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
@@ -33,6 +34,7 @@ const GROUPS = {
   autocomplete: `${PREFIX}-${AutocompleteRecipes.GROUP_NAME}`,
   button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
   card: `${PREFIX}-${CardRecipes.GROUP_NAME}`,
+  header: `${PREFIX}-${HeaderRecipes.GROUP_NAME}`,
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
   inputPhone: `${PREFIX}-${InputPhoneRecipes.GROUP_NAME}`,
@@ -41,6 +43,7 @@ const GROUPS = {
   inputRadioGroup: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}-group`,
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
   loader: `${PREFIX}-${LoaderRecipes.GROUP_NAME}`,
+  logo: `${PREFIX}-${LogoRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
   toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
@@ -99,9 +102,9 @@ const fractalPreset = definePreset({
         card: CardRecipes.card,
 
         header: HeaderRecipes.header,
-        headerBackButton: HeaderRecipes.headerBackButton,
-        headerTitle: HeaderRecipes.headerTitle,
-        headerMenu: HeaderRecipes.headerMenu,
+        headerLeft: HeaderRecipes.headerLeft,
+        headerMiddle: HeaderRecipes.headerMiddle,
+        headerRight: HeaderRecipes.headerRight,
 
         inputCheckbox: InputCheckboxRecipes.inputCheckbox,
         inputCheckboxCheckmark: InputCheckboxRecipes.inputCheckboxCheckmark,
@@ -154,6 +157,8 @@ const fractalPreset = definePreset({
         inputTextWrapper: InputTextRecipes.inputTextWrapper,
 
         loader: LoaderRecipes.loader,
+
+        logo: LogoRecipes.logo,
 
         selectContainer: SelectRecipes.selectContainer,
         selectDescription: SelectRecipes.selectDescription,
