@@ -244,3 +244,58 @@ export const Secondary: Story = {
     </>
   ),
 }
+
+export const Text: Story = {
+  render: () => (
+    <>
+      <Wrapper>
+        <Button label="Text button" variant="text" />
+        <Button
+          icon={<CancelIcon />}
+          label="Text button with right icon"
+          variant="text"
+        />
+        <Button
+          icon={<CancelIcon />}
+          iconPosition="left"
+          label="Text button with left icon"
+          variant="text"
+        />
+        <Button
+          icon={<CancelIcon />}
+          iconOnly
+          label="Text button with icon only"
+          variant="text"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <Button disabled label="Text disabled button" variant="text" />
+        <Button
+          disabled
+          icon={<CancelIcon />}
+          label="Text disabled button with right icon"
+          variant="text"
+        />
+        <Button
+          disabled
+          icon={<CancelIcon />}
+          iconPosition="left"
+          label="Text disabled button with left icon"
+          variant="text"
+        />
+        <Button
+          disabled
+          icon={<CancelIcon />}
+          iconOnly
+          label="Text disabled button with icon only"
+          variant="text"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <Button fullWidth label="Full width text button" variant="text" />
+      </Wrapper>
+    </>
+  ),
+}
