@@ -22,44 +22,42 @@ export const header: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['Header'],
 })
 
-export const headerBackButton: ReturnType<typeof defineRecipe> = defineRecipe({
+export const headerLeft: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    height: '24px',
-    width: '24px',
+    justifySelf: 'flex-start',
   },
 
-  className: 'headerBackButton',
-  description: 'Header back button',
+  className: 'headerLeft',
+  description: 'Left part of the header',
   jsx: ['Header'],
 })
 
-export const headerTitle: ReturnType<typeof defineRecipe> = defineRecipe({
+export const headerMiddle: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    sm: {
+      justifySelf: 'center',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     flex: 1,
+    justifySelf: 'flex-start',
     margin: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
   },
 
-  className: 'headerTitle',
-  description: 'Header title',
+  className: 'headerMiddle',
+  description: 'Middle part of the header',
   jsx: ['Header'],
 })
 
-export const headerMenu: ReturnType<typeof defineRecipe> = defineRecipe({
+export const headerRight: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    sm: {
-      '.device-macbook-pro &': {
-        display: 'none',
-      },
-    },
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     justifySelf: 'flex-end',
   },
 
-  className: 'headerMenu',
-  description: 'Header menu',
+  className: 'headerRight',
+  description: 'Right part of the header',
   jsx: ['Header'],
 })
