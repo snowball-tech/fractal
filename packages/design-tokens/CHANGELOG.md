@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.7.0...@snowball-tech/design-tokens@5.7.1) (2023-08-02)
+
+### 🐛 Bug Fixes
+
+- **spacing:** fix the spacing scale ([d067703](https://github.com/snowball-tech/fractal/commit/d067703ea70ca40ddc3e67f766946ee9f0e729f0))
+
 # @snowball-tech/design-tokens [5.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.6.0...@snowball-tech/design-tokens@5.7.0) (2023-07-26)
 
 ### ✨ Features
