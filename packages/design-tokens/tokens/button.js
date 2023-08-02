@@ -72,6 +72,30 @@ module.exports = {
           value: '{border.disabled.value}',
         },
       },
+
+      text: {
+        base: {
+          comment: 'Border for text buttons.',
+
+          value: '{border.none.value}',
+        },
+        hover: {
+          comment: 'Border when hovering/focusing text buttons.',
+
+          value: '{border.button.text.base.value}',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        active: {
+          comment: 'Border when clicking/activating text buttons.',
+
+          value: '{border.button.text.base.value}',
+        },
+        disabled: {
+          comment: 'Border for disabled text buttons.',
+
+          value: '{border.button.text.base.value}',
+        },
+      },
     },
   },
 
@@ -155,6 +179,32 @@ module.exports = {
             value: '{color.background.button.secondary.base.value}',
           },
         },
+
+        text: {
+          base: {
+            comment: 'Background color to use on text buttons.',
+
+            value: '{color.base.transparent.value}',
+          },
+          hover: {
+            comment:
+              'Background color to use when hovering/focusing text buttons.',
+
+            value: '{color.background.button.text.base.value}',
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          active: {
+            comment:
+              'Background color to use when clicking/activating a text buttons.',
+
+            value: '{color.background.button.text.base.value}',
+          },
+          disabled: {
+            comment: 'Background color to use on disabled text buttons.',
+
+            value: '{color.background.button.text.base.value}',
+          },
+        },
       },
     },
 
@@ -233,6 +283,31 @@ module.exports = {
           },
           disabled: {
             comment: 'Background color to use on disabled secondary buttons.',
+
+            value: '{color.icon.disabled.value}',
+          },
+        },
+
+        text: {
+          base: {
+            comment: 'Icon color to use on text buttons.',
+
+            value: '{color.brand.secondary.value}',
+          },
+          hover: {
+            comment: 'Icon color to use when hovering/focusing text buttons.',
+
+            value: '{color.icon.button.text.base.value}',
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          active: {
+            comment:
+              'Icon color to use when clicking/activating a text buttons.',
+
+            value: '{color.icon.button.text.base.value}',
+          },
+          disabled: {
+            comment: 'Background color to use on disabled text buttons.',
 
             value: '{color.icon.disabled.value}',
           },
@@ -319,6 +394,31 @@ module.exports = {
             value: '{color.text.disabled.value}',
           },
         },
+
+        text: {
+          base: {
+            comment: 'Text color to use on text buttons.',
+
+            value: '{color.brand.secondary.value}',
+          },
+          hover: {
+            comment: 'Text color to use when hovering/focusing text buttons.',
+
+            value: '{color.text.button.text.base.value}',
+          },
+          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          active: {
+            comment:
+              'Text color to use when clicking/activating a text buttons.',
+
+            value: '{color.brand.secondary.value}',
+          },
+          disabled: {
+            comment: 'Text color to use on disabled text buttons.',
+
+            value: '{color.text.disabled.value}',
+          },
+        },
       },
     },
   },
@@ -394,6 +494,30 @@ module.exports = {
           comment: 'Shadow for disabled secondary buttons.',
 
           value: '{shadow.button.secondary.base.value}',
+        },
+      },
+
+      text: {
+        base: {
+          comment: 'Shadow for text buttons.',
+
+          value: '{shadow.none.value}',
+        },
+        hover: {
+          comment: 'Shadow when hovering/focusing text buttons.',
+
+          value: 'shadow.button.text.base.value',
+        },
+        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        active: {
+          comment: 'Shadow when clicking/activating text buttons.',
+
+          value: '{shadow.button.text.base.value}',
+        },
+        disabled: {
+          comment: 'Shadow for disabled text buttons.',
+
+          value: '{shadow.button.text.base.value}',
         },
       },
     },
