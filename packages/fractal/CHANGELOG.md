@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.6.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.6.0...@snowball-tech/fractal@2.6.1) (2023-08-02)
+
+### 📝 Documentation
+
+- **button:** add stories for the text variant ([8aa84b6](https://github.com/snowball-tech/fractal/commit/8aa84b66288c05d791cc2ea6d4932d2b19519920))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.9.0
+
 # @snowball-tech/fractal [2.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.4...@snowball-tech/fractal@2.6.0) (2023-08-02)
 
 ### ✨ Features
