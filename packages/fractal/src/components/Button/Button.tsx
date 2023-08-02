@@ -13,7 +13,7 @@ import { type ForwardedRef, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_VARIANT } from './Button.constants'
+import { DEFAULT_VARIANT, Variants } from './Button.constants'
 import { GROUP_NAME } from './Button.recipe'
 import type { ButtonProps } from './Button.types'
 
@@ -75,7 +75,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
 
         {!iconOnly ? (
-          <div className={cx(buttonLabel(), typography({ variant: 'body-1' }))}>
+          <div
+            className={cx(
+              buttonLabel(),
+              typography({
+                variant: variant === Variants.Text ? 'body-1-link' : 'body-1',
+              }),
+            )}
+          >
             {label}
           </div>
         ) : (
