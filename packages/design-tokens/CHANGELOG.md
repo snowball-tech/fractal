@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.7.1...@snowball-tech/design-tokens@5.8.0) (2023-08-02)
+
+### ✨ Features
+
+- **button:** add the "text" variant ([a55336b](https://github.com/snowball-tech/fractal/commit/a55336b75fae562f748fe0bfbe3f2e9f54c78bda))
+
 ## @snowball-tech/design-tokens [5.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.7.0...@snowball-tech/design-tokens@5.7.1) (2023-08-02)
 
 ### 🐛 Bug Fixes
