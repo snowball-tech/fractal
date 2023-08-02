@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.3...@snowball-tech/fractal@2.5.4) (2023-08-02)
+
+### 🐛 Bug Fixes
+
+- update spacings doc and add tokens doc ([51ca1ec](https://github.com/snowball-tech/fractal/commit/51ca1ec92ad73c6abcce91cc05d5f0643de35cd8))
+
 ## @snowball-tech/fractal [2.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.2...@snowball-tech/fractal@2.5.3) (2023-08-02)
 
 ### 📦 Dependencies
