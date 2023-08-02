@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.4...@snowball-tech/fractal@2.6.0) (2023-08-02)
+
+### ✨ Features
+
+- **button:** add the "text" variant ([a55336b](https://github.com/snowball-tech/fractal/commit/a55336b75fae562f748fe0bfbe3f2e9f54c78bda))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.8.0
+
 ## @snowball-tech/fractal [2.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.5.3...@snowball-tech/fractal@2.5.4) (2023-08-02)
 
 ### 🐛 Bug Fixes
