@@ -14,13 +14,13 @@ export const Loader = ({ size = DEFAULT_SIZE, ...props }: LoaderProps) => {
 
   return (
     <svg
+      className={cx(props.className, loader({ size }))}
       display="block"
       preserveAspectRatio="xMidYMid"
       style={{ background: '0 0', margin: 'auto' }}
+      viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       {...omit(['className'], props)}
-      className={cx(props.className, loader({ size }))}
-      viewBox="0 0 100 100"
     >
       <g transform="translate(50 50)">
         <g>
