@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Atoms/Tokens" />
+
+# Tokens
+
+---
+
+All design values _(colors, breakpoints, shadows, spacings, ...)_ are defined as
+design tokens.
+
+You can find those tokens in the
+[`design-tokens` directory of the Fractal repository](https://github.com/snowball-tech/fractal/tree/main/packages/design-tokens)
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> For more information about design tokens, read the
+> [README](https://github.com/snowball-tech/fractal/blob/main/packages/design-tokens/README.md)
+
+For convenience and ease of use, those tokens are translated into usable
+resources when developing your application.
+
+## CSS variables
+
+All tokens are exported as CSS variables in the
+`@snowball-tech/design-tokens/dist/web/css/variables.css` file
+_(exported by the
+[`@snowball-tech/design-tokens`](https://www.npmjs.com/package/@snowball-tech/design-tokens)
+package)_.
+
+The variables are named exactly like the corresponding tokens, except that the
+"." is replaced by a "-" _(and of course, variables are prefixed with "--")_.
+
+## JavaScript/TypeScript constants
+
+If you need to use a token in your JavaScript/TypeScript code, you can import
+any values from the
+`@snowball-tech/design-tokens/dist/web/react/design-tokens.js` file
+_(exported by the
+[`@snowball-tech/design-tokens`](https://www.npmjs.com/package/@snowball-tech/design-tokens)
+package)_.
+
+The constants are named exactly like the corresponding tokens but in
+[PascalCase](https://techterms.com/definition/pascalcase)
