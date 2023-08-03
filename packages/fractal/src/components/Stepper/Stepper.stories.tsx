@@ -26,3 +26,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const Simple: Story = {
+  render: () => <Stepper current={1} length={3} />,
+}
+
+export const Progress: Story = {
+  render: () => (
+    <Stepper current={1} currentAs="progress" length={3} value={33} />
+  ),
+}
