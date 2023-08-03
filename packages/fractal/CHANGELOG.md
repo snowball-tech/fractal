@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.7.1...@snowball-tech/fractal@2.8.0) (2023-08-03)
+
+### ✨ Features
+
+- **progress:** add a progress component ([cc5669f](https://github.com/snowball-tech/fractal/commit/cc5669f9417964c488ae091ca1d1659db5cc4327))
+
 ## @snowball-tech/fractal [2.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.7.0...@snowball-tech/fractal@2.7.1) (2023-08-03)
 
 ### 📦 Dependencies
