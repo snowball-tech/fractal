@@ -1,6 +1,7 @@
 import {
   UilBars as HamburgerBarsIcon,
   UilArrowLeft as LeftIcon,
+  UilSearchAlt as SearchIcon,
 } from '@iconscout/react-unicons'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
@@ -19,13 +20,12 @@ type HeaderProps = ComponentProps<typeof Header>
 const SAFE_AREAS: Record<string, string> = {
   'galaxy-s8': '',
   'google-pixel': '',
-  'google-pixel-6-pro': '37px',
+  'google-pixel-6-pro': '30px',
   'ipad-pro': '',
   'iphone-8': '',
-  'iphone-14': '37px',
-  'iphone-14-pro': '47px',
-  'iphone-x': '37px',
-  'macbook-pro': '19px',
+  'iphone-14': '30px',
+  'iphone-14-pro': '40px',
+  'iphone-x': '30px',
   none: '',
   'the-iphone': '',
 }
@@ -36,7 +36,7 @@ const meta: Meta<HeaderProps & { device: string }> = {
       control: 'radio',
       mapping: {
         Nothing: false,
-        'Search bar': <Autocomplete />,
+        'Search bar': <Autocomplete fullWidth prefix={<SearchIcon />} />,
         Title: 'The Empire Strikes Back',
       },
       options: ['Title', 'Search bar', 'Nothing'],
@@ -46,7 +46,6 @@ const meta: Meta<HeaderProps & { device: string }> = {
       mapping: {
         'Google Pixel': 'google-pixel',
         'Google Pixel 6 Pro': 'google-pixel-6-pro',
-        'MacBook Pro': 'macbook-pro',
         None: 'none',
         'Samsung Galaxy S8': 'galaxy-s8',
         'iPad Pro': 'ipad-pro',
@@ -67,7 +66,6 @@ const meta: Meta<HeaderProps & { device: string }> = {
         'Samsung Galaxy S8',
         'iPhone',
         'iPad Pro',
-        'MacBook Pro',
       ],
     },
     left: {
@@ -82,7 +80,7 @@ const meta: Meta<HeaderProps & { device: string }> = {
             onClick={action('onBackClick')}
           />
         ),
-        Logo: <Logo />,
+        Logo: <Logo size="m" />,
         Nothing: false,
       },
       options: ['Back', 'Logo', 'Nothing'],
