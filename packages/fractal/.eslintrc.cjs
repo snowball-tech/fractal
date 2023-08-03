@@ -23,10 +23,16 @@ module.exports = {
   },
 
   rules: {
+    '@typescript-eslint/no-misused-promises': 'off',
+    'import/no-cycle': 'off',
     'import/no-named-as-default': 'off',
   },
 
   settings: {
+    'import/ignore': [
+      '@snowball-tech/fractal-panda',
+      '@iconscout/react-unicons',
+    ],
     'import/resolver': {
       typescript: {
         project: ['./tsconfig.json'],
