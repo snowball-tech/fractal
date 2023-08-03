@@ -100,6 +100,8 @@ const fractalPreset = definePreset({
         buttonIcon: ButtonRecipes.buttonIcon,
 
         card: CardRecipes.card,
+        cardTitle: CardRecipes.cardTitle,
+        cardIcon: CardRecipes.cardIcon,
 
         header: HeaderRecipes.header,
         headerLeft: HeaderRecipes.headerLeft,

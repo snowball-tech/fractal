@@ -8,7 +8,12 @@ export const GROUP_NAME = 'card'
 export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     borderRadius: 'var(--size-radius-s)',
-    padding: 'var(--size-spacing-2)',
+    color: 'var(--color-text-card-body)',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 'var(--size-card-gap)',
+    px: 'var(--size-card-padding-horizontal)',
+    py: 'var(--size-card-padding-vertical)',
   },
 
   defaultVariants: {
@@ -21,7 +26,7 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
         ...colors,
 
         [colorName]: {
-          backgroundColor: `var(--color-decorative-${colorName}-90)`,
+          backgroundColor: `var(--color-background-card-${colorName})`,
         },
       }),
       {} as Record<Colors, SystemStyleObject>,
@@ -31,5 +36,65 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   className: 'card',
   description: 'Card',
+  jsx: ['Card'],
+})
+
+export const cardTitle: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 'var(--size-card-title-gap)',
+  },
+
+  defaultVariants: {
+    color: DEFAULT_COLOR,
+  },
+
+  variants: {
+    color: Object.values(Colors).reduce(
+      (colors, colorName) => ({
+        ...colors,
+
+        [colorName]: {
+          color: `var(--color-text-card-title-${colorName})`,
+        },
+      }),
+      {} as Record<Colors, SystemStyleObject>,
+    ),
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'cardTitle',
+  description: 'Card title',
+  jsx: ['Card'],
+})
+
+export const cardIcon: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    height: '24px',
+    width: '24px',
+  },
+
+  defaultVariants: {
+    color: DEFAULT_COLOR,
+  },
+
+  variants: {
+    color: Object.values(Colors).reduce(
+      (colors, colorName) => ({
+        ...colors,
+
+        [colorName]: {
+          color: `var(--color-icon-card-${colorName})`,
+        },
+      }),
+      {} as Record<Colors, SystemStyleObject>,
+    ),
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'cardIcon',
+  description: 'Card icon',
   jsx: ['Card'],
 })
