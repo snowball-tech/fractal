@@ -47,3 +47,13 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'A step',
   jsx: ['Stepper'],
 })
+
+export const stepAsProgress: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    width: 'var(--size-spacing-20)',
+  },
+
+  className: 'stepAsProgress',
+  description: 'Container for the current step when displayed as progress bar',
+  jsx: ['Stepper'],
+})

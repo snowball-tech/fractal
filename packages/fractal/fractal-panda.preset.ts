@@ -21,6 +21,7 @@ import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
 import * as InputTextRecipes from '@/components/InputText/InputText.recipe'
 import * as LoaderRecipes from '@/components/Loader/Loader.recipe'
 import * as LogoRecipes from '@/components/Logo/Logo.recipe'
+import * as ProgressRecipes from '@/components/Progress/Progress.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as StepperRecipes from '@/components/Stepper/Stepper.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
@@ -44,6 +45,7 @@ const GROUPS = {
   inputText: `${PREFIX}-${InputTextRecipes.GROUP_NAME}`,
   loader: `${PREFIX}-${LoaderRecipes.GROUP_NAME}`,
   logo: `${PREFIX}-${LogoRecipes.GROUP_NAME}`,
+  progress: `${PREFIX}-${ProgressRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
   toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
@@ -162,6 +164,9 @@ const fractalPreset = definePreset({
 
         logo: LogoRecipes.logo,
 
+        progress: ProgressRecipes.progress,
+        progressIndicator: ProgressRecipes.progressIndicator,
+
         selectContainer: SelectRecipes.selectContainer,
         selectDescription: SelectRecipes.selectDescription,
         selectDropdown: SelectRecipes.selectDropdown,
@@ -180,6 +185,7 @@ const fractalPreset = definePreset({
 
         stepper: StepperRecipes.stepper,
         step: StepperRecipes.step,
+        stepAsProgress: StepperRecipes.stepAsProgress,
 
         toggle: ToggleRecipes.toggle,
         toggleGroup: ToggleGroupRecipes.toggleGroup,
