@@ -98,3 +98,12 @@ export const cardIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Card icon',
   jsx: ['Card'],
 })
+
+export const cardContent: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {},
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'cardContent',
+  description: 'Card content',
+  jsx: ['Card'],
+})
