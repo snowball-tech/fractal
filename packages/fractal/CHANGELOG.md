@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.8.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.1...@snowball-tech/fractal@2.8.2) (2023-08-03)
+
+### 📝 Documentation
+
+- **stepper:** add stories to the Stepper component ([6c70e40](https://github.com/snowball-tech/fractal/commit/6c70e40a2ee2137fce017d2b9247af03aeb766df))
+
 ## @snowball-tech/fractal [2.8.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.0...@snowball-tech/fractal@2.8.1) (2023-08-03)
 
 ### 🎨 Code Style and Formatting
