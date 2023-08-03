@@ -1,3 +1,10 @@
+# @snowball-tech/design-tokens [5.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.9.0...@snowball-tech/design-tokens@5.10.0) (2023-08-03)
+
+### ✨ Features
+
+- **card:** add tokens for the card component ([f9fbff3](https://github.com/snowball-tech/fractal/commit/f9fbff322c22509a382feab1356f3a8c3169740c))
+- **logo:** add the logo component ([990c9e9](https://github.com/snowball-tech/fractal/commit/990c9e941ba4cd055bfdce09c87834fc77a45d72))
+
 # @snowball-tech/design-tokens [5.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.8.0...@snowball-tech/design-tokens@5.9.0) (2023-08-02)
 
 ### ✨ Features
