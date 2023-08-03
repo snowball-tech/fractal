@@ -4,6 +4,18 @@ export const GROUP_NAME = 'header'
 
 export const header: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    ':not(.device-screen) > &': {
+      md: {
+        alignContent: 'stretch',
+        display: 'grid',
+        gridColumnGap: 0,
+        gridTemplateColumns: 'repeat(12, 1fr)',
+        height: '80px',
+        justifyContent: 'stretch',
+      },
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     alignItems: 'center',
     backgroundColor: 'var(--color-brand-primary)',
     borderBottom: 'var(--border-2)',
@@ -12,8 +24,9 @@ export const header: ReturnType<typeof defineRecipe> = defineRecipe({
     display: 'flex',
     gap: 'var(--size-spacing-1)',
     height: '64px',
-    padding:
-      '0 var(--size-spacing-3) var(--size-spacing-1) var(--size-spacing-3)',
+    pb: 'calc(var(--size-spacing-1) - var(--size-border-2))',
+    pt: 'var(--size-spacing-1)',
+    px: 'var(--size-spacing-3)',
     width: '100%',
   },
 
@@ -24,7 +37,13 @@ export const header: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const headerLeft: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    justifySelf: 'flex-start',
+    ':not(.device-screen) > &': {
+      md: {
+        gridColumn: '1 / 4',
+        justifySelf: 'start',
+        maxHeight: '64px',
+      },
+    },
   },
 
   className: 'headerLeft',
@@ -34,14 +53,19 @@ export const headerLeft: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const headerMiddle: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    sm: {
-      justifySelf: 'center',
+    ':not(.device-screen) > &': {
+      md: {
+        gridColumn: '4 / 10',
+        justifySelf: 'center',
+        maxHeight: '48px',
+        textAlign: 'center',
+        width: '100%',
+      },
     },
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    flex: 1,
-    justifySelf: 'flex-start',
     margin: 0,
+    maxHeight: '100%',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -54,7 +78,13 @@ export const headerMiddle: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const headerRight: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    justifySelf: 'flex-end',
+    ':not(.device-screen) > &': {
+      md: {
+        gridColumn: '10 / 13',
+        justifySelf: 'end',
+        maxHeight: '48px',
+      },
+    },
   },
 
   className: 'headerRight',

@@ -4,6 +4,7 @@ import {
   headerLeft,
   headerMiddle,
   headerRight,
+  typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -28,7 +29,9 @@ export const Header = ({
     >
       {left ? <div className={headerLeft()}>{left}</div> : false}
 
-      {middle ? <div className={headerMiddle()}>{middle}</div> : false}
+      <div className={cx(headerMiddle(), typography({ variant: 'heading-4' }))}>
+        {middle}
+      </div>
 
       {right ? <div className={headerRight()}>{right}</div> : false}
     </div>
