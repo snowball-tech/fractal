@@ -17,6 +17,7 @@ export { InputRadio, InputRadioGroup } from './InputRadio/index.js'
 export { InputText } from './InputText/index.js'
 export { Loader } from './Loader/index.js'
 export { Logo } from './Logo/index.js'
+export { Progress } from './Progress/index.js'
 export {
   Select,
   SelectItem,
