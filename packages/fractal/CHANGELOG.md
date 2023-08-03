@@ -1,3 +1,32 @@
+# @snowball-tech/fractal [2.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.6.1...@snowball-tech/fractal@2.7.0) (2023-08-03)
+
+### ✨ Features
+
+- **button:** improve the display in text icon only mode ([776283e](https://github.com/snowball-tech/fractal/commit/776283e36065ee7195abed5d355d4b20bdddcb3b))
+- **card:** add new feedback card and title/icon props ([5e84543](https://github.com/snowball-tech/fractal/commit/5e84543c84c132583511e015d68f12223c65e7f6))
+- **header:** implement the desktop mode ([f3cd206](https://github.com/snowball-tech/fractal/commit/f3cd206634a13cfe0ff7080d3816bea8d90c7121))
+- **logo:** add the logo component ([990c9e9](https://github.com/snowball-tech/fractal/commit/990c9e941ba4cd055bfdce09c87834fc77a45d72))
+
+### 📝 Documentation
+
+- **logo:** update the subtitle ([dd2339a](https://github.com/snowball-tech/fractal/commit/dd2339a9788cfbdd0a1db9118e6b4975aaf6cb17))
+
+### ♻️ Code Refactoring
+
+- **header:** update the header component to make it composable ([3a6662b](https://github.com/snowball-tech/fractal/commit/3a6662b838e0d21cfef803bd17b6767536753058))
+
+### 👷 Build
+
+- force to rebuild everything on CI ([0511ec9](https://github.com/snowball-tech/fractal/commit/0511ec950948e0c50833cc5a54e95a73835206e7))
+
+### 📦 Dependencies
+
+- update dependencies ([b784ffb](https://github.com/snowball-tech/fractal/commit/b784ffbc0f4c4ffaa587fa11f85e80362f6a7a78))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.10.0
+
 ## @snowball-tech/fractal [2.6.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.6.0...@snowball-tech/fractal@2.6.1) (2023-08-02)
 
 ### 📝 Documentation
