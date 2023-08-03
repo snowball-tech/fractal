@@ -104,6 +104,15 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           transform: 'translate(0, -2px)',
         },
       },
+
+      [Variants.Text]: {
+        ...variants[Variants.Text],
+        '&.icon-only': {
+          height: '24px',
+          padding: 0,
+          width: '24px',
+        },
+      },
     },
   },
 
@@ -138,6 +147,28 @@ export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
     width: '24px',
   },
 
+  defaultVariants: {
+    variant: DEFAULT_VARIANT,
+  },
+
+  variants: {
+    variant: {
+      ...Object.values(Variants).reduce(
+        (allVariants, variantName) => ({
+          ...allVariants,
+          [variantName]: {},
+        }),
+        {} as Record<Variants, SystemStyleObject>,
+      ),
+      [Variants.Text]: {
+        '.fractal-button.icon-only &': {
+          mt: 0,
+        },
+      },
+    },
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   className: 'buttonIcon',
   description: 'Button icon',
   jsx: ['Button'],
