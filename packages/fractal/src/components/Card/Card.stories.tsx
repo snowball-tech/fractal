@@ -1,3 +1,10 @@
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@iconscout/react-unicons'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
@@ -22,10 +29,23 @@ const meta = {
         type: { summary: Object.values(Colors).join('|') },
       },
     },
+    icon: {
+      mapping: {
+        Cancel: <CancelIcon />,
+        Check: <CheckCircleIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+        Send: <SendIcon />,
+        Star: <StarIcon />,
+      },
+      options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
   },
   args: {
     children:
       'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+    icon: 'None',
+    title: '',
   },
   component: Card,
   parameters: {
@@ -44,7 +64,7 @@ export const Playground: Story = {
   },
 }
 
-export const Cards: Story = {
+export const BasicCards: Story = {
   parameters: { ...perColorStoriesParameters },
   render: ({ children }) => (
     <div
@@ -59,6 +79,37 @@ export const Cards: Story = {
       <Card color="pink">{children}</Card>
       <Card color="purple">{children}</Card>
       <Card color="yellow">{children}</Card>
+    </div>
+  ),
+}
+
+export const FeedbackCards: Story = {
+  parameters: { ...perColorStoriesParameters },
+  render: ({ children }) => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--size-spacing-3)',
+      }}
+    >
+      <Card
+        color="error"
+        icon={<ExclamationCircleIcon />}
+        title="Oops, there have been an error"
+      >
+        {children}
+      </Card>
+      <Card
+        color="warning"
+        icon={<ExclamationCircleIcon />}
+        title="Be careful!"
+      >
+        {children}
+      </Card>
+      <Card color="success" icon={<CheckCircleIcon />} title="Congratulations">
+        {children}
+      </Card>
     </div>
   ),
 }
