@@ -69,7 +69,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...omit(['className', 'dir', 'id'], props)}
       >
         {icon && iconPosition === 'left' ? (
-          <div className={buttonIcon()}>{icon}</div>
+          <div className={buttonIcon({ variant })}>{icon}</div>
         ) : (
           false
         )}
@@ -90,7 +90,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
 
         {icon && iconPosition === 'right' ? (
-          <div className={buttonIcon()}>{icon}</div>
+          <div className={buttonIcon({ variant })}>{icon}</div>
         ) : (
           false
         )}
