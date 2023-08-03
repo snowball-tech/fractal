@@ -4391,6 +4391,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-progress@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@radix-ui/react-progress@npm:1.0.3"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@radix-ui/react-context": 1.0.1
+    "@radix-ui/react-primitive": 1.0.3
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: a4398812315ae5b25f8637a6553daf85bd36e6e08d15f7486248538a994a99268752e2c21e4af15277c17e861c1825fdd7292938c515c112dc2cdce63ec1a892
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-radio-group@npm:^1.1.3":
   version: 1.1.3
   resolution: "@radix-ui/react-radio-group@npm:1.1.3"
@@ -5051,10 +5072,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:5.9.0":
-  version: 5.9.0
-  resolution: "@snowball-tech/design-tokens@npm:5.9.0"
-  checksum: b27e524dc821b475c5649e475c63fa1f0ccd342b901ef91e13e450e4d90102407cb2619d411465d804e4ee47eca9bc906845a31a15116c076a428984d833472f
+"@snowball-tech/design-tokens@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@snowball-tech/design-tokens@npm:5.10.0"
+  checksum: 093cfb77c9959ffe15eec6e8b66d32cd7cdb108203655e751d3743aa9c26e1705f6f84af8d28fa39308e6523522be38eb5f4982be9611d95040cd0d021f9312a
   languageName: node
   linkType: hard
 
@@ -5127,13 +5148,14 @@ __metadata:
     "@radix-ui/react-dropdown-menu": ^2.0.5
     "@radix-ui/react-form": ^0.0.3
     "@radix-ui/react-label": ^2.0.2
+    "@radix-ui/react-progress": ^1.0.3
     "@radix-ui/react-radio-group": ^1.1.3
     "@radix-ui/react-scroll-area": ^1.0.4
     "@radix-ui/react-select": ^1.2.2
     "@radix-ui/react-toggle": ^1.0.3
     "@radix-ui/react-toggle-group": ^1.0.4
     "@simbathesailor/use-what-changed": ^2.0.0
-    "@snowball-tech/design-tokens": 5.9.0
+    "@snowball-tech/design-tokens": 5.10.0
     "@snowball-tech/eslint-config": ^5.1.4
     "@storybook/addon-a11y": ^7.2.0
     "@storybook/addon-essentials": ^7.2.0
