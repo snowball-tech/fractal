@@ -18,7 +18,7 @@ const meta = {
   },
   component: Logo,
   parameters: {
-    componentSubtitle: `👷‍♀️ Well, I can drive that loader - Ripley - Alien`,
+    componentSubtitle: `🦸‍♀️ What is it? - It's the SHIELD logo - Does announcing your identity on clothing help with the covert part of your job? - Carol Denver - Captain Marvel`,
   },
 
   title: 'Molecules/Logo',
