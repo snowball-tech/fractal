@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.7.0...@snowball-tech/fractal@2.7.1) (2023-08-03)
+
+### 📦 Dependencies
+
+- fix package.json ([ae6aa95](https://github.com/snowball-tech/fractal/commit/ae6aa9571805cf0515ae037113a6f6c30ff08377))
+
 # @snowball-tech/fractal [2.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.6.1...@snowball-tech/fractal@2.7.0) (2023-08-03)
 
 ### ✨ Features
