@@ -1,6 +1,7 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   card,
+  cardContent,
   cardIcon,
   cardTitle,
   typography,
@@ -45,7 +46,8 @@ export const Card = ({
       ) : (
         false
       )}
-      {children}
+
+      <div className={cardContent()}>{children}</div>
     </div>
   )
 }
