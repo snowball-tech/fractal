@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.8.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.2...@snowball-tech/fractal@2.8.3) (2023-08-03)
+
+### 🐛 Bug Fixes
+
+- **card:** remove flex display from card content ([e8f0fb0](https://github.com/snowball-tech/fractal/commit/e8f0fb04ffbc5ba8b9055e3a4081eccf25f5aa88))
+
+### 📦 Dependencies
+
+- update storybook ([5556241](https://github.com/snowball-tech/fractal/commit/5556241b36b1d587382bc0a2fe4987c8aab7e3e9))
+
 ## @snowball-tech/fractal [2.8.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.1...@snowball-tech/fractal@2.8.2) (2023-08-03)
 
 ### 📝 Documentation
