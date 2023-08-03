@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.8.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.0...@snowball-tech/fractal@2.8.1) (2023-08-03)
+
+### 🎨 Code Style and Formatting
+
+- improve performances of the linter ([ee8ad01](https://github.com/snowball-tech/fractal/commit/ee8ad013db25e944be1c54d26f43dc1b216bc4aa))
+
 # @snowball-tech/fractal [2.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.7.1...@snowball-tech/fractal@2.8.0) (2023-08-03)
 
 ### ✨ Features
