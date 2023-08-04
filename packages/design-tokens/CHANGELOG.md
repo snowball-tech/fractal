@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.10.0...@snowball-tech/design-tokens@5.10.1) (2023-08-04)
+
+### 🐛 Bug Fixes
+
+- **stepper:** use a 1px border ([5078747](https://github.com/snowball-tech/fractal/commit/507874731a934c2976c098894013644289074d7e))
+
 # @snowball-tech/design-tokens [5.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.9.0...@snowball-tech/design-tokens@5.10.0) (2023-08-03)
 
 ### ✨ Features
