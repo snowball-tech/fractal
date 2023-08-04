@@ -5,7 +5,7 @@ module.exports = {
         base: {
           comment: "Border for stepper's step.",
 
-          value: '{border.2.value}',
+          value: '{border.1.value}',
         },
         // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
         active: {
