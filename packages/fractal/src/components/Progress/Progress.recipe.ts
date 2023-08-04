@@ -7,7 +7,7 @@ export const progress: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: 'var(--color-background-stepper-step-base)',
     border: 'var(--border-stepper-step-base)',
     borderRadius: 'var(--size-radius-rounded)',
-    height: '16px',
+    height: '8px',
     maxWidth: '100%',
     overflow: 'hidden',
     position: 'relative',
