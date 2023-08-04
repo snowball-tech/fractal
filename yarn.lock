@@ -5072,10 +5072,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:5.10.0":
-  version: 5.10.0
-  resolution: "@snowball-tech/design-tokens@npm:5.10.0"
-  checksum: 093cfb77c9959ffe15eec6e8b66d32cd7cdb108203655e751d3743aa9c26e1705f6f84af8d28fa39308e6523522be38eb5f4982be9611d95040cd0d021f9312a
+"@snowball-tech/design-tokens@npm:5.10.1":
+  version: 5.10.1
+  resolution: "@snowball-tech/design-tokens@npm:5.10.1"
+  checksum: 47e8f01a97bf911f4f77cbecb2a28a587c34f825959a760036776117059f0bf27feede9373f725c10e69990880a8171afe6f859d2cc092d2583f1507dbdf140a
   languageName: node
   linkType: hard
 
@@ -5155,7 +5155,7 @@ __metadata:
     "@radix-ui/react-toggle": ^1.0.3
     "@radix-ui/react-toggle-group": ^1.0.4
     "@simbathesailor/use-what-changed": ^2.0.0
-    "@snowball-tech/design-tokens": 5.10.0
+    "@snowball-tech/design-tokens": 5.10.1
     "@snowball-tech/eslint-config": ^5.1.4
     "@storybook/addon-a11y": ^7.2.1
     "@storybook/addon-essentials": ^7.2.1
@@ -7017,10 +7017,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.4.6":
-  version: 20.4.6
-  resolution: "@types/node@npm:20.4.6"
-  checksum: 28dfc13da87f579264840bc5b8a2cde2dcb93662464a0d58f0fa98eba1aae978e3c73e893474238c4a1226d0b1a14e3936520ff9795e1c4e06fad3282be83d18
+"@types/node@npm:^20.4.7":
+  version: 20.4.7
+  resolution: "@types/node@npm:20.4.7"
+  checksum: a40d7003f66b56220a2028179e49f950b46fa6dbf860a4a6ecbd6ba7976f05b2f0b31ced39689ec88a7d9e32d07e088c6a06d270b99d5bc13a28291ac2f30ca7
   languageName: node
   linkType: hard
 
@@ -14788,7 +14788,7 @@ __metadata:
     "@snowball-tech/stylelint-config": ^2.1.4
     "@types/eslint": ^8.44.1
     "@types/is-ci": ^3.0.0
-    "@types/node": ^20.4.6
+    "@types/node": ^20.4.7
     "@types/prettier": ^3.0.0
     chromatic: ^6.20.0
     concurrently: ^8.2.0
