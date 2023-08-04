@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.8.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.4...@snowball-tech/fractal@2.8.5) (2023-08-04)
+
+### 🐛 Bug Fixes
+
+- **stepper-progress:** reduce the height of the steps/progress ([4d16baa](https://github.com/snowball-tech/fractal/commit/4d16baaf0c3ca584f0e04565c63280624dfc1307))
+
 ## @snowball-tech/fractal [2.8.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.3...@snowball-tech/fractal@2.8.4) (2023-08-04)
 
 ### Dependencies
