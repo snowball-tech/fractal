@@ -120,7 +120,7 @@
     "vite-tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "@ark-ui/react": "^0.10.0",
+    "@ark-ui/react": "^0.11.0",
     "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-compose-refs": "^1.0.1",
