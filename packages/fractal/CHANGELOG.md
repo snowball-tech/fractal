@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.8.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.6...@snowball-tech/fractal@2.8.7) (2023-08-14)
+
+### 👷 Build
+
+- force code building when building chromatic ([9ec39be](https://github.com/snowball-tech/fractal/commit/9ec39be01982b825c26a37c9132de51d1725ebe7))
+
+### 📦 Dependencies
+
+- update dependencies ([480475e](https://github.com/snowball-tech/fractal/commit/480475ee3e7990f0872f8d9cf5cd871df06ea8ad))
+
 ## @snowball-tech/fractal [2.8.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.5...@snowball-tech/fractal@2.8.6) (2023-08-14)
 
 ### 🐛 Bug Fixes
