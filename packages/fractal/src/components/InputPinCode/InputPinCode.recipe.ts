@@ -61,7 +61,7 @@ export const inputPinCodeFields: ReturnType<typeof defineRecipe> = defineRecipe(
   },
 )
 
-export const inputPinCodeField: ReturnType<typeof defineRecipe> = defineRecipe({
+export const inputPinCodeField = defineRecipe({
   base: {
     '& .fractal-inputTextContainer': {
       px: 0,
