@@ -50,7 +50,7 @@ export const inputDateFields: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['InputDate'],
 })
 
-export const inputDateField: ReturnType<typeof defineRecipe> = defineRecipe({
+export const inputDateField = defineRecipe({
   base: {
     '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
       display: 'none',
