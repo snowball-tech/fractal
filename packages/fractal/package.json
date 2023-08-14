@@ -43,7 +43,7 @@
   },
   "scripts": {
     "build:chromatic": "yarn run -T chromatic --build-script-name build:storybook",
-    "prebuild:storybook": "yarn run -T turbo run update:fonts build:code build:styles --filter=@snowball-tech/fractal --parallel",
+    "prebuild:storybook": "yarn run -T turbo run update:fonts build:code build:styles --filter=@snowball-tech/fractal --parallel --force",
     "build:storybook": "yarn run prebuild:storybook && yarn storybook build",
     "prebuild": "yarn run clean:build && mkdir -p ./dist",
     "build": "yarn run prebuild && yarn run -T turbo build:code build:info build:styles --filter=@snowball-tech/fractal --parallel --force && yarn run -T turbo build:library --filter=@snowball-tech/fractal && yarn run postbuild",
