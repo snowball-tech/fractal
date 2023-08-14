@@ -23579,8 +23579,8 @@ __metadata:
   linkType: hard
 
 "storybook-addon-mock@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "storybook-addon-mock@npm:4.1.0"
+  version: 4.2.0
+  resolution: "storybook-addon-mock@npm:4.2.0"
   dependencies:
     mock-xmlhttprequest: ^8.1.0
     path-to-regexp: ^6.2.1
@@ -23599,7 +23599,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: cbfc074a518803454267fc9d06bb6b85b65141b7c2d1265da67e214ebb06d69650fd3bf90adcdd72a547d72120fe4df2fd8d5016a55ac991f79d083af4ea2cc2
+  checksum: fa612b868fb0356f858d347bb8e22439edfa5085408cd67bc8c7451059d65de9dba50651c7ac439e641dbb9604ecc78fbdd9de6645b7bd00f0c777eac9c318d6
   languageName: node
   linkType: hard
 
