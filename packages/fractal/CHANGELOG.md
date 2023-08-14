@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [2.8.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.5...@snowball-tech/fractal@2.8.6) (2023-08-14)
+
+### 🐛 Bug Fixes
+
+- fix typings of recipes ([819fc1a](https://github.com/snowball-tech/fractal/commit/819fc1a4b0a45caffed12968d2810fdb9faafb03))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([56d9bfb](https://github.com/snowball-tech/fractal/commit/56d9bfb854e2af666b92ef948c0b045be364820f))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.10.2
+
 ## @snowball-tech/fractal [2.8.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.4...@snowball-tech/fractal@2.8.5) (2023-08-04)
 
 ### 🐛 Bug Fixes
