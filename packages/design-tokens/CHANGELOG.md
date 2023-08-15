@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.10.2...@snowball-tech/design-tokens@5.11.0) (2023-08-15)
+
+### ✨ Features
+
+- **avatar:** add avatar design tokens ([df1eb88](https://github.com/snowball-tech/fractal/commit/df1eb88402f9c8bd5f196a720be51be56e3ea98f))
+
 ## @snowball-tech/design-tokens [5.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.10.1...@snowball-tech/design-tokens@5.10.2) (2023-08-14)
 
 ### 📦 Dependencies
