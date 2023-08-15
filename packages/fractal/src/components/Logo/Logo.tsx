@@ -6,10 +6,9 @@ import { DEFAULT_SIZE } from './Logo.constants'
 import type { LogoProps } from './Logo.types'
 
 /**
- * `Loader` component allow to build interface with level and hierarchy.
- * experience.
+ * `Logo` component allow to display the SnowBall logo.
  */
-export const Loader = ({ size = DEFAULT_SIZE, ...props }: LogoProps) => {
+export const Logo = ({ size = DEFAULT_SIZE, ...props }: LogoProps) => {
   return (
     <svg
       className={cx(props.className, logo({ size }))}
@@ -80,6 +79,6 @@ export const Loader = ({ size = DEFAULT_SIZE, ...props }: LogoProps) => {
     </svg>
   )
 }
-Loader.displayName = 'Loader'
+Logo.displayName = 'Logo'
 
-export default Loader
+export default Logo
