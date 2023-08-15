@@ -26,7 +26,6 @@ module.exports = {
         width: { value: baseWidth * 3 },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       xl: {
         height: { value: baseHeight * 4 },
         width: { value: baseWidth * 4 },
