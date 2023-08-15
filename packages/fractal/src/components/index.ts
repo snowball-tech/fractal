@@ -6,6 +6,7 @@ export {
   AutocompleteItemSeparator,
   AutocompleteLoading,
 } from './Autocomplete/index.js'
+export { Avatar } from './Avatar/index.js'
 export { Button } from './Button/index.js'
 export { Card } from './Card/index.js'
 export { Header } from './Header/index.js'
