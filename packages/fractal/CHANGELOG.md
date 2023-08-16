@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.9.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.1...@snowball-tech/fractal@2.9.2) (2023-08-16)
+
+### 🐛 Bug Fixes
+
+- **pin-code:** fix the padding in mobile view ([bd5c7ef](https://github.com/snowball-tech/fractal/commit/bd5c7ef1e1753c095dc2e26aed61d62a3229b349))
+
+### 📦 Dependencies
+
+- update storybook ([9c16c28](https://github.com/snowball-tech/fractal/commit/9c16c2802624f497bdef526b2477d903bfae9535))
+
 ## @snowball-tech/fractal [2.9.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.0...@snowball-tech/fractal@2.9.1) (2023-08-16)
 
 ### 🐛 Bug Fixes
