@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [2.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.8...@snowball-tech/fractal@2.9.0) (2023-08-16)
+
+### ✨ Features
+
+- **avatar:** add avatar component ([5f3f4c2](https://github.com/snowball-tech/fractal/commit/5f3f4c2abe95cca210f64db4f16211c9fb386bbf))
+
+### 🐛 Bug Fixes
+
+- **logo:** fix the name of the cpmponent ([452c9c7](https://github.com/snowball-tech/fractal/commit/452c9c774e2602a4df980f3815ef9a55d92e08aa))
+
+### 📦 Dependencies
+
+- update dependencies ([25e29f3](https://github.com/snowball-tech/fractal/commit/25e29f366f9e40207117a03aec46b64de70a4058))
+
 ## @snowball-tech/fractal [2.8.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.7...@snowball-tech/fractal@2.8.8) (2023-08-15)
 
 ### Dependencies
