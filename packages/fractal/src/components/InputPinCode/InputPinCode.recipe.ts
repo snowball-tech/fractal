@@ -63,14 +63,6 @@ export const inputPinCodeFields: ReturnType<typeof defineRecipe> = defineRecipe(
 
 export const inputPinCodeField = defineRecipe({
   base: {
-    '& .fractal-inputTextContainer': {
-      px: 0,
-    },
-
-    '& input': {
-      px: 0,
-    },
-
     '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
       display: 'none',
     },
@@ -83,14 +75,8 @@ export const inputPinCodeField = defineRecipe({
       maxWidth: 'calc(64px + (var(--size-spacing-5) / 2))!',
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     maxWidth: '64px!',
     minWidth: '20px',
-    sm: {
-      '& input': {
-        px: 'var(--size-input-padding-horizontal)',
-      },
-    },
     textAlign: 'center',
     width: 'fit-content',
   },
