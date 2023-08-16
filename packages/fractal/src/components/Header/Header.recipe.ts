@@ -59,7 +59,6 @@ export const headerMiddle: ReturnType<typeof defineRecipe> = defineRecipe({
         justifySelf: 'center',
         maxHeight: '48px',
         textAlign: 'center',
-        width: '100%',
       },
     },
 
@@ -69,6 +68,7 @@ export const headerMiddle: ReturnType<typeof defineRecipe> = defineRecipe({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    width: '100%',
   },
 
   className: 'headerMiddle',
