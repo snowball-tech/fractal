@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.9.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.0...@snowball-tech/fractal@2.9.1) (2023-08-16)
+
+### 🐛 Bug Fixes
+
+- **header:** fix the display of the middle ([cd6afd3](https://github.com/snowball-tech/fractal/commit/cd6afd3f8eb9e53c721327ce47aab7144ef49185))
+
 # @snowball-tech/fractal [2.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.8.8...@snowball-tech/fractal@2.9.0) (2023-08-16)
 
 ### ✨ Features
