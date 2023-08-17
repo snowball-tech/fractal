@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [2.9.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.3...@snowball-tech/fractal@2.9.4) (2023-08-17)
+
+### 📦 Dependencies
+
+- fix lockfile ([dbe279f](https://github.com/snowball-tech/fractal/commit/dbe279f93c56a2a4f8dd4ec0f572588f92e972a5))
+- use better version of unicons ([cac8176](https://github.com/snowball-tech/fractal/commit/cac817646b6a97221abbcc9cc97c8e708506230a))
+
 ## @snowball-tech/fractal [2.9.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.2...@snowball-tech/fractal@2.9.3) (2023-08-17)
 
 ### 🐛 Bug Fixes
