@@ -1,4 +1,9 @@
-import type { ChangeEvent, HTMLAttributes, KeyboardEvent } from 'react'
+import type {
+  ChangeEvent,
+  FocusEvent,
+  HTMLAttributes,
+  KeyboardEvent,
+} from 'react'
 
 export type DateFormat = {
   day?: number | undefined
@@ -27,7 +32,13 @@ export type CombinedRefs = {
 export interface InputDateProps
   extends Omit<
     HTMLAttributes<HTMLDivElement>,
-    'defaultValue' | 'onChange' | 'onKeyDown' | 'onKeyUp' | 'placeholder'
+    | 'defaultValue'
+    | 'onBlur'
+    | 'onChange'
+    | 'onFocus'
+    | 'onKeyDown'
+    | 'onKeyUp'
+    | 'placeholder'
   > {
   /** Indicates if the day field must be focused on render. */
   autoFocus?: boolean
@@ -72,6 +83,10 @@ export interface InputDateProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
+  /**
+   * Event handler called when one of the field of the date input is blurred.
+   */
+  onBlur?: (event: FocusEvent<HTMLInputElement>, type: keyof DateFormat) => void
   /** Event handler called when the date value is changed. */
   onChange?: (event: ChangeEvent<HTMLInputElement>, newDate: DateFormat) => void
   /** Event handler called when one of the field of the date input is changed. */
@@ -79,6 +94,13 @@ export interface InputDateProps
     event: ChangeEvent<HTMLInputElement>,
     type: keyof DateFormat,
     newDay: number,
+  ) => void
+  /**
+   * Event handler called when one of the field of the date input is focused.
+   */
+  onFocus?: (
+    event: FocusEvent<HTMLInputElement>,
+    type: keyof DateFormat,
   ) => void
   /** Event handler when a key is pressed down in one of the fields. */
   onKeyDown: (
