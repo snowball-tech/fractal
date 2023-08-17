@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLAttributes } from 'react'
+import type { ChangeEvent, HTMLAttributes, KeyboardEvent } from 'react'
 
 export type DateFormat = {
   day?: number | undefined
@@ -27,7 +27,7 @@ export type CombinedRefs = {
 export interface InputDateProps
   extends Omit<
     HTMLAttributes<HTMLDivElement>,
-    'defaultValue' | 'onChange' | 'placeholder'
+    'defaultValue' | 'onChange' | 'onKeyDown' | 'onKeyUp' | 'placeholder'
   > {
   /** Indicates if the day field must be focused on render. */
   autoFocus?: boolean
@@ -79,6 +79,17 @@ export interface InputDateProps
     event: ChangeEvent<HTMLInputElement>,
     type: keyof DateFormat,
     newDay: number,
+  ) => void
+  /** Event handler when a key is pressed down in one of the fields. */
+  onKeyDown: (
+    event: KeyboardEvent<HTMLInputElement>,
+    type: keyof DateFormat,
+  ) => void
+
+  /** Event handler when a key is released in one of the fields. */
+  onKeyUp: (
+    event: KeyboardEvent<HTMLInputElement>,
+    type: keyof DateFormat,
   ) => void
   /**
    * A string to display in each of the date field when the value is

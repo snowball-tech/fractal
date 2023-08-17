@@ -82,6 +82,8 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       name,
       onChange,
       onFieldChange,
+      onKeyDown,
+      onKeyUp,
       placeholders,
       readOnly = false,
       required = false,
@@ -294,6 +296,10 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         default:
           break
       }
+
+      if (isFunction(onKeyDown)) {
+        onKeyDown(event, type)
+      }
     }
 
     return (
@@ -337,6 +343,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             onChange={(event, newDay) => handleChange(event, newDay, 'day')}
             onFocus={handleFocus}
             onKeyDown={(event) => handleKeyDown(event, 'day')}
+            {...(isFunction(onKeyUp)
+              ? { onKeyUp: (event) => onKeyUp(event, 'day') }
+              : {})}
           />
 
           <InputText
@@ -367,6 +376,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             }
             onFocus={handleFocus}
             onKeyDown={(event) => handleKeyDown(event, 'month')}
+            {...(isFunction(onKeyUp)
+              ? { onKeyUp: (event) => onKeyUp(event, 'month') }
+              : {})}
           />
 
           <InputText
@@ -402,6 +414,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             onChange={(event, newYear) => handleChange(event, newYear, 'year')}
             onFocus={handleFocus}
             onKeyDown={(event) => handleKeyDown(event, 'year')}
+            {...(isFunction(onKeyUp)
+              ? { onKeyUp: (event) => onKeyUp(event, 'year') }
+              : {})}
           />
         </div>
 
