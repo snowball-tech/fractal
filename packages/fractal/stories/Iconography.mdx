@@ -1,5 +1,6 @@
 import * as icons from '@iconscout/react-unicons'
 import { Meta } from '@storybook/blocks'
+import kebabCase from 'lodash/fp/kebabCase'
 import { createElement } from 'react'
 
 <Meta title="Atoms/Iconography" />
@@ -55,7 +56,11 @@ import UilIcons from '@iconscout/react-unicons/dist/icons/uil-icons'
       className="icon"
       title={iconName}
       onClick={() => {
-        navigator.clipboard.writeText(iconName)
+        navigator.clipboard.writeText(
+          `import ${iconName} from '@iconscout/react-unicons/dist/icons/${kebabCase(
+            iconName,
+          )}'`,
+        )
       }}
     >
       <div className="icon-name">{iconName}</div>
