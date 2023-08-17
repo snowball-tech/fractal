@@ -142,7 +142,7 @@
     "react-dom": "^18.2.0"
   },
   "peerDependencies": {
-    "@iconscout/react-unicons": "Azuky/react-unicons",
+    "@iconscout/react-unicons": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
