@@ -25,6 +25,7 @@ import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
+  type FocusEvent,
   type ForwardedRef,
   forwardRef,
   useEffect,
@@ -143,7 +144,11 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       }
     }
 
-    const handleInputBlur = () => {
+    const handleInputBlur = (event: FocusEvent<HTMLInputElement>) => {
+      if (isFunction(props.onBlur)) {
+        props.onBlur(event)
+      }
+
       if (keepFocus) {
         if (inputRef.current) {
           inputRef.current.focus()
