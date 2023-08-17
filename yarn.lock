@@ -5207,6 +5207,7 @@ __metadata:
     vite: ^4.4.9
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
+    "@iconscout/react-unicons": "*"
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown
