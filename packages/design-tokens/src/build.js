@@ -1,4 +1,3 @@
-const ora = require('ora')
 const StyleDictionary = require('style-dictionary')
 
 require('./actions')
@@ -19,7 +18,7 @@ if (platforms.length > 1) {
 } else {
   message = `${message} ${platforms[0]}`
 }
-ora().info(`${message}...`)
+console.info(`${message}...`)
 
 const sdInstance = StyleDictionary.extend(config)
 
@@ -28,6 +27,6 @@ platforms.forEach((platform) => {
 })
 
 console.log('')
-ora().succeed(
+console.info(
   `${platforms.length} platform${platforms.length > 1 ? 's' : ''} built!`,
 )

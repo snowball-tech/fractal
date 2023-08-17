@@ -1,7 +1,6 @@
 const path = require('node:path')
 const { execSync } = require('node:child_process')
 
-const chalk = require('chalk')
 const noop = require('lodash/fp/noop')
 const StyleDictionary = require('style-dictionary')
 
@@ -18,9 +17,7 @@ StyleDictionary.registerAction({
     execSync(
       `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader`,
     )
-    console.log(
-      chalk.bold.green(`✔︎ ${destinationDirectory}constants.js (ESM)`),
-    )
+    console.log(`✔︎ ${destinationDirectory}constants.js (ESM)`)
   },
   name: 'react/copy-constants',
   undo: noop,
