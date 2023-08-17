@@ -80,8 +80,10 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       label,
       maxYear = 2099,
       name,
+      onBlur,
       onChange,
       onFieldChange,
+      onFocus,
       onKeyDown,
       onKeyUp,
       placeholders,
@@ -237,7 +239,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       }
     }
 
-    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+    const handleFocus = (
+      event: FocusEvent<HTMLInputElement>,
+      type: keyof DateFormat,
+    ) => {
+      if (isFunction(onFocus)) {
+        onFocus(event, type)
+      }
+
       if (event.target) {
         event.target.select()
       }
@@ -247,6 +256,10 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       event: KeyboardEvent<HTMLInputElement>,
       type: keyof DateFormat,
     ) => {
+      if (isFunction(onKeyDown)) {
+        onKeyDown(event, type)
+      }
+
       switch (event.key) {
         case 'ArrowLeft':
           switch (type) {
@@ -296,10 +309,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         default:
           break
       }
-
-      if (isFunction(onKeyDown)) {
-        onKeyDown(event, type)
-      }
     }
 
     return (
@@ -340,8 +349,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             suffix={errors.day ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.day !== undefined ? { value: value.day } : {})}
+            {...(isFunction(onBlur)
+              ? { onBlur: (event) => onBlur(event, 'day') }
+              : {})}
             onChange={(event, newDay) => handleChange(event, newDay, 'day')}
-            onFocus={handleFocus}
+            onFocus={(event) => handleFocus(event, 'day')}
             onKeyDown={(event) => handleKeyDown(event, 'day')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
@@ -371,10 +383,13 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             suffix={errors.month ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.month !== undefined ? { value: value.month } : {})}
+            {...(isFunction(onBlur)
+              ? { onBlur: (event) => onBlur(event, 'month') }
+              : {})}
             onChange={(event, newMonth) =>
               handleChange(event, newMonth, 'month')
             }
-            onFocus={handleFocus}
+            onFocus={(event) => handleFocus(event, 'month')}
             onKeyDown={(event) => handleKeyDown(event, 'month')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
@@ -411,8 +426,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             }
             type="number"
             {...(value?.year !== undefined ? { value: value.year } : {})}
+            {...(isFunction(onBlur)
+              ? { onBlur: (event) => onBlur(event, 'year') }
+              : {})}
             onChange={(event, newYear) => handleChange(event, newYear, 'year')}
-            onFocus={handleFocus}
+            onFocus={(event) => handleFocus(event, 'year')}
             onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'year') }
