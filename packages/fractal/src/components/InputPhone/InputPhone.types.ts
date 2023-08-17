@@ -75,10 +75,9 @@ export interface InputPhoneProps
   /** Event handler called when the phone value is changed. */
   onChange?: (newPhoneNumber: PhoneNumber, isValid?: boolean) => void
   /** Event handler when a key is pressed down in one of the fields. */
-  onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => void
-
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void
   /** Event handler when a key is released in one of the fields. */
-  onKeyUp: (event: KeyboardEvent<HTMLInputElement>) => void
+  onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => void
   /**
    * A string to display when the text input is empty.
    *
