@@ -1,3 +1,25 @@
+# @snowball-tech/fractal [2.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.8...@snowball-tech/fractal@2.10.0) (2023-08-17)
+
+### ❓ Unknown changes
+
+- **input-date:** fix the typings of date format ([5775fcf](https://github.com/snowball-tech/fractal/commit/5775fcfeb5b8f2157ed579231169545332520cb3))
+
+### ✨ Features
+
+- **input-date:** support blur and focus events too ([6c3e65c](https://github.com/snowball-tech/fractal/commit/6c3e65c7d8780abad820041c574836405c314405))
+- **input-date:** support onKeyDown and onKeyUp ([ff4c30f](https://github.com/snowball-tech/fractal/commit/ff4c30ffa13cf6032fbd2bf8fd946d4a585c645d))
+- **input-phone:** support onKeyDown and onKeyUp ([e209ae3](https://github.com/snowball-tech/fractal/commit/e209ae359e8757b9963c026e0816fb18cdd862ca))
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix support for onBlur event handler ([5099719](https://github.com/snowball-tech/fractal/commit/509971903e430400bcab26ac9a968c6e475d7fab))
+- **input-date:** fix the typings ([6ac0bb7](https://github.com/snowball-tech/fractal/commit/6ac0bb74dbb3a975815b1ed28435ad41d17102b0))
+- **input-phone:** fix typings ([9667f93](https://github.com/snowball-tech/fractal/commit/9667f93b03ffb27da42b224b93c937980f0adfee))
+
+### 📝 Documentation
+
+- **icons:** copy/paste the import statement instead of the icon name ([b776248](https://github.com/snowball-tech/fractal/commit/b776248bf0aa43dbfa8d345ebbd9dbf4d9e01b1a))
+
 ## @snowball-tech/fractal [2.9.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.7...@snowball-tech/fractal@2.9.8) (2023-08-17)
 
 ### 📝 Documentation
