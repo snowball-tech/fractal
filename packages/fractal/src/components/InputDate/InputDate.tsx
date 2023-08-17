@@ -17,8 +17,8 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
-import isNumber from 'lodash/fp/isNumber'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
@@ -43,7 +43,7 @@ import type {
 } from './InputDate.types'
 
 function isValid(type: keyof DateFormat, value: number, max?: number) {
-  if (!isNumber(value) || Number.isNaN(value)) {
+  if (!isInteger(value)) {
     return false
   }
 
@@ -55,9 +55,9 @@ function isValid(type: keyof DateFormat, value: number, max?: number) {
       return value >= 1 && value <= 12
 
     case 'year':
-      return (
-        value >= 1900 && (!isNumber(max) || Number.isNaN(max) || value <= max)
-      )
+      return max === undefined || !isInteger(max)
+        ? value >= 1900
+        : value >= 1900 && value <= max
 
     default:
       return false
@@ -138,22 +138,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       const newErrors = { ...errors }
 
       const day = value?.day || defaultValue?.day
-      if (
-        !isNil(day) &&
-        !Number.isNaN(day) &&
-        (!isNumber(day) || !isValid('day', day))
-      ) {
+      if (!isNil(day) && (!isInteger(day) || !isValid('day', day))) {
         newErrors.day = true
       } else {
         newErrors.day = false
       }
 
       const month = value?.month || defaultValue?.month
-      if (
-        !isNil(month) &&
-        !Number.isNaN(month) &&
-        (!isNumber(month) || !isValid('month', month))
-      ) {
+      if (!isNil(month) && (!isInteger(month) || !isValid('month', month))) {
         newErrors.month = true
       } else {
         newErrors.month = false
@@ -162,8 +154,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       const year = value?.year || defaultValue?.year
       if (
         !isNil(year) &&
-        !Number.isNaN(year) &&
-        (!isNumber(year) || !isValid('year', year, maxYear))
+        (!isInteger(year) || !isValid('year', year, maxYear))
       ) {
         newErrors.year = true
       } else {
@@ -216,8 +207,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
       if (
         !isNil(newValueAsInt) &&
-        isNumber(newValueAsInt) &&
-        !Number.isNaN(newValueAsInt) &&
+        isInteger(newValueAsInt) &&
         isValid(type, newValueAsInt, maxYear)
       ) {
         switch (type) {
