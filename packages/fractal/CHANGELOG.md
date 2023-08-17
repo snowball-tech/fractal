@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.9.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.6...@snowball-tech/fractal@2.9.7) (2023-08-17)
+
+### ♻️ Code Refactoring
+
+- use isFinite/isInteger instead of checking for NaN ([efcd703](https://github.com/snowball-tech/fractal/commit/efcd7037e96e6a61776e82af098f8ebbd99a9453))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.11.2
+
 ## @snowball-tech/fractal [2.9.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.5...@snowball-tech/fractal@2.9.6) (2023-08-17)
 
 ### 🐛 Bug Fixes
