@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [2.9.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.5...@snowball-tech/fractal@2.9.6) (2023-08-17)
+
+### 🐛 Bug Fixes
+
+- **checkbox:** fix the box sizing ([1b7e31e](https://github.com/snowball-tech/fractal/commit/1b7e31e9a41ec522362ed8e3234164be207f81df))
+- **radio:** fix the box sizing ([b426d13](https://github.com/snowball-tech/fractal/commit/b426d13773dfc6fa361786112905a0351844c995))
+
 ## @snowball-tech/fractal [2.9.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.4...@snowball-tech/fractal@2.9.5) (2023-08-17)
 
 ### 📦 Dependencies
