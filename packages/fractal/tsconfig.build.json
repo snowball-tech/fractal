@@ -6,7 +6,7 @@
     "noEmit": false
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "files": ["global.d.ts", "unicons.d.ts", "index.ts"],
+  "files": ["global.d.ts", "index.ts"],
   "exclude": ["src/**/*.stories.*", "src/**/*.mdx"],
   "references": []
 }

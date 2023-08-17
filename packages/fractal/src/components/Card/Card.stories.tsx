@@ -1,10 +1,8 @@
-import {
-  UilCancel as CancelIcon,
-  UilCheckCircle as CheckCircleIcon,
-  UilExclamationCircle as ExclamationCircleIcon,
-  UilMessage as SendIcon,
-  UilEnvelopeStar as StarIcon,
-} from '@iconscout/react-unicons'
+import CancelIcon from '@iconscout/react-unicons/dist/icons/uil-cancel'
+import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
+import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
+import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
+import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 

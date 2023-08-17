@@ -2639,14 +2639,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconscout/react-unicons@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@iconscout/react-unicons@npm:2.0.2"
-  dependencies:
-    react: ">=15.0.0 <17.0.0"
+"@iconscout/react-unicons@Azuky/react-unicons":
+  version: 1.3.0
+  resolution: "@iconscout/react-unicons@https://github.com/Azuky/react-unicons.git#commit=24eb30a949ffdff406c3e02b63a6dde500e4fe86"
   peerDependencies:
-    react: ">=15.0.0 <17.0.0"
-  checksum: 37522d6c6fb0c67cb209e7e5d5a6995cd1b6c5dec8caa52591fcddc50197206b238b7b5fde71237eb2129bb3c190c80eea7373201af71ae538b1a48ae881da86
+    react: ^17.0.0 || ^18.0.0
+  checksum: 7ca4579c8a95e8362dd2278369c12080b60a1620238c2fcb88609fbaf4c72ab94e4be8048fe12ee3be2adbad78c9662af851e0f08c9f3927af6655686785b8f8
   languageName: node
   linkType: hard
 
@@ -5153,7 +5151,7 @@ __metadata:
   resolution: "@snowball-tech/fractal@workspace:packages/fractal"
   dependencies:
     "@ark-ui/react": ^0.13.1
-    "@iconscout/react-unicons": ^2.0.2
+    "@iconscout/react-unicons": Azuky/react-unicons
     "@pandacss/dev": ^0.11.0
     "@pandacss/preset-base": ^0.11.0
     "@radix-ui/react-checkbox": ^1.0.4
@@ -5209,7 +5207,6 @@ __metadata:
     vite: ^4.4.9
     vite-tsconfig-paths: ^4.2.0
   peerDependencies:
-    "@iconscout/react-unicons": ^2.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown
@@ -21139,7 +21136,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -21595,17 +21592,6 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
-  languageName: node
-  linkType: hard
-
-"react@npm:>=15.0.0 <17.0.0":
-  version: 16.14.0
-  resolution: "react@npm:16.14.0"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-    prop-types: ^15.6.2
-  checksum: 8484f3ecb13414526f2a7412190575fc134da785c02695eb92bb6028c930bfe1c238d7be2a125088fec663cc7cda0a3623373c46807cf2c281f49c34b79881ac
   languageName: node
   linkType: hard
 

@@ -1,4 +1,4 @@
-import { UilUser as UserIcon } from '@iconscout/react-unicons'
+import UserIcon from '@iconscout/react-unicons/dist/icons/uil-user'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   avatar,

@@ -1,7 +1,5 @@
-import {
-  UilCheckCircle as CheckCircleIcon,
-  UilExclamationCircle as ExclamationCircleIcon,
-} from '@iconscout/react-unicons'
+import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
+import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {

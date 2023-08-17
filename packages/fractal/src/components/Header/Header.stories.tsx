@@ -1,8 +1,6 @@
-import {
-  UilBars as HamburgerBarsIcon,
-  UilArrowLeft as LeftIcon,
-  UilSearchAlt as SearchIcon,
-} from '@iconscout/react-unicons'
+import LeftIcon from '@iconscout/react-unicons/dist/icons/uil-arrow-left'
+import HamburgerBarsIcon from '@iconscout/react-unicons/dist/icons/uil-bars'
+import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import isEmpty from 'lodash/fp/isEmpty'
