@@ -70,6 +70,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       label,
       name,
       onChange,
+      onKeyDown,
+      onKeyUp,
       placeholder,
       readOnly = false,
       required = false,
@@ -327,6 +329,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   value={search}
                   onBlur={handleSearchBlur}
                   onChange={(_, newSearch) => handleSearch(newSearch, true)}
+                  {...(isFunction(onKeyDown) ? { onKeyDown } : {})}
+                  {...(isFunction(onKeyUp) ? { onKeyUp } : {})}
                 />
 
                 {prefixes.map(
