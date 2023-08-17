@@ -1,10 +1,8 @@
 'use client'
 
-import {
-  UilCheckCircle as CheckCircleIcon,
-  UilExclamationCircle as ExclamationCircleIcon,
-  UilSearchAlt as SearchIcon,
-} from '@iconscout/react-unicons'
+import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
+import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
+import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {

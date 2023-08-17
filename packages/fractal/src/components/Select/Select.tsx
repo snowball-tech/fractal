@@ -1,6 +1,6 @@
 'use client'
 
-import { UilAngleDown as AngleDownIcon } from '@iconscout/react-unicons'
+import AngleDownIcon from '@iconscout/react-unicons/dist/icons/uil-angle-down'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'

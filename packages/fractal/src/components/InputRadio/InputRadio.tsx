@@ -1,4 +1,4 @@
-import { UilCheck as CheckIcon } from '@iconscout/react-unicons'
+import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'
 import { cx } from '@snowball-tech/fractal-panda/css'

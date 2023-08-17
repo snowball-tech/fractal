@@ -1,7 +1,5 @@
-import {
-  UilMessage as SendIcon,
-  UilEnvelopeStar as StarIcon,
-} from '@iconscout/react-unicons'
+import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
+import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 

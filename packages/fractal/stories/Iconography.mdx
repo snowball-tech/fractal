@@ -13,19 +13,28 @@ Fractal uses the [Unicons icon library](https://iconscout.com/unicons) in the
 
 ## Usage
 
-The `@iconscout/react-unicons` package is available as a Fractal dependency so
-you can import any Line icon in your React components and use it as any other
-React component:
+It's recommended to add the `@iconscout/react-unicons` package as a dependency
+so you can import any Line icon in your React components and use it as any other
+React component.
+
+> ##### 💡 Tips
+>
+> ---
+>
+> The official `react-unicons` library hasn't been updated in a while.
+> If you want to enjoy TypeScript support and tree shaking, it's recommended to
+> add the
+> [Azuky's version of the library](https://github.com/Azuky/react-unicons):
+>
+> ```bash
+> yarn add @iconscout/react-unicons@Azuky/react-unicons
+> ```
+
+A good practice is to import each single icon instead of using the barrel file
+to allow tree-shaking and reduce the size of your bundle:
 
 ```jsx
-import { UilIcons } from '@iconscout/react-unicons'
-```
-
-A good practice is to rename the imported icon in the `<Name>Icon` format, for
-example:
-
-```jsx
-import { UilHeart as HeartIcon } from '@iconscout/react-unicons'
+import UilIcons from '@iconscout/react-unicons/dist/icons/uil-icons'
 ```
 
 ## Available icons
@@ -54,3 +63,6 @@ import { UilHeart as HeartIcon } from '@iconscout/react-unicons'
     </div>
   ))}
 </div>
+
+You can also get the list (and name) of all available icons, at the following
+link: https://iconscout.com/unicons/explore/line
