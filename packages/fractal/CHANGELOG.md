@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.9.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.7...@snowball-tech/fractal@2.9.8) (2023-08-17)
+
+### 📝 Documentation
+
+- **avatar:** use a static image ([4e0ba5c](https://github.com/snowball-tech/fractal/commit/4e0ba5c74f732482bea0fd1d28c6251c733d3a63))
+
 ## @snowball-tech/fractal [2.9.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.6...@snowball-tech/fractal@2.9.7) (2023-08-17)
 
 ### ♻️ Code Refactoring
