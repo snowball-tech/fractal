@@ -1,9 +1,9 @@
 import { ChangeEvent, HTMLAttributes } from 'react'
 
 export type DateFormat = {
-  day?: number
-  month?: number
-  year?: number
+  day?: number | undefined
+  month?: number | undefined
+  year?: number | undefined
 }
 
 export type Placeholders = {
