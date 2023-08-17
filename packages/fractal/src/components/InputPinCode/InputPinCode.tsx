@@ -13,7 +13,7 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
-import isNumber from 'lodash/fp/isNumber'
+import isInteger from 'lodash/fp/isInteger'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
@@ -78,12 +78,7 @@ export const InputPinCode = ({
   ) => {
     const newValueAsInt = parseInt(newValue, 10)
 
-    if (
-      !isNumber(newValueAsInt) ||
-      Number.isNaN(newValueAsInt) ||
-      newValueAsInt < 0 ||
-      newValueAsInt > 9
-    ) {
+    if (!isInteger(newValueAsInt) || newValueAsInt < 0 || newValueAsInt > 9) {
       return
     }
 
@@ -205,7 +200,7 @@ export const InputPinCode = ({
             className={inputPinCodeField()}
             {...(isString(defaultValue)
               ? {
-                  defaultValue: Number.isNaN(
+                  defaultValue: !isInteger(
                     parseInt(defaultValue[index] ?? '', 10),
                   )
                     ? ''
@@ -237,7 +232,7 @@ export const InputPinCode = ({
             type="number"
             {...(isString(value)
               ? {
-                  value: Number.isNaN(parseInt(value[index] ?? '', 10))
+                  value: !isInteger(parseInt(value[index] ?? '', 10))
                     ? ''
                     : value[index],
                 }

@@ -1,6 +1,6 @@
 const StyleDictionary = require('style-dictionary')
 
-const isNumber = require('lodash/fp/isNumber')
+const isFinite = require('lodash/fp/isFinite')
 const isString = require('lodash/fp/isString')
 
 const {
@@ -18,7 +18,7 @@ StyleDictionary.registerTransform({
     }
 
     const floatValue = parseFloat(token.value)
-    if (!isNumber(floatValue) || Number.isNaN(floatValue)) {
+    if (!isFinite(floatValue)) {
       return token.value
     }
 
@@ -42,7 +42,7 @@ StyleDictionary.registerTransform({
     }
 
     const floatValue = parseFloat(token.value)
-    if (!isNumber(floatValue) || Number.isNaN(floatValue)) {
+    if (!isFinite(floatValue)) {
       return token.value
     }
 
