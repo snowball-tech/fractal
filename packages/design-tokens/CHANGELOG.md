@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.11.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.11.1...@snowball-tech/design-tokens@5.11.2) (2023-08-17)
+
+### ♻️ Code Refactoring
+
+- use isFinite/isInteger instead of checking for NaN ([efcd703](https://github.com/snowball-tech/fractal/commit/efcd7037e96e6a61776e82af098f8ebbd99a9453))
+
 ## @snowball-tech/design-tokens [5.11.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.11.0...@snowball-tech/design-tokens@5.11.1) (2023-08-17)
 
 ### 📦 Dependencies
