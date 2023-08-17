@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.9.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.2...@snowball-tech/fractal@2.9.3) (2023-08-17)
+
+### 🐛 Bug Fixes
+
+- **input-phone:** display in row mode in mobile ([7422bd1](https://github.com/snowball-tech/fractal/commit/7422bd17c58d0cb072400321e2d02f389c1421bf))
+
 ## @snowball-tech/fractal [2.9.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.1...@snowball-tech/fractal@2.9.2) (2023-08-16)
 
 ### 🐛 Bug Fixes
