@@ -1,5 +1,5 @@
 import UserIcon from '@iconscout/react-unicons/dist/icons/uil-user'
-import { cx } from '@snowball-tech/fractal-panda/css'
+import { css, cx } from '@snowball-tech/fractal-panda/css'
 import {
   avatar,
   avatarWithBackground,
@@ -28,10 +28,16 @@ export const Avatar = ({
 
   if (!isEmpty(imageUrl)) {
     return (
-      <img
-        alt={name}
-        className={avatar({ size })}
-        src={imageUrl}
+      <div
+        className={cx(
+          avatar({ size }),
+          css({
+            backgroundPosition: `center`,
+            backgroundRepeat: `no-repeat`,
+            backgroundSize: `cover`,
+          }),
+        )}
+        style={{ backgroundImage: `url(${imageUrl})` }}
         title={name}
         {...omit(['className'], props)}
       />
