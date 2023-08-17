@@ -14,11 +14,12 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       _fullWidth: {
-        width: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
+        width: '100%',
       },
 
       alignItems: 'center',
       borderRadius: 'var(--size-radius-s)',
+      boxSizing: 'border-box',
       display: 'flex',
       gap: 'var(--size-checkbox-gap)',
       px: 'var(--size-checkbox-padding-horizontal)',
