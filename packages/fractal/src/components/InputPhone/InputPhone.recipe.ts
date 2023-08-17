@@ -5,16 +5,10 @@ export const GROUP_NAME = 'input-phone'
 export const inputPhoneContainer: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      sm: {
-        width: 'unset',
-      },
-
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--size-spacing-1)',
       maxWidth: '100%',
-      width: '100%',
     },
 
     className: 'inputPhoneContainer',
@@ -44,16 +38,11 @@ export const inputPhoneLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const inputPhoneFields: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    sm: {
-      flexDirection: 'row',
-      width: 'fit-content',
-    },
-
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     gap: 'var(--size-spacing-1)',
     maxWidth: '100%',
+    width: 'fit-content',
   },
 
   className: 'inputPhoneFields',
@@ -63,11 +52,7 @@ export const inputPhoneFields: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const inputPhonePrefix: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    sm: {
-      width: '110px!',
-    },
-
-    width: '100%',
+    width: '110px!',
   },
 
   className: 'inputPhonePrefix',
@@ -78,12 +63,8 @@ export const inputPhonePrefix: ReturnType<typeof defineRecipe> = defineRecipe({
 export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      sm: {
-        width: 'fit-content!',
-      },
-
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       maxWidth: '100%',
+      width: 'fit-content!',
     },
 
     className: 'inputPhonePrefixDropdown',
@@ -129,9 +110,7 @@ export const inputPhoneNumberInputText: ReturnType<typeof defineRecipe> =
 
 export const inputPhoneNumber: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    sm: {
-      width: 'calc(12rem + (var(--size-input-padding-horizontal) * 2))!',
-    },
+    width: 'calc(12rem + (var(--size-input-padding-horizontal) * 2))!',
   },
 
   className: 'inputPhoneNumber',

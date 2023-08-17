@@ -68,11 +68,11 @@ const fractalPreset = definePreset({
 
   theme: {
     breakpoints: {
-      [Breakpoints.lg]: SizeBreakpointLg,
-      [Breakpoints.md]: SizeBreakpointMd,
-      [Breakpoints.sm]: SizeBreakpointSm,
-      [Breakpoints.xl]: SizeBreakpointXl,
       [Breakpoints.xs]: SizeBreakpointXs,
+      [Breakpoints.sm]: SizeBreakpointSm,
+      [Breakpoints.md]: SizeBreakpointMd,
+      [Breakpoints.lg]: SizeBreakpointLg,
+      [Breakpoints.xl]: SizeBreakpointXl,
       [Breakpoints.xxl]: SizeBreakpointXxl,
     },
 
