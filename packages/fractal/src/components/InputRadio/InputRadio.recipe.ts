@@ -42,15 +42,16 @@ export const inputRadioContainer = defineRecipe({
       },
 
     _fullWidth: {
-      maxWidth: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
+      maxWidth: '100%',
       width: '100%',
     },
 
     alignItems: 'center',
     borderRadius: 'var(--size-radius-s)',
+    boxSizing: 'border-box',
     display: 'flex',
     gap: 'var(--size-checkbox-gap)',
-    maxWidth: 'calc(100% - (var(--size-checkbox-padding-horizontal) * 2))',
+    maxWidth: '100%',
     px: 'var(--size-checkbox-padding-horizontal)',
     py: 'var(--size-checkbox-padding-vertical)',
     width: 'fit-content',
