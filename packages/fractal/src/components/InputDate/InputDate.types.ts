@@ -103,13 +103,12 @@ export interface InputDateProps
     type: keyof DateFormat,
   ) => void
   /** Event handler when a key is pressed down in one of the fields. */
-  onKeyDown: (
+  onKeyDown?: (
     event: KeyboardEvent<HTMLInputElement>,
     type: keyof DateFormat,
   ) => void
-
   /** Event handler when a key is released in one of the fields. */
-  onKeyUp: (
+  onKeyUp?: (
     event: KeyboardEvent<HTMLInputElement>,
     type: keyof DateFormat,
   ) => void
