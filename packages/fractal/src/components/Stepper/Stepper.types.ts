@@ -10,8 +10,6 @@ export interface StepperProps extends AllHTMLAttributes<HTMLDivElement> {
    * - `progress`: The current step will be displayed as a progress bar.
    */
   currentAs?: 'progress' | 'step'
-  /** Indicates if you want to highlight the current step. */
-  highlighted?: boolean
   /** The number of steps. */
   length: number
   /**

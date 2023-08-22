@@ -20,7 +20,6 @@ import type { StepperProps } from './Stepper.types'
 export const Stepper = ({
   current = 0,
   currentAs = 'step',
-  highlighted = false,
   length,
   max = 100,
   value = 0,
@@ -30,13 +29,13 @@ export const Stepper = ({
     `${PREFIX}-${GROUP_NAME}`,
     stepper(),
     props.className,
-    highlighted ? 'highlighted' : '',
+    `current-as-${currentAs}`,
   )
 
   return (
     <div className={groupClassNames} {...omit(['className'], props)}>
       {range(0, length).map((index) => {
-        if (index !== current || currentAs === 'step') {
+        if (index !== current) {
           return (
             <div
               key={index}
@@ -51,8 +50,8 @@ export const Stepper = ({
           <Progress
             key={index}
             className={stepAsProgress()}
-            max={max}
-            value={value}
+            max={currentAs === 'step' ? 5 : max}
+            value={currentAs === 'step' ? 1 : value}
           />
         )
       })}
