@@ -37,7 +37,9 @@ export const Progress = ({
     >
       <RxProgress.Indicator
         className={progressIndicator()}
-        style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}
+        style={{
+          transform: `translateX(-${100 - ((value / max) * 100 ?? 0)}%)`,
+        }}
       />
     </RxProgress.Root>
   )
