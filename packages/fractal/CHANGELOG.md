@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [2.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.3...@snowball-tech/fractal@2.15.0) (2023-08-22)
+
+### ✨ Features
+
+- **paper:** move elevated Card to dedicated Paper component ([c20d2c9](https://github.com/snowball-tech/fractal/commit/c20d2c97d3da354a25e6ef4994926ad137759a59))
+
+### 📝 Documentation
+
+- **paper:** fix the default elevation value ([959bb5a](https://github.com/snowball-tech/fractal/commit/959bb5ae64ad0b7d09912422efd727af83ab77f1))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.13.0
+
 ## @snowball-tech/fractal [2.14.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.2...@snowball-tech/fractal@2.14.3) (2023-08-22)
 
 ### 🐛 Bug Fixes
