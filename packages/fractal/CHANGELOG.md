@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.14.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.1...@snowball-tech/fractal@2.14.2) (2023-08-22)
+
+### 📦 Dependencies
+
+- update eslint-config ([ce424c8](https://github.com/snowball-tech/fractal/commit/ce424c8535ddcded40c9966b8f90c9dd0e49b8d3))
+
 ## @snowball-tech/fractal [2.14.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.0...@snowball-tech/fractal@2.14.1) (2023-08-22)
 
 ### 🐛 Bug Fixes
