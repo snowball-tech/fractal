@@ -7,14 +7,15 @@ import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
 import Card from './Card'
-import {
-  Colors,
-  DEFAULT_COLOR,
-  DEFAULT_ELEVATION,
-  Elevations,
-} from './Card.constants'
+import { Colors, DEFAULT_COLOR } from './Card.constants'
 
 type CardProps = ComponentProps<typeof Card>
+
+const perCardTypesStoriesParameters = {
+  controls: {
+    include: ['children', 'dismissable', 'icon', 'title'],
+  },
+}
 
 const meta = {
   argTypes: {
@@ -24,22 +25,6 @@ const meta = {
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
         type: { summary: Object.values(Colors).join('|') },
-      },
-    },
-    elevation: {
-      control: 'select',
-      mapping: {
-        Flat: Elevations.Flat,
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        Bordered: Elevations.Bordered,
-        Low: Elevations.Low,
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-        High: Elevations.High,
-      },
-      options: ['Flat', 'Bordered', 'Low', 'High'],
-      table: {
-        defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(Elevations).join('|') },
       },
     },
     icon: {
@@ -75,6 +60,57 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     color: DEFAULT_COLOR,
-    elevation: DEFAULT_ELEVATION,
   },
+}
+
+export const BasicCards: Story = {
+  parameters: { ...perCardTypesStoriesParameters },
+  render: ({ children, dismissable = false, icon, title = '' }) => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--size-spacing-3)',
+      }}
+    >
+      <Card color="blue" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="green" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="pink" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="purple" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="yellow" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+    </div>
+  ),
+}
+
+export const FeedbackCards: Story = {
+  parameters: { ...perCardTypesStoriesParameters },
+  render: ({ children, dismissable = false, icon, title = '' }) => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--size-spacing-3)',
+      }}
+    >
+      <Card color="error" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="warning" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+      <Card color="success" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
+    </div>
+  ),
 }
