@@ -1,7 +1,12 @@
 import { defineRecipe } from '@pandacss/dev'
 import type { SystemStyleObject } from '@snowball-tech/fractal-panda/types'
 
-import { Colors, DEFAULT_COLOR } from './Card.constants'
+import {
+  Colors,
+  DEFAULT_COLOR,
+  DEFAULT_ELEVATION,
+  Elevations,
+} from './Card.constants'
 
 export const GROUP_NAME = 'card'
 
@@ -22,6 +27,7 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
 
   defaultVariants: {
     color: DEFAULT_COLOR,
+    elevation: DEFAULT_ELEVATION,
   },
 
   variants: {
@@ -35,6 +41,30 @@ export const card: ReturnType<typeof defineRecipe> = defineRecipe({
       }),
       {} as Record<Colors, SystemStyleObject>,
     ),
+
+    elevation: {
+      [Elevations.Flat]: {
+        border: 'var(--border-none)',
+        boxShadow: 'var(--shadow-none)',
+      },
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      [Elevations.Bordered]: {
+        border: 'var(--border-1)',
+        borderRadius: 'var(--size-radius-s)',
+        boxShadow: 'var(--shadow-none)',
+      },
+      [Elevations.Low]: {
+        border: 'var(--border-1)',
+        borderRadius: 'var(--size-radius-s)',
+        boxShadow: 'var(--shadow-brutal-1)',
+      },
+      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      [Elevations.High]: {
+        border: 'var(--border-2)',
+        borderRadius: 'var(--size-radius-s)',
+        boxShadow: 'var(--shadow-brutal-2)',
+      },
+    },
   },
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
