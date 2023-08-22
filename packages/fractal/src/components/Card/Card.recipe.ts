@@ -7,6 +7,10 @@ export const GROUP_NAME = 'card'
 
 export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    _fullWidth: {
+      width: '100%',
+    },
+
     borderRadius: 'var(--size-radius-s)',
     color: 'var(--color-text-card-body)',
     display: 'flex',

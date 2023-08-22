@@ -9,7 +9,10 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
+import { PREFIX } from '@/constants'
+
 import { DEFAULT_COLOR } from './Card.constants'
+import { GROUP_NAME } from './Card.recipe'
 import type { CardProps } from './Card.types'
 
 /**
@@ -19,19 +22,21 @@ import type { CardProps } from './Card.types'
 export const Card = ({
   children,
   color = DEFAULT_COLOR,
+  fullWidth = false,
   icon,
   title,
   ...props
 }: CardProps) => {
+  const groupClassNames = cx(
+    `${PREFIX}-${GROUP_NAME}`,
+    card(),
+    props.className,
+    fullWidth ? 'full-width' : '',
+    typography({ variant: 'body-1' }),
+  )
+
   return (
-    <div
-      className={cx(
-        props.className,
-        card({ color }),
-        typography({ variant: 'body-1' }),
-      )}
-      {...omit(['className'], props)}
-    >
+    <div className={groupClassNames} {...omit(['className'], props)}>
       {!isEmpty(title) || icon ? (
         <div
           className={cx(
