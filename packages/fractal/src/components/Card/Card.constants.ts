@@ -6,6 +6,7 @@ export enum Colors {
   Purple = 'purple',
   Success = 'success',
   Warning = 'warning',
+  White = 'white',
   Yellow = 'yellow',
 }
 
