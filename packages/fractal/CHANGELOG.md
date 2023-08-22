@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [2.14.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.2...@snowball-tech/fractal@2.14.3) (2023-08-22)
+
+### 🐛 Bug Fixes
+
+- **progress:** allow to have max different than 100 ([0790013](https://github.com/snowball-tech/fractal/commit/07900133f27bff015bd491a2f82bed1f15deb73d))
+- **stepper:** fix the display of the current step ([36ba736](https://github.com/snowball-tech/fractal/commit/36ba736969a1fa7825f9353b6e265626cd612252))
+
 ## @snowball-tech/fractal [2.14.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.1...@snowball-tech/fractal@2.14.2) (2023-08-22)
 
 ### 📦 Dependencies
