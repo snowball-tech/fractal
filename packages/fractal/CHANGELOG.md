@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.13.0...@snowball-tech/fractal@2.14.0) (2023-08-22)
+
+### ✨ Features
+
+- **card:** allow to dismiss a card ([ab4afd0](https://github.com/snowball-tech/fractal/commit/ab4afd089f810bac5385de969638201a3a901746))
+
 # @snowball-tech/fractal [2.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.12.1...@snowball-tech/fractal@2.13.0) (2023-08-22)
 
 ### ✨ Features
