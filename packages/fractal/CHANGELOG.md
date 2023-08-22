@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.11.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.11.0...@snowball-tech/fractal@2.11.1) (2023-08-22)
+
+### 📦 Dependencies
+
+- update Glacier dependencies and Yarn ([cf9e189](https://github.com/snowball-tech/fractal/commit/cf9e18990ff76f330c0984151c5c881898ae4ba5))
+
 # @snowball-tech/fractal [2.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.2...@snowball-tech/fractal@2.11.0) (2023-08-22)
 
 ### ✨ Features
