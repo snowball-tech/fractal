@@ -26,6 +26,7 @@ import parsePhoneNumber, {
 import examples from 'libphonenumber-js/mobile/examples'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ForwardedRef,
@@ -70,8 +71,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       label,
       name,
       onChange,
-      onKeyDown,
-      onKeyUp,
       placeholder,
       readOnly = false,
       required = false,
@@ -329,8 +328,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   value={search}
                   onBlur={handleSearchBlur}
                   onChange={(_, newSearch) => handleSearch(newSearch, true)}
-                  {...(isFunction(onKeyDown) ? { onKeyDown } : {})}
-                  {...(isFunction(onKeyUp) ? { onKeyUp } : {})}
                 />
 
                 {prefixes.map(
@@ -396,6 +393,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             }
             value={number}
             onChange={(_, newNumber) => handleNumberChange(newNumber)}
+            {...omit(['className'], props)}
           />
         </div>
 
