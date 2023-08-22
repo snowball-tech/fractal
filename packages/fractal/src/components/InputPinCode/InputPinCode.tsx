@@ -42,6 +42,7 @@ export const InputPinCode = ({
   name,
   onBlur,
   onChange,
+  onComplete,
   onFieldChange,
   onFocus,
   onKeyDown,
@@ -114,6 +115,10 @@ export const InputPinCode = ({
         nextInput.focus()
       }
     } else if (input) {
+      if (isFunction(onComplete)) {
+        onComplete(newCode)
+      }
+
       input.blur()
     }
   }

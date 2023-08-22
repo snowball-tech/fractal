@@ -64,6 +64,8 @@ export interface InputPinCodeProps
   onBlur?: (event: FocusEvent<HTMLInputElement>, index: number) => void
   /** Event handler called when the pin code value is changed. */
   onChange?: (event: ChangeEvent<HTMLInputElement>, newCode: string) => void
+  /** Event handler called when all the fields has been filled. */
+  onComplete?: (newCode: string) => void
   /**
    * Event handler called when one of the field of the pin code input is
    * changed.
