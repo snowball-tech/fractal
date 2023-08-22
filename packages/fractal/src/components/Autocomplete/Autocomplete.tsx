@@ -193,7 +193,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
           {...(value !== undefined ? { value } : {})}
           onBlur={handleInputBlur}
           onChange={handleInputChange}
-          {...omit(['className'], props)}
+          {...omit(['className', 'onBlur'], props)}
         />
 
         <RxDropdownMenu.Root
