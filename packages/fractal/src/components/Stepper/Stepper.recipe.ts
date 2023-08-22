@@ -18,14 +18,6 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const step: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    '.fractal-stepper.highlighted &': {
-      _active: {
-        backgroundColor:
-          'var(--color-background-stepper-step-active-highlighted)',
-        border: 'var(--border-stepper-step-active)',
-      },
-    },
-
     _active: {
       backgroundColor: 'var(--color-background-stepper-step-active-neutral)',
       border: 'var(--border-stepper-step-active)',
@@ -39,8 +31,10 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: 'var(--color-background-stepper-step-base)',
     border: 'var(--border-stepper-step-base)',
     borderRadius: 'var(--size-radius-rounded)',
-    height: '8px',
-    width: '40px',
+    height: 'var(--size-spacing-1)',
+    maxWidth: 'var(--size-spacing-5)',
+    minWidth: 'var(--size-spacing-5)',
+    width: 'var(--size-spacing-5)',
   },
 
   className: 'step',
@@ -50,7 +44,16 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const stepAsProgress: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    width: 'var(--size-spacing-20)',
+    '.fractal-stepper.current-as-progress &': {
+      minWidth: 'var(--size-spacing-20)',
+      width: 'var(--size-spacing-20)',
+    },
+
+    '.fractal-stepper.current-as-step &': {
+      maxWidth: 'var(--size-spacing-5)',
+      minWidth: 'var(--size-spacing-5)',
+      width: 'var(--size-spacing-5)',
+    },
   },
 
   className: 'stepAsProgress',

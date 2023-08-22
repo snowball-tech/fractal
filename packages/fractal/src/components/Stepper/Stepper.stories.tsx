@@ -9,7 +9,6 @@ const meta: Meta<StepperProps> = {
   args: {
     current: 1,
     currentAs: 'step',
-    highlighted: false,
     length: 3,
     max: 100,
     value: 33,
