@@ -146,10 +146,6 @@ export const cardContent: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const cardDismissIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    '& svg': {
-      color: 'var(--color-base-grey-500)',
-    },
-
     position: 'absolute',
     right: 'var(--size-spacing-2)',
     top: 'var(--size-spacing-2)',
