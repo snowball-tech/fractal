@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.14.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.0...@snowball-tech/fractal@2.14.1) (2023-08-22)
+
+### 🐛 Bug Fixes
+
+- **card:** remove the (wrong) icon color for dismiss button ([647c04d](https://github.com/snowball-tech/fractal/commit/647c04d0994a16f8daf2d649850b101e4677d858))
+
 # @snowball-tech/fractal [2.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.13.0...@snowball-tech/fractal@2.14.0) (2023-08-22)
 
 ### ✨ Features
