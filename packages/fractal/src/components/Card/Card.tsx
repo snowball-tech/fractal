@@ -16,19 +16,20 @@ import omit from 'lodash/fp/omit'
 import { Button } from '@/components/Button'
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_COLOR, DEFAULT_ELEVATION } from './Card.constants'
+import { DEFAULT_COLOR } from './Card.constants'
 import { GROUP_NAME } from './Card.recipe'
 import type { CardProps } from './Card.types'
 
 /**
- * `Card` component allow to build interface with level and hierarchy.
- * experience.
+ * `Card` component allow to build nice interface by offering user colored
+ * blocks of contents.
+ *
+ * It's also useful for feedback and hierarchization of the content.
  */
 export const Card = ({
   children,
   color = DEFAULT_COLOR,
   dismissable = false,
-  elevation = DEFAULT_ELEVATION,
   icon,
   onDismiss,
   title,
@@ -36,7 +37,7 @@ export const Card = ({
 }: CardProps) => {
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
-    card({ color, elevation }),
+    card({ color }),
     props.className,
     dismissable ? 'dismissable' : '',
     typography({ variant: 'body-1' }),

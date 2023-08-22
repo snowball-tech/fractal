@@ -1,0 +1,37 @@
+import {
+  ArgTypes,
+  Controls,
+  Description,
+  Meta,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/blocks'
+
+import * as PaperStories from './Paper.stories'
+
+<Meta of={PaperStories} />
+
+<Title />
+
+<Subtitle />
+
+<Description />
+
+---
+
+## Props
+
+On top of all the props, attributes and event handler you can set on a
+`<div />` element, component accepts the following props:
+
+<ArgTypes />
+
+<Stories includePrimary={false} title="Papers" />
+
+## Playground
+
+<Primary />
+
+<Controls />

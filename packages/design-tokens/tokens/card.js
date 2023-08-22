@@ -37,11 +37,6 @@ module.exports = {
 
           value: '{color.feedback.warning.90.value}',
         },
-        white: {
-          comment: 'Background color for white card.',
-
-          value: '{color.base.white.value}',
-        },
         yellow: {
           comment: 'Background color for yellow card.',
 
@@ -86,11 +81,6 @@ module.exports = {
           comment: 'Icon color for warning card.',
 
           value: '{color.feedback.warning.50.value}',
-        },
-        white: {
-          comment: 'Icon color for white card.',
-
-          value: '{color.text.dark.value}',
         },
         yellow: {
           comment: 'Icon color for yellow card.',
@@ -141,11 +131,6 @@ module.exports = {
           },
           warning: {
             comment: 'Text color for warning card.',
-
-            value: '{color.text.dark.value}',
-          },
-          white: {
-            comment: 'Text color for white card.',
 
             value: '{color.text.dark.value}',
           },
