@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [2.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.1...@snowball-tech/fractal@2.10.2) (2023-08-22)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix rest props spreading ([27d5cb5](https://github.com/snowball-tech/fractal/commit/27d5cb5dd0699be745039c4fdcc8bfd9018d6864))
+- **input-date:** fix rest props spreading ([b548d65](https://github.com/snowball-tech/fractal/commit/b548d65d9f0657b3d1a74c4cc8cdb8db829fe6af))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([3c0d728](https://github.com/snowball-tech/fractal/commit/3c0d728c5f95936291de4a19cc76317976b90db3))
+
 ## @snowball-tech/fractal [2.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.0...@snowball-tech/fractal@2.10.1) (2023-08-22)
 
 ### 🐛 Bug Fixes
