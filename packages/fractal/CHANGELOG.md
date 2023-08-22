@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.12.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.12.0...@snowball-tech/fractal@2.12.1) (2023-08-22)
+
+### 🐛 Bug Fixes
+
+- **card:** add missing enum for white color ([f03939e](https://github.com/snowball-tech/fractal/commit/f03939e71420aecb8f387fa386c7e3c4fd423ec1))
+
 # @snowball-tech/fractal [2.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.11.2...@snowball-tech/fractal@2.12.0) (2023-08-22)
 
 ### ✨ Features
