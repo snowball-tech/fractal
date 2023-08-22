@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.11.2...@snowball-tech/design-tokens@5.12.0) (2023-08-22)
+
+### ✨ Features
+
+- **card:** add `white` color variant ([e7f95fc](https://github.com/snowball-tech/fractal/commit/e7f95fcddf6d7b6fa410da6c65025aad92f342d3))
+
 ## @snowball-tech/design-tokens [5.11.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.11.1...@snowball-tech/design-tokens@5.11.2) (2023-08-17)
 
 ### ♻️ Code Refactoring
