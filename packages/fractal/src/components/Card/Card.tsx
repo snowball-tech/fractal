@@ -11,7 +11,7 @@ import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_COLOR } from './Card.constants'
+import { DEFAULT_COLOR, DEFAULT_ELEVATION } from './Card.constants'
 import { GROUP_NAME } from './Card.recipe'
 import type { CardProps } from './Card.types'
 
@@ -22,6 +22,7 @@ import type { CardProps } from './Card.types'
 export const Card = ({
   children,
   color = DEFAULT_COLOR,
+  elevation = DEFAULT_ELEVATION,
   fullWidth = false,
   icon,
   title,
@@ -29,7 +30,7 @@ export const Card = ({
 }: CardProps) => {
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}`,
-    card(),
+    card({ color, elevation }),
     props.className,
     fullWidth ? 'full-width' : '',
     typography({ variant: 'body-1' }),
