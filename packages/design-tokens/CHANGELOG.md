@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [5.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.12.0...@snowball-tech/design-tokens@5.13.0) (2023-08-22)
+
+### ✨ Features
+
+- **paper:** move elevated Card to dedicated Paper component ([c20d2c9](https://github.com/snowball-tech/fractal/commit/c20d2c97d3da354a25e6ef4994926ad137759a59))
+
 # @snowball-tech/design-tokens [5.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.11.2...@snowball-tech/design-tokens@5.12.0) (2023-08-22)
 
 ### ✨ Features
