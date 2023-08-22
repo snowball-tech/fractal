@@ -19,6 +19,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
+import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
@@ -358,6 +359,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
               : {})}
+            {...omit(['className'], props)}
           />
 
           <InputText
@@ -394,6 +396,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
               : {})}
+            {...omit(['className'], props)}
           />
 
           <InputText
@@ -435,6 +438,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'year') }
               : {})}
+            {...omit(['className'], props)}
           />
         </div>
 
