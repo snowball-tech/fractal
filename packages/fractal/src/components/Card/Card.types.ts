@@ -7,6 +7,8 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
   children: ReactNode
   /** The background color of the card. */
   color?: `${Colors}`
+  /** indicates if the card should take all the available width or not. */
+  fullWidth?: boolean
   /**
    * An icon to display at the top of the card (to the left of the title if
    * there is one).
