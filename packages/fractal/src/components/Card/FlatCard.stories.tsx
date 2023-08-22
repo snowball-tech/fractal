@@ -13,7 +13,7 @@ type CardProps = ComponentProps<typeof Card>
 
 const perCardTypesStoriesParameters = {
   controls: {
-    include: ['children'],
+    include: ['children', 'dismissable'],
   },
 }
 
@@ -42,8 +42,8 @@ const meta = {
   args: {
     children:
       'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+    dismissable: false,
     elevation: DEFAULT_ELEVATION,
-    fullWidth: false,
     icon: 'None',
     title: '',
   },
@@ -68,8 +68,18 @@ export const Playground: Story = {
 }
 
 export const BasicCards: Story = {
-  parameters: { ...perCardTypesStoriesParameters },
-  render: ({ children }) => (
+  parameters: {
+    ...perCardTypesStoriesParameters,
+    controls: {
+      ...perCardTypesStoriesParameters.controls,
+      include: [
+        ...perCardTypesStoriesParameters.controls.include,
+        'icon',
+        'title',
+      ],
+    },
+  },
+  render: ({ children, dismissable = false, icon, title = '' }) => (
     <div
       style={{
         display: 'flex',
@@ -77,22 +87,58 @@ export const BasicCards: Story = {
         gap: 'var(--size-spacing-3)',
       }}
     >
-      <Card color="blue" elevation="0">
+      <Card
+        color="blue"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="green" elevation="0">
+      <Card
+        color="green"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="pink" elevation="0">
+      <Card
+        color="pink"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="purple" elevation="0">
+      <Card
+        color="purple"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="white" elevation="0">
+      <Card
+        color="white"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="yellow" elevation="0">
+      <Card
+        color="yellow"
+        dismissable={dismissable}
+        elevation="0"
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
     </div>
@@ -101,7 +147,7 @@ export const BasicCards: Story = {
 
 export const FeedbackCards: Story = {
   parameters: { ...perCardTypesStoriesParameters },
-  render: ({ children }) => (
+  render: ({ children, dismissable = false }) => (
     <div
       style={{
         display: 'flex',
@@ -111,6 +157,7 @@ export const FeedbackCards: Story = {
     >
       <Card
         color="error"
+        dismissable={dismissable}
         elevation="0"
         icon={<ExclamationCircleIcon />}
         title="Oops, there have been an error"
@@ -119,6 +166,7 @@ export const FeedbackCards: Story = {
       </Card>
       <Card
         color="warning"
+        dismissable={dismissable}
         elevation="0"
         icon={<ExclamationCircleIcon />}
         title="Be careful!"
@@ -127,6 +175,7 @@ export const FeedbackCards: Story = {
       </Card>
       <Card
         color="success"
+        dismissable={dismissable}
         elevation="0"
         icon={<CheckCircleIcon />}
         title="Congratulations"

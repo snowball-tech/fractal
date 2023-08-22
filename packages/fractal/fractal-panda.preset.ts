@@ -108,6 +108,7 @@ const fractalPreset = definePreset({
 
         card: CardRecipes.card,
         cardContent: CardRecipes.cardContent,
+        cardDismissIcon: CardRecipes.cardDismissIcon,
         cardTitle: CardRecipes.cardTitle,
         cardIcon: CardRecipes.cardIcon,
 

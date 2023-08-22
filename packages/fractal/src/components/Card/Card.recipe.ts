@@ -12,15 +12,17 @@ export const GROUP_NAME = 'card'
 
 export const card: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    _fullWidth: {
-      width: '100%',
+    '&.dismissable': {
+      pr: 'calc(var(--size-card-padding-horizontal) + var(--size-spacing-4))',
     },
 
     borderRadius: 'var(--size-radius-s)',
+    boxSizing: 'border-box',
     color: 'var(--color-text-card-body)',
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--size-card-gap)',
+    position: 'relative',
     px: 'var(--size-card-padding-horizontal)',
     py: 'var(--size-card-padding-vertical)',
   },
@@ -139,5 +141,22 @@ export const cardContent: ReturnType<typeof defineRecipe> = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   className: 'cardContent',
   description: 'Card content',
+  jsx: ['Card'],
+})
+
+export const cardDismissIcon: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    '& svg': {
+      color: 'var(--color-base-grey-500)',
+    },
+
+    position: 'absolute',
+    right: 'var(--size-spacing-2)',
+    top: 'var(--size-spacing-2)',
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'cardDismissIcon',
+  description: 'Card dismiss icon',
   jsx: ['Card'],
 })
