@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.2...@snowball-tech/fractal@2.11.0) (2023-08-22)
+
+### ✨ Features
+
+- **input-pincode:** add an `onComplete` event ([6f35130](https://github.com/snowball-tech/fractal/commit/6f351300dc602a2103b06f1c646e0e5d751b5ce5))
+
 ## @snowball-tech/fractal [2.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.1...@snowball-tech/fractal@2.10.2) (2023-08-22)
 
 ### 🐛 Bug Fixes
