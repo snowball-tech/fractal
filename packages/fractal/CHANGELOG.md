@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.10.0...@snowball-tech/fractal@2.10.1) (2023-08-22)
+
+### 🐛 Bug Fixes
+
+- **input-phone:** fix keyboard events ([fd8717e](https://github.com/snowball-tech/fractal/commit/fd8717e974f72797a6bcf6b3dff89c5c522370dc))
+
 # @snowball-tech/fractal [2.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.9.8...@snowball-tech/fractal@2.10.0) (2023-08-17)
 
 ### ❓ Unknown changes
