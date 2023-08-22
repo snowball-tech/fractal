@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.11.2...@snowball-tech/fractal@2.12.0) (2023-08-22)
+
+### ✨ Features
+
+- **card:** add fullWidth support ([70f6cfa](https://github.com/snowball-tech/fractal/commit/70f6cfaef6660730c0375f914fd1f4b3f23d5644))
+
 ## @snowball-tech/fractal [2.11.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.11.1...@snowball-tech/fractal@2.11.2) (2023-08-22)
 
 ### Dependencies
