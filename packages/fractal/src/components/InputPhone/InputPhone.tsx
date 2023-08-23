@@ -391,6 +391,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                 <CheckCircleIcon />
               ) : undefined
             }
+            type="tel"
             value={number}
             onChange={(_, newNumber) => handleNumberChange(newNumber)}
             {...omit(['className'], props)}
