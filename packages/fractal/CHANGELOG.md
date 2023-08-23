@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [2.16.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.0...@snowball-tech/fractal@2.16.1) (2023-08-23)
+
+### 🐛 Bug Fixes
+
+- **input-date:** allow to use left arrow in day and right arrow in year ([c8df171](https://github.com/snowball-tech/fractal/commit/c8df171f1123b96730d75bf805f28f25626aa84e))
+- **input-date:** don't autoswitch field when using up/down arrows ([2654b26](https://github.com/snowball-tech/fractal/commit/2654b26b97df57b32ea7bc648200a27d272146b4))
+
+### 📦 Dependencies
+
+- update dependencies ([3520c0f](https://github.com/snowball-tech/fractal/commit/3520c0f7825d1243ee9592c2c9d8ed3e7d9f20ff))
+
 # @snowball-tech/fractal [2.16.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.15.0...@snowball-tech/fractal@2.16.0) (2023-08-23)
 
 ### ✨ Features
