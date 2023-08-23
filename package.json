@@ -71,7 +71,7 @@
     "@snowball-tech/stylelint-config": "^2.1.6",
     "@types/eslint": "^8.44.2",
     "@types/is-ci": "^3.0.0",
-    "@types/node": "^20.5.2",
+    "@types/node": "^20.5.3",
     "@types/prettier": "^3.0.0",
     "chromatic": "^6.23.0",
     "concurrently": "^8.2.1",

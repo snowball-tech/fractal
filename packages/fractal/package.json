@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal",
-  "version": "2.16.0",
+  "version": "2.15.0",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -102,7 +102,7 @@
     "@types/lodash": "^4.14.197",
     "@types/prettier": "^3.0.0",
     "@types/prop-types": "^15.7.5",
-    "@types/react": "^18.2.20",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "csso-cli": "^4.0.2",
@@ -115,7 +115,7 @@
     "storybook-addon-mock": "^4.2.1",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "vercel": "^32.0.0",
+    "vercel": "^32.0.1",
     "vite": "^4.4.9",
     "vite-tsconfig-paths": "^4.2.0"
   },
