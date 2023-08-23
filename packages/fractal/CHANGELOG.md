@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.16.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.1...@snowball-tech/fractal@2.16.2) (2023-08-23)
+
+### 🐛 Bug Fixes
+
+- **input-date:** make the fields a bit larger ([379c812](https://github.com/snowball-tech/fractal/commit/379c81211baf0bf78138aa902e13e6d6fe129c3d))
+
 ## @snowball-tech/fractal [2.16.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.0...@snowball-tech/fractal@2.16.1) (2023-08-23)
 
 ### 🐛 Bug Fixes
