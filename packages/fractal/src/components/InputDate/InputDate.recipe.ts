@@ -71,7 +71,9 @@ export const inputDateField = defineRecipe({
 
 export const inputDateDay: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    minWidth: '64px',
+    '& input': {
+      minWidth: '72px',
+    },
   },
 
   className: 'inputDateDay',
@@ -81,7 +83,9 @@ export const inputDateDay: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const inputDateMonth: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    minWidth: '64px',
+    '& input': {
+      minWidth: '72px',
+    },
   },
 
   className: 'inputDateMonth',
@@ -92,6 +96,7 @@ export const inputDateMonth: ReturnType<typeof defineRecipe> = defineRecipe({
 export const inputDateYear: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     '& input': {
+      minWidth: '88px',
       width: 'unset!',
     },
   },
