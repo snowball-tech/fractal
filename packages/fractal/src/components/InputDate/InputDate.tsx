@@ -269,19 +269,20 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             case 'month':
               if (dayRef.current) {
                 dayRef.current.focus()
+                event.preventDefault()
               }
               break
 
             case 'year':
               if (monthRef.current) {
                 monthRef.current.focus()
+                event.preventDefault()
               }
               break
 
             default:
               break
           }
-          event.preventDefault()
           break
 
         case 'ArrowRight':
@@ -289,19 +290,20 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             case 'day':
               if (monthRef.current) {
                 monthRef.current.focus()
+                event.preventDefault()
               }
               break
 
             case 'month':
               if (yearRef.current) {
                 yearRef.current.focus()
+                event.preventDefault()
               }
               break
 
             default:
               break
           }
-          event.preventDefault()
           break
 
         case 'ArrowUp':
