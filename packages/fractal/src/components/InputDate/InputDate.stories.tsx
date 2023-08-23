@@ -7,7 +7,7 @@ import type { DateFormat } from './InputDate.types'
 
 type InputDateProps = ComponentProps<typeof InputDate>
 
-const dateFormat = '{ day: number, month: number, year: number }'
+const dateFormat = "{ day: '' | number, month: '' | number, year: '' | number }"
 
 const meta: Meta<InputDateProps> = {
   argTypes: {
