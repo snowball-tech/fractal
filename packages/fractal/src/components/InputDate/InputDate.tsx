@@ -121,6 +121,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       month: boolean
       year: boolean
     }>({ day: false, month: false, year: false })
+    const [autoSwitch, setAutoSwitch] = useState(true)
 
     const hasErrorMessage = !isEmpty(error)
     const hasSuccessMessage = !isEmpty(success)
@@ -213,7 +214,8 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       if (
         !isNil(newValueAsInt) &&
         isInteger(newValueAsInt) &&
-        isValid(type, newValueAsInt, maxYear)
+        isValid(type, newValueAsInt, maxYear) &&
+        autoSwitch
       ) {
         switch (type) {
           case 'day':
@@ -309,6 +311,12 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
         default:
           break
+      }
+
+      if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        setAutoSwitch(false)
+      } else {
+        setAutoSwitch(true)
       }
     }
 
