@@ -1,3 +1,14 @@
+# @snowball-tech/fractal [2.16.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.15.0...@snowball-tech/fractal@2.16.0) (2023-08-23)
+
+### ✨ Features
+
+- **input-phone:** use the proper `tel` type for the phone field ([dbc7e8e](https://github.com/snowball-tech/fractal/commit/dbc7e8e6e12c4ebae21c34450d5702164bb865e5))
+- **input-text:** allow type `tel` ([56ace86](https://github.com/snowball-tech/fractal/commit/56ace86da64b2c6b61198a3f860acf934198bc96))
+
+### 🐛 Bug Fixes
+
+- **input-date:** fix the typing to allow empty value ([98339aa](https://github.com/snowball-tech/fractal/commit/98339aa37a46bbec52acd24148b0e3c69a8045d7))
+
 # @snowball-tech/fractal [2.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.14.3...@snowball-tech/fractal@2.15.0) (2023-08-22)
 
 ### ✨ Features
