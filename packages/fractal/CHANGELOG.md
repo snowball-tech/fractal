@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.16.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.2...@snowball-tech/fractal@2.16.3) (2023-08-23)
+
+### 🐛 Bug Fixes
+
+- **input-phone:** remove the pattern regexp ([0805f63](https://github.com/snowball-tech/fractal/commit/0805f6390c83d28c4d3592e2c832407456445eeb))
+
 ## @snowball-tech/fractal [2.16.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.1...@snowball-tech/fractal@2.16.2) (2023-08-23)
 
 ### 🐛 Bug Fixes
