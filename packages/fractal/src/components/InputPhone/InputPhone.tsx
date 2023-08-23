@@ -366,7 +366,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             disabled={disabled}
             error={hasErrorMessage}
             name={`${name || id}-number`}
-            pattern="[0-9()- ]"
             placeholder={actualPlaceholder ?? ''}
             prefix={
               withPrefix && !isEmpty(prefix) ? (
