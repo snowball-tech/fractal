@@ -6,9 +6,9 @@ import type {
 } from 'react'
 
 export type DateFormat = {
-  day?: number | undefined
-  month?: number | undefined
-  year?: number | undefined
+  day?: '' | number
+  month?: '' | number
+  year?: '' | number
 }
 
 export type Placeholders = {

@@ -43,8 +43,8 @@ import type {
   InputDateProps,
 } from './InputDate.types'
 
-function isValid(type: keyof DateFormat, value: number, max?: number) {
-  if (!isInteger(value)) {
+function isValid(type: keyof DateFormat, value: '' | number, max?: number) {
+  if (!isInteger(value) || value === '') {
     return false
   }
 
