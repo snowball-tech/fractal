@@ -57,8 +57,8 @@ export const autocompleteInput: ReturnType<typeof defineRecipe> = defineRecipe({
 export const autocompleteDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      mt: 'calc(var(--size-spacing-1) * -0.75)!',
-      width: 'calc(var(--radix-popper-anchor-width) - var(--size-spacing-2))!',
+      boxSizing: 'border-box',
+      mt: 'calc(var(--size-spacing-1) * -0.75)',
     },
 
     className: 'autocompleteDropdown',
