@@ -1,3 +1,19 @@
+## @snowball-tech/fractal [2.16.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.3...@snowball-tech/fractal@2.16.4) (2023-08-24)
+
+### 🐛 Bug Fixes
+
+- **stepper:** don't overflow the container ([cc1497b](https://github.com/snowball-tech/fractal/commit/cc1497baa4e916260704cf42d6053da8c5a035a0))
+
+### 📦 Dependencies
+
+- update dependencies ([f2354f7](https://github.com/snowball-tech/fractal/commit/f2354f7e643ef2cbc0f0252d3eaa8b1782e4f915))
+- upgrade dependencies ([7f68fd9](https://github.com/snowball-tech/fractal/commit/7f68fd9e5c5254eee81faf866ccb4f16b824e295))
+- **yarn:** upgrade yarn ([34f6310](https://github.com/snowball-tech/fractal/commit/34f63104cbf4bc9f4ee01afbdbbd2460370fc33b))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.13.1
+
 ## @snowball-tech/fractal [2.16.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.2...@snowball-tech/fractal@2.16.3) (2023-08-23)
 
 ### 🐛 Bug Fixes
