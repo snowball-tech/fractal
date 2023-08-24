@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal",
-  "version": "2.16.3",
+  "version": "2.16.2",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -24,7 +24,7 @@
     "directory": "packages/fractal"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@3.6.2",
+  "packageManager": "yarn@3.6.1",
   "engines": {
     "yarn": "^3.0.0",
     "node": "^18.0.0"
@@ -82,8 +82,8 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.11.1",
-    "@pandacss/preset-base": "^0.11.1",
+    "@pandacss/dev": "^0.12.0",
+    "@pandacss/preset-base": "^0.12.0",
     "@simbathesailor/use-what-changed": "^2.0.0",
     "@snowball-tech/eslint-config": "^5.2.2",
     "@storybook/addon-a11y": "^7.3.2",
