@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.16.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.6...@snowball-tech/fractal@2.16.7) (2023-08-24)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix the margin ([29e448a](https://github.com/snowball-tech/fractal/commit/29e448a0eb7c7c5a75fe3de9ee0485cf8b1b0cfd))
+
 ## @snowball-tech/fractal [2.16.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.5...@snowball-tech/fractal@2.16.6) (2023-08-24)
 
 ### 🐛 Bug Fixes
