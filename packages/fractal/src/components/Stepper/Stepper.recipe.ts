@@ -8,7 +8,6 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
     flexDirection: 'row',
     gap: 'var(--size-spacing-1)',
     maxWidth: '100%',
-    width: 'fit-content',
   },
 
   className: 'stepper',
@@ -33,8 +32,7 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
     borderRadius: 'var(--size-radius-rounded)',
     height: 'var(--size-spacing-1)',
     maxWidth: 'var(--size-spacing-5)',
-    minWidth: 'var(--size-spacing-5)',
-    width: 'var(--size-spacing-5)',
+    width: '100%',
   },
 
   className: 'step',
@@ -45,15 +43,10 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
 export const stepAsProgress: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     '.fractal-stepper.current-as-progress &': {
-      minWidth: 'var(--size-spacing-20)',
-      width: 'var(--size-spacing-20)',
+      maxWidth: 'var(--size-spacing-20)',
     },
 
-    '.fractal-stepper.current-as-step &': {
-      maxWidth: 'var(--size-spacing-5)',
-      minWidth: 'var(--size-spacing-5)',
-      width: 'var(--size-spacing-5)',
-    },
+    width: '100%',
   },
 
   className: 'stepAsProgress',
