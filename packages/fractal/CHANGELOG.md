@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.16.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.7...@snowball-tech/fractal@2.16.8) (2023-08-24)
+
+### 🐛 Bug Fixes
+
+- update ref handling in Phone, Date, Select, Toggle and Autocomplete ([35c13e3](https://github.com/snowball-tech/fractal/commit/35c13e3ed1ffa4d09b1180088d6759dcc32a981c))
+
 ## @snowball-tech/fractal [2.16.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.6...@snowball-tech/fractal@2.16.7) (2023-08-24)
 
 ### 🐛 Bug Fixes
