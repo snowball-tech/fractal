@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.16.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.4...@snowball-tech/fractal@2.16.5) (2023-08-24)
+
+### 🐛 Bug Fixes
+
+- **stepper:** make the progress bar take all the space ([8fb73c5](https://github.com/snowball-tech/fractal/commit/8fb73c54639c569e144c5f599fd38158bdcf2078))
+
 ## @snowball-tech/fractal [2.16.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.3...@snowball-tech/fractal@2.16.4) (2023-08-24)
 
 ### 🐛 Bug Fixes
