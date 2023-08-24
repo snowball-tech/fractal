@@ -6,6 +6,12 @@ import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
 import { InputTextProps } from '../InputText/InputText.types'
 
+export type CombinedRefs = {
+  container: HTMLDivElement | null
+  dropdown: HTMLDivElement | null
+  input: HTMLInputElement | null
+}
+
 export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
   /** Indicates if the autocomplete input must be focused on render. */
   autoFocus?: boolean

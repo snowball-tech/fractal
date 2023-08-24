@@ -104,15 +104,15 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
     useImperativeHandle(ref, () => ({
       get day() {
-        return dayRef.current
+        return dayRef?.current ?? null
       },
 
       get month() {
-        return monthRef.current
+        return monthRef?.current ?? null
       },
 
       get year() {
-        return yearRef.current
+        return yearRef?.current ?? null
       },
     }))
 
@@ -219,19 +219,19 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       ) {
         switch (type) {
           case 'day':
-            if (newValue.length === 2 && monthRef.current) {
+            if (newValue.length === 2 && monthRef?.current) {
               monthRef.current.focus()
             }
             break
 
           case 'month':
-            if (newValue.length === 2 && yearRef.current) {
+            if (newValue.length === 2 && yearRef?.current) {
               yearRef.current.focus()
             }
             break
 
           case 'year':
-            if (newValue.length === 4 && yearRef.current) {
+            if (newValue.length === 4 && yearRef?.current) {
               yearRef.current.blur()
             }
             break
@@ -267,14 +267,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         case 'ArrowLeft':
           switch (type) {
             case 'month':
-              if (dayRef.current) {
+              if (dayRef?.current) {
                 dayRef.current.focus()
                 event.preventDefault()
               }
               break
 
             case 'year':
-              if (monthRef.current) {
+              if (monthRef?.current) {
                 monthRef.current.focus()
                 event.preventDefault()
               }
@@ -288,14 +288,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         case 'ArrowRight':
           switch (type) {
             case 'day':
-              if (monthRef.current) {
+              if (monthRef?.current) {
                 monthRef.current.focus()
                 event.preventDefault()
               }
               break
 
             case 'month':
-              if (yearRef.current) {
+              if (yearRef?.current) {
                 yearRef.current.focus()
                 event.preventDefault()
               }

@@ -26,6 +26,7 @@ import {
   type ForwardedRef,
   forwardRef,
   useEffect,
+  useImperativeHandle,
   useRef,
   useState,
 } from 'react'
@@ -33,12 +34,12 @@ import {
 import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './Select.recipe'
-import type { SelectProps } from './Select.types'
+import type { CombinedRefs, SelectProps } from './Select.types'
 
 /**
  * `Select` component is used to offer the user choices they can select.
  */
-export const Select = forwardRef<HTMLButtonElement, SelectProps>(
+export const Select = forwardRef<CombinedRefs, SelectProps>(
   (
     {
       autoFocus = false,
@@ -62,9 +63,25 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
       value,
       ...props
     }: SelectProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref: ForwardedRef<CombinedRefs>,
   ) => {
+    const triggerRef = useRef<HTMLButtonElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    const dropdownRef = useRef<HTMLDivElement>(null)
+
+    useImperativeHandle(ref, () => ({
+      get container() {
+        return containerRef?.current ?? null
+      },
+
+      get dropdown() {
+        return dropdownRef?.current ?? null
+      },
+
+      get trigger() {
+        return triggerRef?.current ?? null
+      },
+    }))
 
     const [isOpen, setIsOpen] = useState(open || false)
 
@@ -108,7 +125,10 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
           return
         }
 
-        if (containerRef?.current?.contains(target as Element)) {
+        if (
+          containerRef?.current?.contains(target as Element) ||
+          dropdownRef?.current?.contains(target as Element)
+        ) {
           event.preventDefault()
         }
       }
@@ -145,7 +165,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
         >
           <RxSelect.Trigger
             id={id}
-            ref={ref}
+            ref={triggerRef}
             className={cx(
               `${PREFIX}-${GROUP_NAME}-trigger`,
               typography({ variant: 'body-1' }),
@@ -169,6 +189,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
 
           <RxSelect.Portal>
             <RxSelect.Content
+              ref={dropdownRef}
               align="center"
               className={cx(
                 `${PREFIX}-${GROUP_NAME}-dropdown`,
