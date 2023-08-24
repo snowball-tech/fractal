@@ -1,6 +1,8 @@
 import type { CountryCode } from 'libphonenumber-js'
 import type { HTMLAttributes } from 'react'
 
+import type { CombinedRefs as SelectCombinedRefs } from '@/components/Select/Select.types'
+
 export type CountryDetails = {
   countryCode: CountryCode
   countryName: string
@@ -20,7 +22,8 @@ export type Prefix = {
 
 export type CombinedRefs = {
   phone: HTMLInputElement | null
-  prefix: HTMLButtonElement | null
+  prefix: SelectCombinedRefs | null
+  searchPrefixInput: HTMLInputElement | null
 }
 
 export interface InputPhoneProps

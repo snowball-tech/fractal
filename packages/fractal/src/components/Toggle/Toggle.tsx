@@ -49,7 +49,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     )
 
     const handleToggle = (newToggled: boolean) => {
-      buttonRef.current?.blur()
+      buttonRef?.current?.blur()
 
       if (isFunction(onToggle)) {
         onToggle(newToggled)

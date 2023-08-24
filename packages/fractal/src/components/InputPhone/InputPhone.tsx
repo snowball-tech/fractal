@@ -84,19 +84,23 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     ref: ForwardedRef<CombinedRefs>,
   ) => {
     const phoneRef = useRef<HTMLInputElement>(null)
-    const prefixRef = useRef<HTMLButtonElement>(null)
+    const prefixRef = useRef<CombinedRefs['prefix']>(null)
+    const searchPrefixInputRef = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(ref, () => ({
       get phone() {
-        return phoneRef.current
+        return phoneRef?.current ?? null
       },
 
       get prefix() {
-        return prefixRef.current
+        return prefixRef?.current ?? null
+      },
+
+      get searchPrefixInput() {
+        return searchPrefixInputRef?.current ?? null
       },
     }))
 
-    const searchInputRef = useRef<HTMLInputElement>(null)
     const [keepFocus, setKeepFocus] = useState(false)
 
     const [search, setSearch] = useState('')
@@ -271,8 +275,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
     const handleSearchBlur = () => {
       if (keepFocus) {
-        if (searchInputRef.current) {
-          searchInputRef.current.focus()
+        if (searchPrefixInputRef?.current) {
+          searchPrefixInputRef.current.focus()
         }
 
         setKeepFocus(false)
@@ -318,7 +322,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             >
               <>
                 <InputText
-                  ref={searchInputRef}
+                  ref={searchPrefixInputRef}
                   className={inputPhonePrefixSearch()}
                   fullWidth
                   {...(placeholder !== undefined

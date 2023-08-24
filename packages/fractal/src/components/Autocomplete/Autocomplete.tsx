@@ -1,6 +1,5 @@
 'use client'
 
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
@@ -29,6 +28,7 @@ import {
   type ForwardedRef,
   forwardRef,
   useEffect,
+  useImperativeHandle,
   useRef,
   useState,
 } from 'react'
@@ -37,13 +37,13 @@ import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './Autocomplete.recipe'
-import type { AutocompleteProps } from './Autocomplete.types'
+import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
 
 /**
  * `Autocomplete` component is used to allow the user to enter text and offer
  * them suggestion as they type.
  */
-export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
+export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
   (
     {
       autoFocus = false,
@@ -69,11 +69,25 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       value,
       ...props
     }: AutocompleteProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    ref: ForwardedRef<CombinedRefs>,
   ) => {
     const inputRef = useRef<HTMLInputElement>(null)
-    const combinedRef = composeRefs(ref, inputRef)
     const containerRef = useRef<HTMLDivElement>(null)
+    const dropdownRef = useRef<HTMLDivElement>(null)
+
+    useImperativeHandle(ref, () => ({
+      get container() {
+        return containerRef?.current ?? null
+      },
+
+      get dropdown() {
+        return dropdownRef?.current ?? null
+      },
+
+      get input() {
+        return inputRef?.current ?? null
+      },
+    }))
 
     const [keepFocus, setKeepFocus] = useState(false)
     const [isOpen, setIsOpen] = useState(
@@ -139,7 +153,10 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
         return
       }
 
-      if (containerRef?.current?.contains(target as Element)) {
+      if (
+        containerRef?.current?.contains(target as Element) ||
+        dropdownRef?.current?.contains(target as Element)
+      ) {
         event.preventDefault()
       }
     }
@@ -150,8 +167,8 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       }
 
       if (keepFocus) {
-        if (inputRef.current) {
-          inputRef.current.focus()
+        if (inputRef?.current) {
+          inputRef?.current?.focus()
         }
 
         setKeepFocus(false)
@@ -176,7 +193,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
 
         <InputText
           id={id}
-          ref={combinedRef}
+          ref={inputRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
           className={autocompleteInput()}
@@ -205,6 +222,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
             className={css({ maxHeight: 0, visibility: 'hidden' })}
           />
           <RxDropdownMenu.Content
+            ref={dropdownRef}
             align="center"
             className={cx(
               `${PREFIX}-${GROUP_NAME}-dropdown`,

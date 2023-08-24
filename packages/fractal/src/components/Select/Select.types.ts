@@ -1,6 +1,12 @@
 import type { SelectContentProps as RxSelectContentProps } from '@radix-ui/react-select'
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
+export type CombinedRefs = {
+  container: HTMLDivElement | null
+  dropdown: HTMLDivElement | null
+  trigger: HTMLButtonElement | null
+}
+
 export interface SelectProps
   extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'onSelect'> {
   /** Indicates if the select must be opened on render. */
