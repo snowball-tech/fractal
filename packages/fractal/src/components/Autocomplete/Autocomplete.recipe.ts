@@ -58,7 +58,7 @@ export const autocompleteDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       boxSizing: 'border-box',
-      mt: 'calc(var(--size-spacing-1) * -0.75)',
+      mt: 'calc(var(--size-spacing-1) * -0.75)!',
     },
 
     className: 'autocompleteDropdown',
