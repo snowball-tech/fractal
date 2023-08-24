@@ -42,8 +42,8 @@ export const step: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const stepAsProgress: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    '.fractal-stepper.current-as-progress &': {
-      maxWidth: 'var(--size-spacing-20)',
+    '.fractal-stepper.current-as-step &': {
+      maxWidth: 'var(--size-spacing-5)',
     },
 
     width: '100%',
