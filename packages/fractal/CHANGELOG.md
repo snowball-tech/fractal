@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.18.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.17.0...@snowball-tech/fractal@2.18.0) (2023-08-25)
+
+### ✨ Features
+
+- **input-text:** add select on focus ([a4cfea3](https://github.com/snowball-tech/fractal/commit/a4cfea3ef355496870d7d884486f8c2b862a6ea9))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([bd1a4b4](https://github.com/snowball-tech/fractal/commit/bd1a4b477320274599b80704b7756fa620aa2ae9))
+
 # @snowball-tech/fractal [2.17.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.16.8...@snowball-tech/fractal@2.17.0) (2023-08-24)
 
 ### ✨ Features
