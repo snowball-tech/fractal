@@ -129,16 +129,6 @@ export const InputPinCode = ({
     }
   }
 
-  const handleFocus = (event: FocusEvent<HTMLInputElement>, index: number) => {
-    if (isFunction(onFocus)) {
-      onFocus(event, index)
-    }
-
-    if (event.target) {
-      event.target.select()
-    }
-  }
-
   const handleKeyDown = (
     event: KeyboardEvent<HTMLInputElement>,
     index: number,
@@ -244,7 +234,9 @@ export const InputPinCode = ({
               : {})}
             onBlur={(event) => handleBlur(event, index)}
             onChange={(event, newDigit) => handleChange(event, newDigit, index)}
-            onFocus={(event) => handleFocus(event, index)}
+            {...(isFunction(onFocus)
+              ? { onFocus: (event) => onFocus(event, index) }
+              : {})}
             onKeyDown={(event) => handleKeyDown(event, index)}
             {...omit(['className'], props)}
           />

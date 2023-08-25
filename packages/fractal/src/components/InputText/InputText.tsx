@@ -16,7 +16,12 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
-import { type ChangeEvent, type ForwardedRef, forwardRef } from 'react'
+import {
+  type ChangeEvent,
+  type FocusEvent,
+  type ForwardedRef,
+  forwardRef,
+} from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -43,6 +48,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       prefix,
       readOnly = false,
       required = false,
+      selectOnFocus = true,
       success,
       suffix,
       type = 'text',
@@ -74,6 +80,16 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       if (isFunction(onChange)) {
         onChange(event, event.target.value)
+      }
+    }
+
+    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+      if (isFunction(props.onFocus)) {
+        props.onFocus(event)
+      }
+
+      if (selectOnFocus && event.target) {
+        event.target.select()
       }
     }
 
@@ -114,8 +130,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             type={type}
             value={value}
             onChange={handleChange}
+            onFocus={handleFocus}
             // Be careful, arguments of `omit` from lodash FP are flipped!
-            {...omit(['className'], props)}
+            {...omit(['className', 'onFocus'], props)}
           />
 
           {suffix ? (

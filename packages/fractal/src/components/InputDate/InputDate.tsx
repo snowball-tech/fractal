@@ -23,7 +23,6 @@ import omit from 'lodash/fp/omit'
 import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
-  type FocusEvent,
   type ForwardedRef,
   KeyboardEvent,
   forwardRef,
@@ -242,19 +241,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       }
     }
 
-    const handleFocus = (
-      event: FocusEvent<HTMLInputElement>,
-      type: keyof DateFormat,
-    ) => {
-      if (isFunction(onFocus)) {
-        onFocus(event, type)
-      }
-
-      if (event.target) {
-        event.target.select()
-      }
-    }
-
     const handleKeyDown = (
       event: KeyboardEvent<HTMLInputElement>,
       type: keyof DateFormat,
@@ -364,7 +350,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'day') }
               : {})}
             onChange={(event, newDay) => handleChange(event, newDay, 'day')}
-            onFocus={(event) => handleFocus(event, 'day')}
+            {...(isFunction(onFocus)
+              ? { onFocus: (event) => onFocus(event, 'year') }
+              : {})}
             onKeyDown={(event) => handleKeyDown(event, 'day')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
@@ -401,7 +389,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             onChange={(event, newMonth) =>
               handleChange(event, newMonth, 'month')
             }
-            onFocus={(event) => handleFocus(event, 'month')}
+            {...(isFunction(onFocus)
+              ? { onFocus: (event) => onFocus(event, 'year') }
+              : {})}
             onKeyDown={(event) => handleKeyDown(event, 'month')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
@@ -443,7 +433,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'year') }
               : {})}
             onChange={(event, newYear) => handleChange(event, newYear, 'year')}
-            onFocus={(event) => handleFocus(event, 'year')}
+            {...(isFunction(onFocus)
+              ? { onFocus: (event) => onFocus(event, 'year') }
+              : {})}
             onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'year') }

@@ -61,6 +61,11 @@ export interface InputTextProps
   /** Indicates if the text input must be filled. */
   required?: boolean
   /**
+   * Indicates if the content of the input text should be selected when the
+   * input text is focused.
+   */
+  selectOnFocus?: boolean
+  /**
    * If a boolean: indicates that the field is in success.
    *
    * If a string: a message to display when the text input has a valid value.
