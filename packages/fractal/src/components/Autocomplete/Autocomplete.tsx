@@ -241,6 +241,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         if (document.activeElement === inputRef.current) {
           setKeepFocus(true)
         }
+
         handleDropdownToggle(true)
       }
     }

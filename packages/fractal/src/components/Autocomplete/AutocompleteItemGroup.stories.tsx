@@ -24,6 +24,9 @@ const meta: Meta<AutocompleteItemGroupProps> = {
     label: 'Jedis',
   },
   component: AutocompleteItemGroup,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 
   title: 'Molecules/Autocomplete/AutocompleteItemGroup',
 } satisfies Meta<AutocompleteItemGroupProps>
@@ -34,6 +37,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({ label }) => (
     <Autocomplete
+      open
       placeholder="Start typing to autocomplete"
       onChange={action('onChange')}
     >
