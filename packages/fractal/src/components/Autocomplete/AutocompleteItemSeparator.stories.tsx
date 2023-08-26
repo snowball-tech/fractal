@@ -13,7 +13,7 @@ type AutocompleteItemSeparatorProps = ComponentProps<
 const meta: Meta<AutocompleteItemSeparatorProps> = {
   component: AutocompleteItemSeparator,
   parameters: {
-    chromatic: { delay: 1000 },
+    chromatic: { delay: 2000 },
   },
 
   title: 'Molecules/Autocomplete/AutocompleteItemSeparator',

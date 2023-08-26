@@ -8,3 +8,25 @@
 @import '@snowball-tech/design-tokens/dist/web/css/fonts.css' layer(fractal);
 /* stylelint-disable-next-line import-notation */
 @import '@snowball-tech/design-tokens/dist/web/css/variables.css' layer(fractal);
+
+@layer reset {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
+    margin: 0;
+  }
+
+  div {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: var(--color-brand-secondary);
+  }
+}

@@ -31,7 +31,7 @@ const meta: Meta<AutocompleteLoadingProps> = {
   },
   component: AutocompleteLoading,
   parameters: {
-    chromatic: { delay: 1000 },
+    chromatic: { delay: 2000 },
   },
 
   title: 'Molecules/Autocomplete/AutocompleteLoading',

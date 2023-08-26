@@ -167,7 +167,8 @@ export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       [`&:has(+ .fractal-scrollarea-scrollbar-y)`]: {
-        width: 'calc(100% - var(--size-spacing-1))',
+        width:
+          'calc(100% - var(--size-spacing-1) + var(--size-spacing-quarter))',
       },
 
       height: '100%',
@@ -187,7 +188,7 @@ export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       '&[data-orientation="vertical"]': {
-        width: '5px',
+        width: 'var(--size-spacing-1)',
       },
 
       _hover: {
