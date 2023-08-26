@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.19.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.5...@snowball-tech/fractal@2.19.0) (2023-08-26)
+
+### 💄 UI/UX
+
+- switch to border-box box sizing and add resets ([#43](https://github.com/snowball-tech/fractal/issues/43)) ([a3ef20d](https://github.com/snowball-tech/fractal/commit/a3ef20d2fa0436aa0537c1bcd39d3b4d23a89d3a))
+
 ## @snowball-tech/fractal [2.18.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.4...@snowball-tech/fractal@2.18.5) (2023-08-26)
 
 ### 🐛 Bug Fixes
