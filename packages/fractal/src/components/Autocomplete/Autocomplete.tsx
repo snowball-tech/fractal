@@ -342,7 +342,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                 {...(props.dir !== undefined
                   ? { dir: props.dir as RxScrollArea.Direction }
                   : {})}
-                type="hover"
+                type="always"
               >
                 <RxScrollArea.Viewport
                   className={selectDropdownScrollViewport()}
