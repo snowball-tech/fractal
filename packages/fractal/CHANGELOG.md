@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [2.18.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.1...@snowball-tech/fractal@2.18.2) (2023-08-26)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix triggering/focusing of autocomplete ([a0f67b8](https://github.com/snowball-tech/fractal/commit/a0f67b80304d888cf6b953fc94b4577e9014ddb6))
+- **autocomplete:** make the text input focused state when focusing the dropdown ([5dee9bf](https://github.com/snowball-tech/fractal/commit/5dee9bfacc369554f7e5b50934c51b4225a443a8))
+
+### 📝 Documentation
+
+- **autocomplete:** debounce and cancel requests ([2281a8a](https://github.com/snowball-tech/fractal/commit/2281a8a9143e7bf7a528e477b66ca705adfcc658))
+
 ## @snowball-tech/fractal [2.18.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.0...@snowball-tech/fractal@2.18.1) (2023-08-26)
 
 ### 🐛 Bug Fixes
