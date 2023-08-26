@@ -1,5 +1,4 @@
 import { defineRecipe } from '@pandacss/dev'
-import { selectDropdownScrollbar as selectDropdownScrollbarRecipe } from '@snowball-tech/fractal-panda/recipes'
 
 export const GROUP_NAME = 'select'
 
@@ -166,9 +165,8 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    // @ts-expect-error `has` is not supported yet in PandaCSS.
     base: {
-      [`&:has(+ .${selectDropdownScrollbarRecipe()})`]: {
+      [`&:has(+ .fractal-scrollarea-scrollbar-y)`]: {
         width: 'calc(100% - var(--size-spacing-1))',
       },
 

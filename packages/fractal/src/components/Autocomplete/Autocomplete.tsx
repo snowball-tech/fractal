@@ -354,7 +354,10 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                 </RxScrollArea.Viewport>
 
                 <RxScrollArea.Scrollbar
-                  className={selectDropdownScrollbar()}
+                  className={cx(
+                    `${PREFIX}-scrollarea-scrollbar-y`,
+                    selectDropdownScrollbar(),
+                  )}
                   orientation="vertical"
                 >
                   <RxScrollArea.Thumb
