@@ -7,7 +7,7 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-// import isChromatic from 'chromatic/isChromatic'
+import isChromatic from 'chromatic/isChromatic'
 // eslint-disable-next-line lodash-fp/use-fp
 import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/fp/isEmpty'
