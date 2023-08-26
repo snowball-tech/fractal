@@ -4,7 +4,7 @@ import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
-import { cx } from '@snowball-tech/fractal-panda/css'
+import { css, cx } from '@snowball-tech/fractal-panda/css'
 import {
   autocompleteContainer,
   autocompleteDescription,
@@ -27,6 +27,7 @@ import {
   type FocusEvent,
   type ForwardedRef,
   type KeyboardEvent,
+  type MouseEvent,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -161,6 +162,14 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         }
       }
 
+    const handleDropdownPointerDownOutside: DismissableLayerProps['onPointerDownOutside'] =
+      () => {
+        if (inputRef?.current) {
+          setKeepFocus(false)
+          inputRef.current.blur()
+        }
+      }
+
     const handleInputBlur = (event: FocusEvent<HTMLInputElement>) => {
       if (isFunction(props.onBlur)) {
         props.onBlur(event)
@@ -182,9 +191,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           handleDropdownToggle(false)
         } else if (inputRef?.current) {
           setKeepFocus(false)
-          if (inputRef?.current) {
-            inputRef.current.blur()
-          }
+          inputRef.current.blur()
         }
       } else if (event.key === 'Enter') {
         event.preventDefault()
@@ -211,10 +218,41 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     const handleDropdownKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Escape') {
         if (inputRef?.current) {
+          if (document.activeElement === inputRef.current) {
+            setKeepFocus(true)
+          }
           inputRef.current.focus()
         }
       }
     }
+
+    const handleTriggerClick = (event: MouseEvent<HTMLInputElement>) => {
+      if (props.onClick) {
+        props.onClick(event)
+      }
+
+      if (inputRef?.current) {
+        if (document.activeElement !== inputRef.current) {
+          inputRef.current.focus()
+        }
+      }
+
+      if (children && !isOpen) {
+        if (document.activeElement === inputRef.current) {
+          setKeepFocus(true)
+        }
+        handleDropdownToggle(true)
+      }
+    }
+
+    useEffect(() => {
+      if (open === true || (Boolean(children) && open !== false)) {
+        handleDropdownToggle(true)
+      }
+      // We don't want to reopen the toggle based on the `handleDropdownToggle`
+      // function. So we don't include it in the dependencies.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [children, open])
 
     return (
       <div ref={containerRef} className={groupClassNames}>
@@ -237,7 +275,13 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           open={isOpen}
           onOpenChange={handleDropdownToggle}
         >
-          <RxDropdownMenu.Trigger asChild>
+          <RxDropdownMenu.Trigger
+            asChild
+            onPointerDown={(event) => {
+              event.preventDefault()
+              event.stopPropagation()
+            }}
+          >
             <InputText
               id={id}
               ref={inputRef}
@@ -258,6 +302,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               {...(value !== undefined ? { value } : {})}
               onBlur={handleInputBlur}
               onChange={handleInputChange}
+              onClick={handleTriggerClick}
               onKeyDown={handleInputKeyDown}
               {...omit(['className', 'onBlur'], props)}
             />
@@ -273,6 +318,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                 selectDropdown(),
                 autocompleteDropdown(),
                 ...(dropdown?.className?.split(' ') || []),
+                !children ? css({ visibility: 'hidden' }) : '',
               )}
               loop
               side="bottom"
@@ -281,6 +327,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               }}
               onInteractOutside={handleDropdownInteractOutside}
               onKeyDown={handleDropdownKeyDown}
+              onPointerDownOutside={handleDropdownPointerDownOutside}
               {...omit(['className'], dropdown)}
             >
               <RxScrollArea.Root
