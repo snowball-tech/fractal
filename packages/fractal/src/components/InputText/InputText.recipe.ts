@@ -113,6 +113,13 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     _writable: {
+      '&:is([data-state="open"])': {
+        backgroundColor: `var(--color-background-input-focus)`,
+        border: `var(--border-input-focus)`,
+        color: `var(--color-text-input-focus)`,
+        shadow: `var(--shadow-input-focus)`,
+      },
+
       _focus: {
         backgroundColor: `var(--color-background-input-focus)`,
         border: `var(--border-input-focus)`,
