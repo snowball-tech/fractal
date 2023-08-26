@@ -7,14 +7,19 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import isChromatic from 'chromatic/isChromatic'
+// import isChromatic from 'chromatic/isChromatic'
 // eslint-disable-next-line lodash-fp/use-fp
 import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
 import kebabCase from 'lodash/fp/kebabCase'
-import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
+import {
+  type ChangeEvent,
+  type ComponentProps,
+  type ReactNode,
+  useEffect,
+} from 'react'
 
 import { jedis, others, siths } from '@/mocks'
 
@@ -145,6 +150,8 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
     })
 }, 200)
 
+let unmounted = false
+
 const meta: Meta<AutocompleteProps> = {
   argTypes: {
     children: {
@@ -227,10 +234,12 @@ const meta: Meta<AutocompleteProps> = {
 
         action('onSelect')(selectedValue)
 
-        setArgs({
-          children: false,
-          value: selectedValue,
-        })
+        if (!unmounted) {
+          setArgs({
+            children: false,
+            value: selectedValue,
+          })
+        }
       }
 
       const onChange = (
@@ -240,34 +249,46 @@ const meta: Meta<AutocompleteProps> = {
         context.args.onChange?.(event, newValue)
 
         // Check if the component is controlled.
-        if (context.args.value !== undefined) {
+        if (context.args.value !== undefined && !unmounted) {
           setArgs({
             value: newValue,
           })
         }
 
-        if (isEmpty(newValue)) {
+        if (isEmpty(newValue) && !unmounted) {
           setArgs({
             children: false,
           })
-
-          return
         }
 
-        setArgs({
-          children: (
-            <AutocompleteLoading>
-              Loading Star Wars characters and planets...
-            </AutocompleteLoading>
-          ),
-        })
+        if (!unmounted) {
+          setArgs({
+            children: (
+              <AutocompleteLoading>
+                Loading Star Wars characters and planets...
+              </AutocompleteLoading>
+            ),
+          })
 
-        debouncedLoad(newValue, setArgs, onSelect)
+          debouncedLoad(newValue, setArgs, onSelect)
+        }
       }
 
-      if (!isEmpty(context.args.value) && !context.args.children) {
-        onChange(null, String(context.args.value))
-      }
+      useEffect(() => {
+        unmounted = false
+        if (!isEmpty(context.args.value) && !context.args.children) {
+          setTimeout(() => onChange(null, String(context.args.value)), 100)
+        }
+
+        return () => {
+          abort?.abort()
+          debouncedLoad.cancel()
+
+          unmounted = true
+        }
+        // We only want to run this effect once.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
 
       return <Story args={{ ...context.args, onChange }} />
     },

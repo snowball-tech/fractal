@@ -25,7 +25,7 @@ const meta: Meta<AutocompleteItemGroupProps> = {
   },
   component: AutocompleteItemGroup,
   parameters: {
-    chromatic: { delay: 1000 },
+    chromatic: { delay: 2000 },
   },
 
   title: 'Molecules/Autocomplete/AutocompleteItemGroup',
