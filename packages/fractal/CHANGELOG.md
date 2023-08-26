@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [2.18.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.4...@snowball-tech/fractal@2.18.5) (2023-08-26)
+
+### 🐛 Bug Fixes
+
+- **autocomplete-select:** fix the margin with the scrollbar ([be892b3](https://github.com/snowball-tech/fractal/commit/be892b3d1f30ea850e91c6b7f33f248fdbe9acd3))
+- **dropdown:** give a specific name to the scrollbar ([c5c444f](https://github.com/snowball-tech/fractal/commit/c5c444f87ab73c6bcf71d45f5a6a0875dae3f83e))
+
 ## @snowball-tech/fractal [2.18.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.3...@snowball-tech/fractal@2.18.4) (2023-08-26)
 
 ### 📝 Documentation
