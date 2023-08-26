@@ -12,6 +12,9 @@ type AutocompleteItemSeparatorProps = ComponentProps<
 
 const meta: Meta<AutocompleteItemSeparatorProps> = {
   component: AutocompleteItemSeparator,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 
   title: 'Molecules/Autocomplete/AutocompleteItemSeparator',
 } satisfies Meta<AutocompleteItemSeparatorProps>
@@ -22,6 +25,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: () => (
     <Autocomplete
+      open
       placeholder="Start typing to autocomplete"
       onChange={action('onChange')}
     >

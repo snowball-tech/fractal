@@ -273,6 +273,7 @@ const meta: Meta<AutocompleteProps> = {
     },
   ],
   parameters: {
+    chromatic: { delay: 5000 },
     componentSubtitle:
       '🧑‍🚀 Our mission with Andy is complete, Woody - Buzz Lightyear - Toy Story 3',
     controls: {
@@ -287,5 +288,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: '' },
+  args: { value: isChromatic() ? 'a' : '' },
 }

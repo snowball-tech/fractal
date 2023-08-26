@@ -30,6 +30,9 @@ const meta: Meta<AutocompleteLoadingProps> = {
     spin: true,
   },
   component: AutocompleteLoading,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 
   title: 'Molecules/Autocomplete/AutocompleteLoading',
 } satisfies Meta<AutocompleteLoadingProps>
@@ -39,7 +42,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children, icon, spin = false }) => (
-    <Autocomplete placeholder="Start typing to autocomplete">
+    <Autocomplete open placeholder="Start typing to autocomplete">
       <AutocompleteLoading icon={icon} spin={spin}>
         {children}
       </AutocompleteLoading>

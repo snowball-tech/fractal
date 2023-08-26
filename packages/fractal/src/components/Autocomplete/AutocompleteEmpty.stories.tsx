@@ -16,6 +16,9 @@ const meta: Meta<AutocompleteEmptyProps> = {
     children: 'No results! Sorry about that!',
   },
   component: AutocompleteEmpty,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 
   title: 'Molecules/Autocomplete/AutocompleteEmpty',
 } satisfies Meta<AutocompleteEmptyProps>
@@ -25,7 +28,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children }) => (
-    <Autocomplete placeholder="Start typing to autocomplete">
+    <Autocomplete open placeholder="Start typing to autocomplete">
       <AutocompleteEmpty>{children}</AutocompleteEmpty>
     </Autocomplete>
   ),

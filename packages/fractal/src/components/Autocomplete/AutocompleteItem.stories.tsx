@@ -18,6 +18,9 @@ const meta: Meta<AutocompleteItemProps> = {
     value: 'jar-jar-binks',
   },
   component: AutocompleteItem,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 
   title: 'Molecules/Autocomplete/AutocompleteItem',
 } satisfies Meta<AutocompleteItemProps>
@@ -28,6 +31,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({ children, disabled = false, value = '' }) => (
     <Autocomplete
+      open
       placeholder="Start typing to autocomplete"
       onChange={action('onChange')}
     >
