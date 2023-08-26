@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.18.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.3...@snowball-tech/fractal@2.18.4) (2023-08-26)
+
+### 📝 Documentation
+
+- **autocomplete:** improve stories in Chromatic ([cda30fa](https://github.com/snowball-tech/fractal/commit/cda30fac195a5a2e166ae47c2ffb9dfcd73eb00b))
+
 ## @snowball-tech/fractal [2.18.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.2...@snowball-tech/fractal@2.18.3) (2023-08-26)
 
 ### 🐛 Bug Fixes
