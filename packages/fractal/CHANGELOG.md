@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [2.18.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.0...@snowball-tech/fractal@2.18.1) (2023-08-26)
+
+### 🐛 Bug Fixes
+
+- **select-autocomplete:** fix the sizing of the dropdowns ([4da791b](https://github.com/snowball-tech/fractal/commit/4da791bd619b49a3f8391724a6d3e93ef6abf390))
+- **select:** remove hard coded open status ([462bdfa](https://github.com/snowball-tech/fractal/commit/462bdfa492a11900e5e7af0e0951ec5cc2c045fa))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([8680df9](https://github.com/snowball-tech/fractal/commit/8680df95b2d97612eb6a3e62527709a7e267bef5))
+
 # @snowball-tech/fractal [2.18.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.17.0...@snowball-tech/fractal@2.18.0) (2023-08-25)
 
 ### ✨ Features
