@@ -7,7 +7,11 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+// eslint-disable-next-line lodash-fp/use-fp
+import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
@@ -63,6 +67,87 @@ const itemsWithGroupsAndSeparators = (
     {othersItems}
   </>
 )
+
+let abort: AbortController | null = null
+
+const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
+  if (!isNil(abort) && isFunction(abort?.abort)) {
+    abort.abort()
+  }
+  abort = null
+  abort = new AbortController()
+
+  console.log('Loading Star Wars characters and planets...', { newValue })
+
+  const promises = []
+  promises.push(
+    fetch(`https://swapi.dev/api/people/?search=${newValue}`, {
+      signal: abort?.signal,
+    }),
+  )
+  promises.push(
+    fetch(`https://swapi.dev/api/planets/?search=${newValue}`, {
+      signal: abort?.signal,
+    }),
+  )
+
+  void Promise.all(promises)
+    .then(async ([charactersResponse, planetsResponse]) => {
+      const { results: characters } = (await charactersResponse?.json()) ?? {}
+      const { results: planets } = (await planetsResponse?.json()) ?? {}
+
+      if (isEmpty(characters) && isEmpty(planets)) {
+        setArgs({
+          children: (
+            <AutocompleteEmpty>
+              Nothing found in Star Wars matching your search!
+            </AutocompleteEmpty>
+          ),
+        })
+
+        return {}
+      }
+
+      setArgs({
+        children: (
+          <>
+            <AutocompleteItemGroup label="Characters">
+              {characters.map(({ name }: { name: string }) => (
+                <AutocompleteItem key={name} onSelect={onSelect}>
+                  {name}
+                </AutocompleteItem>
+              ))}
+            </AutocompleteItemGroup>
+
+            <AutocompleteItemSeparator />
+
+            <AutocompleteItemGroup label="Planets">
+              {planets.map(({ name }: { name: string }) => (
+                <AutocompleteItem key={name} onSelect={onSelect}>
+                  {name}
+                </AutocompleteItem>
+              ))}
+            </AutocompleteItemGroup>
+          </>
+        ),
+      })
+
+      return { characters, planets }
+    })
+    .catch((error) => {
+      if (error.name === 'AbortError') {
+        console.debug(
+          'Aborting Star Wars characters and planets load, a new request has been triggered...',
+        )
+
+        return
+      }
+
+      console.error('Error when loading Star Wars characters and planets', {
+        error,
+      })
+    })
+}, 200)
 
 const meta: Meta<AutocompleteProps> = {
   argTypes: {
@@ -181,57 +266,7 @@ const meta: Meta<AutocompleteProps> = {
           ),
         })
 
-        const promises = []
-        promises.push(fetch(`https://swapi.dev/api/people/?search=${newValue}`))
-        promises.push(
-          fetch(`https://swapi.dev/api/planets/?search=${newValue}`),
-        )
-
-        void Promise.all(promises).then(
-          async ([charactersResponse, planetsResponse]) => {
-            const { results: characters } =
-              (await charactersResponse?.json()) ?? {}
-            const { results: planets } = (await planetsResponse?.json()) ?? {}
-
-            if (isEmpty(characters) && isEmpty(planets)) {
-              setArgs({
-                children: (
-                  <AutocompleteEmpty>
-                    Nothing found in Star Wars matching your search!
-                  </AutocompleteEmpty>
-                ),
-              })
-
-              return {}
-            }
-
-            setArgs({
-              children: (
-                <>
-                  <AutocompleteItemGroup label="Characters">
-                    {characters.map(({ name }: { name: string }) => (
-                      <AutocompleteItem key={name} onSelect={onSelect}>
-                        {name}
-                      </AutocompleteItem>
-                    ))}
-                  </AutocompleteItemGroup>
-
-                  <AutocompleteItemSeparator />
-
-                  <AutocompleteItemGroup label="Planets">
-                    {planets.map(({ name }: { name: string }) => (
-                      <AutocompleteItem key={name} onSelect={onSelect}>
-                        {name}
-                      </AutocompleteItem>
-                    ))}
-                  </AutocompleteItemGroup>
-                </>
-              ),
-            })
-
-            return { characters, planets }
-          },
-        )
+        debouncedLoad(newValue, setArgs, onSelect)
       }
 
       return <Story args={{ ...context.args, onChange }} />
@@ -252,5 +287,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { open: true, value: '' },
+  args: { value: '' },
 }
