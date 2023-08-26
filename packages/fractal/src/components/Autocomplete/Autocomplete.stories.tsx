@@ -78,8 +78,6 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
   abort = null
   abort = new AbortController()
 
-  console.log('Loading Star Wars characters and planets...', { newValue })
-
   const promises = []
   promises.push(
     fetch(`https://swapi.dev/api/people/?search=${newValue}`, {
@@ -137,15 +135,12 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
     })
     .catch((error) => {
       if (error.name === 'AbortError') {
-        console.debug(
-          'Aborting Star Wars characters and planets load, a new request has been triggered...',
-        )
-
         return
       }
 
       console.error('Error when loading Star Wars characters and planets', {
         error,
+        newValue,
       })
     })
 }, 200)
@@ -268,6 +263,10 @@ const meta: Meta<AutocompleteProps> = {
         })
 
         debouncedLoad(newValue, setArgs, onSelect)
+      }
+
+      if (!isEmpty(context.args.value) && !context.args.children) {
+        onChange(null, String(context.args.value))
       }
 
       return <Story args={{ ...context.args, onChange }} />
