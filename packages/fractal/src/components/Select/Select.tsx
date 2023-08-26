@@ -154,7 +154,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             : {})}
           disabled={disabled || readOnly || false}
           name={name || id}
-          open={true}
+          open={isOpen}
           required={required}
           {...(value !== undefined ? { value } : {})}
           onOpenChange={handleDropdownToggle}

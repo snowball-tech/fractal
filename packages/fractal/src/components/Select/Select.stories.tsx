@@ -125,6 +125,4 @@ const meta: Meta<SelectProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {
-  args: { open: true },
-}
+export const Playground: Story = {}
