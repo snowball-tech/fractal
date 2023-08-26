@@ -17,7 +17,7 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const step: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    _active: {
+    '&:is([data-active="true"], .active)': {
       backgroundColor: 'var(--color-background-stepper-step-active-neutral)',
       border: 'var(--border-stepper-step-active)',
     },

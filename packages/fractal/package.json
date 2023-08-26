@@ -82,8 +82,8 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.12.1",
-    "@pandacss/preset-base": "^0.12.1",
+    "@pandacss/dev": "^0.12.2",
+    "@pandacss/preset-base": "^0.12.2",
     "@simbathesailor/use-what-changed": "^2.0.0",
     "@snowball-tech/eslint-config": "^5.2.3",
     "@storybook/addon-a11y": "^7.3.2",
@@ -106,7 +106,7 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "csso-cli": "^4.0.2",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "postcss": "^8.4.28",
     "postcss-styled-syntax": "^0.4.0",
     "prettier": "^3.0.2",
