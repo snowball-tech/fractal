@@ -271,43 +271,50 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           false
         )}
 
+        <InputText
+          id={id}
+          ref={inputRef}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus={autoFocus}
+          className={autocompleteInput()}
+          {...(defaultValue !== undefined ? { defaultValue } : {})}
+          disabled={disabled}
+          error={hasErrorMessage}
+          fullWidth={fullWidth}
+          name={name || id}
+          {...(placeholder !== undefined ? { placeholder } : {})}
+          readOnly={readOnly}
+          required={required}
+          selectOnFocus={!keepFocus}
+          success={isSuccessful}
+          type="text"
+          {...(value !== undefined ? { value } : {})}
+          onBlur={handleInputBlur}
+          onChange={handleInputChange}
+          onClick={handleTriggerClick}
+          onKeyDown={handleInputKeyDown}
+          {...omit(['className', 'onBlur'], props)}
+        />
+
         <RxDropdownMenu.Root
           modal={false}
           open={isOpen}
           onOpenChange={handleDropdownToggle}
         >
           <RxDropdownMenu.Trigger
-            asChild
+            className={css({
+              borderBottom: 0,
+              borderTop: 0,
+              height: 0,
+              maxHeight: 0,
+              py: 0,
+              visibility: 'hidden',
+            })}
             onPointerDown={(event) => {
               event.preventDefault()
               event.stopPropagation()
             }}
-          >
-            <InputText
-              id={id}
-              ref={inputRef}
-              // eslint-disable-next-line jsx-a11y/no-autofocus
-              autoFocus={autoFocus}
-              className={autocompleteInput()}
-              {...(defaultValue !== undefined ? { defaultValue } : {})}
-              disabled={disabled}
-              error={hasErrorMessage}
-              fullWidth={fullWidth}
-              name={name || id}
-              {...(placeholder !== undefined ? { placeholder } : {})}
-              readOnly={readOnly}
-              required={required}
-              selectOnFocus={!keepFocus}
-              success={isSuccessful}
-              type="text"
-              {...(value !== undefined ? { value } : {})}
-              onBlur={handleInputBlur}
-              onChange={handleInputChange}
-              onClick={handleTriggerClick}
-              onKeyDown={handleInputKeyDown}
-              {...omit(['className', 'onBlur'], props)}
-            />
-          </RxDropdownMenu.Trigger>
+          />
 
           <RxDropdownMenu.Portal>
             <RxDropdownMenu.Content

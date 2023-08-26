@@ -16,7 +16,6 @@ export const autocompleteContainer: ReturnType<typeof defineRecipe> =
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       display: 'flex',
       flexDirection: 'column',
-      gap: 'var(--size-spacing-1)',
       maxWidth: '100%',
       width: '100%',
     },
@@ -47,7 +46,9 @@ export const autocompleteLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 })
 
 export const autocompleteInput: ReturnType<typeof defineRecipe> = defineRecipe({
-  base: {},
+  base: {
+    my: 'var(--size-spacing-1)',
+  },
 
   className: 'autocompleteInput',
   description: 'The input field of the autocomplete',
@@ -56,7 +57,9 @@ export const autocompleteInput: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const autocompleteDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    base: {},
+    base: {
+      mt: '0!',
+    },
 
     className: 'autocompleteDropdown',
     description: 'The dropdown of the autocomplete',
