@@ -25,7 +25,6 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: () => (
     <Autocomplete
-      open
       placeholder="Start typing to autocomplete"
       onChange={action('onChange')}
     >
