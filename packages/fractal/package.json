@@ -82,8 +82,8 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.12.2",
-    "@pandacss/preset-base": "^0.12.2",
+    "@pandacss/dev": "^0.13.0",
+    "@pandacss/preset-base": "^0.13.0",
     "@simbathesailor/use-what-changed": "^2.0.0",
     "@snowball-tech/eslint-config": "^5.2.3",
     "@storybook/addon-a11y": "^7.3.2",
