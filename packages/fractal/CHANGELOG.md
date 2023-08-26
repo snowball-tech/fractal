@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.19.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.19.0...@snowball-tech/fractal@2.19.1) (2023-08-26)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** don't always display the scrollbar ([60183cb](https://github.com/snowball-tech/fractal/commit/60183cb3045b880d65584e5346bdfa59ee38a3a7))
+
 # @snowball-tech/fractal [2.19.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.5...@snowball-tech/fractal@2.19.0) (2023-08-26)
 
 ### 💄 UI/UX
