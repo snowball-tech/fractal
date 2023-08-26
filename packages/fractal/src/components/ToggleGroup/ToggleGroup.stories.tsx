@@ -119,13 +119,27 @@ const separator = (
   />
 )
 
+const Title = ({
+  children,
+  main = false,
+}: {
+  children: ReactNode
+  main?: boolean
+}) => {
+  return main ? (
+    <h1 style={{ marginTop: '2rem' }}>{children}</h1>
+  ) : (
+    <h3 style={{ marginBlock: '1rem' }}>{children}</h3>
+  )
+}
+
 export const Primary: Story = {
   render: () => (
     <>
       <h1>Horizontal</h1>
       {separator}
 
-      <h3>Who is the best Jedi?</h3>
+      <Title>Who is the best Jedi?</Title>
       <ToggleGroup
         defaultValue="yoda"
         orientation="horizontal"
@@ -134,7 +148,7 @@ export const Primary: Story = {
         {jedisItems}
       </ToggleGroup>
 
-      <h3>Who are the best Jedis?</h3>
+      <Title>Who are the best Jedis?</Title>
       <ToggleGroup
         defaultValue={['yoda', 'luke-skywalker']}
         orientation="horizontal"
@@ -144,7 +158,7 @@ export const Primary: Story = {
         {jedisItems}
       </ToggleGroup>
 
-      <h3>Who is the worst Sith?</h3>
+      <Title>Who is the worst Sith?</Title>
       <ToggleGroup
         defaultValue="emperor-palpatine"
         disabled
@@ -154,7 +168,7 @@ export const Primary: Story = {
         {sithsItems}
       </ToggleGroup>
 
-      <h3>Who shot first?</h3>
+      <Title>Who shot first?</Title>
       <ToggleGroup
         defaultValue="han-solo"
         fullWidth
@@ -164,15 +178,15 @@ export const Primary: Story = {
         {othersItemsFullWidth}
       </ToggleGroup>
 
-      <h1>Vertical</h1>
+      <Title main>Vertical</Title>
       {separator}
 
-      <h3>Who is the best Jedi?</h3>
+      <Title>Who is the best Jedi?</Title>
       <ToggleGroup defaultValue="yoda" variant="primary">
         {jedisItems}
       </ToggleGroup>
 
-      <h3>Who are the best Jedis?</h3>
+      <Title>Who are the best Jedis?</Title>
       <ToggleGroup
         defaultValue={['yoda', 'luke-skywalker']}
         type="multiple"
@@ -181,12 +195,12 @@ export const Primary: Story = {
         {jedisItems}
       </ToggleGroup>
 
-      <h3>Who is the worst Sith?</h3>
+      <Title>Who is the worst Sith?</Title>
       <ToggleGroup defaultValue="emperor-palpatine" disabled variant="primary">
         {sithsItemsFullWidth}
       </ToggleGroup>
 
-      <h3>Who shot first?</h3>
+      <Title>Who shot first?</Title>
       <ToggleGroup defaultValue="han-solo" fullWidth variant="primary">
         {othersItemsFullWidth}
       </ToggleGroup>
