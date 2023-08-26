@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [2.18.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.2...@snowball-tech/fractal@2.18.3) (2023-08-26)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix Chromatic builds ([c02593f](https://github.com/snowball-tech/fractal/commit/c02593fc3155df0fdb91c9629bb07e2f8af8afda))
+
+### 📝 Documentation
+
+- **autocomplete:** fix loading of isChromatic helper ([4d0d0af](https://github.com/snowball-tech/fractal/commit/4d0d0af00ecf64397bba801fad1532027db3d71f))
+
+### 📦 Dependencies
+
+- upgrade pandacss ([536c595](https://github.com/snowball-tech/fractal/commit/536c5951d65e194e15725d059f5e86a202f14bf2))
+
 ## @snowball-tech/fractal [2.18.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.18.1...@snowball-tech/fractal@2.18.2) (2023-08-26)
 
 ### 🐛 Bug Fixes
