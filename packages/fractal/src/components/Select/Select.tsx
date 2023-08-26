@@ -221,7 +221,10 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 </RxSelect.Viewport>
 
                 <RxScrollArea.Scrollbar
-                  className={selectDropdownScrollbar()}
+                  className={cx(
+                    `${PREFIX}-scrollarea-scrollbar-y`,
+                    selectDropdownScrollbar(),
+                  )}
                   orientation="vertical"
                 >
                   <RxScrollArea.Thumb
