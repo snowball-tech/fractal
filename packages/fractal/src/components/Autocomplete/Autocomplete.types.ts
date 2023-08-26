@@ -79,7 +79,10 @@ export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
    * Event handler called when the autocomplete input value is changed or a
    * value is selected.
    */
-  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement> | null,
+    newValue: string,
+  ) => void
   /** Event handler called when the autocomplete dropdown is closed. */
   onClose?: () => void
   /**

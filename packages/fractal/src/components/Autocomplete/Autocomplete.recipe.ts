@@ -56,10 +56,7 @@ export const autocompleteInput: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const autocompleteDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    base: {
-      boxSizing: 'border-box',
-      mt: 'calc(var(--size-spacing-1) * -0.75)!',
-    },
+    base: {},
 
     className: 'autocompleteDropdown',
     description: 'The dropdown of the autocomplete',
@@ -132,9 +129,7 @@ export const autocompleteEmpty: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const autocompleteDescription: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    base: {
-      mt: 'calc(var(--size-spacing-1) * -2)',
-    },
+    base: {},
 
     className: 'autocompleteDescription',
     description: 'Autocomplete description',
@@ -143,9 +138,7 @@ export const autocompleteDescription: ReturnType<typeof defineRecipe> =
 
 export const autocompleteMessage: ReturnType<typeof defineRecipe> =
   defineRecipe({
-    base: {
-      mt: 'calc(var(--size-spacing-1) * -2)',
-    },
+    base: {},
 
     className: 'autocompleteMessage',
     description: 'Autocomplete text message (error or success)',

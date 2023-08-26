@@ -148,11 +148,13 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: `var(--color-background-select-base)`,
     border: `var(--border-select-base)`,
     borderRadius: 'var(--size-radius-s)',
-    maxHeight:
-      'calc(var(--radix-popper-available-height) - var(--size-spacing-2))',
+    boxSizing: 'border-box',
     mt: 'var(--size-dropdown-gap)',
+    overflow: 'hidden',
     padding:
       'var(--size-dropdown-padding-vertical) var(--size-dropdown-padding-horizontal)',
+    pointerEvents: 'auto',
+    position: 'relative',
     width: 'var(--radix-popper-anchor-width)',
   },
 
@@ -160,6 +162,77 @@ export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select dropdown',
   jsx: ['Select'],
 })
+
+export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      height: '100%',
+      maxHeight:
+        'calc(var(--radix-popper-available-height) - var(--size-spacing-4))',
+      overflow: 'auto',
+      position: 'relative',
+      width: '100%',
+    },
+
+    className: 'selectDropdownScrollViewport',
+    description: 'Select dropdown scroll viewport',
+    jsx: ['Select'],
+  })
+
+export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      '&[data-orientation="vertical"]': {
+        width: '5px',
+      },
+
+      _hover: {
+        backgroundColor: ' var(--color-base-grey-70)',
+      },
+
+      backgroundColor: 'var(--color-base-grey-90)',
+      borderRadius: 'var(--size-radius-s)',
+      bottom: 'calc(var(--size-spacing-1) * -1)!',
+      display: 'flex',
+      padding: '2px',
+      right: 'calc(var(--size-spacing-1) * -1)!',
+      top: 'calc(var(--size-spacing-1) * -1)!',
+      touchAction: 'none',
+      transition: 'background-color 300ms ease-out',
+      userSelect: 'none',
+    },
+
+    className: 'selectDropdownScrollbar',
+    description: 'Select dropdown scrollbar',
+    jsx: ['Select'],
+  })
+
+export const selectDropdownScrollbarThumbs: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      _before: {
+        content: '""',
+        height: '100%',
+        left: '50%',
+        minHeight: '44px',
+        minWidth: '44px',
+        position: 'absolute',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+      },
+
+      background: 'var(--color-base-grey-30)',
+      borderRadius: 'var(--size-radius-s)',
+      flex: 1,
+      position: 'relative',
+    },
+
+    // eslint-disable-next-line no-secrets/no-secrets
+    className: 'selectDropdownScrollbarThumbs',
+    description: 'Select dropdown scrollbar thumbs',
+    jsx: ['Select'],
+  })
 
 export const selectItemGroup: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
@@ -246,7 +319,8 @@ export const selectItemSeparator: ReturnType<typeof defineRecipe> =
     base: {
       backgroundColor: 'var(--color-stroke-separator)',
       height: 'var(--size-border-1)',
-      my: 'var(--size-options-padding-vertical)',
+      margin:
+        'var(--size-options-padding-vertical) var(--size-options-padding-horizontal)',
     },
 
     className: 'selectItemSeparator',
@@ -261,71 +335,3 @@ export const selectDescription: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Select description',
   jsx: ['Select'],
 })
-
-export const selectDropdownScrollViewport: ReturnType<typeof defineRecipe> =
-  defineRecipe({
-    base: {
-      height: '100%',
-      maxHeight:
-        'calc(var(--radix-popper-available-height) - var(--size-spacing-2))',
-      overflow: 'auto',
-      position: 'relative',
-      width: '100%',
-    },
-
-    className: 'selectDropdownScrollViewport',
-    description: 'Select dropdown scroll viewport',
-    jsx: ['Select'],
-  })
-
-export const selectDropdownScrollbar: ReturnType<typeof defineRecipe> =
-  defineRecipe({
-    base: {
-      '&[data-orientation="vertical"]': {
-        width: '5px',
-      },
-
-      _hover: {
-        backgroundColor: ' var(--color-base-grey-70)',
-      },
-
-      backgroundColor: 'var(--color-base-grey-90)',
-      borderRadius: 'var(--size-radius-s)',
-      display: 'flex',
-      padding: '2px',
-      touchAction: 'none',
-      transition: 'background-color 300ms ease-out',
-      userSelect: 'none',
-    },
-
-    className: 'selectDropdownScrollbar',
-    description: 'Select dropdown scrollbar',
-    jsx: ['Select'],
-  })
-
-export const selectDropdownScrollbarThumbs: ReturnType<typeof defineRecipe> =
-  defineRecipe({
-    base: {
-      _before: {
-        content: '""',
-        height: '100%',
-        left: '50%',
-        minHeight: '44px',
-        minWidth: '44px',
-        position: 'absolute',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '100%',
-      },
-
-      background: 'var(--color-base-grey-30)',
-      borderRadius: 'var(--size-radius-s)',
-      flex: 1,
-      position: 'relative',
-    },
-
-    // eslint-disable-next-line no-secrets/no-secrets
-    className: 'selectDropdownScrollbarThumbs',
-    description: 'Select dropdown scrollbar thumbs',
-    jsx: ['Select'],
-  })

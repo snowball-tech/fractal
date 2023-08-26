@@ -83,10 +83,9 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       },
     }))
 
-    const [isOpen, setIsOpen] = useState(open || false)
-
+    const [isOpen, setIsOpen] = useState(open === true)
     useEffect(() => {
-      setIsOpen(open || false)
+      setIsOpen(open === true)
     }, [open])
 
     const groupClassNames = cx(
@@ -155,7 +154,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             : {})}
           disabled={disabled || readOnly || false}
           name={name || id}
-          open={isOpen}
+          open={true}
           required={required}
           {...(value !== undefined ? { value } : {})}
           onOpenChange={handleDropdownToggle}
@@ -200,20 +199,14 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               side="bottom"
               style={{
                 display: undefined,
-                overflow: 'hidden',
               }}
-              {...omit(['className'], dropdown)}
               onPointerDownOutside={handlePointerDownOutside}
+              {...omit(['className'], dropdown)}
             >
               <RxScrollArea.Root
                 {...(props.dir !== undefined
                   ? { dir: props.dir as RxScrollArea.Direction }
                   : {})}
-                style={{
-                  maxHeight:
-                    'calc(var(--radix-popper-available-height) - var(--size-spacing-4))',
-                  overflow: 'hidden',
-                }}
                 type="hover"
               >
                 <RxSelect.Viewport asChild>
