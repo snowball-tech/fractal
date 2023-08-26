@@ -153,7 +153,7 @@ const meta: Meta<AutocompleteProps> = {
       }
 
       const onChange = (
-        event: ChangeEvent<HTMLInputElement>,
+        event: ChangeEvent<HTMLInputElement> | null,
         newValue: string,
       ) => {
         context.args.onChange?.(event, newValue)
@@ -252,5 +252,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: '' },
+  args: { open: true, value: '' },
 }

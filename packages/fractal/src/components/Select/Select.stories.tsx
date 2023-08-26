@@ -108,11 +108,7 @@ const meta: Meta<SelectProps> = {
         setArgs({ value: newValue })
       }
 
-      return (
-        <div style={{ maxWidth: '300px' }}>
-          <Story args={{ ...context.args, onSelect }} />
-        </div>
-      )
+      return <Story args={{ ...context.args, onSelect }} />
     },
   ],
   parameters: {
@@ -129,4 +125,6 @@ const meta: Meta<SelectProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {}
+export const Playground: Story = {
+  args: { open: true },
+}

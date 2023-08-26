@@ -4,7 +4,7 @@ import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
-import { css, cx } from '@snowball-tech/fractal-panda/css'
+import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   autocompleteContainer,
   autocompleteDescription,
@@ -26,6 +26,7 @@ import {
   type ChangeEvent,
   type FocusEvent,
   type ForwardedRef,
+  type KeyboardEvent,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -90,13 +91,13 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     }))
 
     const [keepFocus, setKeepFocus] = useState(false)
+
     const [isOpen, setIsOpen] = useState(
       open === true || (Boolean(children) && open !== false),
     )
-
     useEffect(() => {
-      setIsOpen(open === true || (Boolean(children) && open !== false))
-    }, [open, children])
+      setIsOpen(open === true)
+    }, [open])
 
     const hasErrorMessage = !isEmpty(error)
     const hasSuccessMessage = !isEmpty(success)
@@ -145,21 +146,20 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
     }
 
-    const handleInteractOutside: DismissableLayerProps['onInteractOutside'] = (
-      event,
-    ) => {
-      const { target } = event
-      if (target === window || target === null || target === undefined) {
-        return
-      }
+    const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
+      (event) => {
+        const { target } = event
+        if (target === window || target === null || target === undefined) {
+          return
+        }
 
-      if (
-        containerRef?.current?.contains(target as Element) ||
-        dropdownRef?.current?.contains(target as Element)
-      ) {
-        event.preventDefault()
+        if (
+          containerRef?.current?.contains(target as Element) ||
+          dropdownRef?.current?.contains(target as Element)
+        ) {
+          event.preventDefault()
+        }
       }
-    }
 
     const handleInputBlur = (event: FocusEvent<HTMLInputElement>) => {
       if (isFunction(props.onBlur)) {
@@ -167,11 +167,52 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
 
       if (keepFocus) {
+        setKeepFocus(false)
         if (inputRef?.current) {
-          inputRef?.current?.focus()
+          inputRef.current.focus()
+        }
+      }
+    }
+
+    const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+
+        if (isOpen) {
+          handleDropdownToggle(false)
+        } else if (inputRef?.current) {
+          setKeepFocus(false)
+          if (inputRef?.current) {
+            inputRef.current.blur()
+          }
+        }
+      } else if (event.key === 'Enter') {
+        event.preventDefault()
+
+        if (isFunction(onChange)) {
+          onChange(null, String(value) ?? '')
+        }
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        if (!children) {
+          return
         }
 
-        setKeepFocus(false)
+        event.preventDefault()
+
+        if (!isOpen) {
+          setKeepFocus(true)
+          handleDropdownToggle(true)
+        } else if (dropdownRef?.current) {
+          dropdownRef.current.focus()
+        }
+      }
+    }
+
+    const handleDropdownKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Escape') {
+        if (inputRef?.current) {
+          inputRef.current.focus()
+        }
       }
     }
 
@@ -191,76 +232,83 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           false
         )}
 
-        <InputText
-          id={id}
-          ref={inputRef}
-          // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus={autoFocus}
-          className={autocompleteInput()}
-          {...(defaultValue !== undefined ? { defaultValue } : {})}
-          disabled={disabled}
-          error={hasErrorMessage}
-          fullWidth={fullWidth}
-          name={name || id}
-          {...(placeholder !== undefined ? { placeholder } : {})}
-          readOnly={readOnly}
-          required={required}
-          success={isSuccessful}
-          type="text"
-          {...(value !== undefined ? { value } : {})}
-          onBlur={handleInputBlur}
-          onChange={handleInputChange}
-          {...omit(['className', 'onBlur'], props)}
-        />
-
         <RxDropdownMenu.Root
           modal={false}
           open={isOpen}
           onOpenChange={handleDropdownToggle}
         >
-          <RxDropdownMenu.Trigger
-            className={css({ maxHeight: 0, visibility: 'hidden' })}
-          />
-          <RxDropdownMenu.Content
-            ref={dropdownRef}
-            align="center"
-            className={cx(
-              `${PREFIX}-${GROUP_NAME}-dropdown`,
-              typography({ variant: 'body-1' }),
-              selectDropdown(),
-              autocompleteDropdown(),
-              ...(dropdown?.className?.split(' ') || []),
-            )}
-            loop
-            side="bottom"
-            onInteractOutside={handleInteractOutside}
-            {...omit(['className'], dropdown)}
-          >
-            <RxScrollArea.Root
-              {...(props.dir !== undefined
-                ? { dir: props.dir as RxScrollArea.Direction }
-                : {})}
-              type="hover"
-            >
-              <RxScrollArea.Viewport
-                className={selectDropdownScrollViewport()}
-                style={{
-                  overflowY: undefined,
-                }}
-              >
-                {children}
-              </RxScrollArea.Viewport>
+          <RxDropdownMenu.Trigger asChild>
+            <InputText
+              id={id}
+              ref={inputRef}
+              // eslint-disable-next-line jsx-a11y/no-autofocus
+              autoFocus={autoFocus}
+              className={autocompleteInput()}
+              {...(defaultValue !== undefined ? { defaultValue } : {})}
+              disabled={disabled}
+              error={hasErrorMessage}
+              fullWidth={fullWidth}
+              name={name || id}
+              {...(placeholder !== undefined ? { placeholder } : {})}
+              readOnly={readOnly}
+              required={required}
+              selectOnFocus={!keepFocus}
+              success={isSuccessful}
+              type="text"
+              {...(value !== undefined ? { value } : {})}
+              onBlur={handleInputBlur}
+              onChange={handleInputChange}
+              onKeyDown={handleInputKeyDown}
+              {...omit(['className', 'onBlur'], props)}
+            />
+          </RxDropdownMenu.Trigger>
 
-              <RxScrollArea.Scrollbar
-                className={selectDropdownScrollbar()}
-                orientation="vertical"
+          <RxDropdownMenu.Portal>
+            <RxDropdownMenu.Content
+              ref={dropdownRef}
+              align="center"
+              className={cx(
+                `${PREFIX}-${GROUP_NAME}-dropdown`,
+                typography({ variant: 'body-1' }),
+                selectDropdown(),
+                autocompleteDropdown(),
+                ...(dropdown?.className?.split(' ') || []),
+              )}
+              loop
+              side="bottom"
+              style={{
+                display: undefined,
+              }}
+              onInteractOutside={handleDropdownInteractOutside}
+              onKeyDown={handleDropdownKeyDown}
+              {...omit(['className'], dropdown)}
+            >
+              <RxScrollArea.Root
+                {...(props.dir !== undefined
+                  ? { dir: props.dir as RxScrollArea.Direction }
+                  : {})}
+                type="hover"
               >
-                <RxScrollArea.Thumb
-                  className={selectDropdownScrollbarThumbs()}
-                />
-              </RxScrollArea.Scrollbar>
-            </RxScrollArea.Root>
-          </RxDropdownMenu.Content>
+                <RxScrollArea.Viewport
+                  className={selectDropdownScrollViewport()}
+                  style={{
+                    overflowY: undefined,
+                  }}
+                >
+                  {children}
+                </RxScrollArea.Viewport>
+
+                <RxScrollArea.Scrollbar
+                  className={selectDropdownScrollbar()}
+                  orientation="vertical"
+                >
+                  <RxScrollArea.Thumb
+                    className={selectDropdownScrollbarThumbs()}
+                  />
+                </RxScrollArea.Scrollbar>
+              </RxScrollArea.Root>
+            </RxDropdownMenu.Content>
+          </RxDropdownMenu.Portal>
         </RxDropdownMenu.Root>
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
