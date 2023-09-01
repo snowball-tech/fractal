@@ -3634,33 +3634,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pandacss/config@npm:0.13.0, @pandacss/config@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/config@npm:0.13.0"
+"@pandacss/config@npm:0.13.1, @pandacss/config@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/config@npm:0.13.1"
   dependencies:
-    "@pandacss/error": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/preset-base": 0.13.0
-    "@pandacss/preset-panda": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/error": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/preset-base": 0.13.1
+    "@pandacss/preset-panda": 0.13.1
+    "@pandacss/types": 0.13.1
     bundle-n-require: ^1.0.1
     escalade: 3.1.1
     jiti: ^1.19.1
     merge-anything: ^5.1.7
     typescript: ^5.1.6
-  checksum: 172bf02a73ce93f79615f55d1bda9c261fdf52cbcd74a0cd2cc560d75bd44cacc421220a8e0f089a330855d05a790b85729f889a1b97d273a4cc98cef477e5a3
+  checksum: a38407fc3b59a8f010652170ebfa2bac4a4b15da4f1a8d0ab57ac5b2cf84aff4be8a1808499d31131ef6daaac78bb46090434ad831f38bd84bd65c84c487be96
   languageName: node
   linkType: hard
 
-"@pandacss/core@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/core@npm:0.13.0"
+"@pandacss/core@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/core@npm:0.13.1"
   dependencies:
-    "@pandacss/error": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/token-dictionary": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/error": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/token-dictionary": 0.13.1
+    "@pandacss/types": 0.13.1
     autoprefixer: 10.4.15
     hookable: 5.5.3
     lodash.merge: 4.6.2
@@ -3673,106 +3673,106 @@ __metadata:
     postcss-normalize-whitespace: ^6.0.0
     postcss-selector-parser: ^6.0.13
     ts-pattern: 5.0.4
-  checksum: 4155e017fac675f442128e49b50fe914efa0b871427d20500968a419340dc9787123aab6d35b929002b2456f390dca5f9daa67fe804047a53b8bcd7bd830fc6a
+  checksum: ba117d959aa13793a6738a4ef56a678a4e3c4dc08dfdbac825f03cf366e28f53fc9672ed43b36e5221f79bf6c5f5d54620383aa9d0441423ab49ea386b0d5ef8
   languageName: node
   linkType: hard
 
 "@pandacss/dev@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/dev@npm:0.13.0"
+  version: 0.13.1
+  resolution: "@pandacss/dev@npm:0.13.1"
   dependencies:
     "@clack/prompts": ^0.6.3
-    "@pandacss/config": 0.13.0
-    "@pandacss/error": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/node": 0.13.0
-    "@pandacss/postcss": 0.13.0
-    "@pandacss/preset-panda": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/studio": 0.13.0
-    "@pandacss/token-dictionary": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/config": 0.13.1
+    "@pandacss/error": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/node": 0.13.1
+    "@pandacss/postcss": 0.13.1
+    "@pandacss/preset-panda": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/studio": 0.13.1
+    "@pandacss/token-dictionary": 0.13.1
+    "@pandacss/types": 0.13.1
     cac: 6.7.14
     pathe: 1.1.1
     perfect-debounce: ^1.0.0
   bin:
     panda: bin.js
     pandacss: bin.js
-  checksum: 58c312e31663780ef14f10eaae2331cf54044d0980175a5cbbe197dc184c0680a53df16b2717ec34d43db30851937a78f8ebf68fc9eedfb72755d1a65464263a
+  checksum: 54139e246943c9945393d2ed536c25b7f6734d0d71f72e300a0bb5ace93274f8810927f5153c0bdd7bbe94db8783746cc58a6a6220d6f3d513c29256602b12f6
   languageName: node
   linkType: hard
 
-"@pandacss/error@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/error@npm:0.13.0"
-  checksum: 95ae6ee48055e055a6eaa00918d64451c56cedca4669d978f8bcbbe67b2e5cf44a7330231079aebac22d6260bc8454bd19f9c683b115504f4c6438ee04560bdc
+"@pandacss/error@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/error@npm:0.13.1"
+  checksum: a4a50fd1b772309518ce187ffdb7678553ceb4f3eca12882ddb43455ae4da9c12119a0624bf5348d5aca2e4f74567fc0a29740ba69fadafc8855f71ceb0b48f4
   languageName: node
   linkType: hard
 
-"@pandacss/extractor@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/extractor@npm:0.13.0"
+"@pandacss/extractor@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/extractor@npm:0.13.1"
   dependencies:
     lil-fp: 1.4.5
     ts-evaluator: ^1.1.0
     ts-morph: 19.0.0
     ts-pattern: 5.0.4
-  checksum: 877ff869b3223dee6cb0897004f298f7a4e90e9e288d14a46fc7131dd65919c64bcff264a8b88d6b534212f82785cbd8de3b9ebd585ee8fe035239d586a1bfe9
+  checksum: 77399b7691bbe9d7ba6e1726e80bf20e580514385c30e9da5eb95a2a4be584c85ef5b1085b4265b88ee8a6225805b32afc861a6bfaa091350ad69b75b8b07fd0
   languageName: node
   linkType: hard
 
-"@pandacss/generator@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/generator@npm:0.13.0"
+"@pandacss/generator@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/generator@npm:0.13.1"
   dependencies:
-    "@pandacss/core": 0.13.0
-    "@pandacss/is-valid-prop": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/token-dictionary": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/core": 0.13.1
+    "@pandacss/is-valid-prop": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/token-dictionary": 0.13.1
+    "@pandacss/types": 0.13.1
     javascript-stringify: 2.1.0
     lil-fp: 1.4.5
     outdent: " ^0.8.0"
     pluralize: 8.0.0
     postcss: 8.4.27
     ts-pattern: 5.0.4
-  checksum: 4489e2123ce2351d0cc25e1c6c9c05f7254440af926ca62f8cb83c1ee944c5768a68a6a6ae116a5081e6685543c213836d6180a92c984b1d1448ac0f038704af
+  checksum: 5e9ae29eaff194e3d71cc20f52783c85f3d79caf093c883beee52a1ef1ae196940b30a5d8e79f5e66eed36ce319e255c831379b58607bcde18769a9c4067e16f
   languageName: node
   linkType: hard
 
-"@pandacss/is-valid-prop@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/is-valid-prop@npm:0.13.0"
-  checksum: aedc37fd763b7d1c0613091af5ec740f24b99b6ac96dac380bb9934974fe43d780dd729960563672517044f4be067673021f595d6902dde1f512e88780f1ccea
+"@pandacss/is-valid-prop@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/is-valid-prop@npm:0.13.1"
+  checksum: 32bc8b61fc0d251ae5c2f5b1d0726ac577fd6b9adc6834dc282e1041997e221a7a7dd656cc99053f0403d1413b23428eb8ebf2719c16cf43a145c73745a64aad
   languageName: node
   linkType: hard
 
-"@pandacss/logger@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/logger@npm:0.13.0"
+"@pandacss/logger@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/logger@npm:0.13.1"
   dependencies:
     kleur: ^4.1.5
     lil-fp: 1.4.5
-  checksum: 836817fd2ff292b039141dd589ca35181867e28d31a808432d1333abca28a005d9f68fda7194d10fd412a2913c04875edebdc9006c85fd31171b8b035e3614e8
+  checksum: a36ccfb27cf5c6a84a1b21a296d89bad0e8233e136bd382eb481325fe82ff887405dfcdb7c632d42a0a180ec3f03d5f60db48c23abca40cd370a050c62216715
   languageName: node
   linkType: hard
 
-"@pandacss/node@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/node@npm:0.13.0"
+"@pandacss/node@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/node@npm:0.13.1"
   dependencies:
-    "@pandacss/config": 0.13.0
-    "@pandacss/core": 0.13.0
-    "@pandacss/error": 0.13.0
-    "@pandacss/extractor": 0.13.0
-    "@pandacss/generator": 0.13.0
-    "@pandacss/is-valid-prop": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/parser": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/token-dictionary": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/config": 0.13.1
+    "@pandacss/core": 0.13.1
+    "@pandacss/error": 0.13.1
+    "@pandacss/extractor": 0.13.1
+    "@pandacss/generator": 0.13.1
+    "@pandacss/is-valid-prop": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/parser": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/token-dictionary": 0.13.1
+    "@pandacss/types": 0.13.1
     chokidar: ^3.5.3
     fast-glob: ^3.3.1
     file-size: ^1.0.0
@@ -3793,40 +3793,49 @@ __metadata:
     ts-morph: 19.0.0
     ts-pattern: 5.0.4
     tsconfck: ^2.1.2
-  checksum: 0f04d18430aae856b3e24ec7e7bdcfa88b69e091fefe763d42ed5e8af9f6c427c533352776e306e49af130a76d236f0e5bb807d285cf16b12adc1c0a89df2870
+  checksum: dbfc8492046db99e79c60ea43fb4bf00284258599cf42f97538cfa33517b05f8bc2ba5a90ceb21dadd8c31a9c617e307fbbad79b5643a53b103adfb4fbf45a82
   languageName: node
   linkType: hard
 
-"@pandacss/parser@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/parser@npm:0.13.0"
+"@pandacss/parser@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/parser@npm:0.13.1"
   dependencies:
-    "@pandacss/config": ^0.13.0
-    "@pandacss/extractor": 0.13.0
-    "@pandacss/is-valid-prop": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/config": ^0.13.1
+    "@pandacss/extractor": 0.13.1
+    "@pandacss/is-valid-prop": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/types": 0.13.1
     "@vue/compiler-sfc": ^3.3.4
     lil-fp: 1.4.5
     magic-string: ^0.30.2
     ts-morph: 19.0.0
     ts-pattern: 5.0.4
-  checksum: 14fa99f11072ab3cb3a3c84d387980f0e4bea1d4df1341279791bcbb4b7f0b4dd5ebcf0b0267cb0aa304c7f3e5de6f8adf14a73dabf8ff6233188ca9acbf9096
+  checksum: 22e638ac8b1b07d6b89a5f3504a2a5b4e833ca6b7d09f356e05eed9dabc3c0553b8de31c997e036a56f3d16e45fb36e30c39f29d1444b9e6e21f954fbb477e82
   languageName: node
   linkType: hard
 
-"@pandacss/postcss@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/postcss@npm:0.13.0"
+"@pandacss/postcss@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/postcss@npm:0.13.1"
   dependencies:
-    "@pandacss/node": 0.13.0
+    "@pandacss/node": 0.13.1
     postcss: ^8.4.27
-  checksum: 02a514ab96f9e391e7f58cfbbee4be54af5235fe67d4c20f870de69cfc881f81fb29390796a38b73cc05a1dfcd5be4475a2330626d0cff171e12ced2e7117160
+  checksum: d680e10d49902f88d53000bac88cfafac6a38779ac8221a7cddc7e5c71f2d21dce7f4037221d2e135e36dc5c7702d75c7ae958209862e9e89251ab54d1f03ba2
   languageName: node
   linkType: hard
 
-"@pandacss/preset-base@npm:0.13.0, @pandacss/preset-base@npm:^0.13.0":
+"@pandacss/preset-base@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/preset-base@npm:0.13.1"
+  dependencies:
+    "@pandacss/types": 0.13.1
+  checksum: bc05d7b3f438b05bdc111e38d6ea8373e43e81c50276faa493660b281c8543a7a5233d4ae65f74280aec64c9dc9735768aec7d09d63d3270c83011b35a7db6d1
+  languageName: node
+  linkType: hard
+
+"@pandacss/preset-base@npm:^0.13.0":
   version: 0.13.0
   resolution: "@pandacss/preset-base@npm:0.13.0"
   dependencies:
@@ -3835,51 +3844,51 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pandacss/preset-panda@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/preset-panda@npm:0.13.0"
+"@pandacss/preset-panda@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/preset-panda@npm:0.13.1"
   dependencies:
-    "@pandacss/types": 0.13.0
-  checksum: 2cfe67b6f661be795ffca39e1f9ff3b0c8f5e3b6ebc4d92edff8f87383f57e9411f8f25ec3bf8a11df5caa35311eb920d62e123fd12181786f8d1f14663ae1f3
+    "@pandacss/types": 0.13.1
+  checksum: 268167e02ace60c215fcbd1691f058a119ff79afa1f29e602a844c02d8e74b4f73cd85db1a6055d8f28d07eafefc2574c3966d607052fc0911835472dbc798ba
   languageName: node
   linkType: hard
 
-"@pandacss/shared@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/shared@npm:0.13.0"
-  checksum: 318414de2fb553a65d4d91491a518b028c3866468972a572ead6a19532767fc94b4d00328019b590c4b27b1a7e120ac1f41b5dd9eaa19ae376716301d9fbb523
+"@pandacss/shared@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/shared@npm:0.13.1"
+  checksum: eaac7f2fa0276dee7710007c79f9748960e06db01980f4ee56e980ea9eff09823e8aecb91bcee9a15bcd7ebb3059d558664c5ce7c6443f37143caba929ae4707
   languageName: node
   linkType: hard
 
-"@pandacss/studio@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/studio@npm:0.13.0"
+"@pandacss/studio@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/studio@npm:0.13.1"
   dependencies:
     "@ark-ui/react": 0.9.0
     "@astrojs/react": 2.2.1
-    "@pandacss/config": 0.13.0
-    "@pandacss/logger": 0.13.0
-    "@pandacss/node": 0.13.0
-    "@pandacss/shared": 0.13.0
-    "@pandacss/token-dictionary": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/config": 0.13.1
+    "@pandacss/logger": 0.13.1
+    "@pandacss/node": 0.13.1
+    "@pandacss/shared": 0.13.1
+    "@pandacss/token-dictionary": 0.13.1
+    "@pandacss/types": 0.13.1
     astro: 2.9.6
     javascript-stringify: 2.1.0
     react: 18.2.0
     react-dom: 18.2.0
     vite: 4.4.9
-  checksum: d853bfe3dd7f9d1ae1cd4a2b2c8b58f192f2c4170430d152912c6e977c2a82398899ec0f0fdc4a056611b1c723383709c75fcd83114ce548663bea593ff99560
+  checksum: 7b1701996d87549516f0d403dfb17e7cb213117e4c5b1f463a3bfdb03096ba7b196935fff44329d9c65f9627176b3a4fa8b332a451e0b37f7b71ca6c681ca323
   languageName: node
   linkType: hard
 
-"@pandacss/token-dictionary@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@pandacss/token-dictionary@npm:0.13.0"
+"@pandacss/token-dictionary@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/token-dictionary@npm:0.13.1"
   dependencies:
-    "@pandacss/shared": 0.13.0
-    "@pandacss/types": 0.13.0
+    "@pandacss/shared": 0.13.1
+    "@pandacss/types": 0.13.1
     ts-pattern: 5.0.4
-  checksum: e29cc7964d6fe82f20f91fb7ae1f5deb6d4fb0e40ccdc935c235db11516800e09337978648acbc176b4eedf8571dd2990df28e26c69885c74ce87f625177fb20
+  checksum: b31a728e52e6db168843d115442e5e8b4ad47cc3915b0c81be020cdf235bb830885462a45b00846178c10746334f2715d451b0a616a09c6ad6150684e0266b4b
   languageName: node
   linkType: hard
 
@@ -3887,6 +3896,13 @@ __metadata:
   version: 0.13.0
   resolution: "@pandacss/types@npm:0.13.0"
   checksum: e43006e38fa90568008b72c87595ab65a91cf70fab4d7f107275358dcf651e37fe1388d74ed5234fb39463a05c2fc6896709752d42f7098e72c2f9674135daf6
+  languageName: node
+  linkType: hard
+
+"@pandacss/types@npm:0.13.1":
+  version: 0.13.1
+  resolution: "@pandacss/types@npm:0.13.1"
+  checksum: 47ea65863dacaff5d3fbdd561b92f4394580b2096dcc13e369a9dba61f72c21f42901fb551626e77110d9bcb026a4959fea82ffca5fd3eb6fbededa8cd580d4a
   languageName: node
   linkType: hard
 
