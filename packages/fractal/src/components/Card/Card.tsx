@@ -30,6 +30,7 @@ export const Card = ({
   children,
   color = DEFAULT_COLOR,
   dismissable = false,
+  fontSize = 1,
   icon,
   onDismiss,
   title,
@@ -40,7 +41,7 @@ export const Card = ({
     card({ color }),
     props.className,
     dismissable ? 'dismissable' : '',
-    typography({ variant: 'body-1' }),
+    typography({ variant: `body-${fontSize}` }),
   )
 
   return (
@@ -49,7 +50,7 @@ export const Card = ({
         <div
           className={cx(
             cardTitle({ color }),
-            typography({ variant: 'body-1-bold' }),
+            typography({ variant: `body-${fontSize}-bold` }),
           )}
         >
           {icon ? <div className={cardIcon({ color })}>{icon}</div> : false}
