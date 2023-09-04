@@ -10,6 +10,11 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Indicates if we can dismiss the card. */
   dismissable?: boolean
   /**
+   * Indicate the font size of the title and the body of the card.
+   * 1 is `body-1` adn 2 is `body-2`.
+   */
+  fontSize?: 1 | 2
+  /**
    * An icon to display at the top of the card (to the left of the title if
    * there is one).
    */

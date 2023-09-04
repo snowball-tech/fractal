@@ -27,6 +27,14 @@ const meta = {
         type: { summary: Object.values(Colors).join('|') },
       },
     },
+    fontSize: {
+      control: 'radio',
+      mapping: {
+        Normal: 1,
+        Small: 2,
+      },
+      options: ['Normal', 'Small'],
+    },
     icon: {
       mapping: {
         Cancel: <CancelIcon />,
