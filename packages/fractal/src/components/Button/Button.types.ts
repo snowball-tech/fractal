@@ -3,6 +3,8 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Variants } from './Button.constants'
 
+export type PressEvent = Parameters<NonNullable<PressableProps['onPress']>>[0]
+
 export interface ButtonProps
   extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   /** Prevents the user from interacting with the button. */
