@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.20.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.19.1...@snowball-tech/fractal@2.20.0) (2023-09-04)
+
+### ✨ Features
+
+- **cards:** add a fontSize prop ([ef63b4a](https://github.com/snowball-tech/fractal/commit/ef63b4ad4105a4905f2c38039e8b9007c8ccc3e5))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([81d9b9d](https://github.com/snowball-tech/fractal/commit/81d9b9df91f81b8ba3f5c64ad82494e3b1606618))
+
 ## @snowball-tech/fractal [2.19.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.19.0...@snowball-tech/fractal@2.19.1) (2023-08-26)
 
 ### 🐛 Bug Fixes
