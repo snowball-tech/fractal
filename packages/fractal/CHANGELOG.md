@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.21.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.20.0...@snowball-tech/fractal@2.21.0) (2023-09-04)
+
+### ✨ Features
+
+- **button:** export the PressEvent type ([b2b8c35](https://github.com/snowball-tech/fractal/commit/b2b8c3543c5ae9eb1525e28b906f3beda3895d47))
+
+### 📦 Dependencies
+
+- revert upgrade of Ark-UI ([1c55a9b](https://github.com/snowball-tech/fractal/commit/1c55a9b162b4992921ea0e9e9a1d47ab70907de8))
+
 # @snowball-tech/fractal [2.20.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.19.1...@snowball-tech/fractal@2.20.0) (2023-09-04)
 
 ### ✨ Features
