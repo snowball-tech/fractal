@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.22.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.0...@snowball-tech/fractal@2.22.1) (2023-09-07)
+
+### 🐛 Bug Fixes
+
+- **toggle:** show the toggled button as such even when disabled ([a4ec735](https://github.com/snowball-tech/fractal/commit/a4ec735c2cca0358ba0dedc29f6fd9e6f23d7aef))
+
 # @snowball-tech/fractal [2.22.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.21.0...@snowball-tech/fractal@2.22.0) (2023-09-07)
 
 ### ✨ Features
