@@ -197,7 +197,7 @@ yarn setup
 
 ### There you go
 
-You are now ready to start working on Glacier.
+You are now ready to start working on Fractal.
 
 ## Usage & Development
 
