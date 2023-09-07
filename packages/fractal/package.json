@@ -82,10 +82,10 @@
     "update:fonts": "yarn run preupdate:fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.13.1",
-    "@pandacss/preset-base": "^0.13.1",
+    "@pandacss/dev": "^0.14.0",
+    "@pandacss/preset-base": "^0.14.0",
     "@simbathesailor/use-what-changed": "^2.0.0",
-    "@snowball-tech/eslint-config": "^5.2.3",
+    "@snowball-tech/eslint-config": "^5.2.4",
     "@storybook/addon-a11y": "^7.4.0",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
@@ -99,7 +99,7 @@
     "@storybook/testing-library": "^0.2.0",
     "@storybook/theming": "^7.4.0",
     "@types/eslint": "^8.44.2",
-    "@types/lodash": "^4.14.197",
+    "@types/lodash": "^4.14.198",
     "@types/prettier": "^3.0.0",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.21",
