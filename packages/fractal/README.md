@@ -7,7 +7,7 @@ build products, apps, marketing contents and documentations.
 
 This package hosts the web (React) implementation of the components.
 
-The [Figma project](https://www.figma.com/file/u70V0ocCmDeYMAAPf9Xfqa/❄%EF%B8%8F-Fractal-Design-System)
+The [Figma project](https://www.figma.com/community/file/1281271374017743876/%E2%9D%84%EF%B8%8F-Fractal-Design-System)
 is the base reference for this design system and is used through the
 [design tokens](../design-tokens) package.
 The [documentation website](https://fractal.snowball.xyz/) is the core reference

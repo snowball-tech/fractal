@@ -24,7 +24,7 @@ developer experience.
 Fractal documentation is also based on these design tokens.
 
 The original source of truth for these tokens is the
-[Figma project](https://www.figma.com/file/u70V0ocCmDeYMAAPf9Xfqa/❄%EF%B8%8F-Fractal-Design-System)
+[Figma project](https://www.figma.com/community/file/1281271374017743876/%E2%9D%84%EF%B8%8F-Fractal-Design-System)
 and all design tokens are regularly manually updated to stay synchronized with
 it.
 
