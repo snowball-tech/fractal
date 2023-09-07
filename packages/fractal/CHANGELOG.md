@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.22.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.1...@snowball-tech/fractal@2.22.2) (2023-09-07)
+
+### 🐛 Bug Fixes
+
+- **docs:** fix link to Fractal ([6b27a58](https://github.com/snowball-tech/fractal/commit/6b27a58c944881ed5d83eeec4878515a327ceed9))
+
 ## @snowball-tech/fractal [2.22.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.0...@snowball-tech/fractal@2.22.1) (2023-09-07)
 
 ### 🐛 Bug Fixes
