@@ -21,10 +21,18 @@ const variants = Object.values(Variants).reduce(
       },
 
       _disabled: {
-        backgroundColor: `var(--color-background-toggle-${variantName}-disabled)`,
-        border: `var(--border-toggle-${variantName}-disabled)`,
-        color: `var(--color-text-toggle-${variantName}-disabled)`,
-        shadow: `var(--shadow-toggle-${variantName}-disabled)`,
+        _notToggled: {
+          backgroundColor: `var(--color-background-toggle-${variantName}-disabled)`,
+          border: `var(--border-toggle-${variantName}-disabled)`,
+          color: `var(--color-text-toggle-${variantName}-disabled)`,
+          shadow: `var(--shadow-toggle-${variantName}-disabled)`,
+        },
+        _toggled: {
+          backgroundColor: `var(--color-background-toggle-${variantName}-toggled)`,
+          border: `var(--border-toggle-${variantName}-disabled)`,
+          color: `var(--color-text-toggle-${variantName}-disabled)`,
+          shadow: `var(--shadow-toggle-${variantName}-disabled)`,
+        },
       },
 
       _hoverFocusNotDisabled: {
