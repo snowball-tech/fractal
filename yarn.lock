@@ -5273,8 +5273,8 @@ __metadata:
   linkType: hard
 
 "@snowball-tech/semantic-release-config@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@snowball-tech/semantic-release-config@npm:2.0.8"
+  version: 2.0.9
+  resolution: "@snowball-tech/semantic-release-config@npm:2.0.9"
   dependencies:
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^10.0.4
@@ -5287,7 +5287,7 @@ __metadata:
     semantic-release: ^21.1.1
   peerDependencies:
     semantic-release: ^21.0.0
-  checksum: 1ce48bcd76f65a5225adb8f693fdd3c14461c6a78f619b3f1772ca99507f14f9f0f4ade81259481d52ddab4cfb70eac90f1660be0ab7767716f3422c569593aa
+  checksum: b2849f29ad59cbc44a4b1364da8d37fee3bee5a126c41e35a9b38795b6202560be326d341e837f9ed8deab2d793667627f4b0210dcd365a8bf868423dcef97dc
   languageName: node
   linkType: hard
 
