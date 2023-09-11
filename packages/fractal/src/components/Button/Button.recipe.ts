@@ -112,6 +112,9 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
           padding: 0,
           width: '24px',
         },
+
+        height: 'unset',
+        padding: 0,
       },
     },
   },
