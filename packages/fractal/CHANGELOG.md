@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.25.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.24.0...@snowball-tech/fractal@2.25.0) (2023-09-12)
+
+### ✨ Features
+
+- **stepper:** animate step changes ([40d55ff](https://github.com/snowball-tech/fractal/commit/40d55ffcd208449cfc77ba0b5d23bb722d47f692))
+
 # @snowball-tech/fractal [2.24.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.23.0...@snowball-tech/fractal@2.24.0) (2023-09-12)
 
 ### ✨ Features
