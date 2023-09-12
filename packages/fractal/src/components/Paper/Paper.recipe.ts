@@ -34,6 +34,11 @@ export const paper: ReturnType<typeof defineRecipe> = defineRecipe({
         borderRadius: 'var(--size-radius-s)',
         boxShadow: 'var(--shadow-brutal-1)',
       },
+      [Elevations.Higher]: {
+        border: 'var(--border-1)',
+        borderRadius: 'var(--size-radius-m)',
+        boxShadow: 'var(--shadow-brutal-2)',
+      },
     },
   },
 

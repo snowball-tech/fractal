@@ -2,6 +2,7 @@ export enum Elevations {
   /* eslint-disable perfectionist/sort-enums */
   Bordered = '1',
   Elevated = '2',
+  Higher = '3',
   /* eslint-enable perfectionist/sort-enums */
 }
 
