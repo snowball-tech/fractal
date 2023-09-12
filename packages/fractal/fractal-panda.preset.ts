@@ -115,7 +115,6 @@ const fractalPreset = definePreset({
         cardIcon: CardRecipes.cardIcon,
 
         paper: PaperRecipes.paper,
-        paperContent: PaperRecipes.paperContent,
 
         header: HeaderRecipes.header,
         headerLeft: HeaderRecipes.headerLeft,
