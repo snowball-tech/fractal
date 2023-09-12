@@ -47,12 +47,3 @@ export const paper: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Paper',
   jsx: ['Paper'],
 })
-
-export const paperContent: ReturnType<typeof defineRecipe> = defineRecipe({
-  base: {},
-
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-  className: 'paperContent',
-  description: 'Paper content',
-  jsx: ['Paper'],
-})
