@@ -1,9 +1,5 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  paper,
-  paperContent,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
+import { paper, typography } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
@@ -29,7 +25,7 @@ export const Paper = ({
 
   return (
     <div className={groupClassNames} {...omit(['className'], props)}>
-      <div className={paperContent()}>{children}</div>
+      {children}
     </div>
   )
 }
