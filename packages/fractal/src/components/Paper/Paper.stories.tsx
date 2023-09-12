@@ -14,8 +14,9 @@ const meta = {
       mapping: {
         Bordered: Elevations.Bordered,
         Elevated: Elevations.Elevated,
+        Higher: Elevations.Higher,
       },
-      options: ['Bordered', 'Elevated'],
+      options: ['Bordered', 'Elevated', 'Higher'],
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
         type: { summary: Object.values(Elevations).join('|') },
@@ -60,6 +61,7 @@ export const Papers: Story = {
     >
       <Paper elevation="1">{children}</Paper>
       <Paper elevation="2">{children}</Paper>
+      <Paper elevation="3">{children}</Paper>
     </div>
   ),
 }
