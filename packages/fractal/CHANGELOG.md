@@ -1,3 +1,21 @@
+# @snowball-tech/fractal [2.24.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.23.0...@snowball-tech/fractal@2.24.0) (2023-09-12)
+
+### ✨ Features
+
+- **paper:** add an higher lever of elevation ([1b9d7e3](https://github.com/snowball-tech/fractal/commit/1b9d7e3d0b77261035697a851f356384ff7785f5))
+
+### 🐛 Bug Fixes
+
+- **paper:** fix the construction of Paper ([3cd8714](https://github.com/snowball-tech/fractal/commit/3cd87148036275b290e2149cc22ed83c5b2a71e7))
+
+### ♻️ Code Refactoring
+
+- **paper:** get rid of useless recipe ([6320547](https://github.com/snowball-tech/fractal/commit/6320547ed0d481eac26aeb6540653a6e112fbedd))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([984c924](https://github.com/snowball-tech/fractal/commit/984c924786e2441958bccd9f90ebbe4df07de2bd))
+
 # @snowball-tech/fractal [2.23.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.3...@snowball-tech/fractal@2.23.0) (2023-09-12)
 
 ### 💄 UI/UX
