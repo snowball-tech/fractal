@@ -1,3 +1,10 @@
+# @snowball-tech/fractal [2.23.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.3...@snowball-tech/fractal@2.23.0) (2023-09-12)
+
+### 💄 UI/UX
+
+- **button:** fix the margin in all variants ([c5b0845](https://github.com/snowball-tech/fractal/commit/c5b084573eeac93bc84449b6947256611df51fb6))
+- **button:** fix the margin of the label and icon ([3cf8502](https://github.com/snowball-tech/fractal/commit/3cf850262e68338e44abaf86d541928c10919e43))
+
 ## @snowball-tech/fractal [2.22.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.22.2...@snowball-tech/fractal@2.22.3) (2023-09-11)
 
 ### 🐛 Bug Fixes
