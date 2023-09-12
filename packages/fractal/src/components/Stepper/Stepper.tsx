@@ -1,9 +1,5 @@
 import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  step,
-  stepAsProgress,
-  stepper,
-} from '@snowball-tech/fractal-panda/recipes'
+import { stepAsProgress, stepper } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 
@@ -37,9 +33,11 @@ export const Stepper = ({
       {range(0, length).map((index) => {
         if (index !== current) {
           return (
-            <div
+            <Progress
               key={index}
-              className={step()}
+              className={stepAsProgress()}
+              max={1}
+              value={current > index ? 1 : 0}
               {...(current > index ? { 'data-completed': true } : {})}
               {...(current === index ? { 'data-active': true } : {})}
             />

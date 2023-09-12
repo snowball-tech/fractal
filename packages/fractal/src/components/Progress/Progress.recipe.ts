@@ -24,7 +24,8 @@ export const progressIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
     backgroundColor: 'var(--color-background-stepper-step-completed)',
     borderRadius: 'var(--size-radius-rounded)',
     height: '100%',
-    transition: 'transform 660ms cubic-bezier(0.65, 0, 0.35, 1)',
+    transition: 'transform 600ms cubic-bezier(0.65, 0, 0.35, 1)',
+    transitionDelay: '100ms',
     width: '100%',
   },
 
