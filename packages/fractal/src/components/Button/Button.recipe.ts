@@ -131,12 +131,33 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'hidden',
+    pt: 'var(--size-spacing-quarter)',
     textAlign: 'center',
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
   },
 
+  defaultVariants: {
+    variant: DEFAULT_VARIANT,
+  },
+
+  variants: {
+    variant: {
+      ...Object.values(Variants).reduce(
+        (allVariants, variantName) => ({
+          ...allVariants,
+          [variantName]: {},
+        }),
+        {} as Record<Variants, SystemStyleObject>,
+      ),
+      [Variants.Text]: {
+        pt: 0,
+      },
+    },
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   className: 'buttonLabel',
   description: 'Button label',
   jsx: ['Button'],
@@ -145,6 +166,7 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     height: '24px',
+    mt: 'var(--size-spacing-quarter)',
     width: '24px',
   },
 
@@ -165,6 +187,8 @@ export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
         '.fractal-button.icon-only &': {
           mt: 0,
         },
+
+        mt: 0,
       },
     },
   },

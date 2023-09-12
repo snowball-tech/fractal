@@ -77,7 +77,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {!iconOnly ? (
           <div
             className={cx(
-              buttonLabel(),
+              buttonLabel({ variant }),
               typography({
                 variant: variant === Variants.Text ? 'body-1-link' : 'body-1',
               }),
