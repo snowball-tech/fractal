@@ -131,7 +131,6 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'hidden',
-    pt: 'var(--size-spacing-half)',
     textAlign: 'center',
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',
@@ -146,7 +145,6 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     height: '24px',
-    mt: 'var(--size-spacing-half)',
     width: '24px',
   },
 
