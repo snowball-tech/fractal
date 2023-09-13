@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.25.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.25.0...@snowball-tech/fractal@2.25.1) (2023-09-13)
+
+### 🐛 Bug Fixes
+
+- **stepper:** fix the display of non current step ([ac00702](https://github.com/snowball-tech/fractal/commit/ac00702cd9e48ff58ca1027080929c7f28919926))
+
 # @snowball-tech/fractal [2.25.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.24.0...@snowball-tech/fractal@2.25.0) (2023-09-12)
 
 ### ✨ Features
