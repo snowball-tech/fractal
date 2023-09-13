@@ -17,20 +17,6 @@ export const stepper: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const step: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    '&:is([data-active="true"], .active)': {
-      backgroundColor: 'var(--color-background-stepper-step-active-neutral)',
-      border: 'var(--border-stepper-step-active)',
-    },
-
-    _completed: {
-      backgroundColor: 'var(--color-background-stepper-step-completed)',
-      border: 'var(--border-stepper-step-completed)',
-    },
-
-    backgroundColor: 'var(--color-background-stepper-step-base)',
-    border: 'var(--border-stepper-step-base)',
-    borderRadius: 'var(--size-radius-rounded)',
-    height: 'var(--size-spacing-1)',
     maxWidth: 'var(--size-spacing-5)',
     width: '100%',
   },
