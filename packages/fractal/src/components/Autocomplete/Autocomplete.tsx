@@ -21,7 +21,6 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
   type FocusEvent,
@@ -30,6 +29,7 @@ import {
   type MouseEvent,
   forwardRef,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -56,7 +56,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       dropdown = {},
       error,
       fullWidth = false,
-      id = uniqueId('fractal-autocomplete-'),
+      id,
       label,
       name,
       onChange,
@@ -73,6 +73,9 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     }: AutocompleteProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const inputRef = useRef<HTMLInputElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
@@ -263,7 +266,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               typography({ variant: 'body-1' }),
               autocompleteLabel(),
             )}
-            htmlFor={id}
+            htmlFor={uniqueId}
           >
             {label}
           </RxLabel>
@@ -272,7 +275,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         )}
 
         <InputText
-          id={id}
+          id={uniqueId}
           ref={inputRef}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
@@ -281,7 +284,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           disabled={disabled}
           error={hasErrorMessage}
           fullWidth={fullWidth}
-          name={name || id}
+          name={name || uniqueId}
           {...(placeholder !== undefined ? { placeholder } : {})}
           readOnly={readOnly}
           required={required}

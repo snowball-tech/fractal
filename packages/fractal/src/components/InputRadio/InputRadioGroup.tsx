@@ -3,7 +3,7 @@ import { cx } from '@snowball-tech/fractal-panda/css'
 import { inputRadioGroup } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
+import { useId } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -21,7 +21,7 @@ export const InputRadioGroup = ({
   defaultValue,
   disabled = false,
   fullWidth = false,
-  name = uniqueId('fractal-input-radio-group-'),
+  name,
   onValueChange,
   orientation = 'vertical',
   required = false,
@@ -29,6 +29,9 @@ export const InputRadioGroup = ({
   variant = DEFAULT_VARIANT,
   ...props
 }: InputRadioGroupProps) => {
+  const generatedId = useId()
+  const uniqueId = (props.id ?? generatedId) || generatedId
+
   const groupClassNames = cx(
     `${PREFIX}-${GROUP_NAME}-group`,
     inputRadioGroup(),
@@ -41,10 +44,11 @@ export const InputRadioGroup = ({
 
   return (
     <RxRadio.Root
+      id={uniqueId}
       className={groupClassNames}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
-      name={name}
+      name={name || uniqueId}
       {...(orientation !== undefined ? { orientation } : {})}
       required={required}
       value={value}

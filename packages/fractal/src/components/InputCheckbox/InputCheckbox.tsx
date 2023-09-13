@@ -12,8 +12,13 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
-import { type ForwardedRef, MouseEvent, forwardRef, useRef } from 'react'
+import {
+  type ForwardedRef,
+  type MouseEvent,
+  forwardRef,
+  useId,
+  useRef,
+} from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -32,7 +37,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       defaultChecked,
       disabled = false,
       fullWidth = false,
-      id = uniqueId('fractal-input-checkbox-'),
+      id,
       label,
       name,
       onCheckedChange,
@@ -43,6 +48,9 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     }: InputCheckboxProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const checkboxRef = useRef<HTMLButtonElement>(null)
     const combinedRef = composeRefs(ref, checkboxRef)
 
@@ -64,13 +72,13 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     return (
       <div className={groupClassNames}>
         <RxCheckbox.Root
-          id={id}
+          id={uniqueId}
           ref={combinedRef}
           {...(checked !== undefined ? { checked } : {})}
           className={inputCheckbox({ color, variant })}
           {...(defaultChecked !== undefined ? { defaultChecked } : {})}
           disabled={disabled}
-          name={name || id}
+          name={name || uniqueId}
           required={required}
           value={value}
           onClick={handleClick}
@@ -89,7 +97,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
             typography({ variant: 'body-1' }),
             inputCheckboxLabel({ color, variant }),
           )}
-          htmlFor={id}
+          htmlFor={uniqueId}
         >
           {label}
         </RxLabel>
