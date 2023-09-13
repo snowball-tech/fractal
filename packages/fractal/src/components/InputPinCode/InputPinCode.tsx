@@ -18,12 +18,12 @@ import isNumber from 'lodash/fp/isNumber'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
-  ClipboardEvent,
+  type ClipboardEvent,
   type FocusEvent,
   type KeyboardEvent,
+  useId,
 } from 'react'
 
 import { InputText } from '@/components/InputText'
@@ -42,7 +42,7 @@ export const InputPinCode = ({
   description,
   disabled = false,
   error,
-  id = uniqueId('fractal-input-pincode-'),
+  id,
   label,
   length = 4,
   name,
@@ -59,6 +59,9 @@ export const InputPinCode = ({
   value,
   ...props
 }: InputPinCodeProps) => {
+  const generatedId = useId()
+  const uniqueId = (id ?? generatedId) || generatedId
+
   let skipFocusChange = false
 
   const hasErrorMessage = !isEmpty(error)
@@ -122,7 +125,7 @@ export const InputPinCode = ({
     if (index < length - 1) {
       const nextIndex = Math.min(newCode.length, index + 1)
       const nextInput = document.getElementById(
-        `${id}-${nextIndex}`,
+        `${uniqueId}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
@@ -155,7 +158,7 @@ export const InputPinCode = ({
       case 'ArrowLeft':
         if (index > 0) {
           const previousInput = document.getElementById(
-            `${id}-${index - 1}`,
+            `${uniqueId}-${index - 1}`,
           ) as HTMLInputElement
           if (previousInput) {
             previousInput.focus()
@@ -167,7 +170,7 @@ export const InputPinCode = ({
       case 'ArrowRight':
         if (index < length - 1) {
           const nextInput = document.getElementById(
-            `${id}-${index + 1}`,
+            `${uniqueId}-${index + 1}`,
           ) as HTMLInputElement
           if (nextInput) {
             nextInput.focus()
@@ -233,7 +236,7 @@ export const InputPinCode = ({
       {!isEmpty(label) ? (
         <RxLabel
           className={cx(typography({ variant: 'body-1' }), inputPinCodeLabel())}
-          htmlFor={`${id}-0`}
+          htmlFor={`${uniqueId}-0`}
         >
           {label}
         </RxLabel>
@@ -244,7 +247,7 @@ export const InputPinCode = ({
       <div className={cx('fields', inputPinCodeFields())}>
         {range(0, length).map((index) => (
           <InputText
-            id={`${id}-${index}`}
+            id={`${uniqueId}-${index}`}
             key={index}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus && index === 0}
@@ -263,7 +266,7 @@ export const InputPinCode = ({
             max={9}
             maxLength={1}
             min={0}
-            name={`${name || id}-${index}`}
+            name={`${name || uniqueId}-${index}`}
             placeholder={placeholders?.[index] ?? placeholders?.[0] ?? ''}
             readOnly={readOnly}
             required={required}

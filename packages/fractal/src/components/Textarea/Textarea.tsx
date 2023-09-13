@@ -11,12 +11,12 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
   type FocusEvent,
   type ForwardedRef,
   forwardRef,
+  useId,
 } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
@@ -37,7 +37,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       disabled = false,
       error,
       fullWidth = false,
-      id = uniqueId('fractal-textarea-'),
+      id,
       label,
       maxRows,
       minRows = 1,
@@ -54,6 +54,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     }: TextareaProps,
     ref: ForwardedRef<HTMLTextAreaElement>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const hasErrorMessage = !isEmpty(error)
     const isInError = hasErrorMessage || error === true
     const hasSuccessMessage = !isEmpty(success)
@@ -92,7 +95,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {!isEmpty(label) ? (
           <RxLabel
             className={cx(typography({ variant: 'body-1' }), textareaLabel())}
-            htmlFor={id}
+            htmlFor={uniqueId}
           >
             {label}
           </RxLabel>
@@ -106,11 +109,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={cx(typography({ variant: 'body-1' }), textarea())}
           disabled={disabled}
           {...(defaultValue !== undefined ? { defaultValue } : {})}
-          id={id}
+          id={uniqueId}
           ref={ref}
           {...(maxRows !== undefined ? { maxRows } : {})}
           {...(minRows !== undefined ? { minRows } : {})}
-          name={name || id}
+          name={name || uniqueId}
           placeholder={placeholder}
           readOnly={readOnly}
           required={required}

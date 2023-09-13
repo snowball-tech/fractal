@@ -27,12 +27,12 @@ import examples from 'libphonenumber-js/mobile/examples'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ForwardedRef,
   forwardRef,
   useCallback,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -67,7 +67,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       description,
       disabled = false,
       error,
-      id = uniqueId('fractal-input-phone-'),
+      id,
       label,
       name,
       onChange,
@@ -83,6 +83,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     }: InputPhoneProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const phoneRef = useRef<HTMLInputElement>(null)
     const prefixRef = useRef<CombinedRefs['prefix']>(null)
     const searchPrefixInputRef = useRef<HTMLInputElement>(null)
@@ -288,7 +291,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         {!isEmpty(label) ? (
           <RxLabel
             className={cx(typography({ variant: 'body-1' }), inputPhoneLabel())}
-            htmlFor={`${id}-number`}
+            htmlFor={`${uniqueId}-number`}
           >
             {label}
           </RxLabel>
@@ -299,7 +302,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         <div className={cx('fields', inputPhoneFields())}>
           {withPrefix ? (
             <Select
-              id={`${id}-prefix`}
+              id={`${uniqueId}-prefix`}
               ref={prefixRef}
               className={inputPhonePrefix()}
               disabled={disabled}
@@ -311,7 +314,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                 </span>
               }
               dropdown={{ className: inputPhonePrefixDropdown() }}
-              name={`${name || id}-prefix`}
+              name={`${name || uniqueId}-prefix`}
               readOnly={readOnly}
               required={required}
               value={JSON.stringify(prefix)}
@@ -359,7 +362,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           )}
 
           <InputText
-            id={`${id}-number`}
+            id={`${uniqueId}-number`}
             ref={phoneRef}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus && !withPrefix}
@@ -369,7 +372,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             )}
             disabled={disabled}
             error={hasErrorMessage}
-            name={`${name || id}-number`}
+            name={`${name || uniqueId}-number`}
             placeholder={actualPlaceholder ?? ''}
             prefix={
               withPrefix && !isEmpty(prefix) ? (

@@ -15,12 +15,12 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
   type FocusEvent,
   type ForwardedRef,
   forwardRef,
+  useId,
 } from 'react'
 
 import { PREFIX } from '@/constants'
@@ -40,7 +40,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       disabled = false,
       error,
       fullWidth = false,
-      id = uniqueId('fractal-input-text-'),
+      id,
       label,
       name,
       onChange,
@@ -57,6 +57,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     }: InputTextProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const hasErrorMessage = !isEmpty(error)
     const isInError = hasErrorMessage || error === true
     const hasSuccessMessage = !isEmpty(success)
@@ -98,7 +101,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         {!isEmpty(label) ? (
           <RxLabel
             className={cx(typography({ variant: 'body-1' }), inputTextLabel())}
-            htmlFor={id}
+            htmlFor={uniqueId}
           >
             {label}
           </RxLabel>
@@ -121,9 +124,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             className={cx(typography({ variant: 'body-1' }), inputText())}
             disabled={disabled}
             {...(defaultValue !== undefined ? { defaultValue } : {})}
-            id={id}
+            id={uniqueId}
             ref={ref}
-            name={name || id}
+            name={name || uniqueId}
             placeholder={placeholder}
             readOnly={readOnly}
             required={required}

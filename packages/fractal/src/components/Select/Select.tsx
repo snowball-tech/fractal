@@ -21,11 +21,11 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ForwardedRef,
   forwardRef,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -50,7 +50,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       displayedValue,
       dropdown = {},
       fullWidth = false,
-      id = uniqueId('fractal-select-'),
+      id,
       label,
       name,
       onClose,
@@ -65,6 +65,9 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
     }: SelectProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const triggerRef = useRef<HTMLButtonElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
@@ -137,7 +140,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         {!isEmpty(label) ? (
           <RxLabel
             className={cx(typography({ variant: 'body-1' }), selectLabel())}
-            htmlFor={id}
+            htmlFor={uniqueId}
             onClick={() => setIsOpen(true)}
           >
             {label}
@@ -153,7 +156,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             ? { dir: props.dir as RxSelect.Direction }
             : {})}
           disabled={disabled || readOnly || false}
-          name={name || id}
+          name={name || uniqueId}
           open={isOpen}
           required={required}
           {...(value !== undefined ? { value } : {})}
@@ -163,7 +166,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           {...omit(['autoComplete', 'className', 'dir'], props)}
         >
           <RxSelect.Trigger
-            id={id}
+            id={uniqueId}
             ref={triggerRef}
             className={cx(
               `${PREFIX}-${GROUP_NAME}-trigger`,

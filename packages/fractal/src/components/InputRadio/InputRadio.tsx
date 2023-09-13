@@ -10,8 +10,7 @@ import {
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
-import { type ForwardedRef, forwardRef, useContext } from 'react'
+import { type ForwardedRef, forwardRef, useContext, useId } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -30,13 +29,16 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
     {
       disabled = false,
       fullWidth = false,
-      id = uniqueId('fractal-input-checkbox-'),
+      id,
       label,
       value,
       ...props
     }: InputRadioProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     const variant = useContext(InputRadioVariantContext)
 
     const groupClassNames = cx(
@@ -51,7 +53,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
     return (
       <div className={groupClassNames}>
         <RxRadio.Item
-          id={id}
+          id={uniqueId}
           ref={ref}
           className={inputRadio()}
           disabled={disabled}
@@ -65,7 +67,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
 
         <RxLabel
           className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
-          htmlFor={id}
+          htmlFor={uniqueId}
         >
           {label}
         </RxLabel>

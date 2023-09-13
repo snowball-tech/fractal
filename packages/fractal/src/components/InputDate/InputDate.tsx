@@ -20,13 +20,13 @@ import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
-import uniqueId from 'lodash/fp/uniqueId'
 import {
   type ChangeEvent,
   type ForwardedRef,
   KeyboardEvent,
   forwardRef,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -76,7 +76,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       descriptions,
       disabled = false,
       error,
-      id = uniqueId('fractal-input-date-'),
+      id,
       label,
       maxYear = 2099,
       name,
@@ -95,6 +95,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
     }: InputDateProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
     let skipFocusChange = false
 
     const dayRef = useRef<HTMLInputElement | null>(null)
@@ -313,7 +316,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         {!isEmpty(label) ? (
           <RxLabel
             className={cx(typography({ variant: 'body-1' }), inputDateLabel())}
-            htmlFor={`${id}-day`}
+            htmlFor={`${uniqueId}-day`}
           >
             {label}
           </RxLabel>
@@ -323,7 +326,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
         <div className={cx('fields', inputDateFields())}>
           <InputText
-            id={`${id}-day`}
+            id={`${uniqueId}-day`}
             ref={dayRef}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus}
@@ -337,7 +340,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             max={31}
             maxLength={2}
             min={1}
-            name={`${name || id}-day`}
+            name={`${name || uniqueId}-day`}
             placeholder={placeholders?.day ?? ''}
             readOnly={readOnly}
             required={required}
@@ -361,7 +364,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           />
 
           <InputText
-            id={`${id}-month`}
+            id={`${uniqueId}-month`}
             ref={monthRef}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             className={cx(inputDateField(), inputDateMonth())}
@@ -374,7 +377,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             max={12}
             maxLength={2}
             min={1}
-            name={`${name || id}-month`}
+            name={`${name || uniqueId}-month`}
             placeholder={placeholders?.month ?? ''}
             readOnly={readOnly}
             required={required}
@@ -400,7 +403,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           />
 
           <InputText
-            id={`${id}-year`}
+            id={`${uniqueId}-year`}
             ref={yearRef}
             // eslint-disable-next-line jsx-a11y/no-autofocus
             className={cx(inputDateField(), inputDateYear())}
@@ -413,7 +416,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             max={maxYear}
             maxLength={4}
             min={1900}
-            name={`${name || id}-year`}
+            name={`${name || uniqueId}-year`}
             placeholder={placeholders?.year ?? ''}
             readOnly={readOnly}
             required={required}
