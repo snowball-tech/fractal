@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.28.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.27.0...@snowball-tech/fractal@2.28.0) (2023-09-13)
+
+### ✨ Features
+
+- animate dropdowns opening ([505eff7](https://github.com/snowball-tech/fractal/commit/505eff70de0d506ddc68566a807e3a28658462c3))
+
+### ♻️ Code Refactoring
+
+- use `useId` to generate unique ids ([b66cd19](https://github.com/snowball-tech/fractal/commit/b66cd19ffe549818d5ddc3aee0c1c2bc9caa1b69))
+
 # @snowball-tech/fractal [2.27.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.26.0...@snowball-tech/fractal@2.27.0) (2023-09-13)
 
 ### ✨ Features
