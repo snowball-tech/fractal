@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [2.26.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.25.1...@snowball-tech/fractal@2.26.0) (2023-09-13)
+
+### ✨ Features
+
+- **input-pincode:** add paste support ([184ec57](https://github.com/snowball-tech/fractal/commit/184ec57b3b91ff2935fd8d6d562d2114e73ed9d1))
+
+### 📝 Documentation
+
+- **input-pincode:** fix the typing in the story ([b8ab79c](https://github.com/snowball-tech/fractal/commit/b8ab79c050abe5972693dcdb945cc2ebfbfc7a72))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([5688022](https://github.com/snowball-tech/fractal/commit/5688022104a49c8ba0d9bbaf1684727f7577f47c))
+
 ## @snowball-tech/fractal [2.25.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.25.0...@snowball-tech/fractal@2.25.1) (2023-09-13)
 
 ### 🐛 Bug Fixes
