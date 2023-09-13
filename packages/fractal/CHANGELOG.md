@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.27.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.26.0...@snowball-tech/fractal@2.27.0) (2023-09-13)
+
+### ✨ Features
+
+- **textarea:** add growing textarea ([5af789d](https://github.com/snowball-tech/fractal/commit/5af789d50ecfd114869874d260104fcafa6ca444))
+
 # @snowball-tech/fractal [2.26.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.25.1...@snowball-tech/fractal@2.26.0) (2023-09-13)
 
 ### ✨ Features
