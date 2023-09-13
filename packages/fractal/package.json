@@ -139,7 +139,8 @@
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-textarea-autosize": "^8.5.3"
   },
   "peerDependencies": {
     "@iconscout/react-unicons": "*",

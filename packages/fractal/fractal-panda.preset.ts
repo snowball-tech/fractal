@@ -26,6 +26,7 @@ import * as PaperRecipes from '@/components/Paper/Paper.recipe'
 import * as ProgressRecipes from '@/components/Progress/Progress.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as StepperRecipes from '@/components/Stepper/Stepper.recipe'
+import * as TextareaRecipes from '@/components/Textarea/Textarea.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
 import * as ToggleGroupRecipes from '@/components/ToggleGroup/ToggleGroup.recipe'
 import * as TypographyRecipes from '@/components/Typography/Typography.recipe'
@@ -52,6 +53,7 @@ const GROUPS = {
   progress: `${PREFIX}-${ProgressRecipes.GROUP_NAME}`,
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
+  textarea: `${PREFIX}-${TextareaRecipes.GROUP_NAME}`,
   toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
   toggleGroup: `${PREFIX}-${ToggleGroupRecipes.GROUP_NAME}`,
   toggleGroupItem: `${PREFIX}-${ToggleGroupRecipes.GROUP_NAME}-item`,
@@ -197,6 +199,12 @@ const fractalPreset = definePreset({
         stepper: StepperRecipes.stepper,
         step: StepperRecipes.step,
         stepAsProgress: StepperRecipes.stepAsProgress,
+
+        textarea: TextareaRecipes.textarea,
+        textareaContainer: TextareaRecipes.textareaContainer,
+        textareaDescription: TextareaRecipes.textareaDescription,
+        textareaLabel: TextareaRecipes.textareaLabel,
+        textareaMessage: TextareaRecipes.textareaMessage,
 
         toggle: ToggleRecipes.toggle,
         toggleGroup: ToggleGroupRecipes.toggleGroup,
