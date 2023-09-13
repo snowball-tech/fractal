@@ -1,4 +1,9 @@
-import type { ChangeEvent, FocusEvent, KeyboardEvent } from 'react'
+import type {
+  ChangeEvent,
+  ClipboardEvent,
+  FocusEvent,
+  KeyboardEvent,
+} from 'react'
 
 import type { InputTextProps } from '@/components/InputText/InputText.types'
 
@@ -63,7 +68,10 @@ export interface InputPinCodeProps
    */
   onBlur?: (event: FocusEvent<HTMLInputElement>, index: number) => void
   /** Event handler called when the pin code value is changed. */
-  onChange?: (event: ChangeEvent<HTMLInputElement>, newCode: string) => void
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement> | ClipboardEvent<HTMLInputElement>,
+    newCode: string,
+  ) => void
   /** Event handler called when all the fields has been filled. */
   onComplete?: (newCode: string) => void
   /**
@@ -71,7 +79,7 @@ export interface InputPinCodeProps
    * changed.
    */
   onFieldChange?: (
-    event: ChangeEvent<HTMLInputElement>,
+    event: ChangeEvent<HTMLInputElement> | ClipboardEvent<HTMLInputElement>,
     newDigit: number,
     index: number,
   ) => void

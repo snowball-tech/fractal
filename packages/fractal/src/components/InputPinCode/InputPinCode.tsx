@@ -14,11 +14,17 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
+import isNumber from 'lodash/fp/isNumber'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 import uniqueId from 'lodash/fp/uniqueId'
-import { type ChangeEvent, type FocusEvent, type KeyboardEvent } from 'react'
+import {
+  type ChangeEvent,
+  ClipboardEvent,
+  type FocusEvent,
+  type KeyboardEvent,
+} from 'react'
 
 import { InputText } from '@/components/InputText'
 import { PREFIX } from '@/constants'
@@ -79,13 +85,20 @@ export const InputPinCode = ({
   ) => {
     const newValueAsInt = parseInt(newValue, 10)
 
-    if (!isInteger(newValueAsInt) || newValueAsInt < 0 || newValueAsInt > 9) {
+    if (
+      !isNumber(newValueAsInt) ||
+      !isInteger(newValueAsInt) ||
+      newValueAsInt < 0 ||
+      newValueAsInt > 9
+    ) {
       return
     }
 
     const oldCode = value || defaultValue || ''
-    const newCode =
-      oldCode.substring(0, index) + newValue + oldCode.substring(index + 1)
+    const newCode = `${oldCode.substring(
+      0,
+      index,
+    )}${newValue}${oldCode.substring(index + 1)}`
 
     if (isFunction(onChange)) {
       onChange(event, newCode)
@@ -114,12 +127,13 @@ export const InputPinCode = ({
       if (nextInput) {
         nextInput.focus()
       }
-    } else if (input) {
+    } else {
       if (isFunction(onComplete)) {
         onComplete(newCode)
       }
-
-      input.blur()
+      if (input) {
+        input.blur()
+      }
     }
   }
 
@@ -169,6 +183,48 @@ export const InputPinCode = ({
 
       default:
         break
+    }
+  }
+
+  const handlePaste = (
+    event: ClipboardEvent<HTMLInputElement>,
+    index: number,
+  ) => {
+    if (isFunction(props.onPaste)) {
+      props.onPaste(event)
+    }
+
+    const pastedValue = event.clipboardData.getData('text/plain')
+    if (isEmpty(pastedValue)) {
+      return
+    }
+    const parsedPastedValue = parseInt(pastedValue, 10)
+    if (
+      !isNumber(parsedPastedValue) ||
+      !isInteger(parsedPastedValue) ||
+      `${parsedPastedValue}` !== pastedValue
+    ) {
+      return
+    }
+
+    const newValue = pastedValue
+      .substring(0, length - index)
+      .padEnd(length - index - 1, '0')
+
+    const oldCode = value || defaultValue || ''
+    const newCode = `${oldCode.substring(0, index)}${newValue}`
+
+    if (isFunction(onChange)) {
+      onChange(event, newCode)
+    }
+
+    if (isFunction(onComplete)) {
+      onComplete(newCode)
+    }
+
+    const input = event.target as HTMLInputElement
+    if (input) {
+      input.blur()
     }
   }
 
@@ -238,6 +294,7 @@ export const InputPinCode = ({
               ? { onFocus: (event) => onFocus(event, index) }
               : {})}
             onKeyDown={(event) => handleKeyDown(event, index)}
+            onPaste={(event) => handlePaste(event, index)}
             {...omit(['className'], props)}
           />
         ))}
