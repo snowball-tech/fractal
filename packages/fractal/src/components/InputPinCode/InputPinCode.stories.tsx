@@ -1,6 +1,11 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
+import type {
+  ChangeEvent,
+  ClipboardEvent,
+  ComponentProps,
+  ReactNode,
+} from 'react'
 
 import InputPinCode from './InputPinCode'
 
@@ -23,7 +28,7 @@ const meta: Meta<InputPinCodeProps> = {
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (
-        event: ChangeEvent<HTMLInputElement>,
+        event: ChangeEvent<HTMLInputElement> | ClipboardEvent<HTMLInputElement>,
         newCode: string,
       ) => {
         context.args.onChange?.(event, newCode)
@@ -81,7 +86,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 export const Examples = () => {
   const [{ value = '' }, setArgs] = useArgs()
 
-  const handleChange = (_: ChangeEvent<HTMLInputElement>, newCode: string) => {
+  const handleChange = (_: unknown, newCode: string) => {
     setArgs({ value: newCode })
   }
 
