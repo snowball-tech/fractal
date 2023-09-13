@@ -5260,7 +5260,7 @@ __metadata:
     lodash: ^4.17.21
     normalize.css: ^8.0.1
     postcss: ^8.4.29
-    postcss-styled-syntax: ^0.4.0
+    postcss-styled-syntax: ^0.5.0
     prettier: ^3.0.3
     prop-types: ^15.8.1
     react: ^18.2.0
@@ -7221,6 +7221,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:5.62.0":
+  version: 5.62.0
+  resolution: "@typescript-eslint/types@npm:5.62.0"
+  checksum: 48c87117383d1864766486f24de34086155532b070f6264e09d0e6139449270f8a9559cfef3c56d16e3bcfb52d83d42105d61b36743626399c7c2b5e0ac3b670
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/types@npm:6.6.0":
   version: 6.6.0
   resolution: "@typescript-eslint/types@npm:6.6.0"
@@ -7261,6 +7268,24 @@ __metadata:
     typescript:
       optional: true
   checksum: 100620bc5865dc9d2551c6be520a34b931bc70eca144c5ab0e275b81e57aa92f24a9d3a57f332d98b96e4581cf7e87211c3196d964f4951c7a2508105e3bd3f5
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:^5.62.0":
+  version: 5.62.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.62.0"
+  dependencies:
+    "@typescript-eslint/types": 5.62.0
+    "@typescript-eslint/visitor-keys": 5.62.0
+    debug: ^4.3.4
+    globby: ^11.1.0
+    is-glob: ^4.0.3
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 3624520abb5807ed8f57b1197e61c7b1ed770c56dfcaca66372d584ff50175225798bccb701f7ef129d62c5989070e1ee3a0aa2d84e56d9524dcf011a2bb1a52
   languageName: node
   linkType: hard
 
@@ -7306,6 +7331,16 @@ __metadata:
     "@typescript-eslint/types": 5.60.1
     eslint-visitor-keys: ^3.3.0
   checksum: 137f6a6f8efb398969087147b59f99f7d0deed044d89d7efce3631bb90bc32e3a13a5cee6a65e1c9830862c5c4402ac1a9b2c9e31fe46d1716602af2813bffae
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:5.62.0":
+  version: 5.62.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.62.0"
+  dependencies:
+    "@typescript-eslint/types": 5.62.0
+    eslint-visitor-keys: ^3.3.0
+  checksum: 976b05d103fe8335bef5c93ad3f76d781e3ce50329c0243ee0f00c0fcfb186c81df50e64bfdd34970148113f8ade90887f53e3c4938183afba830b4ba8e30a35
   languageName: node
   linkType: hard
 
@@ -21069,6 +21104,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-styled-syntax@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "postcss-styled-syntax@npm:0.5.0"
+  dependencies:
+    "@typescript-eslint/typescript-estree": ^5.62.0
+    estree-walker: ^2.0.2
+    typescript: ~5.1.6
+  peerDependencies:
+    postcss: ^8.4.21
+  checksum: 1571ea468e9eb9ddf8cd81b298174b310a3ee5ec6b3b1e01a25b4c0e51acb5fc4bb4f76785fe9f9714be29fa6884dd123c7179b475b41c1a108545ca1875af37
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -24801,7 +24849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*, typescript@npm:^5.1.6":
+"typescript@npm:*, typescript@npm:^5.1.6, typescript@npm:~5.1.6":
   version: 5.1.6
   resolution: "typescript@npm:5.1.6"
   bin:
@@ -24831,7 +24879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@*#~builtin<compat/typescript>, typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
+"typescript@patch:typescript@*#~builtin<compat/typescript>, typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>, typescript@patch:typescript@~5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
   resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
