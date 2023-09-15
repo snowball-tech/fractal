@@ -12,7 +12,8 @@ export type CombinedRefs = {
   input: HTMLInputElement | null
 }
 
-export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
+export interface AutocompleteProps
+  extends Omit<InputTextProps, 'onBlur' | 'onSelect'> {
   /** Indicates if the autocomplete input must be focused on render. */
   autoFocus?: boolean
   /** The elements to display in the autocomplete dropdown. */
@@ -66,6 +67,11 @@ export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
+  /**
+   * Event handler called when the autocomplete input AND the dropdown have lost
+   * focus.
+   */
+  onBlur?: () => void
   /**
    * Event handler called when the autocomplete input value is changed or a
    * value is selected.
