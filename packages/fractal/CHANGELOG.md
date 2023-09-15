@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.28.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.3...@snowball-tech/fractal@2.28.4) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix a focus problem ([2d6ed42](https://github.com/snowball-tech/fractal/commit/2d6ed42dd2cbff50c0e0c5fda5ad5b4a4069a7d9))
+
 ## @snowball-tech/fractal [2.28.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.2...@snowball-tech/fractal@2.28.3) (2023-09-15)
 
 ### Dependencies
