@@ -205,7 +205,7 @@ export const InputPinCode = ({
     if (
       !isNumber(parsedPastedValue) ||
       !isInteger(parsedPastedValue) ||
-      `${parsedPastedValue}` !== pastedValue
+      `${parsedPastedValue}`.padStart(pastedValue.length, '0') !== pastedValue
     ) {
       return
     }
@@ -221,13 +221,23 @@ export const InputPinCode = ({
       onChange(event, newCode)
     }
 
-    if (isFunction(onComplete)) {
-      onComplete(newCode)
-    }
+    if (newCode.length === length) {
+      if (isFunction(onComplete)) {
+        onComplete(newCode)
+      }
 
-    const input = event.target as HTMLInputElement
-    if (input) {
-      input.blur()
+      const input = event.target as HTMLInputElement
+      if (input) {
+        input.blur()
+      }
+    } else {
+      const nextIndex = newCode.length
+      const nextInput = document.getElementById(
+        `${uniqueId}-${nextIndex}`,
+      ) as HTMLInputElement
+      if (nextInput) {
+        nextInput.focus()
+      }
     }
   }
 
