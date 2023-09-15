@@ -127,11 +127,13 @@ export const button: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    alignItems: 'center',
+    display: 'flex',
     flex: 1,
+    justifyContent: 'center',
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'hidden',
-    pt: 'var(--size-spacing-quarter)',
     textAlign: 'center',
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',
@@ -165,8 +167,10 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    alignItems: 'center',
+    display: 'flex',
     height: '24px',
-    mt: 'var(--size-spacing-quarter)',
+    height: '100%',
     width: '24px',
   },
 
