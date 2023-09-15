@@ -28,22 +28,13 @@ export interface AutocompleteProps extends Omit<InputTextProps, 'onSelect'> {
   /** Prevents the user from interacting with the autocomplete. */
   disabled?: boolean
   /**
-   * Options to tweak the position of the select dropdown.
+   * Options to tweak the position of the autocomplete dropdown.
+   * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#content
    *
-   * - `collisionBoundary` is the container or list of containers) used to
-   *   compute collision (if none is given, then the viewport is used);
-   * - `hideWhenDetached` indicates if the dropdown must be hidden when the
-   *   trigger is fully occluded;
-   * - `sticky` indicates if the dropdown is kept in the the boundary as long as
-   *   the trigger is (at least partially) in the boundary (`partial`) or always
-   *   kept in the boundary regardless of the trigger (`always`).
+   * You can on top of that add the `className` property to customize the style
+   * of the dropdown.
    */
-  dropdown?: Partial<
-    Pick<
-      RxDropdownMenuContentProps,
-      'collisionBoundary' | 'hideWhenDetached' | 'sticky'
-    > & { className?: string }
-  >
+  dropdown?: Partial<RxDropdownMenuContentProps & { className?: string }>
   /**
    * An error message to display below the autocomplete if there is
    * an error.

@@ -332,6 +332,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               {isOpen && (
                 <RxDropdownMenu.Content
                   ref={dropdownRef}
+                  {...omit(['className'], dropdown)}
                   align="center"
                   asChild
                   className={cx(
@@ -350,7 +351,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                   onInteractOutside={handleDropdownInteractOutside}
                   onKeyDown={handleDropdownKeyDown}
                   onPointerDownOutside={handleDropdownPointerDownOutside}
-                  {...omit(['className'], dropdown)}
                 >
                   <motion.div {...dropdownAnimation}>
                     <RxScrollArea.Root
