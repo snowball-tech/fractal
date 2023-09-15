@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.29.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.0...@snowball-tech/fractal@2.29.1) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix keyboard nav ([b7442b2](https://github.com/snowball-tech/fractal/commit/b7442b2acef0a67175b2ec1a5bfcd46eaa62ae94))
+
 # @snowball-tech/fractal [2.29.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.5...@snowball-tech/fractal@2.29.0) (2023-09-15)
 
 ### ✨ Features
