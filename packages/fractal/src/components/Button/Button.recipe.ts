@@ -167,9 +167,11 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const buttonIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    '& > svg': {
+      height: '24px',
+    },
     alignItems: 'center',
     display: 'flex',
-    height: '24px',
     height: '100%',
     width: '24px',
   },
