@@ -76,6 +76,8 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
     display: 'flex',
     height: '20px',
     justifyContent: 'center',
+    minHeight: '20px',
+    minWidth: '20px',
     width: '20px',
   },
 
