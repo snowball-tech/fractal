@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.28.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.4...@snowball-tech/fractal@2.28.5) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **checkbox:** make sure it's always square ([ed84fb1](https://github.com/snowball-tech/fractal/commit/ed84fb1cb3dff0e8457ed63c2c09f536ef52483d))
+
 ## @snowball-tech/fractal [2.28.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.3...@snowball-tech/fractal@2.28.4) (2023-09-15)
 
 ### 🐛 Bug Fixes
