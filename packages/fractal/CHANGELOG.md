@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [2.29.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.1...@snowball-tech/fractal@2.29.2) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix the onKeyDown prop ([acd5f36](https://github.com/snowball-tech/fractal/commit/acd5f36358fb54c2eb2c643990c089a1c5b55a3d))
+- **button:** fix label/icon vertical centering ([b3f6618](https://github.com/snowball-tech/fractal/commit/b3f6618655226fd239faccc29ca03c531766bd89))
+- **button:** fix the icon height ([25985f7](https://github.com/snowball-tech/fractal/commit/25985f7e96531fcfa8cc2611def087a8a7a4e6f3))
+
 ## @snowball-tech/fractal [2.29.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.0...@snowball-tech/fractal@2.29.1) (2023-09-15)
 
 ### 🐛 Bug Fixes
