@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [5.14.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.14.1...@snowball-tech/design-tokens@5.14.2) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **breakpoints:** add missing `px` ([882275b](https://github.com/snowball-tech/fractal/commit/882275b195ecc5c63ac54c39acbefa86722ef2c2))
+
 ## @snowball-tech/design-tokens [5.14.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.14.0...@snowball-tech/design-tokens@5.14.1) (2023-09-15)
 
 ### 🐛 Bug Fixes
