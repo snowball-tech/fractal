@@ -257,16 +257,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
     }
 
-    const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-      if (props.onFocus) {
-        props.onFocus(event)
-      }
-
-      if (!isOpen) {
-        setKeepFocus(true)
-      }
-    }
-
     useEffect(() => {
       if (open === true || (Boolean(children) && open !== false)) {
         handleDropdownToggle(true)
@@ -357,7 +347,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                   style={{
                     display: undefined,
                   }}
-                  onFocus={handleFocus}
                   onInteractOutside={handleDropdownInteractOutside}
                   onKeyDown={handleDropdownKeyDown}
                   onPointerDownOutside={handleDropdownPointerDownOutside}
