@@ -43,7 +43,7 @@ Object.values(breakpoints).forEach((breakpoint, i) => {
       upTo[secondaryBreakpoint] = {
         value: `(min-width: {size.breakpoint.${breakpoint}.value}) and (max-width: ${
           breakpointsValues[secondaryBreakpoint].value - 1
-        })`,
+        }px)`,
       }
     }
   })
@@ -54,7 +54,7 @@ Object.values(breakpoints).forEach((breakpoint, i) => {
 
   if (!isEmpty(nextBreakpoint)) {
     mediaQuery.to[breakpoint] = {
-      value: `(max-width: ${breakpointsValues[nextBreakpoint].value - 1})`,
+      value: `(max-width: ${breakpointsValues[nextBreakpoint].value - 1}px)`,
     }
   }
   mediaQuery[breakpoint] = { upTo }
