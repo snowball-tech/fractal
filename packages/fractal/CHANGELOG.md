@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.29.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.5...@snowball-tech/fractal@2.29.0) (2023-09-15)
+
+### ✨ Features
+
+- **autocomplete-select:** allow to fully customize the dropdown ([104d3e5](https://github.com/snowball-tech/fractal/commit/104d3e5db9a86123f9a30aee4994b02456dc012c))
+
+### ⏪️ Reverts
+
+- **autocomplete:** revert the change ([ea52b28](https://github.com/snowball-tech/fractal/commit/ea52b2872076a579babfb0a3b28ae62fbb42fcec))
+
 ## @snowball-tech/fractal [2.28.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.28.4...@snowball-tech/fractal@2.28.5) (2023-09-15)
 
 ### 🐛 Bug Fixes
