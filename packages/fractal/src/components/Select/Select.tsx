@@ -199,7 +199,6 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
 
           <RxSelect.Portal>
             <RxSelect.Content
-              ref={dropdownRef}
               {...omit(['className'], dropdown)}
               align="center"
               asChild
@@ -215,7 +214,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               }}
               onPointerDownOutside={handlePointerDownOutside}
             >
-              <motion.div {...dropdownAnimation}>
+              <motion.div {...dropdownAnimation} ref={dropdownRef}>
                 <RxScrollArea.Root
                   {...(props.dir !== undefined
                     ? { dir: props.dir as RxScrollArea.Direction }

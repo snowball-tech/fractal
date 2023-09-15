@@ -24,7 +24,6 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import {
   type ChangeEvent,
-  type FocusEvent,
   type ForwardedRef,
   type KeyboardEvent,
   type MouseEvent,
@@ -67,6 +66,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       id,
       label,
       name,
+      onBlur,
       onChange,
       onClose,
       onInputChange,
@@ -170,6 +170,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           dropdownRef?.current?.contains(target as Element)
         ) {
           event.preventDefault()
+        } else if (isOpen && isFunction(onBlur)) {
+          onBlur()
         }
       }
 
@@ -181,16 +183,14 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         }
       }
 
-    const handleInputBlur = (event: FocusEvent<HTMLInputElement>) => {
-      if (isFunction(props.onBlur)) {
-        props.onBlur(event)
-      }
-
+    const handleInputBlur = () => {
       if (keepFocus) {
         setKeepFocus(false)
         if (inputRef?.current) {
           inputRef.current.focus()
         }
+      } else if (isFunction(onBlur) && !isOpen) {
+        onBlur()
       }
     }
 
@@ -215,14 +215,15 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           return
         }
 
-        event.preventDefault()
-
+        console.log(isOpen, dropdownRef)
         if (!isOpen) {
           setKeepFocus(true)
           handleDropdownToggle(true)
         } else if (dropdownRef?.current) {
           dropdownRef.current.focus()
         }
+
+        event.preventDefault()
       }
     }
 
@@ -331,7 +332,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             <AnimatePresence mode="popLayout">
               {isOpen && (
                 <RxDropdownMenu.Content
-                  ref={dropdownRef}
                   {...omit(['className'], dropdown)}
                   align="center"
                   asChild
@@ -352,7 +352,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
                   onKeyDown={handleDropdownKeyDown}
                   onPointerDownOutside={handleDropdownPointerDownOutside}
                 >
-                  <motion.div {...dropdownAnimation}>
+                  <motion.div {...dropdownAnimation} ref={dropdownRef}>
                     <RxScrollArea.Root
                       {...(props.dir !== undefined
                         ? { dir: props.dir as RxScrollArea.Direction }
