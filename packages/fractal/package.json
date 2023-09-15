@@ -96,7 +96,7 @@
     "@storybook/manager-api": "^7.4.1",
     "@storybook/react": "^7.4.1",
     "@storybook/react-vite": "^7.4.1",
-    "@storybook/testing-library": "^0.2.0",
+    "@storybook/testing-library": "^0.2.1",
     "@storybook/theming": "^7.4.1",
     "@types/eslint": "^8.44.2",
     "@types/lodash": "^4.14.198",
@@ -115,7 +115,7 @@
     "storybook-addon-mock": "^4.2.1",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vercel": "^32.2.1",
+    "vercel": "^32.2.3",
     "vite": "^4.4.9",
     "vite-tsconfig-paths": "^4.2.1"
   },
