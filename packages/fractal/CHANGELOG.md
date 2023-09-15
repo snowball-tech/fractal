@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.29.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.2...@snowball-tech/fractal@2.29.3) (2023-09-15)
+
+### 🐛 Bug Fixes
+
+- **input-pincode:** fix pasting code starting with 0 ([8ee9d20](https://github.com/snowball-tech/fractal/commit/8ee9d20191a722f257268e959ab48c563159164d))
+
 ## @snowball-tech/fractal [2.29.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.1...@snowball-tech/fractal@2.29.2) (2023-09-15)
 
 ### 🐛 Bug Fixes
