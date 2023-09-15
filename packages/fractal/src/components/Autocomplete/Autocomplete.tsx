@@ -195,6 +195,10 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     }
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+      if (isFunction(props.onKeyDown)) {
+        props.onKeyDown(event)
+      }
+
       if (event.key === 'Escape') {
         event.preventDefault()
 
@@ -215,7 +219,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           return
         }
 
-        console.log(isOpen, dropdownRef)
         if (!isOpen) {
           setKeepFocus(true)
           handleDropdownToggle(true)
@@ -305,7 +308,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           onChange={handleInputChange}
           onClick={handleTriggerClick}
           onKeyDown={handleInputKeyDown}
-          {...omit(['className', 'onBlur'], props)}
+          {...omit(['className', 'onBlur', 'onKeyDown'], props)}
         />
 
         <RxDropdownMenu.Root
