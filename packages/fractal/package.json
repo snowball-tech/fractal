@@ -83,7 +83,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.14.0",
-    "@pandacss/preset-base": "^0.14.0",
+    "@pandacss/preset-base": "^0.15.0",
     "@simbathesailor/use-what-changed": "^2.0.0",
     "@snowball-tech/eslint-config": "^5.2.9",
     "@storybook/addon-a11y": "^7.4.1",
