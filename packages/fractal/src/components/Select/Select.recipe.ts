@@ -102,7 +102,9 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     maxHeight: '48px',
     outline: 'none',
     px: 'var(--size-select-padding-horizontal)',
+    py: 'unset',
     shadow: `var(--shadow-select-base)`,
+    textAlign: 'unset',
     transition: 'border-color 300ms ease-out',
   },
 
