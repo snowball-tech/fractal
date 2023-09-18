@@ -21,9 +21,6 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
       borderRadius: 'var(--size-radius-s)',
       boxSizing: 'border-box',
       display: 'flex',
-      gap: 'var(--size-checkbox-gap)',
-      px: 'var(--size-checkbox-padding-horizontal)',
-      py: 'var(--size-checkbox-padding-vertical)',
       width: 'fit-content',
     },
 
@@ -68,16 +65,16 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
 
 export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
-    alignItems: 'center',
-    border: 'var(--size-border-2) solid var(--color-border-default)',
+    backgroundColor: 'unset',
+    border: 'none',
     borderRadius: 'var(--size-radius-xs)',
     cursor: 'var(--cursor-clickable)',
-    display: 'flex',
-    height: '20px',
-    justifyContent: 'center',
-    minHeight: '20px',
-    minWidth: '20px',
-    width: '20px',
+    flex: 0,
+    height: '100%',
+    minHeight: 'var(--size-spacing-6)',
+    pl: 'var(--size-checkbox-padding-horizontal)',
+    px: 'unset',
+    py: 'unset',
   },
 
   defaultVariants: {
@@ -89,18 +86,17 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
       (colors, colorName) => ({
         ...colors,
         [colorName]: {
-          '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked, :disabled, [data-disabled], .disabled))':
+          '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked, :disabled, [data-disabled], .disabled)) > div':
             {
               backgroundColor: `var(--color-decorative-${colorName}-90, var(--color-brand-${colorName}, var(--color-base-white)))`,
             },
 
-          '.fractal-input-checkbox:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:is(:checked, [data-checked], [aria-checked=true])':
+          '.fractal-input-checkbox:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:is(:checked, [data-checked], [aria-checked=true]) > div':
             {
               backgroundColor: `var(--color-decorative-${colorName}-70, var(--color-brand-${colorName}, var(--color-base-${colorName}, var(--color-base-white))))`,
             },
 
           _inputCheckboxDisabled: {
-            borderColor: 'var(--color-box-checkbox-disabled)',
             color: 'var(--color-box-checkbox-disabled)',
             cursor: 'var(--cursor-disabled)',
           },
@@ -134,10 +130,13 @@ export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
 export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      '& > svg': {
-        height: '20px',
-        width: '20px',
-      },
+      alignItems: 'center',
+      border: 'var(--size-border-2) solid var(--color-border-default)',
+      borderRadius: 'var(--size-radius-xs)',
+      display: 'flex',
+      height: '24px',
+      mx: 'var(--size-checkbox-padding-horizontal)',
+      width: '24px',
     },
 
     defaultVariants: {
@@ -160,6 +159,7 @@ export const inputCheckboxCheckmark: ReturnType<typeof defineRecipe> =
           ...variants,
           [variantName]: {
             _inputCheckboxDisabled: {
+              borderColor: 'var(--color-box-checkbox-disabled)',
               color: 'var(--color-mark-checkbox-disabled)',
               cursor: 'var(--cursor-disabled)',
             },
@@ -188,9 +188,11 @@ export const inputCheckboxLabel: ReturnType<typeof defineRecipe> = defineRecipe(
       },
 
       cursor: 'var(--cursor-clickable)',
-      flexGrow: 1,
+      flex: 1,
       overflow: 'auto',
       overflowWrap: 'break-word',
+      pr: 'var(--size-checkbox-padding-horizontal)',
+      py: 'var(--size-checkbox-padding-vertical)',
     },
 
     defaultVariants: {
