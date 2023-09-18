@@ -62,7 +62,6 @@ jobs:
       - if: env.SKIP_INTEGRITY_CHECK != 1
         uses: actions/setup-node@v3
         with:
-          node-version: 18
           cache: yarn
 
       - if: env.SKIP_INTEGRITY_CHECK != 1

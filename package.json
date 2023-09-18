@@ -89,5 +89,8 @@
     "ts-node": "^10.9.1",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "@zag-js/store": "0.20.0"
   }
 }

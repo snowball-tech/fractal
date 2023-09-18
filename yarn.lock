@@ -9098,21 +9098,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zag-js/store@npm:0.12.0":
-  version: 0.12.0
-  resolution: "@zag-js/store@npm:0.12.0"
+"@zag-js/store@npm:0.20.0":
+  version: 0.20.0
+  resolution: "@zag-js/store@npm:0.20.0"
   dependencies:
     proxy-compare: 2.5.1
-  checksum: 003015bfbfd4d46ce8b4ab7d52a1200720ce1b67d8b32eee558ab10ba98830291f264e97cbe04ae57ff41e5248ec8fd240359a4e96d7d42216ed7ab45ba3bb83
-  languageName: node
-  linkType: hard
-
-"@zag-js/store@npm:0.19.1":
-  version: 0.19.1
-  resolution: "@zag-js/store@npm:0.19.1"
-  dependencies:
-    proxy-compare: 2.5.1
-  checksum: 32bed121ffaba8ba577dc2878bd3be15166e3003edbe5859ced157335982fa4edc2341771966167430fad31529d5b3d4fb2a7c746773ec684112fb2318ddb94a
+  checksum: 4d5ce84e6d855e4abfcd6960cb8aa9042384d3edf10212db1585bcf2135909cb6d665da331509e10a42e51e37b2aff6580adcd103b1f55ffc28a419de75579e7
   languageName: node
   linkType: hard
 
