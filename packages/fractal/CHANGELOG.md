@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.29.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.4...@snowball-tech/fractal@2.29.5) (2023-09-18)
+
+### 🐛 Bug Fixes
+
+- remove `all: unset` as it breaks some styles ([#59](https://github.com/snowball-tech/fractal/issues/59)) ([9f402bf](https://github.com/snowball-tech/fractal/commit/9f402bf39bd3abf14a3aea94efe4c7206862ec11))
+
 ## @snowball-tech/fractal [2.29.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.3...@snowball-tech/fractal@2.29.4) (2023-09-18)
 
 ### 📦 Dependencies
