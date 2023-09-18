@@ -79,7 +79,6 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     alignItems: 'center',
-    all: 'unset',
     borderRadius: 'var(--size-radius-rounded)',
     boxSizing: 'border-box',
     cursor: 'var(--cursor-clickable)',
@@ -92,6 +91,7 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
     outline: 'none',
     px: 'var(--size-button-padding-horizontal)',
     py: 'var(--size-button-padding-vertical)',
+    textAlign: 'unset',
     transitionDuration: '300ms',
     transitionProperty: 'background-color, color',
     transitionTimingFunction: 'ease-out',
@@ -138,7 +138,6 @@ export const toggleLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'hidden',
-    pt: 'var(--size-spacing-half)',
     textAlign: 'center',
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',

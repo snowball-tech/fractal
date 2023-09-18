@@ -140,13 +140,13 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
-    all: 'unset',
     backgroundColor: `var(--color-background-input-base)`,
     border: `var(--border-input-base)`,
     borderRadius: 'var(--size-radius-s)',
     boxSizing: 'border-box',
     color: `var(--color-text-input-base)`,
     cursor: 'var(--cursor-clickable)',
+    display: 'unset',
     height: '48px',
     maxHeight: '48px',
     maxWidth: '100%',
@@ -155,6 +155,7 @@ export const inputText: ReturnType<typeof defineRecipe> = defineRecipe({
     px: 'var(--size-input-padding-horizontal)',
     py: 'var(--size-input-padding-vertical)',
     shadow: `var(--shadow-input-base)`,
+    textAlign: 'unset',
     transition: 'border-color 300ms ease-out',
     width: '100%',
   },

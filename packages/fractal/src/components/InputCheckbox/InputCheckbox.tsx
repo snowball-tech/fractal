@@ -85,11 +85,11 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
           {...(isFunction(onCheckedChange) ? { onCheckedChange } : {})}
           {...omit(['className'], props)}
         >
-          <RxCheckbox.Indicator
-            className={inputCheckboxCheckmark({ color, variant })}
-          >
-            <CheckIcon />
-          </RxCheckbox.Indicator>
+          <div className={inputCheckboxCheckmark({ color, variant })}>
+            <RxCheckbox.Indicator asChild>
+              <CheckIcon />
+            </RxCheckbox.Indicator>
+          </div>
         </RxCheckbox.Root>
 
         <RxLabel

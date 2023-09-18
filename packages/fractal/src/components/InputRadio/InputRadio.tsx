@@ -60,9 +60,11 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           value={value}
           {...omit(['className'], props)}
         >
-          <RxRadio.Indicator className={inputRadioCheckmark()}>
-            <CheckIcon />
-          </RxRadio.Indicator>
+          <div className={inputRadioCheckmark()}>
+            <RxRadio.Indicator asChild>
+              <CheckIcon />
+            </RxRadio.Indicator>
+          </div>
         </RxRadio.Item>
 
         <RxLabel
