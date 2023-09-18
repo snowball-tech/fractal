@@ -101,7 +101,9 @@ touch ~/.bash_profile
 To be able to work with this repository, you will have to have a working version
 of NodeJS.
 
-You can simply install the latest version of the 18.x LTS branch.
+You can simply install the latest version of the 18.x.x LTS branch
+
+> Vercel does not support NodeJS v20 yet.
 
 To do so, it's recommended to use a Node Version Manager like
 [NVM](https://github.com/nvm-sh/nvm) or [N](https://github.com/tj/n)

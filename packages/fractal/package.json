@@ -27,7 +27,7 @@
   "packageManager": "yarn@3.6.3",
   "engines": {
     "yarn": "^3.0.0",
-    "node": "^18.0.0 || ^20.0.0"
+    "node": "^18.0.0"
   },
   "type": "module",
   "sideEffects": false,
@@ -85,7 +85,7 @@
     "@pandacss/dev": "^0.15.0",
     "@pandacss/preset-base": "^0.15.0",
     "@simbathesailor/use-what-changed": "^2.0.0",
-    "@snowball-tech/eslint-config": "^5.2.9",
+    "@snowball-tech/eslint-config": "^5.2.10",
     "@storybook/addon-a11y": "^7.4.2",
     "@storybook/addon-essentials": "^7.4.2",
     "@storybook/addon-interactions": "^7.4.2",
