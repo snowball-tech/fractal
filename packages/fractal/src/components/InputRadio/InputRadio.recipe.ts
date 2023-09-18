@@ -50,10 +50,7 @@ export const inputRadioContainer = defineRecipe({
     borderRadius: 'var(--size-radius-s)',
     boxSizing: 'border-box',
     display: 'flex',
-    gap: 'var(--size-checkbox-gap)',
     maxWidth: '100%',
-    px: 'var(--size-checkbox-padding-horizontal)',
-    py: 'var(--size-checkbox-padding-vertical)',
     width: 'fit-content',
 
     ...Object.values(Variants).reduce(
@@ -75,39 +72,37 @@ export const inputRadioContainer = defineRecipe({
   jsx: ['InputRadio'],
 })
 
-export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
+export const inputRadio = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
+    '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked, :disabled, [data-disabled], .disabled)) > div':
       {
-        borderColor: 'var(--color-box-checkbox-disabled)',
+        backgroundColor: `var(--color-background-radio-hover)`,
+      },
+
+    '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) & > div, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) & > div':
+      {
         color: 'var(--color-box-checkbox-disabled)!',
         cursor: 'var(--cursor-disabled)',
       },
 
-    '.fractal-input-radio-group:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &, .fractal-input-radio:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &':
+    '.fractal-input-radio-group:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) & > div, .fractal-input-radio:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) & > div':
       {
         _checkedNotDisabled: {
           backgroundColor: `var(--color-background-radio-checked)`,
         },
       },
 
-    _hoverNotChecked: {
-      _notDisabled: {
-        backgroundColor: `var(--color-background-radio-hover)`,
-      },
-    },
-
-    alignItems: 'center',
-    border: 'var(--size-border-2) solid var(--color-border-default)',
+    backgroundColor: 'unset',
+    border: 'none',
     borderRadius: 'var(--size-radius-rounded)',
     cursor: 'var(--cursor-clickable)',
-    display: 'flex',
-    height: '20px',
-    justifyContent: 'center',
-    minHeight: '20px',
-    minWidth: '20px',
-    width: '20px',
+    flex: 0,
+    height: '100%',
+    minHeight: 'var(--size-spacing-6)',
+    pl: 'var(--size-checkbox-padding-horizontal)',
+    px: 'unset',
+    py: 'unset',
 
     ...Object.values(Variants).reduce(
       (variants, variantName) => ({
@@ -128,16 +123,22 @@ export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
 export const inputRadioCheckmark: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      '& > svg': {
-        height: '20px',
-        width: '20px',
-      },
-
       '.fractal-input-radio-group:is(:disabled, [disabled], [data-disabled], .disabled) &, .fractal-input-radio:is(:disabled, [disabled], [data-disabled], .disabled) &':
         {
+          borderColor: 'var(--color-box-checkbox-disabled)',
           color: 'var(--color-mark-checkbox-disabled)!',
           cursor: 'var(--cursor-disabled)',
         },
+
+      alignItems: 'center',
+      border: 'var(--size-border-2) solid var(--color-border-default)',
+      borderRadius: 'var(--size-radius-rounded)',
+      display: 'flex',
+      height: '24px',
+      maxHeight: '24px',
+      maxWidth: '24px',
+      mx: 'var(--size-checkbox-padding-horizontal)',
+      width: '24px',
 
       ...Object.values(Variants).reduce(
         (variants, variantName) => ({
@@ -174,6 +175,8 @@ export const inputRadioLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     flexGrow: 1,
     overflow: 'auto',
     overflowWrap: 'break-word',
+    pr: 'var(--size-checkbox-padding-horizontal)',
+    py: 'var(--size-checkbox-padding-vertical)',
 
     ...Object.values(Variants).reduce(
       (variants, variantName) => ({
