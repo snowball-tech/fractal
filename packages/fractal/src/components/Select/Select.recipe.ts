@@ -91,7 +91,6 @@ export const selectTrigger: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     alignItems: 'center',
-    all: 'unset',
     backgroundColor: `var(--color-background-select-base)`,
     border: `var(--border-select-base)`,
     borderRadius: 'var(--size-radius-s)',

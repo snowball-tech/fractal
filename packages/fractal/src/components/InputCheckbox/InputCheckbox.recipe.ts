@@ -69,7 +69,6 @@ export const inputCheckboxContainer: ReturnType<typeof defineRecipe> =
 export const inputCheckbox: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     alignItems: 'center',
-    all: 'unset',
     border: 'var(--size-border-2) solid var(--color-border-default)',
     borderRadius: 'var(--size-radius-xs)',
     cursor: 'var(--cursor-clickable)',

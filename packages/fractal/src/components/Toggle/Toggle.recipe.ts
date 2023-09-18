@@ -79,7 +79,6 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     alignItems: 'center',
-    all: 'unset',
     borderRadius: 'var(--size-radius-rounded)',
     boxSizing: 'border-box',
     cursor: 'var(--cursor-clickable)',

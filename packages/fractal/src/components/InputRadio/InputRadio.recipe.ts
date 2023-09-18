@@ -99,7 +99,6 @@ export const inputRadio: ReturnType<typeof defineRecipe> = defineRecipe({
     },
 
     alignItems: 'center',
-    all: 'unset',
     border: 'var(--size-border-2) solid var(--color-border-default)',
     borderRadius: 'var(--size-radius-rounded)',
     cursor: 'var(--cursor-clickable)',
