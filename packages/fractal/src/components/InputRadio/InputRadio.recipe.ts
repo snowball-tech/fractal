@@ -75,7 +75,7 @@ export const inputRadioContainer = defineRecipe({
 export const inputRadio = defineRecipe({
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   base: {
-    '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], .checked, :disabled, [data-disabled], .disabled)) > div':
+    '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:checked, [data-checked], [aria-checked=true], [data-state="checked"], .checked, :disabled, [data-disabled], .disabled)) > div':
       {
         backgroundColor: `var(--color-background-radio-hover)`,
       },

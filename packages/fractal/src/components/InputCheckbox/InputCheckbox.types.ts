@@ -5,7 +5,7 @@ import type {
 
 import { Colors, Variants } from './InputCheckbox.constants'
 
-export interface InputCheckboxProps extends RxCheckboxProps {
+export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
   /**
    * The controlled checked state of the checkbox.
    *
