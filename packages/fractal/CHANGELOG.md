@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [2.31.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.30.0...@snowball-tech/fractal@2.31.0) (2023-09-19)
+
+### ✨ Features
+
+- **switch:** improve handling of disabled state ([2728857](https://github.com/snowball-tech/fractal/commit/2728857a36340aec9592a84343fe174ad0405fce))
+
 # @snowball-tech/fractal [2.30.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.5...@snowball-tech/fractal@2.30.0) (2023-09-19)
 
 ### ✨ Features
