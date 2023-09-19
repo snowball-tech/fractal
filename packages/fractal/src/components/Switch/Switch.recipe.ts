@@ -64,8 +64,12 @@ export const switchThumb = defineRecipe({
     '.fractal-switch:not(:is(:disabled, [disabled], [data-disabled], .disabled, :readonly, [readonly], [data-readonly], .readonly)) &:is(:checked, [data-checked], [aria-checked=true], [data-state="checked"], .checked)':
       {
         backgroundColor: 'var(--color-brand-primary)',
-        transform: 'translate(15px, -5.5px)',
       },
+
+    _checked: {
+      backgroundColor: 'var(--color-decorative-pink-90)',
+      transform: 'translate(15px, -5.5px)',
+    },
 
     _switchDisabled: {
       border: 'var(--border-disabled)',
