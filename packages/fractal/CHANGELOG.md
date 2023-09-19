@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [2.30.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.5...@snowball-tech/fractal@2.30.0) (2023-09-19)
+
+### ✨ Features
+
+- **switch:** add switch component ([e515073](https://github.com/snowball-tech/fractal/commit/e515073498e2470e253d0ef602307082e5cd33d1))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([1cd3323](https://github.com/snowball-tech/fractal/commit/1cd3323d6e5b1aed611850af5636e9bfeaf90fce))
+
 ## @snowball-tech/fractal [2.29.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.29.4...@snowball-tech/fractal@2.29.5) (2023-09-18)
 
 ### 🐛 Bug Fixes
