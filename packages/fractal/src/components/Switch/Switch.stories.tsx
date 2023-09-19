@@ -49,17 +49,51 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
   </div>
 )
 
-export const Switches: Story = {
+export const Enabled: Story = {
   render: () => (
     <div style={{ width: 'fit-content' }}>
       <Wrapper>
         <Switch label="Left switch" switchPosition="left" />
-        <Switch label="Right switch" switchPosition="right" />
+        <Switch
+          defaultChecked
+          label="Left checked switch"
+          switchPosition="left"
+        />
       </Wrapper>
 
       <Wrapper>
+        <Switch label="Right switch" switchPosition="right" />
+        <Switch
+          defaultChecked
+          label="Right checked switch"
+          switchPosition="right"
+        />
+      </Wrapper>
+    </div>
+  ),
+}
+
+export const Disabled: Story = {
+  render: () => (
+    <div style={{ width: 'fit-content' }}>
+      <Wrapper>
         <Switch disabled label="Left disabled switch" switchPosition="left" />
+        <Switch
+          defaultChecked
+          disabled
+          label="Left checked disabled switch"
+          switchPosition="left"
+        />
+      </Wrapper>
+
+      <Wrapper>
         <Switch disabled label="Right disabled switch" switchPosition="right" />
+        <Switch
+          defaultChecked
+          disabled
+          label="Right checked disabled switch"
+          switchPosition="right"
+        />
       </Wrapper>
     </div>
   ),
