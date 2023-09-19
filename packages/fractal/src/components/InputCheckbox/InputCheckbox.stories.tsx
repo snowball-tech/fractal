@@ -15,7 +15,6 @@ const checkStateType = { type: { summary: "boolean | 'indeterminate'" } }
 
 const meta = {
   argTypes: {
-    asChild: { table: { disable: true } },
     checked: { table: { ...checkStateType } },
     color: {
       options: Object.values(Colors),
