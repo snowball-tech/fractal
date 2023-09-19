@@ -5504,8 +5504,8 @@ __metadata:
     "@types/eslint": ^8.44.2
     "@types/lodash": ^4.14.198
     "@types/prettier": ^3.0.0
-    "@types/prop-types": ^15.7.5
-    "@types/react": ^18.2.21
+    "@types/prop-types": ^15.7.6
+    "@types/react": ^18.2.22
     "@types/react-dom": ^18.2.7
     "@vitejs/plugin-react-swc": ^3.3.2
     country-flag-icons: ^1.5.7
@@ -5515,7 +5515,7 @@ __metadata:
     libphonenumber-js: ^1.10.44
     lodash: ^4.17.21
     normalize.css: ^8.0.1
-    postcss: ^8.4.29
+    postcss: ^8.4.30
     postcss-styled-syntax: ^0.5.0
     prettier: ^3.0.3
     prop-types: ^15.8.1
@@ -5526,7 +5526,7 @@ __metadata:
     storybook-addon-mock: ^4.2.1
     tsup: ^7.2.0
     typescript: ^5.2.2
-    vercel: ^32.2.4
+    vercel: ^32.2.5
     vite: ^4.4.9
     vite-tsconfig-paths: ^4.2.1
   peerDependencies:
@@ -7284,10 +7284,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*, @types/prop-types@npm:^15.7.5":
+"@types/prop-types@npm:*":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
   checksum: 5b43b8b15415e1f298243165f1d44390403bb2bd42e662bca3b5b5633fdd39c938e91b7fce3a9483699db0f7a715d08cef220c121f723a634972fdf596aec980
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:^15.7.6":
+  version: 15.7.6
+  resolution: "@types/prop-types@npm:15.7.6"
+  checksum: 5f2796c7330461a556c4d18035fb914b372f96b1619a4f8302d07e1ea708e06a2dbe666dfcd8ff03f64c625aa4c12b31f677d0298a32910f5ab7ee51521d8086
   languageName: node
   linkType: hard
 
@@ -7325,14 +7332,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.21":
-  version: 18.2.21
-  resolution: "@types/react@npm:18.2.21"
+"@types/react@npm:^18.2.22":
+  version: 18.2.22
+  resolution: "@types/react@npm:18.2.22"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: ffed203bfe7aad772b8286f7953305c9181ac3a8f27d3f5400fbbc2a8e27ca8e5bbff818ee014f39ca0d19d2b3bb154e5bdbec7e232c6f80b59069375aa78349
+  checksum: 44289523dabaadcd3fd85689abb98f9ebcc8492d7e978348d1c986138acef4801030b279e89a19e38a6319e294bcea77559e37e0c803e4bacf2b8ae3a56ba587
   languageName: node
   linkType: hard
 
@@ -7762,10 +7769,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:4.0.5":
-  version: 4.0.5
-  resolution: "@vercel/next@npm:4.0.5"
-  checksum: 85f9f8f3ec6aff709ec674967e44a08c1d369a9d4287fb69dce68ce0b2c0b843bc8acbb64ce930afe27f6f702a766c667a493cc7b2630e65e8211ce5a449284b
+"@vercel/next@npm:4.0.6":
+  version: 4.0.6
+  resolution: "@vercel/next@npm:4.0.6"
+  checksum: 6757a4f9c858e06687d696ae973300b8b4b2213b057edb81bbb6f39244e4791095af4f27e49054269cf9454bb41a8582fbc22a683682138ea84c61e408a3ae28
   languageName: node
   linkType: hard
 
@@ -7834,14 +7841,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/remix-builder@npm:2.0.5":
-  version: 2.0.5
-  resolution: "@vercel/remix-builder@npm:2.0.5"
+"@vercel/remix-builder@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@vercel/remix-builder@npm:2.0.6"
   dependencies:
     "@vercel/nft": 0.22.5
     "@vercel/static-config": 3.0.0
     ts-morph: 12.0.0
-  checksum: 786a80cae6ea77c556d63b817dc5ba67157b742603e6faea911618a9cec41426463d34f6777b92400f3f434b632506fb8971ce5368c10068838cba477b19e72a
+  checksum: c6cf0fd2535ddcad1842a4bc7b89cf18b732772fb1ddb06c5d28b6a14f7d822f8792342539ade7b6ca580bc0d6c8274f4114c931db2a3f3db2e93e05bcd9919f
   languageName: node
   linkType: hard
 
@@ -11171,14 +11178,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "chromatic@npm:7.1.0"
+"chromatic@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "chromatic@npm:7.2.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 0b948419867b95731e522265c5a891d5996ca56837fce853897978c4b504033fe509934b6a39f1d356725c38b39b6a2be1c862f6c0cbc3d95ffd3543c9fc3279
+  checksum: 0f6bcd7e92137eee30690428737d19c539e4aacadd2227ec271b77f3803a9f1271f2deffaf234d362717923bef8c2f9e66f3f36585e358663e193ed49aa3886c
   languageName: node
   linkType: hard
 
@@ -15001,7 +15008,7 @@ __metadata:
     "@types/is-ci": ^3.0.0
     "@types/node": ^20.6.2
     "@types/prettier": ^3.0.0
-    chromatic: ^7.1.0
+    chromatic: ^7.2.0
     concurrently: ^8.2.1
     dotenv-cli: ^7.3.0
     eslint: ^8.49.0
@@ -21950,6 +21957,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:^8.4.30":
+  version: 8.4.30
+  resolution: "postcss@npm:8.4.30"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 6c810c10c9bd3e03ca016e0b6b6756261e640aba1a9a7b1200b55502bc34b9165e38f590aef3493afc2f30ab55cdfcd43fd0f8408d69a77318ddbcf2a8ad164b
+  languageName: node
+  linkType: hard
+
 "preferred-pm@npm:^3.0.3":
   version: 3.0.3
   resolution: "preferred-pm@npm:3.0.3"
@@ -26374,24 +26392,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^32.2.4":
-  version: 32.2.4
-  resolution: "vercel@npm:32.2.4"
+"vercel@npm:^32.2.5":
+  version: 32.2.5
+  resolution: "vercel@npm:32.2.5"
   dependencies:
     "@vercel/build-utils": 7.2.0
     "@vercel/go": 3.0.1
     "@vercel/hydrogen": 1.0.1
-    "@vercel/next": 4.0.5
+    "@vercel/next": 4.0.6
     "@vercel/node": 3.0.5
     "@vercel/python": 4.0.1
     "@vercel/redwood": 2.0.2
-    "@vercel/remix-builder": 2.0.5
+    "@vercel/remix-builder": 2.0.6
     "@vercel/ruby": 2.0.2
     "@vercel/static-build": 2.0.6
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 8f420fa7459c851ea276c3b84937b5e7cdd2d01134188ecceb7fa7b2a0e0aff5b3e94cdf81d5c4b08711de491e0649416ae06186d22e9ee1a74eed95c288134b
+  checksum: c3c63804a8947a5c656a1c5e220054d65f19fcc4f9f8bda4e69116392aa2b961720682048214943ee99c8e1bfd72606b43c465773497d697a0a51df49f1f3b45
   languageName: node
   linkType: hard
 
