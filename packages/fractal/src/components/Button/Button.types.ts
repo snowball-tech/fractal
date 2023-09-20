@@ -1,5 +1,5 @@
 import type { PressableProps } from '@ark-ui/react'
-import type { AllHTMLAttributes, ReactNode } from 'react'
+import type { AllHTMLAttributes, ReactNode, TouchEvent } from 'react'
 
 import { Variants } from './Button.constants'
 
@@ -24,9 +24,11 @@ export interface ButtonProps
   /** The label of the button. */
   label: string
   /** Event handler called when the button is clicked. */
-  onClick?: PressableProps['onPress']
+  onClick?: (event: PressEvent | TouchEvent<HTMLButtonElement>) => void
   /**
    * Event handler called when the button is clicked for a long time (>= 500ms).
+   *
+   * NOte that long click event are not detected on mobile/touch devices.
    */
   onLongClick?: PressableProps['onLongPress']
   /** The type of button. */

@@ -9,7 +9,7 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
+import { type ForwardedRef, type TouchEvent, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -37,6 +37,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const handleTouchStart = (event: TouchEvent<HTMLButtonElement>) => {
+      if (isFunction(props.onTouchStart)) {
+        props.onTouchStart(event)
+
+        return
+      }
+
+      if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
+        onClick(event)
+      }
+    }
+
+    const handleTouchEnd = (event: TouchEvent<HTMLButtonElement>) => {
+      if (isFunction(props.onTouchEnd)) {
+        props.onTouchEnd(event)
+      }
+
+      if ('ontouchstart' in document.documentElement) {
+        event.preventDefault()
+      }
+    }
+
     const buttonClassNames = cx(
       `${PREFIX}-${GROUP_NAME}`,
       button({ variant }),
@@ -61,10 +83,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         preventFocusOnPress
         type={type}
-        {...(isFunction(onClick) ? { onPress: (event) => onClick(event) } : {})}
-        {...(isFunction(onLongClick)
-          ? { onLongPress: (event) => onLongClick(event) }
-          : {})}
+        onTouchEnd={handleTouchEnd}
+        onTouchStart={handleTouchStart}
+        {...(isFunction(onClick) ? { onPress: onClick } : {})}
+        {...(isFunction(onLongClick) ? { onLongPress: onLongClick } : {})}
         title={label}
         {...omit(['className', 'dir', 'id'], props)}
       >
