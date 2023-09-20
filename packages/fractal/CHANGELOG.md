@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.31.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.31.0...@snowball-tech/fractal@2.31.1) (2023-09-20)
+
+### 🐛 Bug Fixes
+
+- **button:** make it work in one click on mobile devices ([1d8faad](https://github.com/snowball-tech/fractal/commit/1d8faade9b8694d1630c7c733a637cc977f716ef))
+
 # @snowball-tech/fractal [2.31.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.30.0...@snowball-tech/fractal@2.31.0) (2023-09-19)
 
 ### ✨ Features
