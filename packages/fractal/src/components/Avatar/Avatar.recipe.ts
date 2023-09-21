@@ -5,6 +5,17 @@ import { DEFAULT_SIZE, Sizes } from './Avatar.constants'
 
 export const GROUP_NAME = 'avatar'
 
+export const avatarContainer: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    width: 'fit-content',
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'avatarContainer',
+  description: 'AvatarContainer',
+  jsx: ['Avatar'],
+})
+
 export const avatar: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     border: 'var(--border-1)',
@@ -45,7 +56,7 @@ export const avatarWithBackground: ReturnType<typeof defineRecipe> =
     base: {
       alignItems: 'center',
       backgroundColor: 'var(--color-brand-primary)',
-      color: 'var(--color-text-light)',
+      color: 'var(--color-text-dark)',
       display: 'flex',
       justifyContent: 'center',
     },
@@ -55,3 +66,81 @@ export const avatarWithBackground: ReturnType<typeof defineRecipe> =
     description: 'Avatar with background color',
     jsx: ['Avatar'],
   })
+
+export const avatarDropdownTrigger: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      alignItems: 'center',
+      appearance: 'none',
+      backgroundColor: 'unset',
+      border: 'none',
+      color: 'unset',
+      display: 'flex',
+      outline: 'none',
+      px: 'unset',
+      py: 'unset',
+      textAlign: 'unset',
+    },
+
+    className: 'avatarDropdownTrigger',
+    description: 'The trigger of the dropdown menu of the avatar',
+    jsx: ['Avatar'],
+  })
+
+export const avatarDropdownTriggerIndicator: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      '& > svg': {
+        height: '100%',
+      },
+
+      '.fractal-avatarContainer.opened &': {
+        transform: 'rotate(180deg)',
+      },
+
+      alignSelf: 'center',
+      height: '100%',
+      transition: 'transform 300ms ease-out',
+    },
+
+    className: 'avatarDropdownTriggerIndicator',
+    description: 'Avatar dropdown menu trigger status indicator (arrow)',
+    jsx: ['Avatar'],
+  })
+
+export const avatarDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    maxWidth: 'var(--radix-dropdown-menu-content-available-width)',
+    mx: 'var(--size-spacing-2)',
+    width: 'unset!',
+  },
+
+  className: 'avatarDropdown',
+  description: 'The dropdown menu of the avatar',
+  jsx: ['Avatar'],
+})
+
+export const avatarMenuItem: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    alignItems: 'center',
+    display: 'flex',
+    gap: 'var(--size-spacing-1)',
+  },
+
+  className: 'avatarMenuItem',
+  description: 'The menu item of the avatar dropdown',
+  jsx: ['Avatar'],
+})
+
+export const avatarMenuItemIcon: ReturnType<typeof defineRecipe> = defineRecipe(
+  {
+    base: {
+      maxHeight: '24px',
+      minWidth: '24px',
+    },
+
+    className: 'avatarMenuItemIcon',
+    description: 'The icon of a menu item of the avatar dropdown',
+    jsx: ['Avatar'],
+  },
+)
