@@ -1,3 +1,16 @@
+# @snowball-tech/design-tokens [5.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.14.2...@snowball-tech/design-tokens@5.15.0) (2023-09-21)
+
+### ✨ Features
+
+- **avatar:** add avatar dropdown menu ([01816df](https://github.com/snowball-tech/fractal/commit/01816df9d7bdab525153f7253517972784214db6))
+- **logo:** allow to have combination of variant ([1b451b9](https://github.com/snowball-tech/fractal/commit/1b451b94cf197719b4bd315f1f89514f2f525c2a))
+- **tag:** add Tag component ([743c3c4](https://github.com/snowball-tech/fractal/commit/743c3c46f1f0885682117fb994bf98d0d20e88e4))
+- **textarea:** add icon/action icon ([ef78343](https://github.com/snowball-tech/fractal/commit/ef78343c22bcebf7dddaee8f9fcb4360d1e9fddb))
+
+### 💄 UI/UX
+
+- **loader:** update the available loader sizes ([3b901bb](https://github.com/snowball-tech/fractal/commit/3b901bbfa0cdffa58e6cde2edafb0b382a5d4274))
+
 ## @snowball-tech/design-tokens [5.14.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.14.1...@snowball-tech/design-tokens@5.14.2) (2023-09-15)
 
 ### 🐛 Bug Fixes
