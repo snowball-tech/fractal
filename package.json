@@ -57,6 +57,7 @@
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
     "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
     "publish:all": "multi-semantic-release",
+    "publish:all:local": "CI=true multi-semantic-release",
     "setup": "yarn install && yarn setup:freezer && yarn setup:husky && yarn turbo run setup --filter=!//",
     "setup:freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup:husky": "is-ci || yarn husky install",
