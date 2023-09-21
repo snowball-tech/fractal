@@ -1,3 +1,41 @@
+# @snowball-tech/fractal [2.32.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.31.1...@snowball-tech/fractal@2.32.0) (2023-09-21)
+
+### ✨ Features
+
+- **avatar:** add avatar dropdown menu ([01816df](https://github.com/snowball-tech/fractal/commit/01816df9d7bdab525153f7253517972784214db6))
+- **badge:** add the badge component ([b168a60](https://github.com/snowball-tech/fractal/commit/b168a6023b48e0b9699f0c4349062df00f126969))
+- **logo:** allow to have combination of variant ([1b451b9](https://github.com/snowball-tech/fractal/commit/1b451b94cf197719b4bd315f1f89514f2f525c2a))
+- **tag:** add Tag component ([743c3c4](https://github.com/snowball-tech/fractal/commit/743c3c46f1f0885682117fb994bf98d0d20e88e4))
+- **textarea:** add icon/action icon ([ef78343](https://github.com/snowball-tech/fractal/commit/ef78343c22bcebf7dddaee8f9fcb4360d1e9fddb))
+
+### 🐛 Bug Fixes
+
+- **logo:** fix the size of the brand only logo ([7812fb9](https://github.com/snowball-tech/fractal/commit/7812fb9f34978d911c88566cb8048fd5d238b1e6))
+
+### 📝 Documentation
+
+- **logo:** add dark background behind light variants ([12ff09e](https://github.com/snowball-tech/fractal/commit/12ff09e6b97815c35d37304f391f855a82d128af))
+
+### 🏗 Chores
+
+- remove animations that were buggy ([6d8af4d](https://github.com/snowball-tech/fractal/commit/6d8af4d370035832b96db82e067ee35aa1e2136a))
+
+### 💄 UI/UX
+
+- **loader:** update the available loader sizes ([3b901bb](https://github.com/snowball-tech/fractal/commit/3b901bbfa0cdffa58e6cde2edafb0b382a5d4274))
+
+### ⚙️ Continuous Integrations
+
+- fix memory size ([d82d71a](https://github.com/snowball-tech/fractal/commit/d82d71ac07d6760feed199d14e9c242fd3b32bbc))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([901b722](https://github.com/snowball-tech/fractal/commit/901b72282346e64b91075f3cb3504d0eefd8842e))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.15.0
+
 ## @snowball-tech/fractal [2.31.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.31.0...@snowball-tech/fractal@2.31.1) (2023-09-20)
 
 ### 🐛 Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal",
-  "version": "2.31.1",
+  "version": "2.32.0",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -134,7 +134,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "@snowball-tech/design-tokens": "5.14.2",
+    "@snowball-tech/design-tokens": "5.15.0",
     "country-flag-icons": "^1.5.7",
     "libphonenumber-js": "^1.10.44",
     "lodash": "^4.17.21",
