@@ -31,3 +31,30 @@ export const logo: ReturnType<typeof defineRecipe> = defineRecipe({
   description: 'Logo',
   jsx: ['Logo'],
 })
+
+export const picto: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {},
+
+  defaultVariants: {
+    size: DEFAULT_SIZE,
+  },
+
+  variants: {
+    size: Object.values(Sizes).reduce(
+      (sizes, size) => ({
+        ...sizes,
+
+        [size]: {
+          height: `var(--size-picto-${size}-height)`,
+          width: `var(--size-picto-${size}-width)`,
+        },
+      }),
+      {} as Record<Sizes, SystemStyleObject>,
+    ),
+  },
+
+  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  className: 'picto',
+  description: 'Picto only',
+  jsx: ['Logo'],
+})
