@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react'
+import type { ChangeEvent, ReactNode } from 'react'
 import type { TextareaAutosizeProps } from 'react-textarea-autosize'
 
 export interface TextareaProps
@@ -31,6 +31,12 @@ export interface TextareaProps
   /** Indicates if the textarea should take all the available width. */
   fullWidth?: boolean
   /**
+   * An icon to display on the bottom right corner of the textarea.
+   *
+   * If you also define a `onIconClick` handler, the icon will be a button.
+   */
+  icon?: ReactNode
+  /**
    * A unique HTML id for the textarea.
    *
    * This allows to link the textarea with a label.
@@ -59,6 +65,10 @@ export interface TextareaProps
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>, newValue: string) => void
   /** Event handler called when the textarea is resized. */
   onHeightChange?: TextareaAutosizeProps['onHeightChange']
+  /**
+   * Event handler called when the icon on the bottom right corner is clicked.
+   */
+  onIconClick?: () => void
   /** A string to display when the textarea is empty. */
   placeholder?: string
   /** Prevents the user to change the value of the textarea. */

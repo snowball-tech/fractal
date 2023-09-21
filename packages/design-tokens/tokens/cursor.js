@@ -13,6 +13,13 @@ module.exports = {
       value: 'pointer',
     },
 
+    text: {
+      comment: 'Cursor for text elements.',
+
+      value: 'text',
+    },
+
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
     disabled: {
       comment: 'Cursor for disabled elements.',
 

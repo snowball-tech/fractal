@@ -4,6 +4,8 @@ import {
   textarea,
   textareaContainer,
   textareaDescription,
+  textareaIcon,
+  textareaIconWrapper,
   textareaLabel,
   textareaMessage,
   typography,
@@ -20,6 +22,7 @@ import {
 } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
+import { Button } from '@/components/Button'
 import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './Textarea.recipe'
@@ -37,6 +40,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       disabled = false,
       error,
       fullWidth = false,
+      icon,
       id,
       label,
       maxRows,
@@ -44,6 +48,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       name,
       onChange,
       onHeightChange,
+      onIconClick,
       placeholder,
       readOnly = false,
       required = false,
@@ -72,6 +77,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       readOnly ? 'readonly' : '',
       required ? 'required' : '',
       isSuccessful ? 'valid' : '',
+      icon ? 'with-icon' : '',
+      isFunction(onIconClick) && icon ? 'with-action' : '',
     )
 
     const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -103,27 +110,46 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           false
         )}
 
-        <TextareaAutosize
-          // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus={autoFocus}
-          className={cx(typography({ variant: 'body-1' }), textarea())}
-          disabled={disabled}
-          {...(defaultValue !== undefined ? { defaultValue } : {})}
-          id={uniqueId}
-          ref={ref}
-          {...(maxRows !== undefined ? { maxRows } : {})}
-          {...(minRows !== undefined ? { minRows } : {})}
-          name={name || uniqueId}
-          placeholder={placeholder}
-          readOnly={readOnly}
-          required={required}
-          value={value}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          {...(isFunction(onHeightChange) ? { onHeightChange } : {})}
-          // Be careful, arguments of `omit` from lodash FP are flipped!
-          {...omit(['className', 'onFocus'], props)}
-        />
+        <div className={textareaIconWrapper()}>
+          <TextareaAutosize
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus={autoFocus}
+            className={cx(typography({ variant: 'body-1' }), textarea())}
+            disabled={disabled}
+            {...(defaultValue !== undefined ? { defaultValue } : {})}
+            id={uniqueId}
+            ref={ref}
+            {...(maxRows !== undefined ? { maxRows } : {})}
+            {...(minRows !== undefined ? { minRows } : {})}
+            name={name || uniqueId}
+            placeholder={placeholder}
+            readOnly={readOnly}
+            required={required}
+            value={value}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            {...(isFunction(onHeightChange) ? { onHeightChange } : {})}
+            // Be careful, arguments of `omit` from lodash FP are flipped!
+            {...omit(['className', 'onFocus'], props)}
+          />
+
+          {icon && isFunction(onIconClick) && (
+            <Button
+              className={textareaIcon()}
+              disabled={disabled}
+              icon={icon}
+              iconOnly
+              label=""
+              readOnly={readOnly}
+              variant="text"
+              onClick={onIconClick}
+            />
+          )}
+
+          {icon && !isFunction(onIconClick) && (
+            <div className={textareaIcon()}>{icon}</div>
+          )}
+        </div>
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
           <div
