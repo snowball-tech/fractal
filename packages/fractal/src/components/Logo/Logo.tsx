@@ -31,6 +31,9 @@ export const Logo = ({
   if (brandVariant === 'none') {
     viewBox = '0 16 60 60'
   }
+  if (pictoVariant === 'none') {
+    viewBox = '60 0 201 76'
+  }
 
   let className = logo({ size })
   if (brandVariant === 'none') {
