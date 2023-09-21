@@ -13,9 +13,9 @@ export const DEFAULT_SIZE = Sizes.M
 
 export const sizeToTypographyVariant: Record<Sizes, `${TypographyVariants}`> = {
   /* eslint-disable perfectionist/sort-objects */
-  [Sizes.S]: TypographyVariants.Body1,
-  [Sizes.M]: TypographyVariants.Heading4,
-  [Sizes.L]: TypographyVariants.Heading3,
-  [Sizes.XL]: TypographyVariants.Heading2,
+  [Sizes.S]: TypographyVariants.CaptionBold,
+  [Sizes.M]: TypographyVariants.CaptionBold,
+  [Sizes.L]: TypographyVariants.Body1Bold,
+  [Sizes.XL]: TypographyVariants.Heading4,
   /* eslint-enable perfectionist/sort-objects */
 }

@@ -2,21 +2,21 @@ module.exports = {
   size: {
     avatar: {
       s: {
-        value: 40,
+        value: '{size.spacing.5.value}',
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       m: {
-        value: 48,
+        value: '{size.spacing.6.value}',
       },
 
       // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
       l: {
-        value: 56,
+        value: '{size.spacing.7.value}',
       },
 
       xl: {
-        value: 64,
+        value: '{size.spacing.8.value}',
       },
     },
   },

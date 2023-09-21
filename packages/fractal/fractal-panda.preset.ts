@@ -106,6 +106,13 @@ const fractalPreset = definePreset({
         autocompleteMessage: AutocompleteRecipes.autocompleteMessage,
 
         avatar: AvatarRecipes.avatar,
+        avatarContainer: AvatarRecipes.avatarContainer,
+        avatarDropdown: AvatarRecipes.avatarDropdown,
+        avatarDropdownTrigger: AvatarRecipes.avatarDropdownTrigger,
+        avatarDropdownTriggerIndicator:
+          AvatarRecipes.avatarDropdownTriggerIndicator,
+        avatarMenuItem: AvatarRecipes.avatarMenuItem,
+        avatarMenuItemIcon: AvatarRecipes.avatarMenuItemIcon,
         avatarWithBackground: AvatarRecipes.avatarWithBackground,
 
         button: ButtonRecipes.button,
@@ -178,6 +185,7 @@ const fractalPreset = definePreset({
         loader: LoaderRecipes.loader,
 
         logo: LogoRecipes.logo,
+        picto: LogoRecipes.picto,
 
         progress: ProgressRecipes.progress,
         progressIndicator: ProgressRecipes.progressIndicator,
@@ -190,12 +198,12 @@ const fractalPreset = definePreset({
           SelectRecipes.selectDropdownScrollbarThumbs,
         selectDropdownScrollViewport:
           SelectRecipes.selectDropdownScrollViewport,
-        selectIndicator: SelectRecipes.selectIndicator,
         selectItem: SelectRecipes.selectItem,
         selectItemGroup: SelectRecipes.selectItemGroup,
         selectItemSeparator: SelectRecipes.selectItemSeparator,
         selectLabel: SelectRecipes.selectLabel,
         selectTrigger: SelectRecipes.selectTrigger,
+        selectTriggerIndicator: SelectRecipes.selectTriggerIndicator,
         selectValue: SelectRecipes.selectValue,
 
         stepper: StepperRecipes.stepper,
