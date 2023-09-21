@@ -27,6 +27,7 @@ import * as ProgressRecipes from '@/components/Progress/Progress.recipe'
 import * as SelectRecipes from '@/components/Select/Select.recipe'
 import * as StepperRecipes from '@/components/Stepper/Stepper.recipe'
 import * as SwitchRecipes from '@/components/Switch/Switch.recipe'
+import * as TagRecipes from '@/components/Tag/Tag.recipe'
 import * as TextareaRecipes from '@/components/Textarea/Textarea.recipe'
 import * as ToggleRecipes from '@/components/Toggle/Toggle.recipe'
 import * as ToggleGroupRecipes from '@/components/ToggleGroup/ToggleGroup.recipe'
@@ -55,6 +56,7 @@ const GROUPS = {
   select: `${PREFIX}-${SelectRecipes.GROUP_NAME}`,
   selectTrigger: `${PREFIX}-${SelectRecipes.GROUP_NAME}-trigger`,
   switch: `${PREFIX}-${SwitchRecipes.GROUP_NAME}`,
+  tag: `${PREFIX}-${TagRecipes.GROUP_NAME}`,
   textarea: `${PREFIX}-${TextareaRecipes.GROUP_NAME}`,
   toggle: `${PREFIX}-${ToggleRecipes.GROUP_NAME}`,
   toggleGroup: `${PREFIX}-${ToggleGroupRecipes.GROUP_NAME}`,
@@ -214,6 +216,8 @@ const fractalPreset = definePreset({
         switchToggle: SwitchRecipes.switchToggle,
         switchLabel: SwitchRecipes.switchLabel,
         switchThumb: SwitchRecipes.switchThumb,
+
+        tag: TagRecipes.tag,
 
         textarea: TextareaRecipes.textarea,
         textareaContainer: TextareaRecipes.textareaContainer,

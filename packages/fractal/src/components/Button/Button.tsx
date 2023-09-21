@@ -59,7 +59,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }
     }
 
-    const buttonClassNames = cx(
+    const groupClassName = cx(
       `${PREFIX}-${GROUP_NAME}`,
       button({ variant }),
       fullWidth && !iconOnly ? 'full-width' : '',
@@ -76,7 +76,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...(props.id !== undefined ? { id: props.id } : {})}
         ref={ref}
         aria-label={label}
-        className={buttonClassNames}
+        className={groupClassName}
         {...(props.dir !== undefined
           ? { dir: props.dir as 'ltr' | 'rtl' }
           : {})}
