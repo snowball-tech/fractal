@@ -46,14 +46,33 @@ export const textareaLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['Textarea'],
 })
 
+export const textareaIconWrapper: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      position: 'relative',
+    },
+
+    className: 'textareaIconWrapper',
+    description: 'Textarea and icon/button wrapper',
+    jsx: ['Textarea'],
+  })
+
 export const textarea: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    '.fractal-input-textarea.with-icon &': {
+      pr: 'calc(var(--size-input-padding-horizontal) + var(--size-spacing-4))',
+    },
+
     _disabled: {
       backgroundColor: `var(--color-background-input-disabled)`,
       border: `var(--border-input-disabled)`,
       color: `var(--color-text-input-disabled)`,
       cursor: 'var(--cursor-disabled)',
       shadow: `var(--shadow-input-disabled)`,
+    },
+
+    _focus: {
+      cursor: 'var(--cursor-text)',
     },
 
     _placeholder: {
@@ -128,6 +147,28 @@ export const textarea: ReturnType<typeof defineRecipe> = defineRecipe({
 
   className: 'textarea',
   description: 'Textarea',
+  jsx: ['Textarea'],
+})
+
+export const textareaIcon: ReturnType<typeof defineRecipe> = defineRecipe({
+  base: {
+    '.fractal-input-textarea.with-action &': {
+      bottom: 'var(--size-spacing-2)',
+    },
+    '.fractal-input-textarea:is([disabled], [data-disabled], .disabled, [data-read-only], .readonly) &':
+      {
+        color: 'var(--color-base-grey-70)!',
+        cursor: 'var(--cursor-disabled)',
+      },
+
+    bottom: 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
+    color: 'var(--color-base-grey-30)!',
+    position: 'absolute',
+    right: 'var(--size-spacing-2)',
+  },
+
+  className: 'textareaIcon',
+  description: 'Textarea icon/button',
   jsx: ['Textarea'],
 })
 

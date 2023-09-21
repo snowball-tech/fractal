@@ -210,6 +210,8 @@ const fractalPreset = definePreset({
         textarea: TextareaRecipes.textarea,
         textareaContainer: TextareaRecipes.textareaContainer,
         textareaDescription: TextareaRecipes.textareaDescription,
+        textareaIconWrapper: TextareaRecipes.textareaIconWrapper,
+        textareaIcon: TextareaRecipes.textareaIcon,
         textareaLabel: TextareaRecipes.textareaLabel,
         textareaMessage: TextareaRecipes.textareaMessage,
 

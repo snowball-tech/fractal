@@ -57,7 +57,7 @@
     "build:info": "yarn run prebuild:info && yarn panda ship --outfile dist/fractal.buildinfo.json",
     "prebuild:styles": "mkdir -p ./dist",
     "build:styles": "yarn run prebuild:styles && yarn panda cssgen --outfile dist/fractal.css",
-    "clean:cache": "rm -Rf ./node_modules/.cache >/dev/null 2>&1 || true",
+    "clean:cache": "(rm -Rf ./node_modules/.cache >/dev/null 2>&1 || true) && (rm -Rf ../../node_modules/.cache >/dev/null 2>&1 || true)",
     "clean:build": "rm -Rf ./dist >/dev/null 2>&1 || true",
     "clean:fonts": "rm -Rf ./assets/fonts >/dev/null 2>&1 || true",
     "clean:storybook": "rm -Rf storybook-static >/dev/null 2>&1 || true",
