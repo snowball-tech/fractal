@@ -18,7 +18,6 @@ import {
   selectDropdownScrollbarThumbs,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
-import { AnimatePresence, motion } from 'framer-motion'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -40,13 +39,6 @@ import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './Autocomplete.recipe'
 import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
-
-const dropdownAnimation = {
-  animate: { height: 'auto' },
-  exit: { height: 0 },
-  initial: { height: 0 },
-  transition: { duration: 0.6 },
-}
 
 /**
  * `Autocomplete` component is used to allow the user to enter text and offer
@@ -332,61 +324,58 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           />
 
           <RxDropdownMenu.Portal>
-            <AnimatePresence mode="popLayout">
-              {isOpen && (
-                <RxDropdownMenu.Content
-                  {...omit(['className'], dropdown)}
-                  align="center"
-                  asChild
-                  className={cx(
-                    `${PREFIX}-${GROUP_NAME}-dropdown`,
-                    typography({ variant: 'body-1' }),
-                    selectDropdown(),
-                    autocompleteDropdown(),
-                    ...(dropdown?.className?.split(' ') || []),
-                    !children ? css({ visibility: 'hidden' }) : '',
-                  )}
-                  loop
-                  side="bottom"
-                  style={{
-                    display: undefined,
-                  }}
-                  onInteractOutside={handleDropdownInteractOutside}
-                  onKeyDown={handleDropdownKeyDown}
-                  onPointerDownOutside={handleDropdownPointerDownOutside}
+            {isOpen && (
+              <RxDropdownMenu.Content
+                ref={dropdownRef}
+                {...omit(['className'], dropdown)}
+                align="center"
+                asChild
+                className={cx(
+                  `${PREFIX}-${GROUP_NAME}-dropdown`,
+                  typography({ variant: 'body-1' }),
+                  selectDropdown(),
+                  autocompleteDropdown(),
+                  ...(dropdown?.className?.split(' ') || []),
+                  !children ? css({ visibility: 'hidden' }) : '',
+                )}
+                loop
+                side="bottom"
+                style={{
+                  display: undefined,
+                }}
+                onInteractOutside={handleDropdownInteractOutside}
+                onKeyDown={handleDropdownKeyDown}
+                onPointerDownOutside={handleDropdownPointerDownOutside}
+              >
+                <RxScrollArea.Root
+                  {...(props.dir !== undefined
+                    ? { dir: props.dir as RxScrollArea.Direction }
+                    : {})}
+                  type="hover"
                 >
-                  <motion.div {...dropdownAnimation} ref={dropdownRef}>
-                    <RxScrollArea.Root
-                      {...(props.dir !== undefined
-                        ? { dir: props.dir as RxScrollArea.Direction }
-                        : {})}
-                      type="hover"
-                    >
-                      <RxScrollArea.Viewport
-                        className={selectDropdownScrollViewport()}
-                        style={{
-                          overflowY: undefined,
-                        }}
-                      >
-                        {children}
-                      </RxScrollArea.Viewport>
+                  <RxScrollArea.Viewport
+                    className={selectDropdownScrollViewport()}
+                    style={{
+                      overflowY: undefined,
+                    }}
+                  >
+                    {children}
+                  </RxScrollArea.Viewport>
 
-                      <RxScrollArea.Scrollbar
-                        className={cx(
-                          `${PREFIX}-scrollarea-scrollbar-y`,
-                          selectDropdownScrollbar(),
-                        )}
-                        orientation="vertical"
-                      >
-                        <RxScrollArea.Thumb
-                          className={selectDropdownScrollbarThumbs()}
-                        />
-                      </RxScrollArea.Scrollbar>
-                    </RxScrollArea.Root>
-                  </motion.div>
-                </RxDropdownMenu.Content>
-              )}
-            </AnimatePresence>
+                  <RxScrollArea.Scrollbar
+                    className={cx(
+                      `${PREFIX}-scrollarea-scrollbar-y`,
+                      selectDropdownScrollbar(),
+                    )}
+                    orientation="vertical"
+                  >
+                    <RxScrollArea.Thumb
+                      className={selectDropdownScrollbarThumbs()}
+                    />
+                  </RxScrollArea.Scrollbar>
+                </RxScrollArea.Root>
+              </RxDropdownMenu.Content>
+            )}
           </RxDropdownMenu.Portal>
         </RxDropdownMenu.Root>
 
