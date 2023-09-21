@@ -33,7 +33,7 @@ export const Playground: Story = {
   },
 }
 
-export const Sizes: Story = {
+export const Loaders: Story = {
   render: () => (
     <div
       style={{
