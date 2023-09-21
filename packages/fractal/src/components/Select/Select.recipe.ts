@@ -124,25 +124,26 @@ export const selectValue: ReturnType<typeof defineRecipe> = defineRecipe({
   jsx: ['Select'],
 })
 
-export const selectIndicator: ReturnType<typeof defineRecipe> = defineRecipe({
-  base: {
-    '& > svg': {
+export const selectTriggerIndicator: ReturnType<typeof defineRecipe> =
+  defineRecipe({
+    base: {
+      '& > svg': {
+        height: '100%',
+      },
+
+      _selectOpened: {
+        transform: 'rotate(180deg)',
+      },
+
+      alignSelf: 'center',
       height: '100%',
+      transition: 'transform 300ms ease-out',
     },
 
-    _selectOpened: {
-      transform: 'rotate(180deg)',
-    },
-
-    alignSelf: 'center',
-    height: '100%',
-    transition: 'transform 300ms ease-out',
-  },
-
-  className: 'selectIndicator',
-  description: 'Select status indicator (arrow)',
-  jsx: ['Select'],
-})
+    className: 'selectTriggerIndicator',
+    description: 'Select trigger status indicator (arrow)',
+    jsx: ['Select'],
+  })
 
 export const selectDropdown: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {

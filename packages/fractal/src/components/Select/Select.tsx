@@ -12,13 +12,12 @@ import {
   selectDropdownScrollViewport,
   selectDropdownScrollbar,
   selectDropdownScrollbarThumbs,
-  selectIndicator,
   selectLabel,
   selectTrigger,
+  selectTriggerIndicator,
   selectValue,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
-import { motion } from 'framer-motion'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -36,13 +35,6 @@ import { PREFIX } from '@/constants'
 
 import { GROUP_NAME } from './Select.recipe'
 import type { CombinedRefs, SelectProps } from './Select.types'
-
-const dropdownAnimation = {
-  animate: { height: 'auto' },
-  exit: { height: 0 },
-  initial: { height: 0 },
-  transition: { duration: 0.6 },
-}
 
 /**
  * `Select` component is used to offer the user choices they can select.
@@ -192,13 +184,14 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               )}
             </div>
 
-            <RxSelect.Icon className={selectIndicator()}>
+            <RxSelect.Icon className={selectTriggerIndicator()}>
               <AngleDownIcon />
             </RxSelect.Icon>
           </RxSelect.Trigger>
 
           <RxSelect.Portal>
             <RxSelect.Content
+              ref={dropdownRef}
               {...omit(['className'], dropdown)}
               align="center"
               asChild
@@ -214,37 +207,35 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               }}
               onPointerDownOutside={handlePointerDownOutside}
             >
-              <motion.div {...dropdownAnimation} ref={dropdownRef}>
-                <RxScrollArea.Root
-                  {...(props.dir !== undefined
-                    ? { dir: props.dir as RxScrollArea.Direction }
-                    : {})}
-                  type="hover"
-                >
-                  <RxSelect.Viewport asChild>
-                    <RxScrollArea.Viewport
-                      className={selectDropdownScrollViewport()}
-                      style={{
-                        overflowY: undefined,
-                      }}
-                    >
-                      {items}
-                    </RxScrollArea.Viewport>
-                  </RxSelect.Viewport>
-
-                  <RxScrollArea.Scrollbar
-                    className={cx(
-                      `${PREFIX}-scrollarea-scrollbar-y`,
-                      selectDropdownScrollbar(),
-                    )}
-                    orientation="vertical"
+              <RxScrollArea.Root
+                {...(props.dir !== undefined
+                  ? { dir: props.dir as RxScrollArea.Direction }
+                  : {})}
+                type="hover"
+              >
+                <RxSelect.Viewport asChild>
+                  <RxScrollArea.Viewport
+                    className={selectDropdownScrollViewport()}
+                    style={{
+                      overflowY: undefined,
+                    }}
                   >
-                    <RxScrollArea.Thumb
-                      className={selectDropdownScrollbarThumbs()}
-                    />
-                  </RxScrollArea.Scrollbar>
-                </RxScrollArea.Root>
-              </motion.div>
+                    {items}
+                  </RxScrollArea.Viewport>
+                </RxSelect.Viewport>
+
+                <RxScrollArea.Scrollbar
+                  className={cx(
+                    `${PREFIX}-scrollarea-scrollbar-y`,
+                    selectDropdownScrollbar(),
+                  )}
+                  orientation="vertical"
+                >
+                  <RxScrollArea.Thumb
+                    className={selectDropdownScrollbarThumbs()}
+                  />
+                </RxScrollArea.Scrollbar>
+              </RxScrollArea.Root>
             </RxSelect.Content>
           </RxSelect.Portal>
         </RxSelect.Root>
