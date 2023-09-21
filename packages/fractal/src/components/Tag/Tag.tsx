@@ -9,11 +9,7 @@ import { GROUP_NAME } from './Tag.recipe'
 import type { TagProps } from './Tag.types'
 
 /**
- * `Typography` component is the corner stone of Fractal. It defines and
- * restricts allowed text styles throughout your UI.
- *
- * Using this component ensure you to have a consistent and accessible
- * experience.
+ * `Tag` component displays a small colored pill of text.
  */
 export const Tag = ({
   children,

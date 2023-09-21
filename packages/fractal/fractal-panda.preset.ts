@@ -11,6 +11,7 @@ import {
 
 import * as AutocompleteRecipes from '@/components/Autocomplete/Autocomplete.recipe'
 import * as AvatarRecipes from '@/components/Avatar/Avatar.recipe'
+import * as BadgeRecipes from '@/components/Badge/Badge.recipe'
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as CardRecipes from '@/components/Card/Card.recipe'
 import * as HeaderRecipes from '@/components/Header/Header.recipe'
@@ -39,6 +40,7 @@ import { Breakpoints, PREFIX } from './src/constants'
 const GROUPS = {
   autocomplete: `${PREFIX}-${AutocompleteRecipes.GROUP_NAME}`,
   avatar: `${PREFIX}-${AvatarRecipes.GROUP_NAME}`,
+  badge: `${PREFIX}-${BadgeRecipes.GROUP_NAME}`,
   button: `${PREFIX}-${ButtonRecipes.GROUP_NAME}`,
   card: `${PREFIX}-${CardRecipes.GROUP_NAME}`,
   header: `${PREFIX}-${HeaderRecipes.GROUP_NAME}`,
@@ -116,6 +118,8 @@ const fractalPreset = definePreset({
         avatarMenuItem: AvatarRecipes.avatarMenuItem,
         avatarMenuItemIcon: AvatarRecipes.avatarMenuItemIcon,
         avatarWithBackground: AvatarRecipes.avatarWithBackground,
+
+        badge: BadgeRecipes.badge,
 
         button: ButtonRecipes.button,
         buttonLabel: ButtonRecipes.buttonLabel,
