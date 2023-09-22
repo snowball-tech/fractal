@@ -217,8 +217,7 @@ Each of these packages and applications contains their own documentation in
 their own `README.md` file.
 
 > See the [dedicated `TOOLING.md` documentation](./docs/TOOLING.md) for more
-> information about the mono-repository management with Yarn workspaces and
-> TurboRepo.
+> information about the mono-repository management with Yarn workspaces.
 
 ### File structure
 

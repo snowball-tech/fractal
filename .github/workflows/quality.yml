@@ -31,14 +31,11 @@ jobs:
       - name: Installing dependencies
         run: yarn install --immutable --immutable-cache
 
-      - name: Starting TurboRepo local cache server
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
-
       - name: Checking linter
-        run: yarn run -T turbo run --continue lint --filter=!//
+        run: yarn run -T lint
 
       - name: Checking format
-        run: yarn run -T turbo run --continue format --filter=!//
+        run: yarn run -T format
 
       - name: Checking typings
-        run: yarn run -T turbo run --continue types:check
+        run: yarn run -T types:check

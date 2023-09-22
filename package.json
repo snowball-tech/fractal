@@ -1,6 +1,6 @@
 {
   "name": "fractal",
-  "description": "Snowball's open-source design system mono-repository managed by Yarn 3 and TurboRepo",
+  "description": "Snowball's open-source design system mono-repository managed by Yarn 3",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "private": true,
   "contributors": [
@@ -12,7 +12,6 @@
     "mono-repo",
     "yarn",
     "yarn3",
-    "turborepo",
     "vercel",
     "javascript",
     "typescript",
@@ -48,19 +47,21 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
-    "build": "NODE_ENV=production yarn turbo run build",
-    "build:storybook": "NODE_ENV=production yarn turbo run build:storybook --parallel",
-    "format:fix": "yarn turbo run format:fix --filter=!//",
+    "build": "NODE_ENV=production yarn workspaces foreach -t run build",
+    "format": "yarn run -T format:root && yarn workspaces foreach -p run format",
+    "format:fix": "yarn run -T format:root:fix && yarn workspaces foreach -p run format:fix",
     "format:root": "prettier --cache --check \"./!(apps|packages)\"",
     "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
-    "lint:fix": "yarn turbo run lint:fix",
+    "lint": "yarn run -T lint:root && yarn workspaces foreach -p run lint",
+    "lint:fix": "yarn run -T lint:root:fix && yarn workspaces foreach -p run lint:fix",
     "lint:root": "eslint --cache \"./!(apps|packages)\"",
     "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
     "publish:all": "multi-semantic-release",
-    "publish:all:local": "CI=true multi-semantic-release",
-    "setup": "yarn install && yarn setup:freezer && yarn setup:husky && yarn turbo run setup --filter=!//",
+    "publish:all:local": "CI=true yarn publish:all",
+    "setup": "yarn install && yarn setup:freezer && yarn setup:husky && yarn workspaces foreach -pt run setup",
     "setup:freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup:husky": "is-ci || yarn husky install",
+    "types:check": "yarn workspaces foreach -p run types:check",
     "update:references": "workspaces-to-typescript-project-references --includesRoot"
   },
   "devDependencies": {
@@ -87,7 +88,6 @@
     "serve": "^14.2.1",
     "stylelint": "^15.10.3",
     "ts-node": "^10.9.1",
-    "turbo": "^1.10.14",
     "typescript": "^5.2.2"
   },
   "resolutions": {

@@ -31,9 +31,6 @@ jobs:
       - name: Installing dependencies
         run: yarn install --immutable --immutable-cache
 
-      - name: Starting TurboRepo local cache server
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
-
       - name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
@@ -42,7 +39,7 @@ jobs:
       - name: Building all packages
         env:
           NODE_OPTIONS: --max_old_space_size=16384
-        run: yarn run -T turbo run build
+        run: yarn run -T build
 
       - name: Waiting for security to pass
         uses: lewagon/wait-on-check-action@v1.3.1
