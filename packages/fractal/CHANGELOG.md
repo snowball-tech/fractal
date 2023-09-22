@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [2.32.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.1...@snowball-tech/fractal@2.32.2) (2023-09-22)
+
+### 🐛 Bug Fixes
+
+- **avatar:** make sure they are always rounded ([103ccc5](https://github.com/snowball-tech/fractal/commit/103ccc5f184441eace38311783ef02df034801e1))
+
 ## @snowball-tech/fractal [2.32.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.0...@snowball-tech/fractal@2.32.1) (2023-09-22)
 
 ### 👷 Build
