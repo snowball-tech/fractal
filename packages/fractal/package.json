@@ -84,7 +84,7 @@
   "devDependencies": {
     "@pandacss/dev": "^0.15.1",
     "@pandacss/preset-base": "^0.15.1",
-    "@snowball-tech/eslint-config": "^5.2.10",
+    "@snowball-tech/eslint-config": "^5.2.11",
     "@storybook/addon-a11y": "^7.4.3",
     "@storybook/addon-essentials": "^7.4.3",
     "@storybook/addon-interactions": "^7.4.3",
