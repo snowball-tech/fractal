@@ -1,3 +1,10 @@
+## @snowball-tech/design-tokens [5.15.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.15.0...@snowball-tech/design-tokens@5.15.1) (2023-09-22)
+
+### 👷 Build
+
+- add missing script in design tokens ([2254ba3](https://github.com/snowball-tech/fractal/commit/2254ba35bfee33f377091b9b4d0d6a449113f1dc))
+- get rid of turborepo to cleanup the execution ([bf8a797](https://github.com/snowball-tech/fractal/commit/bf8a797226a63f4914ccec8717b0ccda95dcee39))
+
 # @snowball-tech/design-tokens [5.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.14.2...@snowball-tech/design-tokens@5.15.0) (2023-09-21)
 
 ### ✨ Features
