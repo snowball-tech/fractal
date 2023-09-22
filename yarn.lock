@@ -4559,9 +4559,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:^5.2.11":
-  version: 5.2.11
-  resolution: "@snowball-tech/eslint-config@npm:5.2.11"
+"@snowball-tech/eslint-config@npm:^5.2.12":
+  version: 5.2.12
+  resolution: "@snowball-tech/eslint-config@npm:5.2.12"
   dependencies:
     "@next/eslint-plugin-next": ^13.5.2
     "@rushstack/eslint-patch": ^1.4.0
@@ -4599,7 +4599,7 @@ __metadata:
     prettier: ^3.0.3
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 1d1cf577623482599a5488b7706fe77071acdfcc52bc85129cfc5f98c63f76f165c6d049db96b2dba201c2026c681dd7b2e67a0d99ef50187925f4ec4de53d8e
+  checksum: f495ec8cd6af09fbebc39d457f57fe4219726679bd39f25ed59e1b6874a14bd747e72987fcf3a68c6a9b1c8fccdb5c5b9cf1d085e8baefd5ec353d2b910b4dbc
   languageName: node
   linkType: hard
 
@@ -4623,7 +4623,7 @@ __metadata:
     "@radix-ui/react-toggle": ^1.0.3
     "@radix-ui/react-toggle-group": ^1.0.4
     "@snowball-tech/design-tokens": 5.15.0
-    "@snowball-tech/eslint-config": ^5.2.11
+    "@snowball-tech/eslint-config": ^5.2.12
     "@storybook/addon-a11y": ^7.4.3
     "@storybook/addon-actions": ^7.4.3
     "@storybook/addon-essentials": ^7.4.3
@@ -4673,20 +4673,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/prettier-config@npm:^1.3.9":
-  version: 1.3.9
-  resolution: "@snowball-tech/prettier-config@npm:1.3.9"
+"@snowball-tech/prettier-config@npm:^1.3.10":
+  version: 1.3.10
+  resolution: "@snowball-tech/prettier-config@npm:1.3.10"
   dependencies:
     prettier: ^3.0.3
     prettier-plugin-organize-attributes: ^1.0.0
     prettier-plugin-sh: ^0.13.1
-  checksum: a8815e749862a75c439f0d841f63d6b836d7c69344c5449c63ab918f21c732987100efdae90970d3eb6f51444204760b526f50291ddc667f559b6b009d9b71ec
+  checksum: 2fb7315ad02f7a66f1813264ba45c1003730aac8ecf4a623ec91c0bab1011a9449eef471e268a9b1a8b4866204cf3aa785a5635924209c9afa89d6874812ded5
   languageName: node
   linkType: hard
 
-"@snowball-tech/semantic-release-config@npm:^2.0.11":
-  version: 2.0.11
-  resolution: "@snowball-tech/semantic-release-config@npm:2.0.11"
+"@snowball-tech/semantic-release-config@npm:^2.0.12":
+  version: 2.0.12
+  resolution: "@snowball-tech/semantic-release-config@npm:2.0.12"
   dependencies:
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/commit-analyzer": ^11.0.0
@@ -4699,13 +4699,13 @@ __metadata:
     semantic-release: ^22.0.1
   peerDependencies:
     semantic-release: ^21.0.0
-  checksum: 83750cd7536cddf8a2509a0a62f12aceabb86477f907d62a2a6a978d129a131b51805455d3886172415ad1710104aee468a2940987c3018d48166b8fd00c1808
+  checksum: 41ab4748bf685e31c8037d02009fbf0352228711714ca447a02732f559866d9e1c1d26be1cf26589eca0773640dd54b406971071c18503094423664207b31a70
   languageName: node
   linkType: hard
 
-"@snowball-tech/stylelint-config@npm:^2.1.10":
-  version: 2.1.10
-  resolution: "@snowball-tech/stylelint-config@npm:2.1.10"
+"@snowball-tech/stylelint-config@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@snowball-tech/stylelint-config@npm:2.1.11"
   dependencies:
     postcss: ^8.4.30
     postcss-html: ^1.5.0
@@ -4715,7 +4715,7 @@ __metadata:
     stylelint-config-standard: ^34.0.0
   peerDependencies:
     stylelint: ^15.0.0
-  checksum: 59cfddb5c1e40af4c4b8fe2f3f433c1954d5395df068fd36a9f52e4ecb503c161487a040d8d4518edc502526293688954a76baa89c69262236dfd2008442941d
+  checksum: 1d459495f60ddc19c6da17c70cdec3bc145b996d56e07905bc3d51b209c6bf45de10898f482db8ffc5d45d945d9c55f912630d857edcb38400fb7a8713d7cdb9
   languageName: node
   linkType: hard
 
@@ -13473,10 +13473,10 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": ^2.10.2
     "@qiwi/multi-semantic-release": ^7.0.0
-    "@snowball-tech/eslint-config": ^5.2.11
-    "@snowball-tech/prettier-config": ^1.3.9
-    "@snowball-tech/semantic-release-config": ^2.0.11
-    "@snowball-tech/stylelint-config": ^2.1.10
+    "@snowball-tech/eslint-config": ^5.2.12
+    "@snowball-tech/prettier-config": ^1.3.10
+    "@snowball-tech/semantic-release-config": ^2.0.12
+    "@snowball-tech/stylelint-config": ^2.1.11
     "@types/eslint": ^8.44.2
     "@types/is-ci": ^3.0.0
     "@types/node": ^20.6.3
