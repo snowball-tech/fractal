@@ -69,7 +69,7 @@
     "@qiwi/multi-semantic-release": "^7.0.0",
     "@snowball-tech/eslint-config": "^5.2.12",
     "@snowball-tech/prettier-config": "^1.3.10",
-    "@snowball-tech/semantic-release-config": "^2.0.12",
+    "@snowball-tech/semantic-release-config": "^2.0.13",
     "@snowball-tech/stylelint-config": "^2.1.11",
     "@types/eslint": "^8.44.2",
     "@types/is-ci": "^3.0.0",
