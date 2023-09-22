@@ -1,3 +1,19 @@
+## @snowball-tech/fractal [2.32.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.0...@snowball-tech/fractal@2.32.1) (2023-09-22)
+
+### 👷 Build
+
+- get rid of turborepo to cleanup the execution ([bf8a797](https://github.com/snowball-tech/fractal/commit/bf8a797226a63f4914ccec8717b0ccda95dcee39))
+- more cleanup of build steps and fix releasing ([2619924](https://github.com/snowball-tech/fractal/commit/2619924528db0e2bb869aa2ffb1d03e993aba518))
+
+### 📦 Dependencies
+
+- cleanup and upgrade dependencies ([1ff2aa5](https://github.com/snowball-tech/fractal/commit/1ff2aa54aca1249fd24a0b35233f360bf3d24fac))
+- upgrade dependencies ([dba7552](https://github.com/snowball-tech/fractal/commit/dba7552710876cf62050649288a7816e72b87122))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.15.1
+
 # @snowball-tech/fractal [2.32.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.31.1...@snowball-tech/fractal@2.32.0) (2023-09-21)
 
 ### ✨ Features
