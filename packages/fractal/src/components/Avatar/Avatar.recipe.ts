@@ -59,7 +59,7 @@ export const avatarWithBackground: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       alignItems: 'center',
-      backgroundColor: 'var(--color-brand-primary)',
+      backgroundColor: 'var(--color-decorative-pink-70)',
       color: 'var(--color-text-dark)',
       display: 'flex',
       justifyContent: 'center',
