@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [2.32.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.2...@snowball-tech/fractal@2.32.3) (2023-09-22)
+
+### 🐛 Bug Fixes
+
+- **avatar:** fix the background color ([e5cfc88](https://github.com/snowball-tech/fractal/commit/e5cfc88e013a25f38a6115d936e1cbdd0f7ce083))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([46a2a50](https://github.com/snowball-tech/fractal/commit/46a2a50bc4b34fc8e102b709235027b344aa9772))
+
 ## @snowball-tech/fractal [2.32.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.1...@snowball-tech/fractal@2.32.2) (2023-09-22)
 
 ### 🐛 Bug Fixes
