@@ -31,35 +31,6 @@ You can also use the following syntax to take an action in every workspace:
 yarn workspaces foreach <command>
 ```
 
-### TurboRepo
-
-This mono-repository is based on [TurboRepo](https://turbo.build/repo) which is
-a tool that basically speed-up the tasks in a mono-repository.
-
-To fully use the potential of TurboRepo, you are expected to have in each of
-your packages and applications the following scripts:
-
-- `build`: _**(if needed)**_ to build the package/application
-- `lint`: to check the linting of the package/application:
-  `yarn run -T eslint --cache .`
-- `lint:fix`: to automatically fix some linting errors/warnings of the
-  package/application: `yarn run -T eslint --cache --fix .`
-- `format`: to check the formatting of the package/application:
-  `yarn run -T prettier --cache --check .`
-- `format:fix`: to automatically fix the format of the package/application
-  `yarn run -T prettier --cache --write .`
-- `types:check`: _**(when using TypeScript)**_ to check the TypeScript
-  compilation the package/application: `tsc --noEmit`
-
-These scripts will be automatically picked up by TurboRepo when running tasks
-such as `turbo lint` or `turbo build` from the root of the mono-repository or in
-each of the packages/applications.
-
-> **A quick note on `package.json` scripts**: as we are using Yarn v3 for the
-> mono-repository/workspace management, the automatic `pre<script>` and
-> `post<script>` hooks are not available. So you will have to call them yourself
-> in you actual script.
-
 ## Vercel
 
 > To be able to do anything in Vercel, you'll have to make sure to have the
@@ -182,7 +153,6 @@ The dependencies that are available at the root level are:
 - `is-ci`: to check if you are in a CI environment
 - `eslint`: to lint your code
 - `prettier` to format your code
-- `turbo`: to supercharge your mono-repository management
 
 > Note that despite the fact that `typescript` is available at the root level,
 > you **have to install it as a development dependency** in your own
@@ -254,7 +224,7 @@ We also have those conventions enforced:
 1. as a pre-commit hook, that check the format, errors and warning before
    committing the code (see [.husky/pre-commit]),
 2. during Continuous Integration, by running a non-changing linting step
-   (`turbo lint` and `turbo format`).
+   (`yarn run -T lint` and `yarn run -T format`).
 
 > **Note:** while these steps ensure our codebase follows our coding standards,
 > it is recommended to enable automatic fixing in your IDE, to reduce friction

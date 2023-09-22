@@ -100,18 +100,14 @@ yarn build
 
 ### Useful Commands
 
-> It's recommended to use [Turbo](https://turbo.build/repo) to run the following
-> command to leverage advanced caching and packages dependencies management. But
-> you can also directly use `yarn` to run the following commands.
-
-- `turbo format:fix` to format the code according to our formatting guidelines
+- `yarn format:fix` to format the code according to our formatting guidelines
   (using _Prettier_);
-- `turbo lint:fix`: to check that the code matches our coding guidelines and
+- `yarn lint:fix`: to check that the code matches our coding guidelines and
   automatically fix what can be fixed _(using ESLint)_;
-- `turbo test`: run all the unit tests;
-- `turbo test:dev`: run the tests for modified components and re-trigger runs
+- `yarn test`: run all the unit tests;
+- `yarn test:dev`: run the tests for modified components and re-trigger runs
   everytime something is modified;
-- `turbo build`: compiles and bundle the design token;
+- `yarn build`: compiles and bundle the design token;
 
 ### Style Dictionary
 

@@ -66,10 +66,6 @@ jobs:
         run: yarn install --immutable --immutable-cache
 
       - if: env.SKIP_CHROMATIC != 1
-        name: Starting TurboRepo local cache server
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
-
-      - if: env.SKIP_CHROMATIC != 1
         name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
