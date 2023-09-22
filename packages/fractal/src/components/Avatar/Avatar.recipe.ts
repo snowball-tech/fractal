@@ -38,6 +38,10 @@ export const avatar: ReturnType<typeof defineRecipe> = defineRecipe({
           },
 
           height: `var(--size-avatar-${size})`,
+          maxHeight: `var(--size-avatar-${size})`,
+          maxWidth: `var(--size-avatar-${size})`,
+          minHeight: `var(--size-avatar-${size})`,
+          minWidth: `var(--size-avatar-${size})`,
           width: `var(--size-avatar-${size})`,
         },
       }),
