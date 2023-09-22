@@ -46,7 +46,8 @@
     "format:fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run -T eslint --cache .",
     "lint:fix": "yarn run -T eslint --cache --fix .",
-    "setup": "yarn install"
+    "setup": "yarn install",
+    "types:check": "true"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.198",
