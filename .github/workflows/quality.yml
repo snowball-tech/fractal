@@ -31,6 +31,9 @@ jobs:
       - name: Installing dependencies
         run: yarn install --immutable --immutable-cache
 
+      - name: Setting up each workspace
+        run: yarn workspaces foreach -p run setup
+
       - name: Checking linter
         run: yarn run -T lint
 
