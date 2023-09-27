@@ -1,3 +1,21 @@
+## @snowball-tech/fractal [2.32.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.3...@snowball-tech/fractal@2.32.4) (2023-09-27)
+
+### ❓ Unknown changes
+
+- Revert "deps: upgrade dependencies" ([5f627c0](https://github.com/snowball-tech/fractal/commit/5f627c02fb8db64fa05df685380dd527ac8beacd))
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix display of loading in large dropdown ([a5cc970](https://github.com/snowball-tech/fractal/commit/a5cc970de2bf3eb0e2f3586b5544caa690ff2541))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([7858a6b](https://github.com/snowball-tech/fractal/commit/7858a6b133312cef96a8d988022f195d418ccee4))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 5.15.2
+
 ## @snowball-tech/fractal [2.32.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.2...@snowball-tech/fractal@2.32.3) (2023-09-22)
 
 ### 🐛 Bug Fixes
