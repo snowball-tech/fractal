@@ -95,6 +95,11 @@ export const autocompleteItemSeparator: ReturnType<typeof defineRecipe> =
 export const autocompleteLoading: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
+      '& > div': {
+        flex: 1,
+        width: '100%',
+      },
+
       '& > svg': {
         minWidth: '24px',
       },
