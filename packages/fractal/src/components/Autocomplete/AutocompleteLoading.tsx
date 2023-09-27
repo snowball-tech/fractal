@@ -35,12 +35,10 @@ export const AutocompleteLoading = ({
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
     >
-      {/* eslint-disable-next-line no-nested-ternary */}
       {icon && isBoolean(icon) ? <Loader /> : false}
-
       {icon && !isBoolean(icon) ? icon : false}
 
-      {children}
+      <div>{children}</div>
     </RxDropdownMenu.Item>
   )
 }
