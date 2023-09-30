@@ -3273,12 +3273,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pandacss/preset-base@npm:0.15.2, @pandacss/preset-base@npm:^0.15.2":
+"@pandacss/preset-base@npm:0.15.2":
   version: 0.15.2
   resolution: "@pandacss/preset-base@npm:0.15.2"
   dependencies:
     "@pandacss/types": 0.15.2
   checksum: a6c25652e0e2d932a08d3fdc24942937e876157beeee42aa2e08d8274a0de16e1021fc6b9c3737e074672a76c7836e7dc63604316a9b84ac26c585093356df40
+  languageName: node
+  linkType: hard
+
+"@pandacss/preset-base@npm:^0.15.2":
+  version: 0.15.4
+  resolution: "@pandacss/preset-base@npm:0.15.4"
+  dependencies:
+    "@pandacss/types": 0.15.4
+  checksum: 8f21e5a087340476f24b3ac6228b3f4d56f3b931a210eadafd6d5071b72f3822c39fb20238b839f57c319adf5bd39907a43abde32c8daa168aa97a550b256acd
   languageName: node
   linkType: hard
 
@@ -3334,6 +3343,13 @@ __metadata:
   version: 0.15.2
   resolution: "@pandacss/types@npm:0.15.2"
   checksum: 5b9b700723d4c9426e1be07f3dc6005cce092b246806514538220d7b505d479f5a0fed95aa957d06ae2de282eb18c5aaeeafc47bc4413b0e8bdc3a70ef0370a5
+  languageName: node
+  linkType: hard
+
+"@pandacss/types@npm:0.15.4":
+  version: 0.15.4
+  resolution: "@pandacss/types@npm:0.15.4"
+  checksum: 8ab3a5132b5303aab8dd2cfe6a3c8f6aebb0f3567a222be04e57dc4b4b8bd1330372618e62bacdce776312a539cd143e0c4a663746544e6a5283605380063f5c
   languageName: node
   linkType: hard
 
