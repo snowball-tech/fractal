@@ -24,7 +24,7 @@
     "directory": "packages/fractal"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@3.6.3",
+  "packageManager": "yarn@3.6.4",
   "engines": {
     "yarn": "^3.0.0",
     "node": "^18.0.0"
