@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [6.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.15.2...@snowball-tech/design-tokens@6.0.0) (2023-10-10)
+
+### 💥 Breaking changes
+
+- **dropdown:** add a dropdown component ([#84](https://github.com/snowball-tech/fractal/issues/84)) ([14f2e90](https://github.com/snowball-tech/fractal/commit/14f2e9078746b63a15c115070b6fc6b5094e7616))
+
 ## @snowball-tech/design-tokens [5.15.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.15.1...@snowball-tech/design-tokens@5.15.2) (2023-09-27)
 
 ### 📦 Dependencies
