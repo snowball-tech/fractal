@@ -30,7 +30,7 @@ const iconsMenu = (
 const radioMenu = (
   <DropdownRadioGroup>
     <DropdownRadioItem label="Jedi" value="jedi" />
-    <DropdownRadioItem label="Sitg" value="sith" />
+    <DropdownRadioItem label="Sith" value="sith" />
   </DropdownRadioGroup>
 )
 
