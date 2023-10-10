@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [3.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.4...@snowball-tech/fractal@3.0.0) (2023-10-10)
+
+### 💥 Breaking changes
+
+- **dropdown:** add a dropdown component ([#84](https://github.com/snowball-tech/fractal/issues/84)) ([14f2e90](https://github.com/snowball-tech/fractal/commit/14f2e9078746b63a15c115070b6fc6b5094e7616))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 6.0.0
+
 ## @snowball-tech/fractal [2.32.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.3...@snowball-tech/fractal@2.32.4) (2023-09-27)
 
 ### ❓ Unknown changes
