@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [3.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.0...@snowball-tech/fractal@3.0.1) (2023-10-10)
+
+### 🐛 Bug Fixes
+
+- **input-date-pincode:** add inputmode and pattern ([dfb071f](https://github.com/snowball-tech/fractal/commit/dfb071fe97978d7af6b137c97946be1e4106daac))
+
 # @snowball-tech/fractal [3.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@2.32.4...@snowball-tech/fractal@3.0.0) (2023-10-10)
 
 ### 💥 Breaking changes
