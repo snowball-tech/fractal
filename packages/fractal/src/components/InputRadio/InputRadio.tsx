@@ -56,7 +56,7 @@ export const InputRadio = ({
         {...omit(['className'], props)}
       >
         <div className={inputRadioCheckmark()}>
-          <RxRadio.Indicator asChild>
+          <RxRadio.Indicator>
             <CheckIcon />
           </RxRadio.Indicator>
         </div>
