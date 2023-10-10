@@ -135,9 +135,11 @@ export const inputRadioCheckmark: ReturnType<typeof defineRecipe> =
       borderRadius: 'var(--size-radius-rounded)',
       display: 'flex',
       height: '24px',
+      justifyContent: 'center',
       maxHeight: '24px',
       maxWidth: '24px',
       mx: 'var(--size-checkbox-padding-horizontal)',
+      pt: 'var(--size-spacing-half)',
       width: '24px',
 
       ...Object.values(Variants).reduce(
