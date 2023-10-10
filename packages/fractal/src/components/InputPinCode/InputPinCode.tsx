@@ -273,10 +273,12 @@ export const InputPinCode = ({
               : {})}
             disabled={disabled}
             error={hasErrorMessage}
+            inputMode="numeric"
             max={9}
             maxLength={1}
             min={0}
             name={`${name || uniqueId}-${index}`}
+            pattern="[0-9]?"
             placeholder={placeholders?.[index] ?? placeholders?.[0] ?? ''}
             readOnly={readOnly}
             required={required}
