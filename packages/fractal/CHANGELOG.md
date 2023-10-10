@@ -1,3 +1,14 @@
+## @snowball-tech/fractal [3.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.1...@snowball-tech/fractal@3.0.2) (2023-10-10)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** add missing exports ([0e4aed6](https://github.com/snowball-tech/fractal/commit/0e4aed6b9ad30ac1a237821601274b3b17882eeb))
+- **radio-checkbox:** fix ref issue with the checkmark ([193d9ad](https://github.com/snowball-tech/fractal/commit/193d9ada28b550725c17f0211bf6f34cdd7d5846))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([a26fac3](https://github.com/snowball-tech/fractal/commit/a26fac3ee2562ee25ef22e13eb5b7f4bdb90ad16))
+
 ## @snowball-tech/fractal [3.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.0...@snowball-tech/fractal@3.0.1) (2023-10-10)
 
 ### 🐛 Bug Fixes
