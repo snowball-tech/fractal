@@ -10,7 +10,7 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
   /** The radio buttons to display inside of the radio group. */
   children: ReactNode
   /**
-   * The controlled value of the radio group (i.e. the value of the default
+   * The uncontrolled value of the radio group (i.e. the value of the default
    * selected radio button).
    */
   defaultValue?: string
