@@ -12,8 +12,8 @@ type AvatarProps = ComponentProps<typeof Avatar>
 
 const menu = (
   <>
-    <DropdownItem>My profile</DropdownItem>
-    <DropdownItem icon={<SignoutIcon />}>Sign out</DropdownItem>
+    <DropdownItem label="My profile" />
+    <DropdownItem icon={<SignoutIcon />} label="Sign out" />
   </>
 )
 
