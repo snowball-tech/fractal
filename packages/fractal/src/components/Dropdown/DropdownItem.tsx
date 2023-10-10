@@ -1,8 +1,8 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
-  avatarMenuItem,
-  avatarMenuItemIcon,
+  dropdownItem,
+  dropdownItemIcon,
   selectItem,
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
@@ -11,22 +11,22 @@ import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Avatar.recipe'
-import type { AvatarMenuItemProps } from './Avatar.types'
+import { GROUP_NAME } from './Dropdown.recipe'
+import type { DropdownItemProps } from './Dropdown.types'
 
 /**
- * `Avatar` component allow to display an avatar with an optional dropdown menu.
+ * `DropdownItem` displays items in a dropdown.
  */
-export const AvatarMenuItem = ({
+export const DropdownItem = ({
   disabled,
   icon,
   label,
   onClick,
   ...props
-}: AvatarMenuItemProps) => {
+}: DropdownItemProps) => {
   const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-menu-item`,
-    avatarMenuItem(),
+    `${PREFIX}-${GROUP_NAME}-item`,
+    dropdownItem(),
     selectItem(),
     typography({ variant: 'body-1' }),
     props.className,
@@ -41,12 +41,12 @@ export const AvatarMenuItem = ({
       {...(isFunction(onClick) ? { onSelect: onClick } : {})}
       {...omit(['className'], props)}
     >
-      {icon && <div className={avatarMenuItemIcon()}>{icon}</div>}
+      {icon && <div className={dropdownItemIcon()}>{icon}</div>}
 
       {label}
     </RxDropdownMenu.Item>
   )
 }
-AvatarMenuItem.displayName = 'AvatarMenuItem'
+DropdownItem.displayName = 'DropdownItem'
 
-export default AvatarMenuItem
+export default DropdownItem

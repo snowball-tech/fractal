@@ -1,4 +1,3 @@
-import { Pressable } from '@ark-ui/react'
 import { cx } from '@snowball-tech/fractal-panda/css'
 import {
   button,
@@ -9,7 +8,12 @@ import {
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, type TouchEvent, forwardRef } from 'react'
+import {
+  type ForwardedRef,
+  type MouseEvent,
+  type TouchEvent,
+  forwardRef,
+} from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -30,7 +34,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconPosition = 'right',
       label,
       onClick,
-      onLongClick,
       type = 'button',
       variant = DEFAULT_VARIANT,
       ...props
@@ -45,7 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }
 
       if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
-        onClick(event)
+        onClick(event as unknown as MouseEvent<HTMLButtonElement>)
       }
     }
 
@@ -72,7 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     )
 
     return (
-      <Pressable
+      <button
         {...(props.id !== undefined ? { id: props.id } : {})}
         ref={ref}
         aria-label={label}
@@ -81,12 +84,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           ? { dir: props.dir as 'ltr' | 'rtl' }
           : {})}
         disabled={disabled}
-        preventFocusOnPress
         type={type}
         onTouchEnd={handleTouchEnd}
         onTouchStart={handleTouchStart}
-        {...(isFunction(onClick) ? { onPress: onClick } : {})}
-        {...(isFunction(onLongClick) ? { onLongPress: onLongClick } : {})}
+        {...(isFunction(onClick) ? { onClick } : {})}
         title={label}
         {...omit(['className', 'dir', 'id'], props)}
       >
@@ -116,7 +117,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           false
         )}
-      </Pressable>
+      </button>
     )
   },
 )

@@ -72,7 +72,7 @@ export const autocompleteItemGroup: ReturnType<typeof defineRecipe> =
 
     className: 'autocompleteItemGroup',
     description: 'Autocomplete items group',
-    jsx: ['Autocomplete'],
+    jsx: ['Autocomplete', 'AutocompleteItemGroup'],
   })
 
 export const autocompleteItem: ReturnType<typeof defineRecipe> = defineRecipe({
@@ -80,7 +80,7 @@ export const autocompleteItem: ReturnType<typeof defineRecipe> = defineRecipe({
 
   className: 'autocompleteItem',
   description: 'Autocomplete item',
-  jsx: ['Autocomplete'],
+  jsx: ['Autocomplete', 'AutocompleteItem'],
 })
 
 export const autocompleteItemSeparator: ReturnType<typeof defineRecipe> =
@@ -89,7 +89,7 @@ export const autocompleteItemSeparator: ReturnType<typeof defineRecipe> =
 
     className: 'autocompleteItemSeparator',
     description: 'Autocomplete item separator',
-    jsx: ['Autocomplete'],
+    jsx: ['Autocomplete', 'autocompleteItemSeparator'],
   })
 
 export const autocompleteLoading: ReturnType<typeof defineRecipe> =
@@ -119,7 +119,7 @@ export const autocompleteLoading: ReturnType<typeof defineRecipe> =
 
     className: 'autocompleteLoading',
     description: 'Autocomplete loading indicator',
-    jsx: ['Autocomplete'],
+    jsx: ['Autocomplete', 'AutocompleteLoading'],
   })
 
 export const autocompleteEmpty: ReturnType<typeof defineRecipe> = defineRecipe({
@@ -132,7 +132,7 @@ export const autocompleteEmpty: ReturnType<typeof defineRecipe> = defineRecipe({
 
   className: 'autocompleteEmpty',
   description: 'Autocomplete empty indicator',
-  jsx: ['Autocomplete'],
+  jsx: ['Autocomplete', 'AutocompleteEmpty'],
 })
 
 export const autocompleteDescription: ReturnType<typeof defineRecipe> =

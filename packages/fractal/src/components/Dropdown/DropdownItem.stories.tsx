@@ -8,12 +8,12 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Avatar from './Avatar'
-import AvatarMenuItem from './AvatarMenuItem'
+import Dropdown from './Dropdown'
+import DropdownItem from './DropdownItem'
 
-type AutocompleteEmptyProps = ComponentProps<typeof AvatarMenuItem>
+type DropdownItemProps = ComponentProps<typeof DropdownItem>
 
-const meta: Meta<AutocompleteEmptyProps> = {
+const meta: Meta<DropdownItemProps> = {
   argTypes: {
     icon: {
       control: 'radio',
@@ -28,31 +28,28 @@ const meta: Meta<AutocompleteEmptyProps> = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-    label: {
-      control: 'text',
-    },
   },
   args: {
     disabled: false,
-    label: 'This is a menu item',
+    label: 'Luke Skywalker',
   },
-  component: AvatarMenuItem,
+  component: DropdownItem,
 
-  title: 'Molecules/Avatar/AvatarMenuItem',
-} satisfies Meta<AutocompleteEmptyProps>
+  title: 'Molecules/Dropdown/DropdownItem',
+} satisfies Meta<DropdownItemProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, icon, label = 'This is a menu item' }) => (
-    <Avatar name="Luke Skywalker" size="xl">
-      <AvatarMenuItem
+  render: ({ disabled = false, icon, label = 'Luke Skywalker' }) => (
+    <Dropdown trigger="Is a jedi">
+      <DropdownItem
         disabled={disabled}
         icon={icon}
         label={label}
         onClick={action('onClick')}
       />
-    </Avatar>
+    </Dropdown>
   ),
 }

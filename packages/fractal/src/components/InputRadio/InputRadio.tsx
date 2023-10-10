@@ -10,7 +10,7 @@ import {
   typography,
 } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useContext, useId } from 'react'
+import { useContext, useId } from 'react'
 
 import { PREFIX } from '@/constants'
 
@@ -24,59 +24,53 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  *
  * You must use this component within the `InputRadioGroup` component.
  */
-export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
-  (
-    {
-      disabled = false,
-      fullWidth = false,
-      id,
-      label,
-      value,
-      ...props
-    }: InputRadioProps,
-    ref: ForwardedRef<HTMLButtonElement>,
-  ) => {
-    const generatedId = useId()
-    const uniqueId = (id ?? generatedId) || generatedId
+export const InputRadio = ({
+  disabled = false,
+  fullWidth = false,
+  id,
+  label,
+  value,
+  ...props
+}: InputRadioProps) => {
+  const generatedId = useId()
+  const uniqueId = (id ?? generatedId) || generatedId
 
-    const variant = useContext(InputRadioVariantContext)
+  const variant = useContext(InputRadioVariantContext)
 
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      inputRadioContainer(),
-      `variant-${variant}`,
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-    )
+  const groupClassNames = cx(
+    `${PREFIX}-${GROUP_NAME}`,
+    inputRadioContainer(),
+    `variant-${variant}`,
+    props.className,
+    disabled ? 'disabled' : '',
+    fullWidth ? 'full-width' : '',
+  )
 
-    return (
-      <div className={groupClassNames}>
-        <RxRadio.Item
-          id={uniqueId}
-          ref={ref}
-          className={inputRadio()}
-          disabled={disabled}
-          value={value}
-          {...omit(['className'], props)}
-        >
-          <div className={inputRadioCheckmark()}>
-            <RxRadio.Indicator asChild>
-              <CheckIcon />
-            </RxRadio.Indicator>
-          </div>
-        </RxRadio.Item>
+  return (
+    <div className={groupClassNames}>
+      <RxRadio.Item
+        id={uniqueId}
+        className={inputRadio()}
+        disabled={disabled}
+        value={value}
+        {...omit(['className'], props)}
+      >
+        <div className={inputRadioCheckmark()}>
+          <RxRadio.Indicator asChild>
+            <CheckIcon />
+          </RxRadio.Indicator>
+        </div>
+      </RxRadio.Item>
 
-        <RxLabel
-          className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
-          htmlFor={uniqueId}
-        >
-          {label}
-        </RxLabel>
-      </div>
-    )
-  },
-)
+      <RxLabel
+        className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
+        htmlFor={uniqueId}
+      >
+        {label}
+      </RxLabel>
+    </div>
+  )
+}
 InputRadio.displayName = 'InputRadio'
 
 export default InputRadio
