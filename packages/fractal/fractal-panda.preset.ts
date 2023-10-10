@@ -14,6 +14,7 @@ import * as AvatarRecipes from '@/components/Avatar/Avatar.recipe'
 import * as BadgeRecipes from '@/components/Badge/Badge.recipe'
 import * as ButtonRecipes from '@/components/Button/Button.recipe'
 import * as CardRecipes from '@/components/Card/Card.recipe'
+import * as DropdownRecipes from '@/components/Dropdown/Dropdown.recipe'
 import * as HeaderRecipes from '@/components/Header/Header.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
@@ -111,12 +112,6 @@ const fractalPreset = definePreset({
 
         avatar: AvatarRecipes.avatar,
         avatarContainer: AvatarRecipes.avatarContainer,
-        avatarDropdown: AvatarRecipes.avatarDropdown,
-        avatarDropdownTrigger: AvatarRecipes.avatarDropdownTrigger,
-        avatarDropdownTriggerIndicator:
-          AvatarRecipes.avatarDropdownTriggerIndicator,
-        avatarMenuItem: AvatarRecipes.avatarMenuItem,
-        avatarMenuItemIcon: AvatarRecipes.avatarMenuItemIcon,
         avatarWithBackground: AvatarRecipes.avatarWithBackground,
 
         badge: BadgeRecipes.badge,
@@ -131,7 +126,17 @@ const fractalPreset = definePreset({
         cardTitle: CardRecipes.cardTitle,
         cardIcon: CardRecipes.cardIcon,
 
-        paper: PaperRecipes.paper,
+        dropdownContainer: DropdownRecipes.dropdownContainer,
+        dropdown: DropdownRecipes.dropdown,
+        dropdownTrigger: DropdownRecipes.dropdownTrigger,
+        dropdownTriggerIndicator: DropdownRecipes.dropdownTriggerIndicator,
+        dropdownItem: DropdownRecipes.dropdownItem,
+        dropdownItemIcon: DropdownRecipes.dropdownItemIcon,
+        dropdownItemGroup: DropdownRecipes.dropdownItemGroup,
+        dropdownRadioGroup: DropdownRecipes.dropdownRadioGroup,
+        dropdownRadioItem: DropdownRecipes.dropdownRadioItem,
+        dropdownRadioItemCheckmark: DropdownRecipes.dropdownRadioItemCheckmark,
+        dropdownRadioItemLabel: DropdownRecipes.dropdownRadioItemLabel,
 
         header: HeaderRecipes.header,
         headerLeft: HeaderRecipes.headerLeft,
@@ -192,6 +197,8 @@ const fractalPreset = definePreset({
 
         logo: LogoRecipes.logo,
         picto: LogoRecipes.picto,
+
+        paper: PaperRecipes.paper,
 
         progress: ProgressRecipes.progress,
         progressIndicator: ProgressRecipes.progressIndicator,
