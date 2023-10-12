@@ -18,6 +18,7 @@ import * as DropdownRecipes from '@/components/Dropdown/Dropdown.recipe'
 import * as HeaderRecipes from '@/components/Header/Header.recipe'
 import * as InputCheckboxRecipes from '@/components/InputCheckbox/InputCheckbox.recipe'
 import * as InputDateRecipes from '@/components/InputDate/InputDate.recipe'
+import * as InputFileRecipes from '@/components/InputFile/InputFile.recipe'
 import * as InputPhoneRecipes from '@/components/InputPhone/InputPhone.recipe'
 import * as InputPinCodeRecipes from '@/components/InputPinCode/InputPinCode.recipe'
 import * as InputRadioRecipes from '@/components/InputRadio/InputRadio.recipe'
@@ -47,6 +48,7 @@ const GROUPS = {
   header: `${PREFIX}-${HeaderRecipes.GROUP_NAME}`,
   inputCheckbox: `${PREFIX}-${InputCheckboxRecipes.GROUP_NAME}`,
   inputDate: `${PREFIX}-${InputDateRecipes.GROUP_NAME}`,
+  inputFile: `${PREFIX}-${InputFileRecipes.GROUP_NAME}`,
   inputPhone: `${PREFIX}-${InputPhoneRecipes.GROUP_NAME}`,
   inputPinCode: `${PREFIX}-${InputPinCodeRecipes.GROUP_NAME}`,
   inputRadio: `${PREFIX}-${InputRadioRecipes.GROUP_NAME}`,
@@ -156,6 +158,10 @@ const fractalPreset = definePreset({
         inputDateMessage: InputDateRecipes.inputDateMessage,
         inputDateMonth: InputDateRecipes.inputDateMonth,
         inputDateYear: InputDateRecipes.inputDateYear,
+
+        inputFileButton: ButtonRecipes.button,
+        inputFileButtonLabel: ButtonRecipes.buttonLabel,
+        inputFileButtonIcon: ButtonRecipes.buttonIcon,
 
         inputPhoneContainer: InputPhoneRecipes.inputPhoneContainer,
         inputPhoneDescription: InputPhoneRecipes.inputPhoneDescription,
