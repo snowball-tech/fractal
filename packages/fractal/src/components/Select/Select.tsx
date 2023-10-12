@@ -122,6 +122,10 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
 
     const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
       (event) => {
+        if (isFunction(dropdown.onPointerDownOutside)) {
+          dropdown.onPointerDownOutside(event)
+        }
+
         const { target } = event
         if (target === window || target === null || target === undefined) {
           return
@@ -192,7 +196,6 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           <RxSelect.Portal>
             <RxSelect.Content
               ref={dropdownRef}
-              {...omit(['className'], dropdown)}
               align="center"
               asChild
               className={cx(
@@ -206,6 +209,17 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 display: undefined,
               }}
               onPointerDownOutside={handlePointerDownOutside}
+              {...omit(
+                [
+                  'align',
+                  'asChild',
+                  'className',
+                  'position',
+                  'side',
+                  'onPointerDownOutside',
+                ],
+                dropdown,
+              )}
             >
               <RxScrollArea.Root
                 {...(props.dir !== undefined

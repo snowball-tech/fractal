@@ -33,7 +33,7 @@ export interface SelectProps
   displayedValue?: ReactNode
   /**
    * Options to tweak the position of the select dropdown.
-   * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#content
+   * See https://www.radix-ui.com/primitives/docs/components/select#content
    *
    * You can on top of that add the `className` property to customize the style
    * of the dropdown.
