@@ -57,7 +57,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         props.onTouchEnd(event)
       }
 
-      if ('ontouchstart' in document.documentElement) {
+      if (
+        'ontouchstart' in document.documentElement &&
+        !isFunction(props.onTouchStart) &&
+        isFunction(onClick)
+      ) {
         event.preventDefault()
       }
     }
@@ -89,7 +93,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onTouchStart={handleTouchStart}
         {...(isFunction(onClick) ? { onClick } : {})}
         title={label}
-        {...omit(['className', 'dir', 'id'], props)}
+        {...omit(
+          ['className', 'dir', 'id', 'onTouchEnd', 'onTouchStart'],
+          props,
+        )}
       >
         {icon && iconPosition === 'left' ? (
           <div className={buttonIcon({ variant })}>{icon}</div>
