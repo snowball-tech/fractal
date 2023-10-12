@@ -77,7 +77,6 @@ export const Avatar = ({
 
         <RxDropdown.Portal>
           <RxDropdown.Content
-            align="center"
             className={cx(
               `${PREFIX}-${GROUP_NAME}-dropdown`,
               typography({ variant: 'body-1' }),
