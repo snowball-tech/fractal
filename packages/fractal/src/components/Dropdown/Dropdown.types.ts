@@ -1,5 +1,5 @@
+import type { DropdownMenuContentProps as RxDropdownContentProps } from '@radix-ui/react-dropdown-menu'
 import {
-  Content,
   DropdownMenuItem,
   Root,
   MenuRadioGroupProps as RxDropdownRadioGroupProps,
@@ -7,7 +7,8 @@ import {
 } from '@radix-ui/react-dropdown-menu'
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
-export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
+type Props = RxDropdownContentProps & AllHTMLAttributes<HTMLDivElement>
+export interface DropdownProps extends Props {
   /**
    * The content of the dropdown menu.
    *
@@ -24,13 +25,6 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * (non-text) trigger.
    */
   open?: boolean
-  /**
-   * The side to open the dropdown too.
-   *
-   * If none is given, it will be chosen automatically based on the available
-   * space.
-   */
-  side?: ComponentProps<typeof Content>['side']
   /** The trigger of the dropdown menu. */
   trigger?: ReactNode
   /** Indicates if the trigger should have an indicator (arrow). */
