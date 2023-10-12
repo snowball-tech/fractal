@@ -1,3 +1,20 @@
+# @snowball-tech/fractal [3.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.2...@snowball-tech/fractal@3.1.0) (2023-10-12)
+
+### ✨ Features
+
+- **input-file:** add an input file component ([950ae4a](https://github.com/snowball-tech/fractal/commit/950ae4a15a969646e628cdfbde90f0ad9bcf441c))
+
+### 🐛 Bug Fixes
+
+- **button:** fix click on mobile devices ([6c882dc](https://github.com/snowball-tech/fractal/commit/6c882dc95608b8052abe81a731141d0002145ecd))
+- **dropdown:** improve typing of props ([a84a2cc](https://github.com/snowball-tech/fractal/commit/a84a2cc1ded90215bfd8b6c0bbe715c714c01af3))
+- **input-date-text:** fix inputmode for mobile ([b504339](https://github.com/snowball-tech/fractal/commit/b5043393156c5661708f91df1a7ce9b652d0d7e7))
+- **select:** fix allowed props in the `dropdown` prop ([39e79f8](https://github.com/snowball-tech/fractal/commit/39e79f84b1327d947f0fde9d877e58ffcfa20b4b))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([b25087b](https://github.com/snowball-tech/fractal/commit/b25087bcb7364ce6abd606e27d596677303fbf01))
+
 ## @snowball-tech/fractal [3.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.1...@snowball-tech/fractal@3.0.2) (2023-10-10)
 
 ### 🐛 Bug Fixes
