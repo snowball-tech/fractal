@@ -96,6 +96,32 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       }
     }
 
+    let inputMode = props.inputMode ?? 'text'
+    switch (type) {
+      case 'number':
+        inputMode = 'decimal'
+        break
+
+      case 'tel':
+        inputMode = 'tel'
+        break
+
+      case 'email':
+        inputMode = 'email'
+        break
+
+      case 'url':
+        inputMode = 'url'
+        break
+
+      case 'search':
+        inputMode = 'search'
+        break
+
+      default:
+        break
+    }
+
     return (
       <div className={groupClassNames}>
         {!isEmpty(label) ? (
@@ -126,7 +152,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             {...(defaultValue !== undefined ? { defaultValue } : {})}
             id={uniqueId}
             ref={ref}
+            inputMode={inputMode}
             name={name || uniqueId}
+            pattern={props.pattern ?? type === 'number' ? '[0-9]*' : undefined}
             placeholder={placeholder}
             readOnly={readOnly}
             required={required}
