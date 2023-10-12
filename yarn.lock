@@ -4734,10 +4734,10 @@ __metadata:
     "@types/lodash": ^4.14.199
     "@types/prettier": ^3.0.0
     "@types/prop-types": ^15.7.8
-    "@types/react": ^18.2.27
-    "@types/react-dom": ^18.2.12
+    "@types/react": ^18.2.28
+    "@types/react-dom": ^18.2.13
     "@vitejs/plugin-react-swc": ^3.4.0
-    chromatic: ^7.2.3
+    chromatic: ^7.3.0
     country-flag-icons: ^1.5.7
     csso-cli: ^4.0.2
     eslint: ^8.51.0
@@ -6710,12 +6710,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/is-ci@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@types/is-ci@npm:3.0.1"
+"@types/is-ci@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@types/is-ci@npm:3.0.2"
   dependencies:
     ci-info: ^3.1.0
-  checksum: c5cce9ffcd2528ebc731570855d23f99e2589d094e20ac5c3d87c2e53a456c2e7002851bd3fec4e3c20cdd8a5b090d8a90194e108192d9494c4d130ff9b65bbb
+  checksum: 38ff40670403ecb90bdfc072aa17d0d8e7461f95613ffe5080b641fed218b93001c53fd8d0283b207d2c6353f08bafda514eaeb9f947759312160a01b95cc597
   languageName: node
   linkType: hard
 
@@ -6965,12 +6965,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.12":
-  version: 18.2.12
-  resolution: "@types/react-dom@npm:18.2.12"
+"@types/react-dom@npm:^18.2.13":
+  version: 18.2.13
+  resolution: "@types/react-dom@npm:18.2.13"
   dependencies:
     "@types/react": "*"
-  checksum: 64eaf808e91c1d58270ea92dda0e0cbb671f7289be4a5a4e0ccbd85857dd69394970eaa403d958dfbca739735c0af9cde4cf8fe135ff34434838360beae8d306
+  checksum: 22ba066b141dca5a5a9227fae0afc7c94b470fff8e8a38ade72649da57a8ea04d0cb2ba3e22005e7d8e772d49bddd28855b1dd98e6defd033bba6afb6edff883
   languageName: node
   linkType: hard
 
@@ -6985,14 +6985,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.27":
-  version: 18.2.27
-  resolution: "@types/react@npm:18.2.27"
+"@types/react@npm:^18.2.28":
+  version: 18.2.28
+  resolution: "@types/react@npm:18.2.28"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bb29779d4e83e30886a4a939b02812a7ae2d49a26e19eb4be48a6d4e73e8b09ca1a639c97c0ba12a7fe46711355059db7f958cbc1754fe697690656cdb9eca07
+  checksum: 81381bedeba83278f4c9febb0b83e0bd3f42a25897a50b9cb36ef53651d34b3d50f87ebf11211ea57ea575131f85d31e93e496ce46478a00b0f9bf7b26b5917a
   languageName: node
   linkType: hard
 
@@ -9910,14 +9910,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^7.2.3":
-  version: 7.2.3
-  resolution: "chromatic@npm:7.2.3"
+"chromatic@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "chromatic@npm:7.3.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 841962ec63e7de86957bc39bf1b743cd36d2bdf467c754f6669e4df067f57224f501a75ad6129e943605f32bf2b5b57190a478be5454ae92d0847998eb94399f
+  checksum: 0f8bc34aa0cb7f20398ef64c9dbdd2abdd8f33546495b805773e054b2f3eac1902b15608eaabd98b7fca6c1a4ac366976d2aa8eceecfeb8a24fa194eab524750
   languageName: node
   linkType: hard
 
@@ -13538,10 +13538,10 @@ __metadata:
     "@snowball-tech/semantic-release-config": ^2.0.13
     "@snowball-tech/stylelint-config": ^2.1.11
     "@types/eslint": ^8.44.4
-    "@types/is-ci": ^3.0.1
+    "@types/is-ci": ^3.0.2
     "@types/node": ^20.8.4
     "@types/prettier": ^3.0.0
-    chromatic: ^7.2.3
+    chromatic: ^7.3.0
     concurrently: ^8.2.1
     dotenv-cli: ^7.3.0
     eslint: ^8.51.0
