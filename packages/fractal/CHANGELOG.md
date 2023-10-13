@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [3.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.0...@snowball-tech/fractal@3.1.1) (2023-10-13)
+
+### 🐛 Bug Fixes
+
+- **input-pincode:** allow to use backspace to erase a digit and go back to previous one ([5eb3699](https://github.com/snowball-tech/fractal/commit/5eb36996ce8309fbfac57112056c208d5444588e))
+
 # @snowball-tech/fractal [3.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.0.2...@snowball-tech/fractal@3.1.0) (2023-10-12)
 
 ### ✨ Features
