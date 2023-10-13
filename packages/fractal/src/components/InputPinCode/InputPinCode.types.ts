@@ -80,8 +80,8 @@ export interface InputPinCodeProps
    */
   onFieldChange?: (
     event: ChangeEvent<HTMLInputElement> | ClipboardEvent<HTMLInputElement>,
-    newDigit: number,
     index: number,
+    newDigit: string,
   ) => void
   /**
    * Event handler called when one of the field of the pin code input is

@@ -87,6 +87,7 @@ export const InputPinCode = ({
     index: number,
   ) => {
     const newValueAsInt = parseInt(newValue, 10)
+    let digit = newValue
 
     if (
       !isNumber(newValueAsInt) ||
@@ -94,21 +95,20 @@ export const InputPinCode = ({
       newValueAsInt < 0 ||
       newValueAsInt > 9
     ) {
-      return
+      digit = ''
     }
 
     const oldCode = value || defaultValue || ''
-    const newCode = `${oldCode.substring(
-      0,
-      index,
-    )}${newValue}${oldCode.substring(index + 1)}`
+    const newCode = `${oldCode.substring(0, index)}${digit}${oldCode.substring(
+      index + 1,
+    )}`
 
     if (isFunction(onChange)) {
       onChange(event, newCode)
     }
 
     if (isFunction(onFieldChange)) {
-      onFieldChange(event, index, newValueAsInt)
+      onFieldChange(event, index, digit)
     }
 
     const input = event.target
@@ -134,7 +134,7 @@ export const InputPinCode = ({
       if (isFunction(onComplete)) {
         onComplete(newCode)
       }
-      if (input) {
+      if (!isEmpty(digit) && input) {
         input.blur()
       }
     }
@@ -156,6 +156,28 @@ export const InputPinCode = ({
 
     switch (event.key) {
       case 'ArrowLeft':
+        if (index > 0) {
+          const previousInput = document.getElementById(
+            `${uniqueId}-${index - 1}`,
+          ) as HTMLInputElement
+          if (previousInput) {
+            previousInput.focus()
+          }
+        }
+        event.preventDefault()
+        break
+
+      case 'Backspace':
+        if (!isEmpty(event.currentTarget.value)) {
+          handleChange(
+            event as unknown as ChangeEvent<HTMLInputElement>,
+            '',
+            index,
+          )
+
+          return
+        }
+
         if (index > 0) {
           const previousInput = document.getElementById(
             `${uniqueId}-${index - 1}`,
