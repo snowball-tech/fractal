@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [3.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.1...@snowball-tech/fractal@3.1.2) (2023-10-16)
+
+### 🐛 Bug Fixes
+
+- **input-pincode:** fix the usage of arrow keys ([a0c7ae8](https://github.com/snowball-tech/fractal/commit/a0c7ae8ea39e9f48a7ffbcaf7c8c31e62ff1da6c))
+
 ## @snowball-tech/fractal [3.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.0...@snowball-tech/fractal@3.1.1) (2023-10-13)
 
 ### 🐛 Bug Fixes
