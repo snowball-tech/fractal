@@ -24,6 +24,7 @@ import {
   type FocusEvent,
   type KeyboardEvent,
   useId,
+  useRef,
 } from 'react'
 
 import { InputText } from '@/components/InputText'
@@ -62,7 +63,7 @@ export const InputPinCode = ({
   const generatedId = useId()
   const uniqueId = (id ?? generatedId) || generatedId
 
-  let skipFocusChange = false
+  const skipFocusChange = useRef(false)
 
   const hasErrorMessage = !isEmpty(error)
   const hasSuccessMessage = !isEmpty(success)
@@ -116,8 +117,8 @@ export const InputPinCode = ({
       input.select()
     }
 
-    if (skipFocusChange) {
-      skipFocusChange = false
+    if (skipFocusChange.current) {
+      skipFocusChange.current = false
 
       return
     }
@@ -203,7 +204,7 @@ export const InputPinCode = ({
 
       case 'ArrowUp':
       case 'ArrowDown':
-        skipFocusChange = true
+        skipFocusChange.current = true
         break
 
       default:
