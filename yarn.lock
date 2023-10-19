@@ -3330,8 +3330,8 @@ __metadata:
   linkType: hard
 
 "@qiwi/multi-semantic-release@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@qiwi/multi-semantic-release@npm:7.0.0"
+  version: 7.1.0
+  resolution: "@qiwi/multi-semantic-release@npm:7.1.0"
   dependencies:
     "@semrel-extra/topo": ^1.13.0
     blork: ^9.3.0
@@ -3352,7 +3352,7 @@ __metadata:
     stream-buffers: ^3.0.2
   bin:
     multi-semantic-release: bin/cli.js
-  checksum: 2b42abf7ea2f07767cbba12754425917e21c445390443a27a5bc657baa57fe1b3a1d267c3cfc4760d1e60ac7bbdbdb2ef57cec1ab08fcf6348d525e39346631c
+  checksum: 441fd5ca1738159403a0ff55355570d4a998865ca805eb93a183dbb9d8b65aafc28395497a176870eb73679eddb6edda7d94d2cfe4a6e18367dc5cfcb81d3503
   languageName: node
   linkType: hard
 
