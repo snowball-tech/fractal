@@ -27,6 +27,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       disabled = false,
       fullWidth = false,
       icon,
+      iconOnly = false,
       label,
       onToggle,
       toggled,
@@ -43,9 +44,10 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       toggle({ variant }),
       props.className,
       disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
+      fullWidth && !iconOnly ? 'full-width' : '',
       defaultToggled || toggled ? 'toggled' : '',
       !isEmpty(icon) ? `addendum prefix` : '',
+      iconOnly ? 'icon-only' : '',
     )
 
     const handleToggle = (newToggled: boolean) => {
@@ -66,15 +68,20 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
           ? { defaultPressed: defaultToggled }
           : {})}
         disabled={disabled}
+        title={label}
         {...(toggled !== undefined ? { pressed: toggled } : {})}
         onPressedChange={handleToggle}
         {...omit(['className', 'id'], props)}
       >
         {icon}
 
-        <div className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
-          {label}
-        </div>
+        {!iconOnly ? (
+          <div className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
+            {label}
+          </div>
+        ) : (
+          false
+        )}
       </RxToggle.Root>
     )
   },

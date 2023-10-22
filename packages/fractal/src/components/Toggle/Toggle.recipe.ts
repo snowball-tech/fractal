@@ -66,6 +66,11 @@ export const toggle: ReturnType<typeof defineRecipe> = defineRecipe({
       margin: 'unset',
     },
 
+    '&.icon-only': {
+      padding: 'var(--size-spacing-1)',
+      width: '48px',
+    },
+
     _active: {
       transition: 'none',
     },
