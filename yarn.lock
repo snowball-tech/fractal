@@ -4754,10 +4754,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@snowball-tech/design-tokens@npm:6.0.0"
-  checksum: b143d7e9865a515a4a8109a7df92afd1dc1c92c395df22c2c47fdd201bf6c7bf5f026dd86f5507ea58f9ebf481d2a5fdeaf60b4d3b594998f8bebf9f01ed522f
+"@snowball-tech/design-tokens@npm:6.1.0":
+  version: 6.1.0
+  resolution: "@snowball-tech/design-tokens@npm:6.1.0"
+  checksum: 13f94cfc72154b860a91b696ffb417b2da3f288433c449d5cac49a26892930eb7ed7be4e35fd2172d47034c769b42c240d5145953a53b2831624791eb14a0e92
   languageName: node
   linkType: hard
 
@@ -4834,7 +4834,7 @@ __metadata:
     "@radix-ui/react-switch": ^1.0.3
     "@radix-ui/react-toggle": ^1.0.3
     "@radix-ui/react-toggle-group": ^1.0.4
-    "@snowball-tech/design-tokens": 6.0.0
+    "@snowball-tech/design-tokens": 6.1.0
     "@snowball-tech/eslint-config": ^5.2.12
     "@storybook/addon-a11y": ^7.5.1
     "@storybook/addon-actions": ^7.5.1
