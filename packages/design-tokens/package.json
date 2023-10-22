@@ -50,7 +50,7 @@
     "types:check": "true"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.199",
+    "@types/lodash": "^4.14.200",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.8.0",
     "to-esm": "^2.27.3"

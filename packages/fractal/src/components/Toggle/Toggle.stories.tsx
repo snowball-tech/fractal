@@ -39,6 +39,7 @@ const meta = {
     disabled: false,
     fullWidth: false,
     icon: 'None',
+    iconOnly: false,
     label: 'Compact trash',
   },
   component: Toggle,
@@ -78,6 +79,11 @@ export const Primary: Story = {
       <Wrapper>
         <Toggle label="Primary toggle" />
         <Toggle icon={<StarIcon />} label="Primary toggle with icon" />
+        <Toggle
+          icon={<StarIcon />}
+          iconOnly
+          label="Primary toggle with icon only"
+        />
         <Toggle defaultToggled label="Primary toggle toggled" />
       </Wrapper>
 
@@ -87,6 +93,12 @@ export const Primary: Story = {
           disabled
           icon={<CancelIcon />}
           label="Primary disabled toggle with icon"
+        />
+        <Toggle
+          disabled
+          icon={<CancelIcon />}
+          iconOnly
+          label="Primary disabled toggle with icon only"
         />
         <Toggle
           defaultToggled
