@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [6.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@6.0.0...@snowball-tech/design-tokens@6.1.0) (2023-10-22)
+
+### ✨ Features
+
+- **toggle:** add icon only mode ([23f8d1b](https://github.com/snowball-tech/fractal/commit/23f8d1bb6bd60c7707ab0c93d3f73d026df638e1))
+
 # @snowball-tech/design-tokens [6.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@5.15.2...@snowball-tech/design-tokens@6.0.0) (2023-10-10)
 
 ### 💥 Breaking changes
