@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [3.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.2...@snowball-tech/fractal@3.2.0) (2023-10-22)
+
+### ✨ Features
+
+- **toggle:** add icon only mode ([23f8d1b](https://github.com/snowball-tech/fractal/commit/23f8d1bb6bd60c7707ab0c93d3f73d026df638e1))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 6.1.0
+
 ## @snowball-tech/fractal [3.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.1...@snowball-tech/fractal@3.1.2) (2023-10-16)
 
 ### 🐛 Bug Fixes
