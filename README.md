@@ -165,7 +165,7 @@ n auto
 ### **Yarn**
 
 This mono-repository is base on Yarn Workspaces.
-So you'll have to have [Yarn](https://yarnpkg.com/) on its 3.x.x version.
+So you'll have to have [Yarn](https://yarnpkg.com/) on its 4.x.x version.
 
 When having NodeJS installed, simply run:
 
@@ -178,13 +178,13 @@ corepack prepare yarn@stable --activate
 > [official installation documentation](https://yarnpkg.com/getting-started/install)
 > if you have any question or issue
 
-Then make sure you have the latest 3.x.x version installed:
+Then make sure you have the latest 4.x.x version installed:
 
 ```bash
 yarn --version
 ```
 
-This should output a 3.x.x version _(e.g. "3.6.4")_.
+This should output a 4.x.x version _(e.g. "4.0.0")_.
 
 </details>
 

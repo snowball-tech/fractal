@@ -31,9 +31,9 @@
     "url": "https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.0",
   "engines": {
-    "yarn": "^3.0.0",
+    "yarn": "^4.0.0",
     "node": "^18.0.0"
   },
   "workspaces": [
@@ -47,35 +47,36 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
-    "build": "NODE_ENV=production yarn workspaces foreach -t run build",
-    "format": "yarn run -T format:root && yarn workspaces foreach -p run format",
-    "format:fix": "yarn run -T format:root:fix && yarn workspaces foreach -p run format:fix",
-    "format:root": "prettier --cache --check \"./!(apps|packages)\"",
-    "format:root:fix": "prettier --cache --write \"./!(apps|packages)\"",
-    "lint": "yarn run -T lint:root && yarn workspaces foreach -p run lint",
-    "lint:fix": "yarn run -T lint:root:fix && yarn workspaces foreach -p run lint:fix",
-    "lint:root": "eslint --cache \"./!(apps|packages)\"",
-    "lint:root:fix": "eslint --cache --fix \"./!(apps|packages)\"",
-    "publish:all": "multi-semantic-release",
-    "publish:all:local": "CI=true yarn publish:all",
-    "setup": "yarn install && yarn setup:freezer && yarn setup:husky && yarn workspaces foreach -pt run setup",
-    "setup:freezer": "is-ci && ./scripts/setup-freezer.sh",
-    "setup:husky": "is-ci || yarn husky install",
-    "types:check": "yarn workspaces foreach -p run types:check",
-    "update:references": "workspaces-to-typescript-project-references --includesRoot"
+    "build": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build",
+    "format": "yarn run -T format-root && yarn workspaces foreach --all -p run format",
+    "format-fix": "yarn run -T format-root-fix && yarn workspaces foreach --all -p run format-fix",
+    "format-root": "prettier --cache --check \"./!(apps|packages)\"",
+    "format-root-fix": "prettier --cache --write \"./!(apps|packages)\"",
+    "lint": "yarn run -T lint-root && yarn workspaces foreach --all -p run lint",
+    "lint-fix": "yarn run -T lint-root-fix && yarn workspaces foreach --all -p run lint-fix",
+    "lint-root": "eslint --cache \"./!(apps|packages)\"",
+    "lint-root-fix": "eslint --cache --fix \"./!(apps|packages)\"",
+    "publish:-all": "multi-semantic-release",
+    "publish:-all-local": "CI=true yarn publish:-all",
+    "presetup": "is-ci || yarn install",
+    "setup": "yarn run presetup && yarn setup-freezer && yarn setup-husky && yarn workspaces foreach --all -pt run setup",
+    "setup-freezer": "is-ci && ./scripts/setup-freezer.sh",
+    "setup-husky": "is-ci || yarn husky install",
+    "types-check": "yarn workspaces foreach --all -p run types-check",
+    "update-references": "workspaces-to-typescript-project-references --includesRoot"
   },
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.2",
-    "@qiwi/multi-semantic-release": "^7.1.0",
-    "@snowball-tech/eslint-config": "^5.2.12",
-    "@snowball-tech/prettier-config": "^1.3.10",
-    "@snowball-tech/semantic-release-config": "^2.0.13",
-    "@snowball-tech/stylelint-config": "^2.1.11",
+    "@qiwi/multi-semantic-release": "^7.1.1",
+    "@snowball-tech/eslint-config": "^5.2.13",
+    "@snowball-tech/prettier-config": "^1.3.11",
+    "@snowball-tech/semantic-release-config": "^2.0.14",
+    "@snowball-tech/stylelint-config": "^2.1.12",
     "@types/eslint": "^8.44.6",
     "@types/is-ci": "^3.0.3",
-    "@types/node": "^20.8.7",
+    "@types/node": "^20.8.8",
     "@types/prettier": "^3.0.0",
-    "chromatic": "^7.4.0",
+    "chromatic": "^7.5.0",
     "concurrently": "^8.2.2",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.52.0",
@@ -89,5 +90,8 @@
     "stylelint": "^15.11.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@yarnpkg/types": "^4.0.0"
   }
 }

@@ -23,16 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 18.x
           cache: yarn
 
-      - name: Installing dependencies
-        run: yarn install --immutable --immutable-cache
-
-      - name: Setting up each workspace
-        run: yarn workspaces foreach -p run setup
+      - name: Setting up dependencies & workspaces
+        run: yarn install --immutable --immutable-cache && yarn run -T setup
 
       - name: Checking linter
         run: yarn run -T lint
@@ -41,4 +38,4 @@ jobs:
         run: yarn run -T format
 
       - name: Checking typings
-        run: yarn run -T types:check
+        run: yarn run -T types-check

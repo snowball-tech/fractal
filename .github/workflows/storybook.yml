@@ -56,20 +56,20 @@ jobs:
           echo "SKIP_CHROMATIC=1" >> $GITHUB_ENV
 
       - if: env.SKIP_CHROMATIC != 1
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18.x
           cache: yarn
 
       - if: env.SKIP_CHROMATIC != 1
-        name: Installing dependencies
-        run: yarn install --immutable --immutable-cache
+      - name: Setting up dependencies & workspaces
+        run: yarn install --immutable --immutable-cache && yarn run -T setup
 
       - if: env.SKIP_CHROMATIC != 1
         name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
-        run: yarn run setup:freezer
+        run: yarn run setup-freezer
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for security to pass
@@ -94,14 +94,14 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal build:chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
+          yarn workspace @snowball-tech/fractal build-chromatic --exit-zero-on-changes --exit-once-uploaded --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'pull_request'
         name: Building and publishing to Chromatic with Snapshot testing
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal build:chromatic --no-interactive
+          yarn workspace @snowball-tech/fractal build-chromatic --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1
         uses: actions/upload-artifact@v3
