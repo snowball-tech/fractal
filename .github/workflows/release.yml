@@ -11,6 +11,7 @@ on:
       - main
 
 env:
+  FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
   NODE_ENV: production
 
 jobs:
@@ -32,8 +33,6 @@ jobs:
         run: yarn install --immutable --immutable-cache && yarn run -T setup
 
       - name: Setting up Git to access Freezer
-        env:
-          FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
         run: yarn run setup-freezer
 
       - name: Building all packages
