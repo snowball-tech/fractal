@@ -48,7 +48,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build",
-    "build-vercel": "NODE_ENV=production yarn workspaces foreach --all -t run build-vercel",
+    "build-vercel": "NODE_ENV=production yarn workspaces foreach --all -topological-dev run build-vercel",
     "format": "yarn run -T format-root && yarn workspaces foreach --all -p run format",
     "format-fix": "yarn run -T format-root-fix && yarn workspaces foreach --all -p run format-fix",
     "format-root": "prettier --cache --check \"./!(apps|packages)\"",
