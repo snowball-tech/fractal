@@ -43,8 +43,9 @@
   },
   "scripts": {
     "build-chromatic": "yarn run -T chromatic --build-script-name build-storybook",
-    "prebuild-storybook": "yarn run update-fonts & yarn run build-code & yarn run build-styles\"",
-    "build-storybook": "yarn run prebuild-storybook && yarn storybook build",
+    "prebuild-vercel": "yarn run update-fonts & yarn run build-code & yarn run build-styles\"",
+    "build-vercel": "yarn run prebuild-vercel && yarn storybook build",
+    "build-storybook": "yarn run build-vercel",
     "prebuild": "yarn run clean-build && mkdir -p ./dist",
     "build": "yarn run prebuild && yarn run build-code && yarn run build-info && yarn run build-styles && yarn build-library && yarn run postbuild",
     "postbuild": "yarn run csso --comments none --input dist/fractal.css --source-map file --output dist/fractal.css --stat && yarn run build-stats",

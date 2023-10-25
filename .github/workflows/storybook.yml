@@ -62,7 +62,7 @@ jobs:
           cache: yarn
 
       - if: env.SKIP_CHROMATIC != 1
-      - name: Setting up dependencies & workspaces
+        name: Setting up dependencies & workspaces
         run: yarn install --immutable --immutable-cache && yarn run -T setup
 
       - if: env.SKIP_CHROMATIC != 1
