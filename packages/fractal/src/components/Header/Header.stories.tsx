@@ -9,9 +9,11 @@ import type { CSSProperties, ComponentProps } from 'react'
 import { Autocomplete } from '@/components/Autocomplete'
 import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
-import '@/styles/smartphones.css'
 
 import Header from './Header'
+
+// eslint-disable-next-line perfectionist/sort-imports
+import '@/styles/smartphones.css'
 
 type HeaderProps = ComponentProps<typeof Header>
 
