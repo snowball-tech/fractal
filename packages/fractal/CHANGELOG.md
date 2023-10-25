@@ -1,3 +1,31 @@
+# @snowball-tech/fractal [3.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.2.0...@snowball-tech/fractal@3.3.0) (2023-10-25)
+
+### ✨ Features
+
+- add analytics ([7a039d1](https://github.com/snowball-tech/fractal/commit/7a039d1d1b71ce9abe85a1ec80cb54bca9c0e933))
+
+### 🐛 Bug Fixes
+
+- **analytics:** use the proper script ([29be13e](https://github.com/snowball-tech/fractal/commit/29be13e59c8acf6ec741391e3e2b6be64a8f4b6b))
+
+### 📝 Documentation
+
+- **intro:** add Léa's dribble link ([01010f8](https://github.com/snowball-tech/fractal/commit/01010f826427416d47f32d03d417e9636c4d43e1))
+
+### ⚙️ Continuous Integrations
+
+- fix build on Vercel ([9433398](https://github.com/snowball-tech/fractal/commit/9433398060dca90a3cefb0081168a9ef85e09b05))
+- fix vercel build command ([1ca9e3a](https://github.com/snowball-tech/fractal/commit/1ca9e3ac8a8462b34bbe61c36a5ff9fd8e1137ab))
+- fix vercel setup script ([2aa87fa](https://github.com/snowball-tech/fractal/commit/2aa87fa00f31796fe3422a90711ccfe2fab1e617))
+
+### 📦 Dependencies
+
+- upgrade to Yarn V4 and upgrade dependencies ([ec23fd1](https://github.com/snowball-tech/fractal/commit/ec23fd159bcbf6d6c16adc0e11fdeadbe819c5d8))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 6.1.1
+
 # @snowball-tech/fractal [3.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.1.2...@snowball-tech/fractal@3.2.0) (2023-10-22)
 
 ### ✨ Features
