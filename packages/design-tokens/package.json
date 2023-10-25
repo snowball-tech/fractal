@@ -22,9 +22,9 @@
     "directory": "packages/design-tokens"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.0",
   "engines": {
-    "yarn": "^3.0.0",
+    "yarn": "^4.0.0",
     "node": "^18.0.0"
   },
   "main": "dist/web/react/design-tokens.js",
@@ -38,21 +38,20 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prebuild": "yarn run clean:build",
+    "prebuild": "yarn run clean-build",
     "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
-    "clean:build": "rm -Rf dist >/dev/null 2>&1 || true",
+    "clean-build": "rm -Rf dist >/dev/null 2>&1 || true",
     "dev": "yarn run -T nodemon -x \"yarn build\"",
     "format": "yarn run -T prettier --cache --check .",
-    "format:fix": "yarn run -T prettier --cache --write .",
+    "format-fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run -T eslint --cache .",
-    "lint:fix": "yarn run -T eslint --cache --fix .",
-    "setup": "yarn install",
-    "types:check": "true"
+    "lint-fix": "yarn run -T eslint --cache --fix .",
+    "setup": "yarn install"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.200",
     "lodash": "^4.17.21",
-    "style-dictionary": "^3.8.0",
+    "style-dictionary": "^3.9.0",
     "to-esm": "^2.27.3"
   }
 }

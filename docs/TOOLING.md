@@ -28,7 +28,7 @@ yarn workspace <workspace name> <command>
 You can also use the following syntax to take an action in every workspace:
 
 ```bash
-yarn workspaces foreach <command>
+yarn workspaces foreach [--all|--recursive|--since|--worktree] [--parallel] [--topological|--topological-dev] <command>
 ```
 
 ## Vercel

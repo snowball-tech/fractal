@@ -100,12 +100,12 @@ yarn build
 
 ### Useful Commands
 
-- `yarn format:fix` to format the code according to our formatting guidelines
+- `yarn format-fix` to format the code according to our formatting guidelines
   (using _Prettier_);
-- `yarn lint:fix`: to check that the code matches our coding guidelines and
+- `yarn lint-fix`: to check that the code matches our coding guidelines and
   automatically fix what can be fixed _(using ESLint)_;
 - `yarn test`: run all the unit tests;
-- `yarn test:dev`: run the tests for modified components and re-trigger runs
+- `yarn test-dev`: run the tests for modified components and re-trigger runs
   everytime something is modified;
 - `yarn build`: compiles and bundle the design token;
 
