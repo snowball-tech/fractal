@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [6.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@6.1.0...@snowball-tech/design-tokens@6.1.1) (2023-10-25)
+
+### 📦 Dependencies
+
+- upgrade to Yarn V4 and upgrade dependencies ([ec23fd1](https://github.com/snowball-tech/fractal/commit/ec23fd159bcbf6d6c16adc0e11fdeadbe819c5d8))
+
 # @snowball-tech/design-tokens [6.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@6.0.0...@snowball-tech/design-tokens@6.1.0) (2023-10-22)
 
 ### ✨ Features
