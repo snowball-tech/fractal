@@ -15,6 +15,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  YARN_ENABLE_HARDENED_MODE: true
+
 jobs:
   security:
     name: Checking Yarn cache's integrity
