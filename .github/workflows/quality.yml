@@ -16,6 +16,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
+
 jobs:
   quality:
     name: Checking code quality
