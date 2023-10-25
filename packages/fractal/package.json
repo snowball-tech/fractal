@@ -27,7 +27,7 @@
   "packageManager": "yarn@4.0.0",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "^18.0.0"
+    "node": "^20.0.0"
   },
   "type": "module",
   "sideEffects": false,
