@@ -1,8 +1,7 @@
-# This is a Github Workflow that runs lint, formatter and unit tests on every
-# push and pull request.
+# This is a Github Workflow that waits for quality and security to be executed
+# on the `main` branch.
 
-# If everything pass and we are on the `main` branch, it also runs Semantic
-# Release.
+# If everything pass it also release all package using Semantic Release.
 
 name: Release
 
