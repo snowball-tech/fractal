@@ -37,6 +37,15 @@ export interface TextareaProps
    */
   icon?: ReactNode
   /**
+   * Indicates if the icon is disabled when it's a button.
+   *
+   * By default, if the field is disabled, the icon is disabled too, unless you
+   * explicitly set this prop to `false`.
+   * You can also, of course, set this prop to `true` to disable the icon button
+   * whenever you want.
+   */
+  iconDisabled?: boolean
+  /**
    * A unique HTML id for the textarea.
    *
    * This allows to link the textarea with a label.

@@ -687,6 +687,19 @@ export const WithIconAction: Story = {
           <Textarea
             disabled
             icon={<AttachmentIcon />}
+            iconDisabled={false}
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            disabled
+            icon={<AttachmentIcon />}
+            placeholder="This is the disabled placeholder"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             placeholder="This is the disabled placeholder"
             onIconClick={onIconClick}
           />
@@ -694,6 +707,13 @@ export const WithIconAction: Story = {
             defaultValue="This is the value"
             disabled
             icon={<AttachmentIcon />}
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue="This is the value"
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             onIconClick={onIconClick}
           />
         </Wrapper>
@@ -708,6 +728,13 @@ export const WithIconAction: Story = {
             defaultValue={longValue}
             disabled
             icon={<AttachmentIcon />}
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue={longValue}
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             onIconClick={onIconClick}
           />
         </Wrapper>
@@ -750,6 +777,21 @@ export const WithIconAction: Story = {
           <Textarea
             disabled
             icon={<AttachmentIcon />}
+            iconDisabled={false}
+            label="Textarea with a label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            disabled
+            icon={<AttachmentIcon />}
+            label="Textarea with a label"
+            placeholder="And the placeholder"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="Textarea with a label"
             placeholder="And the placeholder"
             onIconClick={onIconClick}
@@ -761,6 +803,14 @@ export const WithIconAction: Story = {
             label="Textarea with a label"
             onIconClick={onIconClick}
           />
+          <Textarea
+            defaultValue="And a value"
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
+            label="Textarea with a label"
+            onIconClick={onIconClick}
+          />
         </Wrapper>
 
         <Wrapper>
@@ -774,6 +824,14 @@ export const WithIconAction: Story = {
             defaultValue={longValue}
             disabled
             icon={<AttachmentIcon />}
+            label="Textarea with a label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue={longValue}
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="Textarea with a label"
             onIconClick={onIconClick}
           />
@@ -816,6 +874,23 @@ export const WithIconAction: Story = {
             description="This is the description"
             disabled
             icon={<AttachmentIcon />}
+            iconDisabled={false}
+            label="This is the label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            description="This is the description"
+            disabled
+            icon={<AttachmentIcon />}
+            label="This is the label"
+            placeholder="This is the placeholder"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            description="This is the description"
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="This is the label"
             placeholder="This is the placeholder"
             onIconClick={onIconClick}
@@ -825,6 +900,15 @@ export const WithIconAction: Story = {
             description="This is the description"
             disabled
             icon={<AttachmentIcon />}
+            label="This is the label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue="This is the value"
+            description="This is the description"
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="This is the label"
             onIconClick={onIconClick}
           />
@@ -843,6 +927,15 @@ export const WithIconAction: Story = {
             description="This is the description"
             disabled
             icon={<AttachmentIcon />}
+            label="This is the label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue={longValue}
+            description="This is the description"
+            disabled
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="This is the label"
             onIconClick={onIconClick}
           />
@@ -871,6 +964,16 @@ export const WithIconAction: Story = {
             label="This is a full width textarea with a label"
             onIconClick={onIconClick}
           />
+          <Textarea
+            defaultValue="A value"
+            description="And a description"
+            disabled
+            fullWidth
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
+            label="This is a full width textarea with a label"
+            onIconClick={onIconClick}
+          />
         </Wrapper>
 
         <Wrapper>
@@ -891,6 +994,16 @@ export const WithIconAction: Story = {
             disabled
             fullWidth
             icon={<AttachmentIcon />}
+            label="This is a full width textarea with a label"
+            onIconClick={onIconClick}
+          />
+          <Textarea
+            defaultValue={veryLongValue}
+            description="And a description"
+            disabled
+            fullWidth
+            icon={<AttachmentIcon />}
+            iconDisabled={false}
             label="This is a full width textarea with a label"
             onIconClick={onIconClick}
           />
