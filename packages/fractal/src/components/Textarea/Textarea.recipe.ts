@@ -152,14 +152,13 @@ export const textarea: ReturnType<typeof defineRecipe> = defineRecipe({
 
 export const textareaIcon: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
+    '&.disabled': {
+      color: 'var(--color-base-grey-70)!',
+      cursor: 'var(--cursor-disabled)',
+    },
     '.fractal-input-textarea.with-action &': {
       bottom: 'var(--size-spacing-2)',
     },
-    '.fractal-input-textarea:is([disabled], [data-disabled], .disabled, [data-read-only], .readonly) &':
-      {
-        color: 'var(--color-base-grey-70)!',
-        cursor: 'var(--cursor-disabled)',
-      },
 
     bottom: 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
     color: 'var(--color-base-grey-30)!',

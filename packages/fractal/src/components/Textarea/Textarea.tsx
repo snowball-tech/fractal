@@ -12,6 +12,7 @@ import {
 } from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 import {
   type ChangeEvent,
@@ -41,6 +42,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       error,
       fullWidth = false,
       icon,
+      iconDisabled,
       id,
       label,
       maxRows,
@@ -97,6 +99,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       }
     }
 
+    let isIconDisabled = disabled
+    if (isFunction(onIconClick)) {
+      isIconDisabled = isNil(iconDisabled) ? disabled : iconDisabled
+    }
+
     return (
       <div className={groupClassNames}>
         {!isEmpty(label) ? (
@@ -135,19 +142,22 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
           {icon && isFunction(onIconClick) && (
             <Button
-              className={textareaIcon()}
-              disabled={disabled}
+              className={cx(textareaIcon(), isIconDisabled ? 'disabled' : '')}
+              disabled={isIconDisabled}
               icon={icon}
               iconOnly
               label=""
-              readOnly={readOnly}
               variant="text"
               onClick={onIconClick}
             />
           )}
 
           {icon && !isFunction(onIconClick) && (
-            <div className={textareaIcon()}>{icon}</div>
+            <div
+              className={cx(textareaIcon(), isIconDisabled ? 'disabled' : '')}
+            >
+              {icon}
+            </div>
           )}
         </div>
 
