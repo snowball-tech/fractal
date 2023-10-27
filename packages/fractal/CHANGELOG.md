@@ -1,3 +1,19 @@
+## @snowball-tech/fractal [3.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.3.0...@snowball-tech/fractal@3.3.1) (2023-10-27)
+
+### 🐛 Bug Fixes
+
+- **textarea:** allow to have the icon button enabled on a disabled field ([46e74aa](https://github.com/snowball-tech/fractal/commit/46e74aa684eab3696c346b6e928b0d999c994193))
+
+### ⚙️ Continuous Integrations
+
+- fix build order ([7ca4ef4](https://github.com/snowball-tech/fractal/commit/7ca4ef48beddba72150c15511a447185b2e124a3))
+- improve commands ([29aee19](https://github.com/snowball-tech/fractal/commit/29aee19ed1c9e2dbebe9dc69bffe613a205eb81f))
+
+### 📦 Dependencies
+
+- rollback panda to 0.17.0 ([74e52a3](https://github.com/snowball-tech/fractal/commit/74e52a3ff135e4b5375a86b3ceac4c323fe35392))
+- upgrade dependencies ([9dee556](https://github.com/snowball-tech/fractal/commit/9dee556894fb39a8c4bcc700e15e804e856346cd))
+
 # @snowball-tech/fractal [3.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.2.0...@snowball-tech/fractal@3.3.0) (2023-10-25)
 
 ### ✨ Features
