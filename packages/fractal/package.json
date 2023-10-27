@@ -47,7 +47,7 @@
     "build-vercel": "yarn run prebuild-vercel && yarn storybook build",
     "build-storybook": "yarn run build-vercel",
     "prebuild": "yarn run clean-build && mkdir -p ./dist",
-    "build": "yarn run prebuild && (yarn run build-code & yarn run build-info & yarn run build-styles & yarn build-library) && yarn run postbuild",
+    "build": "yarn run prebuild && (yarn run build-code & yarn run build-info & yarn run build-styles) && yarn build-library && yarn run postbuild",
     "postbuild": "yarn run csso --comments none --input dist/fractal.css --source-map file --output dist/fractal.css --stat && yarn run build-stats",
     "build-stats": "./scripts/build-stats.sh",
     "prebuild-library": "mkdir -p ./dist",
