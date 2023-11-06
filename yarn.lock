@@ -3404,6 +3404,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pandacss/preset-base@npm:0.17.5":
+  version: 0.17.5
+  resolution: "@pandacss/preset-base@npm:0.17.5"
+  dependencies:
+    "@pandacss/types": "npm:0.17.5"
+  checksum: 08476d8f9f799f3afe7961d19d74a48c8bfba75a0ee21cedcb7d893c9853c5e87284c9abcbef69a5043f2db8814efd30e2871fed9581b3233db9be90ec81e67b
+  languageName: node
+  linkType: hard
+
 "@pandacss/preset-panda@npm:0.17.0":
   version: 0.17.0
   resolution: "@pandacss/preset-panda@npm:0.17.0"
@@ -3472,6 +3481,13 @@ __metadata:
   version: 0.17.1
   resolution: "@pandacss/types@npm:0.17.1"
   checksum: d714ef08e6dc0f1458ac91174429f1ebfc5576becc38a7e321efc9881c966e6f82b8fa95d25b8fc7b53c0deb610e2cf3dd35186628c9f04158dd685a1486c0d0
+  languageName: node
+  linkType: hard
+
+"@pandacss/types@npm:0.17.5":
+  version: 0.17.5
+  resolution: "@pandacss/types@npm:0.17.5"
+  checksum: 95f99db49f2b15253b919ef0289c268bc354a9a59d80fd1f74fe9f8ae3b82989cac982cbdca5e96740129512fcd5239a6f1388414cf71fce2039fe020bce43c9
   languageName: node
   linkType: hard
 
@@ -4922,7 +4938,7 @@ __metadata:
   dependencies:
     "@iconscout/react-unicons": Azuky/react-unicons
     "@pandacss/dev": "npm:0.17.0"
-    "@pandacss/preset-base": "npm:0.17.0"
+    "@pandacss/preset-base": "npm:0.17.5"
     "@radix-ui/react-checkbox": "npm:^1.0.4"
     "@radix-ui/react-compose-refs": "npm:^1.0.1"
     "@radix-ui/react-dropdown-menu": "npm:^2.0.6"
