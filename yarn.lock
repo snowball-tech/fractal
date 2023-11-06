@@ -7108,10 +7108,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 20.6.3
-  resolution: "@types/node@npm:20.6.3"
-  checksum: 2ccd82424cd43c452daaf8918dd40074652080fb813499e0353d3de7fa4620b73595c5a4fddd3651cb2fede21b6e19c5767449e401a744c95427ddeec556c8d0
+"@types/node@npm:*, @types/node@npm:^20.8.9":
+  version: 20.8.10
+  resolution: "@types/node@npm:20.8.10"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 8930039077c8ad74de74c724909412bea8110c3f8892bcef8dda3e9629073bed65632ee755f94b252bcdae8ca71cf83e89a4a440a105e2b1b7c9797b43483049
   languageName: node
   linkType: hard
 
@@ -7123,9 +7125,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^16.0.0":
-  version: 16.18.53
-  resolution: "@types/node@npm:16.18.53"
-  checksum: 12735ff396cf70f926807a82ca248c1df2dc5ee93c9a43f7358bc6e5b38061b72ba3527a69ac647fe777f3fa7cfca2be220f26f33aee667c820375edd4721420
+  version: 16.18.60
+  resolution: "@types/node@npm:16.18.60"
+  checksum: 7379878b0585c9af36f3419b7932f34f22dd32c7d5a7ba5c1538d45e710873135b2fca9b4e0a6ea78ddcf3ca3a4cb9b62b9d05e1ffc06679c9844280bd42b3c2
   languageName: node
   linkType: hard
 
@@ -7137,18 +7139,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^18.0.0, @types/node@npm:^18.11.18":
-  version: 18.17.18
-  resolution: "@types/node@npm:18.17.18"
-  checksum: 493aa742e819433469fb67ae8c1c66bc0db03a0d5061a6807b596e5c5e7ea4548cf8bbbd7e64cd0fe0d4b7b047937731f79086983f730112291981e4451df37f
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20.8.9":
-  version: 20.8.9
-  resolution: "@types/node@npm:20.8.9"
+  version: 18.18.8
+  resolution: "@types/node@npm:18.18.8"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 71e0023342272e63c47f3fab6082bd6c89d0b0c4262a1c2d0d52458560077f5c28ef5cfe704306eac43fc2e5111bef4e1cdbf08f565650520fad5e54005a8836
+  checksum: 25346cda374c3bb630a9055cf8b7dd49729d53502b81ba647336f459c751f66c73ae9ba755a63d7bd05b07afa2c90b5627af985998ef5cdb0bafb2db5ec7b520
   languageName: node
   linkType: hard
 
