@@ -10148,13 +10148,13 @@ __metadata:
   linkType: hard
 
 "chromatic@npm:^7.5.4":
-  version: 7.5.4
-  resolution: "chromatic@npm:7.5.4"
+  version: 7.6.0
+  resolution: "chromatic@npm:7.6.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: aadfd03a325c4862e96f2f141d273d0ea06e0af33fbce26bac5c419f05586771913e4ca46bade728e01eebf53115421f14e0db47525634a6a8a37ea204946de1
+  checksum: e7e900bd34ad0b1b8fe3b85f105ae24acf757ef206eb332e57eea1ced7a5377bd53440b3514d6763c3bc63340c3ad5fc6fa5bb6b69f683d25568504f1b31ee86
   languageName: node
   linkType: hard
 
