@@ -134,6 +134,7 @@ export const buttonLabel: ReturnType<typeof defineRecipe> = defineRecipe({
     maxWidth: '100%',
     overflow: 'hidden',
     textAlign: 'center',
+    textDecoration: 'none',
     textOverflow: 'ellipsis',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',

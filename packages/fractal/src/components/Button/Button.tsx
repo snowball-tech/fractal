@@ -27,13 +27,16 @@ import type { ButtonProps } from './Button.types'
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      asLink = false,
       disabled = false,
       fullWidth = false,
+      href,
       icon,
       iconOnly = false,
       iconPosition = 'right',
       label,
       onClick,
+      target,
       type = 'button',
       variant = DEFAULT_VARIANT,
       ...props
@@ -48,7 +51,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }
 
       if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
-        onClick(event as unknown as MouseEvent<HTMLButtonElement>)
+        onClick(
+          event as unknown as MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+        )
       }
     }
 
@@ -77,6 +82,48 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconOnly ? 'icon-only' : '',
       props.className,
     )
+
+    if (asLink) {
+      return (
+        <a
+          {...(props.id !== undefined ? { id: props.id } : {})}
+          aria-label={label}
+          className={groupClassName}
+          href={href}
+          {...(!isEmpty(target) ? { target } : {})}
+          {...(isFunction(onClick) ? { onClick } : {})}
+          title={label}
+          {...omit(['className', 'id'], props)}
+        >
+          {icon && iconPosition === 'left' ? (
+            <div className={buttonIcon({ variant })}>{icon}</div>
+          ) : (
+            false
+          )}
+
+          {!iconOnly ? (
+            <div
+              className={cx(
+                buttonLabel({ variant }),
+                typography({
+                  variant: variant === Variants.Text ? 'body-1-link' : 'body-1',
+                }),
+              )}
+            >
+              {label}
+            </div>
+          ) : (
+            false
+          )}
+
+          {icon && iconPosition === 'right' ? (
+            <div className={buttonIcon({ variant })}>{icon}</div>
+          ) : (
+            false
+          )}
+        </a>
+      )
+    }
 
     return (
       <button
