@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [3.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.3.1...@snowball-tech/fractal@3.4.0) (2023-11-06)
+
+### ✨ Features
+
+- **button:** add a `asLink` mode. ([173d7da](https://github.com/snowball-tech/fractal/commit/173d7da89a2c4a41e4c9ec75ed23a6932c3bf8bf))
+
 ## @snowball-tech/fractal [3.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.3.0...@snowball-tech/fractal@3.3.1) (2023-10-27)
 
 ### 🐛 Bug Fixes
