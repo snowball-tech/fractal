@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [3.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.4.0...@snowball-tech/fractal@3.4.1) (2023-11-06)
+
+### 🐛 Bug Fixes
+
+- **button:** remove the text decoration in link mode ([acf6f2c](https://github.com/snowball-tech/fractal/commit/acf6f2c511633a4d062f1f23378bfbe8f4522465))
+
 # @snowball-tech/fractal [3.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.3.1...@snowball-tech/fractal@3.4.0) (2023-11-06)
 
 ### ✨ Features
