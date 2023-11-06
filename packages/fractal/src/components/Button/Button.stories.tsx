@@ -35,6 +35,7 @@ const meta = {
     },
   },
   args: {
+    asLink: false,
     disabled: false,
     fullWidth: false,
     icon: 'Send',
