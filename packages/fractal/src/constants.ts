@@ -1,4 +1,4 @@
-import constants from '@snowball-tech/design-tokens/dist/web/react/constants'
+import constants from '@snowball-tech/design-tokens/dist/web/typescript/constants'
 
 export const Breakpoints = constants.breakpoints
 
