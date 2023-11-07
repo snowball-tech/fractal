@@ -39,7 +39,7 @@ StyleDictionary.registerAction({
     console.log(`✔︎ ${destinationDirectory}tailwind.config.js (ESM)`)
 
     execSync(`cp ${baseConfigFile} ${destinationPath}`)
-    console.log(`✔︎ ${destinationDirectory}tailwind.config.js (TS)`)
+    console.log(`✔︎ ${destinationDirectory}tailwind.config.ts (TS)`)
   },
   name: 'tailwindcss/copy-config',
   undo: noop,
