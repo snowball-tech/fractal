@@ -15,6 +15,7 @@ module.exports = {
     '@snowball-tech/eslint-config/storybook',
     '@snowball-tech/eslint-config/perfectionist',
     '@snowball-tech/eslint-config/prettier',
+    'plugin:@typescript-eslint/disable-type-checked',
   ],
 
   parserOptions: {
@@ -23,6 +24,7 @@ module.exports = {
   },
 
   rules: {
+    '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'import/no-cycle': 'off',
     'import/no-named-as-default': 'off',
