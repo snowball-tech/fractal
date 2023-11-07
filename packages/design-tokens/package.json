@@ -52,6 +52,7 @@
     "@types/lodash": "^4.14.200",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.0",
+    "tailwindcss": "^3.3.5",
     "to-esm": "^2.27.3"
   }
 }

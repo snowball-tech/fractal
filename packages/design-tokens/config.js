@@ -45,7 +45,7 @@ module.exports = {
     //
     typescript: {
       ...BASE_OPTIONS,
-      actions: ['react/copy-constants'],
+      actions: ['typescript/copy-constants'],
       buildPath: 'dist/web/typescript/',
       files: [
         {
@@ -65,6 +65,12 @@ module.exports = {
         // Use HSL instead of HEX to automatically support Alpha channel.
         'color/hsl',
       ],
+    },
+
+    //
+    tailwindcss: {
+      ...BASE_OPTIONS,
+      actions: ['tailwindcss/copy-config'],
     },
   },
 }
