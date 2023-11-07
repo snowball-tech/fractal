@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [3.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.4.1...@snowball-tech/fractal@3.5.0) (2023-11-07)
+
+### ✨ Features
+
+- **design-tokens:** add support for TailwindCSS ([#110](https://github.com/snowball-tech/fractal/issues/110)) ([9ea2a07](https://github.com/snowball-tech/fractal/commit/9ea2a0734853965a9f474b5023b26d1139cb8bf6))
+
+### 📦 Dependencies
+
+- upgrade yarn ([b502bfd](https://github.com/snowball-tech/fractal/commit/b502bfd91fd7102c445389e78f5c8fb6f6340d43))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 7.0.0
+
 ## @snowball-tech/fractal [3.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.4.0...@snowball-tech/fractal@3.4.1) (2023-11-06)
 
 ### 🐛 Bug Fixes
