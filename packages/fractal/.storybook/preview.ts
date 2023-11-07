@@ -1,7 +1,7 @@
 import {
   ColorBaseBlack,
   ColorBaseWhite,
-} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+} from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
 import type { Preview } from '@storybook/react'
 
 import DocumentationTemplate from './DocumentationTemplate.mdx'

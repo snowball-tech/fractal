@@ -1,4 +1,4 @@
-declare module '@snowball-tech/design-tokens/dist/web/typescript/constants' {
+declare module '@snowball-tech/design-tokens/dist/web/react/constants' {
   export const breakpoints: {
     /* eslint-disable perfectionist/sort-object-types */
     xs: 'xs'
