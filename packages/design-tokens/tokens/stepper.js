@@ -7,7 +7,7 @@ module.exports = {
 
           value: '{border.1.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: "Border when a stepper's step is active.",
 
@@ -31,7 +31,7 @@ module.exports = {
 
             value: '{color.decorative.pink.90.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             highlighted: {
               comment:

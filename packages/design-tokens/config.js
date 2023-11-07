@@ -6,7 +6,7 @@ const BASE_OPTIONS = {
 module.exports = {
   source: ['tokens/**/*.json', 'tokens/**/*.json5', 'tokens/**/*.js'],
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+  //
   platforms: {
     css: {
       ...BASE_OPTIONS,
@@ -41,10 +41,12 @@ module.exports = {
         'color/css',
       ],
     },
-    react: {
+
+    //
+    typescript: {
       ...BASE_OPTIONS,
-      actions: ['react/copy-constants'],
-      buildPath: 'dist/web/react/',
+      actions: ['typescript/copy-constants'],
+      buildPath: 'dist/web/typescript/',
       files: [
         {
           destination: 'design-tokens.d.ts',
@@ -63,6 +65,12 @@ module.exports = {
         // Use HSL instead of HEX to automatically support Alpha channel.
         'color/hsl',
       ],
+    },
+
+    //
+    tailwindcss: {
+      ...BASE_OPTIONS,
+      actions: ['tailwindcss/copy-config'],
     },
   },
 }

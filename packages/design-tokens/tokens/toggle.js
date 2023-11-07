@@ -12,7 +12,7 @@ module.exports = {
 
           value: '{border.button.display.hover.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Border when clicking/activating primary toggles.',
 
@@ -23,7 +23,7 @@ module.exports = {
 
           value: '{border.1.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Border for disabled primary toggles.',
 
@@ -48,7 +48,7 @@ module.exports = {
 
             value: '{color.background.button.display.hover.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Background color to use when clicking/activating a primary toggles.',
@@ -61,7 +61,7 @@ module.exports = {
 
             value: '{color.background.button.secondary.active.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           disabled: {
             comment: 'Background color to use on disabled primary toggles.',
 
@@ -85,7 +85,7 @@ module.exports = {
 
             value: '{color.icon.button.display.hover.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Icon color to use when clicking/activating a primary toggles.',
@@ -98,7 +98,7 @@ module.exports = {
 
             value: '{color.icon.button.secondary.active.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           disabled: {
             comment: 'Icon color to use on disabled primary toggles.',
 
@@ -122,7 +122,7 @@ module.exports = {
 
             value: '{color.text.button.display.hover.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Text color to use when clicking/activating a primary toggles.',
@@ -135,7 +135,7 @@ module.exports = {
 
             value: '{color.text.button.secondary.active.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           disabled: {
             comment: 'Text color to use on disabled primary toggles.',
 
@@ -159,7 +159,7 @@ module.exports = {
 
           value: '{shadow.button.display.hover.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Shadow when clicking/activating primary toggles.',
 
@@ -170,7 +170,7 @@ module.exports = {
 
           value: '{shadow.toggle.primary.active.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Shadow for disabled primary toggles.',
 
@@ -196,7 +196,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Gap between text and icon.',
 
