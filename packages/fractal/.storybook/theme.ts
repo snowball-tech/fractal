@@ -6,7 +6,7 @@ import {
   SizeRadiusM as Radius,
   ColorBrandSecondary as SecondaryColor,
   ColorBaseWhite as White,
-} from '@snowball-tech/design-tokens/dist/web/react/design-tokens'
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 import type { ThemeVars } from '@storybook/theming'
 import { create } from '@storybook/theming/create'
 

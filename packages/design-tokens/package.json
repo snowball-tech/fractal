@@ -27,12 +27,12 @@
     "yarn": "^4.0.0",
     "node": "^18.0.0"
   },
-  "main": "dist/web/react/design-tokens.js",
+  "main": "dist/web/typescript/design-tokens.js",
   "files": [
     "dist/*",
     "dist/**"
   ],
-  "types": "dist/web/react/design-tokens.d.ts",
+  "types": "dist/web/typescript/design-tokens.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

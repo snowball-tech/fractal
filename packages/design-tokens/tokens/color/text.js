@@ -13,7 +13,7 @@ module.exports = {
         value: '{color.base.white.value}',
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Text color of most disabled elements.',
 
@@ -26,7 +26,7 @@ module.exports = {
         value: '{color.base.grey.30.value}',
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       error: {
         comment: 'Text color for error messages.',
 

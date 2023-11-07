@@ -13,7 +13,7 @@ module.exports = {
         value: '{color.base.white.value}',
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Icon color of most disabled elements.',
 

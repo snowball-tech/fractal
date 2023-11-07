@@ -10,7 +10,7 @@ module.exports = {
       },
       white: { comment: 'White Tone 100', value: '#FFFFFF' },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       transparent: { comment: 'Transparent', value: 'transparent' },
     },
   },

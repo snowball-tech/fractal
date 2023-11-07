@@ -41,7 +41,7 @@ module.exports = {
           value: '{color.base.transparent.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment:
             'Background color to use for disabled checkbox/radio fields.',
@@ -57,7 +57,7 @@ module.exports = {
           value: '{color.decorative.pink.90.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         checked: {
           comment:
             'Background color to use when a radio button in a group is selected',
@@ -88,7 +88,7 @@ module.exports = {
           value: '{color.text.checkbox.tertiary.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Box color to use for disabled checkbox/radio fields.',
 
@@ -118,7 +118,7 @@ module.exports = {
           value: '{color.text.checkbox.tertiary.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Box color to use for disabled checkbox/radio fields.',
 
@@ -148,7 +148,7 @@ module.exports = {
           value: '{color.text.checkbox.primary.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Box color to use for disabled checkbox/radio fields.',
 
@@ -195,7 +195,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Gap between checkbox and label.',
 

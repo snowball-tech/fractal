@@ -14,13 +14,13 @@ module.exports = {
         width: { value: baseWidth },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       m: {
         height: { value: baseHeight * 2 },
         width: { value: baseWidth * 2 },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       l: {
         height: { value: baseHeight * 3 },
         width: { value: baseWidth * 3 },
@@ -43,13 +43,13 @@ module.exports = {
         width: { value: baseHeight },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       m: {
         height: { value: baseHeight * 2 },
         width: { value: baseHeight * 2 },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       l: {
         height: { value: baseHeight * 3 },
         width: { value: baseHeight * 3 },

@@ -11,13 +11,13 @@ module.exports = {
 
         value: '{border.input.hover.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       focus: {
         comment: 'Border when focusing selects.',
 
         value: '{size.border.1.value} solid {color.border.primary.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Border for disabled selects.',
 
@@ -25,7 +25,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     dropdown: {
       comment: "Border for selects' dropdown.",
 
@@ -43,7 +43,7 @@ module.exports = {
 
         value: '{border.options.base.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: "Border for disabled selects' options.",
 
@@ -65,13 +65,13 @@ module.exports = {
 
           value: '{color.background.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Background color to use when focusing selects.',
 
           value: '{color.background.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Background color to use for disabled selects.',
 
@@ -79,7 +79,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       dropdown: {
         comment: "Background color to use for selects' dropdown.",
 
@@ -119,7 +119,7 @@ module.exports = {
             value: '{color.decorative.purple.90.value}',
           },
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: "Background color to use for disabled selects' options.",
 
@@ -140,13 +140,13 @@ module.exports = {
 
           value: '{color.icon.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Dropdown arrow color to use when focusing selects.',
 
           value: '{color.icon.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Dropdown arrow color to use for disabled selects.',
 
@@ -167,13 +167,13 @@ module.exports = {
 
           value: '{color.text.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Text color to use when focusing selects.',
 
           value: '{color.text.select.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Text color to use for disabled selects.',
 
@@ -187,7 +187,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       options: {
         base: {
           comment: "Text color to use for selects' options.",
@@ -199,7 +199,7 @@ module.exports = {
 
           value: '{color.text.options.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: "Text color to use for disabled selects' options.",
 
@@ -221,13 +221,13 @@ module.exports = {
 
         value: 'inset 0 0 0 1px {color.border.default.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       focus: {
         comment: 'Shadow when focusing selects.',
 
         value: 'inset 0 0 0 1px {color.border.primary.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Shadow for disabled selects.',
 
@@ -235,7 +235,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     dropdown: {
       comment: "Shadow for selects' dropdown.",
 
@@ -253,7 +253,7 @@ module.exports = {
 
         value: '{shadow.options.base.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: "Shadow for disabled selects' options.",
 
@@ -278,7 +278,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     dropdown: {
       padding: {
         horizontal: {
@@ -293,7 +293,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Spacing to use between the select and the dropdown',
 

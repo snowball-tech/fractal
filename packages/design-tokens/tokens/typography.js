@@ -56,7 +56,7 @@ module.exports = {
             group: 'size',
             value: 48,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 80,
@@ -73,7 +73,7 @@ module.exports = {
             group: 'size',
             value: 64,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 96,
@@ -92,7 +92,7 @@ module.exports = {
             group: 'size',
             value: 40,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 72,
@@ -109,7 +109,7 @@ module.exports = {
             group: 'size',
             value: 48,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 80,
@@ -128,7 +128,7 @@ module.exports = {
             group: 'size',
             value: 32,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 56,
@@ -145,7 +145,7 @@ module.exports = {
             group: 'size',
             value: 40,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 64,
@@ -166,7 +166,7 @@ module.exports = {
             group: 'size',
             value: 32,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 40,
@@ -183,7 +183,7 @@ module.exports = {
             group: 'size',
             value: 44,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 56,
@@ -202,7 +202,7 @@ module.exports = {
             group: 'size',
             value: 28,
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           [breakpoints.md]: {
             group: 'size',
             value: 32,
@@ -315,7 +315,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     body: {
       1: {
         comment: 'Use for marketing and/or product regular body text',
@@ -361,7 +361,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       '1-bold': {
         comment: 'Use for marketing and/or product bold body text',
 
@@ -453,7 +453,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       '2-bold': {
         comment: 'Use for marketing and/or product bold low body text',
 
@@ -507,7 +507,7 @@ module.exports = {
       // reference in the other tokens below.
       ignored: true,
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       fontFamily: {
         value: '{font.family.normal.value}',
       },
@@ -527,7 +527,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     'caption-median': {
       comment: 'Use for marketing and/or product labels and captions',
 
@@ -550,7 +550,7 @@ module.exports = {
       },
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     'caption-bold': {
       comment: 'Use for marketing and/or product bold labels and captions',
 
