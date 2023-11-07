@@ -13,9 +13,22 @@ module.exports = {
     '@snowball-tech/eslint-config/react',
     '@snowball-tech/eslint-config/lodash',
     '@snowball-tech/eslint-config/perfectionist',
-    '@snowball-tech/eslint-config/tailwind',
     '@snowball-tech/eslint-config/prettier',
+    'plugin:@typescript-eslint/disable-type-checked',
   ],
 
-  root: true,
+  overrides: [
+    {
+      files: ['src/tailwind.config.ts'],
+      rules: {
+        'import/no-unresolved': 'off',
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+  ],
 }

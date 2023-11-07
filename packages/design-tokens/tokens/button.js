@@ -12,7 +12,7 @@ module.exports = {
 
           value: '{border.button.display.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Border when clicking/activating display buttons.',
 
@@ -36,7 +36,7 @@ module.exports = {
 
           value: '{border.2.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Border when clicking/activating primary buttons.',
 
@@ -60,7 +60,7 @@ module.exports = {
 
           value: '{border.button.secondary.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Border when clicking/activating secondary buttons.',
 
@@ -84,7 +84,7 @@ module.exports = {
 
           value: '{border.button.text.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Border when clicking/activating text buttons.',
 
@@ -114,7 +114,7 @@ module.exports = {
 
             value: '{color.background.button.display.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Background color to use when clicking/activating a display buttons.',
@@ -140,7 +140,7 @@ module.exports = {
 
             value: '{color.base.white.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Background color to use when clicking/activating a primary buttons.',
@@ -166,7 +166,7 @@ module.exports = {
 
             value: '{color.background.button.secondary.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Background color to use when clicking/activating a secondary buttons.',
@@ -192,7 +192,7 @@ module.exports = {
 
             value: '{color.background.button.text.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Background color to use when clicking/activating a text buttons.',
@@ -222,7 +222,7 @@ module.exports = {
 
             value: '{color.icon.button.display.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Icon color to use when clicking/activating a display buttons.',
@@ -248,7 +248,7 @@ module.exports = {
 
             value: '{color.base.black.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Icon color to use when clicking/activating a primary buttons.',
@@ -274,7 +274,7 @@ module.exports = {
 
             value: '{color.icon.button.secondary.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Icon color to use when clicking/activating a secondary buttons.',
@@ -299,7 +299,7 @@ module.exports = {
 
             value: '{color.icon.button.text.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Icon color to use when clicking/activating a text buttons.',
@@ -329,7 +329,7 @@ module.exports = {
 
             value: '{color.text.button.display.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Text color to use when clicking/activating a display buttons.',
@@ -355,7 +355,7 @@ module.exports = {
 
             value: '{color.base.black.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Text color to use when clicking/activating a primary buttons.',
@@ -381,7 +381,7 @@ module.exports = {
 
             value: '{color.text.button.secondary.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Text color to use when clicking/activating a secondary buttons.',
@@ -406,7 +406,7 @@ module.exports = {
 
             value: '{color.text.button.text.base.value}',
           },
-          // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+          //
           active: {
             comment:
               'Text color to use when clicking/activating a text buttons.',
@@ -436,7 +436,7 @@ module.exports = {
 
           value: '{shadow.brutal.2.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Shadow when clicking/activating display buttons.',
 
@@ -460,7 +460,7 @@ module.exports = {
 
           value: '{shadow.button.primary.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Shadow when clicking/activating primary buttons.',
 
@@ -484,7 +484,7 @@ module.exports = {
 
           value: 'inset 0 0 0 1px {color.border.default.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Shadow when clicking/activating secondary buttons.',
 
@@ -508,7 +508,7 @@ module.exports = {
 
           value: 'shadow.button.text.base.value',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         active: {
           comment: 'Shadow when clicking/activating text buttons.',
 
@@ -539,7 +539,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Gap between text and icon.',
 

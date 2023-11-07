@@ -1,1 +1,1 @@
-module.exports = require('@snowball-tech/prettier-config/.prettierrc')
+module.exports = require('@snowball-tech/prettier-config/.prettierrc-tailwind')

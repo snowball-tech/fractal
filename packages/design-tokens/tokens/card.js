@@ -168,7 +168,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Gap between title and body.',
 

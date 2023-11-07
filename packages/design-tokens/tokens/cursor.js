@@ -6,7 +6,7 @@ module.exports = {
       value: 'default',
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     clickable: {
       comment: 'Cursor for clickable elements.',
 
@@ -19,7 +19,7 @@ module.exports = {
       value: 'text',
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     disabled: {
       comment: 'Cursor for disabled elements.',
 

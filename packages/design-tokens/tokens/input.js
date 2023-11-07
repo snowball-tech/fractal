@@ -11,13 +11,13 @@ module.exports = {
 
         value: '{border.input.base.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       focus: {
         comment: 'Border when focusing input fields.',
 
         value: '{size.border.1.value} solid {color.border.primary.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Border for disabled input fields.',
 
@@ -50,13 +50,13 @@ module.exports = {
 
           value: '{color.background.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Background color to use when focusing input fields.',
 
           value: '{color.background.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Background color to use for disabled input fields.',
 
@@ -90,13 +90,13 @@ module.exports = {
 
           value: '{color.icon.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Icon color to use when focusing input fields.',
 
           value: '{color.icon.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Icon color to use for disabled input fields.',
 
@@ -129,13 +129,13 @@ module.exports = {
 
           value: '{color.text.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         focus: {
           comment: 'Text color to use when focusing input fields.',
 
           value: '{color.text.input.base.value}',
         },
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         disabled: {
           comment: 'Text color to use for disabled input fields.',
 
@@ -148,7 +148,7 @@ module.exports = {
           value: '{color.text.placeholder.value}',
         },
 
-        // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+        //
         error: {
           comment: 'Text color to use for input fields with "error" feedback.',
 
@@ -176,13 +176,13 @@ module.exports = {
 
         value: 'inset 0 0 0 1px {color.border.default.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       focus: {
         comment: 'Shadow when focusing input fields.',
 
         value: 'inset 0 0 0 1px {color.border.primary.value}',
       },
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       disabled: {
         comment: 'Shadow for disabled input fields.',
 
@@ -217,7 +217,7 @@ module.exports = {
         },
       },
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       gap: {
         comment: 'Gap between text and icon.',
 

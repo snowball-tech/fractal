@@ -3,7 +3,7 @@ module.exports = {
     brand: {
       comment: "Main Snowball's brand colors.",
 
-      // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+      //
       body: {
         dark: { comment: 'Black', value: '{color.base.black}' },
         light: { comment: 'Yellowish White Tone 90', value: '#FFFBF4' },

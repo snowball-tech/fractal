@@ -6,7 +6,7 @@ module.exports = {
       value: 'none',
     },
 
-    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    //
     1: {
       comment: 'A subtle border.',
 
