@@ -1,3 +1,17 @@
+# @snowball-tech/design-tokens [7.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@6.1.1...@snowball-tech/design-tokens@7.0.0) (2023-11-07)
+
+### 💥 Breaking changes
+
+- update design tokens exports ([5f23c9e](https://github.com/snowball-tech/fractal/commit/5f23c9e1a109ca039b060f870360dc65588f163b))
+
+### ✨ Features
+
+- **design-tokens:** add support for TailwindCSS ([#110](https://github.com/snowball-tech/fractal/issues/110)) ([9ea2a07](https://github.com/snowball-tech/fractal/commit/9ea2a0734853965a9f474b5023b26d1139cb8bf6))
+
+### 📦 Dependencies
+
+- upgrade yarn ([b502bfd](https://github.com/snowball-tech/fractal/commit/b502bfd91fd7102c445389e78f5c8fb6f6340d43))
+
 ## @snowball-tech/design-tokens [6.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@6.1.0...@snowball-tech/design-tokens@6.1.1) (2023-10-25)
 
 ### 📦 Dependencies
