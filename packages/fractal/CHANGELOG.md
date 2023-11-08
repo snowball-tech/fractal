@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [3.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.1...@snowball-tech/fractal@3.5.2) (2023-11-08)
+
+### 🐛 Bug Fixes
+
+- fix a style issue ([8ef28a0](https://github.com/snowball-tech/fractal/commit/8ef28a0882a20e208af9c72920b5f5065de341dc))
+- **textarea:** make the icon black when hovered ([bd8a07b](https://github.com/snowball-tech/fractal/commit/bd8a07bed10fbcb1bbe21b516cf3326be7fc5900))
+
 ## @snowball-tech/fractal [3.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.0...@snowball-tech/fractal@3.5.1) (2023-11-07)
 
 ### 📦 Dependencies
