@@ -23,7 +23,7 @@ export function extendConditions(
     hoverNotChecked:
       '&:is(:hover, [data-hover]):not(:is(:checked, [data-checked], .checked))',
 
-    hoverNotFocus: '&',
+    hoverNotFocus: '&:is(:hover, [data-hover]):not(:is(:focus, [data-focus]))',
     hoverFocusNotDisabled:
       '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
 
