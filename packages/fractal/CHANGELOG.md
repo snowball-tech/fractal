@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [3.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.2...@snowball-tech/fractal@3.5.3) (2023-11-08)
+
+### 🐛 Bug Fixes
+
+- **input-phone:** fix phone input behavior with prefix ([0ab4026](https://github.com/snowball-tech/fractal/commit/0ab4026663a33e2fa9bf3a7fd8b636d1900b6a1c))
+
 ## @snowball-tech/fractal [3.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.1...@snowball-tech/fractal@3.5.2) (2023-11-08)
 
 ### 🐛 Bug Fixes
