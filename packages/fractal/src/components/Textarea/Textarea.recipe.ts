@@ -28,7 +28,7 @@ export const textareaContainer: ReturnType<typeof defineRecipe> = defineRecipe({
 export const textareaLabel: ReturnType<typeof defineRecipe> = defineRecipe({
   base: {
     _textareaNotWritable: {
-      cursor: 'unset',
+      cursor: 'not-allowed',
     },
 
     _textareaRequired: {
@@ -103,7 +103,8 @@ export const textarea: ReturnType<typeof defineRecipe> = defineRecipe({
       shadow: `var(--shadow-input-disabled)`,
     },
 
-    _writable: {
+    // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
+    _groupWritable: {
       _focus: {
         backgroundColor: `var(--color-background-input-focus)`,
         border: `var(--border-input-focus)`,
@@ -157,6 +158,12 @@ export const textareaIcon: ReturnType<typeof defineRecipe> = defineRecipe({
       cursor: 'var(--cursor-disabled)',
     },
     '.fractal-input-textarea.with-action &': {
+      _notDisabled: {
+        _hover: {
+          color: `var(--color-text-input-base)!`,
+        },
+      },
+
       bottom: 'var(--size-spacing-2)',
     },
 

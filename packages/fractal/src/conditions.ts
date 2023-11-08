@@ -13,17 +13,17 @@ export function extendConditions(
       '.group:is(:active, [data-active]):not(:is(:disabled, [disabled], [data-disabled], .disabled)) &,',
 
     readOnlyNotDisabled:
-      '&:is(:read-only, [data-read-only], .readonly):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
+      '&:is(:read-only, [read-only], [data-read-only], .readonly):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
 
     writable:
-      '&:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly))',
+      '&:not(:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [read-only], [data-read-only], .readonly))',
     groupNotWritable:
-      '.group:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [data-read-only], .readonly) &',
+      '.group:is(:disabled, [disabled], [data-disabled], .disabled, :read-only, [read-only], [data-read-only], .readonly) &',
 
     hoverNotChecked:
       '&:is(:hover, [data-hover]):not(:is(:checked, [data-checked], .checked))',
 
-    hoverNotFocus: '&:is(:hover, [data-hover]):not(:is(:focus, [data-focus]))',
+    hoverNotFocus: '&',
     hoverFocusNotDisabled:
       '&:is(:hover, [data-hover], :focus, [data-focus]):not(:is(:disabled, [disabled], [data-disabled], .disabled))',
 
