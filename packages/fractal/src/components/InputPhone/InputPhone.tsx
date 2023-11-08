@@ -186,7 +186,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       }
 
       selectPrefix({
-        countryCode: parsedPhone.country,
+        countryCode: parsedPhone.country ?? prefix?.countryCode,
         prefix: parsedPhone.countryCallingCode,
       })
 
@@ -332,6 +332,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                     ? { placeholder: searchPlaceholder }
                     : {})}
                   prefix={<SearchIcon />}
+                  selectOnFocus={!keepFocus}
                   value={search}
                   onBlur={handleSearchBlur}
                   onChange={(_, newSearch) => handleSearch(newSearch, true)}
