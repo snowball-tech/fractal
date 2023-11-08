@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal",
-  "version": "3.5.2",
+  "version": "3.5.3",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
@@ -84,6 +84,7 @@
     "update-fonts": "yarn run preupdate-fonts && ../../scripts/update-fonts.sh ./assets/"
   },
   "devDependencies": {
+    "@csstools/postcss-cascade-layers": "^4.0.1",
     "@pandacss/dev": "0.18.0",
     "@pandacss/preset-base": "0.18.0",
     "@snowball-tech/eslint-config": "^5.3.1",
@@ -101,6 +102,7 @@
     "@storybook/theming": "^7.5.3",
     "@types/eslint": "^8.44.7",
     "@types/lodash": "^4.14.200",
+    "@types/postcss-flexbugs-fixes": "^5",
     "@types/prettier": "^3.0.0",
     "@types/prop-types": "^15.7.9",
     "@types/react": "^18.2.36",
@@ -110,6 +112,10 @@
     "csso-cli": "^4.0.2",
     "eslint": "^8.53.0",
     "postcss": "^8.4.31",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-logical": "^7.0.0",
+    "postcss-preset-env": "^9.3.0",
     "postcss-styled-syntax": "^0.5.0",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
