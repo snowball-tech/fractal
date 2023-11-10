@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/design-tokens",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [

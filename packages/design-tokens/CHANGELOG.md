@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [7.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.1...@snowball-tech/design-tokens@7.0.2) (2023-11-10)
+
+### 🐛 Bug Fixes
+
+- **tailwind:** use the proper safelisting of classes ([6a2c7dc](https://github.com/snowball-tech/fractal/commit/6a2c7dc575e272d8011f2b0f2a4d0ba064202e00))
+
 ## @snowball-tech/design-tokens [7.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.0...@snowball-tech/design-tokens@7.0.1) (2023-11-10)
 
 ### 🐛 Bug Fixes
