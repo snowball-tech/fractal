@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [7.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.3...@snowball-tech/design-tokens@7.0.4) (2023-11-10)
+
+### 🐛 Bug Fixes
+
+- **tailwind:** fix border colors ([5c1b1af](https://github.com/snowball-tech/fractal/commit/5c1b1af6623926cea5c394d3a0a7c4885b43fc65))
+
 ## @snowball-tech/design-tokens [7.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.2...@snowball-tech/design-tokens@7.0.3) (2023-11-10)
 
 ### 📦 Dependencies
