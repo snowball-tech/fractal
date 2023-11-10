@@ -84,9 +84,8 @@ export default {
   theme: {
     backgroundColor: ({ theme }) => ({
       ...theme('colors'),
-      dark: 'var(--color-background-body-dark)',
+      ...theme('colors.body'),
       disabled: 'var(--color-background-disabled)',
-      light: 'var(--color-background-body-light)',
     }),
 
     borderColor: ({ theme }) => ({
@@ -130,6 +129,10 @@ export default {
       ...baseColors,
       ...brandColors,
       base: baseColors,
+      body: {
+        dark: 'var(--color-background-body-dark)',
+        light: 'var(--color-background-body-light)',
+      },
       brand: {
         ...brandColors,
         DEFAULT: 'var(--color-brand-primary)',
