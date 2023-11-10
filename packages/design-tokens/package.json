@@ -49,6 +49,8 @@
     "setup": "yarn install"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@types/lodash": "^4.14.200",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.0",
