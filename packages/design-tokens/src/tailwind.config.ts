@@ -79,11 +79,7 @@ export default {
     require('@tailwindcss/container-queries'),
   ],
 
-  purge: {
-    options: {
-      safelist: [/^[fF]ractal/],
-    },
-  },
+  safelist: [{ pattern: /^[fF]ractal/ }],
 
   theme: {
     backgroundColor: ({ theme }) => ({
