@@ -49,12 +49,15 @@
     "setup": "yarn install"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@types/lodash": "^4.14.200",
+    "@types/lodash": "^4.14.201",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.0",
     "tailwindcss": "^3.3.5",
     "to-esm": "^2.27.3"
+  },
+  "peerDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "tailwindcss": "^3.3.5"
   }
 }
