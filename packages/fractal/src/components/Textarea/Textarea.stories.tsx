@@ -105,7 +105,7 @@ export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
-    const textarea = canvas.getByLabelText(/label/i)
+    const textarea = canvas.getByLabelText(/kenobi/i)
 
     await userEvent.hover(textarea)
     await sleep(500)
@@ -113,6 +113,10 @@ export const Interactive: Story = {
 
     await sleep(500)
     await userEvent.type(textarea, 'Hello there!', { delay: 10 })
+    await userEvent.type(
+      textarea,
+      'Nulla ad id sint ipsum magna et aliqua duis cupidatat quis exercitation quis nulla culpa. Cillum dolor pariatur velit labore proident fugiat ut enim in occaecat labore. Lorem fugiat commodo voluptate tempor. Ullamco cupidatat commodo qui aliqua ullamco incididunt do quis est Lorem fugiat minim laborum. Incididunt qui duis proident non duis consequat. Non ad enim fugiat labore occaecat nisi do reprehenderit.',
+    )
 
     await sleep(500)
     await textarea.blur()
