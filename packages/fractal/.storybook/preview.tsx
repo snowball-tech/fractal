@@ -14,7 +14,9 @@ const preview: Preview = {
   decorators: isChromatic()
     ? [
         (storyFn) => (
-          <div style={{ height: '800px', width: '1200px' }}>{storyFn()}</div>
+          <div style={{ height: '1200px', padding: '16px', width: '800px' }}>
+            {storyFn()}
+          </div>
         ),
       ]
     : [],
