@@ -5416,6 +5416,7 @@ __metadata:
     react-textarea-autosize: "npm:^8.5.3"
     storybook: "npm:^7.5.3"
     storybook-addon-mock: "npm:^4.3.0"
+    storybook-addon-pseudo-states: "npm:^2.1.2"
     tsup: "npm:^7.2.0"
     typescript: "npm:^5.2.2"
     vercel: "npm:^32.5.3"
@@ -23602,6 +23603,26 @@ __metadata:
     react-dom:
       optional: true
   checksum: f9407e23df2b3dad895d9ee9a47799c5dedd84a69773c0ad1a2d7ff039650548187dc6b6d3dad693945e16956e3d3075ffc062004417e3fad1edb43d0ca06bcf
+  languageName: node
+  linkType: hard
+
+"storybook-addon-pseudo-states@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "storybook-addon-pseudo-states@npm:2.1.2"
+  peerDependencies:
+    "@storybook/components": ^7.4.6
+    "@storybook/core-events": ^7.4.6
+    "@storybook/manager-api": ^7.4.6
+    "@storybook/preview-api": ^7.4.6
+    "@storybook/theming": ^7.4.6
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: df9baffd11ec8eb6487e871d33d2235efc0b93c6e1b679f1a99de65b6e5f2778e0ee17389ba9064feedcac701dd95f94edb53944ccf01ae870287693c0619749
   languageName: node
   linkType: hard
 

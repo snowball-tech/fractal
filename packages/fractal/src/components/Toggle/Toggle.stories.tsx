@@ -5,7 +5,10 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-excla
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import Toggle from './Toggle'
 import { DEFAULT_VARIANT, Variants } from './Toggle.constants'
@@ -129,4 +132,16 @@ export const Primary: Story = {
       </Wrapper>
     </>
   ),
+}
+
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('button'))
+  },
+  render: () => <Toggle label="Primary toggle" />,
 }

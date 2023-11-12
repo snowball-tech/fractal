@@ -30,13 +30,15 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children, disabled = false, value = '' }) => (
-    <Autocomplete
-      placeholder="Start typing to autocomplete"
-      onChange={action('onChange')}
-    >
-      <AutocompleteItem disabled={disabled} value={value}>
-        {children}
-      </AutocompleteItem>
-    </Autocomplete>
+    <div style={{ height: '1200px' }}>
+      <Autocomplete
+        placeholder="Start typing to autocomplete"
+        onChange={action('onChange')}
+      >
+        <AutocompleteItem disabled={disabled} value={value}>
+          {children}
+        </AutocompleteItem>
+      </Autocomplete>
+    </div>
   ),
 }

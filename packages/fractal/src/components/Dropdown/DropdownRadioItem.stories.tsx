@@ -27,10 +27,12 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ disabled = false, label, value }) => (
-    <Dropdown trigger="Click me">
-      <DropdownRadioGroup onValueChange={action('onValueChange')}>
-        <DropdownRadioItem disabled={disabled} label={label} value={value} />
-      </DropdownRadioGroup>
-    </Dropdown>
+    <div style={{ height: '1200px' }}>
+      <Dropdown trigger="Click me">
+        <DropdownRadioGroup onValueChange={action('onValueChange')}>
+          <DropdownRadioItem disabled={disabled} label={label} value={value} />
+        </DropdownRadioGroup>
+      </Dropdown>
+    </div>
   ),
 }

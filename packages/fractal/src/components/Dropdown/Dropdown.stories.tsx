@@ -2,12 +2,16 @@ import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
 import UserProfileIcon from '@iconscout/react-unicons/dist/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
 import type { Meta, StoryObj } from '@storybook/react'
-import type { ComponentProps } from 'react'
+import { userEvent, within } from '@storybook/testing-library'
+import isChromatic from 'chromatic/isChromatic'
+import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
 import { Button } from '@/components/Button'
 import { avatarUrl } from '@/mocks'
+import { sleep } from '@/utils'
 
+import { DropdownItemGroup, DropdownItemSeparator } from '.'
 import Dropdown from './Dropdown'
 import DropdownItem from './DropdownItem'
 import DropdownRadioGroup from './DropdownRadioGroup'
@@ -82,6 +86,13 @@ const meta = {
     withIndicator: true,
   },
   component: Dropdown,
+  decorators: isChromatic()
+    ? [
+        (storyFn: () => ReactNode) => (
+          <div style={{ height: '800px' }}>{storyFn()}</div>
+        ),
+      ]
+    : [],
   parameters: {
     componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
   },
@@ -93,3 +104,34 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const Interactive: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    await userEvent.click(canvas.getAllByRole('button').at(0)!)
+
+    const menuItems = body.getAllByRole('menuitem')
+    if (menuItems.length > 0) {
+      /* eslint-disable @typescript-eslint/no-non-null-assertion */
+      await userEvent.hover(menuItems.at(0)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(1)!)
+      /* eslint-enable @typescript-eslint/no-non-null-assertion */
+    }
+  },
+  render: () => (
+    <Dropdown trigger={<Button label="This is a button trigger" />}>
+      <DropdownItemGroup label="Menu">
+        <DropdownItem label="My profile" />
+        <DropdownItem icon={<SignoutIcon />} label="Sign out" />
+      </DropdownItemGroup>
+
+      <DropdownItemSeparator />
+
+      {radioMenu}
+    </Dropdown>
+  ),
+}

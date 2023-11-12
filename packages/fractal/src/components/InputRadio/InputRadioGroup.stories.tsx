@@ -1,9 +1,11 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
+import { sleep } from '@/utils'
 
 import InputRadio from './InputRadio'
 import { DEFAULT_VARIANT, Variants } from './InputRadio.constants'
@@ -190,6 +192,37 @@ export const Primary: Story = {
   ),
 }
 
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const radios = canvas.getAllByRole('radio')
+
+    /* eslint-disable @typescript-eslint/no-non-null-assertion */
+    await userEvent.hover(radios.at(0)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(1)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(2)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(3)!)
+    await sleep(500)
+    await userEvent.click(radios.at(3)!)
+
+    radios.at(3)!.blur()
+    /* eslint-enable @typescript-eslint/no-non-null-assertion */
+  },
+  render: () => (
+    <InputRadioGroup
+      defaultValue="yoda"
+      orientation="horizontal"
+      variant="primary"
+    >
+      {jedisItems}
+    </InputRadioGroup>
+  ),
+}
+
 export const Secondary: Story = {
   render: () => (
     <>
@@ -250,6 +283,37 @@ export const Secondary: Story = {
   ),
 }
 
+export const InteractiveSecondary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const radios = canvas.getAllByRole('radio')
+
+    /* eslint-disable @typescript-eslint/no-non-null-assertion */
+    await userEvent.hover(radios.at(0)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(1)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(2)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(3)!)
+    await sleep(500)
+    await userEvent.click(radios.at(3)!)
+
+    radios.at(3)!.blur()
+    /* eslint-enable @typescript-eslint/no-non-null-assertion */
+  },
+  render: () => (
+    <InputRadioGroup
+      defaultValue="yoda"
+      orientation="horizontal"
+      variant="secondary"
+    >
+      {jedisItems}
+    </InputRadioGroup>
+  ),
+}
+
 export const Tertiary: Story = {
   render: () => (
     <>
@@ -307,5 +371,36 @@ export const Tertiary: Story = {
         {othersItemsFullWidth}
       </InputRadioGroup>
     </>
+  ),
+}
+
+export const InteractiveTertiary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const radios = canvas.getAllByRole('radio')
+
+    /* eslint-disable @typescript-eslint/no-non-null-assertion */
+    await userEvent.hover(radios.at(0)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(1)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(2)!)
+    await sleep(500)
+    await userEvent.hover(radios.at(3)!)
+    await sleep(500)
+    await userEvent.click(radios.at(3)!)
+
+    radios.at(3)!.blur()
+    /* eslint-enable @typescript-eslint/no-non-null-assertion */
+  },
+  render: () => (
+    <InputRadioGroup
+      defaultValue="yoda"
+      orientation="horizontal"
+      variant="tertiary"
+    >
+      {jedisItems}
+    </InputRadioGroup>
   ),
 }

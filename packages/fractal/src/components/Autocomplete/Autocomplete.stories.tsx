@@ -7,6 +7,11 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import {
+  userEvent,
+  waitForElementToBeRemoved,
+  within,
+} from '@storybook/testing-library'
 import isChromatic from 'chromatic/isChromatic'
 // eslint-disable-next-line lodash-fp/use-fp
 import debounce from 'lodash/debounce'
@@ -22,6 +27,7 @@ import {
 } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
+import { sleep } from '@/utils'
 
 import Autocomplete from './Autocomplete'
 import AutocompleteEmpty from './AutocompleteEmpty'
@@ -225,6 +231,13 @@ const meta: Meta<AutocompleteProps> = {
   },
   component: Autocomplete,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFn: () => ReactNode) => (
+            <div style={{ height: '1200px' }}>{storyFn()}</div>
+          ),
+        ]
+      : []),
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
@@ -294,7 +307,7 @@ const meta: Meta<AutocompleteProps> = {
     },
   ],
   parameters: {
-    chromatic: { delay: 5000 },
+    chromatic: { delay: 500 },
     componentSubtitle:
       '🧑‍🚀 Our mission with Andy is complete, Woody - Buzz Lightyear - Toy Story 3',
     controls: {
@@ -309,5 +322,108 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: isChromatic() ? 'a' : '' },
+  args: { value: '' },
+}
+
+export const InteractiveSearching: Story = {
+  args: { value: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const input = canvas.getByRole('textbox')
+    await userEvent.click(input)
+
+    await sleep(500)
+    await userEvent.type(input, 'an', {
+      delay: 100,
+    })
+
+    await body.getByText(/loading star wars/i)
+  },
+}
+
+export const InteractiveSearch: Story = {
+  args: { value: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const input = canvas.getByRole('textbox')
+    await userEvent.click(input)
+
+    await sleep(500)
+    await userEvent.type(input, 'an', {
+      delay: 100,
+    })
+
+    const loader = await body.getByText(/loading star wars/i)
+    await waitForElementToBeRemoved(loader, { timeout: 10000 })
+
+    const menuItems = body.getAllByRole('menuitem')
+    if (menuItems.length > 0) {
+      /* eslint-disable @typescript-eslint/no-non-null-assertion */
+      await userEvent.hover(menuItems.at(0)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(1)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(2)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(3)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(4)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(5)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(6)!)
+      /* eslint-enable @typescript-eslint/no-non-null-assertion */
+    }
+  },
+}
+
+export const InteractiveSearchAndSelect: Story = {
+  args: { value: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const input = canvas.getByRole('textbox')
+    await userEvent.click(input)
+
+    await sleep(500)
+    await userEvent.type(input, 'an', {
+      delay: 100,
+    })
+
+    const loader = await body.getByText(/loading star wars/i)
+    await waitForElementToBeRemoved(loader, { timeout: 10000 })
+
+    const menuItems = body.getAllByRole('menuitem')
+    if (menuItems.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      await userEvent.hover(menuItems.at(0)!)
+      await sleep(500)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      await userEvent.click(menuItems.at(0)!)
+    }
+  },
+}
+
+export const InteractiveEmptySearch: Story = {
+  args: { value: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const input = canvas.getByRole('textbox')
+    await userEvent.click(input)
+
+    await sleep(500)
+    await userEvent.type(input, 'pzgvf')
+
+    const loader = await body.getByText(/loading star wars/i)
+    await waitForElementToBeRemoved(loader, { timeout: 10000 })
+
+    await body.getByText(/nothing found/i)
+  },
 }

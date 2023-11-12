@@ -5,6 +5,7 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-excla
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
 
 import Button from './Button'
@@ -135,6 +136,15 @@ export const Display: Story = {
   ),
 }
 
+export const InteractiveDisplay: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+  },
+  render: () => <Button label='"Display" button' variant="display" />,
+}
+
 export const Primary: Story = {
   render: () => (
     <>
@@ -179,6 +189,15 @@ export const Primary: Story = {
       </Wrapper>
     </>
   ),
+}
+
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+  },
+  render: () => <Button label="Primary button" variant="primary" />,
 }
 
 export const Secondary: Story = {
@@ -244,6 +263,15 @@ export const Secondary: Story = {
   ),
 }
 
+export const InteractiveSecondary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+  },
+  render: () => <Button label="Secondary button" variant="secondary" />,
+}
+
 export const Text: Story = {
   render: () => (
     <>
@@ -297,4 +325,13 @@ export const Text: Story = {
       </Wrapper>
     </>
   ),
+}
+
+export const InteractiveText: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+  },
+  render: () => <Button label="Text button" variant="text" />,
 }

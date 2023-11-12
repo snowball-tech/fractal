@@ -42,13 +42,15 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children, icon, spin = false }) => (
-    <Autocomplete
-      placeholder="Start typing to autocomplete"
-      style={{ minWidth: '500px' }}
-    >
-      <AutocompleteLoading icon={icon} spin={spin}>
-        {children}
-      </AutocompleteLoading>
-    </Autocomplete>
+    <div style={{ height: '800px' }}>
+      <Autocomplete
+        placeholder="Start typing to autocomplete"
+        style={{ minWidth: '500px' }}
+      >
+        <AutocompleteLoading icon={icon} spin={spin}>
+          {children}
+        </AutocompleteLoading>
+      </Autocomplete>
+    </div>
   ),
 }

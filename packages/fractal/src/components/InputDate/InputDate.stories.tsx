@@ -1,5 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import InputDate from './InputDate'
@@ -101,7 +102,28 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: { day: 11, month: 10, year: 1985 } },
+  args: { value: { day: 19, month: 10, year: 1977 } },
+}
+
+export const Interactive: Story = {
+  args: { value: { day: '', month: '', year: '' } },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    /* eslint-disable @typescript-eslint/no-non-null-assertion */
+    const inputDay = canvas.getAllByRole('spinbutton').at(0)
+    await userEvent.click(inputDay!)
+    await userEvent.type(inputDay!, '19')
+
+    const inputMonth = canvas.getAllByRole('spinbutton').at(1)
+    await userEvent.click(inputMonth!)
+    await userEvent.type(inputMonth!, '10')
+
+    const inputYear = canvas.getAllByRole('spinbutton').at(2)
+    await userEvent.click(inputYear!)
+    await userEvent.type(inputYear!, '1977')
+    /* eslint-enable @typescript-eslint/no-non-null-assertion */
+  },
 }
 
 const separator = (

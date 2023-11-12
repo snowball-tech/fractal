@@ -28,8 +28,10 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children }) => (
-    <Autocomplete placeholder="Start typing to autocomplete">
-      <AutocompleteEmpty>{children}</AutocompleteEmpty>
-    </Autocomplete>
+    <div style={{ height: '800px' }}>
+      <Autocomplete placeholder="Start typing to autocomplete">
+        <AutocompleteEmpty>{children}</AutocompleteEmpty>
+      </Autocomplete>
+    </div>
   ),
 }

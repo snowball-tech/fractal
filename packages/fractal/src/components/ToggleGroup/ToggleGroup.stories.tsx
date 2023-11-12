@@ -1,9 +1,11 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
+import { sleep } from '@/utils'
 
 import { DEFAULT_VARIANT, Variants } from '../Toggle/Toggle.constants'
 import ToggleGroup from './ToggleGroup'
@@ -205,5 +207,32 @@ export const Primary: Story = {
         {othersItemsFullWidth}
       </ToggleGroup>
     </>
+  ),
+}
+
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const toggles = canvas.getAllByRole('radio')
+    if (toggles.length > 0) {
+      /* eslint-disable @typescript-eslint/no-non-null-assertion */
+      await userEvent.hover(toggles.at(0)!)
+      await sleep(500)
+      await userEvent.hover(toggles.at(1)!)
+      await sleep(500)
+      await userEvent.hover(toggles.at(2)!)
+      await sleep(500)
+      await userEvent.hover(toggles.at(3)!)
+      /* eslint-enable @typescript-eslint/no-non-null-assertion */
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    await userEvent.click(toggles.at(3)!)
+  },
+  render: () => (
+    <ToggleGroup defaultValue="yoda" orientation="horizontal" variant="primary">
+      {jedisItems}
+    </ToggleGroup>
   ),
 }
