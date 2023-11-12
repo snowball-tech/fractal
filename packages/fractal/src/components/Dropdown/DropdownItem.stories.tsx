@@ -43,13 +43,15 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ disabled = false, icon, label = 'Luke Skywalker' }) => (
-    <Dropdown trigger="Is a jedi">
-      <DropdownItem
-        disabled={disabled}
-        icon={icon}
-        label={label}
-        onClick={action('onClick')}
-      />
-    </Dropdown>
+    <div style={{ height: '1200px' }}>
+      <Dropdown trigger="Is a jedi">
+        <DropdownItem
+          disabled={disabled}
+          icon={icon}
+          label={label}
+          onClick={action('onClick')}
+        />
+      </Dropdown>
+    </div>
   ),
 }

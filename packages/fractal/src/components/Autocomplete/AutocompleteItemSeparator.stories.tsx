@@ -24,13 +24,15 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <Autocomplete
-      placeholder="Start typing to autocomplete"
-      onChange={action('onChange')}
-    >
-      <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
-      <AutocompleteItemSeparator />
-      <AutocompleteItem value="darth-sidious">Darth Sidious</AutocompleteItem>
-    </Autocomplete>
+    <div style={{ height: '1200px' }}>
+      <Autocomplete
+        placeholder="Start typing to autocomplete"
+        onChange={action('onChange')}
+      >
+        <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+        <AutocompleteItemSeparator />
+        <AutocompleteItem value="darth-sidious">Darth Sidious</AutocompleteItem>
+      </Autocomplete>
+    </div>
   ),
 }

@@ -144,6 +144,7 @@ export const InteractiveMenu: Story = {
         display: 'flex',
         flexDirection: 'column',
         gap: 'var(--size-spacing-2)',
+        height: '800px',
       }}
     >
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl">

@@ -21,10 +21,12 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <Dropdown trigger="Fighter">
-      <DropdownItem label="Yoda" />
-      <DropdownItemSeparator />
-      <DropdownItem label="Darth Sidious" />
-    </Dropdown>
+    <div style={{ height: '1200px' }}>
+      <Dropdown trigger="Fighter">
+        <DropdownItem label="Yoda" />
+        <DropdownItemSeparator />
+        <DropdownItem label="Darth Sidious" />
+      </Dropdown>
+    </div>
   ),
 }

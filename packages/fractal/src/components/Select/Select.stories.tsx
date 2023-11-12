@@ -1,6 +1,7 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
+import isChromatic from 'chromatic/isChromatic'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -101,6 +102,13 @@ const meta: Meta<SelectProps> = {
   },
   component: Select,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFn: () => ReactNode) => (
+            <div style={{ height: '1200px' }}>{storyFn()}</div>
+          ),
+        ]
+      : []),
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 

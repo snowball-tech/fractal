@@ -12,6 +12,7 @@ import {
   waitForElementToBeRemoved,
   within,
 } from '@storybook/testing-library'
+import isChromatic from 'chromatic/isChromatic'
 // eslint-disable-next-line lodash-fp/use-fp
 import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/fp/isEmpty'
@@ -230,6 +231,13 @@ const meta: Meta<AutocompleteProps> = {
   },
   component: Autocomplete,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFn: () => ReactNode) => (
+            <div style={{ height: '1200px' }}>{storyFn()}</div>
+          ),
+        ]
+      : []),
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 

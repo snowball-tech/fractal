@@ -3,7 +3,8 @@ import UserProfileIcon from '@iconscout/react-unicons/dist/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
-import type { ComponentProps } from 'react'
+import isChromatic from 'chromatic/isChromatic'
+import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
 import { Button } from '@/components/Button'
@@ -85,6 +86,13 @@ const meta = {
     withIndicator: true,
   },
   component: Dropdown,
+  decorators: isChromatic()
+    ? [
+        (storyFn: () => ReactNode) => (
+          <div style={{ height: '800px' }}>{storyFn()}</div>
+        ),
+      ]
+    : [],
   parameters: {
     componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
   },

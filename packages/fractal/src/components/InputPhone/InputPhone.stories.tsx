@@ -1,6 +1,7 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
+import isChromatic from 'chromatic/isChromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -42,6 +43,13 @@ const meta: Meta<InputPhoneProps> = {
   },
   component: InputPhone,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFn: () => ReactNode) => (
+            <div style={{ height: '1200px' }}>{storyFn()}</div>
+          ),
+        ]
+      : []),
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
@@ -96,7 +104,7 @@ export const Interactive: Story = {
     await userEvent.click(phoneInput)
 
     await sleep(500)
-    await userEvent.type(phoneInput, '(201) 555-0123', {
+    await userEvent.type(phoneInput, '01 23 45 67 89', {
       delay: 50,
     })
 

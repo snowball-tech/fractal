@@ -35,12 +35,14 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ label }) => (
-    <Dropdown>
-      <DropdownItemGroup label={label}>
-        <DropdownItem label="Luke Skywalker" />
-        <DropdownItem label="Obi-Wan Kenobi" />
-        <DropdownItem label="Yoda" />
-      </DropdownItemGroup>
-    </Dropdown>
+    <div style={{ height: '1200px' }}>
+      <Dropdown>
+        <DropdownItemGroup label={label}>
+          <DropdownItem label="Luke Skywalker" />
+          <DropdownItem label="Obi-Wan Kenobi" />
+          <DropdownItem label="Yoda" />
+        </DropdownItemGroup>
+      </Dropdown>
+    </div>
   ),
 }
