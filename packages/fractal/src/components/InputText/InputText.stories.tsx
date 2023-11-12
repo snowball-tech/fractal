@@ -5,7 +5,10 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-excla
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import InputText from './InputText'
 
@@ -91,6 +94,23 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     value: '',
+  },
+}
+
+export const Interactive: Story = {
+  args: {
+    value: '',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const input = canvas.getByRole('textbox')
+
+    await userEvent.hover(input)
+    await sleep(500)
+    await userEvent.click(input)
+    await sleep(500)
+    await userEvent.type(input, 'Hello world!', { delay: 10 })
   },
 }
 

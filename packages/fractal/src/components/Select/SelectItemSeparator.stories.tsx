@@ -19,10 +19,12 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <Select placeholder="Click to open" onSelect={action('onSelect')}>
-      <SelectItem value="yoda">Yoda</SelectItem>
-      <SelectItemSeparator />
-      <SelectItem value="darth-sidious">Darth Sidious</SelectItem>
-    </Select>
+    <div style={{ height: '800px' }}>
+      <Select placeholder="Click to open" onSelect={action('onSelect')}>
+        <SelectItem value="yoda">Yoda</SelectItem>
+        <SelectItemSeparator />
+        <SelectItem value="darth-sidious">Darth Sidious</SelectItem>
+      </Select>
+    </div>
   ),
 }

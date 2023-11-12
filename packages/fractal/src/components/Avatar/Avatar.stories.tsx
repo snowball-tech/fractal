@@ -1,9 +1,11 @@
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps } from 'react'
 
 import { DropdownItem } from '@/components/Dropdown'
 import { avatarUrl } from '@/mocks'
+import { sleep } from '@/utils'
 
 import Avatar from './Avatar'
 import { Sizes as AvailableSizes, DEFAULT_SIZE } from './Avatar.constants'
@@ -114,6 +116,35 @@ export const WithMenu: Story = {
         display: 'flex',
         flexDirection: 'column',
         gap: 'var(--size-spacing-2)',
+      }}
+    >
+      <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl">
+        {menu}
+      </Avatar>
+    </div>
+  ),
+}
+
+export const InteractiveMenu: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    await userEvent.click(canvas.getByRole('button'))
+
+    await sleep(500)
+    await userEvent.hover(body.getByRole('menuitem', { name: 'My profile' }))
+
+    await sleep(500)
+    await userEvent.hover(body.getByRole('menuitem', { name: 'Sign out' }))
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--size-spacing-2)',
+        height: '800px',
       }}
     >
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl">

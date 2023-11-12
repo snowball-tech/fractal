@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import Switch from './Switch'
 
@@ -34,6 +37,20 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const Interactive: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const switchButton = canvas.getByLabelText(/chewie/i)
+
+    await userEvent.hover(switchButton)
+    await sleep(500)
+    await userEvent.click(switchButton)
+
+    await switchButton.blur()
+  },
+}
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <div

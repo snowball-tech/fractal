@@ -3,7 +3,10 @@ import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import InputFile from './InputFile'
 import { DEFAULT_VARIANT, Variants } from './InputFile.constants'
@@ -127,6 +130,19 @@ export const Display: Story = {
   ),
 }
 
+export const InteractiveDisplay: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('button'))
+  },
+  render: () => (
+    <InputFile label='"Display" input file trigger button' variant="display" />
+  ),
+}
+
 export const Primary: Story = {
   render: () => (
     <>
@@ -178,6 +194,19 @@ export const Primary: Story = {
         />
       </Wrapper>
     </>
+  ),
+}
+
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('button'))
+  },
+  render: () => (
+    <InputFile label="Primary input file trigger button" variant="primary" />
   ),
 }
 
@@ -243,6 +272,22 @@ export const Secondary: Story = {
   ),
 }
 
+export const InteractiveSecondary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('button'))
+  },
+  render: () => (
+    <InputFile
+      label="Secondary input file trigger button"
+      variant="secondary"
+    />
+  ),
+}
+
 export const Text: Story = {
   render: () => (
     <>
@@ -299,5 +344,18 @@ export const Text: Story = {
         />
       </Wrapper>
     </>
+  ),
+}
+
+export const InteractiveText: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('button'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('button'))
+  },
+  render: () => (
+    <InputFile label="Text input file trigger button" variant="text" />
   ),
 }

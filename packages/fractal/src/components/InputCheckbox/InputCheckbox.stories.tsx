@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import InputCheckbox from './InputCheckbox'
 import {
@@ -166,6 +169,17 @@ export const Primary: Story = {
   ),
 }
 
+export const InteractivePrimary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('checkbox'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('checkbox'))
+  },
+  render: () => <InputCheckbox label="Primary" variant="primary" />,
+}
+
 export const Secondary: Story = {
   render: () => (
     <>
@@ -255,6 +269,17 @@ export const Secondary: Story = {
   ),
 }
 
+export const InteractiveSecondary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('checkbox'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('checkbox'))
+  },
+  render: () => <InputCheckbox label="Secondary" variant="secondary" />,
+}
+
 export const Tertiary: Story = {
   render: () => (
     <>
@@ -342,4 +367,15 @@ export const Tertiary: Story = {
       </Wrapper>
     </>
   ),
+}
+
+export const InteractiveTertiary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await userEvent.hover(canvas.getByRole('checkbox'))
+    await sleep(500)
+    await userEvent.click(canvas.getByRole('checkbox'))
+  },
+  render: () => <InputCheckbox label="Tertiary" variant="tertiary" />,
 }

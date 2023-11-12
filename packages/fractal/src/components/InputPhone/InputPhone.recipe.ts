@@ -64,6 +64,7 @@ export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
       maxWidth: '100%',
+      pt: 'var(--size-spacing-8)!',
       width: 'fit-content!',
     },
 
@@ -75,7 +76,9 @@ export const inputPhonePrefixDropdown: ReturnType<typeof defineRecipe> =
 export const inputPhonePrefixSearch: ReturnType<typeof defineRecipe> =
   defineRecipe({
     base: {
-      mb: 'var(--size-spacing-1)',
+      position: 'fixed',
+      top: 'var(--size-spacing-2)',
+      width: 'calc(100% - var(--size-spacing-3))!',
     },
 
     className: 'inputPhonePrefixSearch',

@@ -1,6 +1,10 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
+import isChromatic from 'chromatic/isChromatic'
 import type { ComponentProps, ReactNode } from 'react'
+
+import { sleep } from '@/utils'
 
 import InputPhone from './InputPhone'
 import type { PhoneNumber } from './InputPhone.types'
@@ -39,6 +43,13 @@ const meta: Meta<InputPhoneProps> = {
   },
   component: InputPhone,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFn: () => ReactNode) => (
+            <div style={{ height: '1200px' }}>{storyFn()}</div>
+          ),
+        ]
+      : []),
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
@@ -81,6 +92,45 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: { value: { number: '' } },
+}
+
+export const Interactive: Story = {
+  args: { value: { number: '' } },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const phoneInput = canvas.getByRole('textbox')
+    await userEvent.click(phoneInput)
+
+    await sleep(500)
+    await userEvent.type(phoneInput, '01 23 45 67 89', {
+      delay: 50,
+    })
+
+    const prefixSelect = canvas.getByRole('combobox')
+    await userEvent.click(prefixSelect)
+
+    const searchPrefixInput = body.getByPlaceholderText(/search/u)
+
+    await sleep(500)
+    await userEvent.click(searchPrefixInput)
+    await sleep(500)
+    await userEvent.type(searchPrefixInput, 'uni', {
+      delay: 50,
+    })
+
+    const menuItems = body.getAllByLabelText(/\(+/i)
+    if (menuItems.length > 0) {
+      /* eslint-disable @typescript-eslint/no-non-null-assertion */
+      await userEvent.hover(menuItems.at(0)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(1)!)
+      await sleep(500)
+      await userEvent.hover(menuItems.at(2)!)
+      /* eslint-enable @typescript-eslint/no-non-null-assertion */
+    }
+  },
 }
 
 const separator = (

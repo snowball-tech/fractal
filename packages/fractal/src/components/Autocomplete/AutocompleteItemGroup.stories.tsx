@@ -36,19 +36,21 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ label }) => (
-    <Autocomplete
-      placeholder="Start typing to autocomplete"
-      onChange={action('onChange')}
-    >
-      <AutocompleteItemGroup label={label}>
-        <AutocompleteItem value="luke-skywalker">
-          Luke Skywalker
-        </AutocompleteItem>
-        <AutocompleteItem value="obi-wan-kenobi">
-          Obi-Wan Kenobi
-        </AutocompleteItem>
-        <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
-      </AutocompleteItemGroup>
-    </Autocomplete>
+    <div style={{ height: '1200px' }}>
+      <Autocomplete
+        placeholder="Start typing to autocomplete"
+        onChange={action('onChange')}
+      >
+        <AutocompleteItemGroup label={label}>
+          <AutocompleteItem value="luke-skywalker">
+            Luke Skywalker
+          </AutocompleteItem>
+          <AutocompleteItem value="obi-wan-kenobi">
+            Obi-Wan Kenobi
+          </AutocompleteItem>
+          <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+        </AutocompleteItemGroup>
+      </Autocomplete>
+    </div>
   ),
 }
