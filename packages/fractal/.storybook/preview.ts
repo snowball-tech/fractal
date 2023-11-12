@@ -51,6 +51,10 @@ const preview: Preview = {
         ],
       },
     },
+
+    pseudo: {
+      rootSelector: 'body',
+    },
   },
 }
 

@@ -26,8 +26,14 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+
     'import/no-cycle': 'off',
     'import/no-named-as-default': 'off',
+
+    'storybook/no-uninstalled-addons': [
+      'error',
+      { packageJsonLocation: './packages/fractal/package.json' },
+    ],
   },
 
   settings: {

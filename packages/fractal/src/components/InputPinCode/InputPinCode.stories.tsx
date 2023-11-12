@@ -1,11 +1,14 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import type {
   ChangeEvent,
   ClipboardEvent,
   ComponentProps,
   ReactNode,
 } from 'react'
+
+import { sleep } from '@/utils'
 
 import InputPinCode from './InputPinCode'
 
@@ -58,6 +61,32 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: { value: '' },
+}
+
+export const Interactive: Story = {
+  args: { value: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const inputs = canvas.getAllByRole('spinbutton')
+
+    /* eslint-disable @typescript-eslint/no-non-null-assertion */
+    await userEvent.click(inputs.at(0)!)
+    await sleep(500)
+    await userEvent.type(inputs.at(0)!, '0')
+
+    await sleep(500)
+    await userEvent.type(inputs.at(1)!, '1')
+
+    await sleep(500)
+    await userEvent.type(inputs.at(2)!, '2')
+
+    await sleep(500)
+    await userEvent.type(inputs.at(3)!, '3')
+
+    await userEvent.click(inputs.at(4)!)
+    /* eslint-enable @typescript-eslint/no-non-null-assertion */
+  },
 }
 
 const separator = (

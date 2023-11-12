@@ -1,9 +1,11 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
+import { sleep } from '@/utils'
 
 import Select from './Select'
 import SelectItem from './SelectItem'
@@ -126,3 +128,41 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
+
+export const InteractiveOpen: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const select = canvas.getByRole('combobox')
+    await userEvent.click(select)
+
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/luke/i))
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/mace/i))
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/obi/i))
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/qui/i))
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/yoda/i))
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/c3po/i))
+  },
+}
+
+export const InteractiveSelected: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    const select = canvas.getByRole('combobox')
+    await userEvent.click(select)
+
+    await sleep(500)
+    await userEvent.hover(body.getByLabelText(/obi/i))
+    await sleep(500)
+    await userEvent.click(body.getByLabelText(/obi/i))
+  },
+}
