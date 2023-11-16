@@ -68,8 +68,6 @@ export default {
 
   corePlugins: {
     columns: false,
-    fontSize: false,
-    lineHeight: false,
   },
 
   plugins: [
@@ -86,13 +84,18 @@ export default {
       ...theme('colors'),
       ...theme('colors.body'),
       disabled: 'var(--color-background-disabled)',
+      'disabled-light': 'var(--color-base-grey-90)',
+      separator: 'var(--color-base-grey-70)',
     }),
 
     borderColor: ({ theme }) => ({
       ...theme('colors'),
       DEFAULT: 'var(--color-border-default)',
       disabled: 'var(--color-border-disabled)',
+      error: 'var(--color-feedback-danger-50)',
       normal: 'var(--color-border-default)',
+      success: 'var(--color-feedback-success-50)',
+      warning: 'var(--color-feedback-warning-50)',
     }),
 
     borderRadius: {
@@ -121,8 +124,16 @@ export default {
       '2': 'var(--shadow-brutal-2)',
       DEFAULT: 'var(--shadow-none)',
       brutal: 'var(--shadow-brutal-2)',
+      'brutal-1': 'var(--shadow-brutal-1)',
+      'brutal-2': 'var(--shadow-brutal-2)',
+      disabled: 'var(--shadow-none)',
+      error: 'inset 0 0 0 1px var(--color-feedback-danger-50)',
+      hover: 'inset 0 0 0 1px var(--color-border-default)',
       none: 'var(--shadow-none)',
+      primary: 'inset 0 0 0 1px var(--color-brand-primary)',
       subtle: 'var(--shadow-brutal-1)',
+      success: 'inset 0 0 0 1px var(--color-feedback-success-50)',
+      warning: 'inset 0 0 0 1px var(--color-feedback-warning-50)',
     },
 
     colors: {
@@ -140,12 +151,12 @@ export default {
       current: 'currentColor',
       decorative: {
         blue: {
-          30: 'var(--color-decorative-blue-30)',
+          50: 'var(--color-decorative-blue-50)',
           70: 'var(--color-decorative-blue-70)',
           90: 'var(--color-decorative-blue-90)',
         },
         green: {
-          30: 'var(--color-decorative-green-30)',
+          50: 'var(--color-decorative-green-50)',
           70: 'var(--color-decorative-green-70)',
           90: 'var(--color-decorative-green-90)',
         },
@@ -154,12 +165,12 @@ export default {
           90: 'var(--color-decorative-pink-90)',
         },
         purple: {
-          30: 'var(--color-decorative-purple-30)',
+          50: 'var(--color-decorative-purple-50)',
           70: 'var(--color-decorative-purple-70)',
           90: 'var(--color-decorative-purple-90)',
         },
         yellow: {
-          30: 'var(--color-decorative-yellow-30)',
+          50: 'var(--color-decorative-yellow-50)',
           70: 'var(--color-decorative-yellow-70)',
           90: 'var(--color-decorative-yellow-90)',
         },
@@ -182,17 +193,134 @@ export default {
     },
 
     fontFamily: {
+      DEFAULT: 'var(--font-family-normal)',
+
       'family-normal': 'var(--font-family-normal)',
       'family-wide': 'var(--font-family-wide)',
+
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      'display-1': 'var(--typography-display-1-font-family)',
+      'display-2': 'var(--typography-display-2-font-family)',
+      'display-wide': 'var(--typography-display-wide-font-family)',
+
+      'heading-1': 'var(--typography-heading-1-font-family)',
+      'heading-2': 'var(--typography-heading-2-font-family)',
+      'heading-3': 'var(--typography-heading-3-font-family)',
+      'heading-4': 'var(--typography-heading-4-font-family)',
+
+      'body-1': 'var(--typography-body-1-font-family)',
+      'body-2': 'var(--typography-body-2-font-family)',
+
+      caption: 'var(--typography-caption-font-family)',
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    },
+
+    fontSize: {
+      DEFAULT: 'var(--size-spacing-2)',
+
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      'display-1-xs': 'var(--typography-display-1-font-size-xs)',
+      'display-1-md': 'var(--typography-display-1-font-size-md)',
+      'display-2-xs': 'var(--typography-display-2-font-size-xs)',
+      'display-2-md': 'var(--typography-display-2-font-size-md)',
+      'display-wide-xs': 'var(--typography-display-wide-font-size-xs)',
+      'display-wide-md': 'var(--typography-display-wide-font-size-md)',
+
+      'heading-1-xs': 'var(--typography-heading-1-font-size-xs)',
+      'heading-1-md': 'var(--typography-heading-1-font-size-md)',
+      'heading-2-xs': 'var(--typography-heading-2-font-size-xs)',
+      'heading-2-md': 'var(--typography-heading-2-font-size-md)',
+      'heading-3': 'var(--typography-heading-3-font-size)',
+      'heading-4': 'var(--typography-heading-4-font-size)',
+
+      'body-1': 'var(--typography-body-1-font-size)',
+      'body-2': 'var(--typography-body-2-font-size)',
+
+      caption: 'var(--typography-caption-font-size)',
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
     },
 
     fontWeight: {
       DEFAULT: 'var(--font-weight-standard)',
-      bold: 'var(--font-weight-bold)',
-      median: 'var(--font-weight-median)',
-      medium: 'var(--font-weight-median)',
-      normal: 'var(--font-weight-standard)',
-      standard: 'var(--font-weight-standard)',
+      weight: 'var(--font-weight-standard)',
+
+      'weight-bold': 'var(--font-weight-bold)',
+      'weight-median': 'var(--font-weight-median)',
+      'weight-medium': 'var(--font-weight-median)',
+      'weight-normal': 'var(--font-weight-standard)',
+      'weight-standard': 'var(--font-weight-standard)',
+
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      'weight-display-1': 'var(--typography-display-1-font-weight)',
+      'weight-display-2': 'var(--typography-display-2-font-weight)',
+      'weight-display-wide': 'var(--typography-display-wide-font-weight)',
+
+      'weight-heading-1': 'var(--typography-heading-1-font-weight)',
+      'weight-heading-2': 'var(--typography-heading-2-font-weight)',
+      'weight-heading-3': 'var(--typography-heading-3-font-weight)',
+      'weight-heading-4': 'var(--typography-heading-4-font-weight)',
+
+      'weight-body-1': 'var(--typography-body-1-font-weight)',
+      'weight-body-1-bold': 'var(--typography-body-1-bold-font-weight)',
+      'weight-body-1-median': 'var(--typography-body-1-median-font-weight)',
+      'weight-body-1-link': 'var(--typography-body-1-link-font-weight)',
+      'weight-body-2': 'var(--typography-body-2-font-weight)',
+      'weight-body-2-bold': 'var(--typography-body-2-bold-font-weight)',
+      'weight-body-2-median': 'var(--typography-body-2-median-font-weight)',
+      'weight-body-2-link': 'var(--typography-body-2-link-font-weight)',
+
+      'weight-caption-bold': 'var(--typography-caption-bold-font-weight)',
+      'weight-caption-median': 'var(--typography-caption-median-font-weight)',
+      'weight-caption-link': 'var(--typography-caption-link-font-weight)',
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    },
+
+    height: ({ breakpoints, theme }) => ({
+      ...theme('spacing'),
+      ...percentages,
+      dvh: '100dvh',
+      fit: 'fit-content',
+      full: '100%',
+      lvh: '100lvh',
+      max: 'max-content',
+      min: 'min-content',
+      screen: '100vh',
+      svh: '100svh',
+      ...breakpoints(
+        omit(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      ),
+    }),
+
+    lineHeight: {
+      DEFAULT: 'var(--typography-body-1-line-height)',
+
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      'display-1-xs': 'var(--typography-display-1-line-height-xs)',
+      'display-1-md': 'var(--typography-display-1-line-height-md)',
+      'display-2-xs': 'var(--typography-display-2-line-height-xs)',
+      'display-2-md': 'var(--typography-display-2-line-height-md)',
+      'display-wide-xs': 'var(--typography-display-wide-line-height-xs)',
+      'display-wide-md': 'var(--typography-display-wide-line-height-md)',
+
+      'heading-1-xs': 'var(--typography-heading-1-line-height-xs)',
+      'heading-1-md': 'var(--typography-heading-1-line-height-md)',
+      'heading-2': 'var(--typography-heading-2-line-height)',
+      'heading-3': 'var(--typography-heading-3-line-height)',
+      'heading-4': 'var(--typography-heading-4-line-height)',
+
+      'body-1': 'var(--typography-body-1-line-height)',
+      'body-2': 'var(--typography-body-2-line-height)',
+
+      caption: 'var(--typography-caption-line-height)',
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
     },
 
     maxHeight: ({ breakpoints, theme }) => ({
@@ -337,7 +465,9 @@ export default {
 
     stroke: ({ theme }) => ({
       ...theme('borderColor'),
+      DEFAULT: 'var(--color-base-grey-70)',
       none: 'none',
+      separator: 'var(--color-base-grey-70)',
     }),
 
     textColor: ({ theme }) => ({
@@ -398,6 +528,7 @@ export default {
       'background-color': 'background-color',
       bg: 'background-color',
       'bg-color': 'background-color',
+      'border-color': 'border-color',
       colors:
         'color, background-color, border-color, text-decoration-color, fill, stroke',
       'margin-top': 'margin-top',
@@ -408,5 +539,17 @@ export default {
       shadow: 'box-shadow',
       transform: 'transform',
     },
+
+    width: ({ breakpoints, theme }) => ({
+      ...theme('spacing'),
+      ...percentages,
+      fit: 'fit-content',
+      full: '100%',
+      max: 'max-content',
+      min: 'min-content',
+      ...breakpoints(
+        pick(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      ),
+    }),
   },
 } satisfies Config
