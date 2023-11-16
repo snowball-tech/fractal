@@ -4756,7 +4756,6 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.4.1"
     chromatic: "npm:^9.0.0"
     country-flag-icons: "npm:^1.5.7"
-    csso-cli: "npm:^4.0.2"
     eslint: "npm:^8.53.0"
     libphonenumber-js: "npm:^1.10.49"
     lodash: "npm:^4.17.21"
@@ -7871,13 +7870,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-colors@npm:^4.1.1":
-  version: 4.1.3
-  resolution: "ansi-colors@npm:4.1.3"
-  checksum: 43d6e2fc7b1c6e4dc373de708ee76311ec2e0433e7e8bd3194e7ff123ea6a747428fc61afdcf5969da5be3a5f0fd054602bec56fc0ebe249ce2fcde6e649e3c2
-  languageName: node
-  linkType: hard
-
 "ansi-escapes@npm:^5.0.0":
   version: 5.0.0
   resolution: "ansi-escapes@npm:5.0.0"
@@ -9125,15 +9117,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clap@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "clap@npm:3.1.1"
-  dependencies:
-    ansi-colors: "npm:^4.1.1"
-  checksum: 0390fb3da1433d2ab58ca59b7762beab6ac0946f23f54508bb8be1abb3356cd3abb4775be1d211b1aaa1087b30e4e57f4183cd42ec50cfb2a632e8093597beaa
-  languageName: node
-  linkType: hard
-
 "clean-regexp@npm:^1.0.0":
   version: 1.0.0
   resolution: "clean-regexp@npm:1.0.0"
@@ -9829,16 +9812,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-tree@npm:~2.2.0":
-  version: 2.2.1
-  resolution: "css-tree@npm:2.2.1"
-  dependencies:
-    mdn-data: "npm:2.0.28"
-    source-map-js: "npm:^1.0.1"
-  checksum: 1959c4b0e268bf8db1b3a1776a5ba9ae3a464ccd1226bfa62799cb0a3d0039006e21fb95cec4dec9d687a9a9b90f692dff2d230b631527ece700f4bfb419aaf3
-  languageName: node
-  linkType: hard
-
 "cssdb@npm:^7.9.0":
   version: 7.9.0
   resolution: "cssdb@npm:7.9.0"
@@ -9852,29 +9825,6 @@ __metadata:
   bin:
     cssesc: bin/cssesc
   checksum: 0e161912c1306861d8f46e1883be1cbc8b1b2879f0f509287c0db71796e4ddfb97ac96bdfca38f77f452e2c10554e1bb5678c99b07a5cf947a12778f73e47e12
-  languageName: node
-  linkType: hard
-
-"csso-cli@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "csso-cli@npm:4.0.2"
-  dependencies:
-    chokidar: "npm:^3.5.3"
-    clap: "npm:^3.1.1"
-    csso: "npm:^5.0.4"
-    source-map-js: "npm:^1.0.2"
-  bin:
-    csso: bin/csso
-  checksum: 1f22f50224e81b2e91907237d5e320361bf6ba8040e67c77f1a0145bd83426fab486215f3ce59dcb2066fa86d5107649bb5f27b890efbdaa395bff3db8b66e8c
-  languageName: node
-  linkType: hard
-
-"csso@npm:^5.0.4":
-  version: 5.0.5
-  resolution: "csso@npm:5.0.5"
-  dependencies:
-    css-tree: "npm:~2.2.0"
-  checksum: 4036fb2b9f8ed6b948349136b39e0b19ffb5edee934893a37b55e9a116186c4ae2a9d3ba66fbdbc07fa44a853fb478cd2d8733e4743473dcd364e7f21444ff34
   languageName: node
   linkType: hard
 
@@ -15878,13 +15828,6 @@ __metadata:
   dependencies:
     "@types/mdast": "npm:^3.0.0"
   checksum: fafe201c12a0d412a875fe8540bf70b4360f3775fb7f0d19403ba7b59e50f74f730e3b405c72ad940bc8a3ec1ba311f76dfca61c4ce585dce1ccda2168ec244f
-  languageName: node
-  linkType: hard
-
-"mdn-data@npm:2.0.28":
-  version: 2.0.28
-  resolution: "mdn-data@npm:2.0.28"
-  checksum: aec475e0c078af00498ce2f9434d96a1fdebba9814d14b8f72cd6d5475293f4b3972d0538af2d5c5053d35e1b964af08b7d162b98e9846e9343990b75e4baef1
   languageName: node
   linkType: hard
 
