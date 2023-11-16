@@ -85,7 +85,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "^4.0.1",
-    "@pandacss/dev": "0.18.1",
+    "@pandacss/dev": "0.18.2",
     "@pandacss/preset-base": "0.18.1",
     "@snowball-tech/eslint-config": "^5.3.1",
     "@storybook/addon-a11y": "^7.5.3",
