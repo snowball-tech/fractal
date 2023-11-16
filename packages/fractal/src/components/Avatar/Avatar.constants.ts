@@ -1,5 +1,7 @@
 import { Variants as TypographyVariants } from '@/components/Typography/Typography.constants'
 
+export const GROUP_NAME = 'avatar'
+
 export enum Sizes {
   /* eslint-disable perfectionist/sort-enums */
   S = 's',

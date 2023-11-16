@@ -1,23 +1,19 @@
 import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  card,
-  cardContent,
-  cardDismissIcon,
-  cardIcon,
-  cardTitle,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Button } from '@/components/Button'
-import { PREFIX } from '@/constants'
+import { Typography } from '@/components/Typography/Typography'
+import {
+  DARK_FG_COLORS_CLASSNAMES,
+  LIGHT_BG_COLORS_CLASSNAMES,
+  PREFIX,
+} from '@/constants'
 
-import { DEFAULT_COLOR } from './Card.constants'
-import { GROUP_NAME } from './Card.recipe'
+import { DEFAULT_COLOR, GROUP_NAME } from './Card.constants'
 import type { CardProps } from './Card.types'
 
 /**
@@ -36,35 +32,64 @@ export const Card = ({
   title,
   ...props
 }: CardProps) => {
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    card({ color }),
-    props.className,
-    dismissable ? 'dismissable' : '',
-    typography({ variant: `body-${fontSize}` }),
-  )
-
   return (
-    <div className={groupClassNames} {...omit(['className'], props)}>
-      {!isEmpty(title) || icon ? (
-        <div
-          className={cx(
-            cardTitle({ color }),
-            typography({ variant: `body-${fontSize}-bold` }),
+    <div
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${color}`,
+        `${PREFIX}-${GROUP_NAME}--${fontSize}`,
+        'relative flex flex-col gap-1 rounded-sm p-2 text-dark',
+        LIGHT_BG_COLORS_CLASSNAMES[color],
+        dismissable ? `${PREFIX}-${GROUP_NAME}--dismissable pr-6` : '',
+        props.className,
+      )}
+      {...omit(['className'], props)}
+    >
+      {(!isEmpty(title) || icon) && (
+        <Typography
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__title`,
+            `${PREFIX}-${GROUP_NAME}__title--${fontSize}`,
+            'flex items-center gap-1',
           )}
+          element="div"
+          variant={`body-${fontSize}-bold`}
         >
-          {icon ? <div className={cardIcon({ color })}>{icon}</div> : false}
+          {icon && (
+            <div
+              className={twJoin(
+                `${PREFIX}-${GROUP_NAME}__title__icon`,
+                `${PREFIX}-${GROUP_NAME}__title__icon--${color}`,
+                'h-3 w-3 text',
+                DARK_FG_COLORS_CLASSNAMES[color],
+              )}
+            >
+              {icon}
+            </div>
+          )}
 
           {title}
-        </div>
-      ) : (
-        false
+        </Typography>
       )}
 
-      <div className={cardContent()}>{children}</div>
+      <Typography
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__content`,
+          `${PREFIX}-${GROUP_NAME}__content--${fontSize}`,
+        )}
+        element="div"
+        variant={`body-${fontSize}`}
+      >
+        {children}
+      </Typography>
 
-      {dismissable ? (
-        <div className={cardDismissIcon()}>
+      {dismissable && (
+        <div
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__dismiss`,
+            'absolute right-2 top-2 h-3 w-3',
+          )}
+        >
           <Button
             icon={<CloseIcon />}
             iconOnly
@@ -73,8 +98,6 @@ export const Card = ({
             onClick={() => (isFunction(onDismiss) ? onDismiss() : noop)}
           />
         </div>
-      ) : (
-        false
       )}
     </div>
   )

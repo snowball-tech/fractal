@@ -10,7 +10,7 @@ import { Autocomplete } from '@/components/Autocomplete'
 import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
 
-import Header from './Header'
+import { Header } from '.'
 
 // eslint-disable-next-line perfectionist/sort-imports
 import '@/styles/smartphones.css'
@@ -120,7 +120,11 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({ device, ...args }) => {
     if (device === 'none') {
-      return <Header {...args} />
+      return (
+        <div className="@container">
+          <Header {...args} />
+        </div>
+      )
     }
 
     const style: CSSProperties = {
@@ -137,7 +141,7 @@ export const Playground: Story = {
       <div className="smartphone">
         <div className={`device device-${device}`}>
           <div className="device-frame">
-            <div className="device-screen">
+            <div className="device-screen @container">
               <Header {...args} style={style} />
             </div>
           </div>

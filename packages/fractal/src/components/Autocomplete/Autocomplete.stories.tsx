@@ -29,12 +29,14 @@ import {
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteEmpty from './AutocompleteEmpty'
-import AutocompleteItem from './AutocompleteItem'
-import AutocompleteItemGroup from './AutocompleteItemGroup'
-import AutocompleteItemSeparator from './AutocompleteItemSeparator'
-import AutocompleteLoading from './AutocompleteLoading'
+import {
+  Autocomplete,
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteItemGroup,
+  AutocompleteItemSeparator,
+  AutocompleteLoading,
+} from '.'
 
 type AutocompleteProps = ComponentProps<typeof Autocomplete>
 
@@ -44,9 +46,12 @@ function asItem(list: Array<string>, withDisabled = false): ReactNode {
     const disabled = (index + 1) % 3 === 0 && withDisabled
 
     return (
-      <AutocompleteItem key={value} disabled={disabled} value={value}>
-        {item}
-      </AutocompleteItem>
+      <AutocompleteItem
+        key={value}
+        disabled={disabled}
+        label={item}
+        value={value}
+      />
     )
   })
 }
@@ -122,21 +127,41 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
         children: (
           <>
             <AutocompleteItemGroup label="Characters">
-              {characters.map(({ name }: { name: string }) => (
-                <AutocompleteItem key={name} onSelect={onSelect}>
-                  {name}
-                </AutocompleteItem>
-              ))}
+              <>
+                {isEmpty(characters) && (
+                  <AutocompleteEmpty>
+                    No character matching the search found!
+                  </AutocompleteEmpty>
+                )}
+                {!isEmpty(characters) &&
+                  characters.map(({ name }: { name: string }) => (
+                    <AutocompleteItem
+                      key={name}
+                      label={name}
+                      onSelect={onSelect}
+                    />
+                  ))}
+              </>
             </AutocompleteItemGroup>
 
             <AutocompleteItemSeparator />
 
             <AutocompleteItemGroup label="Planets">
-              {planets.map(({ name }: { name: string }) => (
-                <AutocompleteItem key={name} onSelect={onSelect}>
-                  {name}
-                </AutocompleteItem>
-              ))}
+              <>
+                {isEmpty(planets) && (
+                  <AutocompleteEmpty>
+                    No planet matching the search found!
+                  </AutocompleteEmpty>
+                )}
+                {!isEmpty(planets) &&
+                  planets.map(({ name }: { name: string }) => (
+                    <AutocompleteItem
+                      key={name}
+                      label={name}
+                      onSelect={onSelect}
+                    />
+                  ))}
+              </>
             </AutocompleteItemGroup>
           </>
         ),

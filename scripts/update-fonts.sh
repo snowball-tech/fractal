@@ -12,6 +12,7 @@
 source "$(dirname "$0")/colors.sh"
 
 destination="$1"
+force="$2"
 
 exitCode=0
 if [ -n "$CI" ]; then
@@ -21,6 +22,16 @@ fi
 if [ -z "$destination" ]; then
   echo "Usage: $0 <destination>"
   exit $exitCode
+fi
+
+if [ -n "$(ls -A "${destination}"fonts/*.woff* 2>/dev/null)" ]; then
+  if [ "$force" != "--force" ]; then
+    bold_success "Fonts seems to be already there."
+    info "Launch \`yarn force-update-fonts\` to force the download/update of the fonts."
+    echo ""
+
+    exit 0
+  fi
 fi
 
 TMP_DIR="$(dirname "$0")/tmp/freezer/$(date +'%Y%m%d_%H%M%S')-$RANDOM"
@@ -35,10 +46,10 @@ if [ $? -gt 0 ]; then
   warning "Unable to clone the Freezer repository."
   warning "Please make sure you have the appropriate GitHub token or SSH key and permissions to access the Freezer repository in the 'snowball-tech' organization."
 
-  exit $exitCode
+  exit "$exitCode"
 fi
 
-cd "$TMP_DIR" > /dev/null 2>&1 || exit 0
+cd "$TMP_DIR" >/dev/null 2>&1 || exit 0
 
 sparseCheckout=$(git sparse-checkout set --no-cone "packages/fonts" 2>&1)
 if [ $? -gt 0 ]; then
@@ -47,7 +58,7 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the spare-checkout of the Freezer repository."
 
-  exit $exitCode
+  exit "$exitCode"
 fi
 
 checkout=$(git checkout 2>&1)
@@ -57,10 +68,10 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the checkout of the fonts from the Freezer repository."
 
-  exit $exitCode
+  exit "$exitCode"
 fi
 
-cd - > /dev/null 2>&1 || exit 5
+cd - >/dev/null 2>&1 || exit 5
 
 createDir=$(mkdir -p "$destination" 2>&1)
 if [ $? -gt 0 ]; then
@@ -71,7 +82,7 @@ if [ $? -gt 0 ]; then
   echo ""
   warning "$createDir"
 
-  exit $exitCode
+  exit "$exitCode"
 fi
 
 copy=$(cp -r "$TMP_DIR/packages/fonts" "$destination" 2>&1)
@@ -81,7 +92,7 @@ if [ $? -gt 0 ]; then
 
   warning "Something wrong happened during the copy of the fonts from the Freezer repository to '$destination'."
 
-  exit $exitCode
+  exit "$exitCode"
 fi
 
 bold_success "DONE"
@@ -104,3 +115,5 @@ info "assets/fonts"
 echo -n "$BLUE"
 ls "$destination/fonts"
 echo -n "$NORMAL"
+
+echo ""

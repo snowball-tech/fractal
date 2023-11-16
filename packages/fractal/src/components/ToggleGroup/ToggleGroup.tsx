@@ -1,15 +1,14 @@
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { toggleGroup } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
+import { twMerge } from 'tailwind-merge'
 
+import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_VARIANT } from '../Toggle/Toggle.constants'
-import { GROUP_NAME } from './ToggleGroup.recipe'
+import { GROUP_NAME } from './ToggleGoup.constants'
 import type { ToggleGroupProps } from './ToggleGroup.types'
-import { ToggleGroupVariantContext } from './ToggleGroupVariantContext'
+import { ToggleGroupContext } from './ToggleGroupContext'
 
 /**
  * `ToggleGroup` component is used to group multiple `Toggle` components
@@ -30,20 +29,19 @@ export const ToggleGroup = ({
   variant = DEFAULT_VARIANT,
   ...props
 }: ToggleGroupProps) => {
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-group`,
-    toggleGroup(),
-    `variant-${variant}`,
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-  )
-
   return (
     // @ts-expect-error - I have a hard time using the proper type for the
     // `type` property.
     <RxToggleGroup.Root
-      className={groupClassNames}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${variant}`,
+        'flex max-w-full flex-col gap-3',
+        'data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:flex-wrap sm:data-[orientation=horizontal]:flex-nowrap',
+        disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+        fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
+        props.className,
+      )}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
       {...(orientation !== undefined ? { orientation } : {})}
@@ -56,9 +54,9 @@ export const ToggleGroup = ({
         : {})}
       {...omit(['className'], props)}
     >
-      <ToggleGroupVariantContext.Provider value={variant}>
+      <ToggleGroupContext.Provider value={{ disabled, variant }}>
         {radioButtons}
-      </ToggleGroupVariantContext.Provider>
+      </ToggleGroupContext.Provider>
     </RxToggleGroup.Root>
   )
 }

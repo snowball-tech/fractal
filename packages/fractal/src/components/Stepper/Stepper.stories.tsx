@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Stepper from './Stepper'
+import { Stepper } from '.'
 
 type StepperProps = ComponentProps<typeof Stepper>
 

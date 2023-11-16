@@ -8,8 +8,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
 
-import Button from './Button'
-import { DEFAULT_VARIANT, Variants } from './Button.constants'
+import { Button, ButtonVariants } from '.'
+import { DEFAULT_VARIANT } from './Button.constants'
 
 type ButtonProps = ComponentProps<typeof Button>
 
@@ -28,10 +28,10 @@ const meta = {
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
     variant: {
-      options: Object.values(Variants),
+      options: Object.values(ButtonVariants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(Variants).join('|') },
+        type: { summary: Object.values(ButtonVariants).join('|') },
       },
     },
   },

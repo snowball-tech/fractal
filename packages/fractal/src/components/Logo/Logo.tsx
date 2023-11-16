@@ -1,13 +1,16 @@
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { logo, picto } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twMerge } from 'tailwind-merge'
+
+import { PREFIX } from '@/constants'
 
 import {
   BrandColors,
   DEFAULT_BRAND_COLOR,
   DEFAULT_PICTO_COLOR,
   DEFAULT_SIZE,
+  GROUP_NAME,
   PictoColors,
+  Sizes,
 } from './Logo.constants'
 import type { LogoProps } from './Logo.types'
 
@@ -23,6 +26,30 @@ export const Logo = ({
   if (pictoVariant === 'none' && brandVariant === 'none') {
     return false
   }
+  const logoSizeClassNames = {
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+    [Sizes.S]: 'h-[22px] w-[75px]',
+    [Sizes.M]: 'h-[44px] w-[150px]',
+    [Sizes.L]: 'h-[66px] w-[225px]',
+    [Sizes.XL]: 'h-[88px] w-[300px]',
+    [Sizes.Fluid]: 'h-auto w-full',
+
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+  }
+  const pictoClassNames = {
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+    [Sizes.S]: 'h-[22px] w-[22px]',
+    [Sizes.M]: 'h-[44px] w-[44px]',
+    [Sizes.L]: 'h-[66px] w-[66px]',
+    [Sizes.XL]: 'h-[88px] w-[88px]',
+    [Sizes.Fluid]: 'h-auto w-full',
+
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+  }
 
   const pictoColor = PictoColors[pictoVariant]
   const brandColor = BrandColors[brandVariant]
@@ -35,14 +62,26 @@ export const Logo = ({
     viewBox = '60 0 201 76'
   }
 
-  let className = logo({ size })
+  let className = logoSizeClassNames[size]
   if (brandVariant === 'none') {
-    className = picto({ size })
+    className = pictoClassNames[size]
   }
 
   return (
     <svg
-      className={cx(props.className, className)}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${size}`,
+        `${PREFIX}-${GROUP_NAME}__brand--${brandVariant}`,
+        `${PREFIX}-${GROUP_NAME}__picto--${pictoVariant}`,
+        brandVariant === 'none' ? `${PREFIX}-${GROUP_NAME}--picto-only` : '',
+        pictoVariant === 'none' ? `${PREFIX}-${GROUP_NAME}--brand-only` : '',
+        brandVariant !== 'none' && pictoVariant !== 'none'
+          ? `${PREFIX}-${GROUP_NAME}--full`
+          : '',
+        className,
+        props.className,
+      )}
       display="block"
       fill="none"
       preserveAspectRatio="xMidYMid"

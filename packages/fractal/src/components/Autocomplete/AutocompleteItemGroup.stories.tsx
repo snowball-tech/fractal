@@ -2,9 +2,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteItem from './AutocompleteItem'
-import AutocompleteItemGroup from './AutocompleteItemGroup'
+import { Autocomplete, AutocompleteItem, AutocompleteItemGroup } from '.'
 
 type AutocompleteItemGroupProps = ComponentProps<typeof AutocompleteItemGroup>
 
@@ -42,13 +40,9 @@ export const Playground: Story = {
         onChange={action('onChange')}
       >
         <AutocompleteItemGroup label={label}>
-          <AutocompleteItem value="luke-skywalker">
-            Luke Skywalker
-          </AutocompleteItem>
-          <AutocompleteItem value="obi-wan-kenobi">
-            Obi-Wan Kenobi
-          </AutocompleteItem>
-          <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+          <AutocompleteItem label="Luke Skywalker" value="luke-skywalker" />
+          <AutocompleteItem label="Obi-Wan Kenobi" value="obi-wan-kenobi" />
+          <AutocompleteItem label="Yoda" value="yoda" />
         </AutocompleteItemGroup>
       </Autocomplete>
     </div>

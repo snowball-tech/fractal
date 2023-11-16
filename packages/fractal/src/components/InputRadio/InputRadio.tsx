@@ -1,22 +1,24 @@
 import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
+import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputRadio,
-  inputRadioCheckmark,
-  inputRadioContainer,
-  inputRadioLabel,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
-import { useContext, useId } from 'react'
+import {
+  type ForwardedRef,
+  type MouseEvent,
+  forwardRef,
+  useContext,
+  useId,
+  useRef,
+} from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './InputRadio.recipe'
+import { GROUP_NAME, Variants } from './InputRadio.constants'
 import type { InputRadioProps } from './InputRadio.types'
-import { InputRadioVariantContext } from './InputRadioVariantContext'
+import { InputRadioContext } from './InputRadioContext'
 
 /**
  * `InputRadio` component is used to allow the user to make a single choice
@@ -24,53 +26,113 @@ import { InputRadioVariantContext } from './InputRadioVariantContext'
  *
  * You must use this component within the `InputRadioGroup` component.
  */
-export const InputRadio = ({
-  disabled = false,
-  fullWidth = false,
-  id,
-  label,
-  value,
-  ...props
-}: InputRadioProps) => {
-  const generatedId = useId()
-  const uniqueId = (id ?? generatedId) || generatedId
+export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
+  (
+    {
+      disabled = false,
+      fullWidth = false,
+      id,
+      label,
+      value,
+      ...props
+    }: InputRadioProps,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ) => {
+    const variantClassNames = {
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
-  const variant = useContext(InputRadioVariantContext)
+      [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
+      [Variants.Secondary]: 'bg-white border-1 border-normal',
+      [Variants.Tertiary]: 'bg-[transparent]',
 
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    inputRadioContainer(),
-    `variant-${variant}`,
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-  )
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+    }
 
-  return (
-    <div className={groupClassNames}>
-      <RxRadio.Item
-        id={uniqueId}
-        className={inputRadio()}
-        disabled={disabled}
-        value={value}
-        {...omit(['className'], props)}
+    const generatedId = useId()
+    const uniqueId = (id ?? generatedId) || generatedId
+
+    const radioRef = useRef<HTMLButtonElement>(null)
+    const combinedRef = composeRefs(ref, radioRef)
+
+    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+      if (event.target) {
+        ;(event.target as HTMLButtonElement).blur()
+      }
+    }
+
+    const {
+      disabled: groupDisabled,
+      required = false,
+      variant,
+    } = useContext(InputRadioContext)
+
+    const isDisabled = disabled || groupDisabled
+
+    return (
+      <Typography
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          `${PREFIX}-${GROUP_NAME}--${variant}`,
+          'group/radio',
+          'flex w-full max-w-full cursor-default items-center rounded-sm',
+          variantClassNames[variant],
+          isDisabled
+            ? `${PREFIX}-${GROUP_NAME}--disabled text-disabled`
+            : 'text-dark',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          props.className,
+        )}
+        element="div"
       >
-        <div className={inputRadioCheckmark()}>
-          <RxRadio.Indicator>
-            <CheckIcon />
-          </RxRadio.Indicator>
-        </div>
-      </RxRadio.Item>
+        <RxRadio.Item
+          id={uniqueId}
+          ref={combinedRef}
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__radio`,
+            'h-full min-h-6 flex-[0] rounded-xs border-none bg-[unset] px-[unset] py-[unset] focus-visible:outline-none',
+            isDisabled
+              ? 'cursor-not-allowed'
+              : 'cursor-pointer [&>:first-child]:data-[state=checked]:bg-primary group-hover/radio:[&>:first-child]:data-[state=unchecked]:bg-decorative-pink-90',
+          )}
+          disabled={isDisabled}
+          required={required}
+          value={value}
+          onClick={handleClick}
+          {...omit(['className'], props)}
+        >
+          <div
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__radio__mark`,
+              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-full border-2 pt-0.5',
+              isDisabled ? 'border-disabled bg-transparent' : `border-normal`,
+            )}
+          >
+            <RxRadio.Indicator>
+              <CheckIcon />
+            </RxRadio.Indicator>
+          </div>
+        </RxRadio.Item>
 
-      <RxLabel
-        className={cx(typography({ variant: 'body-1' }), inputRadioLabel())}
-        htmlFor={uniqueId}
-      >
-        {label}
-      </RxLabel>
-    </div>
-  )
-}
+        <RxLabel
+          asChild
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__radio__label`,
+            'flex-1 overflow-auto break-words py-2 pr-2',
+            isDisabled ? 'cursor-not-allowed' : `cursor-pointer`,
+            required
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              : '',
+          )}
+          htmlFor={uniqueId}
+        >
+          <Typography element="label">{label}</Typography>
+        </RxLabel>
+      </Typography>
+    )
+  },
+)
 InputRadio.displayName = 'InputRadio'
 
 export default InputRadio

@@ -1,13 +1,13 @@
-import * as RxDropdown from '@radix-ui/react-dropdown-menu'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { dropdownRadioGroup } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useId } from 'react'
+import { twMerge } from 'tailwind-merge'
 
+import { Variants as InputRadioVariants } from '@/components/InputRadio/InputRadio.constants'
+import { InputRadioGroup } from '@/components/InputRadio/InputRadioGroup'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Dropdown.recipe'
+import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioGroupProps } from './Dropdown.types'
 
 /**
@@ -26,20 +26,19 @@ export const DropdownRadioGroup = ({
   const generatedId = useId()
   const uniqueId = (props.id ?? generatedId) || generatedId
 
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-radio-group`,
-    dropdownRadioGroup(),
-    props.className,
-    disabled ? 'disabled' : '',
-  )
-
   return (
-    <RxDropdown.RadioGroup
+    <InputRadioGroup
       id={uniqueId}
-      className={groupClassNames}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__group-radio`,
+        'group/dropdown-radio-group',
+        disabled ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled` : '',
+        props.className,
+      )}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       {...(disabled !== undefined ? { disabled } : {})}
       {...(value !== undefined ? { value } : {})}
+      variant={InputRadioVariants.Tertiary}
       {...(isFunction(onValueChange)
         ? {
             onValueChange: (newValue: string) => onValueChange(newValue),
@@ -48,7 +47,7 @@ export const DropdownRadioGroup = ({
       {...omit(['className'], props)}
     >
       {dropdownRadioItems}
-    </RxDropdown.RadioGroup>
+    </InputRadioGroup>
   )
 }
 DropdownRadioGroup.displayName = 'DropdownRadioGroup'

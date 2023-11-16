@@ -1,28 +1,13 @@
 'use client'
 
-import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
-import { css, cx } from '@snowball-tech/fractal-panda/css'
-import {
-  autocompleteContainer,
-  autocompleteDescription,
-  autocompleteDropdown,
-  autocompleteInput,
-  autocompleteLabel,
-  autocompleteMessage,
-  selectDropdown,
-  selectDropdownScrollViewport,
-  selectDropdownScrollbar,
-  selectDropdownScrollbarThumbs,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import {
   type ChangeEvent,
+  type FocusEvent,
   type ForwardedRef,
   type KeyboardEvent,
   type MouseEvent,
@@ -33,11 +18,15 @@ import {
   useRef,
   useState,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Dropdown } from '@/components/Dropdown/Dropdown'
+import type { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Dropdown.types'
 import { InputText } from '@/components/InputText'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Autocomplete.recipe'
+import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
 
 /**
@@ -78,7 +67,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
     const inputRef = useRef<HTMLInputElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
-    const dropdownRef = useRef<HTMLDivElement>(null)
+    const dropdownRef = useRef<DropdownCombinedRefs>(null)
 
     useImperativeHandle(ref, () => ({
       get container() {
@@ -94,32 +83,19 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       },
     }))
 
+    const hasChildren = Boolean(children)
+
     const [keepFocus, setKeepFocus] = useState(false)
 
     const [isOpen, setIsOpen] = useState(
-      open === true || (Boolean(children) && open !== false),
+      open === true || (hasChildren && open !== false),
     )
-    useEffect(() => {
-      setIsOpen(open === true)
-    }, [open])
 
     const hasErrorMessage = !isEmpty(error)
     const hasSuccessMessage = !isEmpty(success)
 
     const isInError = hasErrorMessage
     const isSuccessful = hasSuccessMessage && !isInError
-
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      autocompleteContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-      isInError ? 'error' : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isSuccessful ? 'success' : '',
-    )
 
     const handleInputChange = (
       event: ChangeEvent<HTMLInputElement>,
@@ -140,15 +116,18 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
     const handleDropdownToggle = (isOpened: boolean) => {
       setIsOpen(isOpened)
-
-      if (isOpened && isFunction(onOpen)) {
-        onOpen()
-      }
-
-      if (!isOpened && isFunction(onClose)) {
-        onClose()
-      }
     }
+
+    useEffect(() => {
+      if (open === true || (hasChildren && open !== false)) {
+        handleDropdownToggle(true)
+      } else {
+        handleDropdownToggle(false)
+      }
+      // We don't want to reopen the toggle based on the `handleOpenChange`
+      // function. So we don't include it in the dependencies.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [children, open])
 
     const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
       (event) => {
@@ -159,11 +138,12 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         if (
           containerRef?.current?.contains(target as Element) ||
-          dropdownRef?.current?.contains(target as Element)
+          dropdownRef?.current?.container?.contains(target as Element) ||
+          dropdownRef?.current?.dropdown?.contains(target as Element)
         ) {
           event.preventDefault()
         } else if (isOpen && isFunction(onBlur)) {
-          onBlur()
+          inputRef.current?.blur()
         }
       }
 
@@ -187,6 +167,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     }
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+      event.stopPropagation()
+
       if (isFunction(props.onKeyDown)) {
         props.onKeyDown(event)
       }
@@ -207,7 +189,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           onChange(null, String(value) ?? '')
         }
       } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        if (!children) {
+        if (!hasChildren) {
           return
         }
 
@@ -215,7 +197,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           setKeepFocus(true)
           handleDropdownToggle(true)
         } else if (dropdownRef?.current) {
-          dropdownRef.current.focus()
+          dropdownRef.current.dropdown?.focus()
         }
 
         event.preventDefault()
@@ -228,12 +210,11 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           if (document.activeElement === inputRef.current) {
             setKeepFocus(true)
           }
-          inputRef.current.focus()
         }
       }
     }
 
-    const handleTriggerClick = (event: MouseEvent<HTMLInputElement>) => {
+    const handleInputClick = (event: MouseEvent<HTMLInputElement>) => {
       if (props.onClick) {
         props.onClick(event)
       }
@@ -244,8 +225,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         }
       }
 
-      if (children && !isOpen) {
-        if (document.activeElement === inputRef.current) {
+      if (hasChildren) {
+        if (document.activeElement === inputRef.current && !isOpen) {
           setKeepFocus(true)
         }
 
@@ -253,156 +234,131 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
     }
 
-    useEffect(() => {
-      if (open === true || (Boolean(children) && open !== false)) {
+    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+      if (props.onFocus) {
+        props.onFocus(event)
+      }
+
+      if (hasChildren) {
+        if (!isOpen) {
+          setKeepFocus(true)
+        }
         handleDropdownToggle(true)
       }
-      // We don't want to reopen the toggle based on the `handleDropdownToggle`
-      // function. So we don't include it in the dependencies.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }
+
+    const writable = !disabled && !readOnly
 
     return (
-      <div ref={containerRef} className={groupClassNames}>
-        {!isEmpty(label) ? (
+      <div
+        ref={containerRef}
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex w-full max-w-full flex-col',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+          props.className,
+        )}
+      >
+        {!isEmpty(label) && (
           <RxLabel
-            className={cx(
-              typography({ variant: 'body-1' }),
-              autocompleteLabel(),
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
+                : 'cursor-pointer',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
             )}
             htmlFor={uniqueId}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
-        <InputText
-          id={uniqueId}
-          ref={inputRef}
-          // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus={autoFocus}
-          className={autocompleteInput()}
-          {...(defaultValue !== undefined ? { defaultValue } : {})}
+        <Dropdown
+          ref={dropdownRef}
           disabled={disabled}
-          error={hasErrorMessage}
-          fullWidth={fullWidth}
-          name={name || uniqueId}
-          {...(placeholder !== undefined ? { placeholder } : {})}
-          readOnly={readOnly}
-          required={required}
-          selectOnFocus={!keepFocus}
-          success={isSuccessful}
-          type="text"
-          {...(value !== undefined ? { value } : {})}
-          onBlur={handleInputBlur}
-          onChange={handleInputChange}
-          onClick={handleTriggerClick}
-          onKeyDown={handleInputKeyDown}
-          {...omit(['className', 'onBlur', 'onKeyDown'], props)}
-        />
-
-        <RxDropdownMenu.Root
-          modal={false}
+          dropdown={{
+            ...dropdown,
+            align: 'end',
+            className: twJoin(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
+          }}
+          {...(isFunction(onClose) ? { onClose } : {})}
+          {...(isFunction(onOpen) ? { onOpen } : {})}
           open={isOpen}
-          onOpenChange={handleDropdownToggle}
+          side="bottom"
+          toggleOnTriggerClick={false}
+          trigger={
+            <InputText
+              id={uniqueId}
+              ref={inputRef}
+              autoFocus={autoFocus}
+              className={twJoin(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
+              {...(defaultValue !== undefined ? { defaultValue } : {})}
+              disabled={disabled}
+              error={hasErrorMessage}
+              fullWidth={fullWidth}
+              name={name || uniqueId}
+              {...(placeholder !== undefined ? { placeholder } : {})}
+              readOnly={readOnly}
+              required={required}
+              selectOnFocus={false}
+              success={isSuccessful}
+              type="text"
+              {...(value !== undefined ? { value } : {})}
+              onBlur={handleInputBlur}
+              onChange={handleInputChange}
+              onClick={handleInputClick}
+              onFocus={handleInputFocus}
+              onKeyDown={handleInputKeyDown}
+              {...omit(
+                ['className', 'onBlur', 'onKeyDown', 'onFocus', 'onClick'],
+                props,
+              )}
+            />
+          }
+          width="trigger"
+          withIndicator={false}
+          onInteractOutside={handleDropdownInteractOutside}
+          onKeyDown={handleDropdownKeyDown}
+          onMenuOpenChange={handleDropdownToggle}
+          onPointerDownOutside={handleDropdownPointerDownOutside}
         >
-          <RxDropdownMenu.Trigger
-            className={css({
-              borderBottom: 0,
-              borderTop: 0,
-              height: 0,
-              maxHeight: 0,
-              py: 0,
-              visibility: 'hidden',
-            })}
-            onPointerDown={(event) => {
-              event.preventDefault()
-              event.stopPropagation()
-            }}
-          />
+          {children}
+        </Dropdown>
 
-          <RxDropdownMenu.Portal>
-            {isOpen && (
-              <RxDropdownMenu.Content
-                ref={dropdownRef}
-                {...omit(['className'], dropdown)}
-                align="center"
-                asChild
-                className={cx(
-                  `${PREFIX}-${GROUP_NAME}-dropdown`,
-                  typography({ variant: 'body-1' }),
-                  selectDropdown(),
-                  autocompleteDropdown(),
-                  ...(dropdown?.className?.split(' ') || []),
-                  !children ? css({ visibility: 'hidden' }) : '',
-                )}
-                loop
-                side="bottom"
-                style={{
-                  display: undefined,
-                }}
-                onInteractOutside={handleDropdownInteractOutside}
-                onKeyDown={handleDropdownKeyDown}
-                onPointerDownOutside={handleDropdownPointerDownOutside}
-              >
-                <RxScrollArea.Root
-                  {...(props.dir !== undefined
-                    ? { dir: props.dir as RxScrollArea.Direction }
-                    : {})}
-                  type="hover"
-                >
-                  <RxScrollArea.Viewport
-                    className={selectDropdownScrollViewport()}
-                    style={{
-                      overflowY: undefined,
-                    }}
-                  >
-                    {children}
-                  </RxScrollArea.Viewport>
-
-                  <RxScrollArea.Scrollbar
-                    className={cx(
-                      `${PREFIX}-scrollarea-scrollbar-y`,
-                      selectDropdownScrollbar(),
-                    )}
-                    orientation="vertical"
-                  >
-                    <RxScrollArea.Thumb
-                      className={selectDropdownScrollbarThumbs()}
-                    />
-                  </RxScrollArea.Scrollbar>
-                </RxScrollArea.Root>
-              </RxDropdownMenu.Content>
+        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__description`,
+              'cursor-default text-dark',
             )}
-          </RxDropdownMenu.Portal>
-        </RxDropdownMenu.Root>
-
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              autocompleteDescription(),
-            )}
+            variant="caption-median"
           >
             {description}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
 
-        {hasErrorMessage || hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              autocompleteMessage(),
+        {(hasErrorMessage || hasSuccessMessage) && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+                isInError ? 'error' : 'success'
+              }`,
+              'cursor-default text-dark',
             )}
+            value="caption-median"
           >
             {isInError ? error : success}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
       </div>
     )

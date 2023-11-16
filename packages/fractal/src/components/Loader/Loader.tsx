@@ -1,8 +1,9 @@
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { loader } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twMerge } from 'tailwind-merge'
 
-import { DEFAULT_SIZE, DURATION } from './Loader.constants'
+import { PREFIX } from '@/constants'
+
+import { DEFAULT_SIZE, DURATION, GROUP_NAME, Sizes } from './Loader.constants'
 import type { LoaderProps } from './Loader.types'
 
 /**
@@ -10,11 +11,28 @@ import type { LoaderProps } from './Loader.types'
  * experience.
  */
 export const Loader = ({ size = DEFAULT_SIZE, ...props }: LoaderProps) => {
+  const sizeClassNames = {
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+    [Sizes.S]: 'h-4 max-h-4 min-h-4 w-4 max-w-4 min-w-4',
+    [Sizes.M]: 'h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6',
+    [Sizes.L]: 'h-12 max-h-12 min-h-12 w-12 max-w-12 min-w-12',
+    [Sizes.XL]: 'h-20 max-h-20 min-h-20 w-20 max-w-20 min-w-20',
+
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+  }
+
   const transformDuration = parseFloat(DURATION) / 4
 
   return (
     <svg
-      className={cx(props.className, loader({ size }))}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${size}`,
+        sizeClassNames[size],
+        props.className,
+      )}
       display="block"
       preserveAspectRatio="xMidYMid"
       style={{ background: '0 0', margin: 'auto' }}

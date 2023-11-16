@@ -1,15 +1,7 @@
 'use client'
 
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputFileButton,
-  inputFileButtonIcon,
-  inputFileButtonLabel,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
-import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 import {
   type ForwardedRef,
@@ -20,11 +12,13 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_VARIANT, Variants } from './InputFile.constants'
-import { GROUP_NAME } from './InputFile.recipe'
+import { Typography } from '..'
+import { variantClassNames, variantDisabledClassNames } from '../Button/Button'
+import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './InputFile.constants'
 import type { CombinedRefs, InputFileProps } from './InputFile.types'
 
 /**
@@ -79,31 +73,73 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
       }
     }
 
-    const groupClassName = cx(
+    const isTextVariant = variant === Variants.Text
+
+    const classNames = twMerge(
       `${PREFIX}-${GROUP_NAME}`,
-      inputFileButton({ variant }),
-      triggerProps.fullWidth && !triggerProps.iconOnly ? 'full-width' : '',
-      disabled ? 'disabled' : '',
-      !isEmpty(triggerProps.icon)
-        ? `addendum ${
-            (triggerProps.iconPosition || 'right') === 'right'
-              ? 'suffix'
-              : 'prefix'
-          }`
+      `${PREFIX}-${GROUP_NAME}--${variant}`,
+      props.required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-[unset] appearance-none outline-none box-border',
+      !isTextVariant ? 'h-6 px-3 py-1' : '',
+      triggerProps.fullWidth && !triggerProps.iconOnly
+        ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
-      triggerProps.iconOnly ? 'icon-only' : '',
+      disabled
+        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[variant]}`
+        : `${variantClassNames[variant]} cursor-pointer`,
+      !isEmpty(triggerProps.icon)
+        ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`
+        : '',
+      // eslint-disable-next-line no-nested-ternary
+      triggerProps.iconOnly
+        ? `${PREFIX}-${GROUP_NAME}--icon-only w-6`
+        : !triggerProps.fullWidth
+          ? 'w-fit'
+          : '',
       props.className,
     )
+
+    const iconElement = (
+      <div
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__icon--${triggerProps.iconPosition}`,
+          'flex h-3 w-3 items-center [&>svg]:h-3',
+          isTextVariant ? 'mt-0' : '',
+        )}
+      >
+        {triggerProps.icon as ReactNode}
+      </div>
+    )
+
+    const labelElement = (
+      <Typography
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__label`,
+          `${PREFIX}-${GROUP_NAME}__label--${variant}`,
+          'flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+          isTextVariant ? 'pt-0' : '',
+          props.required
+            ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+            : '',
+        )}
+        element="div"
+        variant={isTextVariant ? 'body-1-link' : 'body-1'}
+      >
+        {label}
+      </Typography>
+    )
+
+    const hasIcon = Boolean(triggerProps.icon)
 
     return (
       <>
         <button
-          {...(!isNil(triggerProps.id)
+          {...(triggerProps.id !== undefined
             ? { id: triggerProps.id as string }
             : {})}
           ref={triggerRef}
           aria-label={label}
-          className={groupClassName}
+          className={classNames}
           {...(triggerProps.dir !== undefined
             ? { dir: triggerProps.dir as 'ltr' | 'rtl' }
             : {})}
@@ -117,38 +153,15 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
             triggerProps,
           )}
         >
-          {triggerProps.icon &&
-          (triggerProps.iconPosition || 'right') === 'left' ? (
-            <div className={inputFileButtonIcon({ variant })}>
-              {triggerProps.icon as ReactNode}
-            </div>
-          ) : (
-            false
-          )}
+          {hasIcon &&
+            (triggerProps.iconPosition || 'right') === 'left' &&
+            iconElement}
 
-          {!triggerProps.iconOnly ? (
-            <div
-              className={cx(
-                inputFileButtonLabel({ variant }),
-                typography({
-                  variant: variant === Variants.Text ? 'body-1-link' : 'body-1',
-                }),
-              )}
-            >
-              {label}
-            </div>
-          ) : (
-            false
-          )}
+          {!triggerProps.iconOnly && labelElement}
 
-          {triggerProps.icon &&
-          (triggerProps.iconPosition || 'right') === 'right' ? (
-            <div className={inputFileButtonIcon({ variant })}>
-              {triggerProps.icon as ReactNode}
-            </div>
-          ) : (
-            false
-          )}
+          {hasIcon &&
+            (triggerProps.iconPosition || 'right') === 'right' &&
+            iconElement}
         </button>
 
         <input

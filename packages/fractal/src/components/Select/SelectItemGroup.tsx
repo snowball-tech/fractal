@@ -1,12 +1,13 @@
 import * as RxSelect from '@radix-ui/react-select'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  selectItemGroup,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
+import { PREFIX } from '@/constants'
+
+import { GROUP_NAME } from './Select.constants'
 import type { SelectItemGroupProps } from './Select.types'
+import { SelectGroupContext } from './SelectGroupContext'
 
 /**
  * `SelectItemGroup` component is used to group `SelectItem` components inside
@@ -14,23 +15,46 @@ import type { SelectItemGroupProps } from './Select.types'
  */
 export const SelectItemGroup = ({
   children: items,
+  disabled = false,
   label,
   ...props
 }: SelectItemGroupProps) => {
-  const itemGroupClassNames = cx(
-    typography({ variant: 'body-1' }),
-    selectItemGroup(),
-    props.className,
-  )
-
   return (
     <RxSelect.Group
-      className={itemGroupClassNames}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__item-group`,
+        'p-2 py-0',
+        disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
+        props.className,
+      )}
       {...omit(['className'], props)}
     >
-      <RxSelect.Label>{label}</RxSelect.Label>
+      <RxSelect.Label
+        asChild
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__item-group__label`,
+          'block py-2',
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
+            : 'cursor-default text-placeholder',
+        )}
+      >
+        <Typography element="label">{label}</Typography>
+      </RxSelect.Label>
 
-      {items}
+      <Typography
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__item-group__items`,
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
+            : 'alternating-bg-colors-90-hover',
+        )}
+        element="div"
+      >
+        <SelectGroupContext.Provider value={{ disabled }}>
+          {items}
+        </SelectGroupContext.Provider>
+      </Typography>
     </RxSelect.Group>
   )
 }

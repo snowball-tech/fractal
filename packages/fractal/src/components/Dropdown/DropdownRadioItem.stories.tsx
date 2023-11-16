@@ -2,9 +2,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Dropdown from './Dropdown'
-import DropdownRadioGroup from './DropdownRadioGroup'
-import DropdownRadioItem from './DropdownRadioItem'
+import { Dropdown, DropdownRadioGroup, DropdownRadioItem } from '.'
 
 type DropdownRadioItemProps = ComponentProps<typeof DropdownRadioItem>
 

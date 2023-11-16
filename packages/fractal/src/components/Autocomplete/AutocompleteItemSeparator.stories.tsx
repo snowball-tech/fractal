@@ -2,9 +2,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteItem from './AutocompleteItem'
-import AutocompleteItemSeparator from './AutocompleteItemSeparator'
+import { Autocomplete, AutocompleteItem, AutocompleteItemSeparator } from '.'
 
 type AutocompleteItemSeparatorProps = ComponentProps<
   typeof AutocompleteItemSeparator
@@ -29,9 +27,9 @@ export const Playground: Story = {
         placeholder="Start typing to autocomplete"
         onChange={action('onChange')}
       >
-        <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+        <AutocompleteItem label="Yoda" value="yoda" />
         <AutocompleteItemSeparator />
-        <AutocompleteItem value="darth-sidious">Darth Sidious</AutocompleteItem>
+        <AutocompleteItem label="Darth Sidious" value="darth-sidious" />
       </Autocomplete>
     </div>
   ),

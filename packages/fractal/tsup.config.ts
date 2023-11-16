@@ -13,7 +13,6 @@ const commonConfig: Options = {
   external: ['react', 'react-dom', '@iconscout/react-unicons'],
   format: 'esm',
   minify: true,
-  noExternal: ['@snowball-tech/fractal-panda'],
   outDir: './dist',
   replaceNodeEnv: true,
   sourcemap: true,
@@ -36,9 +35,5 @@ export default defineConfig([
       './src/components/index.ts',
       './src/components/**/index.ts',
     ],
-  },
-  {
-    ...commonConfig,
-    entry: ['./fractal-panda.preset.ts'],
   },
 ])

@@ -1,17 +1,4 @@
 import { Label as RxLabel } from '@radix-ui/react-label'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputText,
-  inputTextAddendum,
-  inputTextContainer,
-  inputTextDescription,
-  inputTextLabel,
-  inputTextMessage,
-  inputTextPrefix,
-  inputTextSuffix,
-  inputTextWrapper,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -22,10 +9,12 @@ import {
   forwardRef,
   useId,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './InputText.recipe'
+import { Typography } from '..'
+import { GROUP_NAME } from './InputText.constants'
 import type { InputTextProps } from './InputText.types'
 
 /**
@@ -64,21 +53,6 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const isInError = hasErrorMessage || error === true
     const hasSuccessMessage = !isEmpty(success)
     const isSuccessful = (hasSuccessMessage || success === true) && !isInError
-
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      inputTextContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-      isInError ? 'invalid' : '',
-      !isEmpty(prefix) || !isEmpty(suffix) ? `addendum` : '',
-      !isEmpty(prefix) ? `prefix` : '',
-      !isEmpty(suffix) ? `suffix` : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isSuccessful ? 'valid' : '',
-    )
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       if (isFunction(onChange)) {
@@ -122,32 +96,104 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         break
     }
 
+    const writable = !disabled && !readOnly
+    const hasPrefix = Boolean(prefix)
+    const hasSuffix = Boolean(suffix)
+
+    const addendumClasses =
+      'flex max-w-full absolute top-1/2 -translate-y-1/2 w-fit'
+
     return (
-      <div className={groupClassNames}>
+      <div
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex w-full max-w-full flex-col gap-1 text-dark',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          readOnly && !disabled ? 'cursor-default' : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+          !isEmpty(prefix) || !isEmpty(suffix)
+            ? `${PREFIX}-${GROUP_NAME}--with-addendum`
+            : '',
+          !isEmpty(prefix) ? `${PREFIX}-${GROUP_NAME}--with-prefix` : '',
+          !isEmpty(suffix) ? `${PREFIX}-${GROUP_NAME}--with-suffix` : '',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+          props.className,
+        )}
+      >
         {!isEmpty(label) ? (
           <RxLabel
-            className={cx(typography({ variant: 'body-1' }), inputTextLabel())}
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              'text-dark',
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
+                : 'cursor-pointer',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
+            )}
             htmlFor={uniqueId}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
         ) : (
           false
         )}
 
-        <div className={inputTextWrapper()}>
-          {prefix ? (
-            <div className={cx(inputTextAddendum(), inputTextPrefix())}>
+        <Typography
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__wrapper`,
+            'relative w-full max-w-full',
+            fullWidth ? '' : 'sm:w-fit',
+          )}
+          element="div"
+        >
+          {hasPrefix && (
+            <div
+              className={twJoin(
+                `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
+                addendumClasses,
+                !writable ? 'text-disabled' : '',
+                'left-1',
+              )}
+            >
               {prefix}
             </div>
-          ) : (
-            false
           )}
 
           <input
-            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus}
-            className={cx(typography({ variant: 'body-1' }), inputText())}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__input`,
+              'box-border h-6 max-h-6 w-full min-w-6 max-w-full rounded-sm border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+              writable
+                ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
+                : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-[transparent]`,
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
+                : ' text-dark',
+              readOnly && !disabled
+                ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
+                : '',
+              fullWidth
+                ? `${PREFIX}-${GROUP_NAME}__input--full-width`
+                : 'sm:w-[unset]',
+              isInError
+                ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
+                : '',
+              isSuccessful
+                ? `${PREFIX}-${GROUP_NAME}__input--with-success border-success shadow-success`
+                : '',
+              writable && !isInError && !isSuccessful ? 'border-normal' : '',
+              hasPrefix ? 'pl-5' : '',
+              hasSuffix ? 'pr-5' : '',
+              required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+            )}
             disabled={disabled}
             {...(defaultValue !== undefined ? { defaultValue } : {})}
             id={uniqueId}
@@ -166,39 +212,48 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             {...omit(['className', 'onFocus'], props)}
           />
 
-          {suffix ? (
-            <div className={cx(inputTextAddendum(), inputTextSuffix())}>
+          {hasSuffix && (
+            <div
+              className={twJoin(
+                `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--suffix`,
+                addendumClasses,
+                'right-1',
+                !writable && !isInError && !isSuccessful ? 'text-disabled' : '',
+                isInError ? 'text-error' : '',
+                isSuccessful ? 'text-success' : '',
+              )}
+            >
               {suffix}
             </div>
-          ) : (
-            false
           )}
-        </div>
+        </Typography>
 
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              inputTextDescription(),
+        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__description`,
+              'cursor-default text-dark',
             )}
+            element="div"
+            variant="caption-median"
           >
             {description}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
 
-        {hasErrorMessage || hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              inputTextMessage(),
+        {(hasErrorMessage || hasSuccessMessage) && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+                isInError ? 'error' : 'success'
+              }`,
+              'cursor-default text-dark',
             )}
+            element="div"
+            variant="caption-median"
           >
             {isInError ? error : success}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
       </div>
     )

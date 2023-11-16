@@ -17,7 +17,7 @@ _(web applications, mobile applications, marketing content, documentations, ...)
 The code of this design system is written in
 [TypeScript](https://www.typescriptlang.org/) and is targeted to be used in
 [React](https://reactjs.org/) applications.  
-[Panda CSS](https://panda-css.com/) is used to style all the
+[TailwindCSS](https://tailwindcss.com/) is used to style all the
 components exposed here.  
 Also, most of the components are based on [Radix-UI](https://www.radix-ui.com/).
 

@@ -1,16 +1,14 @@
 import * as RxRadio from '@radix-ui/react-radio-group'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { inputRadioGroup } from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useId } from 'react'
+import { twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_VARIANT } from './InputRadio.constants'
-import { GROUP_NAME } from './InputRadio.recipe'
+import { DEFAULT_VARIANT, GROUP_NAME } from './InputRadio.constants'
 import type { InputRadioGroupProps } from './InputRadio.types'
-import { InputRadioVariantContext } from './InputRadioVariantContext'
+import { InputRadioContext } from './InputRadioContext'
 
 /**
  * `InputRadioGroup` component is used to group multiple `InputRadio` components
@@ -32,20 +30,21 @@ export const InputRadioGroup = ({
   const generatedId = useId()
   const uniqueId = (props.id ?? generatedId) || generatedId
 
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-group`,
-    inputRadioGroup(),
-    `variant-${variant}`,
-    props.className,
-    disabled ? 'disabled' : '',
-    fullWidth ? 'full-width' : '',
-    required ? 'required' : '',
-  )
-
   return (
     <RxRadio.Root
       id={uniqueId}
-      className={groupClassNames}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__group`,
+        `${PREFIX}-${GROUP_NAME}__group--${variant}`,
+        'flex max-w-full flex-col gap-3',
+        'data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:flex-wrap sm:data-[orientation=horizontal]:flex-nowrap',
+        disabled ? `${PREFIX}-${GROUP_NAME}__group--disabled` : '',
+        fullWidth
+          ? `${PREFIX}-${GROUP_NAME}__group--full-width w-full`
+          : 'w-fit',
+        required ? `${PREFIX}-${GROUP_NAME}__group--required` : '',
+        props.className,
+      )}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
       name={name || uniqueId}
@@ -59,9 +58,9 @@ export const InputRadioGroup = ({
         : {})}
       {...omit(['className'], props)}
     >
-      <InputRadioVariantContext.Provider value={variant}>
+      <InputRadioContext.Provider value={{ disabled, required, variant }}>
         {radioButtons}
-      </InputRadioVariantContext.Provider>
+      </InputRadioContext.Provider>
     </RxRadio.Root>
   )
 }

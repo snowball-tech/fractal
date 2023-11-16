@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'toggle'
+
 export enum Variants {
   Primary = 'primary',
 }

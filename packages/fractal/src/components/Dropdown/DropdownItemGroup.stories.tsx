@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Dropdown from './Dropdown'
-import DropdownItem from './DropdownItem'
-import DropdownItemGroup from './DropdownItemGroup'
+import { Dropdown, DropdownItem, DropdownItemGroup } from '.'
 
 type DropdownItemGroupProps = ComponentProps<typeof DropdownItemGroup>
 
@@ -20,6 +18,7 @@ const meta: Meta<DropdownItemGroupProps> = {
     },
   },
   args: {
+    disabled: false,
     label: 'Jedis',
   },
   component: DropdownItemGroup,
@@ -34,10 +33,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ label }) => (
-    <div style={{ height: '1200px' }}>
-      <Dropdown>
-        <DropdownItemGroup label={label}>
+  render: ({ disabled = false, label }) => (
+    <div style={{ height: '300px' }}>
+      <Dropdown trigger="Jedis">
+        <DropdownItemGroup disabled={disabled} label={label}>
           <DropdownItem label="Luke Skywalker" />
           <DropdownItem label="Obi-Wan Kenobi" />
           <DropdownItem label="Yoda" />

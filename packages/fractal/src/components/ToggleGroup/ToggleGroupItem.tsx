@@ -1,19 +1,28 @@
+import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  toggle,
-  toggleLabel,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useContext } from 'react'
+import {
+  type ForwardedRef,
+  type MouseEvent,
+  forwardRef,
+  useContext,
+  useRef,
+} from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './ToggleGroup.recipe'
+import {
+  disabledVariantClassNames as toggleDisabledVariantClassNames,
+  variantClassNames as toggleVariantClassNames,
+} from '../Toggle/Toggle'
+import { Variants } from '../Toggle/Toggle.constants'
+import { GROUP_NAME } from './ToggleGoup.constants'
 import type { ToggleGroupItemProps } from './ToggleGroup.types'
-import { ToggleGroupVariantContext } from './ToggleGroupVariantContext'
+import { ToggleGroupContext } from './ToggleGroupContext'
 
 /**
  * `ToggleGroupItem` component is used to allow the user to make a single choice
@@ -30,36 +39,89 @@ export const ToggleGroupItem = forwardRef<
       disabled = false,
       fullWidth = false,
       icon,
+      iconOnly = false,
       label,
+      onToggle,
       value,
       ...props
     }: ToggleGroupItemProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
-    const variant = useContext(ToggleGroupVariantContext)
+    const buttonRef = useRef<HTMLButtonElement>(null)
+    const combinedRef = composeRefs(ref, buttonRef)
 
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}-item`,
-      toggle({ variant }),
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-      !isEmpty(icon) ? `addendum prefix` : '',
-    )
+    const variantClassNames = {
+      [Variants.Primary]:
+        'bg-white text-dark aria-[checked=false]:shadow-subtle aria-[checked=false]:hover:shadow-brutal aria-[checked=false]:focus:shadow-brutal aria-[checked=false]:active:shadow-none border-1 border-normal aria-[checked=false]:active:-translate-x-0.25 aria-[checked=false]:active:translate-y-0.5 aria-[checked=false]:hover:translate-x-0 aria-[checked=false]:hover:-translate-y-0.25 aria-[checked=false]:focus:translate-x-0 aria-[checked=false]:focus:-translate-y-0.25 aria-[checked=true]:bg-secondary aria-[checked=true]:text-light',
+    }
+
+    const disabledVariantClassNames = {
+      [Variants.Primary]:
+        'bg-white text-disabled shadow-none border-1 border-disabled aria-[checked=true]:bg-secondary aria-[checked=true]:text-disabled',
+    }
+
+    const { disabled: groupDisabled, variant } = useContext(ToggleGroupContext)
+
+    const handleToggle = (event: MouseEvent<HTMLButtonElement>) => {
+      buttonRef?.current?.blur()
+
+      if (isFunction(onToggle)) {
+        onToggle(
+          event.currentTarget.attributes.getNamedItem('aria-checked')?.value ===
+            'true',
+        )
+      }
+
+      if (isFunction(props.onClick)) {
+        props.onClick(event)
+      }
+    }
+
+    const isDisabled = disabled || groupDisabled
 
     return (
       <RxToggleGroup.Item
-        ref={ref}
-        className={groupClassNames}
-        disabled={disabled}
+        {...(props.id !== undefined ? { id: props.id } : {})}
+        ref={combinedRef}
+        aria-label={label}
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          `${PREFIX}-${GROUP_NAME}--${variant}`,
+          'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-none transition-colors duration-300 ease-out active:transition-none',
+          isDisabled
+            ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${disabledVariantClassNames[variant]} ${toggleDisabledVariantClassNames[variant]}`
+            : `cursor-pointer ${variantClassNames[variant]} ${toggleVariantClassNames[variant]}`,
+          fullWidth && !iconOnly
+            ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
+            : 'w-fit',
+          !isEmpty(icon)
+            ? `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`
+            : '',
+          iconOnly ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 p-1` : 'px-3 py-1',
+          props.className,
+        )}
+        disabled={isDisabled}
+        title={label}
         value={value}
-        {...omit(['className'], props)}
+        onClick={handleToggle}
+        {...omit(['className', 'id', 'onClick'], props)}
       >
         {icon}
 
-        <div className={cx(toggleLabel(), typography({ variant: 'body-1' }))}>
-          {label}
-        </div>
+        {!iconOnly && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              'max-h-full max-w-full flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+              isDisabled
+                ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
+                : `cursor-pointer`,
+            )}
+            element="label"
+          >
+            {label}
+          </Typography>
+        )}
       </RxToggleGroup.Item>
     )
   },

@@ -3,6 +3,8 @@ import { getCountries, getCountryCallingCode } from 'libphonenumber-js/max'
 
 import { CountryDetails } from './InputPhone.types'
 
+export const GROUP_NAME = 'input-phone'
+
 export const DEFAULT_COUNTRY_CODE = 'FR'
 
 export const countryByCountryCode: Record<string, CountryDetails> = {}

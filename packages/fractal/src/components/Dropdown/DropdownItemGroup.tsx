@@ -1,42 +1,60 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  dropdownItemGroup,
-  selectItemGroup,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Dropdown.recipe'
+import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemGroupProps } from './Dropdown.types'
+import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
- * `DropdownItemGroup` component is used to display `DropdownItem` grouped under
- * a common label with nice formatting.
+ * `ItemGroup` component is used to display `Item`s grouped under a common label
+ * with nice formatting.
  */
 export default function DropdownItemGroup({
   children: items,
+  disabled = false,
   label,
   ...props
 }: DropdownItemGroupProps) {
-  const itemGroupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-group`,
-    typography({ variant: 'body-1' }),
-    selectItemGroup(),
-    dropdownItemGroup(),
-    props.className,
-  )
-
   return (
     <RxDropdownMenu.Group
-      className={itemGroupClassNames}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__item-group`,
+        'p-2 py-0',
+        disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
+        props.className,
+      )}
       {...omit(['className'], props)}
     >
-      <RxDropdownMenu.Label>{label}</RxDropdownMenu.Label>
+      <RxDropdownMenu.Label
+        asChild
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__item-group__label`,
+          'block py-2',
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
+            : 'cursor-default text-placeholder',
+        )}
+      >
+        <Typography element="label">{label}</Typography>
+      </RxDropdownMenu.Label>
 
-      {items}
+      <Typography
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__item-group__items`,
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
+            : 'alternating-bg-colors-90-hover',
+        )}
+        element="div"
+      >
+        <DropdownGroupContext.Provider value={{ disabled }}>
+          {items}
+        </DropdownGroupContext.Provider>
+      </Typography>
     </RxDropdownMenu.Group>
   )
 }

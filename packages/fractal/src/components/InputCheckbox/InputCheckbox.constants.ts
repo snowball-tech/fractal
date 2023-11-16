@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'input-checkbox'
+
 export enum Variants {
   Primary = 'primary',
   Secondary = 'secondary',

@@ -7,8 +7,8 @@ import { DropdownItem } from '@/components/Dropdown'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
-import Avatar from './Avatar'
-import { Sizes as AvailableSizes, DEFAULT_SIZE } from './Avatar.constants'
+import { Avatar, AvatarSizes } from '.'
+import { DEFAULT_SIZE } from './Avatar.constants'
 
 type AvatarProps = ComponentProps<typeof Avatar>
 
@@ -30,10 +30,10 @@ const meta = {
       options: ['None', 'With menu'],
     },
     size: {
-      options: Object.values(AvailableSizes),
+      options: Object.values(AvatarSizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(AvailableSizes).join('|') },
+        type: { summary: Object.values(AvatarSizes).join('|') },
       },
     },
   },

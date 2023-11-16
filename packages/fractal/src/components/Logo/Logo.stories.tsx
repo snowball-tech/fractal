@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps, ReactNode } from 'react'
 
-import Logo from './Logo'
-import { Sizes as AvailableSizes, DEFAULT_SIZE } from './Logo.constants'
+import { Logo, LogoSizes } from '.'
+import { DEFAULT_SIZE } from './Logo.constants'
 
 const note = (
   <blockquote style={{ marginBottom: 'var(--size-spacing-8)', marginLeft: 0 }}>
@@ -21,10 +21,10 @@ type LogoProps = ComponentProps<typeof Logo>
 const meta: Meta<LogoProps> = {
   argTypes: {
     size: {
-      options: Object.values(AvailableSizes),
+      options: Object.values(LogoSizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(AvailableSizes).join('|') },
+        type: { summary: Object.values(LogoSizes).join('|') },
       },
     },
   },

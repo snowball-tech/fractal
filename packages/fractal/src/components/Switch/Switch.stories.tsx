@@ -4,7 +4,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import Switch from './Switch'
+import { Switch } from '.'
 
 type SwitchProps = ComponentProps<typeof Switch>
 
