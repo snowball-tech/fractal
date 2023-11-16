@@ -4639,14 +4639,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:7.0.4":
-  version: 7.0.4
-  resolution: "@snowball-tech/design-tokens@npm:7.0.4"
+"@snowball-tech/design-tokens@npm:7.1.0":
+  version: 7.1.0
+  resolution: "@snowball-tech/design-tokens@npm:7.1.0"
   peerDependencies:
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/container-queries": ^0.1.1
     tailwindcss: ^3.3.5
-  checksum: 7f753e67c92dcba25e9483f230bde6268d8704d81917acc7ba729b0297fdf9a2e616e2cd14aa27992a21569b605329439254ef55d267b3ffdc6812c1d2080704
+  checksum: 10a5db0872284900f56043ff2c93fb6389199af3f574ab27aedac13fb54801c39cf3316bd311565acd6841af141555fd460342e2fc15dc68fd12184a14b371b0
   languageName: node
   linkType: hard
 
@@ -4728,7 +4728,7 @@ __metadata:
     "@radix-ui/react-switch": "npm:^1.0.3"
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
-    "@snowball-tech/design-tokens": "npm:7.0.4"
+    "@snowball-tech/design-tokens": "npm:7.1.0"
     "@snowball-tech/eslint-config": "npm:^5.3.1"
     "@storybook/addon-a11y": "npm:^7.5.3"
     "@storybook/addon-actions": "npm:^7.5.3"
@@ -4754,7 +4754,7 @@ __metadata:
     "@types/react": "npm:^18.2.37"
     "@types/react-dom": "npm:^18.2.15"
     "@vitejs/plugin-react-swc": "npm:^3.4.1"
-    chromatic: "npm:^8.0.0"
+    chromatic: "npm:^9.0.0"
     country-flag-icons: "npm:^1.5.7"
     csso-cli: "npm:^4.0.2"
     eslint: "npm:^8.53.0"
@@ -4767,7 +4767,8 @@ __metadata:
     postcss-logical: "npm:^7.0.0"
     postcss-preset-env: "npm:^9.3.0"
     postcss-styled-syntax: "npm:^0.5.0"
-    prettier: "npm:^3.0.3"
+    prettier: "npm:^3.1.0"
+    prettier-plugin-tailwindcss: "npm:^0.5.7"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -4778,7 +4779,7 @@ __metadata:
     tailwindcss: "npm:^3.3.5"
     tsup: "npm:^7.2.0"
     typescript: "npm:^5.2.2"
-    vercel: "npm:^32.5.3"
+    vercel: "npm:^32.5.5"
     vite: "npm:^4.5.0"
     vite-tsconfig-paths: "npm:^4.2.1"
   peerDependencies:
@@ -7356,10 +7357,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:7.2.3":
-  version: 7.2.3
-  resolution: "@vercel/build-utils@npm:7.2.3"
-  checksum: 492c19714c5faf4b96b2d67e6c5c6dab6f477b256143fa83e480882b235639ad2991f91e480665fa8fb3af04d23cd4cedaa03a0c694c56fb71ba543810aa81aa
+"@vercel/build-utils@npm:7.2.5":
+  version: 7.2.5
+  resolution: "@vercel/build-utils@npm:7.2.5"
+  checksum: 689e990b0eb7f5130093f1875445c9bc269065699bea16fae41b52d2a6f192af66095891f311d856ccb60598efaa0bab4921794910b27ebfae6babfed3b73c93
   languageName: node
   linkType: hard
 
@@ -7407,17 +7408,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/gatsby-plugin-vercel-builder@npm:2.0.9":
-  version: 2.0.9
-  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.9"
+"@vercel/gatsby-plugin-vercel-builder@npm:2.0.11":
+  version: 2.0.11
+  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.11"
   dependencies:
     "@sinclair/typebox": "npm:0.25.24"
-    "@vercel/build-utils": "npm:7.2.3"
+    "@vercel/build-utils": "npm:7.2.5"
     "@vercel/routing-utils": "npm:3.1.0"
     esbuild: "npm:0.14.47"
     etag: "npm:1.8.1"
     fs-extra: "npm:11.1.0"
-  checksum: e45ba736e386bae53eb7e3364709df23d3fcef395b2b90946987a2320c7df84307e163190a47f75022eb396d3082c73bad3f713969279af38605b7c124e94b5c
+  checksum: c8ca0c5d0d461f3cd6eaccf521f3cb700143c1617f84e9461c228271dd9efb8161335427dc077c2dd776e6a18834f7d9a31cbbb2112f103f1107d82c8bc62fca
   languageName: node
   linkType: hard
 
@@ -7468,15 +7469,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/node@npm:3.0.9":
-  version: 3.0.9
-  resolution: "@vercel/node@npm:3.0.9"
+"@vercel/node@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@vercel/node@npm:3.0.11"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.2.1"
     "@edge-runtime/primitives": "npm:4.0.5"
     "@edge-runtime/vm": "npm:3.1.7"
     "@types/node": "npm:14.18.33"
-    "@vercel/build-utils": "npm:7.2.3"
+    "@vercel/build-utils": "npm:7.2.5"
     "@vercel/error-utils": "npm:2.0.2"
     "@vercel/nft": "npm:0.24.2"
     "@vercel/static-config": "npm:3.0.0"
@@ -7491,7 +7492,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.26.5"
-  checksum: 86910badae2b7e7f0ee416c8eb93ee8a5236490c5440ae7269b9d2d440e5982bfc3a615ce76d9e9d4cbb31421c4ebf9ca541d8f2d9e7f7e303ba7a2e174124a3
+  checksum: bd4e14be3206530af490853ff8e1c3b76bf8d13fd51ecc412ac9c1a30ad7d216ca89fca73984239491ecbf520cd9822dfc107d69988c6ecebff492d2771119da
   languageName: node
   linkType: hard
 
@@ -7544,15 +7545,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/static-build@npm:2.0.10":
-  version: 2.0.10
-  resolution: "@vercel/static-build@npm:2.0.10"
+"@vercel/static-build@npm:2.0.12":
+  version: 2.0.12
+  resolution: "@vercel/static-build@npm:2.0.12"
   dependencies:
     "@vercel/gatsby-plugin-vercel-analytics": "npm:1.0.11"
-    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.9"
+    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.11"
     "@vercel/static-config": "npm:3.0.0"
     ts-morph: "npm:12.0.0"
-  checksum: 7c5afd203e6d4ffd465a76081e88fe25f165cd46e0e74e575606bcee1ea3a86533fdd30491a9fc83ea48a633addb15f2e243a21401babc95f802d6e5e42b82f2
+  checksum: e76765fef82628c47bbd136a7ca951005be726454e8b22e6e9993f34566453a27c560933b3153506e6cc6ed0ea98a5355e3a27abf41692eee43d183c1272e340
   languageName: node
   linkType: hard
 
@@ -9097,14 +9098,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "chromatic@npm:8.0.0"
+"chromatic@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "chromatic@npm:9.0.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 6295037feec906756fc2fbe7a7f242239b6949c485d6e135fa14dc06c0babff847ce9ee53cf6ec50eba90d8e9b09ecbbb4bdc363ca9a0f469f973d9179a694b1
+  checksum: c8e0aef55e6954b958a0c7564949e63a3e950690e46db0596397fbd232918c11422da8c5f2d9907e2d7be4a618009dbe74760572c40fc4d117cb3079d66f03b8
   languageName: node
   linkType: hard
 
@@ -12556,15 +12557,15 @@ __metadata:
     "@types/node": "npm:^20.9.0"
     "@types/prettier": "npm:^3.0.0"
     "@yarnpkg/types": "npm:^4.0.0"
-    chromatic: "npm:^8.0.0"
+    chromatic: "npm:^9.0.0"
     concurrently: "npm:^8.2.2"
     dotenv-cli: "npm:^7.3.0"
     eslint: "npm:^8.53.0"
     husky: "npm:^8.0.3"
     is-ci: "npm:^3.0.1"
-    lint-staged: "npm:^15.0.2"
+    lint-staged: "npm:^15.1.0"
     nodemon: "npm:^3.0.1"
-    prettier: "npm:^3.0.3"
+    prettier: "npm:^3.1.0"
     semantic-release: "npm:^22.0.7"
     serve: "npm:^14.2.1"
     stylelint: "npm:^15.11.0"
@@ -15217,9 +15218,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.0.2":
-  version: 15.0.2
-  resolution: "lint-staged@npm:15.0.2"
+"lint-staged@npm:^15.1.0":
+  version: 15.1.0
+  resolution: "lint-staged@npm:15.1.0"
   dependencies:
     chalk: "npm:5.3.0"
     commander: "npm:11.1.0"
@@ -15230,10 +15231,10 @@ __metadata:
     micromatch: "npm:4.0.5"
     pidtree: "npm:0.6.0"
     string-argv: "npm:0.3.2"
-    yaml: "npm:2.3.3"
+    yaml: "npm:2.3.4"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 79c6487405dff2670bcf7e4721f06705bd33b4fef88d77988565fb9cb2f62608231cbbc706da0ae150b49d0fab447be083c4561164670ec7f407fd183ce27615
+  checksum: 77aacab303ebab8ef6781833d35d82405b73f0e3e8f8c585cdd95b0e1f42a638a12e853d7ef6227a85d77ed2ba233f92b0499124696a6872569c508e04d25ce3
   languageName: node
   linkType: hard
 
@@ -18891,6 +18892,59 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-tailwindcss@npm:^0.5.7":
+  version: 0.5.7
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.7"
+  peerDependencies:
+    "@ianvs/prettier-plugin-sort-imports": "*"
+    "@prettier/plugin-pug": "*"
+    "@shopify/prettier-plugin-liquid": "*"
+    "@shufo/prettier-plugin-blade": "*"
+    "@trivago/prettier-plugin-sort-imports": "*"
+    prettier: ^3.0
+    prettier-plugin-astro: "*"
+    prettier-plugin-css-order: "*"
+    prettier-plugin-import-sort: "*"
+    prettier-plugin-jsdoc: "*"
+    prettier-plugin-organize-attributes: "*"
+    prettier-plugin-organize-imports: "*"
+    prettier-plugin-style-order: "*"
+    prettier-plugin-svelte: "*"
+  peerDependenciesMeta:
+    "@ianvs/prettier-plugin-sort-imports":
+      optional: true
+    "@prettier/plugin-pug":
+      optional: true
+    "@shopify/prettier-plugin-liquid":
+      optional: true
+    "@shufo/prettier-plugin-blade":
+      optional: true
+    "@trivago/prettier-plugin-sort-imports":
+      optional: true
+    prettier-plugin-astro:
+      optional: true
+    prettier-plugin-css-order:
+      optional: true
+    prettier-plugin-import-sort:
+      optional: true
+    prettier-plugin-jsdoc:
+      optional: true
+    prettier-plugin-marko:
+      optional: true
+    prettier-plugin-organize-attributes:
+      optional: true
+    prettier-plugin-organize-imports:
+      optional: true
+    prettier-plugin-style-order:
+      optional: true
+    prettier-plugin-svelte:
+      optional: true
+    prettier-plugin-twig-melody:
+      optional: true
+  checksum: fb53766b6543bb46b5ba544d75e220c01d51fcf29403d3b908a0bcedf3a8c0e7481c8e6d7bb321bae8c96ae4f31d4d1c39e5e3e888b495d575705f6809854076
+  languageName: node
+  linkType: hard
+
 "prettier@npm:*, prettier@npm:^3.0.3":
   version: 3.0.3
   resolution: "prettier@npm:3.0.3"
@@ -18906,6 +18960,15 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "prettier@npm:3.1.0"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: e95e8f93c6b9aea2ac1e86bebe329bee90c8c50d9a23d1f593eba8d7f39b33b3641eb28785001505b6723c47895a5322ad12a2fb855b289cb7bae450ffc34425
   languageName: node
   linkType: hard
 
@@ -22771,26 +22834,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^32.5.3":
-  version: 32.5.3
-  resolution: "vercel@npm:32.5.3"
+"vercel@npm:^32.5.5":
+  version: 32.5.5
+  resolution: "vercel@npm:32.5.5"
   dependencies:
-    "@vercel/build-utils": "npm:7.2.3"
+    "@vercel/build-utils": "npm:7.2.5"
     "@vercel/fun": "npm:1.1.0"
     "@vercel/go": "npm:3.0.3"
     "@vercel/hydrogen": "npm:1.0.1"
     "@vercel/next": "npm:4.0.14"
-    "@vercel/node": "npm:3.0.9"
+    "@vercel/node": "npm:3.0.11"
     "@vercel/python": "npm:4.1.0"
     "@vercel/redwood": "npm:2.0.5"
     "@vercel/remix-builder": "npm:2.0.11"
     "@vercel/ruby": "npm:2.0.2"
-    "@vercel/static-build": "npm:2.0.10"
+    "@vercel/static-build": "npm:2.0.12"
     chokidar: "npm:3.3.1"
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 85c5dd6164c9465b6d5f11dd8b5eedd726ba73225d8b99ad4207ed3aaa04e24a5846016da1d13818cc0d00a826c9697ba107334a93dbd068d31c11d00c0ebc6e
+  checksum: bd469fc944db90ce7fe39da8cb5a74e088efe183dd078b1c88ffb4255d221b7a7ee31317432e1118ba3b334fbf6969ebcbe56e7f047e7e1849a0e65c54b59d20
   languageName: node
   linkType: hard
 
@@ -23293,10 +23356,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:2.3.3":
-  version: 2.3.3
-  resolution: "yaml@npm:2.3.3"
-  checksum: 3b1a974b9d3672c671d47099a41c0de77b7ff978d0849aa55a095587486e82cd072321d19f2b4c791a367f766310b5a82dff098839b0f4ddcbbbe477f82dfb07
+"yaml@npm:2.3.4":
+  version: 2.3.4
+  resolution: "yaml@npm:2.3.4"
+  checksum: f8207ce43065a22268a2806ea6a0fa3974c6fde92b4b2fa0082357e487bc333e85dc518910007e7ac001b532c7c84bd3eccb6c7757e94182b564028b0008f44b
   languageName: node
   linkType: hard
 
