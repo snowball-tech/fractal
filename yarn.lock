@@ -3787,6 +3787,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pandacss/preset-base@npm:0.18.2":
+  version: 0.18.2
+  resolution: "@pandacss/preset-base@npm:0.18.2"
+  dependencies:
+    "@pandacss/types": "npm:0.18.2"
+  checksum: fa2771004e946d850fc5b9681cde38e4fdd389775a6805a1840aab4dae5e4f8354b992a3aa863dc91307ddcf89004ef8f5f3c97dfee73da40d09ade63b351016
+  languageName: node
+  linkType: hard
+
 "@pandacss/preset-panda@npm:0.18.1":
   version: 0.18.1
   resolution: "@pandacss/preset-panda@npm:0.18.1"
@@ -3839,6 +3848,13 @@ __metadata:
   version: 0.18.1
   resolution: "@pandacss/types@npm:0.18.1"
   checksum: e443a251b07e68cf6e4faa1ffd98c5f3d4ddfd2b2d960aee1120701be80b033a83f1901019510f5b45b03b8fdbe5a6172bb768d142fd881a11724387ae36a0d0
+  languageName: node
+  linkType: hard
+
+"@pandacss/types@npm:0.18.2":
+  version: 0.18.2
+  resolution: "@pandacss/types@npm:0.18.2"
+  checksum: 42084bb2a8d2aa377842034058d55ba7b3bed3e6924e7883b54961e15b93884b1fb5e8f9e86622b1bc8a6b188350dc240f92b5c69f77d15900e623cb9a652ff7
   languageName: node
   linkType: hard
 
@@ -5360,7 +5376,7 @@ __metadata:
     "@csstools/postcss-cascade-layers": "npm:^4.0.1"
     "@iconscout/react-unicons": Azuky/react-unicons
     "@pandacss/dev": "npm:0.18.1"
-    "@pandacss/preset-base": "npm:0.18.1"
+    "@pandacss/preset-base": "npm:0.18.2"
     "@radix-ui/react-checkbox": "npm:^1.0.4"
     "@radix-ui/react-compose-refs": "npm:^1.0.1"
     "@radix-ui/react-dropdown-menu": "npm:^2.0.6"
