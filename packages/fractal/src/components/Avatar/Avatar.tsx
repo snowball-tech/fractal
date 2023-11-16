@@ -64,6 +64,8 @@ perfectionist/sort-objects */
     .slice(0, 2)
     .join('')
 
+  const hasChildren = Boolean(children)
+
   const avatarBubble = isEmpty(imageUrl) ? (
     <Typography
       className={twJoin(
@@ -102,7 +104,7 @@ perfectionist/sort-objects */
     />
   )
 
-  if (children && !disabled) {
+  if (hasChildren && !disabled) {
     return (
       <div
         className={twMerge(

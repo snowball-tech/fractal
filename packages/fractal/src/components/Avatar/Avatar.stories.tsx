@@ -110,21 +110,6 @@ export const Image: Story = {
 }
 
 export const WithMenu: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    const body = within(canvasElement.ownerDocument.body)
-
-    await userEvent.click(canvas.getByRole('button'))
-
-    await sleep(500)
-    await userEvent.hover(body.getByRole('menuitem', { name: 'My profile' }))
-    await sleep(1000)
-    await userEvent.hover(body.getByRole('menuitem', { name: 'Sign out' }))
-
-    await sleep(1000)
-    await userEvent.click(body.getByRole('menuitem', { name: 'My profile' }))
-  },
-
   render: () => (
     <div
       style={{
