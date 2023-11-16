@@ -339,7 +339,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__field__day`,
               fieldClassNames,
-              '[&>input]:min-w-9',
+              '[&_input]:min-w-9',
             )}
             {...(defaultValue?.day !== undefined
               ? { defaultValue: defaultValue.day }
@@ -381,7 +381,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__field__month`,
               fieldClassNames,
-              '[&>input]:min-w-9',
+              '[&_input]:min-w-9',
             )}
             {...(defaultValue?.month !== undefined
               ? { defaultValue: defaultValue.month }
@@ -425,7 +425,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__field__year`,
               fieldClassNames,
-              '[&>input]:!w-[unset] [&>input]:min-w-11',
+              '[&_input]:!w-[unset] [&_input]:min-w-11',
             )}
             {...(defaultValue?.year !== undefined
               ? { defaultValue: defaultValue.year }
