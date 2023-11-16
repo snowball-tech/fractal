@@ -5396,7 +5396,7 @@ __metadata:
     "@types/react": "npm:^18.2.37"
     "@types/react-dom": "npm:^18.2.15"
     "@vitejs/plugin-react-swc": "npm:^3.4.1"
-    chromatic: "npm:^8.0.0"
+    chromatic: "npm:^9.0.0"
     country-flag-icons: "npm:^1.5.7"
     csso-cli: "npm:^4.0.2"
     eslint: "npm:^8.53.0"
@@ -10723,14 +10723,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "chromatic@npm:8.0.0"
+"chromatic@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "chromatic@npm:9.0.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 6295037feec906756fc2fbe7a7f242239b6949c485d6e135fa14dc06c0babff847ce9ee53cf6ec50eba90d8e9b09ecbbb4bdc363ca9a0f469f973d9179a694b1
+  checksum: c8e0aef55e6954b958a0c7564949e63a3e950690e46db0596397fbd232918c11422da8c5f2d9907e2d7be4a618009dbe74760572c40fc4d117cb3079d66f03b8
   languageName: node
   linkType: hard
 
@@ -14395,7 +14395,7 @@ __metadata:
     "@types/node": "npm:^20.9.0"
     "@types/prettier": "npm:^3.0.0"
     "@yarnpkg/types": "npm:^4.0.0"
-    chromatic: "npm:^8.0.0"
+    chromatic: "npm:^9.0.0"
     concurrently: "npm:^8.2.2"
     dotenv-cli: "npm:^7.3.0"
     eslint: "npm:^8.53.0"

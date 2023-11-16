@@ -108,7 +108,7 @@
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react-swc": "^3.4.1",
-    "chromatic": "^8.0.0",
+    "chromatic": "^9.0.0",
     "csso-cli": "^4.0.2",
     "eslint": "^8.53.0",
     "postcss": "^8.4.31",
