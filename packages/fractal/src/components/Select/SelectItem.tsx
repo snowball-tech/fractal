@@ -1,9 +1,14 @@
 import * as RxSelect from '@radix-ui/react-select'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { selectItem, typography } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { useContext } from 'react'
+import { twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
+import { PREFIX } from '@/constants'
+
+import { GROUP_NAME } from './Select.constants'
 import type { SelectItemProps } from './Select.types'
+import { SelectGroupContext } from './SelectGroupContext'
 
 /**
  * `SelectItem` component is used to display choices inside of the dropdown of a
@@ -15,21 +20,28 @@ export const SelectItem = ({
   value,
   ...props
 }: SelectItemProps) => {
-  const itemClassNames = cx(
-    typography({ variant: 'body-1' }),
-    selectItem(),
-    props.className,
-    disabled ? 'disabled' : '',
-  )
+  const { disabled: groupDisabled } = useContext(SelectGroupContext)
+
+  const isDisabled = disabled || groupDisabled
 
   return (
     <RxSelect.Item
-      className={itemClassNames}
-      disabled={disabled}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__item alternatee`,
+        'flex items-center gap-1 rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+        isDisabled
+          ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-[transparent] text-disabled`
+          : 'cursor-pointer text-dark',
+        props.className,
+      )}
+      disabled={isDisabled}
       value={value}
       {...omit(['className'], props)}
     >
-      <RxSelect.ItemText>{item}</RxSelect.ItemText>
+      <RxSelect.ItemText asChild>
+        <Typography element="div">{item}</Typography>
+      </RxSelect.ItemText>
+
       <RxSelect.ItemIndicator />
     </RxSelect.Item>
   )

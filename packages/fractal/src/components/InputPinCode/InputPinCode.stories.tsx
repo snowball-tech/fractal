@@ -10,7 +10,7 @@ import type {
 
 import { sleep } from '@/utils'
 
-import InputPinCode from './InputPinCode'
+import { InputPinCode } from '.'
 
 type InputPinCodeProps = ComponentProps<typeof InputPinCode>
 

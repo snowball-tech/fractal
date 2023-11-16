@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Typography from './Typography'
-import { DEFAULT_VARIANT, Variants } from './Typography.constants'
+import { Typography, TypographyVariants } from '.'
+import { DEFAULT_VARIANT } from './Typography.constants'
 
 type TypographyProps = ComponentProps<typeof Typography>
 
@@ -20,21 +20,21 @@ const meta = {
       table: {
         defaultValue: {
           summary: [
-            `<h1 /> for ${Variants.Display1} and ${Variants.Heading1}`,
-            `<h2 /> for ${Variants.Display2} and ${Variants.Heading2}`,
-            `<h3 /> for ${Variants.DisplayWide} and ${Variants.Heading3}`,
-            `<h4 /> for ${Variants.Heading4}`,
-            `<a /> for ${Variants.Heading3Link}, ${Variants.Heading4Link}, ${Variants.Body1Link}, ${Variants.Body2Link} and ${Variants.CaptionLink}`,
+            `<h1 /> for ${TypographyVariants.Display1} and ${TypographyVariants.Heading1}`,
+            `<h2 /> for ${TypographyVariants.Display2} and ${TypographyVariants.Heading2}`,
+            `<h3 /> for ${TypographyVariants.DisplayWide} and ${TypographyVariants.Heading3}`,
+            `<h4 /> for ${TypographyVariants.Heading4}`,
+            `<a /> for ${TypographyVariants.Heading3Link}, ${TypographyVariants.Heading4Link}, ${TypographyVariants.Body1Link}, ${TypographyVariants.Body2Link} and ${TypographyVariants.CaptionLink}`,
             `<p /> for everything else`,
           ].join('; '),
         },
       },
     },
     variant: {
-      options: Object.values(Variants),
+      options: Object.values(TypographyVariants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(Variants).join('|') },
+        type: { summary: Object.values(TypographyVariants).join('|') },
       },
     },
   },
@@ -64,15 +64,15 @@ export const Display: Story = {
   render: ({ children }) => (
     <>
       <Typography variant="display-1">
-        {Variants.Display1}
+        {TypographyVariants.Display1}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="display-2">
-        {Variants.Display2}
+        {TypographyVariants.Display2}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="display-wide">
-        {Variants.DisplayWide}
+        {TypographyVariants.DisplayWide}
         <blockquote>{children}</blockquote>
       </Typography>
     </>
@@ -84,27 +84,27 @@ export const Headings: Story = {
   render: ({ children }) => (
     <>
       <Typography variant="heading-1">
-        {Variants.Heading1}
+        {TypographyVariants.Heading1}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="heading-2">
-        {Variants.Heading2}
+        {TypographyVariants.Heading2}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="heading-3">
-        {Variants.Heading3}
+        {TypographyVariants.Heading3}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="heading-3-link">
-        {Variants.Heading3Link}
+        {TypographyVariants.Heading3Link}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="heading-4">
-        {Variants.Heading4}
+        {TypographyVariants.Heading4}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="heading-4-link">
-        {Variants.Heading4Link}
+        {TypographyVariants.Heading4Link}
         <blockquote>{children}</blockquote>
       </Typography>
     </>
@@ -116,19 +116,19 @@ export const Body1: Story = {
   render: ({ children }) => (
     <>
       <Typography variant="body-1">
-        {Variants.Body1}
+        {TypographyVariants.Body1}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-1-median">
-        {Variants.Body1Median}
+        {TypographyVariants.Body1Median}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-1-bold">
-        {Variants.Body1Bold}
+        {TypographyVariants.Body1Bold}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-1-link">
-        {Variants.Body1Link}
+        {TypographyVariants.Body1Link}
         <blockquote>{children}</blockquote>
       </Typography>
     </>
@@ -140,19 +140,19 @@ export const Body2: Story = {
   render: ({ children }) => (
     <>
       <Typography variant="body-2">
-        {Variants.Body2}
+        {TypographyVariants.Body2}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-2-median">
-        {Variants.Body2Median}
+        {TypographyVariants.Body2Median}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-2-bold">
-        {Variants.Body2Bold}
+        {TypographyVariants.Body2Bold}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="body-2-link">
-        {Variants.Body2Link}
+        {TypographyVariants.Body2Link}
         <blockquote>{children}</blockquote>
       </Typography>
     </>
@@ -164,15 +164,15 @@ export const Caption: Story = {
   render: ({ children }) => (
     <>
       <Typography variant="caption-median">
-        {Variants.CaptionMedian}
+        {TypographyVariants.CaptionMedian}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="caption-bold">
-        {Variants.CaptionBold}
+        {TypographyVariants.CaptionBold}
         <blockquote>{children}</blockquote>
       </Typography>
       <Typography variant="caption-link">
-        {Variants.CaptionLink}
+        {TypographyVariants.CaptionLink}
         <blockquote>{children}</blockquote>
       </Typography>
     </>

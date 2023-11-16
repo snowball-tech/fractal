@@ -6,8 +6,8 @@ import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Card from './Card'
-import { Colors, DEFAULT_COLOR } from './Card.constants'
+import { Card, CardColors } from '.'
+import { DEFAULT_COLOR } from './Card.constants'
 
 type CardProps = ComponentProps<typeof Card>
 
@@ -21,10 +21,10 @@ const meta = {
   argTypes: {
     children: { control: 'text' },
     color: {
-      options: Object.values(Colors),
+      options: Object.values(CardColors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(Colors).join('|') },
+        type: { summary: Object.values(CardColors).join('|') },
       },
     },
     fontSize: {

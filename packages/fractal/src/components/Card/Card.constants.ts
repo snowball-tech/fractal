@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'card'
+
 export enum Colors {
   Blue = 'blue',
   Error = 'error',

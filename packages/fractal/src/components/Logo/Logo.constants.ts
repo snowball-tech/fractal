@@ -4,6 +4,8 @@ import {
   ColorTextLight,
 } from '@snowball-tech/design-tokens'
 
+export const GROUP_NAME = 'logo'
+
 export enum Sizes {
   /* eslint-disable perfectionist/sort-enums */
   S = 's',

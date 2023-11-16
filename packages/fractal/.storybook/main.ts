@@ -5,7 +5,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
-    'storybook-addon-pseudo-states',
     '@storybook/addon-a11y',
     'storybook-addon-mock',
   ],

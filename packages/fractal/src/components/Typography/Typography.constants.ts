@@ -1,5 +1,7 @@
 import type { ElementType } from 'react'
 
+export const GROUP_NAME = 'typography'
+
 export enum Variants {
   Body1 = 'body-1',
   Body1Bold = 'body-1-bold',

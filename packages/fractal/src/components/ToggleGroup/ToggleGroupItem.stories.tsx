@@ -8,8 +8,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import ToggleGroup from './ToggleGroup'
-import ToggleGroupItem from './ToggleGroupItem'
+import { ToggleGroup, ToggleGroupItem } from '.'
 
 type ToggleGroupItemsProps = ComponentProps<typeof ToggleGroupItem>
 
@@ -32,6 +31,7 @@ const meta: Meta<ToggleGroupItemsProps> = {
     disabled: false,
     fullWidth: false,
     icon: 'None',
+    iconOnly: false,
     label: 'Jar Jar Binks',
     value: 'jar-jar-binks',
   },
@@ -44,12 +44,20 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, fullWidth = false, icon, label, value }) => (
-    <ToggleGroup onValueChange={action('onValueChange')}>
+  render: ({
+    disabled = false,
+    fullWidth = false,
+    icon,
+    iconOnly = false,
+    label,
+    value,
+  }) => (
+    <ToggleGroup fullWidth={fullWidth} onValueChange={action('onValueChange')}>
       <ToggleGroupItem
         disabled={disabled}
         fullWidth={fullWidth}
         icon={icon}
+        iconOnly={iconOnly}
         label={label}
         value={value}
       />

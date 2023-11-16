@@ -8,8 +8,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Dropdown from './Dropdown'
-import DropdownItem from './DropdownItem'
+import { Dropdown, DropdownItem } from '.'
 
 type DropdownItemProps = ComponentProps<typeof DropdownItem>
 
@@ -43,8 +42,8 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ disabled = false, icon, label = 'Luke Skywalker' }) => (
-    <div style={{ height: '1200px' }}>
-      <Dropdown trigger="Is a jedi">
+    <div style={{ height: '100px' }}>
+      <Dropdown trigger="Jedi">
         <DropdownItem
           disabled={disabled}
           icon={icon}

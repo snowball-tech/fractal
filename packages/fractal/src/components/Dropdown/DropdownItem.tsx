@@ -1,49 +1,65 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  dropdownItem,
-  dropdownItemIcon,
-  selectItem,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
+import { useContext } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Dropdown.recipe'
+import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemProps } from './Dropdown.types'
+import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
- * `DropdownItem` displays items in a dropdown.
+ * `Item` displays items in a dropdown.
  */
 export const DropdownItem = ({
   disabled,
   icon,
   label,
   onClick,
+  onSelect,
+  value,
   ...props
 }: DropdownItemProps) => {
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}-item`,
-    dropdownItem(),
-    selectItem(),
-    typography({ variant: 'body-1' }),
-    props.className,
-    icon ? 'with-icon' : '',
-    disabled ? 'disabled' : '',
-  )
+  const { disabled: groupDisabled } = useContext(DropdownGroupContext)
+
+  const isDisabled = disabled || groupDisabled
 
   return (
     <RxDropdownMenu.Item
-      className={groupClassNames}
-      {...(disabled !== undefined ? { disabled } : {})}
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}__item alternatee`,
+        'flex items-center gap-1',
+        'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+        icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
+        isDisabled
+          ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-[transparent] text-disabled`
+          : 'cursor-pointer text-dark',
+        props.className,
+      )}
+      {...(value !== undefined ? { 'data-value': value } : {})}
+      disabled={isDisabled}
       {...(isFunction(onClick) ? { onSelect: onClick } : {})}
-      {...omit(['className'], props)}
+      {...(isFunction(onSelect) ? { onSelect } : {})}
+      {...omit(['className', 'data-value'], props)}
+      asChild
     >
-      {icon && <div className={dropdownItemIcon()}>{icon}</div>}
+      <Typography element="div">
+        {icon && (
+          <div
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__item__icon`,
+              'max-h-3 max-w-3',
+            )}
+          >
+            {icon}
+          </div>
+        )}
 
-      {label}
+        {label}
+      </Typography>
     </RxDropdownMenu.Item>
   )
 }

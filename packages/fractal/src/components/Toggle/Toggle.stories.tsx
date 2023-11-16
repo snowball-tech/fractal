@@ -10,8 +10,8 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import Toggle from './Toggle'
-import { DEFAULT_VARIANT, Variants } from './Toggle.constants'
+import { Toggle, ToggleVariants } from '.'
+import { DEFAULT_VARIANT } from './Toggle.constants'
 
 type ToggleProps = ComponentProps<typeof Toggle>
 
@@ -30,11 +30,11 @@ const meta = {
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
     variant: {
-      options: Object.values(Variants),
+      options: Object.values(ToggleVariants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
         disable: true,
-        type: { summary: Object.values(Variants).join('|') },
+        type: { summary: Object.values(ToggleVariants).join('|') },
       },
     },
   },

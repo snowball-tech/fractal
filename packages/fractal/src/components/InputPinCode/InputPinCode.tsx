@@ -1,16 +1,6 @@
 import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputPinCodeContainer,
-  inputPinCodeDescription,
-  inputPinCodeField,
-  inputPinCodeFields,
-  inputPinCodeLabel,
-  inputPinCodeMessage,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
@@ -26,11 +16,13 @@ import {
   useId,
   useRef,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './InputPinCode.recipe'
+import { GROUP_NAME } from './InputPinCode.constants'
 import type { InputPinCodeProps } from './InputPinCode.types'
 
 /**
@@ -70,17 +62,6 @@ export const InputPinCode = ({
 
   const isInError = hasErrorMessage
   const isSuccessful = hasSuccessMessage && !isInError
-
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    inputPinCodeContainer(),
-    props.className,
-    disabled ? 'disabled' : '',
-    isInError ? 'error' : '',
-    readOnly ? 'readonly' : '',
-    required ? 'required' : '',
-    isSuccessful ? 'success' : '',
-  )
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement>,
@@ -265,26 +246,60 @@ export const InputPinCode = ({
   }
 
   return (
-    <div className={groupClassNames}>
+    <div
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        'flex w-full max-w-full flex-col gap-1 sm:w-fit',
+        disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+        isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+        readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+        required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+        isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+        props.className,
+      )}
+    >
       {!isEmpty(label) ? (
         <RxLabel
-          className={cx(typography({ variant: 'body-1' }), inputPinCodeLabel())}
+          asChild
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__label`,
+            disabled ? 'cursor-default' : 'cursor-pointer',
+            required
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              : '',
+          )}
           htmlFor={`${uniqueId}-0`}
         >
-          {label}
+          <Typography element="label">{label}</Typography>
         </RxLabel>
       ) : (
         false
       )}
 
-      <div className={cx('fields', inputPinCodeFields())}>
+      <div
+        className={twJoin(
+          `${PREFIX}-${GROUP_NAME}__fields`,
+          'flex w-full gap-1 sm:w-fit',
+        )}
+      >
         {range(0, length).map((index) => (
           <InputText
             id={`${uniqueId}-${index}`}
             key={index}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus && index === 0}
-            className={inputPinCodeField()}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__field`,
+              index === 0 || index === length - 1
+                ? `${PREFIX}-${GROUP_NAME}__field--${
+                    index === 0 ? 'first' : 'last'
+                  }`
+                : '',
+              `${PREFIX}-${GROUP_NAME}__field--${index}`,
+              'number-text-appearance hide-spin-button w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
+              index === length - 1 && (isInError || isSuccessful)
+                ? '!max-w-[calc(theme(spacing.8)+theme(spacing.2)+theme(spacing.half))]'
+                : '',
+            )}
             {...(isString(defaultValue)
               ? {
                   defaultValue: !isInteger(
@@ -338,30 +353,32 @@ export const InputPinCode = ({
         ))}
       </div>
 
-      {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
-        <div
-          className={cx(
-            typography({ variant: 'caption-median' }),
-            inputPinCodeDescription(),
+      {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+        <Typography
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__description`,
+            'cursor-default text-dark',
           )}
+          element="div"
+          variant="caption-median"
         >
           {description}
-        </div>
-      ) : (
-        false
+        </Typography>
       )}
 
-      {hasErrorMessage || hasSuccessMessage ? (
-        <div
-          className={cx(
-            typography({ variant: 'caption-median' }),
-            inputPinCodeMessage(),
+      {(hasErrorMessage || hasSuccessMessage) && (
+        <Typography
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+              isInError ? 'error' : 'success'
+            }`,
+            'cursor-default text-dark',
           )}
+          element="div"
+          variant="caption-median"
         >
           {isInError ? error : success}
-        </div>
-      ) : (
-        false
+        </Typography>
       )}
     </div>
   )

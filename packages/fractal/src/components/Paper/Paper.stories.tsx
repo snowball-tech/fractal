@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Paper from './Paper'
-import { DEFAULT_ELEVATION, Elevations } from './Paper.constants'
+import { Paper, PaperElevations } from '.'
+import { DEFAULT_ELEVATION } from './Paper.constants'
 
 type PaperProps = ComponentProps<typeof Paper>
 
@@ -11,15 +11,9 @@ const meta = {
     children: { control: 'text' },
     elevation: {
       control: 'radio',
-      mapping: {
-        Bordered: Elevations.Bordered,
-        Elevated: Elevations.Elevated,
-        Higher: Elevations.Higher,
-      },
-      options: ['Bordered', 'Elevated', 'Higher'],
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(Elevations).join('|') },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
   },

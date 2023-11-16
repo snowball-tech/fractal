@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteEmpty from './AutocompleteEmpty'
+import { Autocomplete, AutocompleteEmpty } from '.'
 
 type AutocompleteEmptyProps = ComponentProps<typeof AutocompleteEmpty>
 
@@ -28,7 +27,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ children }) => (
-    <div style={{ height: '800px' }}>
+    <div style={{ height: '200px' }}>
       <Autocomplete placeholder="Start typing to autocomplete">
         <AutocompleteEmpty>{children}</AutocompleteEmpty>
       </Autocomplete>

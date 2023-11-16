@@ -10,7 +10,7 @@ import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import InputText from './InputText'
+import { InputText } from '.'
 
 type InputTextProps = ComponentProps<typeof InputText>
 

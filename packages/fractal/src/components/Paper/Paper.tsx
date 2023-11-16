@@ -1,11 +1,10 @@
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { paper, typography } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { DEFAULT_ELEVATION } from './Paper.constants'
-import { GROUP_NAME } from './Paper.recipe'
+import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
 import type { PaperProps } from './Paper.types'
 
 /**
@@ -16,17 +15,31 @@ export const Paper = ({
   elevation = DEFAULT_ELEVATION,
   ...props
 }: PaperProps) => {
-  const groupClassNames = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    paper({ elevation }),
-    props.className,
-    typography({ variant: 'body-1' }),
-  )
+  const elevationClassNames = {
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+    [Elevations.Bordered]: 'rounded-sm shadow-none',
+    [Elevations.Elevated]: 'rounded-sm shadow-subtle',
+    [Elevations.Higher]: 'rounded-md shadow-brutal',
+
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+  }
 
   return (
-    <div className={groupClassNames} {...omit(['className'], props)}>
+    <Typography
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${elevation}`,
+        'relative flex flex-col border-1 border-normal bg-white p-2 text-dark',
+        elevationClassNames[elevation],
+        props.className,
+      )}
+      element="div"
+      {...omit(['className'], props)}
+    >
       {children}
-    </div>
+    </Typography>
   )
 }
 Paper.displayName = 'Paper'

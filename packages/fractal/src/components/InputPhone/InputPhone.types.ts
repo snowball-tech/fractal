@@ -46,6 +46,8 @@ export interface InputPhoneProps
   description?: string
   /** Prevents the user from interacting with the phone input. */
   disabled?: boolean
+  /** The label to display when the prefix search returns no results. */
+  emptyPrefixLabel?: string
   /**
    * An error message to display below the phone input if there is an
    * error.

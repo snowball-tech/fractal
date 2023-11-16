@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'button'
+
 export enum Variants {
   Display = 'display',
   Primary = 'primary',

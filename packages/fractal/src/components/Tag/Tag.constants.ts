@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'tag'
+
 export enum Colors {
   Blue = 'blue',
   Green = 'green',

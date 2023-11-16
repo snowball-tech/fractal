@@ -4,7 +4,7 @@ import {
 } from '@radix-ui/react-toggle-group'
 import type { ReactNode } from 'react'
 
-import { Variants } from '../Toggle/Toggle.constants'
+import { Variants } from '@/components/Toggle/Toggle.constants'
 
 export interface ToggleGroupProps extends RxToggleGroupProps {
   /** The toggles to display inside of the toggle group. */
@@ -59,8 +59,16 @@ export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
   fullWidth?: boolean
   /** The icon to display in the left of the toggle. */
   icon?: ReactNode
+  /**
+   * Indicates if you want to only display the icon.
+   * The label still is mandatory and will be used as an `aria-label` for
+   * accessibility.
+   */
+  iconOnly?: boolean
   /** The label of the toggle. */
   label: string
+  /** Event handler called when the toggle is clicked. */
+  onToggle?: (toggled: boolean) => void
   /** The value submitted in the submitted form. */
   value: string
 }

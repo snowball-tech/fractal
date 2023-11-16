@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'paper'
+
 export enum Elevations {
   /* eslint-disable perfectionist/sort-enums */
   Bordered = '1',

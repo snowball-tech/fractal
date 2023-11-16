@@ -7,9 +7,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
 
-import Dropdown from './Dropdown'
-import DropdownRadioGroup from './DropdownRadioGroup'
-import DropdownRadioItem from './DropdownRadioItem'
+import { Dropdown, DropdownRadioGroup, DropdownRadioItem } from '.'
 
 type DropdownRadioGroupProps = ComponentProps<typeof DropdownRadioGroup>
 

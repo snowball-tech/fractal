@@ -1,3 +1,5 @@
+export const GROUP_NAME = 'inputFile'
+
 export enum Variants {
   Display = 'display',
   Primary = 'primary',
