@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [8.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.1.0...@snowball-tech/design-tokens@8.0.0) (2023-11-16)
+
+### 💥 Breaking changes
+
+- get rid of PandaCSS and migrate to TailwindCSS ([#118](https://github.com/snowball-tech/fractal/issues/118)) ([cabd2ac](https://github.com/snowball-tech/fractal/commit/cabd2ac45c146a785a34b0befe961e68fbb08ab8))
+
 # @snowball-tech/design-tokens [7.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.4...@snowball-tech/design-tokens@7.1.0) (2023-11-16)
 
 ### ✨ Features
