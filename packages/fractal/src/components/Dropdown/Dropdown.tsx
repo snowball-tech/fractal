@@ -180,8 +180,8 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 ? 'invisible h-0 max-h-0 border-y-0 py-0'
                 : 'flex items-center',
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled text-disabled`
-                : '',
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
+                : 'cursor-pointer',
             )}
             onPointerDown={
               hasTrigger
@@ -193,7 +193,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             }
           >
             {hasTrigger && (
-              <Typography element="div">
+              <Typography element="button">
                 {trigger}
 
                 {withIndicator && (
