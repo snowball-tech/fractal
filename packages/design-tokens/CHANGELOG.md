@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [7.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.4...@snowball-tech/design-tokens@7.1.0) (2023-11-16)
+
+### ✨ Features
+
+- **design-tokens:** update tailwind config ([fdd6615](https://github.com/snowball-tech/fractal/commit/fdd66150c266881a66293f9db8648a604212286c))
+
 ## @snowball-tech/design-tokens [7.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@7.0.3...@snowball-tech/design-tokens@7.0.4) (2023-11-10)
 
 ### 🐛 Bug Fixes
