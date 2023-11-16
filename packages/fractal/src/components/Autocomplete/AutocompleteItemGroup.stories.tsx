@@ -40,13 +40,9 @@ export const Playground: Story = {
         onChange={action('onChange')}
       >
         <AutocompleteItemGroup label={label}>
-          <AutocompleteItem value="luke-skywalker">
-            Luke Skywalker
-          </AutocompleteItem>
-          <AutocompleteItem value="obi-wan-kenobi">
-            Obi-Wan Kenobi
-          </AutocompleteItem>
-          <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+          <AutocompleteItem label="Luke Skywalker" value="luke-skywalker" />
+          <AutocompleteItem label="Obi-Wan Kenobi" value="obi-wan-kenobi" />
+          <AutocompleteItem label="Yoda" value="yoda" />
         </AutocompleteItemGroup>
       </Autocomplete>
     </div>

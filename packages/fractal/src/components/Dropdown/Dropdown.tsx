@@ -40,6 +40,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       onPointerDownOutside,
       open,
       side,
+      toggleOnTriggerClick = true,
       trigger,
       width = 'fit',
       withIndicator = true,
@@ -96,8 +97,10 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
     useEffect(() => {
       if (open === true || (!hasTrigger && hasChildren && open !== false)) {
         handleOpenChange(true)
+      } else {
+        handleOpenChange(false)
       }
-      // We don't want to reopen the toggle based on the `handleDropdownToggle`
+      // We don't want to reopen the toggle based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
@@ -182,7 +185,9 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
                 : 'cursor-pointer',
+              !toggleOnTriggerClick ? '!cursor-default' : '',
             )}
+            disabled={!toggleOnTriggerClick}
             onPointerDown={
               hasTrigger
                 ? noop
@@ -193,7 +198,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             }
           >
             {hasTrigger && (
-              <Typography element="button">
+              <Typography element={toggleOnTriggerClick ? 'button' : 'div'}>
                 {trigger}
 
                 {withIndicator && (

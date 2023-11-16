@@ -7,6 +7,7 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import {
   type ChangeEvent,
+  type FocusEvent,
   type ForwardedRef,
   type KeyboardEvent,
   type MouseEvent,
@@ -20,6 +21,7 @@ import {
 import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Dropdown } from '@/components/Dropdown/Dropdown'
+import type { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Dropdown.types'
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
@@ -65,7 +67,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
     const inputRef = useRef<HTMLInputElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
-    const dropdownRef = useRef<HTMLDivElement>(null)
+    const dropdownRef = useRef<DropdownCombinedRefs>(null)
 
     useImperativeHandle(ref, () => ({
       get container() {
@@ -81,14 +83,13 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       },
     }))
 
+    const hasChildren = Boolean(children)
+
     const [keepFocus, setKeepFocus] = useState(false)
 
     const [isOpen, setIsOpen] = useState(
-      open === true || (Boolean(children) && open !== false),
+      open === true || (hasChildren && open !== false),
     )
-    useEffect(() => {
-      setIsOpen(open === true)
-    }, [open])
 
     const hasErrorMessage = !isEmpty(error)
     const hasSuccessMessage = !isEmpty(success)
@@ -117,6 +118,17 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       setIsOpen(isOpened)
     }
 
+    useEffect(() => {
+      if (open === true || (hasChildren && open !== false)) {
+        handleDropdownToggle(true)
+      } else {
+        handleDropdownToggle(false)
+      }
+      // We don't want to reopen the toggle based on the `handleOpenChange`
+      // function. So we don't include it in the dependencies.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [children, open])
+
     const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
       (event) => {
         const { target } = event
@@ -126,11 +138,12 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         if (
           containerRef?.current?.contains(target as Element) ||
-          dropdownRef?.current?.contains(target as Element)
+          dropdownRef?.current?.container?.contains(target as Element) ||
+          dropdownRef?.current?.dropdown?.contains(target as Element)
         ) {
           event.preventDefault()
         } else if (isOpen && isFunction(onBlur)) {
-          onBlur()
+          inputRef.current?.blur()
         }
       }
 
@@ -154,6 +167,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     }
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+      event.stopPropagation()
+
       if (isFunction(props.onKeyDown)) {
         props.onKeyDown(event)
       }
@@ -174,7 +189,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           onChange(null, String(value) ?? '')
         }
       } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        if (!children) {
+        if (!hasChildren) {
           return
         }
 
@@ -182,7 +197,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           setKeepFocus(true)
           handleDropdownToggle(true)
         } else if (dropdownRef?.current) {
-          dropdownRef.current.focus()
+          dropdownRef.current.dropdown?.focus()
         }
 
         event.preventDefault()
@@ -195,12 +210,11 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           if (document.activeElement === inputRef.current) {
             setKeepFocus(true)
           }
-          inputRef.current.focus()
         }
       }
     }
 
-    const handleTriggerClick = (event: MouseEvent<HTMLInputElement>) => {
+    const handleInputClick = (event: MouseEvent<HTMLInputElement>) => {
       if (props.onClick) {
         props.onClick(event)
       }
@@ -211,11 +225,24 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         }
       }
 
-      if (children && !isOpen) {
-        if (document.activeElement === inputRef.current) {
+      if (hasChildren) {
+        if (document.activeElement === inputRef.current && !isOpen) {
           setKeepFocus(true)
         }
 
+        handleDropdownToggle(true)
+      }
+    }
+
+    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
+      if (props.onFocus) {
+        props.onFocus(event)
+      }
+
+      if (hasChildren) {
+        if (!isOpen) {
+          setKeepFocus(true)
+        }
         handleDropdownToggle(true)
       }
     }
@@ -243,6 +270,9 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             asChild
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__label`,
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
+                : 'cursor-pointer',
               required
                 ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
                 : '',
@@ -253,46 +283,53 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           </RxLabel>
         )}
 
-        <InputText
-          id={uniqueId}
-          ref={inputRef}
-          autoFocus={autoFocus}
-          className={twJoin(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
-          {...(defaultValue !== undefined ? { defaultValue } : {})}
-          disabled={disabled}
-          error={hasErrorMessage}
-          fullWidth={fullWidth}
-          name={name || uniqueId}
-          {...(placeholder !== undefined ? { placeholder } : {})}
-          readOnly={readOnly}
-          required={required}
-          selectOnFocus={!keepFocus}
-          success={isSuccessful}
-          type="text"
-          {...(value !== undefined ? { value } : {})}
-          onBlur={handleInputBlur}
-          onChange={handleInputChange}
-          onClick={handleTriggerClick}
-          onKeyDown={handleInputKeyDown}
-          {...omit(['className', 'onBlur', 'onKeyDown'], props)}
-        />
-
         <Dropdown
-          className={twJoin(
-            `${PREFIX}-${GROUP_NAME}__dropdown`,
-            'invisible h-0 max-h-0 w-full',
-            isOpen ? '-mt-3 mb-3' : '',
-          )}
+          ref={dropdownRef}
           disabled={disabled}
-          dropdown={{ ...dropdown, align: 'center' }}
+          dropdown={{
+            ...dropdown,
+            align: 'end',
+            className: twJoin(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
+          }}
           {...(isFunction(onClose) ? { onClose } : {})}
           {...(isFunction(onOpen) ? { onOpen } : {})}
           open={isOpen}
           side="bottom"
+          toggleOnTriggerClick={false}
+          trigger={
+            <InputText
+              id={uniqueId}
+              ref={inputRef}
+              autoFocus={autoFocus}
+              className={twJoin(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
+              {...(defaultValue !== undefined ? { defaultValue } : {})}
+              disabled={disabled}
+              error={hasErrorMessage}
+              fullWidth={fullWidth}
+              name={name || uniqueId}
+              {...(placeholder !== undefined ? { placeholder } : {})}
+              readOnly={readOnly}
+              required={required}
+              selectOnFocus={false}
+              success={isSuccessful}
+              type="text"
+              {...(value !== undefined ? { value } : {})}
+              onBlur={handleInputBlur}
+              onChange={handleInputChange}
+              onClick={handleInputClick}
+              onFocus={handleInputFocus}
+              onKeyDown={handleInputKeyDown}
+              {...omit(
+                ['className', 'onBlur', 'onKeyDown', 'onFocus', 'onClick'],
+                props,
+              )}
+            />
+          }
           width="trigger"
           withIndicator={false}
           onInteractOutside={handleDropdownInteractOutside}
           onKeyDown={handleDropdownKeyDown}
+          onMenuOpenChange={handleDropdownToggle}
           onPointerDownOutside={handleDropdownPointerDownOutside}
         >
           {children}
@@ -300,7 +337,10 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
-            className={`${PREFIX}-${GROUP_NAME}__description`}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__description`,
+              'cursor-default text-dark',
+            )}
             variant="caption-median"
           >
             {description}
@@ -309,9 +349,12 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={`${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
-              isInError ? 'error' : 'success'
-            }`}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+                isInError ? 'error' : 'success'
+              }`,
+              'cursor-default text-dark',
+            )}
             value="caption-median"
           >
             {isInError ? error : success}

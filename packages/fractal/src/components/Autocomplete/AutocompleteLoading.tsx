@@ -38,6 +38,7 @@ export const AutocompleteLoading = ({
         <div
           className={twJoin(
             `${PREFIX}-${GROUP_NAME}__loading__icon`,
+            'flex items-center justify-center',
             isBoolean(icon)
               ? `${PREFIX}-${GROUP_NAME}__loading__icon--loader`
               : `${PREFIX}-${GROUP_NAME}__loading__icon--icon min-w-3 [&>svg]:min-w-3`,

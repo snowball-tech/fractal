@@ -1,14 +1,16 @@
-import type {
-  DropdownMenuContentProps as RxDropdownMenuContentProps,
-  DropdownMenuItemProps as RxDropdownMenuItemProps,
-} from '@radix-ui/react-dropdown-menu'
+import type { DropdownMenuContentProps as RxDropdownMenuContentProps } from '@radix-ui/react-dropdown-menu'
 import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
+import type {
+  CombinedRefs as DropdownCombinedRefs,
+  DropdownItemGroupProps,
+  DropdownItemProps,
+} from '@/components/Dropdown/Dropdown.types'
 import { InputTextProps } from '@/components/InputText/InputText.types'
 
 export type CombinedRefs = {
   container: HTMLDivElement | null
-  dropdown: HTMLDivElement | null
+  dropdown: DropdownCombinedRefs | null
   input: HTMLInputElement | null
 }
 
@@ -143,26 +145,8 @@ export interface AutocompleteEmptyProps
   children: ReactNode
 }
 
-export interface AutocompleteItemProps extends RxDropdownMenuItemProps {
-  /** The label of the autocomplete item. */
-  children: ReactNode
-  /** Prevents the user from selecting this item. */
-  disabled?: boolean
-  /**
-   * The value of the autocomplete item.
-   *
-   * If none is given, then the textual content of the item will be used as
-   * value.
-   */
-  value?: string
-}
+export type AutocompleteItemProps = DropdownItemProps
 
-export interface AutocompleteItemGroupProps
-  extends AllHTMLAttributes<HTMLDivElement> {
-  /** The autocomplete items to display inside of the group. */
-  children: ReactNode
-  /** The label of the autocomplete items group. */
-  label: string
-}
+export type AutocompleteItemGroupProps = DropdownItemGroupProps
 
 export type AutocompleteItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

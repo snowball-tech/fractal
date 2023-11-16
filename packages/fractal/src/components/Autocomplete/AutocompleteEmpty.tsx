@@ -20,7 +20,7 @@ export const AutocompleteEmpty = ({
     <RxDropdownMenu.Item
       className={twMerge(
         `${PREFIX}-${GROUP_NAME}__empty`,
-        'rounded-sm p-2 outline-none',
+        'cursor-default rounded-sm p-2 outline-none',
         props.className,
       )}
       onSelect={(event) => event.preventDefault()}

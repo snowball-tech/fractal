@@ -27,9 +27,9 @@ export const Playground: Story = {
         placeholder="Start typing to autocomplete"
         onChange={action('onChange')}
       >
-        <AutocompleteItem value="yoda">Yoda</AutocompleteItem>
+        <AutocompleteItem label="Yoda" value="yoda" />
         <AutocompleteItemSeparator />
-        <AutocompleteItem value="darth-sidious">Darth Sidious</AutocompleteItem>
+        <AutocompleteItem label="Darth Sidious" value="darth-sidious" />
       </Autocomplete>
     </div>
   ),

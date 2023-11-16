@@ -62,6 +62,14 @@ export interface DropdownProps extends Props {
    * (non-text) trigger.
    */
   open?: boolean
+  /**
+   * Indicates if you want to toggle the dropdown when clicking on the trigger
+   * (if provided of course).
+   *
+   * If you pass this to `false`, you will have to handle the opening/closing of
+   * the dropdown on your own.
+   */
+  toggleOnTriggerClick?: boolean
   /** The trigger of the dropdown menu. */
   trigger?: ReactNode
   /**

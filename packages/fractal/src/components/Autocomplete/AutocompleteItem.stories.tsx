@@ -7,12 +7,9 @@ import { Autocomplete, AutocompleteItem } from '.'
 type AutocompleteItemProps = ComponentProps<typeof AutocompleteItem>
 
 const meta: Meta<AutocompleteItemProps> = {
-  argTypes: {
-    children: { control: 'text' },
-  },
   args: {
-    children: 'Jar Jar Binks',
     disabled: false,
+    label: 'Jar Jar Binks',
     value: 'jar-jar-binks',
   },
   component: AutocompleteItem,
@@ -27,15 +24,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ children, disabled = false, value = '' }) => (
+  render: ({ disabled = false, label = '', value = '' }) => (
     <div style={{ height: '1200px' }}>
       <Autocomplete
         placeholder="Start typing to autocomplete"
         onChange={action('onChange')}
       >
-        <AutocompleteItem disabled={disabled} value={value}>
-          {children}
-        </AutocompleteItem>
+        <AutocompleteItem disabled={disabled} label={label} value={value} />
       </Autocomplete>
     </div>
   ),
