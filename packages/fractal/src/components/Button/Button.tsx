@@ -113,8 +113,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       !isEmpty(icon)
         ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition}`
         : '',
-      iconOnly ? `${PREFIX}-${GROUP_NAME}--icon-only w-6` : '',
-      iconOnly && fullWidth ? '' : 'w-fit',
+      // eslint-disable-next-line no-nested-ternary
+      iconOnly
+        ? `${PREFIX}-${GROUP_NAME}--icon-only w-6`
+        : !fullWidth
+          ? 'w-fit'
+          : '',
       iconOnly && isTextVariant ? 'h-3 w-3' : '',
       props.className,
     )
