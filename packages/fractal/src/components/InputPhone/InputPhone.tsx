@@ -435,7 +435,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           <Typography
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default',
+              'cursor-default text-dark',
             )}
             element="div"
             variant="caption-median"
@@ -449,8 +449,10 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         {hasErrorMessage || hasSuccessMessage ? (
           <Typography
             className={twJoin(
-              `${PREFIX}-${GROUP_NAME}__message`,
-              'cursor-default',
+              `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+                isInError ? 'error' : 'success'
+              }`,
+              'cursor-default text-dark',
             )}
             element="div"
             variant="caption-median"

@@ -471,7 +471,12 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={`${PREFIX}-${GROUP_NAME}__message`}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+                isInError ? 'error' : 'success'
+              }`,
+              'cursor-default text-dark',
+            )}
             element="div"
             variant="caption-median"
           >
