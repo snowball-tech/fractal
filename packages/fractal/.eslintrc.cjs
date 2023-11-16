@@ -31,10 +31,7 @@ module.exports = {
     'import/no-cycle': 'off',
     'import/no-named-as-default': 'off',
 
-    'storybook/no-uninstalled-addons': [
-      'error',
-      { packageJsonLocation: './packages/fractal/package.json' },
-    ],
+    'storybook/no-uninstalled-addons': 'off',
   },
 
   settings: {

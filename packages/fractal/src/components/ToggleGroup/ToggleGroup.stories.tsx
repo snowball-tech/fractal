@@ -8,7 +8,8 @@ import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { ToggleGroup, ToggleGroupItem, ToggleVariants } from '.'
+import { ToggleGroup, ToggleGroupItem } from '.'
+import { ToggleVariants } from '../Toggle'
 
 type ToggleGroupProps = ComponentProps<typeof ToggleGroup>
 

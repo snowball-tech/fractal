@@ -90,12 +90,8 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
       !isEmpty(triggerProps.icon)
         ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`
         : '',
-      // eslint-disable-next-line no-nested-ternary
-      triggerProps.iconOnly
-        ? `${PREFIX}-${GROUP_NAME}--icon-only w-6`
-        : !triggerProps.fullWidth
-        ? 'w-fit'
-        : '',
+      triggerProps.iconOnly ? `${PREFIX}-${GROUP_NAME}--icon-only w-6` : '',
+      triggerProps.iconOnly && triggerProps.fullWidth ? '' : 'w-fit',
       props.className,
     )
 
