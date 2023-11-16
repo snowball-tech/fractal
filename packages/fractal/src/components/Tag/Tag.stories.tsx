@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Tag from './Tag'
-import { Colors, DEFAULT_COLOR } from './Tag.constants'
+import { Tag, TagColors } from '.'
+import { DEFAULT_COLOR } from './Tag.constants'
 
 type TagProps = ComponentProps<typeof Tag>
 
@@ -16,10 +16,10 @@ const meta = {
   argTypes: {
     children: { control: 'text' },
     color: {
-      options: Object.values(Colors),
+      options: Object.values(TagColors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(Colors).join('|') },
+        type: { summary: Object.values(TagColors).join('|') },
       },
     },
   },

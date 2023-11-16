@@ -1,15 +1,40 @@
-/* stylelint-disable-next-line import-notation */
-@import 'normalize.css' layer(reset);
+@import url('normalize.css') layer(reset);
+@import url('tailwindcss/base') layer(base);
+@import url('./polyfills.css') layer(base);
+@import url('@snowball-tech/design-tokens/dist/web/css/fonts.css')
+layer(fractal);
+@import url('@snowball-tech/design-tokens/dist/web/css/variables.css')
+layer(fractal);
+@import url('tailwindcss/components');
+@import url('tailwindcss/utilities');
 
-@layer fractal;
-@layer reset, base, tokens, recipes, utilities;
+@layer reset, base, fractal, tokens, recipes, utilities;
 
-/* stylelint-disable-next-line import-notation */
-@import '@snowball-tech/design-tokens/dist/web/css/fonts.css' layer(fractal);
-/* stylelint-disable-next-line import-notation */
-@import '@snowball-tech/design-tokens/dist/web/css/variables.css' layer(fractal);
+:root {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}
 
 @layer reset {
+  *,
+  ::before,
+  ::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: black;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   h1,
   h2,
   h3,
@@ -28,5 +53,58 @@
 
   a {
     color: var(--color-brand-secondary);
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *::selection {
+    background-color: var(--color-brand-primary);
+  }
+}
+
+@layer utilities {
+  input.number-text-appearance,
+  .number-text-appearance input[type='number'] {
+    appearance: textfield;
+  }
+
+  input.hide-spin-button::-webkit-outer-spin-button,
+  input.hide-spin-button::-webkit-inner-spin-button,
+  .hide-spin-button input::-webkit-outer-spin-button,
+  .hide-spin-button input::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  .alternating-bg-colors-90-hover .alternatee:nth-child(1),
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 1) {
+    @apply hover:bg-decorative-pink-90;
+  }
+
+  .alternating-bg-colors-90-hover .alternatee:nth-child(2),
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 2) {
+    @apply hover:bg-decorative-yellow-90;
+  }
+
+  .alternating-bg-colors-90-hover .alternatee:nth-child(3),
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 3) {
+    @apply hover:bg-decorative-green-90;
+  }
+
+  .alternating-bg-colors-90-hover .alternatee:nth-child(4),
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 4) {
+    @apply hover:bg-decorative-blue-90;
+  }
+
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5),
+  .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 5) {
+    @apply hover:bg-decorative-purple-90;
+  }
+}
+
+@supports (height: 100dvh) {
+  .h-screen {
+    height: 100dvh;
   }
 }

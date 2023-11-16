@@ -2,14 +2,12 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteItem from './AutocompleteItem'
+import { Autocomplete, AutocompleteItem } from '.'
 
 type AutocompleteItemProps = ComponentProps<typeof AutocompleteItem>
 
 const meta: Meta<AutocompleteItemProps> = {
   argTypes: {
-    asChild: { table: { disable: true } },
     children: { control: 'text' },
   },
   args: {

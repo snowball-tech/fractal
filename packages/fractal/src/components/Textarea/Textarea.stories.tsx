@@ -11,7 +11,7 @@ import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import Textarea from './Textarea'
+import { Textarea } from '.'
 
 type TextareaProps = ComponentProps<typeof Textarea>
 
@@ -53,6 +53,7 @@ const meta: Meta<TextareaProps> = {
     disabled: false,
     fullWidth: false,
     icon: 'None',
+    iconDisabled: false,
     label: 'You don’t need to see his identification!',
     placeholder: 'I don’t need to see his identification...',
     readOnly: false,

@@ -2,12 +2,11 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import InputRadio from './InputRadio'
-import InputRadioGroup from './InputRadioGroup'
+import { InputRadio, InputRadioGroup } from '.'
 
 type InputRadioProps = ComponentProps<typeof InputRadio>
 
-const meta: Meta<InputRadioProps> = {
+const meta: Meta<InputRadioProps & { required?: boolean }> = {
   argTypes: {
     asChild: { table: { disable: true } },
   },
@@ -15,6 +14,7 @@ const meta: Meta<InputRadioProps> = {
     disabled: false,
     fullWidth: false,
     label: 'Jar Jar Binks',
+    required: false,
     value: 'jar-jar-binks',
   },
   component: InputRadio,
@@ -23,14 +23,24 @@ const meta: Meta<InputRadioProps> = {
   },
 
   title: 'Molecules/Input/InputRadio',
-} satisfies Meta<InputRadioProps>
+} satisfies Meta<InputRadioProps & { required?: boolean }>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, fullWidth = false, label, value }) => (
-    <InputRadioGroup fullWidth onValueChange={action('onValueChange')}>
+  render: ({
+    disabled = false,
+    fullWidth = false,
+    label,
+    required = false,
+    value,
+  }) => (
+    <InputRadioGroup
+      fullWidth={fullWidth}
+      required={required}
+      onValueChange={action('onValueChange')}
+    >
       <InputRadio
         disabled={disabled}
         fullWidth={fullWidth}

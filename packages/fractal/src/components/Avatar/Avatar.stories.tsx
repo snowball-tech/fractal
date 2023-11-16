@@ -7,8 +7,8 @@ import { DropdownItem } from '@/components/Dropdown'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
-import Avatar from './Avatar'
-import { Sizes as AvailableSizes, DEFAULT_SIZE } from './Avatar.constants'
+import { Avatar, AvatarSizes } from '.'
+import { DEFAULT_SIZE } from './Avatar.constants'
 
 type AvatarProps = ComponentProps<typeof Avatar>
 
@@ -30,10 +30,10 @@ const meta = {
       options: ['None', 'With menu'],
     },
     size: {
-      options: Object.values(AvailableSizes),
+      options: Object.values(AvatarSizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(AvailableSizes).join('|') },
+        type: { summary: Object.values(AvatarSizes).join('|') },
       },
     },
   },
@@ -110,6 +110,21 @@ export const Image: Story = {
 }
 
 export const WithMenu: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const body = within(canvasElement.ownerDocument.body)
+
+    await userEvent.click(canvas.getByRole('button'))
+
+    await sleep(500)
+    await userEvent.hover(body.getByRole('menuitem', { name: 'My profile' }))
+    await sleep(1000)
+    await userEvent.hover(body.getByRole('menuitem', { name: 'Sign out' }))
+
+    await sleep(1000)
+    await userEvent.click(body.getByRole('menuitem', { name: 'My profile' }))
+  },
+
   render: () => (
     <div
       style={{

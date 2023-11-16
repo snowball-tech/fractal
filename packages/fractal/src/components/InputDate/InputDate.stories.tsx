@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
-import InputDate from './InputDate'
+import { InputDate } from '.'
 import type { DateFormat } from './InputDate.types'
 
 type InputDateProps = ComponentProps<typeof InputDate>

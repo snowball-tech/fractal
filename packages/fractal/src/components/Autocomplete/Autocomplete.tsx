@@ -1,23 +1,7 @@
 'use client'
 
-import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
-import { css, cx } from '@snowball-tech/fractal-panda/css'
-import {
-  autocompleteContainer,
-  autocompleteDescription,
-  autocompleteDropdown,
-  autocompleteInput,
-  autocompleteLabel,
-  autocompleteMessage,
-  selectDropdown,
-  selectDropdownScrollViewport,
-  selectDropdownScrollbar,
-  selectDropdownScrollbarThumbs,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -33,11 +17,14 @@ import {
   useRef,
   useState,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Dropdown } from '@/components/Dropdown/Dropdown'
 import { InputText } from '@/components/InputText'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Autocomplete.recipe'
+import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
 
 /**
@@ -109,18 +96,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     const isInError = hasErrorMessage
     const isSuccessful = hasSuccessMessage && !isInError
 
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      autocompleteContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-      isInError ? 'error' : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isSuccessful ? 'success' : '',
-    )
-
     const handleInputChange = (
       event: ChangeEvent<HTMLInputElement>,
       newValue: string,
@@ -140,14 +115,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
     const handleDropdownToggle = (isOpened: boolean) => {
       setIsOpen(isOpened)
-
-      if (isOpened && isFunction(onOpen)) {
-        onOpen()
-      }
-
-      if (!isOpened && isFunction(onClose)) {
-        onClose()
-      }
     }
 
     const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
@@ -253,37 +220,44 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
     }
 
-    useEffect(() => {
-      if (open === true || (Boolean(children) && open !== false)) {
-        handleDropdownToggle(true)
-      }
-      // We don't want to reopen the toggle based on the `handleDropdownToggle`
-      // function. So we don't include it in the dependencies.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    const writable = !disabled && !readOnly
 
     return (
-      <div ref={containerRef} className={groupClassNames}>
-        {!isEmpty(label) ? (
+      <div
+        ref={containerRef}
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex w-full max-w-full flex-col',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+          props.className,
+        )}
+      >
+        {!isEmpty(label) && (
           <RxLabel
-            className={cx(
-              typography({ variant: 'body-1' }),
-              autocompleteLabel(),
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
             )}
             htmlFor={uniqueId}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <InputText
           id={uniqueId}
           ref={inputRef}
-          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
-          className={autocompleteInput()}
+          className={twJoin(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
           {...(defaultValue !== undefined ? { defaultValue } : {})}
           disabled={disabled}
           error={hasErrorMessage}
@@ -303,106 +277,45 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           {...omit(['className', 'onBlur', 'onKeyDown'], props)}
         />
 
-        <RxDropdownMenu.Root
-          modal={false}
+        <Dropdown
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__dropdown`,
+            'invisible h-0 max-h-0 w-full',
+            isOpen ? '-mt-3 mb-3' : '',
+          )}
+          disabled={disabled}
+          dropdown={{ ...dropdown, align: 'center' }}
+          {...(isFunction(onClose) ? { onClose } : {})}
+          {...(isFunction(onOpen) ? { onOpen } : {})}
           open={isOpen}
-          onOpenChange={handleDropdownToggle}
+          side="bottom"
+          width="trigger"
+          withIndicator={false}
+          onInteractOutside={handleDropdownInteractOutside}
+          onKeyDown={handleDropdownKeyDown}
+          onPointerDownOutside={handleDropdownPointerDownOutside}
         >
-          <RxDropdownMenu.Trigger
-            className={css({
-              borderBottom: 0,
-              borderTop: 0,
-              height: 0,
-              maxHeight: 0,
-              py: 0,
-              visibility: 'hidden',
-            })}
-            onPointerDown={(event) => {
-              event.preventDefault()
-              event.stopPropagation()
-            }}
-          />
+          {children}
+        </Dropdown>
 
-          <RxDropdownMenu.Portal>
-            {isOpen && (
-              <RxDropdownMenu.Content
-                ref={dropdownRef}
-                {...omit(['className'], dropdown)}
-                align="center"
-                asChild
-                className={cx(
-                  `${PREFIX}-${GROUP_NAME}-dropdown`,
-                  typography({ variant: 'body-1' }),
-                  selectDropdown(),
-                  autocompleteDropdown(),
-                  ...(dropdown?.className?.split(' ') || []),
-                  !children ? css({ visibility: 'hidden' }) : '',
-                )}
-                loop
-                side="bottom"
-                style={{
-                  display: undefined,
-                }}
-                onInteractOutside={handleDropdownInteractOutside}
-                onKeyDown={handleDropdownKeyDown}
-                onPointerDownOutside={handleDropdownPointerDownOutside}
-              >
-                <RxScrollArea.Root
-                  {...(props.dir !== undefined
-                    ? { dir: props.dir as RxScrollArea.Direction }
-                    : {})}
-                  type="hover"
-                >
-                  <RxScrollArea.Viewport
-                    className={selectDropdownScrollViewport()}
-                    style={{
-                      overflowY: undefined,
-                    }}
-                  >
-                    {children}
-                  </RxScrollArea.Viewport>
-
-                  <RxScrollArea.Scrollbar
-                    className={cx(
-                      `${PREFIX}-scrollarea-scrollbar-y`,
-                      selectDropdownScrollbar(),
-                    )}
-                    orientation="vertical"
-                  >
-                    <RxScrollArea.Thumb
-                      className={selectDropdownScrollbarThumbs()}
-                    />
-                  </RxScrollArea.Scrollbar>
-                </RxScrollArea.Root>
-              </RxDropdownMenu.Content>
-            )}
-          </RxDropdownMenu.Portal>
-        </RxDropdownMenu.Root>
-
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              autocompleteDescription(),
-            )}
+        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+          <Typography
+            className={`${PREFIX}-${GROUP_NAME}__description`}
+            variant="caption-median"
           >
             {description}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
 
-        {hasErrorMessage || hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              autocompleteMessage(),
-            )}
+        {(hasErrorMessage || hasSuccessMessage) && (
+          <Typography
+            className={`${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
+              isInError ? 'error' : 'success'
+            }`}
+            value="caption-median"
           >
             {isInError ? error : success}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
       </div>
     )

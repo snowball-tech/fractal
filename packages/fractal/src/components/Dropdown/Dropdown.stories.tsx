@@ -1,6 +1,7 @@
 import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
 import UserProfileIcon from '@iconscout/react-unicons/dist/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
+import UserAccountIcon from '@iconscout/react-unicons/dist/icons/uil-user-circle'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
 import isChromatic from 'chromatic/isChromatic'
@@ -11,22 +12,37 @@ import { Button } from '@/components/Button'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { DropdownItemGroup, DropdownItemSeparator } from '.'
-import Dropdown from './Dropdown'
-import DropdownItem from './DropdownItem'
-import DropdownRadioGroup from './DropdownRadioGroup'
-import DropdownRadioItem from './DropdownRadioItem'
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownItemGroup,
+  DropdownItemSeparator,
+  DropdownRadioGroup,
+  DropdownRadioItem,
+} from '.'
 
 const textMenu = (
   <>
-    <DropdownItem label="My profile" />
+    <DropdownItemGroup label="Account">
+      <DropdownItem label="My profile" />
+      <DropdownItem label="My account" />
+    </DropdownItemGroup>
+
+    <DropdownItemSeparator />
+
     <DropdownItem label="Sign out" />
   </>
 )
 
 const iconsMenu = (
   <>
-    <DropdownItem icon={<UserProfileIcon />} label="My profile" />
+    <DropdownItemGroup label="Account">
+      <DropdownItem icon={<UserProfileIcon />} label="My profile" />
+      <DropdownItem icon={<UserAccountIcon />} label="My account" />
+    </DropdownItemGroup>
+
+    <DropdownItemSeparator />
+
     <DropdownItem icon={<SignoutIcon />} label="Sign out" />
   </>
 )
@@ -40,9 +56,18 @@ const radioMenu = (
 
 const mixedMenu = (
   <>
-    <DropdownItem label="My profile" />
-    <DropdownItem icon={<SignoutIcon />} label="Sign out" />
+    <DropdownItemGroup label="Account">
+      <DropdownItem icon={<UserProfileIcon />} label="My profile" />
+      <DropdownItem label="My account" />
+    </DropdownItemGroup>
+
+    <DropdownItemSeparator />
+
     {radioMenu}
+
+    <DropdownItemSeparator />
+
+    <DropdownItem icon={<SignoutIcon />} label="Sign out" />
   </>
 )
 
@@ -78,11 +103,30 @@ const meta = {
       },
       options: ['Nothing', 'Text', 'Button', 'Icon Button', 'Avatar'],
     },
+    width: {
+      control: 'radio',
+      mapping: {
+        Avatar: <Avatar imageUrl={avatarUrl} name="Luke Skywalker" />,
+        Button: <Button label="This is a button trigger" />,
+        'Icon Button': (
+          <Button
+            icon={<MoreMenuIcon />}
+            iconOnly
+            label="This is an icon button trigger"
+            variant="text"
+          />
+        ),
+        Nothing: undefined,
+        Text: 'This is the trigger',
+      },
+      options: ['auto', 'trigger', 'fit', 'full', 100, 500, 1000],
+    },
   },
   args: {
     children: 'Text',
     disabled: false,
     trigger: 'Text',
+    width: 'fit',
     withIndicator: true,
   },
   component: Dropdown,

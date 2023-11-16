@@ -2,10 +2,20 @@ import type { DropdownMenuContentProps as RxDropdownContentProps } from '@radix-
 import {
   DropdownMenuItem,
   Root,
-  MenuRadioGroupProps as RxDropdownRadioGroupProps,
-  MenuRadioItemProps as RxDropdownRadioItemProps,
+  DropdownMenuContentProps as RxDropdownMenuContentProps,
 } from '@radix-ui/react-dropdown-menu'
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
+
+import type {
+  InputRadioGroupProps,
+  InputRadioProps,
+} from '@/components/InputRadio/InputRadio.types'
+
+export type CombinedRefs = {
+  container: HTMLDivElement | null
+  dropdown: HTMLDivElement | null
+  trigger: HTMLElement | null
+}
 
 type Props = RxDropdownContentProps & AllHTMLAttributes<HTMLDivElement>
 export interface DropdownProps extends Props {
@@ -17,7 +27,34 @@ export interface DropdownProps extends Props {
   children: ReactNode
   /** Indicates if the dropdown menu is disabled. */
   disabled?: boolean
+  /**
+   * Options to tweak the position of the autocomplete dropdown.
+   * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#content
+   *
+   * You can on top of that add the `className` property to customize the style
+   * of the dropdown.
+   */
+  dropdown?: Partial<
+    Omit<RxDropdownMenuContentProps, 'loop'> & { className?: string }
+  >
+  /** Event handler called when the autocomplete dropdown is closed. */
+  onClose?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the dropdown.
+   */
+  onInteractOutside?: RxDropdownMenuContentProps['onInteractOutside']
+  /** Event handler called when a key is pressed inside of the dropdown. */
+  onKeyDown?: RxDropdownMenuContentProps['onKeyDown']
+  /**
+   * Event handler called when the autocomplete dropdown is opened or closed.
+   */
   onMenuOpenChange?: ComponentProps<typeof Root>['onOpenChange']
+  /** Event handler called when the autocomplete dropdown is opened. */
+  onOpen?: () => void
+  /**
+   * Event handler called when a click/touch is made outside of the dropdown.
+   */
+  onPointerDownOutside?: RxDropdownMenuContentProps['onPointerDownOutside']
   /**
    * Indicates if the dropdown menu is open.
    *
@@ -27,15 +64,22 @@ export interface DropdownProps extends Props {
   open?: boolean
   /** The trigger of the dropdown menu. */
   trigger?: ReactNode
+  /**
+   * Indicates how to compute the width of the dropdown:
+   *  - `fit`: the width of the dropdown will be computed in order to fit the
+   *    content of the dropdown;
+   *  - `trigger`: the width of the dropdown will be the same as the trigger;
+   *  - `full`: the width of the dropdown will take as much space as available;
+   *  - `auto`: the width of the dropdown will be computed using the best
+   *    option;
+   */
+  width?: 'auto' | 'fit' | 'full' | 'trigger' | number
   /** Indicates if the trigger should have an indicator (arrow). */
   withIndicator?: boolean
 }
 
 export interface DropdownItemProps
-  extends Omit<
-    ComponentProps<typeof DropdownMenuItem>,
-    'asChild' | 'onClick' | 'onSelect'
-  > {
+  extends Omit<ComponentProps<typeof DropdownMenuItem>, 'asChild' | 'onClick'> {
   /** Indicates if the menu item is disabled. */
   disabled?: boolean
   /** An icon to display on the left of the menu item. */
@@ -46,58 +90,30 @@ export interface DropdownItemProps
   label?: string
   /** The event handler to call when the menu item is clicked. */
   onClick?: ComponentProps<typeof DropdownMenuItem>['onSelect']
+  /**
+   * The value of the dropdown item.
+   *
+   * If none is given, then the textual content of the item will be used as
+   * value.
+   */
+  value?: string
 }
 
 export interface DropdownItemGroupProps
   extends AllHTMLAttributes<HTMLDivElement> {
   /** The dropdown items to display inside of the group. */
   children: ReactNode
+  /** Indicates if the whole group should be disabled. */
+  disabled?: boolean
   /** The label of the dropdown items group. */
   label: string
 }
 
-export interface DropdownRadioGroupProps extends RxDropdownRadioGroupProps {
-  /** The radio buttons to display inside of the radio group. */
-  children: ReactNode
-  /**
-   * The uncontrolled value of the radio group (i.e. the value of the default
-   * selected radio button).
-   */
-  defaultValue?: string
-  /**
-   * Prevents the user from interacting with any of the radio button in the
-   * radio group.
-   */
-  disabled?: boolean
-  /**
-   * Event handler called when the value of the radio group (i.e. the selected
-   * radio button) changes.
-   */
-  onValueChange?: (value: string) => void
-  /**
-   * The controlled value of the radio group (i.e. the value of the selected
-   * radio button).
-   *
-   * Must be used in conjunction with `onValueChange`.
-   */
-  value?: string
-}
+export type DropdownRadioGroupProps = Omit<
+  InputRadioGroupProps,
+  'fullWidth' | 'orientation' | 'variant'
+>
 
-export interface DropdownRadioItemProps extends RxDropdownRadioItemProps {
-  /** Prevents the user from interacting with the radio button. */
-  disabled?: boolean
-  /**
-   * A unique HTML id for the radio button.
-   *
-   * This allows to link the radio button with a label.
-   *
-   * If none is given, one will be generated automatically.
-   */
-  id?: string
-  /** The label of the radio button. */
-  label: string
-  /** The value submitted in the submitted form. */
-  value: string
-}
+export type DropdownRadioItemProps = Omit<InputRadioProps, 'fullWidth'>
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

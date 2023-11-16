@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Loader from './Loader'
-import { Sizes as AvailableSizes, DEFAULT_SIZE } from './Loader.constants'
+import { Loader, LoaderSizes } from '.'
+import { DEFAULT_SIZE } from './Loader.constants'
 
 type LoaderProps = ComponentProps<typeof Loader>
 
 const meta = {
   argTypes: {
     size: {
-      options: Object.values(AvailableSizes),
+      options: Object.values(LoaderSizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(AvailableSizes).join('|') },
+        type: { summary: Object.values(LoaderSizes).join('|') },
       },
     },
   },
@@ -42,6 +42,7 @@ export const Loaders: Story = {
         gap: 'var(--size-spacing-2)',
       }}
     >
+      <Loader size="s" />
       <Loader size="m" />
       <Loader size="l" />
       <Loader size="xl" />

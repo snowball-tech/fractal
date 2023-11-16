@@ -1,103 +1,296 @@
 import AngleDownIcon from '@iconscout/react-unicons/dist/icons/uil-angle-down'
 import * as RxDropdown from '@radix-ui/react-dropdown-menu'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  dropdown,
-  dropdownContainer,
-  dropdownTrigger,
-  dropdownTriggerIndicator,
-  selectDropdown,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
+import * as RxScrollArea from '@radix-ui/react-scroll-area'
+import type { DismissableLayerProps } from '@radix-ui/react-select'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNumber from 'lodash/fp/isNumber'
+import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
-import { useState } from 'react'
+import {
+  type ForwardedRef,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Dropdown.recipe'
-import type { DropdownProps } from './Dropdown.types'
+import { GROUP_NAME } from './Dropdown.constants'
+import type { CombinedRefs, DropdownProps } from './Dropdown.types'
 
 /**
  * `Avatar` component allow to display an avatar with an optional dropdown menu.
  */
-export const Avatar = ({
-  children,
-  disabled = false,
-  onMenuOpenChange,
-  side,
-  trigger,
-  withIndicator = true,
-  ...props
-}: DropdownProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
+  (
+    {
+      children,
+      disabled = false,
+      dropdown = {},
+      onClose,
+      onInteractOutside,
+      onKeyDown,
+      onMenuOpenChange,
+      onOpen,
+      onPointerDownOutside,
+      open,
+      side,
+      trigger,
+      width = 'fit',
+      withIndicator = true,
+      ...props
+    }: DropdownProps,
+    ref: ForwardedRef<CombinedRefs>,
+  ) => {
+    const containerRef = useRef<HTMLDivElement>(null)
+    const triggerRef = useRef<HTMLElement>(null)
+    const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const groupClassNames = cx(
-    dropdownContainer(),
-    props.className,
-    isOpen ? 'opened' : 'closed',
-    disabled ? 'disabled' : '',
-  )
+    useImperativeHandle(ref, () => ({
+      get container() {
+        return containerRef?.current ?? null
+      },
 
-  const handleOpenChange = (isOpened: boolean) => {
-    if (disabled) {
-      return
+      get dropdown() {
+        return dropdownRef?.current ?? null
+      },
+
+      get trigger() {
+        return triggerRef?.current ?? null
+      },
+    }))
+
+    const hasTriggerElement = Boolean(trigger)
+    const hasTrigger = hasTriggerElement || withIndicator
+    const hasChildren = Boolean(children)
+
+    const [isOpen, setIsOpen] = useState(
+      open === true || (!hasTrigger && hasChildren && open !== false),
+    )
+
+    const handleOpenChange = (isOpened: boolean) => {
+      if (disabled) {
+        return
+      }
+
+      setIsOpen(isOpened)
+
+      if (isFunction(onMenuOpenChange)) {
+        onMenuOpenChange(isOpened)
+      }
+
+      if (isOpened && isFunction(onOpen)) {
+        onOpen()
+      }
+
+      if (!isOpened && isFunction(onClose)) {
+        onClose()
+      }
     }
 
-    if (isFunction(onMenuOpenChange)) {
-      onMenuOpenChange(isOpened)
+    useEffect(() => {
+      if (open === true || (!hasTrigger && hasChildren && open !== false)) {
+        handleOpenChange(true)
+      }
+      // We don't want to reopen the toggle based on the `handleDropdownToggle`
+      // function. So we don't include it in the dependencies.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [children, open])
+
+    const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
+      (event) => {
+        const { target } = event
+        if (target === window || target === null || target === undefined) {
+          return
+        }
+
+        if (
+          containerRef?.current?.contains(target as Element) ||
+          dropdownRef?.current?.contains(target as Element)
+        ) {
+          event.preventDefault()
+        }
+
+        if (isFunction(onInteractOutside)) {
+          onInteractOutside(event)
+        }
+      }
+
+    let widthClassNames = ''
+    if (isNumber(width)) {
+      widthClassNames = `w-[${width}px]`
+    } else {
+      switch (width) {
+        case 'fit':
+          widthClassNames = 'w-fit'
+          break
+
+        case 'full':
+          widthClassNames = 'w-full'
+          break
+
+        case 'auto':
+        case 'trigger':
+        default:
+          widthClassNames = hasTriggerElement
+            ? 'w-[var(--radix-popper-anchor-width,"100%")]'
+            : 'w-fit'
+          break
+      }
+
+      if (width === 'trigger' && !hasTriggerElement) {
+        console.warn(
+          'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `fit`...',
+        )
+      }
     }
 
-    setIsOpen(isOpened)
-  }
-
-  return (
-    <div className={groupClassNames}>
-      <RxDropdown.Root
-        {...(disabled ? { open: false } : {})}
-        modal={false}
-        onOpenChange={handleOpenChange}
+    return (
+      <div
+        ref={containerRef}
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'w-fit',
+          isOpen
+            ? `${PREFIX}-${GROUP_NAME}--opened`
+            : `${PREFIX}-${GROUP_NAME}--closed`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          props.className,
+        )}
       >
-        <RxDropdown.Trigger
-          className={cx(
-            `${PREFIX}-${GROUP_NAME}-trigger`,
-            typography({ variant: 'body-1' }),
-            dropdownTrigger(),
-          )}
+        <RxDropdown.Root
+          {...(disabled ? { open: false } : { open: isOpen })}
+          modal={false}
+          onOpenChange={handleOpenChange}
         >
-          {trigger}
-
-          {withIndicator && (
-            <div className={dropdownTriggerIndicator()}>
-              <AngleDownIcon />
-            </div>
-          )}
-        </RxDropdown.Trigger>
-
-        <RxDropdown.Portal>
-          <RxDropdown.Content
-            className={cx(
-              `${PREFIX}-${GROUP_NAME}-dropdown`,
-              typography({ variant: 'body-1' }),
-              selectDropdown(),
-              dropdown(),
+          <RxDropdown.Trigger
+            asChild={hasTrigger}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__trigger`,
+              'color-[unset] appearance-none border-none bg-[unset] px-[unset] py-[unset] text-left outline-none',
+              width === 'fit' || width === 'full'
+                ? ''
+                : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
+              !hasTrigger
+                ? 'invisible h-0 max-h-0 border-y-0 py-0'
+                : 'flex items-center',
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled text-disabled`
+                : '',
             )}
-            loop
-            {...(!isEmpty(side) ? { side } : {})}
-            style={{
-              display: undefined,
-              ...(props.style ?? {}),
-            }}
-            {...omit(['className', 'style'], props)}
+            onPointerDown={
+              hasTrigger
+                ? noop
+                : (event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+            }
           >
-            {children}
-          </RxDropdown.Content>
-        </RxDropdown.Portal>
-      </RxDropdown.Root>
-    </div>
-  )
-}
-Avatar.displayName = 'Avatar'
+            {hasTrigger && (
+              <Typography element="div">
+                {trigger}
 
-export default Avatar
+                {withIndicator && (
+                  <div
+                    className={twJoin(
+                      `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
+                      'flex h-full items-center self-center transition-transform duration-300 ease-out',
+                      isOpen ? 'rotate-180' : '',
+                    )}
+                  >
+                    <AngleDownIcon className="h-full" />
+                  </div>
+                )}
+              </Typography>
+            )}
+          </RxDropdown.Trigger>
+
+          <RxDropdown.Portal>
+            {isOpen && (
+              <RxDropdown.Content
+                ref={dropdownRef}
+                align={props.align ?? withIndicator ? 'end' : 'center'}
+                asChild
+                className={twMerge(
+                  `${PREFIX}-${GROUP_NAME}__dropdown`,
+                  'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
+                  widthClassNames,
+                  !hasChildren
+                    ? `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`
+                    : '',
+                  dropdown?.className,
+                )}
+                loop
+                {...(!isEmpty(side) ? { side } : {})}
+                style={{
+                  display: undefined,
+                  width: isNumber(width) ? `${width}px` : undefined,
+                  ...(props.style ?? {}),
+                }}
+                onInteractOutside={handleDropdownInteractOutside}
+                {...(isFunction(onKeyDown) ? { onKeyDown } : {})}
+                {...(isFunction(onPointerDownOutside)
+                  ? { onPointerDownOutside }
+                  : {})}
+                {...omit(
+                  ['className', 'style', 'align', 'onInteractOutside'],
+                  props,
+                )}
+              >
+                <RxScrollArea.Root
+                  className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
+                  {...(props.dir !== undefined
+                    ? { dir: props.dir as RxScrollArea.Direction }
+                    : {})}
+                  type="hover"
+                >
+                  <RxScrollArea.Viewport
+                    className={twJoin(
+                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
+                      `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+                    )}
+                    style={{
+                      overflowY: undefined,
+                    }}
+                  >
+                    <Typography
+                      className="alternating-bg-colors-90-hover"
+                      element="div"
+                      variant="body-1"
+                    >
+                      {children}
+                    </Typography>
+                  </RxScrollArea.Viewport>
+
+                  <RxScrollArea.Scrollbar
+                    className={twJoin(
+                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
+                      '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70',
+                    )}
+                    orientation="vertical"
+                  >
+                    <RxScrollArea.Thumb
+                      className={twJoin(
+                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
+                        "before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']",
+                      )}
+                    />
+                  </RxScrollArea.Scrollbar>
+                </RxScrollArea.Root>
+              </RxDropdown.Content>
+            )}
+          </RxDropdown.Portal>
+        </RxDropdown.Root>
+      </div>
+    )
+  },
+)
+Dropdown.displayName = 'Dropdown'
+
+export default Dropdown

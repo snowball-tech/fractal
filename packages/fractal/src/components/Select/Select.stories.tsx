@@ -8,10 +8,7 @@ import type { ComponentProps, ReactNode } from 'react'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import Select from './Select'
-import SelectItem from './SelectItem'
-import SelectItemGroup from './SelectItemGroup'
-import SelectItemSeparator from './SelectItemSeparator'
+import { Select, SelectItem, SelectItemGroup, SelectItemSeparator } from '.'
 
 type SelectProps = ComponentProps<typeof Select>
 
@@ -98,6 +95,7 @@ const meta: Meta<SelectProps> = {
     fullWidth: false,
     label: 'Who is the best Star Wars character?',
     placeholder: 'May the force be with you!',
+    readOnly: false,
     required: false,
   },
   component: Select,

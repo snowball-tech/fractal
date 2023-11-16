@@ -1,11 +1,10 @@
-import { cx } from '@snowball-tech/fractal-panda/css'
-import { tag, typography } from '@snowball-tech/fractal-panda/recipes'
 import omit from 'lodash/fp/omit'
+import { twMerge } from 'tailwind-merge'
 
-import { PREFIX } from '@/constants'
+import { Typography } from '@/components/Typography/Typography'
+import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
 
-import { DEFAULT_COLOR } from './Tag.constants'
-import { GROUP_NAME } from './Tag.recipe'
+import { DEFAULT_COLOR, GROUP_NAME } from './Tag.constants'
 import type { TagProps } from './Tag.types'
 
 /**
@@ -18,19 +17,24 @@ export const Tag = ({
   fullWidth = false,
   ...props
 }: TagProps) => {
-  const groupClassName = cx(
-    `${PREFIX}-${GROUP_NAME}`,
-    tag({ color }),
-    typography({ variant: 'caption-median' }),
-    fullWidth ? 'full-width' : '',
-    disabled ? 'disabled' : '',
-    props.className,
-  )
-
   return (
-    <div className={groupClassName} {...omit(['className'], props)}>
+    <Typography
+      className={twMerge(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${color}`,
+        'inline-flex w-fit items-center justify-center rounded-full px-1 py-0.5',
+        fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : '',
+        disabled
+          ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
+          : `${LIGHT_BG_COLORS_CLASSNAMES[color]} cursor-default`,
+        props.className,
+      )}
+      element="div"
+      variant="caption-median"
+      {...omit(['className'], props)}
+    >
       {children}
-    </div>
+    </Typography>
   )
 }
 Tag.displayName = 'Tag'

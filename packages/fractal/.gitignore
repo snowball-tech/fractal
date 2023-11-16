@@ -1,7 +1,8 @@
-# Fonts are not open-source
-
-assets/fonts*/PolySans*
+.vercel
+.env*.local
 dist
 storybook-static
-.vercel
 vite.config.ts.timestamp*
+
+# Fonts are not open-source
+assets/fonts*/PolySans*

@@ -4,21 +4,6 @@ import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circl
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputPhoneContainer,
-  inputPhoneDescription,
-  inputPhoneFields,
-  inputPhoneLabel,
-  inputPhoneMessage,
-  inputPhoneNumber,
-  inputPhoneNumberInputText,
-  inputPhoneNumberPrefixHelper,
-  inputPhonePrefix,
-  inputPhonePrefixDropdown,
-  inputPhonePrefixSearch,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import parsePhoneNumber, {
   type CountryCode,
   getExampleNumber,
@@ -37,17 +22,21 @@ import {
   useRef,
   useState,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
+import { Select } from '@/components/Select/Select'
+import { SelectEmpty } from '@/components/Select/SelectEmpty'
+import { SelectItem } from '@/components/Select/SelectItem'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { Select, SelectItem } from '../Select'
 import {
   DEFAULT_COUNTRY_CODE,
+  GROUP_NAME,
   countryByCountryCode,
   supportedCountries,
 } from './InputPhone.constants'
-import { GROUP_NAME } from './InputPhone.recipe'
 import type {
   CombinedRefs,
   CountryDetails,
@@ -66,6 +55,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       defaultValue,
       description,
       disabled = false,
+      emptyPrefixLabel = '-',
       error,
       id,
       label,
@@ -199,17 +189,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const isInError = hasErrorMessage
     const isSuccessful = hasSuccessMessage && !isInError
 
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      inputPhoneContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      isInError ? 'error' : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isSuccessful ? 'success' : '',
-    )
-
     const emitNewPhoneNumber = (
       prefixToEmit: Prefix | null,
       numberToEmit: string,
@@ -286,25 +265,57 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       }
     }
 
+    const writable = !disabled && !readOnly
+
     return (
-      <div className={groupClassNames}>
+      <div
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex max-w-full flex-col gap-1',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          readOnly && !disabled ? 'cursor-default' : '',
+          isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly cursor-default` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+          props.className,
+        )}
+      >
         {!isEmpty(label) ? (
           <RxLabel
-            className={cx(typography({ variant: 'body-1' }), inputPhoneLabel())}
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
+                : 'cursor-pointer',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
+            )}
             htmlFor={`${uniqueId}-number`}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
         ) : (
           false
         )}
 
-        <div className={cx('fields', inputPhoneFields())}>
-          {withPrefix ? (
+        <div
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__fields`,
+            'flex w-fit max-w-full gap-1',
+          )}
+        >
+          {withPrefix && (
             <Select
               id={`${uniqueId}-prefix`}
               ref={prefixRef}
-              className={inputPhonePrefix()}
+              className={twJoin(
+                `${PREFIX}-${GROUP_NAME}__fields__phone-prefix`,
+                '!w-[110px]',
+              )}
               disabled={disabled}
               displayedValue={
                 <span>
@@ -313,7 +324,12 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   {selectedCountry?.countryCode}
                 </span>
               }
-              dropdown={{ className: inputPhonePrefixDropdown() }}
+              dropdown={{
+                className: twJoin(
+                  `${PREFIX}-${GROUP_NAME}__fields__phone-prefix__dropdown`,
+                  'max-w-full !pt-8 !w-fit',
+                ),
+              }}
               name={`${name || uniqueId}-prefix`}
               readOnly={readOnly}
               required={required}
@@ -326,7 +342,10 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               <>
                 <InputText
                   ref={searchPrefixInputRef}
-                  className={inputPhonePrefixSearch()}
+                  className={twJoin(
+                    `${PREFIX}-${GROUP_NAME}__fields__phone-prefix__dropdown__search`,
+                    'fixed top-2 !w-[calc(100%-theme(spacing.3))]',
+                  )}
                   fullWidth
                   {...(placeholder !== undefined
                     ? { placeholder: searchPlaceholder }
@@ -338,38 +357,43 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   onChange={(_, newSearch) => handleSearch(newSearch, true)}
                 />
 
-                {prefixes.map(
-                  ({
-                    countryCode,
-                    countryName,
-                    flag,
-                    prefix: prefixForCountry,
-                  }) => (
-                    <SelectItem
-                      key={countryCode}
-                      value={JSON.stringify({
-                        countryCode,
-                        prefix: prefixForCountry,
-                      })}
-                    >
-                      {flag} {countryName} (+{prefixForCountry})
-                    </SelectItem>
-                  ),
+                {isEmpty(prefixes) && (
+                  <SelectEmpty>{emptyPrefixLabel}</SelectEmpty>
                 )}
+
+                {!isEmpty(prefixes) &&
+                  prefixes.map(
+                    ({
+                      countryCode,
+                      countryName,
+                      flag,
+                      prefix: prefixForCountry,
+                    }) => (
+                      <SelectItem
+                        key={countryCode}
+                        value={JSON.stringify({
+                          countryCode,
+                          prefix: prefixForCountry,
+                        })}
+                      >
+                        {flag} {countryName} (+{prefixForCountry})
+                      </SelectItem>
+                    ),
+                  )}
               </>
             </Select>
-          ) : (
-            false
           )}
 
           <InputText
             id={`${uniqueId}-number`}
             ref={phoneRef}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus && !withPrefix}
-            className={cx(
-              inputPhoneNumber(),
-              withPrefix && !isEmpty(prefix) ? inputPhoneNumberInputText() : '',
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__fields__phone-number`,
+              '!w-[calc(12rem+theme(spacing.2)+theme(spacing.2)]',
+              withPrefix && !isEmpty(prefix)
+                ? `${PREFIX}-${GROUP_NAME}__fields__phone-number--with-prefix-helper [&_input]:!pl-6`
+                : '',
             )}
             disabled={disabled}
             error={hasErrorMessage}
@@ -377,14 +401,16 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             placeholder={actualPlaceholder ?? ''}
             prefix={
               withPrefix && !isEmpty(prefix) ? (
-                <span
-                  className={cx(
-                    typography({ variant: 'body-1' }),
-                    inputPhoneNumberPrefixHelper(),
+                <Typography
+                  className={twJoin(
+                    `${PREFIX}-${GROUP_NAME}__fields__phone-number__prefix-helper`,
+                    disabled ? 'text-disabled' : 'text-dark',
+                    'w-[36px] text-right',
                   )}
+                  element="span"
                 >
                   +{prefix.prefix}
-                </span>
+                </Typography>
               ) : undefined
             }
             readOnly={readOnly}
@@ -406,27 +432,31 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         </div>
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              inputPhoneDescription(),
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__description`,
+              'cursor-default',
             )}
+            element="div"
+            variant="caption-median"
           >
             {description}
-          </div>
+          </Typography>
         ) : (
           false
         )}
 
         {hasErrorMessage || hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              inputPhoneMessage(),
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__message`,
+              'cursor-default',
             )}
+            element="div"
+            variant="caption-median"
           >
             {isInError ? error : success}
-          </div>
+          </Typography>
         ) : (
           false
         )}

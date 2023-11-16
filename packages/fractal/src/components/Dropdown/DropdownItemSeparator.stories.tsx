@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Dropdown from './Dropdown'
-import DropdownItem from './DropdownItem'
-import DropdownItemSeparator from './DropdownItemSeparator'
+import { Dropdown, DropdownItem, DropdownItemSeparator } from '.'
 
 type DropdownItemSeparatorProps = ComponentProps<typeof DropdownItemSeparator>
 
@@ -21,7 +19,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <div style={{ height: '1200px' }}>
+    <div style={{ height: '200px' }}>
       <Dropdown trigger="Fighter">
         <DropdownItem label="Yoda" />
         <DropdownItemSeparator />

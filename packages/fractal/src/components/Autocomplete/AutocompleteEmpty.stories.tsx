@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteEmpty from './AutocompleteEmpty'
+import { Autocomplete, AutocompleteEmpty } from '.'
 
 type AutocompleteEmptyProps = ComponentProps<typeof AutocompleteEmpty>
 

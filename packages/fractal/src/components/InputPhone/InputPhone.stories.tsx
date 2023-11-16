@@ -6,7 +6,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import InputPhone from './InputPhone'
+import { InputPhone } from '.'
 import type { PhoneNumber } from './InputPhone.types'
 
 type InputPhoneProps = ComponentProps<typeof InputPhone>
@@ -33,6 +33,7 @@ const meta: Meta<InputPhoneProps> = {
     autoFocus: false,
     description: 'This is a description',
     disabled: false,
+    emptyPrefixLabel: 'There is no phone prefix matching your search...',
     label: 'This is the label',
     placeholder: 'This is the placeholder',
     readOnly: false,
@@ -210,7 +211,7 @@ export const Examples: Story = {
 
       <Wrapper>
         <InputPhone
-          defaultValue={{ countryCode: 'FR', number: '+33687542196' }}
+          defaultValue={{ countryCode: 'FR', number: '+33123456789' }}
           description="This is a description"
           label="Valid phone number"
           success="The phone number is valid"

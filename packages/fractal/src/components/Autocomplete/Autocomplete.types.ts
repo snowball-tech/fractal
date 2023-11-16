@@ -4,7 +4,7 @@ import type {
 } from '@radix-ui/react-dropdown-menu'
 import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
-import { InputTextProps } from '../InputText/InputText.types'
+import { InputTextProps } from '@/components/InputText/InputText.types'
 
 export type CombinedRefs = {
   container: HTMLDivElement | null

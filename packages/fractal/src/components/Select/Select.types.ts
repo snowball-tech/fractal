@@ -86,6 +86,13 @@ export interface SelectProps
   value?: string
 }
 
+export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
+  /** The content of the empty indicator. */
+  children: ReactNode
+  /** The value of the empty element. */
+  value?: string
+}
+
 export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The label of the select option. */
   children: ReactNode
@@ -99,6 +106,8 @@ export interface SelectItemGroupProps
   extends AllHTMLAttributes<HTMLDivElement> {
   /** The select options to display inside of the group. */
   children: ReactNode
+  /** Indicates if the whole group should be disabled. */
+  disabled?: boolean
   /** The label of the select options group. */
   label: string
 }

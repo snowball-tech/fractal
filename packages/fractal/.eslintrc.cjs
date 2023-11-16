@@ -14,6 +14,7 @@ module.exports = {
     '@snowball-tech/eslint-config/lodash',
     '@snowball-tech/eslint-config/storybook',
     '@snowball-tech/eslint-config/perfectionist',
+    '@snowball-tech/eslint-config/tailwind',
     '@snowball-tech/eslint-config/prettier',
     'plugin:@typescript-eslint/disable-type-checked',
   ],
@@ -37,10 +38,7 @@ module.exports = {
   },
 
   settings: {
-    'import/ignore': [
-      '@snowball-tech/fractal-panda',
-      '@iconscout/react-unicons',
-    ],
+    'import/ignore': ['@iconscout/react-unicons'],
     'import/resolver': {
       typescript: {
         project: ['./tsconfig.json'],

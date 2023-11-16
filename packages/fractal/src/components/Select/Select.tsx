@@ -4,20 +4,6 @@ import AngleDownIcon from '@iconscout/react-unicons/dist/icons/uil-angle-down'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  selectContainer,
-  selectDescription,
-  selectDropdown,
-  selectDropdownScrollViewport,
-  selectDropdownScrollbar,
-  selectDropdownScrollbarThumbs,
-  selectLabel,
-  selectTrigger,
-  selectTriggerIndicator,
-  selectValue,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -30,10 +16,12 @@ import {
   useRef,
   useState,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './Select.recipe'
+import { GROUP_NAME } from './Select.constants'
 import type { CombinedRefs, SelectProps } from './Select.types'
 
 /**
@@ -86,21 +74,12 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       },
     }))
 
+    const writable = !disabled && !readOnly
+
     const [isOpen, setIsOpen] = useState(open === true)
     useEffect(() => {
       setIsOpen(open === true)
     }, [open])
-
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      selectContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      fullWidth ? 'full-width' : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isOpen ? 'opened' : 'closed',
-    )
 
     const handleSelect = (newValue: string) => {
       if (isFunction(onSelect)) {
@@ -109,6 +88,10 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
     }
 
     const handleDropdownToggle = (isOpened: boolean) => {
+      if (!writable) {
+        return
+      }
+
       setIsOpen(isOpened)
 
       if (isOpened && isFunction(onOpen)) {
@@ -118,6 +101,10 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       if (!isOpened && isFunction(onClose)) {
         onClose()
       }
+    }
+
+    const handleLabelClick = () => {
+      handleDropdownToggle(!isOpen)
     }
 
     const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
@@ -139,15 +126,40 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         }
       }
 
+    const widthClassNames =
+      'min-w-[var(--radix-popper-anchor-width,"100%")] w-[var(--radix-popper-anchor-width,"100%")]'
+
     return (
-      <div ref={containerRef} className={groupClassNames}>
+      <div
+        ref={containerRef}
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex w-full max-w-full flex-col gap-1',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          `${PREFIX}-${GROUP_NAME}--${isOpen ? 'opened' : 'closed'}`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isOpen ? '' : '',
+          props.className,
+        )}
+      >
         {!isEmpty(label) ? (
           <RxLabel
-            className={cx(typography({ variant: 'body-1' }), selectLabel())}
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              'block',
+              writable ? 'cursor-pointer' : 'cursor-default',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
+            )}
             htmlFor={uniqueId}
-            onClick={() => setIsOpen(true)}
+            onClick={handleLabelClick}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
         ) : (
           false
@@ -159,7 +171,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           {...(props.dir !== undefined
             ? { dir: props.dir as RxSelect.Direction }
             : {})}
-          disabled={disabled || readOnly || false}
+          disabled={!writable}
           name={name || uniqueId}
           open={isOpen}
           required={required}
@@ -172,25 +184,49 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           <RxSelect.Trigger
             id={uniqueId}
             ref={triggerRef}
-            className={cx(
-              `${PREFIX}-${GROUP_NAME}-trigger`,
-              typography({ variant: 'body-1' }),
-              selectTrigger(),
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__trigger`,
+              'flex h-6 max-h-6 items-center rounded-sm border-1 border-normal px-2 py-[unset] text-left outline-none transition-border-color duration-300 ease-out data-[placeholder]:text-placeholder',
+              writable
+                ? 'cursor-pointer border-normal bg-white'
+                : 'border-disabled bg-disabled-light',
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-not-allowed`
+                : 'hover:border-1 hover:shadow-hover',
+              !disabled && isOpen
+                ? 'hover:shadow-over border-primary shadow-primary'
+                : '',
+              readOnly ? 'cursor-default' : '',
             )}
           >
-            <div className={selectValue()}>
-              {isEmpty(displayedValue) ? (
-                <RxSelect.Value placeholder={placeholder} />
-              ) : (
-                <RxSelect.Value placeholder={placeholder}>
-                  {displayedValue}
-                </RxSelect.Value>
-              )}
-            </div>
+            <Typography element="div">
+              <div
+                className={twJoin(
+                  `${PREFIX}-${GROUP_NAME}__trigger__value`,
+                  'flex-grow self-center',
+                )}
+              >
+                {isEmpty(displayedValue) ? (
+                  <RxSelect.Value placeholder={placeholder} />
+                ) : (
+                  <RxSelect.Value placeholder={placeholder}>
+                    {displayedValue}
+                  </RxSelect.Value>
+                )}
+              </div>
 
-            <RxSelect.Icon className={selectTriggerIndicator()}>
-              <AngleDownIcon />
-            </RxSelect.Icon>
+              <RxSelect.Icon
+                className={twJoin(
+                  `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
+                  'h-full self-center transition-transform duration-300 ease-out',
+                  writable ? 'text-dark' : 'text-disabled',
+                  isOpen ? 'rotate-180' : '',
+                )}
+              >
+                <AngleDownIcon className="h-full" />
+              </RxSelect.Icon>
+            </Typography>
           </RxSelect.Trigger>
 
           <RxSelect.Portal>
@@ -198,15 +234,17 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               ref={dropdownRef}
               align="center"
               asChild
-              className={cx(
-                `${PREFIX}-${GROUP_NAME}-dropdown`,
-                selectDropdown(),
-                ...(dropdown?.className?.split(' ') || []),
+              className={twMerge(
+                `${PREFIX}-${GROUP_NAME}__dropdown`,
+                'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
+                widthClassNames,
+                dropdown?.className,
               )}
               position="popper"
               side="bottom"
               style={{
                 display: undefined,
+                ...(props.style ?? {}),
               }}
               onPointerDownOutside={handlePointerDownOutside}
               {...omit(
@@ -222,6 +260,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               )}
             >
               <RxScrollArea.Root
+                className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
                 {...(props.dir !== undefined
                   ? { dir: props.dir as RxScrollArea.Direction }
                   : {})}
@@ -229,24 +268,36 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               >
                 <RxSelect.Viewport asChild>
                   <RxScrollArea.Viewport
-                    className={selectDropdownScrollViewport()}
+                    className={twJoin(
+                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
+                      `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+                    )}
                     style={{
                       overflowY: undefined,
                     }}
                   >
-                    {items}
+                    <Typography
+                      className="alternating-bg-colors-90-hover"
+                      element="div"
+                      variant="body-1"
+                    >
+                      {items}
+                    </Typography>
                   </RxScrollArea.Viewport>
                 </RxSelect.Viewport>
 
                 <RxScrollArea.Scrollbar
-                  className={cx(
-                    `${PREFIX}-scrollarea-scrollbar-y`,
-                    selectDropdownScrollbar(),
+                  className={twJoin(
+                    `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
+                    '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70',
                   )}
                   orientation="vertical"
                 >
                   <RxScrollArea.Thumb
-                    className={selectDropdownScrollbarThumbs()}
+                    className={twJoin(
+                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
+                      "before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']",
+                    )}
                   />
                 </RxScrollArea.Scrollbar>
               </RxScrollArea.Root>
@@ -254,17 +305,17 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           </RxSelect.Portal>
         </RxSelect.Root>
 
-        {!isEmpty(description) ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              selectDescription(),
+        {!isEmpty(description) && (
+          <Typography
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__description`,
+              'cursor-default',
             )}
+            element="div"
+            variant="caption-median"
           >
             {description}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
       </div>
     )

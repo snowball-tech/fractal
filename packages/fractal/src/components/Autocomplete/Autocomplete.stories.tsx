@@ -29,12 +29,14 @@ import {
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteEmpty from './AutocompleteEmpty'
-import AutocompleteItem from './AutocompleteItem'
-import AutocompleteItemGroup from './AutocompleteItemGroup'
-import AutocompleteItemSeparator from './AutocompleteItemSeparator'
-import AutocompleteLoading from './AutocompleteLoading'
+import {
+  Autocomplete,
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteItemGroup,
+  AutocompleteItemSeparator,
+  AutocompleteLoading,
+} from '.'
 
 type AutocompleteProps = ComponentProps<typeof Autocomplete>
 

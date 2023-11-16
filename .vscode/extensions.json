@@ -5,6 +5,7 @@
     "bierner.markdown-emoji",
     "bierner.markdown-footnotes",
     "bierner.markdown-preview-github-styles",
+    "bradlc.vscode-tailwindcss",
     "cardinal90.multi-cursor-case-preserve",
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
@@ -13,6 +14,7 @@
     "dsznajder.es7-react-js-snippets",
     "eamodio.gitlens",
     "ecmel.vscode-html-css",
+    "ellreka.tailwindcss-highlight",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
     "github.copilot",
@@ -42,7 +44,6 @@
     "visualstudioexptteam.vscodeintellicode",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
-    "chakra-ui.panda-css-vscode",
     "stylelint.vscode-stylelint",
     "figma.figma-vscode-extension"
   ]

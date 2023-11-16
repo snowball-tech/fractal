@@ -2,9 +2,7 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import Autocomplete from './Autocomplete'
-import AutocompleteItem from './AutocompleteItem'
-import AutocompleteItemSeparator from './AutocompleteItemSeparator'
+import { Autocomplete, AutocompleteItem, AutocompleteItemSeparator } from '.'
 
 type AutocompleteItemSeparatorProps = ComponentProps<
   typeof AutocompleteItemSeparator

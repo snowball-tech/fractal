@@ -3,18 +3,6 @@
 import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import { cx } from '@snowball-tech/fractal-panda/css'
-import {
-  inputDateContainer,
-  inputDateDay,
-  inputDateField,
-  inputDateFields,
-  inputDateLabel,
-  inputDateMessage,
-  inputDateMonth,
-  inputDateYear,
-  typography,
-} from '@snowball-tech/fractal-panda/recipes'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
@@ -31,11 +19,13 @@ import {
   useRef,
   useState,
 } from 'react'
+import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 
-import { GROUP_NAME } from './InputDate.recipe'
+import { GROUP_NAME } from './InputDate.constants'
 import type {
   CombinedRefs,
   DateFormat,
@@ -130,17 +120,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
     const isInError = hasErrorMessage
     const isSuccessful = hasSuccessMessage && !isInError
-
-    const groupClassNames = cx(
-      `${PREFIX}-${GROUP_NAME}`,
-      inputDateContainer(),
-      props.className,
-      disabled ? 'disabled' : '',
-      isInError ? 'error' : '',
-      readOnly ? 'readonly' : '',
-      required ? 'required' : '',
-      isSuccessful ? 'success' : '',
-    )
 
     useEffect(() => {
       const newErrors = { ...errors }
@@ -311,26 +290,57 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       }
     }
 
+    const writable = !disabled && !readOnly
+
+    const fieldClassNames = `${PREFIX}-${GROUP_NAME}__field !max-w-[100px] w-fit number-text-appearance hide-spin-button`
+
     return (
-      <div className={groupClassNames}>
+      <div
+        className={twMerge(
+          `${PREFIX}-${GROUP_NAME}`,
+          'flex w-fit max-w-full flex-col gap-1',
+          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+          readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+          required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+          isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+          props.className,
+        )}
+      >
         {!isEmpty(label) ? (
           <RxLabel
-            className={cx(typography({ variant: 'body-1' }), inputDateLabel())}
+            asChild
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              writable ? 'cursor-pointer' : 'cursor-default',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                : '',
+            )}
             htmlFor={`${uniqueId}-day`}
           >
-            {label}
+            <Typography element="label">{label}</Typography>
           </RxLabel>
         ) : (
           false
         )}
 
-        <div className={cx('fields', inputDateFields())}>
+        <div
+          className={twJoin(
+            `${PREFIX}-${GROUP_NAME}__fields`,
+            'flex w-fit gap-1',
+          )}
+        >
           <InputText
             id={`${uniqueId}-day`}
             ref={dayRef}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus}
-            className={cx(inputDateField(), inputDateDay())}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__field__day`,
+              fieldClassNames,
+              '[&>input]:min-w-9',
+            )}
             {...(defaultValue?.day !== undefined
               ? { defaultValue: defaultValue.day }
               : {})}
@@ -368,8 +378,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           <InputText
             id={`${uniqueId}-month`}
             ref={monthRef}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
-            className={cx(inputDateField(), inputDateMonth())}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__field__month`,
+              fieldClassNames,
+              '[&>input]:min-w-9',
+            )}
             {...(defaultValue?.month !== undefined
               ? { defaultValue: defaultValue.month }
               : {})}
@@ -409,8 +422,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           <InputText
             id={`${uniqueId}-year`}
             ref={yearRef}
-            // eslint-disable-next-line jsx-a11y/no-autofocus
-            className={cx(inputDateField(), inputDateYear())}
+            className={twJoin(
+              `${PREFIX}-${GROUP_NAME}__field__year`,
+              fieldClassNames,
+              '[&>input]:!w-[unset] [&>input]:min-w-11',
+            )}
             {...(defaultValue?.year !== undefined
               ? { defaultValue: defaultValue.year }
               : {})}
@@ -453,17 +469,14 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           />
         </div>
 
-        {hasErrorMessage || hasSuccessMessage ? (
-          <div
-            className={cx(
-              typography({ variant: 'caption-median' }),
-              inputDateMessage(),
-            )}
+        {(hasErrorMessage || hasSuccessMessage) && (
+          <Typography
+            className={`${PREFIX}-${GROUP_NAME}__message`}
+            element="div"
+            variant="caption-median"
           >
             {isInError ? error : success}
-          </div>
-        ) : (
-          false
+          </Typography>
         )}
       </div>
     )

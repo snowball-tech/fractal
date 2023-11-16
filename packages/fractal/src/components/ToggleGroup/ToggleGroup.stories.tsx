@@ -4,12 +4,11 @@ import { userEvent, within } from '@storybook/testing-library'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
+import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { DEFAULT_VARIANT, Variants } from '../Toggle/Toggle.constants'
-import ToggleGroup from './ToggleGroup'
-import ToggleGroupItem from './ToggleGroupItem'
+import { ToggleGroup, ToggleGroupItem, ToggleVariants } from '.'
 
 type ToggleGroupProps = ComponentProps<typeof ToggleGroup>
 
@@ -58,11 +57,11 @@ const meta: Meta<ToggleGroupProps> = {
       },
     },
     variant: {
-      options: Object.values(Variants),
+      options: Object.values(ToggleVariants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
         disable: true,
-        type: { summary: Object.values(Variants).join('|') },
+        type: { summary: Object.values(ToggleVariants).join('|') },
       },
     },
   },
