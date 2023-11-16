@@ -134,7 +134,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             autoFocus={autoFocus}
             className={twJoin(
               `${PREFIX}-${GROUP_NAME}__input`,
-              'box-border min-h-6 w-full max-w-full resize-none rounded-sm border-1 px-2 py-[calc(theme(spacing.1)+theme(spacing.half)+theme(spacing.quarter))] text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder focus:cursor-text',
+              'box-border min-h-6 w-full max-w-full resize-none rounded-sm border-1 px-2 py-[calc(theme(spacing.1)+theme(spacing.half)+theme(spacing.quarter))] text-left leading-[inherit] outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder focus:cursor-text',
               writable
                 ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
                 : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light`,
