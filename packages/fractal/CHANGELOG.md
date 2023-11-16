@@ -1,3 +1,21 @@
+# @snowball-tech/fractal [4.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.5...@snowball-tech/fractal@4.0.0) (2023-11-16)
+
+### 💥 Breaking changes
+
+- get rid of PandaCSS and migrate to TailwindCSS ([#118](https://github.com/snowball-tech/fractal/issues/118)) ([cabd2ac](https://github.com/snowball-tech/fractal/commit/cabd2ac45c146a785a34b0befe961e68fbb08ab8))
+
+### 🚦 Tests
+
+- add interactive stories using the `play` function ([#111](https://github.com/snowball-tech/fractal/issues/111)) ([3dc3a3e](https://github.com/snowball-tech/fractal/commit/3dc3a3e996b9ec8b39c685b733201550138a52e8))
+
+### 👷 Build
+
+- remove useless CSS optimization step ([5ad016f](https://github.com/snowball-tech/fractal/commit/5ad016f6fd31773db312fe3c416056a7eaefb3b0))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 8.0.0
+
 ## @snowball-tech/fractal [3.5.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@3.5.4...@snowball-tech/fractal@3.5.5) (2023-11-10)
 
 ### Dependencies
