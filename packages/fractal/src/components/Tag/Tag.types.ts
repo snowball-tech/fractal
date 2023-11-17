@@ -1,8 +1,9 @@
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
-import { Colors } from './Tag.constants'
+import { Colors, Sizes } from './Tag.constants'
 
-export interface TagProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface TagProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'size'> {
   /** The text to display in the tag. */
   children: ReactNode
   /** The color of the tag to use. */
@@ -11,4 +12,6 @@ export interface TagProps extends AllHTMLAttributes<HTMLDivElement> {
   disabled?: boolean
   /** Indicates if the tag should take all the available width. */
   fullWidth?: boolean
+  /** The size of the tag. */
+  size?: `${Sizes}`
 }

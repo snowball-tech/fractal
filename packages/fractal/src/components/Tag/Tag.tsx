@@ -4,7 +4,14 @@ import { twMerge } from 'tailwind-merge'
 import { Typography } from '@/components/Typography/Typography'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
 
-import { DEFAULT_COLOR, GROUP_NAME } from './Tag.constants'
+import {
+  Colors,
+  DEFAULT_COLOR,
+  DEFAULT_SIZE,
+  GROUP_NAME,
+  Sizes,
+  sizeToTypographyVariant,
+} from './Tag.constants'
 import type { TagProps } from './Tag.types'
 
 /**
@@ -15,14 +22,23 @@ export const Tag = ({
   color = DEFAULT_COLOR,
   disabled = false,
   fullWidth = false,
+  size = DEFAULT_SIZE,
   ...props
 }: TagProps) => {
+  const sizeClassNames = {
+    [Sizes.M]: 'px-2 py-1',
+    [Sizes.S]: 'px-1 py-0.5',
+  }
+
   return (
     <Typography
       className={twMerge(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
-        'inline-flex w-fit items-center justify-center rounded-full px-1 py-0.5',
+        `${PREFIX}-${GROUP_NAME}--${size}`,
+        'inline-flex w-fit items-center justify-center rounded-full border-1',
+        sizeClassNames[size],
+        color === Colors.White ? 'border-grey-70' : 'border-[transparent]',
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : '',
         disabled
           ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
@@ -30,7 +46,7 @@ export const Tag = ({
         props.className,
       )}
       element="div"
-      variant="caption-median"
+      variant={sizeToTypographyVariant[size]}
       {...omit(['className'], props)}
     >
       {children}

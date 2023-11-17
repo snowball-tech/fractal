@@ -9,6 +9,7 @@ export const LIGHT_BG_COLORS_CLASSNAMES = {
   green: 'bg-decorative-green-90',
   pink: 'bg-decorative-pink-90',
   purple: 'bg-decorative-purple-90',
+  white: 'bg-white',
   yellow: 'bg-decorative-yellow-90',
 
   //
@@ -22,6 +23,7 @@ export const MEDIUM_BG_COLORS_CLASSNAMES = {
   green: 'bg-decorative-green-70',
   pink: 'bg-decorative-pink-70',
   purple: 'bg-decorative-purple-70',
+  white: 'bg-white',
   yellow: 'bg-decorative-yellow-70',
 
   //
@@ -35,6 +37,7 @@ export const DARK_BG_COLORS_CLASSNAMES = {
   green: 'bg-decorative-green-50',
   pink: 'bg-primary',
   purple: 'bg-decorative-purple-50',
+  white: 'bg-white',
   yellow: 'bg-decorative-yellow-50',
 
   //
@@ -48,6 +51,7 @@ export const LIGHT_FG_COLORS_CLASSNAMES = {
   green: 'text-decorative-green-90',
   pink: 'text-decorative-pink-90',
   purple: 'text-decorative-purple-90',
+  white: 'bg-white',
   yellow: 'text-decorative-yellow-90',
 
   //
@@ -61,6 +65,7 @@ export const MEDIUM_FG_COLORS_CLASSNAMES = {
   green: 'text-decorative-green-70',
   pink: 'text-decorative-pink-70',
   purple: 'text-decorative-purple-70',
+  white: 'bg-white',
   yellow: 'text-decorative-yellow-70',
 
   //
@@ -74,6 +79,7 @@ export const DARK_FG_COLORS_CLASSNAMES = {
   green: 'text-decorative-green-50',
   pink: 'text-primary',
   purple: 'text-decorative-purple-50',
+  white: 'bg-white',
   yellow: 'text-decorative-yellow-50',
 
   //
