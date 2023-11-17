@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [8.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.1...@snowball-tech/design-tokens@8.0.2) (2023-11-17)
+
+### 🐛 Bug Fixes
+
+- **token:** add auto in height and width ([50f497e](https://github.com/snowball-tech/fractal/commit/50f497e25fc4593c6a6922b0f0b8459e9f0bbb02))
+
 ## @snowball-tech/design-tokens [8.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.0...@snowball-tech/design-tokens@8.0.1) (2023-11-17)
 
 ### 📦 Dependencies
