@@ -284,6 +284,7 @@ export default {
     height: ({ breakpoints, theme }) => ({
       ...theme('spacing'),
       ...percentages,
+      auto: 'auto',
       dvh: '100dvh',
       fit: 'fit-content',
       full: '100%',
@@ -543,10 +544,12 @@ export default {
     width: ({ breakpoints, theme }) => ({
       ...theme('spacing'),
       ...percentages,
+      auto: 'auto',
       fit: 'fit-content',
       full: '100%',
       max: 'max-content',
       min: 'min-content',
+      screen: '100vw',
       ...breakpoints(
         pick(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
       ),
