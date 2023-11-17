@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [4.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.0...@snowball-tech/fractal@4.1.1) (2023-11-17)
+
+### 🐛 Bug Fixes
+
+- **tag:** fix line height ([3a283d9](https://github.com/snowball-tech/fractal/commit/3a283d97ae9c51591702ea980c5933d358d9f908))
+
 # @snowball-tech/fractal [4.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.0.1...@snowball-tech/fractal@4.1.0) (2023-11-17)
 
 ### ✨ Features
