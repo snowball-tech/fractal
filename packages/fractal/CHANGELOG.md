@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [4.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.0.1...@snowball-tech/fractal@4.1.0) (2023-11-17)
+
+### ✨ Features
+
+- **tag:** add medium size and white color ([e080459](https://github.com/snowball-tech/fractal/commit/e080459b84533b973cbf87524307bd27bc3e951f))
+
 ## @snowball-tech/fractal [4.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.0.0...@snowball-tech/fractal@4.0.1) (2023-11-17)
 
 ### 📦 Dependencies
