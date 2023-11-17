@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Tag, TagColors } from '.'
-import { DEFAULT_COLOR } from './Tag.constants'
+import { Tag, TagColors, TagSizes } from '.'
+import { DEFAULT_COLOR, DEFAULT_SIZE } from './Tag.constants'
 
 type TagProps = ComponentProps<typeof Tag>
 
@@ -20,6 +20,13 @@ const meta = {
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
         type: { summary: Object.values(TagColors).join('|') },
+      },
+    },
+    size: {
+      options: Object.values(TagSizes),
+      table: {
+        defaultValue: { summary: DEFAULT_SIZE },
+        type: { summary: Object.values(TagSizes).join('|') },
       },
     },
   },
@@ -43,10 +50,11 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     color: DEFAULT_COLOR,
+    size: DEFAULT_SIZE,
   },
 }
 
-export const Tags: Story = {
+export const SmallTags: Story = {
   parameters: { ...perVariantStoriesParameters },
   render: ({ children, disabled = false, fullWidth = false }) => (
     <div
@@ -56,6 +64,9 @@ export const Tags: Story = {
         gap: 'var(--size-spacing-3)',
       }}
     >
+      <Tag color="white" disabled={disabled} fullWidth={fullWidth}>
+        {children}
+      </Tag>
       <Tag color="blue" disabled={disabled} fullWidth={fullWidth}>
         {children}
       </Tag>
@@ -69,6 +80,38 @@ export const Tags: Story = {
         {children}
       </Tag>
       <Tag color="purple" disabled={disabled} fullWidth={fullWidth}>
+        {children}
+      </Tag>
+    </div>
+  ),
+}
+
+export const BigTags: Story = {
+  parameters: { ...perVariantStoriesParameters },
+  render: ({ children, disabled = false, fullWidth = false }) => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--size-spacing-3)',
+      }}
+    >
+      <Tag color="white" disabled={disabled} fullWidth={fullWidth} size="m">
+        {children}
+      </Tag>
+      <Tag color="blue" disabled={disabled} fullWidth={fullWidth} size="m">
+        {children}
+      </Tag>
+      <Tag color="yellow" disabled={disabled} fullWidth={fullWidth} size="m">
+        {children}
+      </Tag>
+      <Tag color="pink" disabled={disabled} fullWidth={fullWidth} size="m">
+        {children}
+      </Tag>
+      <Tag color="green" disabled={disabled} fullWidth={fullWidth} size="m">
+        {children}
+      </Tag>
+      <Tag color="purple" disabled={disabled} fullWidth={fullWidth} size="m">
         {children}
       </Tag>
     </div>
