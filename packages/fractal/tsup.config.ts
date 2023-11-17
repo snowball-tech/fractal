@@ -24,7 +24,10 @@ const commonConfig: Options = {
 export default defineConfig([
   {
     ...commonConfig,
-    entry: ['./src/components/**/!(*.stories).tsx'],
+    entry: [
+      './src/components/**/!(*.stories).tsx',
+      './src/components/**/!(*.stories).ts',
+    ],
   },
   {
     ...commonConfig,
