@@ -4884,14 +4884,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@snowball-tech/design-tokens@npm:8.0.0"
+"@snowball-tech/design-tokens@npm:8.0.1":
+  version: 8.0.1
+  resolution: "@snowball-tech/design-tokens@npm:8.0.1"
   peerDependencies:
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/container-queries": ^0.1.1
     tailwindcss: ^3.3.5
-  checksum: d1841172b5c0d3dd00c68170c638ddceebb8336a223e5a9b9a90c473473bc28ce1f586acc48847332a55cb2c9fc8768a3f4645b94f7f05e1a9ff9f68251208e6
+  checksum: ad76e15137ff400f3a21e4f357de6179b57af5c1eb62329f6566b7b5bed28096038d1bcc5a1a9e4fa53974b399fb1c8f58e4de0b28523eafac50be67d17b8914
   languageName: node
   linkType: hard
 
@@ -4973,7 +4973,7 @@ __metadata:
     "@radix-ui/react-switch": "npm:^1.0.3"
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
-    "@snowball-tech/design-tokens": "npm:8.0.0"
+    "@snowball-tech/design-tokens": "npm:8.0.1"
     "@snowball-tech/eslint-config": "npm:^5.3.2"
     "@storybook/addon-a11y": "npm:^7.5.3"
     "@storybook/addon-actions": "npm:^7.5.3"
