@@ -11,10 +11,10 @@ import {
   useId,
   useRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import {
   Colors,
@@ -52,7 +52,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
 
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
       [Variants.Secondary]: 'bg-white border-1 border-normal',
-      [Variants.Tertiary]: 'bg-[transparent]',
+      [Variants.Tertiary]: 'bg-transparent',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -61,27 +61,27 @@ perfectionist/sort-objects */
     const colorClassNames = {
       checked: {
         [Colors.Blue]:
-          '[&>:first-child]:data-[state=checked]:bg-decorative-blue-70',
+          '[&>:first-child]:data-state-checked:bg-decorative-blue-70',
         [Colors.Green]:
-          '[&>:first-child]:data-[state=checked]:bg-decorative-green-70',
+          '[&>:first-child]:data-state-checked:bg-decorative-green-70',
         [Colors.Pink]:
-          '[&>:first-child]:data-[state=checked]:bg-decorative-pink-70',
+          '[&>:first-child]:data-state-checked:bg-decorative-pink-70',
         [Colors.Purple]:
-          '[&>:first-child]:data-[state=checked]:bg-decorative-purple-70',
+          '[&>:first-child]:data-state-checked:bg-decorative-purple-70',
         [Colors.Yellow]:
-          '[&>:first-child]:data-[state=checked]:bg-decorative-yellow-70',
+          '[&>:first-child]:data-state-checked:bg-decorative-yellow-70',
       },
       hover: {
         [Colors.Blue]:
-          'group-hover/checkbox:[&>:first-child]:data-[state=unchecked]:bg-decorative-blue-90',
+          'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-blue-90',
         [Colors.Green]:
-          'group-hover/checkbox:[&>:first-child]:data-[state=unchecked]:bg-decorative-green-90',
+          'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-green-90',
         [Colors.Pink]:
-          'group-hover/checkbox:[&>:first-child]:data-[state=unchecked]:bg-decorative-pink-90',
+          'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-pink-90',
         [Colors.Purple]:
-          'group-hover/checkbox:[&>:first-child]:data-[state=unchecked]:bg-decorative-purple-90',
+          'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-purple-90',
         [Colors.Yellow]:
-          'group-hover/checkbox:[&>:first-child]:data-[state=unchecked]:bg-decorative-yellow-90',
+          'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-yellow-90',
       },
     }
 
@@ -99,7 +99,7 @@ perfectionist/sort-objects */
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${color}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -118,10 +118,10 @@ perfectionist/sort-objects */
           id={uniqueId}
           ref={combinedRef}
           {...(checked !== undefined ? { checked } : {})}
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'h-full min-h-6 flex-[0] rounded-xs border-none bg-[unset] px-[unset] py-[unset]',
+            'h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
             disabled
               ? 'cursor-not-allowed'
               : `cursor-pointer ${colorClassNames.checked[color]} ${colorClassNames.hover[color]}`,
@@ -136,7 +136,7 @@ perfectionist/sort-objects */
           {...omit(['className'], props)}
         >
           <div
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__box__mark`,
               `${PREFIX}-${GROUP_NAME}__box__mark--${color}`,
               'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-xs border-2 pt-0.5',
@@ -151,13 +151,13 @@ perfectionist/sort-objects */
 
         <RxLabel
           asChild
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--${color}`,
             'flex-1 overflow-auto break-words py-2 pr-2',
             disabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
               : '',
           )}
           htmlFor={uniqueId}

@@ -1,9 +1,9 @@
 import * as RxSelect from '@radix-ui/react-select'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Select.constants'
 import type { SelectItemGroupProps } from './Select.types'
@@ -21,7 +21,7 @@ export const SelectItemGroup = ({
 }: SelectItemGroupProps) => {
   return (
     <RxSelect.Group
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         'p-2 py-0',
         disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
@@ -31,7 +31,7 @@ export const SelectItemGroup = ({
     >
       <RxSelect.Label
         asChild
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__label`,
           'block py-2',
           disabled
@@ -43,7 +43,7 @@ export const SelectItemGroup = ({
       </RxSelect.Label>
 
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
           disabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`

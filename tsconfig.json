@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "jsx": "react-jsx",
@@ -40,6 +40,9 @@
   ],
   "files": [],
   "references": [
+    {
+      "path": "packages/design-tokens"
+    },
     {
       "path": "packages/fractal"
     }

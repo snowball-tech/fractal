@@ -1,8 +1,8 @@
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
 import type { PaperProps } from './Paper.types'
@@ -28,7 +28,7 @@ perfectionist/sort-objects */
 
   return (
     <Typography
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${elevation}`,
         'relative flex flex-col border-1 border-normal bg-white p-2 text-dark',

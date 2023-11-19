@@ -1,11 +1,11 @@
 import UserIcon from '@iconscout/react-unicons/dist/icons/uil-user'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Dropdown } from '@/components/Dropdown'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import {
   DEFAULT_SIZE,
@@ -52,7 +52,7 @@ perfectionist/sort-objects */
 perfectionist/sort-objects */
   }
 
-  const baseBubbleClassName = twJoin(
+  const baseBubbleClassName = cj(
     `${PREFIX}-${GROUP_NAME}__bubble`,
     'rounded-full border-1 border-normal',
     sizeClassNames[size],
@@ -68,7 +68,7 @@ perfectionist/sort-objects */
 
   const avatarBubble = isEmpty(imageUrl) ? (
     <Typography
-      className={twJoin(
+      className={cj(
         baseBubbleClassName,
         'flex items-center justify-center bg-decorative-pink-70 text-dark',
         !isEmpty(initials)
@@ -82,7 +82,7 @@ perfectionist/sort-objects */
     >
       {isEmpty(initials) ? (
         <UserIcon
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__bubble`,
             iconSizeClassNames[size],
           )}
@@ -93,7 +93,7 @@ perfectionist/sort-objects */
     </Typography>
   ) : (
     <div
-      className={twJoin(
+      className={cj(
         baseBubbleClassName,
         'bg-cover bg-center bg-no-repeat',
         `${PREFIX}-${GROUP_NAME}__bubble--with-picture`,
@@ -107,7 +107,7 @@ perfectionist/sort-objects */
   if (hasChildren && !disabled) {
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${size}`,
           `${PREFIX}-${GROUP_NAME}--with-menu`,
@@ -128,7 +128,7 @@ perfectionist/sort-objects */
 
   return (
     <div
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         'w-fit cursor-default',

@@ -3,10 +3,10 @@ import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Badge.constants'
 import type { BadgeProps } from './Badge.types'
@@ -27,7 +27,7 @@ export const Badge = ({ count, limit = 99, ...props }: BadgeProps) => {
 
   return (
     <Typography
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'inline-flex shrink-0 items-center justify-center rounded-full bg-primary',
         isNil(count) || !isNumber(count) || !isInteger(count)

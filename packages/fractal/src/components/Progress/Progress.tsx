@@ -1,9 +1,9 @@
 import * as RxProgress from '@radix-ui/react-progress'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Progress.constants'
 import type { ProgressProps } from './Progress.types'
@@ -19,7 +19,7 @@ export const Progress = ({
 }: ProgressProps) => {
   return (
     <RxProgress.Root
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'relative h-1 w-full max-w-full overflow-hidden rounded-full border-1 border-normal bg-decorative-pink-90',
         props.className,
@@ -30,7 +30,7 @@ export const Progress = ({
       {...omit(['className'], props)}
     >
       <RxProgress.Indicator
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__indicator`,
           'h-full w-full rounded-full bg-secondary transition-transform delay-100 duration-600 [transition-property:cubic-bezier(0.65,0,0.35,1)]',
           props.className,
