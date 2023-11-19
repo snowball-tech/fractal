@@ -42,6 +42,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       suffix,
       type = 'text',
       value,
+      withSpinButton = false,
       ...props
     }: InputTextProps,
     ref: ForwardedRef<HTMLInputElement>,
@@ -193,6 +194,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               hasPrefix ? 'pl-5' : '',
               hasSuffix ? 'pr-5' : '',
               required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+              !withSpinButton
+                ? '[appearance:textfield] [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden'
+                : '',
             )}
             disabled={disabled}
             {...(defaultValue !== undefined ? { defaultValue } : {})}

@@ -19,7 +19,7 @@ import {
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
-import { cj, cn } from '@/styles/helpers'
+import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Select.constants'
 import type { CombinedRefs, SelectProps } from './Select.types'
@@ -277,7 +277,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                     }}
                   >
                     <Typography
-                      className="alternating-bg-colors-90-hover"
+                      className={alternatingBgColorLightClassNames}
                       element="div"
                       variant="body-1"
                     >

@@ -292,7 +292,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
     const writable = !disabled && !readOnly
 
-    const fieldClassNames = `${PREFIX}-${GROUP_NAME}__field !max-w-[100px] w-fit number-text-appearance hide-spin-button`
+    const fieldClassNames = `${PREFIX}-${GROUP_NAME}__field !max-w-[100px] w-fit`
 
     return (
       <div

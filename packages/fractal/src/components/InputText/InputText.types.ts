@@ -91,4 +91,11 @@ export interface InputTextProps
    * Must be used in conjunction with `onChange`.
    */
   value?: number | string
+  /**
+   * Indicates if the text input should display a spin button to
+   * increment/decrement the value.
+   *
+   * Only useful for `type="number"` inputs.
+   */
+  withSpinButton?: boolean
 }
