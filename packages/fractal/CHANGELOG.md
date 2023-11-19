@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [4.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.3...@snowball-tech/fractal@4.1.4) (2023-11-19)
+
+### 🐛 Bug Fixes
+
+- **tailwind:** don't use any external class ([484c715](https://github.com/snowball-tech/fractal/commit/484c715c12eeff59071f0c81630e4a5aba401f63))
+
 ## @snowball-tech/fractal [4.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.2...@snowball-tech/fractal@4.1.3) (2023-11-19)
 
 ### 🐛 Bug Fixes
