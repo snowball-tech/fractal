@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [8.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.2...@snowball-tech/design-tokens@8.0.3) (2023-11-19)
+
+### 🐛 Bug Fixes
+
+- fix tailwind config and merge utility ([#119](https://github.com/snowball-tech/fractal/issues/119)) ([3ed1461](https://github.com/snowball-tech/fractal/commit/3ed1461b3290be64289fb3983c5b1676fa23bd2d))
+
 ## @snowball-tech/design-tokens [8.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.1...@snowball-tech/design-tokens@8.0.2) (2023-11-17)
 
 ### 🐛 Bug Fixes
