@@ -134,7 +134,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "@snowball-tech/design-tokens": "workspace:^",
+    "@snowball-tech/design-tokens": "workspace:~",
     "@storybook/addon-actions": "^7.5.3",
     "@storybook/preview-api": "^7.5.3",
     "clsx": "^2.0.0",

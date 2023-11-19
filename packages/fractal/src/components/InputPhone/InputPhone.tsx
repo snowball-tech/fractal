@@ -315,7 +315,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               ref={prefixRef}
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__fields__phone-prefix`,
-                '!w-[110px] min-w-[110px] max-w-[110px]',
+                'w-[110px] min-w-[110px] max-w-[110px]',
               )}
               disabled={disabled}
               displayedValue={
