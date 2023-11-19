@@ -3,7 +3,7 @@ import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
-import { cj, cn } from '@/styles/helpers'
+import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemGroupProps } from './Dropdown.types'
@@ -47,7 +47,7 @@ export default function DropdownItemGroup({
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
           disabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
-            : 'alternating-bg-colors-90-hover',
+            : alternatingBgColorLightClassNames,
         )}
         element="div"
       >

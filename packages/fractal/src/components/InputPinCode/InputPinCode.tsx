@@ -295,7 +295,7 @@ export const InputPinCode = ({
                   }`
                 : '',
               `${PREFIX}-${GROUP_NAME}__field--${index}`,
-              'number-text-appearance hide-spin-button w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
+              'w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
               index === length - 1 && (isInError || isSuccessful)
                 ? '!max-w-[calc(theme(spacing.8)+theme(spacing.2)+theme(spacing.half))]'
                 : '',

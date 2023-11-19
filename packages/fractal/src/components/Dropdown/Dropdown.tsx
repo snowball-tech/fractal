@@ -18,7 +18,7 @@ import {
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
-import { cj, cn } from '@/styles/helpers'
+import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
@@ -265,7 +265,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                     }}
                   >
                     <Typography
-                      className="alternating-bg-colors-90-hover"
+                      className={alternatingBgColorLightClassNames}
                       element="div"
                       variant="body-1"
                     >
