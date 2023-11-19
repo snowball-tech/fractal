@@ -32,6 +32,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       children,
       disabled = false,
       dropdown = {},
+      fullWidth = false,
       onClose,
       onInteractOutside,
       onKeyDown,
@@ -158,11 +159,11 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
         ref={containerRef}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          'w-fit',
           isOpen
             ? `${PREFIX}-${GROUP_NAME}--opened`
             : `${PREFIX}-${GROUP_NAME}--closed`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           props.className,
         )}
       >
