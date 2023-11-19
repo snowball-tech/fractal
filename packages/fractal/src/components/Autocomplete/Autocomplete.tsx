@@ -291,6 +291,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             align: 'end',
             className: cj(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
           }}
+          fullWidth={fullWidth}
           {...(isFunction(onClose) ? { onClose } : {})}
           {...(isFunction(onOpen) ? { onOpen } : {})}
           open={isOpen}

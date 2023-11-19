@@ -37,6 +37,8 @@ export interface DropdownProps extends Props {
   dropdown?: Partial<
     Omit<RxDropdownMenuContentProps, 'loop'> & { className?: string }
   >
+  /** Indicates if the dropdown should take all the available width. */
+  fullWidth?: boolean
   /** Event handler called when the autocomplete dropdown is closed. */
   onClose?: () => void
   /**
