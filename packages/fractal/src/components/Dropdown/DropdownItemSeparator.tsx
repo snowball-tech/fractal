@@ -1,8 +1,8 @@
 import * as RxSelect from '@radix-ui/react-select'
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownItemSeparatorProps } from './Dropdown.types'
@@ -16,9 +16,9 @@ export default function DropdownItemSeparator({
 }: DropdownItemSeparatorProps) {
   return (
     <RxSelect.Separator
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__separator`,
-        'mx-2 my-1 h-[1px] bg-separator',
+        'mx-2 my-1 h-px bg-separator',
         props.className,
       )}
       {...omit(['className'], props)}

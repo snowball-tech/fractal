@@ -1,9 +1,9 @@
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Progress } from '@/components/Progress'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Stepper.constants'
 import type { StepperProps } from './Stepper.types'
@@ -22,7 +22,7 @@ export const Stepper = ({
 }: StepperProps) => {
   return (
     <div
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--current-as-${currentAs}`,
         'flex max-w-full gap-1',
@@ -35,10 +35,7 @@ export const Stepper = ({
           return (
             <Progress
               key={index}
-              className={twJoin(
-                `${PREFIX}-${GROUP_NAME}__step`,
-                'w-full !max-w-5',
-              )}
+              className={cj(`${PREFIX}-${GROUP_NAME}__step`, 'w-full !max-w-5')}
               max={1}
               value={current > index ? 1 : 0}
               {...(current > index ? { 'data-completed': true } : {})}
@@ -50,7 +47,7 @@ export const Stepper = ({
         return (
           <Progress
             key={index}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__step`,
               `${PREFIX}-${GROUP_NAME}__step--current`,
               'w-full',

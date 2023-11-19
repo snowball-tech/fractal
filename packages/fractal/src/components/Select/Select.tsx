@@ -16,10 +16,10 @@ import {
   useRef,
   useState,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Select.constants'
 import type { CombinedRefs, SelectProps } from './Select.types'
@@ -132,7 +132,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
     return (
       <div
         ref={containerRef}
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
@@ -148,12 +148,12 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         {!isEmpty(label) ? (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               'block',
               writable ? 'cursor-pointer' : 'cursor-default',
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={uniqueId}
@@ -185,9 +185,9 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             id={uniqueId}
             ref={triggerRef}
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'flex h-6 max-h-6 items-center rounded-sm border-1 border-normal px-2 py-[unset] text-left outline-none transition-border-color duration-300 ease-out data-[placeholder]:text-placeholder',
+              'flex h-6 max-h-6 items-center rounded-sm border-1 border-normal px-2 py-unset text-left outline-none transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder',
               writable
                 ? 'cursor-pointer border-normal bg-white'
                 : 'border-disabled bg-disabled-light',
@@ -202,9 +202,9 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           >
             <Typography element="div">
               <div
-                className={twJoin(
+                className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__value`,
-                  'flex-grow self-center',
+                  'w-full flex-grow self-center',
                 )}
               >
                 {isEmpty(displayedValue) ? (
@@ -217,7 +217,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               </div>
 
               <RxSelect.Icon
-                className={twJoin(
+                className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
                   'h-full self-center transition-transform duration-300 ease-out',
                   writable ? 'text-dark' : 'text-disabled',
@@ -234,7 +234,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               ref={dropdownRef}
               align="center"
               asChild
-              className={twMerge(
+              className={cn(
                 `${PREFIX}-${GROUP_NAME}__dropdown`,
                 'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
                 widthClassNames,
@@ -268,7 +268,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               >
                 <RxSelect.Viewport asChild>
                   <RxScrollArea.Viewport
-                    className={twJoin(
+                    className={cj(
                       `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
                       `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
                     )}
@@ -287,16 +287,16 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 </RxSelect.Viewport>
 
                 <RxScrollArea.Scrollbar
-                  className={twJoin(
+                  className={cj(
                     `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
                     '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70',
                   )}
                   orientation="vertical"
                 >
                   <RxScrollArea.Thumb
-                    className={twJoin(
+                    className={cj(
                       `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                      "before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']",
+                      'before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
                     )}
                   />
                 </RxScrollArea.Scrollbar>
@@ -307,7 +307,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
 
         {!isEmpty(description) && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
               'cursor-default',
             )}

@@ -33,6 +33,9 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "editor.tabSize": 2,
   "eslint.lintTask.enable": true,
   "eslint.onIgnoredFiles": "warn",
@@ -84,6 +87,19 @@
     "javascriptreact",
     "postcss",
     "typescriptreact"
+  ],
+  "tailwindCSS.rootFontSize": 8,
+  "tailwindCSS.experimental.classRegex": [
+    ["\\S*[Cc]lass[nN]ame\\S* = \\[([\\s\\S]+?)(?=][\\n;.])", "'([^']*)'"],
+    ["\\S*[Cc]lass[nN]ame\\S* = {([\\s\\S]+?)}\\s", "'([^']*)'"],
+    "\\S*[Cc]lass[nN]ame\\S* ?[:=] ['`](.*)['`]",
+    "return '(.*)'",
+    ["return \\(?{([\\s\\S]+?)}\\(?\\s", "'([^']*)'"],
+    ["twMerge\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
+    ["twJoin\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
+    ["clsx\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
+    ["cn\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
+    ["cj\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"]
   ],
   "typescript.format.enable": false,
   "typescript.preferences.quoteStyle": "single",

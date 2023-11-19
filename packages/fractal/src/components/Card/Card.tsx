@@ -3,7 +3,6 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Button } from '@/components/Button'
 import { Typography } from '@/components/Typography/Typography'
@@ -12,6 +11,7 @@ import {
   LIGHT_BG_COLORS_CLASSNAMES,
   PREFIX,
 } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { DEFAULT_COLOR, GROUP_NAME } from './Card.constants'
 import type { CardProps } from './Card.types'
@@ -34,7 +34,7 @@ export const Card = ({
 }: CardProps) => {
   return (
     <div
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
         `${PREFIX}-${GROUP_NAME}--${fontSize}`,
@@ -47,7 +47,7 @@ export const Card = ({
     >
       {(!isEmpty(title) || icon) && (
         <Typography
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__title`,
             `${PREFIX}-${GROUP_NAME}__title--${fontSize}`,
             'flex items-center gap-1',
@@ -57,7 +57,7 @@ export const Card = ({
         >
           {icon && (
             <div
-              className={twJoin(
+              className={cj(
                 `${PREFIX}-${GROUP_NAME}__title__icon`,
                 `${PREFIX}-${GROUP_NAME}__title__icon--${color}`,
                 'h-3 w-3 text',
@@ -73,7 +73,7 @@ export const Card = ({
       )}
 
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__content`,
           `${PREFIX}-${GROUP_NAME}__content--${fontSize}`,
         )}
@@ -85,7 +85,7 @@ export const Card = ({
 
       {dismissable && (
         <div
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__dismiss`,
             'absolute right-2 top-2 h-3 w-3',
           )}

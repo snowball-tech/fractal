@@ -2495,6 +2495,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/js@npm:8.54.0":
+  version: 8.54.0
+  resolution: "@eslint/js@npm:8.54.0"
+  checksum: 4d491ff234cd94b54499428cb3435623270ff8cc59950e13e6e1ac2fa350ec60502dac7bfd4f486523fee65ad7a358034570fe776b81b14dbfe5525d1e26e1d8
+  languageName: node
+  linkType: hard
+
 "@fal-works/esbuild-plugin-global-externals@npm:^2.1.2":
   version: 2.1.2
   resolution: "@fal-works/esbuild-plugin-global-externals@npm:2.1.2"
@@ -4884,18 +4891,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:8.0.2":
-  version: 8.0.2
-  resolution: "@snowball-tech/design-tokens@npm:8.0.2"
-  peerDependencies:
-    "@tailwindcss/aspect-ratio": ^0.4.2
-    "@tailwindcss/container-queries": ^0.1.1
-    tailwindcss: ^3.3.5
-  checksum: 593852aa78ee6f9421434735838ea20bf3b2cd6f6a32a49df773bdb21d7350c4df671363a20682112375bd8848580faf45304091e0adcd9b908454f45d7e469f
-  languageName: node
-  linkType: hard
-
-"@snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@workspace:packages/design-tokens, @snowball-tech/design-tokens@workspace:~":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4973,7 +4969,7 @@ __metadata:
     "@radix-ui/react-switch": "npm:^1.0.3"
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
-    "@snowball-tech/design-tokens": "npm:8.0.2"
+    "@snowball-tech/design-tokens": "workspace:~"
     "@snowball-tech/eslint-config": "npm:^5.3.2"
     "@storybook/addon-a11y": "npm:^7.5.3"
     "@storybook/addon-actions": "npm:^7.5.3"
@@ -4999,9 +4995,10 @@ __metadata:
     "@types/react": "npm:^18.2.37"
     "@types/react-dom": "npm:^18.2.15"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
-    chromatic: "npm:^9.0.0"
+    chromatic: "npm:^9.1.0"
+    clsx: "npm:^2.0.0"
     country-flag-icons: "npm:^1.5.7"
-    eslint: "npm:^8.53.0"
+    eslint: "npm:^8.54.0"
     libphonenumber-js: "npm:^1.10.49"
     lodash: "npm:^4.17.21"
     normalize.css: "npm:^8.0.1"
@@ -7159,12 +7156,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.9.1":
-  version: 20.9.1
-  resolution: "@types/node@npm:20.9.1"
+"@types/node@npm:^20.9.2":
+  version: 20.9.2
+  resolution: "@types/node@npm:20.9.2"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: b2b3f9ee31db63ccd3d48e5597d359c3385879679f37a749e473b47068aae181d0e280f39f153d75ce704640b3ec09d029aecd2a686e5658fb866254dc7e781b
+  checksum: 8bab2870bfc02efc988c53dfb0149634f8feb824132cc7f20b36f3d55d89ef893e3a43d545524a5cb3a284f4ce68ae4181d75a4a39cee6b79c586d719e6b7461
   languageName: node
   linkType: hard
 
@@ -9273,14 +9270,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "chromatic@npm:9.0.0"
+"chromatic@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "chromatic@npm:9.1.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: c8e0aef55e6954b958a0c7564949e63a3e950690e46db0596397fbd232918c11422da8c5f2d9907e2d7be4a618009dbe74760572c40fc4d117cb3079d66f03b8
+  checksum: e015aebb77ee266fc3a3da7d366cfb6132b27f540236dd23bcd5ed5985a9727f5e6398eb1880127e791d37febba04f80654519073d7e31b69fc59c256d1d6401
   languageName: node
   linkType: hard
 
@@ -9436,6 +9433,13 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: d06418b7335897209e77bdd430d04f882189582e67bd1f75a04565f3f07f5b3f119a9d670c943b6697d0afb100f03b866b3b8a1f91d4d02d72c4ecf2bb64b5dd
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "clsx@npm:2.0.0"
+  checksum: 943766d1b02fee3538c871e56638d87f973fbc2d6291ce221215ea436fdecb9be97ad323f411839c2d52c45640c449b1a53fbfe7e8b3d529b4e263308b630c9a
   languageName: node
   linkType: hard
 
@@ -12077,6 +12081,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint@npm:^8.54.0":
+  version: 8.54.0
+  resolution: "eslint@npm:8.54.0"
+  dependencies:
+    "@eslint-community/eslint-utils": "npm:^4.2.0"
+    "@eslint-community/regexpp": "npm:^4.6.1"
+    "@eslint/eslintrc": "npm:^2.1.3"
+    "@eslint/js": "npm:8.54.0"
+    "@humanwhocodes/config-array": "npm:^0.11.13"
+    "@humanwhocodes/module-importer": "npm:^1.0.1"
+    "@nodelib/fs.walk": "npm:^1.2.8"
+    "@ungap/structured-clone": "npm:^1.2.0"
+    ajv: "npm:^6.12.4"
+    chalk: "npm:^4.0.0"
+    cross-spawn: "npm:^7.0.2"
+    debug: "npm:^4.3.2"
+    doctrine: "npm:^3.0.0"
+    escape-string-regexp: "npm:^4.0.0"
+    eslint-scope: "npm:^7.2.2"
+    eslint-visitor-keys: "npm:^3.4.3"
+    espree: "npm:^9.6.1"
+    esquery: "npm:^1.4.2"
+    esutils: "npm:^2.0.2"
+    fast-deep-equal: "npm:^3.1.3"
+    file-entry-cache: "npm:^6.0.1"
+    find-up: "npm:^5.0.0"
+    glob-parent: "npm:^6.0.2"
+    globals: "npm:^13.19.0"
+    graphemer: "npm:^1.4.0"
+    ignore: "npm:^5.2.0"
+    imurmurhash: "npm:^0.1.4"
+    is-glob: "npm:^4.0.0"
+    is-path-inside: "npm:^3.0.3"
+    js-yaml: "npm:^4.1.0"
+    json-stable-stringify-without-jsonify: "npm:^1.0.1"
+    levn: "npm:^0.4.1"
+    lodash.merge: "npm:^4.6.2"
+    minimatch: "npm:^3.1.2"
+    natural-compare: "npm:^1.4.0"
+    optionator: "npm:^0.9.3"
+    strip-ansi: "npm:^6.0.1"
+    text-table: "npm:^0.2.0"
+  bin:
+    eslint: bin/eslint.js
+  checksum: 379827964fd7885a4d48611a5237cf5c534eff0ad3d0c1a1d6a14d52ac6758f4efdccd924c9bb3a9aa4dc80a3446d48dc49f61733cd5bd5f74419d0240970e7b
+  languageName: node
+  linkType: hard
+
 "espree@npm:^9.0.0, espree@npm:^9.3.0, espree@npm:^9.6.0, espree@npm:^9.6.1":
   version: 9.6.1
   resolution: "espree@npm:9.6.1"
@@ -12764,13 +12816,13 @@ __metadata:
     "@snowball-tech/stylelint-config": "npm:^2.2.1"
     "@types/eslint": "npm:^8.44.7"
     "@types/is-ci": "npm:^3.0.4"
-    "@types/node": "npm:^20.9.1"
+    "@types/node": "npm:^20.9.2"
     "@types/prettier": "npm:^3.0.0"
     "@yarnpkg/types": "npm:^4.0.0"
-    chromatic: "npm:^9.0.0"
+    chromatic: "npm:^9.1.0"
     concurrently: "npm:^8.2.2"
     dotenv-cli: "npm:^7.3.0"
-    eslint: "npm:^8.53.0"
+    eslint: "npm:^8.54.0"
     husky: "npm:^8.0.3"
     is-ci: "npm:^3.0.1"
     lint-staged: "npm:^15.1.0"

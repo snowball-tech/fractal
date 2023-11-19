@@ -1,9 +1,9 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteEmptyProps } from './Autocomplete.types'
@@ -18,7 +18,7 @@ export const AutocompleteEmpty = ({
 }: AutocompleteEmptyProps) => {
   return (
     <RxDropdownMenu.Item
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
         'cursor-default rounded-sm p-2 outline-none',
         props.className,

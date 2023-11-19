@@ -16,11 +16,11 @@ import {
   useId,
   useRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './InputPinCode.constants'
 import type { InputPinCodeProps } from './InputPinCode.types'
@@ -247,7 +247,7 @@ export const InputPinCode = ({
 
   return (
     <div
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'flex w-full max-w-full flex-col gap-1 sm:w-fit',
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
@@ -261,11 +261,11 @@ export const InputPinCode = ({
       {!isEmpty(label) ? (
         <RxLabel
           asChild
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             disabled ? 'cursor-default' : 'cursor-pointer',
             required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
               : '',
           )}
           htmlFor={`${uniqueId}-0`}
@@ -277,7 +277,7 @@ export const InputPinCode = ({
       )}
 
       <div
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__fields`,
           'flex w-full gap-1 sm:w-fit',
         )}
@@ -287,7 +287,7 @@ export const InputPinCode = ({
             id={`${uniqueId}-${index}`}
             key={index}
             autoFocus={autoFocus && index === 0}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__field`,
               index === 0 || index === length - 1
                 ? `${PREFIX}-${GROUP_NAME}__field--${
@@ -355,7 +355,7 @@ export const InputPinCode = ({
 
       {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
         <Typography
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__description`,
             'cursor-default text-dark',
           )}
@@ -368,7 +368,7 @@ export const InputPinCode = ({
 
       {(hasErrorMessage || hasSuccessMessage) && (
         <Typography
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
               isInError ? 'error' : 'success'
             }`,

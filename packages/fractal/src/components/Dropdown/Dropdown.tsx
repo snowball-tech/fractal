@@ -15,10 +15,10 @@ import {
   useRef,
   useState,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
@@ -156,7 +156,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
     return (
       <div
         ref={containerRef}
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'w-fit',
           isOpen
@@ -173,9 +173,9 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
         >
           <RxDropdown.Trigger
             asChild={hasTrigger}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'color-[unset] appearance-none border-none bg-[unset] px-[unset] py-[unset] text-left outline-none',
+              'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none',
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
@@ -203,7 +203,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
 
                 {withIndicator && (
                   <div
-                    className={twJoin(
+                    className={cj(
                       `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
                       'flex h-full items-center self-center transition-transform duration-300 ease-out',
                       isOpen ? 'rotate-180' : '',
@@ -222,7 +222,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 ref={dropdownRef}
                 align={props.align ?? withIndicator ? 'end' : 'center'}
                 asChild
-                className={twMerge(
+                className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
                   'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
                   widthClassNames,
@@ -256,7 +256,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   type="hover"
                 >
                   <RxScrollArea.Viewport
-                    className={twJoin(
+                    className={cj(
                       `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
                       `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
                     )}
@@ -274,16 +274,16 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   </RxScrollArea.Viewport>
 
                   <RxScrollArea.Scrollbar
-                    className={twJoin(
+                    className={cj(
                       `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
                       '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70',
                     )}
                     orientation="vertical"
                   >
                     <RxScrollArea.Thumb
-                      className={twJoin(
+                      className={cj(
                         `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                        "before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']",
+                        'before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
                       )}
                     />
                   </RxScrollArea.Scrollbar>

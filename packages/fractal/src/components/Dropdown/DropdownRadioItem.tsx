@@ -1,9 +1,9 @@
 import omit from 'lodash/fp/omit'
 import { useId } from 'react'
-import { twMerge } from 'tailwind-merge'
 
 import { InputRadio } from '@/components/InputRadio/InputRadio'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioItemProps } from './Dropdown.types'
@@ -28,7 +28,7 @@ export const DropdownRadioItem = ({
   return (
     <InputRadio
       id={uniqueId}
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__radio`,
         'group/radio-group',
         disabled ? `${PREFIX}-${GROUP_NAME}__radio--disabled` : '',

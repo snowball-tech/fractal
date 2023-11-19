@@ -79,27 +79,27 @@ layer(fractal);
 
   .alternating-bg-colors-90-hover .alternatee:nth-child(1),
   .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 1) {
-    @apply hover:bg-decorative-pink-90 focus:bg-decorative-pink-90 data-[highlighted]:bg-decorative-pink-90;
+    @apply hover:bg-decorative-pink-90 focus:bg-decorative-pink-90 data-highlighted:bg-decorative-pink-90;
   }
 
   .alternating-bg-colors-90-hover .alternatee:nth-child(2),
   .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 2) {
-    @apply hover:bg-decorative-yellow-90 focus:bg-decorative-yellow-90 data-[highlighted]:bg-decorative-yellow-90;
+    @apply hover:bg-decorative-yellow-90 focus:bg-decorative-yellow-90 data-highlighted:bg-decorative-yellow-90;
   }
 
   .alternating-bg-colors-90-hover .alternatee:nth-child(3),
   .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 3) {
-    @apply hover:bg-decorative-green-90 focus:bg-decorative-green-90 data-[highlighted]:bg-decorative-green-90;
+    @apply hover:bg-decorative-green-90 focus:bg-decorative-green-90 data-highlighted:bg-decorative-green-90;
   }
 
   .alternating-bg-colors-90-hover .alternatee:nth-child(4),
   .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 4) {
-    @apply hover:bg-decorative-blue-90 focus:bg-decorative-blue-90 data-[highlighted]:bg-decorative-blue-90;
+    @apply hover:bg-decorative-blue-90 focus:bg-decorative-blue-90 data-highlighted:bg-decorative-blue-90;
   }
 
   .alternating-bg-colors-90-hover .alternatee:nth-child(5),
   .alternating-bg-colors-90-hover .alternatee:nth-child(5n + 5) {
-    @apply hover:bg-decorative-purple-90 focus:bg-decorative-purple-90 data-[highlighted]:bg-decorative-purple-90;
+    @apply hover:bg-decorative-purple-90 focus:bg-decorative-purple-90 data-highlighted:bg-decorative-purple-90;
   }
 }
 

@@ -1,9 +1,9 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemGroupProps } from './Dropdown.types'
@@ -21,7 +21,7 @@ export default function DropdownItemGroup({
 }: DropdownItemGroupProps) {
   return (
     <RxDropdownMenu.Group
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         'p-2 py-0',
         disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
@@ -31,7 +31,7 @@ export default function DropdownItemGroup({
     >
       <RxDropdownMenu.Label
         asChild
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__label`,
           'block py-2',
           disabled
@@ -43,7 +43,7 @@ export default function DropdownItemGroup({
       </RxDropdownMenu.Label>
 
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
           disabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`

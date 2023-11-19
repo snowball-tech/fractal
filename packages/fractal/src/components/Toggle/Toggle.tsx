@@ -4,22 +4,22 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { type ForwardedRef, forwardRef, useRef } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Toggle.constants'
 import type { ToggleProps } from './Toggle.types'
 
 export const variantClassNames = {
   [Variants.Primary]:
-    'bg-white text-dark aria-[pressed=false]:shadow-subtle aria-[pressed=false]:hover:shadow-brutal aria-[pressed=false]:focus:shadow-brutal aria-[pressed=false]:active:shadow-none border-1 border-normal aria-[pressed=false]:active:-translate-x-0.25 aria-[pressed=false]:active:translate-y-0.5 aria-[pressed=false]:hover:translate-x-0 aria-[pressed=false]:hover:-translate-y-0.25 aria-[pressed=false]:focus:translate-x-0 aria-[pressed=false]:focus:-translate-y-0.25 aria-[pressed=true]:bg-secondary aria-[pressed=true]:text-light',
+    'bg-white text-dark aria-not-pressed:shadow-subtle aria-not-pressed:hover:shadow-brutal aria-not-pressed:focus:shadow-brutal aria-not-pressed:active:shadow-none border-1 border-normal aria-not-pressed:active:-translate-x-0.25 aria-not-pressed:active:translate-y-0.5 aria-not-pressed:hover:translate-x-0 aria-not-pressed:hover:-translate-y-0.25 aria-not-pressed:focus:translate-x-0 aria-not-pressed:focus:-translate-y-0.25 aria-pressed:bg-secondary aria-pressed:text-light',
 }
 
 export const disabledVariantClassNames = {
   [Variants.Primary]:
-    'bg-white text-disabled shadow-none border-1 border-disabled aria-[pressed=true]:bg-secondary aria-[pressed=true]:text-disabled',
+    'bg-white text-disabled shadow-none border-1 border-disabled aria-pressed:bg-secondary aria-pressed:text-disabled',
 }
 
 /**
@@ -57,7 +57,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
         {...(props.id !== undefined ? { id: props.id } : {})}
         ref={combinedRef}
         aria-label={label}
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-none transition-colors duration-300 ease-out active:transition-none',
@@ -86,7 +86,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
 
         {!iconOnly && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               'max-h-full max-w-full flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
               disabled

@@ -10,10 +10,10 @@ import {
   useContext,
   useRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import {
   disabledVariantClassNames as toggleDisabledVariantClassNames,
@@ -52,12 +52,12 @@ export const ToggleGroupItem = forwardRef<
 
     const variantClassNames = {
       [Variants.Primary]:
-        'bg-white text-dark aria-[checked=false]:shadow-subtle aria-[checked=false]:hover:shadow-brutal aria-[checked=false]:focus:shadow-brutal aria-[checked=false]:active:shadow-none border-1 border-normal aria-[checked=false]:active:-translate-x-0.25 aria-[checked=false]:active:translate-y-0.5 aria-[checked=false]:hover:translate-x-0 aria-[checked=false]:hover:-translate-y-0.25 aria-[checked=false]:focus:translate-x-0 aria-[checked=false]:focus:-translate-y-0.25 aria-[checked=true]:bg-secondary aria-[checked=true]:text-light',
+        'bg-white text-dark aria-unchecked:shadow-subtle aria-unchecked:hover:shadow-brutal aria-unchecked:focus:shadow-brutal aria-unchecked:active:shadow-none border-1 border-normal aria-unchecked:active:-translate-x-0.25 aria-unchecked:active:translate-y-0.5 aria-unchecked:hover:translate-x-0 aria-unchecked:hover:-translate-y-0.25 aria-unchecked:focus:translate-x-0 aria-unchecked:focus:-translate-y-0.25 aria-checked:bg-secondary aria-checked:text-light',
     }
 
     const disabledVariantClassNames = {
       [Variants.Primary]:
-        'bg-white text-disabled shadow-none border-1 border-disabled aria-[checked=true]:bg-secondary aria-[checked=true]:text-disabled',
+        'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
     }
 
     const { disabled: groupDisabled, variant } = useContext(ToggleGroupContext)
@@ -84,7 +84,7 @@ export const ToggleGroupItem = forwardRef<
         {...(props.id !== undefined ? { id: props.id } : {})}
         ref={combinedRef}
         aria-label={label}
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-none transition-colors duration-300 ease-out active:transition-none',
@@ -110,7 +110,7 @@ export const ToggleGroupItem = forwardRef<
 
         {!iconOnly && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               'max-h-full max-w-full flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
               isDisabled

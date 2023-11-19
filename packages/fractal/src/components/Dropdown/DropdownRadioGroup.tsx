@@ -1,11 +1,11 @@
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useId } from 'react'
-import { twMerge } from 'tailwind-merge'
 
 import { Variants as InputRadioVariants } from '@/components/InputRadio/InputRadio.constants'
 import { InputRadioGroup } from '@/components/InputRadio/InputRadioGroup'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioGroupProps } from './Dropdown.types'
@@ -29,7 +29,7 @@ export const DropdownRadioGroup = ({
   return (
     <InputRadioGroup
       id={uniqueId}
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__group-radio`,
         'group/dropdown-radio-group',
         disabled ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled` : '',

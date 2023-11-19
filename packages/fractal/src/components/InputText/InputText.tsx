@@ -9,9 +9,9 @@ import {
   forwardRef,
   useId,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { Typography } from '..'
 import { GROUP_NAME } from './InputText.constants'
@@ -105,7 +105,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
@@ -127,14 +127,14 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         {!isEmpty(label) ? (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               'text-dark',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
                 : 'cursor-pointer',
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={uniqueId}
@@ -146,7 +146,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         )}
 
         <Typography
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__wrapper`,
             'relative w-full max-w-full',
             fullWidth ? '' : 'sm:w-fit',
@@ -155,7 +155,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         >
           {hasPrefix && (
             <div
-              className={twJoin(
+              className={cj(
                 `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
                 addendumClasses,
                 !writable ? 'text-disabled' : '',
@@ -168,12 +168,12 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
           <input
             autoFocus={autoFocus}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__input`,
               'box-border h-6 max-h-6 w-full min-w-6 max-w-full rounded-sm border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
               writable
                 ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
-                : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-[transparent]`,
+                : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
                 : ' text-dark',
@@ -182,7 +182,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                 : '',
               fullWidth
                 ? `${PREFIX}-${GROUP_NAME}__input--full-width`
-                : 'sm:w-[unset]',
+                : 'sm:w-unset',
               isInError
                 ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
                 : '',
@@ -214,7 +214,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
           {hasSuffix && (
             <div
-              className={twJoin(
+              className={cj(
                 `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--suffix`,
                 addendumClasses,
                 'right-1',
@@ -230,7 +230,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
               'cursor-default text-dark',
             )}
@@ -243,7 +243,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,

@@ -1,10 +1,10 @@
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './ToggleGoup.constants'
 import type { ToggleGroupProps } from './ToggleGroup.types'
@@ -33,11 +33,11 @@ export const ToggleGroup = ({
     // @ts-expect-error - I have a hard time using the proper type for the
     // `type` property.
     <RxToggleGroup.Root
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${variant}`,
         'flex max-w-full flex-col gap-3',
-        'data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:flex-wrap sm:data-[orientation=horizontal]:flex-nowrap',
+        'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
         props.className,

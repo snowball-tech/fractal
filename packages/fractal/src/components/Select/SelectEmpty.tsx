@@ -1,9 +1,9 @@
 import * as RxSelect from '@radix-ui/react-select'
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Select.constants'
 import type { SelectEmptyProps } from './Select.types'
@@ -19,7 +19,7 @@ export const SelectEmpty = ({
 }: SelectEmptyProps) => {
   return (
     <RxSelect.Item
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
         'pointer-events-none flex cursor-default items-center gap-1 rounded-sm p-2 outline-none',
         props.className,

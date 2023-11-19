@@ -1,7 +1,7 @@
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import {
   BrandColors,
@@ -69,7 +69,7 @@ perfectionist/sort-objects */
 
   return (
     <svg
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         `${PREFIX}-${GROUP_NAME}__brand--${brandVariant}`,
