@@ -3,10 +3,10 @@ import * as RxSwitch from '@radix-ui/react-switch'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { type ForwardedRef, forwardRef, useId } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Switch.constants'
 import type { SwitchProps } from './Switch.types'
@@ -36,7 +36,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${switchPosition}`,
           'flex items-center gap-1',
@@ -50,13 +50,13 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           ref={ref}
           aria-label={label}
           {...(checked !== undefined ? { checked } : {})}
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__toggle`,
-            'relative h-1 max-h-1 w-5 max-w-4 rounded-full border-1 border-normal bg-body-light px-[unset] py-[unset] text-left text-[unset] [display:unset]',
+            'relative h-1 max-h-1 w-5 max-w-4 rounded-full border-1 border-normal bg-body-light px-unset py-unset text-left text-color-unset [display:unset]',
             '',
             disabled
               ? `${PREFIX}-${GROUP_NAME}__toggle--disabled cursor-not-allowed !border-disabled`
-              : 'cursor-pointer data-[state=checked]:bg-decorative-pink-90',
+              : 'cursor-pointer data-state-checked:bg-decorative-pink-90',
           )}
           {...(defaultChecked !== undefined ? { defaultChecked } : {})}
           disabled={disabled}
@@ -70,27 +70,27 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           {...omit(['className'], props)}
         >
           <RxSwitch.Thumb
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__toggle__thumb`,
               'block h-2 w-2 -translate-x-0.25 translate-y-[-5.5px] rounded-full border-1 border-normal bg-white transition-transform duration-100',
-              'data-[state=checked]:translate-x-[15px]',
+              'data-state-checked:translate-x-[15px]',
               disabled
-                ? '!border-disabled data-[state=checked]:bg-decorative-pink-90'
-                : 'border-normal data-[state=checked]:bg-primary',
+                ? '!border-disabled data-state-checked:bg-decorative-pink-90'
+                : 'border-normal data-state-checked:bg-primary',
             )}
           />
         </RxSwitch.Root>
 
         <RxLabel
           asChild
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             'h-full max-h-full w-fit max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-middle',
             disabled
               ? 'cursor-not-allowed text-disabled'
               : 'cursor-pointer text-dark',
             required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
               : '',
           )}
           htmlFor={uniqueId}

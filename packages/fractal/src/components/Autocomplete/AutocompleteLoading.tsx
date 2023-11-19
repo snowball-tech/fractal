@@ -1,11 +1,11 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import isBoolean from 'lodash/fp/isBoolean'
 import omit from 'lodash/fp/omit'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Loader } from '@/components/Loader'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteLoadingProps } from './Autocomplete.types'
@@ -22,7 +22,7 @@ export const AutocompleteLoading = ({
 }: AutocompleteLoadingProps) => {
   return (
     <RxDropdownMenu.Item
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__loading`,
         'flex items-center gap-2 rounded-sm p-2 outline-none ',
         icon ? `${PREFIX}-${GROUP_NAME}__loadingwith-icon` : '',
@@ -36,7 +36,7 @@ export const AutocompleteLoading = ({
     >
       {icon && (
         <div
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__loading__icon`,
             'flex items-center justify-center',
             isBoolean(icon)
@@ -53,7 +53,7 @@ export const AutocompleteLoading = ({
       )}
 
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__loading__label`,
           'w-full flex-1',
         )}

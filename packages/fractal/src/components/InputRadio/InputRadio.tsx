@@ -11,10 +11,10 @@ import {
   useId,
   useRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME, Variants } from './InputRadio.constants'
 import type { InputRadioProps } from './InputRadio.types'
@@ -43,7 +43,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
 
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
       [Variants.Secondary]: 'bg-white border-1 border-normal',
-      [Variants.Tertiary]: 'bg-[transparent]',
+      [Variants.Tertiary]: 'bgtransparent',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -71,7 +71,7 @@ perfectionist/sort-objects */
 
     return (
       <Typography
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'group/radio',
@@ -89,12 +89,12 @@ perfectionist/sort-objects */
         <RxRadio.Item
           id={uniqueId}
           ref={combinedRef}
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'h-full min-h-6 flex-[0] rounded-xs border-none bg-[unset] px-[unset] py-[unset] focus-visible:outline-none',
+            'h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
-              : 'cursor-pointer [&>:first-child]:data-[state=checked]:bg-primary group-hover/radio:[&>:first-child]:data-[state=unchecked]:bg-decorative-pink-90',
+              : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-decorative-pink-90',
           )}
           disabled={isDisabled}
           required={required}
@@ -103,7 +103,7 @@ perfectionist/sort-objects */
           {...omit(['className'], props)}
         >
           <div
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__radio__mark`,
               'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-full border-2 pt-0.5',
               isDisabled ? 'border-disabled bg-transparent' : `border-normal`,
@@ -117,12 +117,12 @@ perfectionist/sort-objects */
 
         <RxLabel
           asChild
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__radio__label`,
             'flex-1 overflow-auto break-words py-2 pr-2',
             isDisabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
               : '',
           )}
           htmlFor={uniqueId}

@@ -19,11 +19,11 @@ import {
   useRef,
   useState,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './InputDate.constants'
 import type {
@@ -296,7 +296,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-fit max-w-full flex-col gap-1',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
@@ -311,11 +311,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         {!isEmpty(label) ? (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               writable ? 'cursor-pointer' : 'cursor-default',
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={`${uniqueId}-day`}
@@ -327,16 +327,13 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         )}
 
         <div
-          className={twJoin(
-            `${PREFIX}-${GROUP_NAME}__fields`,
-            'flex w-fit gap-1',
-          )}
+          className={cj(`${PREFIX}-${GROUP_NAME}__fields`, 'flex w-fit gap-1')}
         >
           <InputText
             id={`${uniqueId}-day`}
             ref={dayRef}
             autoFocus={autoFocus}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__field__day`,
               fieldClassNames,
               '[&_input]:min-w-9',
@@ -378,7 +375,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           <InputText
             id={`${uniqueId}-month`}
             ref={monthRef}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__field__month`,
               fieldClassNames,
               '[&_input]:min-w-9',
@@ -422,10 +419,10 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           <InputText
             id={`${uniqueId}-year`}
             ref={yearRef}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__field__year`,
               fieldClassNames,
-              '[&_input]:!w-[unset] [&_input]:min-w-11',
+              '[&_input]:!w-unset [&_input]:min-w-11',
             )}
             {...(defaultValue?.year !== undefined
               ? { defaultValue: defaultValue.year }
@@ -471,7 +468,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,

@@ -22,7 +22,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { InputText } from '@/components/InputText'
 import { Select } from '@/components/Select/Select'
@@ -30,6 +29,7 @@ import { SelectEmpty } from '@/components/Select/SelectEmpty'
 import { SelectItem } from '@/components/Select/SelectItem'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import {
   DEFAULT_COUNTRY_CODE,
@@ -73,6 +73,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     }: InputPhoneProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
+    cn()
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
@@ -269,7 +270,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex max-w-full flex-col gap-1',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
@@ -285,13 +286,13 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         {!isEmpty(label) ? (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
                 : 'cursor-pointer',
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={`${uniqueId}-number`}
@@ -303,7 +304,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         )}
 
         <div
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__fields`,
             'flex w-fit max-w-full gap-1',
           )}
@@ -312,9 +313,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             <Select
               id={`${uniqueId}-prefix`}
               ref={prefixRef}
-              className={twJoin(
+              className={cj(
                 `${PREFIX}-${GROUP_NAME}__fields__phone-prefix`,
-                '!w-[110px]',
+                '!w-[110px] min-w-[110px] max-w-[110px]',
               )}
               disabled={disabled}
               displayedValue={
@@ -325,7 +326,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                 </span>
               }
               dropdown={{
-                className: twJoin(
+                className: cj(
                   `${PREFIX}-${GROUP_NAME}__fields__phone-prefix__dropdown`,
                   'max-w-full !pt-8 !w-fit',
                 ),
@@ -342,7 +343,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               <>
                 <InputText
                   ref={searchPrefixInputRef}
-                  className={twJoin(
+                  className={cj(
                     `${PREFIX}-${GROUP_NAME}__fields__phone-prefix__dropdown__search`,
                     'fixed top-2 !w-[calc(100%-theme(spacing.3))]',
                   )}
@@ -388,7 +389,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             id={`${uniqueId}-number`}
             ref={phoneRef}
             autoFocus={autoFocus && !withPrefix}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__fields__phone-number`,
               '!w-[calc(12rem+theme(spacing.2)+theme(spacing.2)]',
               withPrefix && !isEmpty(prefix)
@@ -402,7 +403,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             prefix={
               withPrefix && !isEmpty(prefix) ? (
                 <Typography
-                  className={twJoin(
+                  className={cj(
                     `${PREFIX}-${GROUP_NAME}__fields__phone-number__prefix-helper`,
                     disabled ? 'text-disabled' : 'text-dark',
                     'w-[36px] text-right',
@@ -433,7 +434,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
               'cursor-default text-dark',
             )}
@@ -448,7 +449,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
         {hasErrorMessage || hasSuccessMessage ? (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,

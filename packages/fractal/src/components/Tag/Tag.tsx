@@ -1,8 +1,8 @@
 import omit from 'lodash/fp/omit'
-import { twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import {
   Colors,
@@ -26,19 +26,19 @@ export const Tag = ({
   ...props
 }: TagProps) => {
   const sizeClassNames = {
-    [Sizes.M]: 'px-2 py-1 leading-[unset]',
+    [Sizes.M]: 'px-2 py-1 leading-browser',
     [Sizes.S]: 'px-1 py-0.5',
   }
 
   return (
     <Typography
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         'inline-flex w-fit items-center justify-center rounded-full border-1',
         sizeClassNames[size],
-        color === Colors.White ? 'border-grey-70' : 'border-[transparent]',
+        color === Colors.White ? 'border-grey-70' : 'border-transparent',
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : '',
         disabled
           ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`

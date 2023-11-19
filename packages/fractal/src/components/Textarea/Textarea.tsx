@@ -11,11 +11,11 @@ import {
   useId,
 } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Button } from '@/components/Button'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Textarea.constants'
 import type { TextareaProps } from './Textarea.types'
@@ -87,7 +87,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
     return (
       <div
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
@@ -108,10 +108,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {!isEmpty(label) ? (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={uniqueId}
@@ -123,7 +123,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
 
         <Typography
-          className={twJoin(
+          className={cj(
             `${PREFIX}-${GROUP_NAME}__wrapper`,
             'relative w-full',
             fullWidth ? '' : 'sm:w-fit',
@@ -132,7 +132,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         >
           <TextareaAutosize
             autoFocus={autoFocus}
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__input`,
               'box-border min-h-6 w-full max-w-full resize-none rounded-sm border-1 px-2 py-[calc(theme(spacing.1)+theme(spacing.half)+theme(spacing.quarter))] text-left leading-[inherit] outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder focus:cursor-text',
               writable
@@ -146,7 +146,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 : '',
               fullWidth
                 ? `${PREFIX}-${GROUP_NAME}__input--fullWidth`
-                : 'sm:w-[unset]',
+                : 'sm:w-unset',
               isInError
                 ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
                 : '',
@@ -179,7 +179,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             <div className="absolute bottom-1.5 right-0.5">
               {isFunction(onIconClick) && (
                 <Button
-                  className={twJoin(
+                  className={cj(
                     `${PREFIX}-${GROUP_NAME}__action`,
                     'mb-0.5 text-grey-50',
                     isIconDisabled
@@ -197,7 +197,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
               {!isFunction(onIconClick) && (
                 <div
-                  className={twJoin(
+                  className={cj(
                     `${PREFIX}-${GROUP_NAME}__icon`,
                     'mr-1.5 text-grey-50',
                     isIconDisabled || disabled
@@ -214,7 +214,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
               'cursor-default text-dark',
             )}
@@ -227,7 +227,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,

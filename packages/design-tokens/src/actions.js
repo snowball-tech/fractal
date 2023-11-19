@@ -25,21 +25,15 @@ StyleDictionary.registerAction({
 
 StyleDictionary.registerAction({
   do: () => {
-    const baseConfigFile = path.resolve(__dirname, './tailwind.config.ts')
+    const destinationDirectory = 'dist/web/'
 
-    const destinationDirectory = 'dist/web/tailwindcss/'
-    const destinationPath = path.resolve(
-      __dirname,
-      `../${destinationDirectory}`,
+    execSync(`yarn run -T tsc --outDir ${destinationDirectory}`)
+    console.log(
+      `✔︎ ${destinationDirectory}/tailwindcss/tailwind.config.js (ESM)`,
     )
-
-    execSync(
-      `yarn run -T tsc ${baseConfigFile} --outDir ${destinationDirectory} --skipLibCheck --esModuleInterop`,
+    console.log(
+      `✔︎ ${destinationDirectory}/tailwindcss/tailwind.theme.js (ESM)`,
     )
-    console.log(`✔︎ ${destinationDirectory}tailwind.config.js (ESM)`)
-
-    execSync(`cp ${baseConfigFile} ${destinationPath}`)
-    console.log(`✔︎ ${destinationDirectory}tailwind.config.ts (TS)`)
   },
   name: 'tailwindcss/copy-config',
   undo: noop,

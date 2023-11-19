@@ -2,9 +2,9 @@ import * as RxRadio from '@radix-ui/react-radio-group'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useId } from 'react'
-import { twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import { DEFAULT_VARIANT, GROUP_NAME } from './InputRadio.constants'
 import type { InputRadioGroupProps } from './InputRadio.types'
@@ -33,11 +33,11 @@ export const InputRadioGroup = ({
   return (
     <RxRadio.Root
       id={uniqueId}
-      className={twMerge(
+      className={cn(
         `${PREFIX}-${GROUP_NAME}__group`,
         `${PREFIX}-${GROUP_NAME}__group--${variant}`,
         'flex max-w-full flex-col gap-3',
-        'data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:flex-wrap sm:data-[orientation=horizontal]:flex-nowrap',
+        'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
         disabled ? `${PREFIX}-${GROUP_NAME}__group--disabled` : '',
         fullWidth
           ? `${PREFIX}-${GROUP_NAME}__group--full-width w-full`

@@ -7,10 +7,10 @@ import {
   type TouchEvent,
   forwardRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Button.constants'
 import type { ButtonProps } from './Button.types'
@@ -21,10 +21,10 @@ export const variantClassNames = {
   [Variants.Display]:
     'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-0.25 active:translate-y-0.5 hover:translate-x-0 hover:-translate-y-0.25 focus:translate-x-0 focus:-translate-y-0.25',
   [Variants.Primary]:
-    'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-[transparent] text-light hover:text-dark active:text-dark focus:text-dark border-2 border-[transparent] hover:border-normal focus:border-normal',
+    'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal',
   [Variants.Secondary]:
     'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal',
-  [Variants.Text]: 'bg-[transparent] text-dark',
+  [Variants.Text]: 'bg-transparent text-dark',
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -38,7 +38,7 @@ export const variantDisabledClassNames = {
   [Variants.Primary]: 'bg-disabled text-light',
   [Variants.Secondary]:
     'bg-white text-disabled shadow-none border-1 border-disabled',
-  [Variants.Text]: 'bg-[transparent] text-disabled',
+  [Variants.Text]: 'bg-transparent text-disabled',
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -96,13 +96,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const isTextVariant = variant === Variants.Text
 
-    const classNames = twMerge(
+    const classNames = cn(
       `${PREFIX}-${GROUP_NAME}`,
       `${PREFIX}-${GROUP_NAME}--${variant}`,
       asLink
         ? `${PREFIX}-${GROUP_NAME}__link ${PREFIX}-${GROUP_NAME}__link--${variant}`
         : '',
-      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-[unset] appearance-none outline-none box-border',
+      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
       !isTextVariant ? 'h-6 px-3 py-1' : '',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
@@ -125,7 +125,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const iconElement = (
       <div
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__icon--${iconPosition}`,
           'flex h-3 w-3 items-center [&>svg]:h-3',
           asLink ? `${PREFIX}-${GROUP_NAME}__link__icon--${iconPosition}` : '',
@@ -138,7 +138,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const labelElement = (
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__label`,
           `${PREFIX}-${GROUP_NAME}__label--${variant}`,
           asLink

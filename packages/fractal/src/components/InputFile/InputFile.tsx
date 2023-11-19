@@ -12,9 +12,9 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { Typography } from '..'
 import { variantClassNames, variantDisabledClassNames } from '../Button/Button'
@@ -75,11 +75,11 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
 
     const isTextVariant = variant === Variants.Text
 
-    const classNames = twMerge(
+    const classNames = cn(
       `${PREFIX}-${GROUP_NAME}`,
       `${PREFIX}-${GROUP_NAME}--${variant}`,
       props.required ? `${PREFIX}-${GROUP_NAME}--required` : '',
-      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-[unset] appearance-none outline-none box-border',
+      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-unset appearance-none box-border',
       !isTextVariant ? 'h-6 px-3 py-1' : '',
       triggerProps.fullWidth && !triggerProps.iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
@@ -101,7 +101,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
 
     const iconElement = (
       <div
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__icon--${triggerProps.iconPosition}`,
           'flex h-3 w-3 items-center [&>svg]:h-3',
           isTextVariant ? 'mt-0' : '',
@@ -113,13 +113,13 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
 
     const labelElement = (
       <Typography
-        className={twJoin(
+        className={cj(
           `${PREFIX}-${GROUP_NAME}__label`,
           `${PREFIX}-${GROUP_NAME}__label--${variant}`,
           'flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
           isTextVariant ? 'pt-0' : '',
           props.required
-            ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+            ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
             : '',
         )}
         element="div"

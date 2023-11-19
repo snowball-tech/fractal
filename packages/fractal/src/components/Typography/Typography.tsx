@@ -5,9 +5,9 @@ import {
   createElement,
   forwardRef,
 } from 'react'
-import { twJoin } from 'tailwind-merge'
 
 import { PREFIX } from '@/constants'
+import { cn } from '@/styles/helpers'
 
 import {
   DEFAULT_ELEMENT,
@@ -141,7 +141,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     return createElement(
       actualElement,
       {
-        className: twJoin(
+        className: cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}__${actualElement}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,

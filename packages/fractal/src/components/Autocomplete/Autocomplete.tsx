@@ -18,13 +18,13 @@ import {
   useRef,
   useState,
 } from 'react'
-import { twJoin, twMerge } from 'tailwind-merge'
 
 import { Dropdown } from '@/components/Dropdown/Dropdown'
 import type { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Dropdown.types'
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
+import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
@@ -252,7 +252,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
     return (
       <div
         ref={containerRef}
-        className={twMerge(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col',
           `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
@@ -268,13 +268,13 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         {!isEmpty(label) && (
           <RxLabel
             asChild
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-default`
                 : 'cursor-pointer',
               required
-                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-["_*"]`
+                ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
                 : '',
             )}
             htmlFor={uniqueId}
@@ -289,7 +289,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           dropdown={{
             ...dropdown,
             align: 'end',
-            className: twJoin(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
+            className: cj(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
           }}
           {...(isFunction(onClose) ? { onClose } : {})}
           {...(isFunction(onOpen) ? { onOpen } : {})}
@@ -301,7 +301,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               id={uniqueId}
               ref={inputRef}
               autoFocus={autoFocus}
-              className={twJoin(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
+              className={cj(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
               {...(defaultValue !== undefined ? { defaultValue } : {})}
               disabled={disabled}
               error={hasErrorMessage}
@@ -337,7 +337,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
               'cursor-default text-dark',
             )}
@@ -349,7 +349,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         {(hasErrorMessage || hasSuccessMessage) && (
           <Typography
-            className={twJoin(
+            className={cj(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,
