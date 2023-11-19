@@ -1,4 +1,3 @@
-import type { DropdownMenuContentProps as RxDropdownContentProps } from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenuItem,
   Root,
@@ -17,8 +16,7 @@ export type CombinedRefs = {
   trigger: HTMLElement | null
 }
 
-type Props = RxDropdownContentProps & AllHTMLAttributes<HTMLDivElement>
-export interface DropdownProps extends Props {
+export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The content of the dropdown menu.
    *
@@ -35,7 +33,7 @@ export interface DropdownProps extends Props {
    * of the dropdown.
    */
   dropdown?: Partial<
-    Omit<RxDropdownMenuContentProps, 'loop'> & { className?: string }
+    Omit<RxDropdownMenuContentProps, 'asChild'> & { className?: string }
   >
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean

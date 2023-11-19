@@ -2,7 +2,6 @@ import AngleDownIcon from '@iconscout/react-unicons/dist/icons/uil-angle-down'
 import * as RxDropdown from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
-import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
@@ -40,7 +39,6 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       onOpen,
       onPointerDownOutside,
       open,
-      side,
       toggleOnTriggerClick = true,
       trigger,
       width = 'fit',
@@ -166,6 +164,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           props.className,
         )}
+        {...omit(['className'], props)}
       >
         <RxDropdown.Root
           {...(disabled ? { open: false } : { open: isOpen })}
@@ -221,7 +220,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             {isOpen && (
               <RxDropdown.Content
                 ref={dropdownRef}
-                align={props.align ?? withIndicator ? 'end' : 'center'}
+                align={dropdown.align ?? withIndicator ? 'end' : 'center'}
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
@@ -233,7 +232,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   dropdown?.className,
                 )}
                 loop
-                {...(!isEmpty(side) ? { side } : {})}
+                side="bottom"
                 style={{
                   display: undefined,
                   width: isNumber(width) ? `${width}px` : undefined,
@@ -246,7 +245,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   : {})}
                 {...omit(
                   ['className', 'style', 'align', 'onInteractOutside'],
-                  props,
+                  dropdown,
                 )}
               >
                 <RxScrollArea.Root

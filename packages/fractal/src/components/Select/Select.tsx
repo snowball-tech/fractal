@@ -247,17 +247,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 ...(props.style ?? {}),
               }}
               onPointerDownOutside={handlePointerDownOutside}
-              {...omit(
-                [
-                  'align',
-                  'asChild',
-                  'className',
-                  'position',
-                  'side',
-                  'onPointerDownOutside',
-                ],
-                dropdown,
-              )}
+              {...omit(['className', 'onPointerDownOutside'], dropdown)}
             >
               <RxScrollArea.Root
                 className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}

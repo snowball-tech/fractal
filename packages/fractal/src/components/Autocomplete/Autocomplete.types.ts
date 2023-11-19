@@ -37,7 +37,9 @@ export interface AutocompleteProps
    * You can on top of that add the `className` property to customize the style
    * of the dropdown.
    */
-  dropdown?: Partial<RxDropdownMenuContentProps & { className?: string }>
+  dropdown?: Partial<
+    Omit<RxDropdownMenuContentProps, 'asChild'> & { className?: string }
+  >
   /**
    * An error message to display below the autocomplete if there is
    * an error.

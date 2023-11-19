@@ -38,7 +38,9 @@ export interface SelectProps
    * You can on top of that add the `className` property to customize the style
    * of the dropdown.
    */
-  dropdown?: RxSelectContentProps & { className?: string }
+  dropdown?: Partial<
+    Omit<RxSelectContentProps, 'asChild'> & { className?: string }
+  >
   /** Indicates if the select should take all the available width. */
   fullWidth?: boolean
   /**
