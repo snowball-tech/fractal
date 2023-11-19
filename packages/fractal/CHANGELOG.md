@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [4.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.4...@snowball-tech/fractal@4.1.5) (2023-11-19)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** support full width ([6bd4abd](https://github.com/snowball-tech/fractal/commit/6bd4abddefaef841d070a48332a95608b8444470))
+
 ## @snowball-tech/fractal [4.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.3...@snowball-tech/fractal@4.1.4) (2023-11-19)
 
 ### 🐛 Bug Fixes
