@@ -287,15 +287,18 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           ref={dropdownRef}
           disabled={disabled}
           dropdown={{
-            ...dropdown,
             align: 'end',
-            className: cj(`${PREFIX}-${GROUP_NAME}__dropdown`, 'mt-0'),
+            className: cn(
+              `${PREFIX}-${GROUP_NAME}__dropdown`,
+              'mt-0',
+              dropdown.className,
+            ),
+            ...omit(['className'], dropdown),
           }}
           fullWidth={fullWidth}
           {...(isFunction(onClose) ? { onClose } : {})}
           {...(isFunction(onOpen) ? { onOpen } : {})}
           open={isOpen}
-          side="bottom"
           toggleOnTriggerClick={false}
           trigger={
             <InputText
