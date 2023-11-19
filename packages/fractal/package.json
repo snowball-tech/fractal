@@ -44,7 +44,7 @@
   },
   "scripts": {
     "build-chromatic": "yarn run -T chromatic --build-script-name build-storybook",
-    "prebuild-vercel": "yarn run update-fonts",
+    "prebuild-vercel": "yarn run update-fonts & yarn workspace @snowball-tech/design-tokens run build",
     "build-vercel": "yarn run prebuild-vercel && yarn storybook build",
     "build-storybook": "yarn run build-vercel",
     "prebuild": "yarn run clean-build && mkdir -p ./dist",
