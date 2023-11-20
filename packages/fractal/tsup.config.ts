@@ -35,6 +35,9 @@ export default defineConfig([
     entry: [
       './index.ts',
       './src/index.ts',
+      './src/constants.ts',
+      './src/types.ts',
+      './src/styles/helpers.ts',
       './src/components/index.ts',
       './src/components/**/index.ts',
     ],
