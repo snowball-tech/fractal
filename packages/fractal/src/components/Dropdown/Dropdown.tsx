@@ -224,7 +224,10 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  'pointer-events-auto relative z-50 mr-1 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
+                  'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
+                  dropdown.side === 'left' ? 'mr-1' : '',
+                  dropdown.side === 'top' ? 'mb-1 mt-0' : '',
+                  dropdown.side === 'right' ? 'ml-1' : '',
                   widthClassNames,
                   !hasChildren
                     ? `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`
