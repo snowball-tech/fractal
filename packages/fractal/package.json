@@ -115,7 +115,7 @@
     "storybook": "^7.5.3",
     "storybook-addon-mock": "^4.3.0",
     "tailwind-merge": "^2.0.0",
-    "tsup": "^7.3.0",
+    "tsup": "^8.0.0",
     "typescript": "^5.2.2",
     "vercel": "^32.5.5",
     "vite": "^5.0.0",

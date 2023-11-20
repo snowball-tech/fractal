@@ -2,9 +2,10 @@ import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
 import UserProfileIcon from '@iconscout/react-unicons/dist/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/dist/icons/uil-user-circle'
+import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
-import isChromatic from 'chromatic/isChromatic'
+import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
@@ -71,10 +72,23 @@ const mixedMenu = (
   </>
 )
 
-type DropdownProps = ComponentProps<typeof Dropdown>
+type DropdownProps = ComponentProps<typeof Dropdown> & {
+  align?: 'Auto' | 'Center' | 'End' | 'Start'
+  side?: 'Auto' | 'Bottom' | 'Left' | 'Right' | 'Top'
+}
 
-const meta = {
+const meta: Meta<DropdownProps> = {
   argTypes: {
+    align: {
+      control: 'radio',
+      mapping: {
+        Auto: undefined,
+        Center: 'center',
+        End: 'end',
+        Start: 'start',
+      },
+      options: ['Auto', 'Start', 'Center', 'End'],
+    },
     children: {
       control: 'radio',
       mapping: {
@@ -84,6 +98,17 @@ const meta = {
         'Text with icons': iconsMenu,
       },
       options: ['Text', 'Text with icons', 'Radio buttons', 'Mixed'],
+    },
+    side: {
+      control: 'radio',
+      mapping: {
+        Auto: undefined,
+        Bottom: 'bottom',
+        Left: 'left',
+        Right: 'right',
+        Top: 'top',
+      },
+      options: ['Auto', 'Top', 'Right', 'Bottom', 'Left'],
     },
     trigger: {
       control: 'radio',
@@ -123,20 +148,52 @@ const meta = {
     },
   },
   args: {
+    align: 'Auto',
     children: 'Text',
     disabled: false,
+    fullWidth: false,
+    side: 'Auto',
     trigger: 'Text',
     width: 'fit',
     withIndicator: true,
   },
   component: Dropdown,
-  decorators: isChromatic()
-    ? [
-        (storyFn: () => ReactNode) => (
-          <div style={{ height: '800px' }}>{storyFn()}</div>
-        ),
-      ]
-    : [],
+  decorators: [
+    (storyFn: () => ReactNode) => (
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          height: '500px',
+          justifyContent: 'center',
+          maxWidth: '500px',
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+    function WithArgs(Story, context) {
+      const [{ align, dropdown, side, withIndicator }] =
+        useArgs<typeof context.args>()
+
+      return (
+        <Story
+          args={{
+            ...context.args,
+            dropdown: {
+              ...dropdown,
+              align:
+                (align as 'center' | 'end' | 'start') ?? withIndicator
+                  ? 'end'
+                  : 'center',
+              avoidCollisions: isEmpty(side),
+              side: side as 'bottom' | 'left' | 'right' | 'top',
+            },
+          }}
+        />
+      )
+    },
+  ],
   parameters: {
     componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
   },
