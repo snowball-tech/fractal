@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [4.1.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.7...@snowball-tech/fractal@4.1.8) (2023-11-20)
+
+### 🚦 Tests
+
+- **autocomplete:** fix the timeout of the star wars query ([c3e8281](https://github.com/snowball-tech/fractal/commit/c3e828180ae4aa320251cdf40878b74488ceb258))
+
 ## @snowball-tech/fractal [4.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.6...@snowball-tech/fractal@4.1.7) (2023-11-20)
 
 ### 🐛 Bug Fixes
