@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [4.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.8...@snowball-tech/fractal@4.2.0) (2023-11-20)
+
+### ✨ Features
+
+- export more things from Fractal ([e0ffac7](https://github.com/snowball-tech/fractal/commit/e0ffac7b12f4a67523be38da4b5c23090d068114))
+
 ## @snowball-tech/fractal [4.1.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.7...@snowball-tech/fractal@4.1.8) (2023-11-20)
 
 ### 🚦 Tests
