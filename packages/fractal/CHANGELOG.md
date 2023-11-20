@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [4.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.5...@snowball-tech/fractal@4.1.6) (2023-11-20)
+
+### ❓ Unknown changes
+
+- break): fix props of dropdown, select and autocomplete component ([fa3f2d7](https://github.com/snowball-tech/fractal/commit/fa3f2d79f560dc87c8d73e209116d9d739b9fcfa))
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix position of dropdown ([e068f99](https://github.com/snowball-tech/fractal/commit/e068f992b34b2b526ca756a8c712046130c73990))
+
 ## @snowball-tech/fractal [4.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.4...@snowball-tech/fractal@4.1.5) (2023-11-19)
 
 ### 🐛 Bug Fixes
