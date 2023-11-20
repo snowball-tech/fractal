@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [4.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.6...@snowball-tech/fractal@4.1.7) (2023-11-20)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix margin according to side ([bcea0f0](https://github.com/snowball-tech/fractal/commit/bcea0f08d7156669c106fcfdc8ea5df16388f5b9))
+
 ## @snowball-tech/fractal [4.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.5...@snowball-tech/fractal@4.1.6) (2023-11-20)
 
 ### ❓ Unknown changes
