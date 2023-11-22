@@ -56,6 +56,19 @@ const fractions = {
 }
 
 export const tailwindTheme: Config['theme'] = {
+  extend: {
+    animation: {
+      wave: '2s linear 0.5s infinite normal none running wave',
+    },
+    keyframes: {
+      wave: {
+        '0%': { transform: 'translateX(-100%)' },
+        '50%, 100%': { transform: 'translateX(100%)' },
+      },
+    },
+  },
+
+  //
   aria: {
     busy: 'busy="true"',
     checked: 'checked="true"',
