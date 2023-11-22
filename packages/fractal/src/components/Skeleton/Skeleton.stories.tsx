@@ -47,7 +47,15 @@ const meta: Meta<StepperProps> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Playground: Story = {}
+export const Playground: Story = {
+  render: ({ children, color = DEFAULT_COLOR, shape }) => (
+    <div className="h-5 w-20">
+      <Skeleton color={color} shape={shape}>
+        {children}
+      </Skeleton>
+    </div>
+  ),
+}
 
 export const Shapes: Story = {
   parameters: { ...perVariantStoriesParameters },
