@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [8.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.3...@snowball-tech/design-tokens@8.1.0) (2023-11-22)
+
+### ✨ Features
+
+- **skeleton:** implement the skeleton component ([#120](https://github.com/snowball-tech/fractal/issues/120)) ([f486622](https://github.com/snowball-tech/fractal/commit/f486622a88dbce00888a10b49a93b313d2ff4a8c))
+
 ## @snowball-tech/design-tokens [8.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.0.2...@snowball-tech/design-tokens@8.0.3) (2023-11-19)
 
 ### 🐛 Bug Fixes
