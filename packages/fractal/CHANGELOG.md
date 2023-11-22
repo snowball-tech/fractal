@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [4.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.2.0...@snowball-tech/fractal@4.3.0) (2023-11-22)
+
+### ✨ Features
+
+- **skeleton:** implement the skeleton component ([#120](https://github.com/snowball-tech/fractal/issues/120)) ([f486622](https://github.com/snowball-tech/fractal/commit/f486622a88dbce00888a10b49a93b313d2ff4a8c))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 8.1.0
+
 # @snowball-tech/fractal [4.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.1.8...@snowball-tech/fractal@4.2.0) (2023-11-20)
 
 ### ✨ Features
