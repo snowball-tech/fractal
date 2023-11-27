@@ -171,7 +171,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
         >
-          {labelElement}
+          {iconOnly ? iconElement : labelElement}
         </a>
       )
     }
@@ -196,7 +196,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           props,
         )}
       >
-        {labelElement}
+        {iconOnly ? iconElement : labelElement}
       </button>
     )
   },
