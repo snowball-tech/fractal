@@ -6,6 +6,7 @@ import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps } from 'react'
 
 import { Dropdown, DropdownItem } from '.'
@@ -30,6 +31,7 @@ const meta: Meta<DropdownItemProps> = {
   },
   args: {
     disabled: false,
+    href: '',
     label: 'Luke Skywalker',
   },
   component: DropdownItem,
@@ -41,13 +43,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, icon, label = 'Luke Skywalker' }) => (
+  render: ({ disabled = false, href = '', icon, label = 'Luke Skywalker' }) => (
     <div style={{ height: '100px' }}>
       <Dropdown trigger="Jedi">
         <DropdownItem
           disabled={disabled}
+          href={href}
           icon={icon}
           label={label}
+          target={!isEmpty(href) ? '_blank' : undefined}
           onClick={action('onClick')}
         />
       </Dropdown>

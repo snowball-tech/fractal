@@ -1,4 +1,5 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
+import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useContext } from 'react'
@@ -16,10 +17,12 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  */
 export const DropdownItem = ({
   disabled,
+  href,
   icon,
   label,
   onClick,
   onSelect,
+  target,
   value,
   ...props
 }: DropdownItemProps) => {
@@ -27,18 +30,23 @@ export const DropdownItem = ({
 
   const isDisabled = disabled || groupDisabled
 
+  const isLink = !isEmpty(href)
+
   return (
     <RxDropdownMenu.Item
       className={cn(
-        `${PREFIX}-${GROUP_NAME}__item alternatee`,
+        `${PREFIX}-${GROUP_NAME}__item`,
+        'alternatee',
         'flex items-center gap-1',
         'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
         icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
         isDisabled
           ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
           : 'cursor-pointer text-dark',
+        isLink ? `${PREFIX}-${GROUP_NAME}__item--link no-underline` : '',
         props.className,
       )}
+      {...(isLink ? { href, target } : {})}
       {...(value !== undefined ? { 'data-value': value } : {})}
       disabled={isDisabled}
       {...(isFunction(onClick) ? { onSelect: onClick } : {})}
@@ -46,7 +54,7 @@ export const DropdownItem = ({
       {...omit(['className', 'data-value'], props)}
       asChild
     >
-      <Typography element="div">
+      <Typography element={isLink ? 'a' : 'div'}>
         {icon && (
           <div
             className={cj(
