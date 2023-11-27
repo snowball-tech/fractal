@@ -50,7 +50,6 @@ perfectionist/sort-objects */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      asLink = false,
       disabled = false,
       fullWidth = false,
       href,
@@ -94,6 +93,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }
     }
 
+    const asLink = !isEmpty(href)
     const isTextVariant = variant === Variants.Text
 
     const classNames = cn(
@@ -102,6 +102,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asLink
         ? `${PREFIX}-${GROUP_NAME}__link ${PREFIX}-${GROUP_NAME}__link--${variant}`
         : '',
+      asLink && !isTextVariant ? 'no-underline' : '',
       'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
       !isTextVariant ? 'h-6 px-3 py-1' : '',
       fullWidth && !iconOnly
@@ -164,10 +165,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className={classNames}
           href={href}
           {...(!isEmpty(target) ? { target } : {})}
-          {...(!disabled && isFunction(onClick)
-            ? { onClick }
-            : { onClick: (event) => event.preventDefault() })}
           title={label}
+          {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
         >
           {hasIcon && iconPosition === 'left' && iconElement}
