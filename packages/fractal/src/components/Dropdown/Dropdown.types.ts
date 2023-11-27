@@ -87,9 +87,15 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 export interface DropdownItemProps
-  extends Omit<ComponentProps<typeof DropdownMenuItem>, 'asChild' | 'onClick'> {
+  extends Omit<
+    ComponentProps<typeof DropdownMenuItem> &
+      AllHTMLAttributes<HTMLAnchorElement>,
+    'asChild' | 'onClick'
+  > {
   /** Indicates if the menu item is disabled. */
   disabled?: boolean
+  /** The URL to open when clicking on the item. */
+  href?: string
   /** An icon to display on the left of the menu item. */
   icon?: ReactNode
   /**
@@ -98,6 +104,8 @@ export interface DropdownItemProps
   label?: string
   /** The event handler to call when the menu item is clicked. */
   onClick?: ComponentProps<typeof DropdownMenuItem>['onSelect']
+  /** Indicates where you want to open the link (if a `href` is provided). */
+  target?: HTMLAnchorElement['target']
   /**
    * The value of the dropdown item.
    *
