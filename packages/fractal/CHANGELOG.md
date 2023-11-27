@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [4.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.3.0...@snowball-tech/fractal@4.4.0) (2023-11-27)
+
+### ✨ Features
+
+- **dropdown:** support href linking in items ([0d63f27](https://github.com/snowball-tech/fractal/commit/0d63f2749186195fdc1ff197f3acc6f66811c945))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([3bcf83c](https://github.com/snowball-tech/fractal/commit/3bcf83cdc565f8f5e07fa4498eaa4fe0bbec28cd))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 8.1.1
+
 # @snowball-tech/fractal [4.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.2.0...@snowball-tech/fractal@4.3.0) (2023-11-22)
 
 ### ✨ Features
