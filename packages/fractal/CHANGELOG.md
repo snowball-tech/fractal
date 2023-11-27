@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [5.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.4.0...@snowball-tech/fractal@5.0.0) (2023-11-27)
+
+### 💥 Breaking changes
+
+- **button:** remove the `asLink` prop ([f60041e](https://github.com/snowball-tech/fractal/commit/f60041e8e07d0c065eaa079f7eef4366129d16dd))
+
 # @snowball-tech/fractal [4.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@4.3.0...@snowball-tech/fractal@4.4.0) (2023-11-27)
 
 ### ✨ Features
