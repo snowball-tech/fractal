@@ -43,7 +43,7 @@ export const DropdownItem = ({
         isDisabled
           ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
           : 'cursor-pointer text-dark',
-        isLink ? `${PREFIX}-${GROUP_NAME}__item--link no-underline` : '',
+        isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
         props.className,
       )}
       {...(isLink ? { href, target } : {})}

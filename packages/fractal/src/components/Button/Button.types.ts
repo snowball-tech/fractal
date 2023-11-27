@@ -7,8 +7,6 @@ export interface ButtonProps
     AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
     'onClick'
   > {
-  /** Indicates if the button should be in fact a link (`a` element). */
-  asLink?: boolean
   /** Prevents the user from interacting with the button. */
   disabled?: boolean
   /** Indicates if the button should take all the available width. */
@@ -29,7 +27,7 @@ export interface ButtonProps
   label: string
   /** Event handler called when the button is clicked. */
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void
-  /** The `target` attribute of the `a` element when `asLink` is used. */
+  /** The `target` attribute of the `a` element (when a `href` is provided). */
   target?: string
   /** The type of button. */
   type?: 'button' | 'reset' | 'submit'
