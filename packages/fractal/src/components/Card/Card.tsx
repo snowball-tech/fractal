@@ -76,6 +76,7 @@ export const Card = ({
         className={cj(
           `${PREFIX}-${GROUP_NAME}__content`,
           `${PREFIX}-${GROUP_NAME}__content--${fontSize}`,
+          'max-h-full overflow-y-auto',
         )}
         element="div"
         variant={`body-${fontSize}`}
