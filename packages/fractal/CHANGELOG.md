@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.1...@snowball-tech/fractal@5.0.2) (2023-11-27)
+
+### 🐛 Bug Fixes
+
+- **button:** fix `iconOnly` mode ([0776d74](https://github.com/snowball-tech/fractal/commit/0776d745469994a227ff84a369b781e3818f756d))
+
 ## @snowball-tech/fractal [5.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.0...@snowball-tech/fractal@5.0.1) (2023-11-27)
 
 ### 🐛 Bug Fixes
