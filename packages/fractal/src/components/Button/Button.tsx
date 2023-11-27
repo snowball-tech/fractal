@@ -137,6 +137,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       </div>
     )
 
+    const hasIcon = Boolean(icon)
+
     const labelElement = (
       <Typography
         className={cj(
@@ -145,17 +147,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           asLink
             ? `${PREFIX}-${GROUP_NAME}__link__label ${PREFIX}-${GROUP_NAME}__link__label--${variant}`
             : '',
-          'flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+          'flex max-h-full max-w-full flex-1 items-center justify-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
           isTextVariant ? 'pt-0' : '',
         )}
         element="div"
         variant={isTextVariant ? 'body-1-link' : 'body-1'}
       >
-        {label}
+        {hasIcon && iconPosition === 'left' && iconElement}
+        {iconOnly ? false : label}
+        {hasIcon && iconPosition === 'right' && iconElement}
       </Typography>
     )
-
-    const hasIcon = Boolean(icon)
 
     if (asLink) {
       return (
@@ -169,9 +171,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
         >
-          {hasIcon && iconPosition === 'left' && iconElement}
-          {!iconOnly && labelElement}
-          {hasIcon && iconPosition === 'right' && iconElement}
+          {labelElement}
         </a>
       )
     }
@@ -196,9 +196,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           props,
         )}
       >
-        {hasIcon && iconPosition === 'left' && iconElement}
-        {!iconOnly && labelElement}
-        {hasIcon && iconPosition === 'right' && iconElement}
+        {labelElement}
       </button>
     )
   },
