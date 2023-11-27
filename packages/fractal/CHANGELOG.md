@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.2...@snowball-tech/fractal@5.0.3) (2023-11-27)
+
+### 🐛 Bug Fixes
+
+- **card:** limit the height of the card ([60a6c32](https://github.com/snowball-tech/fractal/commit/60a6c32f6f16a5f0a18f36c974e69252786103b1))
+
 ## @snowball-tech/fractal [5.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.1...@snowball-tech/fractal@5.0.2) (2023-11-27)
 
 ### 🐛 Bug Fixes
