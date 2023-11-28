@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.1.0...@snowball-tech/fractal@5.1.1) (2023-11-28)
+
+### 🐛 Bug Fixes
+
+- **scrollarea:** fix the className application ([c2e32ee](https://github.com/snowball-tech/fractal/commit/c2e32ee11b21aa6c9dcd2533b8b2e34e800bb970))
+
 # @snowball-tech/fractal [5.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.3...@snowball-tech/fractal@5.1.0) (2023-11-28)
 
 ### ✨ Features
