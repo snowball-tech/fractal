@@ -14,6 +14,10 @@ import type { DropdownRadioGroupProps } from './Dropdown.types'
  * `DropdownRadioGroup` component is used to group multiple `DropdownRadioItem`
  * components together to have the "only one selected" behavior inside of a
  * `Dropdown`.
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-input-inputradio-inputradiogroup--documentation
+ * for more information.
  */
 export const DropdownRadioGroup = ({
   children: dropdownRadioItems,

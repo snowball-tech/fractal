@@ -14,6 +14,9 @@ import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
  * `Item` displays items in a dropdown.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#item
+ * for more information.
  */
 export const DropdownItem = ({
   disabled,

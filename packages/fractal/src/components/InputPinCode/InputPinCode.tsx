@@ -27,7 +27,11 @@ import type { InputPinCodeProps } from './InputPinCode.types'
 
 /**
  * `InputPinCode` component is used to allow the user to a X digit(s) pin code
- * (one digit per field)
+ * (one digit per field).
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-input-inputtext--documentation
+ * for more information.
  */
 export const InputPinCode = ({
   autoFocus = false,

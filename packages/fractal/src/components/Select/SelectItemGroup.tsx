@@ -12,6 +12,9 @@ import { SelectGroupContext } from './SelectGroupContext'
 /**
  * `SelectItemGroup` component is used to group `SelectItem` components inside
  * of the dropdown of a `Select` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/select#group for more
+ * information.
  */
 export const SelectItemGroup = ({
   children: items,

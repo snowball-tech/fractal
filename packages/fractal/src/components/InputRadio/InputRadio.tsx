@@ -25,6 +25,9 @@ import { InputRadioContext } from './InputRadioContext'
  * amongst a group of multiple choices.
  *
  * You must use this component within the `InputRadioGroup` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/radio-group#item for
+ * more information/
  */
 export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
   (

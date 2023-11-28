@@ -12,6 +12,9 @@ import { DropdownGroupContext } from './DropdownGroupContext'
 /**
  * `ItemGroup` component is used to display `Item`s grouped under a common label
  * with nice formatting.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#group
+ * for more information.
  */
 export default function DropdownItemGroup({
   children: items,

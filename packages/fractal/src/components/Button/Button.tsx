@@ -45,7 +45,8 @@ perfectionist/sort-objects */
 }
 
 /**
- * `Button` component is used to allow the user to make an interaction.
+ * `Button` component is used to allow the user to make an interaction on either
+ * a button or a link element.
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (

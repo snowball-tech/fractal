@@ -22,6 +22,8 @@ import type { TextareaProps } from './Textarea.types'
 
 /**
  * `Textarea` component is used to allow the user to enter long textual values.
+ *
+ * See https://github.com/Andarist/react-textarea-autosize for more information.
  */
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   (

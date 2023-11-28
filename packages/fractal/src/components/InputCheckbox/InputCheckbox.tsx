@@ -27,6 +27,9 @@ import type { InputCheckboxProps } from './InputCheckbox.types'
 
 /**
  * `InputCheckbox` component is used to allow the user to make a binary choice.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/checkbox for more
+ * information.
  */
 export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
   (

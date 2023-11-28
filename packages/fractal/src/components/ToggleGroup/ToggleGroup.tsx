@@ -16,6 +16,9 @@ import { ToggleGroupContext } from './ToggleGroupContext'
  *
  * It can be used in either "one toggle toggled at a time" mode or "multiple
  * toggles toggled at the same time" mode.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/toggle-group for more
+ * information.
  */
 export const ToggleGroup = ({
   children: radioButtons,

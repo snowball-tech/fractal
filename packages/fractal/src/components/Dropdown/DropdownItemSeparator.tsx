@@ -10,6 +10,9 @@ import { DropdownItemSeparatorProps } from './Dropdown.types'
 /**
  * `ItemSeparator` component is used to display a separator between groups or
  * items in a dropdown.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/select#separator for
+ * more information.
  */
 export default function DropdownItemSeparator({
   ...props

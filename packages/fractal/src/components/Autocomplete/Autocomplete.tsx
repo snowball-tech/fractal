@@ -32,6 +32,10 @@ import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
 /**
  * `Autocomplete` component is used to allow the user to enter text and offer
  * them suggestion as they type.
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-dropdown--documentation
+ * for more information.
  */
 export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
   (

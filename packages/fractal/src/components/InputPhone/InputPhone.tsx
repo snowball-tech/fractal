@@ -47,6 +47,11 @@ import type {
 /**
  * `InputPhone` component is used to allow the user to enter a phone number
  * (with a prefix).
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-input-inputtext--documentation
+ * and https://fractal.snowball.xyz/?path=/docs/molecules-select--documentation
+ * for more information.
  */
 export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
   (

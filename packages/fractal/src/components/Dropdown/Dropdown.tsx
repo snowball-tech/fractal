@@ -23,7 +23,10 @@ import { GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
 
 /**
- * `Avatar` component allow to display an avatar with an optional dropdown menu.
+ * `Dropdown` component displays a dropdown menu when a trigger is clicked.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu for
+ * more information.
  */
 export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
   (
