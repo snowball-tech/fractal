@@ -11,6 +11,9 @@ import type { SelectEmptyProps } from './Select.types'
 /**
  * `SelectEmpty` component is used to display an empty state inside of the
  * dropdown of an `Select` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/select#item for more
+ * information.
  */
 export const SelectEmpty = ({
   children,

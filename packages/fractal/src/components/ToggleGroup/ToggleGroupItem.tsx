@@ -29,6 +29,9 @@ import { ToggleGroupContext } from './ToggleGroupContext'
  * amongst a group of multiple choices.
  *
  * You must use this component with the `InputRadioGroup` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/toggle-group#item for
+ * more information.
  */
 export const ToggleGroupItem = forwardRef<
   HTMLButtonElement,

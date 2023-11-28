@@ -11,6 +11,9 @@ import type { AutocompleteEmptyProps } from './Autocomplete.types'
 /**
  * `AutocompleteEmpty` component is used to display an empty state inside of the
  * dropdown of an `Autocomplete` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#item
+ * for more information.
  */
 export const AutocompleteEmpty = ({
   children,

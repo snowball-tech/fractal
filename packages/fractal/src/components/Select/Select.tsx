@@ -26,6 +26,9 @@ import type { CombinedRefs, SelectProps } from './Select.types'
 
 /**
  * `Select` component is used to offer the user choices they can select.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/select for more
+ * information.
  */
 export const Select = forwardRef<CombinedRefs, SelectProps>(
   (

@@ -13,6 +13,9 @@ import { SelectGroupContext } from './SelectGroupContext'
 /**
  * `SelectItem` component is used to display choices inside of the dropdown of a
  * `Select` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/select#item for more
+ * information.
  */
 export const SelectItem = ({
   children: item,

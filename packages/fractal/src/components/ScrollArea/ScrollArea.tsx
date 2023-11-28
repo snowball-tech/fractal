@@ -9,6 +9,7 @@ import type { ScrollAreaProps } from './ScrollArea.types'
 
 /**
  * `ScrollArea` component allow to add nice scrollbar to a content.
+ *
  * See https://www.radix-ui.com/primitives/docs/components/scroll-area for more
  * information.
  */

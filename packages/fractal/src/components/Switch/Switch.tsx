@@ -13,6 +13,9 @@ import type { SwitchProps } from './Switch.types'
 
 /**
  * `Switch` component is used to allow the user to toggle an element on/off.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/switch for more
+ * information.
  */
 export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
   (

@@ -13,6 +13,9 @@ import type { AutocompleteLoadingProps } from './Autocomplete.types'
 /**
  * `AutocompleteLoading` component is used to display a loader in the dropdown
  * of an `Autocomplete` component.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#item
+ * for more information.
  */
 export const AutocompleteLoading = ({
   children,

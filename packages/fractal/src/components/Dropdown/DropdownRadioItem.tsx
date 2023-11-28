@@ -14,6 +14,10 @@ import type { DropdownRadioItemProps } from './Dropdown.types'
  *
  * You must use this component within the `DropdownRadioItemGroup` component
  * itself being inside of a `Dropdown` component.
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-input-inputradio--documentation
+ * for more information.
  */
 export const DropdownRadioItem = ({
   disabled = false,

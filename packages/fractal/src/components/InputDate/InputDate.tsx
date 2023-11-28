@@ -57,6 +57,10 @@ function isValid(type: keyof DateFormat, value: '' | number, max?: number) {
 /**
  * `InputDate` component is used to allow the user to enter a date using 3
  * separate day/month/year fields.
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-input-inputtext--documentation
+ * for more information
  */
 export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
   (

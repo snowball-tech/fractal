@@ -10,6 +10,9 @@ import type { ProgressProps } from './Progress.types'
 
 /**
  * `Progress` component is used to display a progression to the user.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/progress for more
+ * information.
  */
 export const Progress = ({
   getValueLabel,

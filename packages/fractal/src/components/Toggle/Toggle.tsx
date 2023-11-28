@@ -24,6 +24,9 @@ export const disabledVariantClassNames = {
 
 /**
  * `Toggle` component is used to allow the user to enable/disabled things.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/toggle for more
+ * information.
  */
 export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (

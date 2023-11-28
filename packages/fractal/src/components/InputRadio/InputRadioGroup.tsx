@@ -13,6 +13,9 @@ import { InputRadioContext } from './InputRadioContext'
 /**
  * `InputRadioGroup` component is used to group multiple `InputRadio` components
  * together to have the "only one selected" behavior.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/radio-group for more
+ * information.
  */
 export const InputRadioGroup = ({
   children: radioButtons,

@@ -11,6 +11,10 @@ import type { StepperProps } from './Stepper.types'
 /**
  * `Stepper` component is used to display a progression to the user in the form
  * of steps.
+ *
+ * See
+ * https://fractal.snowball.xyz/?path=/docs/molecules-progress--documentation
+ * for more information.
  */
 export const Stepper = ({
   current = 0,
