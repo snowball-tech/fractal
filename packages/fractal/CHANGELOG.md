@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [5.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.3...@snowball-tech/fractal@5.1.0) (2023-11-28)
+
+### ✨ Features
+
+- **scrollarea:** add the ScrollArea component ([7b844c1](https://github.com/snowball-tech/fractal/commit/7b844c1de39d99963754b617487c854529c98933))
+
+### 📝 Documentation
+
+- uniformize documentation ([18d56fe](https://github.com/snowball-tech/fractal/commit/18d56fe7721912b9527576f1367c16fc15f7e132))
+
 ## @snowball-tech/fractal [5.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.0.2...@snowball-tech/fractal@5.0.3) (2023-11-27)
 
 ### 🐛 Bug Fixes
