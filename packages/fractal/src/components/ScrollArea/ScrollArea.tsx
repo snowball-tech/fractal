@@ -28,12 +28,14 @@ export const ScrollArea = ({
 
   return (
     <RxScrollArea.Root
-      className={cn(`${PREFIX}-${GROUP_NAME}`, props.className)}
+      className={`${PREFIX}-${GROUP_NAME}`}
       scrollHideDelay={scrollHideDelay}
       type={type}
       {...omit(['className'], props)}
     >
-      <RxScrollArea.Viewport className="relative h-full w-full">
+      <RxScrollArea.Viewport
+        className={cn('relative h-full w-full', props.className)}
+      >
         {children}
       </RxScrollArea.Viewport>
 
