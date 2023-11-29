@@ -81,17 +81,18 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
         return
       }
 
+      const wasOpened = isOpen
       setIsOpen(isOpened)
 
-      if (isFunction(onMenuOpenChange)) {
+      if (isFunction(onMenuOpenChange) && wasOpened !== isOpened) {
         onMenuOpenChange(isOpened)
       }
 
-      if (isOpened && isFunction(onOpen)) {
+      if (!wasOpened && isOpened && isFunction(onOpen)) {
         onOpen()
       }
 
-      if (!isOpened && isFunction(onClose)) {
+      if (wasOpened && !isOpened && isFunction(onClose)) {
         onClose()
       }
     }
