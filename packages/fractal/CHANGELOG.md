@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.3.0...@snowball-tech/fractal@5.3.1) (2023-11-29)
+
+### 🐛 Bug Fixes
+
+- **select:** avoid selection of text when selecting an item on Firefox ([1d0aa6b](https://github.com/snowball-tech/fractal/commit/1d0aa6b1097c7180443cd84cd019ab2d3989f0d3))
+
 # @snowball-tech/fractal [5.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.2.1...@snowball-tech/fractal@5.3.0) (2023-11-29)
 
 ### ✨ Features
