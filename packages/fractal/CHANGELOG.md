@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.2.0...@snowball-tech/fractal@5.2.1) (2023-11-29)
+
+### 🐛 Bug Fixes
+
+- **header:** increase the size of title in md ([eb92218](https://github.com/snowball-tech/fractal/commit/eb92218a9656c12062abb4197e752c17bb49544b))
+
 # @snowball-tech/fractal [5.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.1.1...@snowball-tech/fractal@5.2.0) (2023-11-29)
 
 ### ✨ Features
