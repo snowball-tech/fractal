@@ -5,7 +5,7 @@ import { useId } from 'react'
 import { Variants as InputRadioVariants } from '@/components/InputRadio/InputRadio.constants'
 import { InputRadioGroup } from '@/components/InputRadio/InputRadioGroup'
 import { PREFIX } from '@/constants'
-import { cn } from '@/styles/helpers'
+import { alternatingBgColorLightClassNames, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioGroupProps } from './Dropdown.types'
@@ -36,11 +36,14 @@ export const DropdownRadioGroup = ({
       className={cn(
         `${PREFIX}-${GROUP_NAME}__group-radio`,
         'group/dropdown-radio-group',
-        disabled ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled` : '',
+        disabled
+          ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled`
+          : alternatingBgColorLightClassNames,
         props.className,
       )}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       {...(disabled !== undefined ? { disabled } : {})}
+      fullWidth
       {...(value !== undefined ? { value } : {})}
       variant={InputRadioVariants.Tertiary}
       {...(isFunction(onValueChange)
