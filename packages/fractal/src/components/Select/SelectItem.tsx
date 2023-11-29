@@ -31,7 +31,7 @@ export const SelectItem = ({
     <RxSelect.Item
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item alternatee`,
-        'flex items-center gap-1 rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+        'flex select-none items-center gap-1 rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
         isDisabled
           ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
           : 'cursor-pointer text-dark',
