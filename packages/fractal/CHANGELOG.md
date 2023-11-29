@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [5.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.1.1...@snowball-tech/fractal@5.2.0) (2023-11-29)
+
+### ✨ Features
+
+- **dropdown-radio:** add alternating color on hover ([f1be727](https://github.com/snowball-tech/fractal/commit/f1be72772861b5a65b69eb95e3b694b6c6deff57))
+
 ## @snowball-tech/fractal [5.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.1.0...@snowball-tech/fractal@5.1.1) (2023-11-28)
 
 ### 🐛 Bug Fixes
