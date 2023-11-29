@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.3.1...@snowball-tech/fractal@5.3.2) (2023-11-29)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** call event handler when the state change ([ebea833](https://github.com/snowball-tech/fractal/commit/ebea8337a67585576c540da37f58c892f552423e))
+
 ## @snowball-tech/fractal [5.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.3.0...@snowball-tech/fractal@5.3.1) (2023-11-29)
 
 ### 🐛 Bug Fixes
