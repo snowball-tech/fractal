@@ -34,11 +34,13 @@ export const DropdownRadioItem = ({
       id={uniqueId}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__radio`,
+        'alternatee',
         'group/radio-group',
         disabled ? `${PREFIX}-${GROUP_NAME}__radio--disabled` : '',
         props.className,
       )}
       disabled={disabled}
+      fullWidth
       label={label}
       value={value}
       {...omit(['className'], props)}
