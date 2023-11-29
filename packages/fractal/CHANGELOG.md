@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [5.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.2.1...@snowball-tech/fractal@5.3.0) (2023-11-29)
+
+### ✨ Features
+
+- **tabs:** add a tabs component ([11ce825](https://github.com/snowball-tech/fractal/commit/11ce825f57482e330c2e22550a84108a32faee7f))
+
 ## @snowball-tech/fractal [5.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.2.0...@snowball-tech/fractal@5.2.1) (2023-11-29)
 
 ### 🐛 Bug Fixes
