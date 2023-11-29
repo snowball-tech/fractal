@@ -36,7 +36,7 @@ export const Header = ({
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__left`,
-            '@md:col-start-1 @md:col-end-4 @md:grid @md:max-h-8 @md:justify-self-start',
+            '@md:col-start-1 @md:col-end-3 @md:grid @md:max-h-8 @md:justify-self-start',
           )}
         >
           {left}
@@ -48,8 +48,8 @@ export const Header = ({
       <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__middle`,
-          'm-0 max-h-full w-full overflow-hidden text-ellipsis whitespace-nowrap',
-          '@md:col-start-4 @md:col-end-10 @md:grid @md:max-h-6 @md:justify-self-center  @md:text-center',
+          'm-0 max-h-full w-full truncate',
+          '@md:col-start-3 @md:col-end-11 @md:grid @md:max-h-6 @md:justify-self-center  @md:text-center',
         )}
         element="div"
         variant="heading-4"
@@ -61,7 +61,7 @@ export const Header = ({
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__right`,
-            '@md:col-start-10 @md:col-end-13 @md:grid @md:max-h-6 @md:justify-self-end',
+            '@md:col-start-11 @md:col-end-13 @md:grid @md:max-h-6 @md:justify-self-end',
           )}
         >
           {right}
