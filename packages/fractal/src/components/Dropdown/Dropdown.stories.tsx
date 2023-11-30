@@ -113,7 +113,13 @@ const meta: Meta<DropdownProps> = {
     trigger: {
       control: 'radio',
       mapping: {
-        Avatar: <Avatar imageUrl={avatarUrl} name="Luke Skywalker" />,
+        Avatar: (
+          <Avatar
+            className="cursor-pointer"
+            imageUrl={avatarUrl}
+            name="Luke Skywalker"
+          />
+        ),
         Button: <Button label="This is a button trigger" />,
         'Icon Button': (
           <Button
