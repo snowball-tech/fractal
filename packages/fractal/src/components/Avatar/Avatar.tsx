@@ -6,7 +6,6 @@ import { Dropdown } from '@/components/Dropdown'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
-import { rangeStep } from '@/utils'
 
 import {
   DEFAULT_SIZE,
@@ -70,13 +69,6 @@ perfectionist/sort-objects */
 
   const hasChildren = Boolean(children)
 
-  const fluidFontSize = rangeStep(56, 240, 8)
-    .map(
-      (fontSize, index) => `@[${fontSize}px]:[font-size:${1 + 0.2 * index}rem]`,
-    )
-    .join(' ')
-  console.log(fluidFontSize)
-
   const avatarBubble = isEmpty(imageUrl) ? (
     <Typography
       className={cj(
@@ -126,7 +118,7 @@ perfectionist/sort-objects */
           `${PREFIX}-${GROUP_NAME}--${size}`,
           `${PREFIX}-${GROUP_NAME}--with-menu`,
           'cursor-pointer @container',
-          size === Sizes.Fluid ? 'h-full w-full' : 'h-fit w-fit',
+          size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
           props.className,
         )}
       >
@@ -147,7 +139,7 @@ perfectionist/sort-objects */
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         'cursor-default @container',
-        size === Sizes.Fluid ? 'h-full w-full' : 'h-fit w-fit',
+        size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         props.className,
       )}

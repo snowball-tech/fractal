@@ -188,7 +188,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 : 'flex items-center',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
-                : 'cursor-pointer',
+                : '!cursor-pointer',
               !toggleOnTriggerClick ? '!cursor-default' : '',
             )}
             disabled={!toggleOnTriggerClick}
@@ -202,7 +202,15 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             }
           >
             {hasTrigger && (
-              <Typography element={toggleOnTriggerClick ? 'button' : 'div'}>
+              <Typography
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__trigger__content`,
+                  disabled
+                    ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
+                    : '',
+                )}
+                element={toggleOnTriggerClick ? 'button' : 'div'}
+              >
                 {trigger}
 
                 {withIndicator && (
