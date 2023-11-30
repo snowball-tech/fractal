@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.0...@snowball-tech/fractal@5.5.1) (2023-11-30)
+
+### 🐛 Bug Fixes
+
+- **avatar:** fix font size for fluid size ([7220eda](https://github.com/snowball-tech/fractal/commit/7220eda3aac71b5f2837771f764d306450d3204f))
+
 # @snowball-tech/fractal [5.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.4.2...@snowball-tech/fractal@5.5.0) (2023-11-30)
 
 ### ✨ Features
