@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [5.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.3.2...@snowball-tech/fractal@5.4.0) (2023-11-30)
+
+### ✨ Features
+
+- **tabs:** add support for icons and tabs bar position ([6ec113b](https://github.com/snowball-tech/fractal/commit/6ec113b936ba449a82356580c4e5f880cf0324b0))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([3c00d1b](https://github.com/snowball-tech/fractal/commit/3c00d1ba7658c485c305275aa43f4fa3a830e75f))
+
 ## @snowball-tech/fractal [5.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.3.1...@snowball-tech/fractal@5.3.2) (2023-11-29)
 
 ### 🐛 Bug Fixes
