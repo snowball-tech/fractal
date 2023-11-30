@@ -6,3 +6,10 @@ export enum Orientations {
 }
 
 export const DEFAULT_ORIENTATION = Orientations.Horizontal
+
+export enum Positions {
+  End = 'end',
+  Start = 'start',
+}
+
+export const DEFAULT_POSITION = Positions.Start

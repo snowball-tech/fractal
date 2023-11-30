@@ -1,6 +1,6 @@
 import { AllHTMLAttributes, ReactNode } from 'react'
 
-import { Orientations } from './Tabs.constants'
+import { Orientations, Positions } from './Tabs.constants'
 
 export interface TabsProps
   extends Omit<
@@ -29,6 +29,16 @@ export interface TabsProps
    * Will be mainly used for accessibility purposes.
    */
   label?: string
+  /**
+   * Indicates if the tab bar should be larger (in height) than usual.
+   *
+   * This is only needed if you want to force the tab bar to be large because
+   * otherwise, each `Tab` children component is checked to see if there is an
+   * icon and a text and set this to `true` accordingly.
+   *
+   * Only has an effet in horizontal orientation.
+   */
+  large?: boolean
   /** Event handler called when the selected tab changes. */
   onTabChange?: (newTab: string) => void
   /** The orientations of the tabs. */
@@ -45,14 +55,30 @@ export interface TabsProps
    * You must use `Tab` components.
    */
   tabs: ReactNode
+  tabsPosition?: `${Positions}`
 }
 
 export interface TabProps
-  extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'type' | 'value'> {
+  extends Omit<
+    AllHTMLAttributes<HTMLButtonElement>,
+    'label' | 'type' | 'value'
+  > {
   /** Prevents the user from interacting with the tab. */
   disabled?: boolean
+  /** An icon to display before the label. */
+  icon?: ReactNode
   /** The label of the tab. */
-  label: string
+  label?: string
+  /**
+   * Indicates if the tab should be larger (in height) than usual.
+   *
+   * This is only needed if you want to force the tab bar to be large because
+   * otherwise, each `Tab` children component is checked to see if there is an
+   * icon and a text and set this to `true` accordingly.
+   *
+   * Only has an effet in horizontal orientation.
+   */
+  large?: boolean
   /**
    * The name of the tab.
    * Must be the same as the linked content.
