@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [5.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.4.2...@snowball-tech/fractal@5.5.0) (2023-11-30)
+
+### ✨ Features
+
+- **avatar:** add fluid size ([45eea00](https://github.com/snowball-tech/fractal/commit/45eea009add87baadaaa7459686e457f6ae4b90a))
+
 ## @snowball-tech/fractal [5.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.4.1...@snowball-tech/fractal@5.4.2) (2023-11-30)
 
 ### Dependencies
