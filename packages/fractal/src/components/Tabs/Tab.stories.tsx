@@ -26,6 +26,11 @@ const content = (
 type TabProps = ComponentProps<typeof Tab>
 
 const meta: Meta<TabProps> = {
+  argTypes: {
+    children: {
+      control: 'text',
+    },
+  },
   args: {
     disabled: false,
     label: 'Jedis',

@@ -1,3 +1,6 @@
+import GlobeIcon from '@iconscout/react-unicons/dist/icons/uil-globe'
+import HeartIcon from '@iconscout/react-unicons/dist/icons/uil-heart-alt'
+import BrokenHeartIcon from '@iconscout/react-unicons/dist/icons/uil-heart-break'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
@@ -7,16 +10,37 @@ import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'
 
 import { Tab, TabContent, Tabs } from '.'
+import {
+  DEFAULT_ORIENTATION,
+  DEFAULT_POSITION,
+  Orientations,
+  Positions,
+} from './Tabs.constants'
 
 type TabsProps = ComponentProps<typeof Tabs>
 
-const tabs = (
+const textTabs = (
   <>
     <Tab label="Jedis" name="jedis" />
     <Tab disabled label="Sith" name="sith" />
     <Tab label="Planets" name="planets" />
   </>
 )
+const iconTabs = (
+  <>
+    <Tab icon={<HeartIcon />} name="jedis" />
+    <Tab disabled icon={<BrokenHeartIcon />} name="sith" />
+    <Tab icon={<GlobeIcon />} name="planets" />
+  </>
+)
+const mixedTabs = (
+  <>
+    <Tab label="Jedis" name="jedis" />
+    <Tab disabled label="Sith" name="sith" />
+    <Tab icon={<GlobeIcon />} label="Planets" name="planets" />
+  </>
+)
+
 const children = (
   <div className="p-2">
     <TabContent name="jedis">
@@ -60,7 +84,14 @@ const children = (
 
 const meta: Meta<TabsProps> = {
   argTypes: {
-    children: { table: { disable: true } },
+    children: {
+      control: false,
+      table: {
+        type: {
+          summary: 'TabContent | Array<TabContent>',
+        },
+      },
+    },
     defaultTab: {
       control: 'radio',
       mapping: {
@@ -71,7 +102,34 @@ const meta: Meta<TabsProps> = {
       options: ['Jedis', 'Sith', 'Planets'],
     },
     dir: { table: { disable: true } },
-    tabs: { table: { disable: true } },
+    orientation: {
+      options: Object.values(Orientations),
+      table: {
+        defaultValue: { summary: DEFAULT_ORIENTATION },
+        type: { summary: Object.values(Orientations).join('|') },
+      },
+    },
+    tabs: {
+      control: 'radio',
+      mapping: {
+        Icons: iconTabs,
+        Mixed: mixedTabs,
+        Texts: textTabs,
+      },
+      options: ['Texts', 'Icons', 'Mixed'],
+      table: {
+        type: {
+          summary: 'Tab | Array<Tab>',
+        },
+      },
+    },
+    tabsPosition: {
+      options: Object.values(Positions),
+      table: {
+        defaultValue: { summary: DEFAULT_POSITION },
+        type: { summary: Object.values(Positions).join('|') },
+      },
+    },
   },
   args: {
     children,
@@ -79,8 +137,9 @@ const meta: Meta<TabsProps> = {
     disabled: false,
     label: 'Star Wars',
     onTabChange: action('onTabChange'),
-    orientation: 'horizontal',
-    tabs,
+    orientation: DEFAULT_ORIENTATION,
+    tabs: 'Mixed',
+    tabsPosition: DEFAULT_POSITION,
   },
   component: Tabs,
   decorators: [
@@ -121,16 +180,26 @@ export const Interactive: Story = {
 }
 
 export const Horizontal: Story = {
-  render: () => (
-    <Tabs defaultTab="jedis" orientation="horizontal" tabs={tabs}>
+  render: ({ tabs = mixedTabs, tabsPosition = DEFAULT_POSITION }) => (
+    <Tabs
+      defaultTab="jedis"
+      orientation="horizontal"
+      tabs={tabs}
+      tabsPosition={tabsPosition}
+    >
       {children}
     </Tabs>
   ),
 }
 
 export const Vertical: Story = {
-  render: () => (
-    <Tabs defaultTab="jedis" orientation="vertical" tabs={tabs}>
+  render: ({ tabs = mixedTabs, tabsPosition = DEFAULT_POSITION }) => (
+    <Tabs
+      defaultTab="jedis"
+      orientation="vertical"
+      tabs={tabs}
+      tabsPosition={tabsPosition}
+    >
       {children}
     </Tabs>
   ),
