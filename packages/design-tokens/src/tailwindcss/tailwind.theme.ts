@@ -214,6 +214,19 @@ export const tailwindTheme: Config['theme'] = {
     transparent: 'transparent',
   },
 
+  containers: {
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+    xs: SizeBreakpointXs,
+    sm: SizeBreakpointSm,
+    md: SizeBreakpointMd,
+    lg: SizeBreakpointLg,
+    xl: SizeBreakpointXl,
+    xxl: SizeBreakpointXxl,
+
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+  },
+
   content: {
     empty: '""',
     none: 'none',
