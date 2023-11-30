@@ -73,7 +73,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           aria-label={label}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__tabs`,
-            'flex w-fit items-center justify-between border-normal bg-white',
+            'flex w-fit items-center justify-between border-normal bg-white [z-index:1]',
             orientation === Orientations.Vertical
               ? 'h-full w-6 min-w-6 flex-col'
               : 'max-h-10 w-full',
