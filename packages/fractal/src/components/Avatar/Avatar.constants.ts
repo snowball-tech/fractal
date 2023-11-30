@@ -8,6 +8,7 @@ export enum Sizes {
   M = 'm',
   L = 'l',
   XL = 'xl',
+  Fluid = 'fluid',
   /* eslint-enable perfectionist/sort-enums */
 }
 
@@ -19,5 +20,6 @@ export const sizeToTypographyVariant: Record<Sizes, `${TypographyVariants}`> = {
   [Sizes.M]: TypographyVariants.CaptionBold,
   [Sizes.L]: TypographyVariants.Body1Bold,
   [Sizes.XL]: TypographyVariants.Heading4,
+  [Sizes.Fluid]: TypographyVariants.CaptionBold,
   /* eslint-enable perfectionist/sort-objects */
 }

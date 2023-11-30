@@ -6,6 +6,7 @@ import { Dropdown } from '@/components/Dropdown'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { rangeStep } from '@/utils'
 
 import {
   DEFAULT_SIZE,
@@ -33,6 +34,7 @@ export const Avatar = ({
     [Sizes.M]: 'h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6',
     [Sizes.L]: 'h-7 max-h-7 min-h-7 w-7 max-w-7 min-w-7',
     [Sizes.XL]: 'h-8 max-h-8 min-h-8 w-8 max-w-8 min-w-8',
+    [Sizes.Fluid]: 'w-full h-full min-h-5 min-w-5',
 
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -47,6 +49,8 @@ perfectionist/sort-objects */
     [Sizes.L]:
       'h-[calc(theme(spacing.7)/2)] max-h-[calc(theme(spacing.7)/2)] min-h-[calc(theme(spacing.7)/2)] w-[calc(theme(spacing.7)/2)] max-w-[calc(theme(spacing.7)/2)] min-w-[calc(theme(spacing.7)/2)]',
     [Sizes.XL]: 'h-4 max-h-4 min-h-4 w-4 max-w-4 min-w-4',
+    [Sizes.Fluid]:
+      'w-full h-full min-h-[calc(theme(spacing.5)/2)] min-w-[calc(theme(spacing.5)/2)]',
 
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -66,14 +70,22 @@ perfectionist/sort-objects */
 
   const hasChildren = Boolean(children)
 
+  const fluidFontSize = rangeStep(56, 240, 8)
+    .map(
+      (fontSize, index) => `@[${fontSize}px]:[font-size:${1 + 0.2 * index}rem]`,
+    )
+    .join(' ')
+
   const avatarBubble = isEmpty(imageUrl) ? (
     <Typography
       className={cj(
         baseBubbleClassName,
-        'flex items-center justify-center bg-decorative-pink-70 text-dark',
+        'flex items-center justify-center overflow-hidden bg-decorative-pink-70 text-dark',
         !isEmpty(initials)
           ? `${PREFIX}-${GROUP_NAME}__bubble--with-initials`
           : `${PREFIX}-${GROUP_NAME}__bubble--with-icon`,
+        size === Sizes.Fluid ? `[font-size:0.75rem]` : '',
+        size === Sizes.Fluid ? fluidFontSize : '',
       )}
       element="div"
       title={name}
@@ -111,7 +123,8 @@ perfectionist/sort-objects */
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${size}`,
           `${PREFIX}-${GROUP_NAME}--with-menu`,
-          'w-fit cursor-pointer',
+          'cursor-pointer @container',
+          size === Sizes.Fluid ? 'h-full w-full' : 'h-fit w-fit',
           props.className,
         )}
       >
@@ -131,7 +144,8 @@ perfectionist/sort-objects */
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
-        'w-fit cursor-default',
+        'cursor-default @container',
+        size === Sizes.Fluid ? 'h-full w-full' : 'h-fit w-fit',
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         props.className,
       )}

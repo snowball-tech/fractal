@@ -35,3 +35,13 @@ export function hasChildWithProps(
 
   return hasProps
 }
+
+export function rangeStep(start: number, end: number, step: number): number[] {
+  const result: number[] = []
+
+  for (let i = start; i <= end; i += step) {
+    result.push(i)
+  }
+
+  return result
+}
