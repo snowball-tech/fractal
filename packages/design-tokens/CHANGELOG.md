@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [8.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.1...@snowball-tech/design-tokens@8.1.2) (2023-11-30)
+
+### 🐛 Bug Fixes
+
+- **design-token:** fix the breakpoints for the container queries plugin ([4355c0f](https://github.com/snowball-tech/fractal/commit/4355c0f84bc1e958e569f10a3d4d1138448b6d9c))
+
 ## @snowball-tech/design-tokens [8.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.0...@snowball-tech/design-tokens@8.1.1) (2023-11-27)
 
 ### 📦 Dependencies
