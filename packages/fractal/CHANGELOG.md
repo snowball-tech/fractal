@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.1...@snowball-tech/fractal@5.5.2) (2023-11-30)
+
+### 🐛 Bug Fixes
+
+- **avatar:** fix avatar size ([fc164a9](https://github.com/snowball-tech/fractal/commit/fc164a9870b7a013835f6c6b17e54552b8471809))
+
 ## @snowball-tech/fractal [5.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.0...@snowball-tech/fractal@5.5.1) (2023-11-30)
 
 ### 🐛 Bug Fixes
