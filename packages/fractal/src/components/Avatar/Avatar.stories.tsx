@@ -8,7 +8,7 @@ import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
 import { Avatar, AvatarSizes } from '.'
-import { DEFAULT_SIZE } from './Avatar.constants'
+import { DEFAULT_SIZE, Sizes } from './Avatar.constants'
 
 type AvatarProps = ComponentProps<typeof Avatar>
 
@@ -29,6 +29,10 @@ const meta = {
       },
       options: ['None', 'With menu'],
     },
+    fluidSize: {
+      control: 'number',
+      if: { arg: 'size', eq: Sizes.Fluid },
+    },
     size: {
       options: Object.values(AvatarSizes),
       table: {
@@ -40,6 +44,10 @@ const meta = {
   args: {
     children: 'None',
     disabled: false,
+    fluidSize: 240,
+    imageUrl: '',
+    name: '',
+    size: DEFAULT_SIZE,
   },
   component: Avatar,
   parameters: {
@@ -47,15 +55,27 @@ const meta = {
   },
 
   title: 'Molecules/Avatar',
-} satisfies Meta<AvatarProps>
+} satisfies Meta<AvatarProps & { fluidSize?: number }>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<AvatarProps & { fluidSize?: number }>
 
 export const Playground: Story = {
   args: {
     size: DEFAULT_SIZE,
   },
+  render: ({ children, fluidSize = 240, imageUrl = '', name = '', size }) =>
+    size === Sizes.Fluid ? (
+      <div style={{ height: fluidSize, width: fluidSize }}>
+        <Avatar imageUrl={imageUrl} name={name} size={size}>
+          {children}
+        </Avatar>
+      </div>
+    ) : (
+      <Avatar imageUrl={imageUrl} name={name} size={size}>
+        {children}
+      </Avatar>
+    ),
 }
 
 export const Icon: Story = {
@@ -71,6 +91,9 @@ export const Icon: Story = {
       <Avatar size="m" />
       <Avatar size="l" />
       <Avatar size="xl" />
+      <div style={{ height: '240px', width: '240px' }}>
+        <Avatar size="fluid" />
+      </div>
     </div>
   ),
 }
@@ -88,6 +111,9 @@ export const Name: Story = {
       <Avatar name="Luke Skywalker" size="m" />
       <Avatar name="Luke Skywalker" size="l" />
       <Avatar name="Luke Skywalker" size="xl" />
+      <div style={{ height: '240px', width: '240px' }}>
+        <Avatar name="Luke Skywalker" size="fluid" />
+      </div>
     </div>
   ),
 }
@@ -105,6 +131,10 @@ export const Image: Story = {
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="m" />
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="l" />
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl" />
+
+      <div style={{ height: '240px', width: '240px' }}>
+        <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="fluid" />
+      </div>
     </div>
   ),
 }
