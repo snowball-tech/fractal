@@ -1,5 +1,7 @@
 import type { AllHTMLAttributes } from 'react'
 
+import { ButtonProps } from '@/components/Button/Button.types'
+
 import { Variants } from './InputFile.constants'
 
 export type CombinedRefs = {
@@ -16,7 +18,12 @@ export interface InputFileProps
   /** Event handler called when one or multiple files are selected. */
   onChange?: (files: FileList | null) => void
   /** The props to pass to the trigger of the input file. */
-  triggerProps?: Record<string, unknown>
+  triggerProps?: Partial<
+    Omit<
+      ButtonProps,
+      'disabled' | 'href' | 'label' | 'target' | 'type' | 'variant'
+    >
+  >
   /**
    * The variant of the input file.
    *
