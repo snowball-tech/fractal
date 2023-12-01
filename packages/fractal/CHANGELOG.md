@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.2...@snowball-tech/fractal@5.5.3) (2023-12-01)
+
+### 🐛 Bug Fixes
+
+- **loader:** add a XS size ([5364a96](https://github.com/snowball-tech/fractal/commit/5364a96503366f83050b11df2f08ed2ece85b680))
+
 ## @snowball-tech/fractal [5.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.1...@snowball-tech/fractal@5.5.2) (2023-11-30)
 
 ### 🐛 Bug Fixes
