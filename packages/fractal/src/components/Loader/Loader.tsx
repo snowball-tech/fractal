@@ -14,6 +14,7 @@ export const Loader = ({ size = DEFAULT_SIZE, ...props }: LoaderProps) => {
   const sizeClassNames = {
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
+    [Sizes.XS]: 'h-3 max-h-3 min-h-3 w-3 max-w-3 min-w-3',
     [Sizes.S]: 'h-4 max-h-4 min-h-4 w-4 max-w-4 min-w-4',
     [Sizes.M]: 'h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6',
     [Sizes.L]: 'h-12 max-h-12 min-h-12 w-12 max-w-12 min-w-12',
