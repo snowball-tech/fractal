@@ -140,16 +140,27 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
           ref={triggerRef}
           aria-label={label}
           className={classNames}
-          {...(triggerProps.dir !== undefined
-            ? { dir: triggerProps.dir as 'ltr' | 'rtl' }
-            : {})}
           disabled={disabled}
           title={label}
           type="button"
           onClick={handleTriggerClick}
           onTouchStart={handleTouchStart}
           {...omit(
-            ['className', 'dir', 'id', 'type', 'onTouchStart'],
+            [
+              'className',
+              'disabled',
+              'fullWidth',
+              'href',
+              'icon',
+              'iconOnly',
+              'iconPosition',
+              'id',
+              'label',
+              'onTouchStart',
+              'target',
+              'type',
+              'variant',
+            ],
             triggerProps,
           )}
         >
