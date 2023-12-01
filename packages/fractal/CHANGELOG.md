@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [5.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.3...@snowball-tech/fractal@5.5.4) (2023-12-01)
+
+### 🐛 Bug Fixes
+
+- **input-file:** don't use unwanted props for trigger button ([242203b](https://github.com/snowball-tech/fractal/commit/242203bf3f7fe02432aa7464f66cbe19415b1aab))
+
 ## @snowball-tech/fractal [5.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.2...@snowball-tech/fractal@5.5.3) (2023-12-01)
 
 ### 🐛 Bug Fixes
