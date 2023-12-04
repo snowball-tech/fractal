@@ -1,3 +1,26 @@
+# @snowball-tech/fractal [6.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.5...@snowball-tech/fractal@6.0.0) (2023-12-04)
+
+### 💥 Breaking changes
+
+- **tailwind:** fix the tailwind classes using dots ([008620a](https://github.com/snowball-tech/fractal/commit/008620a80d839332a8e6fc00532e64c846409205))
+
+### ✨ Features
+
+- **dialog:** implement the new dialog component ([c596fe8](https://github.com/snowball-tech/fractal/commit/c596fe855969efc9a518c9a60999e30a8476fdbb))
+
+### 🐛 Bug Fixes
+
+- fix a linter issue ([4bcf4c6](https://github.com/snowball-tech/fractal/commit/4bcf4c6045545331e126f30081b688aee0f4899e))
+
+### 📦 Dependencies
+
+- revert back to Node 18.x ([55bc312](https://github.com/snowball-tech/fractal/commit/55bc3128eae9d445629222ca4d25ecfcdb6dd452))
+- update glacier dependencies ([1321b18](https://github.com/snowball-tech/fractal/commit/1321b18eebf3af17e01b524eff225a268b341ea9))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.0
+
 ## @snowball-tech/fractal [5.5.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.4...@snowball-tech/fractal@5.5.5) (2023-12-04)
 
 ### 📦 Dependencies
