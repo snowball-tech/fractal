@@ -129,7 +129,6 @@ export const tailwindTheme: Config['theme'] = {
 
   borderWidth: {
     '0': '0px',
-    '0.5': 'var(--size-spacing-half)',
     '1': 'var(--size-border-1)',
     '2': 'var(--size-border-2)',
     DEFAULT: '0px',
@@ -525,12 +524,11 @@ export const tailwindTheme: Config['theme'] = {
     px: 'var(--size-spacing-px)',
     quarter: 'var(--size-spacing-quarter)',
     //
-    '0.25': 'var(--size-spacing-quarter)',
     half: 'var(--size-spacing-half)',
     //
-    '0.5': 'var(--size-spacing-half)',
     '1': 'var(--size-spacing-1)',
-    '1.5': 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
+    'one-and-half': 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
+    //
     '2': 'var(--size-spacing-2)',
     '3': 'var(--size-spacing-3)',
     '4': 'var(--size-spacing-4)',
@@ -578,7 +576,6 @@ export const tailwindTheme: Config['theme'] = {
   transitionDelay: {
     0: '0s',
     1: '1s',
-    1.5: '1.5s',
     75: '75ms',
     100: '100ms',
     150: '150ms',
@@ -596,7 +593,6 @@ export const tailwindTheme: Config['theme'] = {
   transitionDuration: {
     0: '0s',
     1: '1s',
-    1.5: '1.5s',
     75: '75ms',
     100: '100ms',
     150: '150ms',

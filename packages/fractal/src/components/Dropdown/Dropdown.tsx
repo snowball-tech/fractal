@@ -291,14 +291,14 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   <RxScrollArea.Scrollbar
                     className={cj(
                       `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
-                      '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70',
+                      '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70',
                     )}
                     orientation="vertical"
                   >
                     <RxScrollArea.Thumb
                       className={cj(
                         `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                        'before:l-1/2 relative !w-0.5 flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                        'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
                       )}
                     />
                   </RxScrollArea.Scrollbar>

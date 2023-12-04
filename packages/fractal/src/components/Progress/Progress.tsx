@@ -39,7 +39,7 @@ export const Progress = ({
           props.className,
         )}
         style={{
-          transform: `translateX(-${100 - ((value / max) * 100 ?? 0)}%)`,
+          transform: `translateX(-${100 - (value / max) * 100}%)`,
         }}
       />
     </RxProgress.Root>

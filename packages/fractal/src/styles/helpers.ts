@@ -57,24 +57,12 @@ export const customTwMerge = extendTailwindMerge({
       ],
       delay: [
         {
-          delay: [
-            '0',
-            '1',
-            '1.5',
-            validators.isNumber,
-            validators.isArbitraryValue,
-          ],
+          delay: ['0', '1', validators.isNumber, validators.isArbitraryValue],
         },
       ],
       duration: [
         {
-          delay: [
-            '0',
-            '1',
-            '1.5',
-            validators.isNumber,
-            validators.isArbitraryValue,
-          ],
+          delay: ['0', '1', validators.isNumber, validators.isArbitraryValue],
         },
       ],
       'font-size': [
@@ -316,17 +304,15 @@ export const customTwMerge = extendTailwindMerge({
       ],
     },
     theme: {
-      borderWidth: ['', 'browser', 'unset', '0', '0.5', 'half', '1', '2'],
+      borderWidth: ['', 'browser', 'unset', '0', 'half', '1', '2'],
       spacing: [
         'browser',
         'unset',
         '0',
         'px',
         'quarter',
-        '0.25',
         'half',
-        '0.5',
-        '1.5',
+        'one-and-half',
         isValidSpacing,
       ],
     },
