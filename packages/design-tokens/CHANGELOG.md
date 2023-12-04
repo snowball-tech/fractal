@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [9.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.3...@snowball-tech/design-tokens@9.0.0) (2023-12-04)
+
+### 💥 Breaking changes
+
+- **tailwind:** fix the tailwind classes using dots ([008620a](https://github.com/snowball-tech/fractal/commit/008620a80d839332a8e6fc00532e64c846409205))
+
+### 📦 Dependencies
+
+- revert back to Node 18.x ([55bc312](https://github.com/snowball-tech/fractal/commit/55bc3128eae9d445629222ca4d25ecfcdb6dd452))
+
 ## @snowball-tech/design-tokens [8.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.2...@snowball-tech/design-tokens@8.1.3) (2023-12-04)
 
 ### 📦 Dependencies
