@@ -28,7 +28,7 @@
   "packageManager": "yarn@4.0.2",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "20x"
+    "node": "18.x"
   },
   "type": "module",
   "sideEffects": false,
@@ -61,7 +61,7 @@
     "predev": "yarn run update-fonts",
     "dev": "yarn run predev && yarn run dev-storybook",
     "dev-storybook": "yarn storybook dev -p 6006 --no-open",
-    "format": "yarn run -T prettier --cache --check .",
+    "format": "yarn run -T prettier --check .",
     "format-fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run lint-scripts & yarn run lint-styles",
     "lint-fix": "yarn run lint-scripts-fix & yarn run lint-styles-fix",
