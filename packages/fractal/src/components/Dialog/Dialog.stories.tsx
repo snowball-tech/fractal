@@ -1,14 +1,14 @@
 import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/testing-library'
-import isChromatic from 'chromatic/isChromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
 import { InputText } from '@/components/InputText'
 import { sleep } from '@/utils'
 
-import { Dialog } from '.'
+import { Dialog, DialogPositions } from '.'
+import { DEFAULT_POSITION } from './Dialog.constants'
 
 type DialogProps = ComponentProps<typeof Dialog>
 
@@ -16,6 +16,13 @@ const meta: Meta<DialogProps> = {
   argTypes: {
     children: {
       control: 'text',
+    },
+    position: {
+      options: Object.values(DialogPositions),
+      table: {
+        defaultValue: { summary: DEFAULT_POSITION },
+        type: { summary: Object.values(DialogPositions).join('|') },
+      },
     },
     trigger: {
       control: 'radio',
@@ -41,18 +48,17 @@ const meta: Meta<DialogProps> = {
     disabled: false,
     dismissable: true,
     modal: true,
+    position: 'fixed',
     title: 'This is the title',
     trigger: 'Text',
   },
   component: Dialog,
   decorators: [
-    ...(isChromatic()
-      ? [
-          (storyFn: () => ReactNode) => (
-            <div style={{ height: '1200px', width: '1200px' }}>{storyFn()}</div>
-          ),
-        ]
-      : []),
+    (storyFn: () => ReactNode) => (
+      <div style={{ height: '500px', position: 'relative', width: '500px' }}>
+        {storyFn()}
+      </div>
+    ),
   ],
 
   parameters: {
