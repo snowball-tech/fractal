@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [8.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.2...@snowball-tech/design-tokens@8.1.3) (2023-12-04)
+
+### 📦 Dependencies
+
+- upgrade dependencies and migrate to Node 20 ([4b710e4](https://github.com/snowball-tech/fractal/commit/4b710e440a32f1caae5e0250052ef3bc2c9082cb))
+
 ## @snowball-tech/design-tokens [8.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@8.1.1...@snowball-tech/design-tokens@8.1.2) (2023-11-30)
 
 ### 🐛 Bug Fixes
