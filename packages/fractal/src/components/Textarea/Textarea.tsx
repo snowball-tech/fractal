@@ -178,7 +178,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           />
 
           {hasIcon && (
-            <div className="bottom-one-and-half absolute right-half">
+            <div className="absolute bottom-one-and-half right-half">
               {isFunction(onIconClick) && (
                 <Button
                   className={cj(
