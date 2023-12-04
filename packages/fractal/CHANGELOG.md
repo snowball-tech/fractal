@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [6.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.0...@snowball-tech/fractal@6.0.1) (2023-12-04)
+
+### 🐛 Bug Fixes
+
+- **dialog:** fix the ref issue with Paper ([6ae0311](https://github.com/snowball-tech/fractal/commit/6ae03116ca91b33be29616dbe930d5f95806ebc2))
+
 # @snowball-tech/fractal [6.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.5...@snowball-tech/fractal@6.0.0) (2023-12-04)
 
 ### 💥 Breaking changes
