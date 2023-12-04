@@ -5,7 +5,7 @@ import type {
 import type { ReactNode } from 'react'
 
 export interface ScrollAreaProps extends RxScrollAreaProps {
-  /** The content of the paper. */
+  /** The content of the scroll area. */
   children: ReactNode
   /**
    * The wanted scrollbar to appears.

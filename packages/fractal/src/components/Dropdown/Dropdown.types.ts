@@ -1,7 +1,7 @@
 import {
   DropdownMenuItem,
   Root,
-  DropdownMenuContentProps as RxDropdownMenuContentProps,
+  type DropdownMenuContentProps as RxDropdownMenuContentProps,
 } from '@radix-ui/react-dropdown-menu'
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
