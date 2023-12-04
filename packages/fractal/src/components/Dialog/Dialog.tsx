@@ -20,7 +20,7 @@ import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dialog.constants'
+import { DEFAULT_POSITION, GROUP_NAME } from './Dialog.constants'
 import type { CombinedRefs, DialogProps } from './Dialog.types'
 
 /**
@@ -45,6 +45,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onPointerDownOutside,
       onToggle,
       open,
+      position = DEFAULT_POSITION,
       title,
       trigger,
       ...props
@@ -165,8 +166,9 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                 <RxDialog.Overlay
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__overlay`,
-                    'fixed inset-0 bg-[rgba(0,0,0,0.3)]',
+                    'inset-0 bg-[rgba(0,0,0,0.3)]',
                   )}
+                  style={{ position }}
                 />
 
                 <RxDialog.Content
@@ -188,8 +190,9 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   )}
                 >
                   <Paper
-                    className="fixed left-1/2 top-1/2 flex h-fit w-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
+                    className="left-1/2 top-1/2 flex h-fit w-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
                     elevation="2"
+                    style={{ position }}
                   >
                     <div className="flex flex-row">
                       <RxDialog.Title

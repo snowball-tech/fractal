@@ -1,6 +1,8 @@
 import { DialogContentProps as RxDialogContentProps } from '@radix-ui/react-dialog'
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
+import { Positions } from './Dialog.constants'
+
 export type CombinedRefs = {
   container: HTMLDivElement | null
   content: HTMLDivElement | null
@@ -51,6 +53,15 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * Must be used in conjunction with `onToggle`.
    */
   open?: boolean
+  /**
+   * The positioning of the modal and the overlay.
+   *
+   *  - 'fixed' will position the modal and the overlay relative to the
+   *    viewport.
+   *  - 'absolute' will position the modal and the overlay relative to the
+   *    closest (relatively) positioned ancestor.
+   */
+  position?: `${Positions}`
   /** A title to display at the top of the dialog. */
   title?: string
   /**
