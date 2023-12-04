@@ -25,7 +25,7 @@
   "packageManager": "yarn@4.0.2",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "20x"
+    "node": "18.x"
   },
   "main": "dist/web/typescript/design-tokens.js",
   "files": [

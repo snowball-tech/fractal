@@ -34,7 +34,7 @@
   "packageManager": "yarn@4.0.2",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "20.x"
+    "node": "18.x"
   },
   "workspaces": [
     "apps/*",
