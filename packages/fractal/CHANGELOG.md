@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [5.5.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.4...@snowball-tech/fractal@5.5.5) (2023-12-04)
+
+### 📦 Dependencies
+
+- upgrade dependencies and migrate to Node 20 ([4b710e4](https://github.com/snowball-tech/fractal/commit/4b710e440a32f1caae5e0250052ef3bc2c9082cb))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 8.1.3
+
 ## @snowball-tech/fractal [5.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@5.5.3...@snowball-tech/fractal@5.5.4) (2023-12-01)
 
 ### 🐛 Bug Fixes
