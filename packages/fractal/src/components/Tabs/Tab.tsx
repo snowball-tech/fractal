@@ -35,7 +35,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
     const isLarge = large || groupLarge || (hasIcon && !isEmpty(label))
 
     let indicatorClassNames =
-      'after:left-1/2 after:h-0.25 after:w-0 after:-translate-x-1/2 after:transition-[width] '
+      'after:left-1/2 after:h-quarter after:w-0 after:-translate-x-1/2 after:transition-[width] '
     indicatorClassNames +=
       tabsPosition === Positions.Start ? 'after:-bottom-px' : 'after:-top-px'
 
@@ -43,7 +43,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
 
     if (orientation === Orientations.Vertical) {
       indicatorClassNames =
-        'after:top-1/2 after:w-0.25 after:h-0 after:-translate-y-1/2 after:transition-[height] '
+        'after:top-1/2 after:w-quarter after:h-0 after:-translate-y-1/2 after:transition-[height] '
       indicatorClassNames +=
         tabsPosition === Positions.Start ? 'after:-right-px' : 'after:-left-px'
 

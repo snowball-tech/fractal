@@ -75,7 +75,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           <RxSwitch.Thumb
             className={cj(
               `${PREFIX}-${GROUP_NAME}__toggle__thumb`,
-              'block h-2 w-2 -translate-x-0.25 translate-y-[-5.5px] rounded-full border-1 border-normal bg-white transition-transform duration-100',
+              'block h-2 w-2 -translate-x-quarter translate-y-[-5.5px] rounded-full border-1 border-normal bg-white transition-transform duration-100',
               'data-state-checked:translate-x-[15px]',
               disabled
                 ? '!border-disabled data-state-checked:bg-decorative-pink-90'

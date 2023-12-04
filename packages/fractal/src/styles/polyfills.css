@@ -1,24 +1,13 @@
 /* Polyfill flex gap for iOS < 14. */
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {
-  /* stylelint-disable selector-class-pattern */
   .flex:not(.flex-col).gap-0 > :not(:last-child),
   .gap-x-0 {
     margin-right: var(--size-spacing-0);
   }
 
-  .flex:not(.flex-col).gap-0.25 > :not(:last-child),
-  .gap-x-0.25 {
-    margin-right: var(--size-spacing-quarter);
-  }
-
   .flex:not(.flex-col).gap-quarter > :not(:last-child),
   .gap-x-quarter {
     margin-right: var(--size-spacing-quarter);
-  }
-
-  .flex:not(.flex-col).gap-0.5 > :not(:last-child),
-  .gap-x-0.5 {
-    margin-right: var(--size-spacing-half);
   }
 
   .flex:not(.flex-col).gap-half > :not(:last-child),
@@ -31,8 +20,8 @@
     margin-right: var(--size-spacing-1);
   }
 
-  .flex:not(.flex-col).gap-1.5 > :not(:last-child),
-  .gap-x-1.5 {
+  .flex:not(.flex-col).gap-one-and-half > :not(:last-child),
+  .gap-x-one-and-half {
     margin-right: calc(var(--size-spacing-1) + var(--size-spacing-half));
   }
 
@@ -136,19 +125,9 @@
     margin-bottom: var(--size-spacing-0);
   }
 
-  .flex.flex-col.gap-0.25 > :not(:last-child),
-  .gap-y-0.25 {
-    margin-bottom: var(--size-spacing-quarter);
-  }
-
   .flex.flex-col.gap-quarter > :not(:last-child),
   .gap-y-quarter {
     margin-bottom: var(--size-spacing-quarter);
-  }
-
-  .flex.flex-col.gap-0.5 > :not(:last-child),
-  .gap-y-0.5 {
-    margin-bottom: var(--size-spacing-half);
   }
 
   .flex.flex-col.gap-half > :not(:last-child),
@@ -161,8 +140,8 @@
     margin-bottom: var(--size-spacing-1);
   }
 
-  .flex.flex-col.gap-1.5 > :not(:last-child),
-  .gap-y-1.5 {
+  .flex.flex-col.gap-one-and-half > :not(:last-child),
+  .gap-y-one-and-half {
     margin-bottom: calc(var(--size-spacing-1) + var(--size-spacing-half));
   }
 
@@ -260,5 +239,4 @@
   .gap-y-20 {
     margin-bottom: var(--size-spacing-20);
   }
-  /* stylelint-enable selector-class-pattern */
 }

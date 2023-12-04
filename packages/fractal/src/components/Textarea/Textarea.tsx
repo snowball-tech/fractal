@@ -178,12 +178,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           />
 
           {hasIcon && (
-            <div className="absolute bottom-1.5 right-0.5">
+            <div className="bottom-one-and-half absolute right-half">
               {isFunction(onIconClick) && (
                 <Button
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__action`,
-                    'mb-0.5 text-grey-50',
+                    'mb-half text-grey-50',
                     isIconDisabled
                       ? `${PREFIX}-${GROUP_NAME}__action--disabled cursor-not-allowed !text-grey-70`
                       : 'hover:!text-dark',
@@ -201,7 +201,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 <div
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__icon`,
-                    'mr-1.5 text-grey-50',
+                    'mr-one-and-half text-grey-50',
                     isIconDisabled || disabled
                       ? `${PREFIX}-${GROUP_NAME}__icon--disabled cursor-not-allowed !text-grey-70`
                       : '',

@@ -27,7 +27,7 @@ export const Tag = ({
 }: TagProps) => {
   const sizeClassNames = {
     [Sizes.M]: 'px-2 py-1 leading-[20px]',
-    [Sizes.S]: 'px-1 py-0.5',
+    [Sizes.S]: 'px-1 py-half',
   }
 
   return (

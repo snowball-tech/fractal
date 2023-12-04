@@ -142,7 +142,7 @@ perfectionist/sort-objects */
             className={cj(
               `${PREFIX}-${GROUP_NAME}__box__mark`,
               `${PREFIX}-${GROUP_NAME}__box__mark--${color}`,
-              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-xs border-2 pt-0.5',
+              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-xs border-2 pt-half',
               disabled ? 'border-disabled bg-transparent' : `border-normal`,
             )}
           >

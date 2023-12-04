@@ -108,7 +108,7 @@ perfectionist/sort-objects */
           <div
             className={cj(
               `${PREFIX}-${GROUP_NAME}__radio__mark`,
-              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-full border-2 pt-0.5',
+              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-full border-2 pt-half',
               isDisabled ? 'border-disabled bg-transparent' : `border-normal`,
             )}
           >

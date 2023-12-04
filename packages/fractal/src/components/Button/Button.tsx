@@ -19,7 +19,7 @@ export const variantClassNames = {
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
   [Variants.Display]:
-    'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-0.25 active:translate-y-0.5 hover:translate-x-0 hover:-translate-y-0.25 focus:translate-x-0 focus:-translate-y-0.25',
+    'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter',
   [Variants.Primary]:
     'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal',
   [Variants.Secondary]:

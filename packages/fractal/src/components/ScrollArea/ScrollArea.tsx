@@ -21,7 +21,7 @@ export const ScrollArea = ({
   ...props
 }: ScrollAreaProps) => {
   const scrollBarClassNames =
-    'flex touch-none select-none bg-grey-90 p-0.25 transition-background-color duration-300 ease-out hover:bg-grey-70'
+    'flex touch-none select-none bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70'
 
   const scrollBarThumbClassNames =
     'relative flex-1 rounded-sm bg-grey-30 before:absolute before:content-empty'
@@ -52,7 +52,7 @@ export const ScrollArea = ({
             className={cj(
               `${PREFIX}-${GROUP_NAME}__scrollbar--y__thumb`,
               scrollBarThumbClassNames,
-              '!w-0.5 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
+              '!w-half before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
             )}
           />
         </RxScrollArea.Scrollbar>
@@ -71,7 +71,7 @@ export const ScrollArea = ({
             className={cj(
               `${PREFIX}-${GROUP_NAME}__scrollbar--x__thumb`,
               scrollBarThumbClassNames,
-              '!h-0.5 before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
+              '!h-half before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
             )}
           />
         </RxScrollArea.Scrollbar>
