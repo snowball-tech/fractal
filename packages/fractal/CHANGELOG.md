@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [6.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.1...@snowball-tech/fractal@6.0.2) (2023-12-04)
+
+### 🐛 Bug Fixes
+
+- **dialog:** fix the interactive close story ([85340b4](https://github.com/snowball-tech/fractal/commit/85340b4016c135411723f529e9f2bc89303375e7))
+
 ## @snowball-tech/fractal [6.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.0...@snowball-tech/fractal@6.0.1) (2023-12-04)
 
 ### 🐛 Bug Fixes
