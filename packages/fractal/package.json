@@ -61,7 +61,7 @@
     "predev": "yarn run update-fonts",
     "dev": "yarn run predev && yarn run dev-storybook",
     "dev-storybook": "yarn storybook dev -p 6006 --no-open",
-    "format": "yarn run -T prettier --check .",
+    "format": "yarn run -T prettier --cache --check .",
     "format-fix": "yarn run -T prettier --cache --write .",
     "lint": "yarn run lint-scripts & yarn run lint-styles",
     "lint-fix": "yarn run lint-scripts-fix & yarn run lint-styles-fix",
@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "^4.0.1",
-    "@snowball-tech/eslint-config": "^5.3.2",
+    "@snowball-tech/eslint-config": "^5.3.3",
     "@storybook/addon-a11y": "^7.6.3",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
@@ -118,7 +118,7 @@
     "tsup": "^8.0.1",
     "typescript": "^5.3.2",
     "vercel": "^32.6.1",
-    "vite": "^5.0.4",
+    "vite": "^5.0.5",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
