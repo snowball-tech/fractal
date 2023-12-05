@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [6.0.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.4...@snowball-tech/fractal@6.0.5) (2023-12-05)
+
+### 🐛 Bug Fixes
+
+- **button:** also fix vertical paddings ([205337d](https://github.com/snowball-tech/fractal/commit/205337d20512a4f85342b8f28cb331d46cbc8205))
+
 ## @snowball-tech/fractal [6.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.3...@snowball-tech/fractal@6.0.4) (2023-12-05)
 
 ### 🐛 Bug Fixes
