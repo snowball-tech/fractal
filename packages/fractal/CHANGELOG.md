@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [6.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.3...@snowball-tech/fractal@6.0.4) (2023-12-05)
+
+### 🐛 Bug Fixes
+
+- **button:** fix width of icon only buttons ([cd40baf](https://github.com/snowball-tech/fractal/commit/cd40baf49c7a72cf6edd00b2d0e52b54a644b46c))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([3cb5b9b](https://github.com/snowball-tech/fractal/commit/3cb5b9bcd37c585b637b62a45d79943573ad4663))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.1
+
 ## @snowball-tech/fractal [6.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.2...@snowball-tech/fractal@6.0.3) (2023-12-05)
 
 ### ♻️ Code Refactoring
