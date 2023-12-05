@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [6.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.2...@snowball-tech/fractal@6.0.3) (2023-12-05)
+
+### ♻️ Code Refactoring
+
+- harmonize the `label`/`children` handling ([e620f10](https://github.com/snowball-tech/fractal/commit/e620f1019f4e4b2612816954f8bb4e3209202c6e))
+
 ## @snowball-tech/fractal [6.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.1...@snowball-tech/fractal@6.0.2) (2023-12-04)
 
 ### 🐛 Bug Fixes
