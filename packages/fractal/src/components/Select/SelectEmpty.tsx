@@ -1,4 +1,5 @@
 import * as RxSelect from '@radix-ui/react-select'
+import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -17,22 +18,32 @@ import type { SelectEmptyProps } from './Select.types'
  */
 export const SelectEmpty = ({
   children,
+  label,
   value = 'empty-value',
   ...props
 }: SelectEmptyProps) => {
+  const hasChildren = Boolean(children)
+  if (!hasChildren && isEmpty(label)) {
+    console.warn(
+      'You must provide a `label` or `children` to the `SelectEmpty` component',
+    )
+  }
+
   return (
     <RxSelect.Item
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
         'pointer-events-none flex cursor-default items-center gap-1 rounded-sm p-2 outline-none',
         props.className,
       )}
+      title={label}
       value={value || 'empty-value'}
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
     >
       <RxSelect.ItemText asChild>
-        <Typography element="div">{children}</Typography>
+        <Typography element="div">{hasChildren ? children : label}</Typography>
       </RxSelect.ItemText>
 
       <RxSelect.ItemIndicator />

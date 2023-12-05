@@ -10,7 +10,11 @@ import type { LoaderProps } from './Loader.types'
  * `Loader` component allow to build interface with level and hierarchy.
  * experience.
  */
-export const Loader = ({ size = DEFAULT_SIZE, ...props }: LoaderProps) => {
+export const Loader = ({
+  label,
+  size = DEFAULT_SIZE,
+  ...props
+}: LoaderProps) => {
   const sizeClassNames = {
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
@@ -28,6 +32,7 @@ perfectionist/sort-objects */
 
   return (
     <svg
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
@@ -37,6 +42,7 @@ perfectionist/sort-objects */
       display="block"
       preserveAspectRatio="xMidYMid"
       style={{ background: '0 0', margin: 'auto' }}
+      title={label}
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       {...omit(['className'], props)}

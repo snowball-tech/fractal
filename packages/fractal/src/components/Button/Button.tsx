@@ -51,6 +51,7 @@ perfectionist/sort-objects */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      children,
       disabled = false,
       fullWidth = false,
       href,
@@ -66,6 +67,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `Button` component',
+      )
+    }
+
     const handleTouchStart = (event: TouchEvent<HTMLButtonElement>) => {
       if (isFunction(props.onTouchStart)) {
         props.onTouchStart(event)
@@ -155,7 +163,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         variant={isTextVariant ? 'body-1-link' : 'body-1'}
       >
         {hasIcon && iconPosition === 'left' && iconElement}
-        {iconOnly ? false : label}
+        {/* eslint-disable-next-line no-nested-ternary */}
+        {iconOnly ? false : hasChildren ? children : label}
         {hasIcon && iconPosition === 'right' && iconElement}
       </Typography>
     )

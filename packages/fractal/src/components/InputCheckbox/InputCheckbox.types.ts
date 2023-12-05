@@ -2,6 +2,7 @@ import type {
   CheckedState,
   CheckboxProps as RxCheckboxProps,
 } from '@radix-ui/react-checkbox'
+import type { ReactNode } from 'react'
 
 import { Colors, Variants } from './InputCheckbox.constants'
 
@@ -12,6 +13,13 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    * Must be used in conjunction with `onCheckedChange`.
    */
   checked?: CheckedState
+  /**
+   * The content of the checkbox.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** The color of the checkbox to use. */
   color?: `${Colors}`
   /**
@@ -32,8 +40,17 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    * If none is given, one will be generated automatically.
    */
   id?: string
-  /** The label of the checkbox. */
-  label: string
+  /**
+   * The content of the checkbox.
+   *
+   * Use this when you only need to display text in a checkbox.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the checkbox.
+   */
+  label?: string
   /**
    * The name of the checkbox.
    *

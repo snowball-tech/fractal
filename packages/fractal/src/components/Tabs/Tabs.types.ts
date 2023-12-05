@@ -10,7 +10,7 @@ export interface TabsProps
   /**
    * The content of the tabs.
    *
-   * You must use `TabContent` components.
+   * You must use `TabContent` components inside of this.
    */
   children: ReactNode
   /**
@@ -23,11 +23,7 @@ export interface TabsProps
   dir?: 'ltr' | 'rtl'
   /** Prevents the user from interacting with any tab. */
   disabled?: boolean
-  /**
-   * The label for the tabs
-   *
-   * Will be mainly used for accessibility purposes.
-   */
+  /** The accessible label for the tabs. */
   label?: string
   /**
    * Indicates if the tab bar should be larger (in height) than usual.
@@ -63,11 +59,27 @@ export interface TabProps
     AllHTMLAttributes<HTMLButtonElement>,
     'label' | 'type' | 'value'
   > {
+  /**
+   * The content of the tab.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** Prevents the user from interacting with the tab. */
   disabled?: boolean
   /** An icon to display before the label. */
   icon?: ReactNode
-  /** The label of the tab. */
+  /**
+   * The content of the tab.
+   *
+   * Use this when you only need to display text in a tab.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the tab.
+   */
   label?: string
   /**
    * Indicates if the tab should be larger (in height) than usual.

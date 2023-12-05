@@ -128,8 +128,13 @@ export interface AutocompleteProps
 
 export interface AutocompleteLoadingProps
   extends AllHTMLAttributes<HTMLDivElement> {
-  /** The content of the loader. */
-  children: ReactNode
+  /**
+   * The content of the loading item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /**
    * Indicates if you want to display an icon.
    *
@@ -137,14 +142,41 @@ export interface AutocompleteLoadingProps
    * your choice.
    */
   icon?: ReactNode | boolean
+  /**
+   * The content of the loading item.
+   *
+   * Use this when you only need to display text in a loading item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the loading item.
+   */
+  label?: string
   /** Indicates if you want the icon to spin. */
   spin?: boolean
 }
 
 export interface AutocompleteEmptyProps
   extends AllHTMLAttributes<HTMLDivElement> {
-  /** The content of the empty indicator. */
-  children: ReactNode
+  /**
+   * The content of the empty item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
+  /**
+   * The content of the empty item.
+   *
+   * Use this when you only need to display text in an empty item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the empty item.
+   */
+  label?: string
 }
 
 export type AutocompleteItemProps = DropdownItemProps

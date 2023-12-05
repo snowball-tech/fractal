@@ -25,6 +25,7 @@ export const ToggleGroup = ({
   defaultValue,
   disabled = false,
   fullWidth = false,
+  label,
   onValueChange,
   orientation = 'vertical',
   type = 'single',
@@ -36,6 +37,7 @@ export const ToggleGroup = ({
     // @ts-expect-error - I have a hard time using the proper type for the
     // `type` property.
     <RxToggleGroup.Root
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -45,6 +47,7 @@ export const ToggleGroup = ({
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
         props.className,
       )}
+      title={label}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
       {...(orientation !== undefined ? { orientation } : {})}

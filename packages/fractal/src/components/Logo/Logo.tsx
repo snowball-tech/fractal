@@ -69,6 +69,7 @@ perfectionist/sort-objects */
 
   return (
     <svg
+      aria-label="Snowball"
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
@@ -86,6 +87,7 @@ perfectionist/sort-objects */
       fill="none"
       preserveAspectRatio="xMidYMid"
       style={{ background: 'none', margin: 'auto' }}
+      title="Snowball"
       viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
       {...omit(['className'], props)}
