@@ -19,11 +19,11 @@ export const variantClassNames = {
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
   [Variants.Display]:
-    'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))]',
+    'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
   [Variants.Primary]:
-    'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal px-[calc(theme(spacing.3)-theme(spacing.half))]',
+    'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
   [Variants.Secondary]:
-    'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal px-[calc(theme(spacing.3)-theme(spacing.quarter))]',
+    'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
   [Variants.Text]: 'bg-transparent text-dark',
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
@@ -34,11 +34,11 @@ export const variantDisabledClassNames = {
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
   [Variants.Display]:
-    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))]',
+    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
   [Variants.Primary]:
-    'bg-disabled text-light px-[calc(theme(spacing.3)-theme(spacing.half))]',
+    'bg-disabled text-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
   [Variants.Secondary]:
-    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))]',
+    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
   [Variants.Text]: 'bg-transparent text-disabled',
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
@@ -114,7 +114,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         : '',
       asLink && !isTextVariant ? 'no-underline' : '',
       'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
-      !isTextVariant ? 'h-6 py-1' : '',
+      !isTextVariant ? 'h-6' : 'h-3',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
@@ -130,7 +130,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         : !fullWidth
           ? 'w-fit'
           : '',
-      iconOnly && isTextVariant ? 'h-3 w-3 max-w-3' : '',
+      iconOnly && isTextVariant ? 'w-3 max-w-3' : '',
       props.className,
     )
 
