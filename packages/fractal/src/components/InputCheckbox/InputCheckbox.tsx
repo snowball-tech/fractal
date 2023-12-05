@@ -133,7 +133,7 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            'mt-half h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
             disabled
               ? 'cursor-not-allowed'
               : `cursor-pointer ${colorClassNames.checked[color]} ${colorClassNames.hover[color]}`,
@@ -166,7 +166,7 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--${color}`,
-            'flex-1 overflow-auto break-words pb-2 pr-2 pt-one-and-half',
+            'flex-1 overflow-auto break-words py-2 pr-2',
             disabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required
               ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
