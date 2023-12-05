@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [6.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.6...@snowball-tech/fractal@6.0.7) (2023-12-05)
+
+### 🐛 Bug Fixes
+
+- **input-checkbox:** use a better alignment for checkbox ([a466cfb](https://github.com/snowball-tech/fractal/commit/a466cfb9ef16c6e1e110ea6c2dedba2b2c12006b))
+
 ## @snowball-tech/fractal [6.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.5...@snowball-tech/fractal@6.0.6) (2023-12-05)
 
 ### 🐛 Bug Fixes
