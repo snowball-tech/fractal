@@ -116,7 +116,7 @@ perfectionist/sort-objects */
           `${PREFIX}-${GROUP_NAME}--${color}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'group/checkbox',
-          'flex w-full cursor-default items-center rounded-sm',
+          'flex w-full cursor-default items-start rounded-sm',
           variantClassNames[variant],
           disabled
             ? `${PREFIX}-${GROUP_NAME}--disabled text-disabled`
@@ -166,7 +166,7 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--${color}`,
-            'flex-1 overflow-auto break-words py-2 pr-2',
+            'flex-1 overflow-auto break-words pb-2 pr-2 pt-one-and-half',
             disabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required
               ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
