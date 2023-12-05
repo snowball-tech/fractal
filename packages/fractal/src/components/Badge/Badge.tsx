@@ -14,7 +14,7 @@ import type { BadgeProps } from './Badge.types'
 /**
  * `Badge` component displays a number in a small colored bubble.
  */
-export const Badge = ({ count, limit = 99, ...props }: BadgeProps) => {
+export const Badge = ({ count, label, limit = 99, ...props }: BadgeProps) => {
   let actualCount = isNumber(count) && isInteger(count) ? `${count}` : ''
   if (
     isNumber(limit) &&
@@ -27,6 +27,7 @@ export const Badge = ({ count, limit = 99, ...props }: BadgeProps) => {
 
   return (
     <Typography
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'inline-flex shrink-0 items-center justify-center rounded-full bg-primary',
@@ -36,6 +37,7 @@ export const Badge = ({ count, limit = 99, ...props }: BadgeProps) => {
         props.className,
       )}
       element="div"
+      title={label}
       variant="caption-bold"
       {...omit(['className'], props)}
     >

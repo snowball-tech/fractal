@@ -17,7 +17,7 @@ import { SelectGroupContext } from './SelectGroupContext'
  * information.
  */
 export const SelectItemGroup = ({
-  children: items,
+  children,
   disabled = false,
   label,
   ...props
@@ -55,7 +55,7 @@ export const SelectItemGroup = ({
         element="div"
       >
         <SelectGroupContext.Provider value={{ disabled }}>
-          {items}
+          {children}
         </SelectGroupContext.Provider>
       </Typography>
     </RxSelect.Group>

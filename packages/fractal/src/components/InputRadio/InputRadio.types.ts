@@ -54,6 +54,13 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
 }
 
 export interface InputRadioProps extends RxRadioProps {
+  /**
+   * The content of the radio.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** Prevents the user from interacting with the radio button. */
   disabled?: boolean
   /** Indicates if the radio button should take all the available width. */
@@ -66,8 +73,17 @@ export interface InputRadioProps extends RxRadioProps {
    * If none is given, one will be generated automatically.
    */
   id?: string
-  /** The label of the radio button. */
-  label: string
+  /**
+   * The content of the radio.
+   *
+   * Use this when you only need to display text in a radio.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the radio.
+   */
+  label?: string
   /** The value submitted in the submitted form. */
   value: string
 }

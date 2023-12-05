@@ -2,6 +2,7 @@ import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'
+import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 import {
   type ForwardedRef,
@@ -32,6 +33,7 @@ import { InputRadioContext } from './InputRadioContext'
 export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
   (
     {
+      children,
       disabled = false,
       fullWidth = false,
       id,
@@ -41,6 +43,13 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
     }: InputRadioProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `InputRadio` component',
+      )
+    }
+
     const variantClassNames = {
       /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
@@ -130,7 +139,9 @@ perfectionist/sort-objects */
           )}
           htmlFor={uniqueId}
         >
-          <Typography element="label">{label}</Typography>
+          <Typography element={hasChildren ? 'div' : 'label'}>
+            {hasChildren ? children : label}
+          </Typography>
         </RxLabel>
       </Typography>
     )

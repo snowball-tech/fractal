@@ -1,3 +1,4 @@
+import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 
@@ -19,19 +20,26 @@ import type { StepperProps } from './Stepper.types'
 export const Stepper = ({
   current = 0,
   currentAs = 'step',
+  getValueLabel,
   length,
   max = 100,
   value = 0,
   ...props
 }: StepperProps) => {
+  const label = isFunction(getValueLabel)
+    ? getValueLabel(current, length)
+    : `${current} / ${length}`
+
   return (
     <div
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--current-as-${currentAs}`,
         'flex max-w-full gap-1',
         props.className,
       )}
+      title={label}
       {...omit(['className'], props)}
     >
       {range(0, length).map((index) => {

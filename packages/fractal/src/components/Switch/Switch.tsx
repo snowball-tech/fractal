@@ -1,5 +1,6 @@
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSwitch from '@radix-ui/react-switch'
+import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { type ForwardedRef, forwardRef, useId } from 'react'
@@ -21,6 +22,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
   (
     {
       checked,
+      children,
       defaultChecked,
       disabled = false,
       id,
@@ -34,6 +36,13 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
     }: SwitchProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `Switch` component',
+      )
+    }
+
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
@@ -98,8 +107,8 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           )}
           htmlFor={uniqueId}
         >
-          <Typography element="label" variant="body-2">
-            {label}
+          <Typography element={hasChildren ? 'div' : 'label'} variant="body-2">
+            {hasChildren ? children : label}
           </Typography>
         </RxLabel>
       </div>

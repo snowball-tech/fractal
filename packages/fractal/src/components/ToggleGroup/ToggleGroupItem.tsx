@@ -39,6 +39,7 @@ export const ToggleGroupItem = forwardRef<
 >(
   (
     {
+      children,
       disabled = false,
       fullWidth = false,
       icon,
@@ -50,6 +51,13 @@ export const ToggleGroupItem = forwardRef<
     }: ToggleGroupItemProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `ToggleGroupItem` component',
+      )
+    }
+
     const buttonRef = useRef<HTMLButtonElement>(null)
     const combinedRef = composeRefs(ref, buttonRef)
 
@@ -120,9 +128,9 @@ export const ToggleGroupItem = forwardRef<
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,
             )}
-            element="label"
+            element={hasChildren ? 'div' : 'label'}
           >
-            {label}
+            {hasChildren ? children : label}
           </Typography>
         )}
       </RxToggleGroup.Item>

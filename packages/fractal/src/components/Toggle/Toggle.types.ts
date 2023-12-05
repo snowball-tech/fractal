@@ -5,6 +5,13 @@ import { Variants } from './Toggle.constants'
 export interface ToggleProps
   extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'type'> {
   /**
+   * The content of the menu item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
+  /**
    * The toggled state of the toggle when it is initially rendered.
    *
    * Use this when you do not need to control its toggled state.
@@ -22,8 +29,17 @@ export interface ToggleProps
    * accessibility.
    */
   iconOnly?: boolean
-  /** The label of the toggle. */
-  label: string
+  /**
+   * The content of the toggle.
+   *
+   * Use this when you only need to display text in a toggle.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the toggle.
+   */
+  label?: string
   /** Event handler called when the toggle is clicked. */
   onToggle?: (toggled: boolean) => void
   /**

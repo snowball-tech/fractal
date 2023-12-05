@@ -31,6 +31,7 @@ export const disabledVariantClassNames = {
 export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (
     {
+      children,
       defaultToggled,
       disabled = false,
       fullWidth = false,
@@ -44,6 +45,13 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     }: ToggleProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `Toggle` component',
+      )
+    }
+
     const buttonRef = useRef<HTMLButtonElement>(null)
     const combinedRef = composeRefs(ref, buttonRef)
 
@@ -96,9 +104,9 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,
             )}
-            element="label"
+            element={hasChildren ? 'div' : 'label'}
           >
-            {label}
+            {hasChildren ? children : label}
           </Typography>
         )}
       </RxToggle.Root>

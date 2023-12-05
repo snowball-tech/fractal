@@ -25,6 +25,13 @@ export interface ToggleGroupProps extends RxToggleGroupProps {
   /** Indicates if the toggle group should take all the available width. */
   fullWidth?: boolean
   /**
+   * The accessible label of the badge.
+   *
+   * If provided, this will be used as the `aria-label` and the `title` of the
+   * badge.
+   */
+  label?: string
+  /**
    * Event handler called when the value of the toggle group (i.e. the toggled
    * toggle) changes.
    */
@@ -53,6 +60,13 @@ export interface ToggleGroupProps extends RxToggleGroupProps {
 }
 
 export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
+  /**
+   * The content of the toggle item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** Prevents the user from interacting with the toggle. */
   disabled?: boolean
   /** Indicates if the toggle should take all the available width. */
@@ -65,8 +79,17 @@ export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
    * accessibility.
    */
   iconOnly?: boolean
-  /** The label of the toggle. */
-  label: string
+  /**
+   * The content of the toggle item.
+   *
+   * Use this when you only need to display text in a toggle item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the toggle item.
+   */
+  label?: string
   /** Event handler called when the toggle is clicked. */
   onToggle?: (toggled: boolean) => void
   /** The value submitted in the submitted form. */

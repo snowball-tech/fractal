@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -22,9 +23,17 @@ export const Tag = ({
   color = DEFAULT_COLOR,
   disabled = false,
   fullWidth = false,
+  label,
   size = DEFAULT_SIZE,
   ...props
 }: TagProps) => {
+  const hasChildren = Boolean(children)
+  if (!hasChildren && isEmpty(label)) {
+    console.warn(
+      'You must provide a `label` or `children` to the `DropdownItem` component',
+    )
+  }
+
   const sizeClassNames = {
     [Sizes.M]: 'px-2 py-1 leading-[20px]',
     [Sizes.S]: 'px-1 py-half',
@@ -32,6 +41,7 @@ export const Tag = ({
 
   return (
     <Typography
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
@@ -46,10 +56,11 @@ export const Tag = ({
         props.className,
       )}
       element="div"
+      title={label}
       variant={sizeToTypographyVariant[size]}
       {...omit(['className'], props)}
     >
-      {children}
+      {hasChildren ? children : label}
     </Typography>
   )
 }

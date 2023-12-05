@@ -71,6 +71,7 @@ perfectionist/sort-objects */
 
   const avatarBubble = isEmpty(imageUrl) ? (
     <Typography
+      aria-label={name}
       className={cj(
         baseBubbleClassName,
         'flex items-center justify-center overflow-hidden bg-decorative-pink-70 text-dark',
@@ -99,6 +100,7 @@ perfectionist/sort-objects */
     </Typography>
   ) : (
     <div
+      aria-label={name}
       className={cj(
         baseBubbleClassName,
         'bg-cover bg-center bg-no-repeat',

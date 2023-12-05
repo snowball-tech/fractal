@@ -19,9 +19,24 @@ import { TabsContext } from './TabsContext'
  */
 export const Tab = forwardRef<HTMLButtonElement, TabProps>(
   (
-    { disabled = false, icon, label, large = false, name, ...props }: TabProps,
+    {
+      children,
+      disabled = false,
+      icon,
+      label,
+      large = false,
+      name,
+      ...props
+    }: TabProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `Tab` component',
+      )
+    }
+
     const hasIcon = Boolean(icon)
 
     const {
@@ -53,6 +68,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
     return (
       <RxTabs.Trigger
         ref={ref}
+        aria-label={label}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__tab`,
           'cursor-pointer border-0 bg-[unset] px-0 py-0 text-left',
@@ -69,6 +85,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
           props.className,
         )}
         disabled={isDisabled}
+        title={label}
         value={name}
         {...omit(['className', 'value'], props)}
       >
@@ -81,7 +98,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
           variant="caption-median"
         >
           {icon}
-          {label}
+          {hasChildren ? children : label}
         </Typography>
       </RxTabs.Trigger>
     )

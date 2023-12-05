@@ -10,6 +10,13 @@ export interface StepperProps extends AllHTMLAttributes<HTMLDivElement> {
    * - `progress`: The current step will be displayed as a progress bar.
    */
   currentAs?: 'progress' | 'step'
+  /**
+   * A function to get the accessible label text representing the current value
+   * in a human-readable format.
+   *
+   * If not provided, the value label will be read as "<current>/<length>".
+   */
+  getValueLabel?: (current: number, length: number) => string
   /** The number of steps. */
   length: number
   /**

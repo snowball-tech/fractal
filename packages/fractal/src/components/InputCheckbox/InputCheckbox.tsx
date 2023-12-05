@@ -2,6 +2,7 @@ import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
+import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import {
@@ -35,6 +36,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
   (
     {
       checked,
+      children,
       color = DEFAULT_COLOR,
       defaultChecked,
       disabled = false,
@@ -50,6 +52,13 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     }: InputCheckboxProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasChildren = Boolean(children)
+    if (!hasChildren && isEmpty(label)) {
+      console.warn(
+        'You must provide a `label` or `children` to the `InputCheckbox` component',
+      )
+    }
+
     const variantClassNames = {
       /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
@@ -165,7 +174,9 @@ perfectionist/sort-objects */
           )}
           htmlFor={uniqueId}
         >
-          <Typography element="label">{label}</Typography>
+          <Typography element={hasChildren ? 'div' : 'label'}>
+            {hasChildren ? children : label}
+          </Typography>
         </RxLabel>
       </div>
     )

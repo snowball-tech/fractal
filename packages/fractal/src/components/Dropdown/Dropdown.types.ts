@@ -92,6 +92,13 @@ export interface DropdownItemProps
       AllHTMLAttributes<HTMLAnchorElement>,
     'asChild' | 'onClick'
   > {
+  /**
+   * The content of the menu item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** Indicates if the menu item is disabled. */
   disabled?: boolean
   /** The URL to open when clicking on the item. */
@@ -100,6 +107,13 @@ export interface DropdownItemProps
   icon?: ReactNode
   /**
    * The content of the menu item.
+   *
+   * Use this when you only need to display text in a menu item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the menu item.
    */
   label?: string
   /** The event handler to call when the menu item is clicked. */

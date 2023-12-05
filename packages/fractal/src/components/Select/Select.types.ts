@@ -89,17 +89,49 @@ export interface SelectProps
 }
 
 export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
-  /** The content of the empty indicator. */
-  children: ReactNode
+  /**
+   * The content of the empty select item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
+  /**
+   * The content of the empty select item.
+   *
+   * Use this when you only need to display text in an empty select item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the empty item.
+   */
+  label?: string
   /** The value of the empty element. */
   value?: string
 }
 
 export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
-  /** The label of the select option. */
-  children: ReactNode
+  /**
+   * The content of the select item.
+   *
+   * Use this for complex content where a string (passed to the `label` prop) is
+   * not enough.
+   */
+  children?: ReactNode
   /** Prevents the user from selecting this option. */
   disabled?: boolean
+  /**
+   * The content of the select item.
+   *
+   * Use this when you only need to display text in a select item.
+   * If you need more complex content, use the `children` prop.
+   *
+   * When using the `children` prop, you can use this prop to set a simple
+   * textual representation of the item that will be used as the `aria-label`
+   * and `title` for the item.
+   */
+  label?: string
   /** The value of the select option. */
   value: string
 }

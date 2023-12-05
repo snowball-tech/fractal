@@ -19,6 +19,7 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  * for more information.
  */
 export const DropdownItem = ({
+  children,
   disabled,
   href,
   icon,
@@ -29,6 +30,13 @@ export const DropdownItem = ({
   value,
   ...props
 }: DropdownItemProps) => {
+  const hasChildren = Boolean(children)
+  if (!hasChildren && isEmpty(label)) {
+    console.warn(
+      'You must provide a `label` or `children` to the `DropdownItem` component',
+    )
+  }
+
   const { disabled: groupDisabled } = useContext(DropdownGroupContext)
 
   const isDisabled = disabled || groupDisabled
@@ -55,7 +63,9 @@ export const DropdownItem = ({
       {...(isFunction(onClick) ? { onSelect: onClick } : {})}
       {...(isFunction(onSelect) ? { onSelect } : {})}
       {...omit(['className', 'data-value'], props)}
+      aria-label={label}
       asChild
+      title={label}
     >
       <Typography element={isLink ? 'a' : 'div'}>
         {icon && (
@@ -69,7 +79,7 @@ export const DropdownItem = ({
           </div>
         )}
 
-        {label}
+        {hasChildren ? children : label}
       </Typography>
     </RxDropdownMenu.Item>
   )
