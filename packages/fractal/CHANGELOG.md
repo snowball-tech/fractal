@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [6.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.7...@snowball-tech/fractal@6.1.0) (2023-12-06)
+
+### ✨ Features
+
+- **input-checkbox:** add a readOnly mode ([00cd374](https://github.com/snowball-tech/fractal/commit/00cd3743ada34282dceae82e0c10c20860312b1b))
+
 ## @snowball-tech/fractal [6.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.6...@snowball-tech/fractal@6.0.7) (2023-12-05)
 
 ### 🐛 Bug Fixes
