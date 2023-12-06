@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.0.0...@snowball-tech/fractal@7.0.1) (2023-12-06)
+
+### 🐛 Bug Fixes
+
+- **input-checkbox:** remove the left margin on the tertiary variant ([ccfc955](https://github.com/snowball-tech/fractal/commit/ccfc955c81d2adace5f8a98ea685fffd5380fb75))
+
 # @snowball-tech/fractal [7.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.1.0...@snowball-tech/fractal@7.0.0) (2023-12-06)
 
 ### 💥 Breaking changes
