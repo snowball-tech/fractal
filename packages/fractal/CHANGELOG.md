@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.1.0...@snowball-tech/fractal@7.0.0) (2023-12-06)
+
+### 💥 Breaking changes
+
+- **input-checkbox:** change the visual style of tertiary checkboxes ([1a8b5dd](https://github.com/snowball-tech/fractal/commit/1a8b5ddaaa2605c8e6bb8644298497717c5d1d62))
+
 # @snowball-tech/fractal [6.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@6.0.7...@snowball-tech/fractal@6.1.0) (2023-12-06)
 
 ### ✨ Features
