@@ -45,6 +45,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       label,
       name,
       onCheckedChange,
+      readOnly = false,
       required = false,
       value = 'on',
       variant = DEFAULT_VARIANT,
@@ -104,6 +105,12 @@ perfectionist/sort-objects */
     const combinedRef = composeRefs(ref, checkboxRef)
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+      if (readOnly) {
+        event.preventDefault()
+
+        return
+      }
+
       if (event.target) {
         ;(event.target as HTMLButtonElement).blur()
       }
@@ -136,9 +143,14 @@ perfectionist/sort-objects */
             'mt-half h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
             disabled
               ? 'cursor-not-allowed'
-              : `cursor-pointer ${colorClassNames.checked[color]} ${colorClassNames.hover[color]}`,
+              : `${colorClassNames.checked[color]}`,
+            !disabled && readOnly ? 'cursor-default' : '',
+            !disabled && !readOnly
+              ? `${colorClassNames.hover[color]} cursor-pointer`
+              : '',
           )}
           {...(defaultChecked !== undefined ? { defaultChecked } : {})}
+          aria-readonly={readOnly}
           disabled={disabled}
           name={name || uniqueId}
           required={required}
@@ -167,7 +179,9 @@ perfectionist/sort-objects */
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--${color}`,
             'flex-1 overflow-auto break-words py-2 pr-2',
-            disabled ? 'cursor-not-allowed' : `cursor-pointer`,
+            disabled ? 'cursor-not-allowed' : '',
+            !disabled && readOnly ? 'cursor-default' : '',
+            !disabled && !readOnly ? 'cursor-pointer' : '',
             required
               ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
               : '',

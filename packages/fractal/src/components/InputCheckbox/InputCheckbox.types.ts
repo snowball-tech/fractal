@@ -62,6 +62,11 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
   /** Event handler called when the checked state of the checkbox changes. */
   onCheckedChange?: (checked: CheckedState) => void
   /**
+   * Prevent the user from interacting with the checkbox but keep a
+   * non-disabled visual state.
+   */
+  readOnly?: boolean
+  /**
    * Indicates that the user must check the checkbox before continuing (e.g.
    * sending a form).
    */
