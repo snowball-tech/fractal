@@ -140,7 +140,8 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'mt-half h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            'mt-half h-full flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            variant === Variants.Tertiary ? '' : 'min-h-6',
             disabled
               ? 'cursor-not-allowed'
               : `${colorClassNames.checked[color]}`,
@@ -178,7 +179,8 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--${color}`,
-            'flex-1 overflow-auto break-words py-2 pr-2',
+            'flex-1 overflow-auto break-words',
+            variant === Variants.Tertiary ? 'py-half' : 'py-2 pr-2',
             disabled ? 'cursor-not-allowed' : '',
             !disabled && readOnly ? 'cursor-default' : '',
             !disabled && !readOnly ? 'cursor-pointer' : '',
