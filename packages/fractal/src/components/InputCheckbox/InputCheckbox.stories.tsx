@@ -44,6 +44,7 @@ const meta = {
     disabled: false,
     fullWidth: false,
     label: 'Han shot first',
+    readOnly: false,
     required: false,
   },
   component: InputCheckbox,
@@ -110,6 +111,16 @@ export const Primary: Story = {
           defaultChecked
           disabled
           label={`Disabled checked primary`}
+          variant="primary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox label={`Read-only primary`} readOnly variant="primary" />
+        <InputCheckbox
+          defaultChecked
+          label={`Read-only checked primary`}
+          readOnly
           variant="primary"
         />
       </Wrapper>
@@ -212,6 +223,20 @@ export const Secondary: Story = {
 
       <Wrapper>
         <InputCheckbox
+          label={`Read-only secondary`}
+          readOnly
+          variant="secondary"
+        />
+        <InputCheckbox
+          defaultChecked
+          label={`Read-only checked secondary`}
+          readOnly
+          variant="secondary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
           fullWidth
           label="Full width secondary"
           variant="secondary"
@@ -306,6 +331,20 @@ export const Tertiary: Story = {
           defaultChecked
           disabled
           label={`Disabled checked tertiary`}
+          variant="tertiary"
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox
+          label={`Read-only tertiary`}
+          readOnly
+          variant="tertiary"
+        />
+        <InputCheckbox
+          defaultChecked
+          label={`Read-only checked tertiary`}
+          readOnly
           variant="tertiary"
         />
       </Wrapper>
