@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [7.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.0.1...@snowball-tech/fractal@7.1.0) (2023-12-07)
+
+### ✨ Features
+
+- **cute-icon:** add the cute icon component ([47408d3](https://github.com/snowball-tech/fractal/commit/47408d3e7f226da6a555cd7cf201b9b52a0b481f))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([51ef38f](https://github.com/snowball-tech/fractal/commit/51ef38fb5199cd66d82c986baf946871af3ee0c3))
+
 ## @snowball-tech/fractal [7.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.0.0...@snowball-tech/fractal@7.0.1) (2023-12-06)
 
 ### 🐛 Bug Fixes
