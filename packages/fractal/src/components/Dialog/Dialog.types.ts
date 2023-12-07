@@ -31,6 +31,8 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   modal?: boolean
   /** Event handler called when the dialog is closed. */
   onClose?: () => void
+  /** Event handler called when the dialog is dismissed. */
+  onDismiss?: () => void
   /**
    * Event handler called when an interaction is made outside of the dropdown.
    */

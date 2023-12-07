@@ -39,6 +39,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       dismissable = true,
       modal = true,
       onClose,
+      onDismiss,
       onInteractOutside,
       onKeyDown,
       onOpen,
@@ -166,7 +167,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                 <RxDialog.Overlay
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__overlay`,
-                    'inset-0 bg-[rgba(0,0,0,0.3)]',
+                    'inset-0 bg-[rgba(255,251,244,0.8)]',
                   )}
                   style={{ position }}
                 />
@@ -215,6 +216,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                               iconOnly
                               label=""
                               variant="text"
+                              onClick={onDismiss}
                             />
                           </div>
                         </RxDialog.Close>
