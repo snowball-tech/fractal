@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.1.0...@snowball-tech/fractal@7.2.0) (2023-12-07)
+
+### ✨ Features
+
+- **confirm:** add a new Confirm component ([a678053](https://github.com/snowball-tech/fractal/commit/a67805303c549d7926c2ecdb51870f7754d1d225))
+
 # @snowball-tech/fractal [7.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.0.1...@snowball-tech/fractal@7.1.0) (2023-12-07)
 
 ### ✨ Features
