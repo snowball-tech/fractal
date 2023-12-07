@@ -4,24 +4,25 @@ import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
-import { InputText } from '@/components/InputText'
 import { sleep } from '@/utils'
 
-import { Dialog, DialogPositions } from '.'
-import { DEFAULT_POSITION } from './Dialog.constants'
+import { Confirm, ConfirmPositions } from '.'
+import { DEFAULT_POSITION } from '../Dialog/Dialog.constants'
 
-type DialogProps = ComponentProps<typeof Dialog>
+type ConfirmProps = ComponentProps<typeof Confirm>
 
-const meta: Meta<DialogProps> = {
+const meta: Meta<ConfirmProps> = {
   argTypes: {
+    cancel: { control: 'text' },
     children: {
       control: 'text',
     },
+    confirm: { control: 'text' },
     position: {
-      options: Object.values(DialogPositions),
+      options: Object.values(ConfirmPositions),
       table: {
         defaultValue: { summary: DEFAULT_POSITION },
-        type: { summary: Object.values(DialogPositions).join('|') },
+        type: { summary: Object.values(ConfirmPositions).join('|') },
       },
     },
     trigger: {
@@ -43,16 +44,16 @@ const meta: Meta<DialogProps> = {
     },
   },
   args: {
-    children: 'You can enter any content you want here',
+    cancel: 'No please, it was a mistake',
+    children:
+      'If you test this confirm dialog, you will have the overwhelming desire to use Fractal! Are you sure you want to carry on?',
+    confirm: 'Oh yeah!!',
     defaultOpen: false,
-    disabled: false,
-    dismissable: true,
-    modal: true,
     position: 'fixed',
-    title: 'This is the title',
+    title: 'Are you sure you want to test this confirm dialog',
     trigger: 'Text',
   },
-  component: Dialog,
+  component: Confirm,
   decorators: [
     (storyFn: () => ReactNode) => (
       <div style={{ height: '350px', position: 'relative', width: '500px' }}>
@@ -62,11 +63,11 @@ const meta: Meta<DialogProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🐑 Agent Starling. If you can't keep up with the dialog, don't try to join - Hannibal Lecter - Hannibal`,
+    componentSubtitle: `🧑‍✈️ Step one. Voice command, 'Confirm acquisition'. - Axiom's Captain B. McCrea - Wall-E`,
   },
 
-  title: 'Molecules/Dialog',
-} satisfies Meta<DialogProps>
+  title: 'Molecules/Confirm',
+} satisfies Meta<ConfirmProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -83,23 +84,15 @@ export const Interactive: Story = {
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
   },
   render: () => (
-    <Dialog
+    <Confirm
+      cancel="Cancel"
       className="min-w-[500px]"
-      title="Please provide your Jedi identification"
-      trigger={<Button label="Open the dialog" />}
+      confirm="Confirm"
+      title="Are you sure you want to test this confirm dialog"
+      trigger={<Button label="Open the confirm" />}
     >
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-2">
-          <InputText defaultValue="Luke" fullWidth label="First name" />
-          <InputText defaultValue="Skywalker" fullWidth label="Last name" />
-        </div>
-
-        <div className="flex flex-row justify-end gap-2">
-          <Button label="Cancel" variant="secondary" />
-          <Button label="Save" />
-        </div>
-      </div>
-    </Dialog>
+      <div className="flex flex-col gap-3">Do you want to confirm?</div>
+    </Confirm>
   ),
 }
 
@@ -118,12 +111,14 @@ export const InteractiveClose: Story = {
     await userEvent.click(body.getAllByRole('button').at(0)!)
   },
   render: () => (
-    <Dialog
+    <Confirm
+      cancel="Cancel"
       className="min-w-[500px]"
+      confirm="Confirm"
       title="This is the title"
-      trigger={<Button label="Open the dialog" />}
+      trigger={<Button label="Open the confirm" />}
     >
       This is the content
-    </Dialog>
+    </Confirm>
   ),
 }
