@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.0...@snowball-tech/fractal@7.2.1) (2023-12-08)
+
+### 🐛 Bug Fixes
+
+- **input-checkbox:** fix an issue with the size of the check box ([e5c10c4](https://github.com/snowball-tech/fractal/commit/e5c10c4ebfd0fde1611feefffcd96fc76ea7d1bd))
+
 # @snowball-tech/fractal [7.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.1.0...@snowball-tech/fractal@7.2.0) (2023-12-07)
 
 ### ✨ Features
