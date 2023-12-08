@@ -51,7 +51,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.202",
     "lodash": "^4.17.21",
-    "style-dictionary": "^3.9.0",
+    "style-dictionary": "^3.9.1",
     "tailwindcss": "^3.3.6",
     "to-esm": "^2.27.3"
   },
