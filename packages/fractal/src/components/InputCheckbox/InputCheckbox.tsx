@@ -140,7 +140,7 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'mt-half h-full flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            'mt-half h-full max-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
             variant === Variants.Tertiary ? '' : 'min-h-6',
             disabled
               ? 'cursor-not-allowed'
