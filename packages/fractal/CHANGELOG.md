@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.2...@snowball-tech/fractal@7.2.3) (2023-12-14)
+
+### 🐛 Bug Fixes
+
+- **dialog:** add a prop to properly translate the close button label ([91f1876](https://github.com/snowball-tech/fractal/commit/91f1876a1e2dfacc92fd6d4c6d31f0055965f928))
+
 ## @snowball-tech/fractal [7.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.1...@snowball-tech/fractal@7.2.2) (2023-12-08)
 
 ### 📦 Dependencies
