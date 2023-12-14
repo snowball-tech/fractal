@@ -13,6 +13,11 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The content of the dialog. */
   children: ReactNode
   /**
+   * The label of the small "x" close button in the top right corner of the
+   * dialog (if it is dismissable).
+   */
+  closeButtonLabel?: string
+  /**
    * The open state of the dialog when it is initially rendered.
    *
    * Use this when you do not need to control its open state.

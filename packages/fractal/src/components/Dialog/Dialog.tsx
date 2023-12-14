@@ -34,6 +34,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
   (
     {
       children,
+      closeButtonLabel = 'Close',
       defaultOpen,
       disabled = false,
       dismissable = true,
@@ -214,7 +215,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                             <Button
                               icon={<CloseIcon />}
                               iconOnly
-                              label=""
+                              label={closeButtonLabel}
                               variant="text"
                               onClick={onDismiss}
                             />
