@@ -7,6 +7,11 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
   children: ReactNode
   /** The background color of the card. */
   color?: `${Colors}`
+  /**
+   * The label of the small "x" dimiss button in the top right corner of the
+   * card (if it is dismissable).
+   */
+  dismissButtonLabel?: string
   /** Indicates if we can dismiss the card. */
   dismissable?: boolean
   /**
