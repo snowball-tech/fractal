@@ -46,6 +46,7 @@ const meta = {
     target: '',
     truncate: true,
     type: 'button',
+    underlined: true,
     wrap: false,
   },
   component: Button,

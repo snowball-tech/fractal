@@ -64,6 +64,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       target,
       truncate = true,
       type = 'button',
+      underlined,
       variant = DEFAULT_VARIANT,
       wrap = false,
       ...props
@@ -114,7 +115,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asLink
         ? `${PREFIX}-${GROUP_NAME}__link ${PREFIX}-${GROUP_NAME}__link--${variant}`
         : '',
-      asLink && !isTextVariant ? 'no-underline' : '',
+      (asLink && !isTextVariant) || underlined === false ? 'no-underline' : '',
       'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
       !wrap ? 'max-h-6' : '',
       !isTextVariant ? 'min-h-6' : 'min-h-3',
@@ -162,6 +163,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : '',
           'flex max-h-full max-w-full flex-1 items-center justify-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
           isTextVariant ? 'pt-0' : '',
+          underlined === false ? 'no-underline' : '',
         )}
         element="div"
         variant={isTextVariant ? 'body-1-link' : 'body-1-median'}
