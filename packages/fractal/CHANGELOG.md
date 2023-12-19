@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.4...@snowball-tech/fractal@7.2.5) (2023-12-19)
+
+### 🐛 Bug Fixes
+
+- **button:** use body-1-median for label ([ac45913](https://github.com/snowball-tech/fractal/commit/ac45913f6904d77d771bc20613473877926158a0))
+
 ## @snowball-tech/fractal [7.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.3...@snowball-tech/fractal@7.2.4) (2023-12-19)
 
 ### 🐛 Bug Fixes
