@@ -62,8 +62,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       label,
       onClick,
       target,
+      truncate = true,
       type = 'button',
       variant = DEFAULT_VARIANT,
+      wrap = false,
       ...props
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
@@ -170,7 +172,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : hasChildren ? (
           children
         ) : (
-          <div className="min-w-0 flex-1 truncate whitespace-break-spaces">
+          <div
+            className={cj(
+              wrap || truncate ? 'min-w-0 flex-1' : '',
+              wrap ? 'whitespace-break-spaces' : '',
+              truncate ? 'truncate' : 'truncate',
+            )}
+          >
             {label}
           </div>
         )}
