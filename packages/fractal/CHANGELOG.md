@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.1...@snowball-tech/fractal@7.3.2) (2023-12-19)
+
+### 🐛 Bug Fixes
+
+- **button:** don't center the label ([8555be0](https://github.com/snowball-tech/fractal/commit/8555be09b3eb63d8801c5457823e1cfff9d85b9b))
+
 ## @snowball-tech/fractal [7.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.0...@snowball-tech/fractal@7.3.1) (2023-12-19)
 
 ### 🐛 Bug Fixes
