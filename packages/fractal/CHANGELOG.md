@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.0...@snowball-tech/fractal@7.3.1) (2023-12-19)
+
+### 🐛 Bug Fixes
+
+- **button:** improve aspect of non wrapping buttons ([2b12e2f](https://github.com/snowball-tech/fractal/commit/2b12e2f11eb00f9945a14509deb6e989e5d1ecdb))
+
 # @snowball-tech/fractal [7.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.6...@snowball-tech/fractal@7.3.0) (2023-12-19)
 
 ### ✨ Features
