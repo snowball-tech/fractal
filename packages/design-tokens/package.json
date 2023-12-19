@@ -52,7 +52,7 @@
     "@types/lodash": "^4.14.202",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.1",
-    "tailwindcss": "^3.3.6",
+    "tailwindcss": "^3.3.7",
     "to-esm": "^2.27.3"
   },
   "peerDependencies": {
