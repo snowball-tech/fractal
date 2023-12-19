@@ -116,6 +116,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         : '',
       asLink && !isTextVariant ? 'no-underline' : '',
       'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
+      !wrap ? 'max-h-6' : '',
       !isTextVariant ? 'min-h-6' : 'min-h-3',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
@@ -128,11 +129,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         : '',
       // eslint-disable-next-line no-nested-ternary
       iconOnly
-        ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 max-w-6`
+        ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 max-w-6 max-h-6 h-6`
         : !fullWidth
           ? 'w-fit'
           : '',
-      iconOnly && isTextVariant ? 'w-3 max-w-3' : '',
+      iconOnly && isTextVariant ? 'w-3 max-w-3 h-3 max-h-3' : '',
       props.className,
     )
 
