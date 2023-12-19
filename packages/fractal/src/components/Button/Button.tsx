@@ -161,7 +161,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           isTextVariant ? 'pt-0' : '',
         )}
         element="div"
-        variant={isTextVariant ? 'body-1-link' : 'body-1'}
+        variant={isTextVariant ? 'body-1-link' : 'body-1-median'}
       >
         {hasIcon && iconPosition === 'left' && iconElement}
         {/* eslint-disable-next-line no-nested-ternary */}
