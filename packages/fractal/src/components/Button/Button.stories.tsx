@@ -44,7 +44,9 @@ const meta = {
     iconPosition: 'right',
     label: 'Punch it, Chewie!',
     target: '',
+    truncate: true,
     type: 'button',
+    wrap: false,
   },
   component: Button,
   parameters: {

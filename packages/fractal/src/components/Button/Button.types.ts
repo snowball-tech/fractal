@@ -5,7 +5,7 @@ import { Variants } from './Button.constants'
 export interface ButtonProps
   extends Omit<
     AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
-    'onClick'
+    'onClick' | 'wrap'
   > {
   /**
    * The content of the button.
@@ -45,8 +45,18 @@ export interface ButtonProps
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void
   /** The `target` attribute of the `a` element (when a `href` is provided). */
   target?: string
+  /**
+   * Indicates if the label should be truncated if the size of the button is to
+   * wide.
+   */
+  truncate?: boolean
   /** The type of button. */
   type?: 'button' | 'reset' | 'submit'
   /** The variant of the button to use. */
   variant?: `${Variants}`
+  /**
+   * Indicates if the label should be wrapper if the size of the button is to
+   * wide.
+   */
+  wrap?: boolean
 }
