@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [7.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.3...@snowball-tech/fractal@7.2.4) (2023-12-19)
+
+### 🐛 Bug Fixes
+
+- **card:** add a prop to translate the dismiss button label ([6d3c5cb](https://github.com/snowball-tech/fractal/commit/6d3c5cbb911d23cb7de747ef5fdec0d824b65798))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([764f5ab](https://github.com/snowball-tech/fractal/commit/764f5ab9c9ab9b6e64e8a2b97c7998d4b2b93d32))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.3
+
 ## @snowball-tech/fractal [7.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.2...@snowball-tech/fractal@7.2.3) (2023-12-14)
 
 ### 🐛 Bug Fixes
