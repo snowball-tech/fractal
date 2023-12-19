@@ -113,8 +113,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ? `${PREFIX}-${GROUP_NAME}__link ${PREFIX}-${GROUP_NAME}__link--${variant}`
         : '',
       asLink && !isTextVariant ? 'no-underline' : '',
-      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
-      !isTextVariant ? 'h-6' : 'h-3',
+      'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
+      !isTextVariant ? 'min-h-6' : 'min-h-3',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
@@ -165,7 +165,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {hasIcon && iconPosition === 'left' && iconElement}
         {/* eslint-disable-next-line no-nested-ternary */}
-        {iconOnly ? false : hasChildren ? children : label}
+        {iconOnly ? (
+          false
+        ) : hasChildren ? (
+          children
+        ) : (
+          <div className="min-w-0 flex-1 truncate whitespace-break-spaces">
+            {label}
+          </div>
+        )}
         {hasIcon && iconPosition === 'right' && iconElement}
       </Typography>
     )
