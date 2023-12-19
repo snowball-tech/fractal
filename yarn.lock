@@ -19139,13 +19139,13 @@ __metadata:
   linkType: hard
 
 "postcss-logical@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "postcss-logical@npm:7.0.0"
+  version: 7.0.1
+  resolution: "postcss-logical@npm:7.0.1"
   dependencies:
     postcss-value-parser: "npm:^4.2.0"
   peerDependencies:
     postcss: ^8.4
-  checksum: f65e7eebcb12f36d5a74481a7666888977be31f59c9fe0858d15da72e47f5e4b2bbd867d47543ba54e6333ef89e521d7f38922517f5c56132a36dca14f498644
+  checksum: 15e671ec72e12e304aef2ab2a999408e5957e7084fe687eb3957854e3343de2c3243a6d30b2a3c8fe19c627f453bf136d4e06584f1f8f1799d77cc641c7da5b4
   languageName: node
   linkType: hard
 
