@@ -25,6 +25,7 @@ import type { CardProps } from './Card.types'
 export const Card = ({
   children,
   color = DEFAULT_COLOR,
+  dismissButtonLabel = 'Close',
   dismissable = false,
   fontSize = 1,
   icon,
@@ -94,7 +95,7 @@ export const Card = ({
           <Button
             icon={<CloseIcon />}
             iconOnly
-            label=""
+            label={dismissButtonLabel}
             variant="text"
             onClick={() => (isFunction(onDismiss) ? onDismiss() : noop)}
           />
