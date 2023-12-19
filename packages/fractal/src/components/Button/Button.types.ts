@@ -52,6 +52,14 @@ export interface ButtonProps
   truncate?: boolean
   /** The type of button. */
   type?: 'button' | 'reset' | 'submit'
+  /**
+   * Indicates if you want to remove underlining.
+   *
+   * If none is given (the default), underlining will be automatically applied
+   * according to the variant.
+   * You can force it to `false` to remove underlining.
+   */
+  underlined?: boolean
   /** The variant of the button to use. */
   variant?: `${Variants}`
   /**
