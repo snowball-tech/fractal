@@ -175,7 +175,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           <div
             className={cj(
-              wrap || truncate ? 'min-w-0 flex-1' : '',
+              wrap || truncate ? 'min-w-0' : '',
               wrap ? 'whitespace-break-spaces' : '',
               truncate ? 'truncate' : 'truncate',
             )}
