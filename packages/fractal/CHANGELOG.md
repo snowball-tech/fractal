@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.6...@snowball-tech/fractal@7.3.0) (2023-12-19)
+
+### ✨ Features
+
+- **button:** make truncate and wrap behavior customizable ([a4511c7](https://github.com/snowball-tech/fractal/commit/a4511c797adc8fe876233d17369fc0beadd06dd4))
+
 ## @snowball-tech/fractal [7.2.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.5...@snowball-tech/fractal@7.2.6) (2023-12-19)
 
 ### 🐛 Bug Fixes
