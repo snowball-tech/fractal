@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.2.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.5...@snowball-tech/fractal@7.2.6) (2023-12-19)
+
+### 🐛 Bug Fixes
+
+- **button:** improve responsive behavior of button ([7160cbe](https://github.com/snowball-tech/fractal/commit/7160cbef361d7385d0501dfe456ee968cd1b9dab))
+
 ## @snowball-tech/fractal [7.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.2.4...@snowball-tech/fractal@7.2.5) (2023-12-19)
 
 ### 🐛 Bug Fixes
