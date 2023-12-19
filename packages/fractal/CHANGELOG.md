@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [7.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.2...@snowball-tech/fractal@7.4.0) (2023-12-19)
+
+### ✨ Features
+
+- **button:** allow to remove underlining ([8ee0dd8](https://github.com/snowball-tech/fractal/commit/8ee0dd8950f574572beb57495e53ae5acfc12e2b))
+
+### 🐛 Bug Fixes
+
+- **button:** add missing prop in type ([8ecabeb](https://github.com/snowball-tech/fractal/commit/8ecabebacb0e3df57ca69f9bbac90e211694aa4c))
+
 ## @snowball-tech/fractal [7.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.1...@snowball-tech/fractal@7.3.2) (2023-12-19)
 
 ### 🐛 Bug Fixes
