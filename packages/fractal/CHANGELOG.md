@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.0...@snowball-tech/fractal@7.4.1) (2023-12-20)
+
+### 🐛 Bug Fixes
+
+- **input-file:** update the typo of the button ([df14550](https://github.com/snowball-tech/fractal/commit/df14550e8a7aaf4893fbd48d947c725766ee7f83))
+
 # @snowball-tech/fractal [7.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.3.2...@snowball-tech/fractal@7.4.0) (2023-12-19)
 
 ### ✨ Features
