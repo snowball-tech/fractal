@@ -123,7 +123,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
             : '',
         )}
         element="div"
-        variant={isTextVariant ? 'body-1-link' : 'body-1'}
+        variant={isTextVariant ? 'body-1-link' : 'body-1-median'}
       >
         {label}
       </Typography>
