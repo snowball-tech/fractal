@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.1...@snowball-tech/fractal@7.4.2) (2023-12-21)
+
+### 🐛 Bug Fixes
+
+- **textarea:** add label support for icon button ([7ab7b22](https://github.com/snowball-tech/fractal/commit/7ab7b2296ab2ccb40b5bd4b1ae5fb383f28792d2))
+
 ## @snowball-tech/fractal [7.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.0...@snowball-tech/fractal@7.4.1) (2023-12-20)
 
 ### 🐛 Bug Fixes
