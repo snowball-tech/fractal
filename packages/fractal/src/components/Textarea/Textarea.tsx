@@ -35,6 +35,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       error,
       fullWidth = false,
       icon,
+      iconButtonLabel,
       iconDisabled,
       id,
       label,
@@ -183,7 +184,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 <Button
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__action`,
-                    'mb-half text-grey-50',
+                    'mb-half mr-one-and-half text-grey-50',
                     isIconDisabled
                       ? `${PREFIX}-${GROUP_NAME}__action--disabled cursor-not-allowed !text-grey-70`
                       : 'hover:!text-dark',
@@ -191,7 +192,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                   disabled={isIconDisabled}
                   icon={icon}
                   iconOnly
-                  label=""
+                  label={iconButtonLabel}
                   variant="text"
                   onClick={onIconClick}
                 />
