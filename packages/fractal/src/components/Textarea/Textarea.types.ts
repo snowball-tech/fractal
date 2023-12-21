@@ -37,6 +37,13 @@ export interface TextareaProps
    */
   icon?: ReactNode
   /**
+   * The label of the icon button (if any).
+   *
+   * When you provide an `icon` and an `onIconClick` handler, the icon will be
+   * a button thus, you MUST provide a label for accessibility reasons.
+   */
+  iconButtonLabel?: string
+  /**
    * Indicates if the icon is disabled when it's a button.
    *
    * By default, if the field is disabled, the icon is disabled too, unless you
