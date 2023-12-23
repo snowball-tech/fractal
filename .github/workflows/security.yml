@@ -51,7 +51,7 @@ jobs:
       - if: env.SKIP_INTEGRITY_CHECK != 1
         name: Get updated dependencies or lockfile
         id: changed-files-specific
-        uses: tj-actions/changed-files@v40
+        uses: tj-actions/changed-files@v41
         with:
           files: |
             .yarn/**
