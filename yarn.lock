@@ -22301,11 +22301,11 @@ __metadata:
   linkType: hard
 
 "tailwind-merge@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "tailwind-merge@npm:2.1.0"
+  version: 2.2.0
+  resolution: "tailwind-merge@npm:2.2.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.5"
-  checksum: 2de4ed3167e69101c7c559af93028ff205543f98f57edaafa460e67b95fdde13a164b8f6f364fde90554e227feac24beaa8be3e74eb12e50fbd38aa5011583db
+  checksum: ec2a249da3c7afc2df935f93dd896843c719a701bd692cf051eafb2b2350989da158e7af9cc976227e49c833501a91b06c42b80aa6721457eec2187a999c9be7
   languageName: node
   linkType: hard
 
