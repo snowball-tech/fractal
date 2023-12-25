@@ -9515,13 +9515,13 @@ __metadata:
   linkType: hard
 
 "chromatic@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "chromatic@npm:10.1.0"
+  version: 10.2.0
+  resolution: "chromatic@npm:10.2.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 4e80fb9b874506f6c262b5d99379af2157fea59bce975f8bd36e1eedd6ad372c32494dc40c531416f95b5f505b6197097b2672dff9ea9450765f38ef28d4c417
+  checksum: 8df1b4a828c7d5eb2614fcab9a1685f5be947a68f5f31733ebf2bbfab86f6b02c0ee99064bfe62b1457f05ddef285c1d36d5674208f778c815714c51c72a68bd
   languageName: node
   linkType: hard
 
