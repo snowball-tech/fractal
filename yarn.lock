@@ -5274,7 +5274,7 @@ __metadata:
     postcss-import: "npm:^15.1.0"
     postcss-logical: "npm:^7.0.1"
     postcss-preset-env: "npm:^9.3.0"
-    postcss-styled-syntax: "npm:^0.5.0"
+    postcss-styled-syntax: "npm:^0.6.0"
     prettier: "npm:^3.1.1"
     prettier-plugin-tailwindcss: "npm:^0.5.9"
     prop-types: "npm:^15.8.1"
@@ -19462,6 +19462,17 @@ __metadata:
   peerDependencies:
     postcss: ^8.4.21
   checksum: 5a8c0decad70dc9b599a9f5a92fb45fe6a3ee7fe1bd734c06df54ab3e9996c622be86220f0f57609b6283f89617a60b186a36488a0d078df454ae3ccb0a0508c
+  languageName: node
+  linkType: hard
+
+"postcss-styled-syntax@npm:^0.6.0":
+  version: 0.6.1
+  resolution: "postcss-styled-syntax@npm:0.6.1"
+  dependencies:
+    typescript: "npm:^5.3.3"
+  peerDependencies:
+    postcss: ^8.4.21
+  checksum: cb3e837aff172d06d9037c7cf7294586f3d4683ac10b0dff103c55f8bb15d6f522cc6cbe944c5993d5f1cd2879677d5c5c2a8bbdcb7295715f700cc382a5c69f
   languageName: node
   linkType: hard
 
