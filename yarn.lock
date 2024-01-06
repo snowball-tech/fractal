@@ -5271,7 +5271,7 @@ __metadata:
     normalize.css: "npm:^8.0.1"
     postcss: "npm:^8.4.32"
     postcss-flexbugs-fixes: "npm:^5.0.2"
-    postcss-import: "npm:^15.1.0"
+    postcss-import: "npm:^16.0.0"
     postcss-logical: "npm:^7.0.1"
     postcss-preset-env: "npm:^9.3.0"
     postcss-styled-syntax: "npm:^0.5.0"
@@ -19185,6 +19185,19 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.0
   checksum: 33c91b7e6b794b5c33d7d7d4730e5f0729c131d2de1ada7fcc116955625a78c3ce613983f019fa9447681795cf3f851e9c38dfbe3f48a2d08a8aef917c70a32a
+  languageName: node
+  linkType: hard
+
+"postcss-import@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "postcss-import@npm:16.0.0"
+  dependencies:
+    postcss-value-parser: "npm:^4.0.0"
+    read-cache: "npm:^1.0.0"
+    resolve: "npm:^1.1.7"
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 8c79ba1280fe2f1cb3b03bfcea7bc54bfee60ef46aef6167ea97c41546819304847a71b89ac9f5cfc473ed5b187ba13ecad2c73985dfcea9c7acab6fb08de7ec
   languageName: node
   linkType: hard
 
