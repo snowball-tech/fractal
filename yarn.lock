@@ -22031,8 +22031,8 @@ __metadata:
   linkType: hard
 
 "style-dictionary@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "style-dictionary@npm:3.9.1"
+  version: 3.9.2
+  resolution: "style-dictionary@npm:3.9.2"
   dependencies:
     chalk: "npm:^4.0.0"
     change-case: "npm:^4.1.2"
@@ -22045,7 +22045,7 @@ __metadata:
     tinycolor2: "npm:^1.4.1"
   bin:
     style-dictionary: bin/style-dictionary
-  checksum: 4dc7ddd2c58fb37c0c3511134cc866212321c287ec5252a399f89ce81c904e0743d527dca2ad2346775782bb62317e39b116895d6351941a167f31b8476e5185
+  checksum: 3b12b00075caf708c15faf3e397011576c1297565421d5bba88ce4f27e01446dc28e9f7eb79d239ecad5b4ba92a689d1888216dca08883d32dc45ce255ecf84a
   languageName: node
   linkType: hard
 
