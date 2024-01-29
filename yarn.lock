@@ -4643,18 +4643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:9.0.4":
-  version: 9.0.4
-  resolution: "@snowball-tech/design-tokens@npm:9.0.4"
-  peerDependencies:
-    "@tailwindcss/aspect-ratio": ^0.4.2
-    "@tailwindcss/container-queries": ^0.1.1
-    tailwindcss: ^3.3.5
-  checksum: 8274dd3350cecb0520874778ca90585cf792702fccc0ad966c96e7bef7ffa9cfff940995554d23f5eebec8b316088ae4a74cb24cea1483dc84ca05d75df19c34
-  languageName: node
-  linkType: hard
-
-"@snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:9.0.6, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4734,7 +4723,7 @@ __metadata:
     "@radix-ui/react-tabs": "npm:^1.0.4"
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
-    "@snowball-tech/design-tokens": "npm:9.0.4"
+    "@snowball-tech/design-tokens": "npm:9.0.6"
     "@snowball-tech/eslint-config": "npm:^5.3.4"
     "@storybook/addon-a11y": "npm:^7.6.10"
     "@storybook/addon-actions": "npm:^7.6.10"
