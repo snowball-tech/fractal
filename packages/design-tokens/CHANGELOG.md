@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [9.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.6...@snowball-tech/design-tokens@9.0.7) (2024-01-29)
+
+### 🏗 Chores
+
+- normalize repository.url fields in package.json ([ca573e8](https://github.com/snowball-tech/fractal/commit/ca573e8adf53ac0fa12d33b82f4d81a889c6781b))
+
 ## @snowball-tech/design-tokens [9.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.5...@snowball-tech/design-tokens@9.0.6) (2024-01-29)
 
 ## @snowball-tech/design-tokens [9.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.4...@snowball-tech/design-tokens@9.0.5) (2024-01-29)
