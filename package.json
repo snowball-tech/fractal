@@ -28,7 +28,7 @@
   "homepage": "https://github.com/snowball-tech/fractal",
   "repository": {
     "type": "git",
-    "url": "https://github.com/snowball-tech/fractal.git"
+    "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
   "packageManager": "yarn@4.0.2",
