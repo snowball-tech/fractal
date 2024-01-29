@@ -99,7 +99,7 @@ export const RealLifeExample: Story = {
     const sidebarItem = (
       <div className="flex h-6 w-full gap-1 p-1">
         <Skeleton className="min-w-4" shape="circle" />
-        <div className="flex h-full w-full flex-col justify-around">
+        <div className="flex size-full flex-col justify-around">
           <Skeleton className="max-h-1" shape="roundedRectangle" />
           <Skeleton className="max-h-1" shape="roundedRectangle" />
         </div>
@@ -143,17 +143,17 @@ export const RealLifeExample: Story = {
             {sidebarItem}
             {sidebarItem}
           </div>
-          <div className="h-full w-full p-3">
+          <div className="size-full p-3">
             <div className="flex h-[calc(100%-theme(spacing.7))] w-full flex-col rounded-md border-1 border-grey-50">
               <div className="flex h-10 items-center gap-2 rounded-t-md border-b-1 border-grey-50 bg-white p-2">
-                <Skeleton className="h-5 w-5" shape="circle" />
+                <Skeleton className="size-5" shape="circle" />
                 <Skeleton
                   className="max-h-2 max-w-[240px]"
                   shape="roundedRectangle"
                 />
               </div>
 
-              <div className="flex h-full w-full flex-col gap-2 overflow-hidden p-2">
+              <div className="flex size-full flex-col gap-2 overflow-hidden p-2">
                 {ownMessage}
                 {userMessage}
                 {ownMessage}
@@ -162,7 +162,7 @@ export const RealLifeExample: Story = {
 
               <div className="flex min-h-10 items-center gap-2 rounded-b-md border-t-1 border-grey-50 bg-white p-2">
                 <Skeleton
-                  className="h-full w-full"
+                  className="size-full"
                   color="light-grey"
                   shape="rectangle"
                 />
