@@ -192,7 +192,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   )}
                 >
                   <Paper
-                    className="left-1/2 top-1/2 flex h-fit w-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
+                    className="left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
                     elevation="2"
                     style={{ position }}
                   >
