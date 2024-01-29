@@ -1,4 +1,4 @@
-## @snowball-tech/fractal [7.4.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.3...@snowball-tech/fractal@7.4.4) (2024-01-29)
+## @snowball-tech/fractal [7.4.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.3...@snowball-tech/fractal@7.4.4) (2024-01-29)
 
 ### 🎨 Code Style and Formatting
 
