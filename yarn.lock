@@ -4643,7 +4643,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:9.0.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:9.0.4":
+  version: 9.0.4
+  resolution: "@snowball-tech/design-tokens@npm:9.0.4"
+  peerDependencies:
+    "@tailwindcss/aspect-ratio": ^0.4.2
+    "@tailwindcss/container-queries": ^0.1.1
+    tailwindcss: ^3.3.5
+  checksum: 8274dd3350cecb0520874778ca90585cf792702fccc0ad966c96e7bef7ffa9cfff940995554d23f5eebec8b316088ae4a74cb24cea1483dc84ca05d75df19c34
+  languageName: node
+  linkType: hard
+
+"@snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
