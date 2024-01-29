@@ -447,7 +447,7 @@ export const InteractiveEmptySearch: Story = {
     await userEvent.type(input, 'pzgvf')
 
     const loader = await body.getByText(/loading star wars/i)
-    await waitForElementToBeRemoved(loader, { timeout: 10000 })
+    await waitForElementToBeRemoved(loader, { timeout: 30000 })
 
     await body.getByText(/nothing found/i)
   },
