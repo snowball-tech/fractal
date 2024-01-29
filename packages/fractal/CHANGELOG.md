@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [7.4.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.4...@snowball-tech/fractal@7.4.5) (2024-01-29)
+
+### 🏗 Chores
+
+- normalize repository.url fields in package.json ([ca573e8](https://github.com/snowball-tech/fractal/commit/ca573e8adf53ac0fa12d33b82f4d81a889c6781b))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.7
+
 ## @snowball-tech/fractal [7.4.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.3...@snowball-tech/fractal@7.4.4) (2024-01-29)
 
 ### 🎨 Code Style and Formatting
