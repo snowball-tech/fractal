@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [7.4.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.3...@snowball-tech/fractal@7.4.4) (2024-01-29)
+
+### 📦 Dependencies
+
+- upgrade dependencies ([ac09f5a](https://github.com/snowball-tech/fractal/commit/ac09f5a63f9c60947d167f932b94b1bf158bf2ce))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.5
+
 ## @snowball-tech/fractal [7.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.2...@snowball-tech/fractal@7.4.3) (2023-12-21)
 
 ### 🐛 Bug Fixes
