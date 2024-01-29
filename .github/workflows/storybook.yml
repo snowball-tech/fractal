@@ -36,7 +36,7 @@ jobs:
       - if: env.SKIP_CHROMATIC != 1
         name: Get changed files from Fractal components library
         id: changed-files-specific
-        uses: tj-actions/changed-files@v40
+        uses: tj-actions/changed-files@v42
         with:
           files: |
             packages/fractal/**
@@ -104,7 +104,7 @@ jobs:
         run: |
           yarn workspace @snowball-tech/fractal build-chromatic --no-interactive
 
-      - if: env.SKIP_CHROMATIC != 1
+      - if: env.SKIP_CHROMATIC != 1 && failure()
         uses: actions/upload-artifact@v3
         with:
           name: Storybook build log
