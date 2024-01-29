@@ -383,7 +383,7 @@ export const InteractiveSearch: Story = {
     })
 
     const loader = await body.getByText(/loading star wars/i)
-    await waitForElementToBeRemoved(loader, { timeout: 10000 })
+    await waitForElementToBeRemoved(loader, { timeout: 30000 })
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {

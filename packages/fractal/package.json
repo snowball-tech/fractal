@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "^4.0.2",
-    "@snowball-tech/eslint-config": "^5.3.4",
+    "@snowball-tech/eslint-config": "^5.3.5",
     "@storybook/addon-a11y": "^7.6.10",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",

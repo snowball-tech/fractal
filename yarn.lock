@@ -4659,9 +4659,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:^5.3.4":
-  version: 5.3.4
-  resolution: "@snowball-tech/eslint-config@npm:5.3.4"
+"@snowball-tech/eslint-config@npm:^5.3.5":
+  version: 5.3.5
+  resolution: "@snowball-tech/eslint-config@npm:5.3.5"
   dependencies:
     "@next/eslint-plugin-next": "npm:^14.1.0"
     "@rushstack/eslint-patch": "npm:^1.7.2"
@@ -4700,7 +4700,7 @@ __metadata:
     prettier: "npm:^3.2.4"
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 404e0bf9084eb9f221711200bf624830f67ee77550734daa180ed70efe71db0cff5a3a114f65d22a3469855c6237cc3914df1f575794c22ae917e872b31b2ef5
+  checksum: fd0aed05ff74706b18097f67a6e24eb49d847bb33d7970c56bbd610cb3378e1595e855f74ac41aa454797ed0cd81addb4b9e3ec9fabf90bea43148ffdb9f2206
   languageName: node
   linkType: hard
 
@@ -4724,7 +4724,7 @@ __metadata:
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
     "@snowball-tech/design-tokens": "npm:9.0.7"
-    "@snowball-tech/eslint-config": "npm:^5.3.4"
+    "@snowball-tech/eslint-config": "npm:^5.3.5"
     "@storybook/addon-a11y": "npm:^7.6.10"
     "@storybook/addon-actions": "npm:^7.6.10"
     "@storybook/addon-essentials": "npm:^7.6.10"
@@ -4784,21 +4784,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/prettier-config@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@snowball-tech/prettier-config@npm:1.4.4"
+"@snowball-tech/prettier-config@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "@snowball-tech/prettier-config@npm:1.4.5"
   dependencies:
     prettier: "npm:^3.2.4"
     prettier-plugin-organize-attributes: "npm:^1.0.0"
     prettier-plugin-sh: "npm:^0.14.0"
     prettier-plugin-tailwindcss: "npm:^0.5.11"
-  checksum: d598c1ce12536020499c41b6d8c56b17969e1bc1c5759c9de53ffc59b63bb59ea0d2fdde781ce93a2ee728acd7aa1a03c300df544fc77c8ed9ad97cf8f1ce46d
+  checksum: 297709988cf5fdd5c45234771f964074e9b8f25b3cb9fd88c5d9f35755986d17020e263479f166c1a851d6f279f4a7bdb4c1d26e0a5f2204e628e055ad11039c
   languageName: node
   linkType: hard
 
-"@snowball-tech/semantic-release-config@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "@snowball-tech/semantic-release-config@npm:2.1.4"
+"@snowball-tech/semantic-release-config@npm:^2.1.5":
+  version: 2.1.5
+  resolution: "@snowball-tech/semantic-release-config@npm:2.1.5"
   dependencies:
     "@semantic-release/changelog": "npm:^6.0.3"
     "@semantic-release/commit-analyzer": "npm:^11.1.0"
@@ -4811,7 +4811,7 @@ __metadata:
     semantic-release: "npm:^23.0.0"
   peerDependencies:
     semantic-release: ^23.0.0
-  checksum: fbac8bd4c9462e9599c753eee89ec6d58bd971fb78c5a42e8bfae9d7ec8592da87a2855ffac049c9a5964e6f91dca9713c3e7eea479f2c09d93dbcab78dc0ef1
+  checksum: 143c9f309ba3cab98966607e06c46acb8835b7bd98dfb7a89fb3bed20d16f7161dc4b2aefb2423265e0a35f3ce609740934e49443f6abd7ecb2b2063d92fcd32
   languageName: node
   linkType: hard
 
@@ -11783,9 +11783,9 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": "npm:^2.10.4"
     "@qiwi/multi-semantic-release": "npm:^7.1.1"
-    "@snowball-tech/eslint-config": "npm:^5.3.4"
-    "@snowball-tech/prettier-config": "npm:^1.4.4"
-    "@snowball-tech/semantic-release-config": "npm:^2.1.4"
+    "@snowball-tech/eslint-config": "npm:^5.3.5"
+    "@snowball-tech/prettier-config": "npm:^1.4.5"
+    "@snowball-tech/semantic-release-config": "npm:^2.1.5"
     "@snowball-tech/stylelint-config": "npm:^2.2.4"
     "@types/eslint": "npm:^8.56.2"
     "@types/is-ci": "npm:^3.0.4"
