@@ -1,3 +1,18 @@
+## @snowball-tech/fractal [7.4.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.3...@snowball-tech/fractal@7.4.4) (2024-01-29)
+
+### 🎨 Code Style and Formatting
+
+- fix linter and formatting ([b5f786d](https://github.com/snowball-tech/fractal/commit/b5f786dea9db6aefaf91d20aefe918cfc9f50afe))
+
+### 📦 Dependencies
+
+- update vite ([e99ba3e](https://github.com/snowball-tech/fractal/commit/e99ba3eb164f8ac8b71f587e0c53d25ff650f566))
+- upgrade dependencies ([5cf976d](https://github.com/snowball-tech/fractal/commit/5cf976dcc2ae3b4c700a6e744936a5b357b0bf2a))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.6
+
 ## @snowball-tech/fractal [7.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.2...@snowball-tech/fractal@7.4.3) (2023-12-21)
 
 ### 🐛 Bug Fixes
