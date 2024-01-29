@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [7.4.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.6...@snowball-tech/fractal@7.4.7) (2024-01-29)
+
+### 🚦 Tests
+
+- fix e2e tests ([1749e6c](https://github.com/snowball-tech/fractal/commit/1749e6cbb38c93da64b3c860a4e9917c823614c7))
+
+### 📦 Dependencies
+
+- upgrade internal dependencies ([0a7e827](https://github.com/snowball-tech/fractal/commit/0a7e8271132aa26a5768e2aed6df428f7b33e9eb))
+
 ## @snowball-tech/fractal [7.4.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.5...@snowball-tech/fractal@7.4.6) (2024-01-29)
 
 ### 📦 Dependencies
