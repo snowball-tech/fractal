@@ -4816,8 +4816,8 @@ __metadata:
   linkType: hard
 
 "@snowball-tech/stylelint-config@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "@snowball-tech/stylelint-config@npm:2.2.4"
+  version: 2.2.5
+  resolution: "@snowball-tech/stylelint-config@npm:2.2.5"
   dependencies:
     postcss: "npm:^8.4.33"
     postcss-html: "npm:^1.6.0"
@@ -4827,7 +4827,7 @@ __metadata:
     stylelint-config-standard: "npm:^36.0.0"
   peerDependencies:
     stylelint: ^16.0.0
-  checksum: 65c9662ae4bc4321ab6af1af6c014e9f58c5ee56284eac49e07d3aab9b0999cc37a0802c852ecc1ebbc593716f53d055d694a8064c56b73e88bbab06577e17ec
+  checksum: b297747a55b4a6a3ea1353e0e8f64f988d8f742ec9c6902947deb8ae50e257ab2cd0d33cdd3e9ff1e774c0348519faa63b6d421f80e189ae7b58c00a792c3e7b
   languageName: node
   linkType: hard
 
