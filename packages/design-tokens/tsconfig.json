@@ -8,13 +8,13 @@
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
     "rootDir": "./src",
     "target": "ESNext",
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true
   },
   "include": ["src/**/*.ts"],
   "files": [],
-  "references": [],
+  "references": []
 }
