@@ -1,3 +1,5 @@
+'use client'
+
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
 import isEmpty from 'lodash/fp/isEmpty'

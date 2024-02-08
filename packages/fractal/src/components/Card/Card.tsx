@@ -1,7 +1,6 @@
 import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
-import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button'
@@ -97,7 +96,7 @@ export const Card = ({
             iconOnly
             label={dismissButtonLabel}
             variant="text"
-            onClick={() => (isFunction(onDismiss) ? onDismiss() : noop)}
+            {...(isFunction(onDismiss) ? { onClick: onDismiss } : {})}
           />
         </div>
       )}

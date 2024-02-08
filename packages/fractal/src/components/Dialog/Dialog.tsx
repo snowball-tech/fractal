@@ -1,3 +1,5 @@
+'use client'
+
 import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
 import * as RxDialog from '@radix-ui/react-dialog'
 import type { DismissableLayerProps } from '@radix-ui/react-select'

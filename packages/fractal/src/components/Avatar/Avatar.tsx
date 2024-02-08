@@ -1,3 +1,5 @@
+'use client'
+
 import UserIcon from '@iconscout/react-unicons/dist/icons/uil-user'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
