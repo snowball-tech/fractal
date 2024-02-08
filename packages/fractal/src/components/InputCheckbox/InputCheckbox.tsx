@@ -1,3 +1,5 @@
+'use client'
+
 import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
 import { composeRefs } from '@radix-ui/react-compose-refs'
