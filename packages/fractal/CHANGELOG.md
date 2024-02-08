@@ -1,3 +1,21 @@
+## @snowball-tech/fractal [7.4.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.7...@snowball-tech/fractal@7.4.8) (2024-02-08)
+
+### 🎨 Code Style and Formatting
+
+- fix tsconfig files format ([1a3f886](https://github.com/snowball-tech/fractal/commit/1a3f88695b265396c469c397c733232ab5982925))
+
+### 🐛 Bug Fixes
+
+- add `use client` directive where needed ([fe69854](https://github.com/snowball-tech/fractal/commit/fe698549b14f92e567123c29286aabd7168c31e8))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([514f51b](https://github.com/snowball-tech/fractal/commit/514f51b7f4a21c7f9936f8fa34d4caf34fe58a94))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.8
+
 ## @snowball-tech/fractal [7.4.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.6...@snowball-tech/fractal@7.4.7) (2024-01-29)
 
 ### 🚦 Tests
