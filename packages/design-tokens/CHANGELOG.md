@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [9.0.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.7...@snowball-tech/design-tokens@9.0.8) (2024-02-08)
+
+### 🎨 Code Style and Formatting
+
+- fix tsconfig files format ([1a3f886](https://github.com/snowball-tech/fractal/commit/1a3f88695b265396c469c397c733232ab5982925))
+
 ## @snowball-tech/design-tokens [9.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.6...@snowball-tech/design-tokens@9.0.7) (2024-01-29)
 
 ### 🏗 Chores
