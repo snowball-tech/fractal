@@ -8,11 +8,11 @@
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
     "rootDir": "./",
     "target": "ESNext",
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true
   },
   "include": [
     "./*.ts",
@@ -20,8 +20,8 @@
     "src/**/*.tsx",
     "./.storybook/*.ts",
     "./.storybook/*.tsx",
-    "./stories",
+    "./stories"
   ],
   "files": [],
-  "references": [],
+  "references": []
 }

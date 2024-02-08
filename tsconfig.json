@@ -27,7 +27,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES6",
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true
   },
   "include": [],
   "exclude": [
@@ -36,15 +36,15 @@
     "**/build",
     "**/dist",
     "**/out",
-    "**/node_modules",
+    "**/node_modules"
   ],
   "files": [],
   "references": [
     {
-      "path": "packages/design-tokens",
+      "path": "packages/design-tokens"
     },
     {
-      "path": "packages/fractal",
-    },
-  ],
+      "path": "packages/fractal"
+    }
+  ]
 }
