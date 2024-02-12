@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [7.4.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.9...@snowball-tech/fractal@7.4.10) (2024-02-12)
+
+### 📦 Dependencies
+
+- upgrade Yarn ([d0bd0ab](https://github.com/snowball-tech/fractal/commit/d0bd0ab02d521423aa0e3399da48267d72049527))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.9
+
 ## @snowball-tech/fractal [7.4.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.8...@snowball-tech/fractal@7.4.9) (2024-02-12)
 
 ### 📦 Dependencies
