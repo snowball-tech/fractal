@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.8...@snowball-tech/fractal@7.4.9) (2024-02-12)
+
+### 📦 Dependencies
+
+- upgrade deps ([a78f43f](https://github.com/snowball-tech/fractal/commit/a78f43fd6b4eceb449355fe81c8d0caf12e6dd81))
+
 ## @snowball-tech/fractal [7.4.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.7...@snowball-tech/fractal@7.4.8) (2024-02-08)
 
 ### 🎨 Code Style and Formatting
