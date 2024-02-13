@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.10...@snowball-tech/fractal@7.4.11) (2024-02-13)
+
+### 🐛 Bug Fixes
+
+- **button:** add a missing classname for icon ([3d414eb](https://github.com/snowball-tech/fractal/commit/3d414eb7efbbf1e6b9344ff712e153d3e8e79aa0))
+
 ## @snowball-tech/fractal [7.4.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.9...@snowball-tech/fractal@7.4.10) (2024-02-12)
 
 ### 📦 Dependencies
