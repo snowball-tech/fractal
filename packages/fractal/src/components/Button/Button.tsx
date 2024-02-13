@@ -143,6 +143,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const iconElement = (
       <div
         className={cj(
+          `${PREFIX}-${GROUP_NAME}__icon`,
           `${PREFIX}-${GROUP_NAME}__icon--${iconPosition}`,
           'flex h-3 w-3 items-center [&>svg]:h-3',
           asLink ? `${PREFIX}-${GROUP_NAME}__link__icon--${iconPosition}` : '',
