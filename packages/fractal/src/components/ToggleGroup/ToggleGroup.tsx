@@ -1,3 +1,5 @@
+'use client'
+
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
