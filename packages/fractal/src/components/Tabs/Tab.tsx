@@ -1,15 +1,20 @@
 import * as RxTabs from '@radix-ui/react-tabs'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useContext } from 'react'
+import { type ForwardedRef, forwardRef } from 'react'
 
 import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME, Orientations, Positions } from './Tabs.constants'
+import {
+  DEFAULT_ORIENTATION,
+  DEFAULT_POSITION,
+  GROUP_NAME,
+  Orientations,
+  Positions,
+} from './Tabs.constants'
 import type { TabProps } from './Tabs.types'
-import { TabsContext } from './TabsContext'
 
 /**
  * `Tab` component is used to display a tab inside of a `Tabs` component.
@@ -26,6 +31,8 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       label,
       large = false,
       name,
+      orientation = DEFAULT_ORIENTATION,
+      tabsPosition = DEFAULT_POSITION,
       ...props
     }: TabProps,
     ref: ForwardedRef<HTMLButtonElement>,
@@ -39,15 +46,8 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
 
     const hasIcon = Boolean(icon)
 
-    const {
-      disabled: groupDisabled,
-      large: groupLarge,
-      orientation,
-      tabsPosition,
-    } = useContext(TabsContext)
-
-    const isDisabled = disabled || groupDisabled
-    const isLarge = large || groupLarge || (hasIcon && !isEmpty(label))
+    const isDisabled = disabled
+    const isLarge = large || (hasIcon && !isEmpty(label))
 
     let indicatorClassNames =
       'after:left-1/2 after:h-quarter after:w-0 after:-translate-x-1/2 after:transition-[width] '
