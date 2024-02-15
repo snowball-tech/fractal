@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.11...@snowball-tech/fractal@7.4.12) (2024-02-15)
+
+### 🐛 Bug Fixes
+
+- add missing `use client` when using context/provider ([373f63f](https://github.com/snowball-tech/fractal/commit/373f63fa0376869cd61dcc6bf109ddde1ffc5d1d))
+
 ## @snowball-tech/fractal [7.4.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.10...@snowball-tech/fractal@7.4.11) (2024-02-13)
 
 ### 🐛 Bug Fixes
