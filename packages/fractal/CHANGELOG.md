@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.4.13](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.12...@snowball-tech/fractal@7.4.13) (2024-02-15)
+
+### ♻️ Code Refactoring
+
+- **tabs:** get rid of the context/provider pattern ([70d2289](https://github.com/snowball-tech/fractal/commit/70d22897020b27de1cf587531c0999dba682feb3))
+
 ## @snowball-tech/fractal [7.4.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.11...@snowball-tech/fractal@7.4.12) (2024-02-15)
 
 ### 🐛 Bug Fixes
