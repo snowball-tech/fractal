@@ -15,7 +15,7 @@ import type { TabContentProps } from './Tabs.types'
  * See https://www.radix-ui.com/primitives/docs/components/tabs#content for more
  * information.
  */
-export const Tab = forwardRef<HTMLDivElement, TabContentProps>(
+export const TabContent = forwardRef<HTMLDivElement, TabContentProps>(
   (
     { children, forceMount = false, name, ...props }: TabContentProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -33,6 +33,6 @@ export const Tab = forwardRef<HTMLDivElement, TabContentProps>(
     )
   },
 )
-Tab.displayName = 'Tab'
+TabContent.displayName = 'TabContent'
 
-export default Tab
+export default TabContent

@@ -51,6 +51,7 @@ export interface TabsProps
    * You must use `Tab` components.
    */
   tabs: ReactNode
+  /** The positioning of the tabs in the tab bar. */
   tabsPosition?: `${Positions}`
 }
 
@@ -66,7 +67,15 @@ export interface TabProps
    * not enough.
    */
   children?: ReactNode
-  /** Prevents the user from interacting with the tab. */
+  /**
+   * Prevents the user from interacting with the tab.
+   *
+   * Note that if the parent `Tabs` is disabled, then all tabs are disabled too.
+   * But you can also force a tab to be disabled even if the parent `Tabs` is
+   * not.
+   * However, if the parent `Tabs` is disabled, then the `disabled` prop is
+   * ignored.
+   */
   disabled?: boolean
   /** An icon to display before the label. */
   icon?: ReactNode
@@ -83,12 +92,16 @@ export interface TabProps
   label?: string
   /**
    * Indicates if the tab should be larger (in height) than usual.
+   * Only has an effet in horizontal orientation.
    *
    * This is only needed if you want to force the tab bar to be large because
    * otherwise, each `Tab` children component is checked to see if there is an
    * icon and a text and set this to `true` accordingly.
    *
-   * Only has an effet in horizontal orientation.
+   * Note that if the parent `Tabs` is flagged as large, then all tabs are large
+   * too.
+   * But you can also force a tab to be large even if the parent `Tabs` is not.
+   * However, if the parent `Tabs` is large, then the `large` prop is ignored.
    */
   large?: boolean
   /**
@@ -96,6 +109,22 @@ export interface TabProps
    * Must be the same as the linked content.
    */
   name: string
+  /**
+   * The orientations of the tabs.
+   *
+   * You shouldn't use this prop directly in the `Tab` component as it is
+   * automatically set by the `Tabs` component.
+   * Any value set here will be ignored anyway.
+   */
+  orientation?: `${Orientations}`
+  /**
+   * The positioning of the tabs in the tab bar.
+   *
+   * You shouldn't use this prop directly in the `Tab` component as it is
+   * automatically set by the `Tabs` component.
+   * Any value set here will be ignored anyway.
+   */
+  tabsPosition?: `${Positions}`
 }
 
 export interface TabContentProps
