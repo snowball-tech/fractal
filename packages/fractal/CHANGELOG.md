@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.13...@snowball-tech/fractal@7.5.0) (2024-02-16)
+
+### ✨ Features
+
+- **loader:** add an xxs size ([54f0038](https://github.com/snowball-tech/fractal/commit/54f0038416daecb03303e7cb8a82bb49630fa2af))
+
 ## @snowball-tech/fractal [7.4.13](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.12...@snowball-tech/fractal@7.4.13) (2024-02-15)
 
 ### ♻️ Code Refactoring
