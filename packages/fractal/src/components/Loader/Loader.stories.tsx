@@ -42,6 +42,7 @@ export const Loaders: Story = {
         gap: 'var(--size-spacing-2)',
       }}
     >
+      <Loader size="xxs" />
       <Loader size="xs" />
       <Loader size="s" />
       <Loader size="m" />

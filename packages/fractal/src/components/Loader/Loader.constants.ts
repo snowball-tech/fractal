@@ -2,6 +2,7 @@ export const GROUP_NAME = 'loader'
 
 export enum Sizes {
   /* eslint-disable perfectionist/sort-enums */
+  XXS = 'xxs',
   XS = 'xs',
   S = 's',
   M = 'm',
