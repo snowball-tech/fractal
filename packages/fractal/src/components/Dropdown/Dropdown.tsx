@@ -39,10 +39,8 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       fullWidth = false,
       onClose,
       onInteractOutside,
-      onKeyDown,
       onMenuOpenChange,
       onOpen,
-      onPointerDownOutside,
       open,
       toggleOnTriggerClick = true,
       trigger,
@@ -105,7 +103,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       } else {
         handleOpenChange(false)
       }
-      // We don't want to reopen the toggle based on the `handleOpenChange`
+      // We don't want to reopen the dropdown based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
@@ -249,19 +247,20 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   dropdown?.className,
                 )}
                 loop
-                side="bottom"
                 style={{
                   display: undefined,
                   width: isNumber(width) ? `${width}px` : undefined,
-                  ...(props.style ?? {}),
+                  ...(dropdown.style ?? {}),
                 }}
                 onInteractOutside={handleDropdownInteractOutside}
-                {...(isFunction(onKeyDown) ? { onKeyDown } : {})}
-                {...(isFunction(onPointerDownOutside)
-                  ? { onPointerDownOutside }
-                  : {})}
                 {...omit(
-                  ['className', 'style', 'align', 'onInteractOutside'],
+                  [
+                    'asChild',
+                    'className',
+                    'style',
+                    'align',
+                    'onInteractOutside',
+                  ],
                   dropdown,
                 )}
               >

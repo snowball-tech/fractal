@@ -136,20 +136,6 @@ const meta: Meta<DropdownProps> = {
     },
     width: {
       control: 'radio',
-      mapping: {
-        Avatar: <Avatar imageUrl={avatarUrl} name="Luke Skywalker" />,
-        Button: <Button label="This is a button trigger" />,
-        'Icon Button': (
-          <Button
-            icon={<MoreMenuIcon />}
-            iconOnly
-            label="This is an icon button trigger"
-            variant="text"
-          />
-        ),
-        Nothing: undefined,
-        Text: 'This is the trigger',
-      },
       options: ['auto', 'trigger', 'fit', 'full', 100, 500, 1000],
     },
   },
