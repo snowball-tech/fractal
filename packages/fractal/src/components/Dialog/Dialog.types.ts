@@ -42,14 +42,8 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * Event handler called when an interaction is made outside of the dropdown.
    */
   onInteractOutside?: RxDialogContentProps['onInteractOutside']
-  /** Event handler called when a key is pressed inside of the dropdown. */
-  onKeyDown?: RxDialogContentProps['onKeyDown']
   /** Event handler called when the dialog is opened. */
   onOpen?: () => void
-  /**
-   * Event handler called when a click/touch is made outside of the dropdown.
-   */
-  onPointerDownOutside?: RxDialogContentProps['onPointerDownOutside']
   /**
    * Event handler called when the dialog is opened or closed.
    */

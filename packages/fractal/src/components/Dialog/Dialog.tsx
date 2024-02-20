@@ -44,9 +44,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onClose,
       onDismiss,
       onInteractOutside,
-      onKeyDown,
       onOpen,
-      onPointerDownOutside,
       onToggle,
       open,
       position = DEFAULT_POSITION,
@@ -184,10 +182,6 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
-                  {...(isFunction(onKeyDown) ? { onKeyDown } : {})}
-                  {...(isFunction(onPointerDownOutside)
-                    ? { onPointerDownOutside }
-                    : {})}
                   {...omit(
                     ['className', 'onInteractOutside', 'asChild'],
                     props,

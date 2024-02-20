@@ -152,7 +152,11 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
 
     const handleDropdownPointerDownOutside: DismissableLayerProps['onPointerDownOutside'] =
-      () => {
+      (event) => {
+        if (isFunction(dropdown.onPointerDownOutside)) {
+          dropdown.onPointerDownOutside(event)
+        }
+
         if (inputRef?.current) {
           setKeepFocus(false)
           inputRef.current.blur()
@@ -297,7 +301,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               'mt-0',
               dropdown.className,
             ),
-            ...omit(['className'], dropdown),
+            onPointerDownOutside: handleDropdownPointerDownOutside,
+            ...omit(['className', 'onPointerDownOutside'], dropdown),
           }}
           fullWidth={fullWidth}
           {...(isFunction(onClose) ? { onClose } : {})}
@@ -338,7 +343,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           onInteractOutside={handleDropdownInteractOutside}
           onKeyDown={handleDropdownKeyDown}
           onMenuOpenChange={handleDropdownToggle}
-          onPointerDownOutside={handleDropdownPointerDownOutside}
         >
           {children}
         </Dropdown>
