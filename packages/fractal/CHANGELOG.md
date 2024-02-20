@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [7.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.5.0...@snowball-tech/fractal@7.6.0) (2024-02-20)
+
+### ✨ Features
+
+- **popover:** implement popover component ([f0ca876](https://github.com/snowball-tech/fractal/commit/f0ca876f8f431f827e6deaae2d3cbac0b174c69e))
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix change in dropdown props ([8fa09fb](https://github.com/snowball-tech/fractal/commit/8fa09fb0b4536af3be73c28518741e6651adc0f6))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([7f553dc](https://github.com/snowball-tech/fractal/commit/7f553dc640ef141ef0d80b25c6d12078eca49f9a))
+
 # @snowball-tech/fractal [7.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.4.13...@snowball-tech/fractal@7.5.0) (2024-02-16)
 
 ### ✨ Features
