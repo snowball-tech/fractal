@@ -39,8 +39,10 @@
   "editor.tabSize": 2,
   "eslint.lintTask.enable": true,
   "eslint.onIgnoredFiles": "warn",
+  "eslint.problems.shortenToSingleLine": true,
   "eslint.useESLintClass": true,
   "eslint.validate": [
+    "github-actions-workflow",
     "html",
     "javascript",
     "javascriptreact",
@@ -82,12 +84,6 @@
     "**/out": true,
     "**/storybook-static": true
   },
-  "stylelint.validate": [
-    "html",
-    "javascriptreact",
-    "postcss",
-    "typescriptreact"
-  ],
   "tailwindCSS.rootFontSize": 8,
   "tailwindCSS.experimental.classRegex": [
     ["\\S*[Cc]lass[nN]ame\\S* = \\[([\\s\\S]+?)(?=][\\n;.])", "'([^']*)'"],
