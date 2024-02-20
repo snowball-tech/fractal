@@ -3,7 +3,12 @@ import {
   Root,
   type DropdownMenuContentProps as RxDropdownMenuContentProps,
 } from '@radix-ui/react-dropdown-menu'
-import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
+import type {
+  AllHTMLAttributes,
+  CSSProperties,
+  ComponentProps,
+  ReactNode,
+} from 'react'
 
 import type {
   InputRadioGroupProps,
@@ -26,35 +31,32 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Indicates if the dropdown menu is disabled. */
   disabled?: boolean
   /**
-   * Options to tweak the position of the autocomplete dropdown.
+   * Options to tweak the position of the dropdown.
    * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#content
    *
-   * You can on top of that add the `className` property to customize the style
-   * of the dropdown.
+   * You can on top of that add the `className` and `style` properties to
+   * customize the style of the dropdown.
    */
   dropdown?: Partial<
-    Omit<RxDropdownMenuContentProps, 'asChild'> & { className?: string }
+    Omit<RxDropdownMenuContentProps, 'asChild' | 'onInteractOutside'> & {
+      className?: string
+      style?: CSSProperties
+    }
   >
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean
-  /** Event handler called when the autocomplete dropdown is closed. */
+  /** Event handler called when the dropdown is closed. */
   onClose?: () => void
   /**
    * Event handler called when an interaction is made outside of the dropdown.
    */
   onInteractOutside?: RxDropdownMenuContentProps['onInteractOutside']
-  /** Event handler called when a key is pressed inside of the dropdown. */
-  onKeyDown?: RxDropdownMenuContentProps['onKeyDown']
   /**
-   * Event handler called when the autocomplete dropdown is opened or closed.
+   * Event handler called when the dropdown is opened or closed.
    */
   onMenuOpenChange?: ComponentProps<typeof Root>['onOpenChange']
-  /** Event handler called when the autocomplete dropdown is opened. */
+  /** Event handler called when the dropdown is opened. */
   onOpen?: () => void
-  /**
-   * Event handler called when a click/touch is made outside of the dropdown.
-   */
-  onPointerDownOutside?: RxDropdownMenuContentProps['onPointerDownOutside']
   /**
    * Indicates if the dropdown menu is open.
    *

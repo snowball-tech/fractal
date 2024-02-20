@@ -208,6 +208,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       >
                         <Typography variant="heading-4">{title}</Typography>
                       </RxDialog.Title>
+
                       {dismissable && (
                         <RxDialog.Close
                           asChild
