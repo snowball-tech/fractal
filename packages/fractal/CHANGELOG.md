@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [7.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.6.0...@snowball-tech/fractal@7.7.0) (2024-02-21)
+
+### ✨ Features
+
+- **popover:** add width control ([37f7b64](https://github.com/snowball-tech/fractal/commit/37f7b64a02531f1be1d1e34bf09236aef9e07d52))
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix width control ([e3f8e71](https://github.com/snowball-tech/fractal/commit/e3f8e71cd38dd2b349e5017664ef73e7b603f8d9))
+
 # @snowball-tech/fractal [7.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.5.0...@snowball-tech/fractal@7.6.0) (2024-02-20)
 
 ### ✨ Features
