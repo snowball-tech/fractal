@@ -82,6 +82,12 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    *  - `full`: the width of the dropdown will take as much space as available;
    *  - `auto`: the width of the dropdown will be computed using the best
    *    option;
+   *  - a number: the width of the dropdown will be the number of pixels
+   *    provided.
+   *  - '*<number>' (a number prefixed with the '*' character): the width of
+   *    the popover will be the provided fraction of the width of the trigger.
+   *    For example '*0.5' will make the popover width half the width of the
+   *    trigger.
    */
   width?: 'auto' | 'fit' | 'full' | 'trigger' | number
   /** Indicates if the trigger should have an indicator (arrow). */

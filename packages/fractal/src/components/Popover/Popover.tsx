@@ -130,34 +130,49 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
         }
       }
 
-    let widthClassNames = ''
+    let widthClassNames = 'max-w-[var(--radix-popper-available-width)]'
     let widthStyle: CSSProperties = {}
     if (isNumber(width)) {
-      widthClassNames = 'max-w-full'
       widthStyle = { minWidth: `${width}px`, width: `${width}px` }
     } else {
-      switch (width) {
-        case 'fit':
+      // eslint-disable-next-line no-lonely-if
+      if (width.startsWith('*')) {
+        if (hasTriggerElement) {
+          const widthValue = width.slice(1)
+          widthStyle = {
+            minWidth: `calc(${widthValue} * var(--radix-popper-anchor-width))`,
+            width: `calc(${widthValue} * var(--radix-popper-anchor-width))`,
+          }
+        } else {
           widthClassNames = 'w-fit'
-          break
+          console.warn(
+            'The `width` prop is set to a fraction but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
+          )
+        }
+      } else {
+        switch (width) {
+          case 'fit':
+            widthClassNames = 'w-fit'
+            break
 
-        case 'full':
-          widthClassNames = 'w-[var(--radix-popper-available-width)]'
-          break
+          case 'full':
+            widthClassNames = 'w-[var(--radix-popper-available-width)]'
+            break
 
-        case 'auto':
-        case 'trigger':
-        default:
-          widthClassNames = hasTriggerElement
-            ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
-            : 'w-fit'
-          break
-      }
+          case 'auto':
+          case 'trigger':
+          default:
+            widthClassNames = hasTriggerElement
+              ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
+              : 'w-fit'
+            break
+        }
 
-      if (width === 'trigger' && !hasTriggerElement) {
-        console.warn(
-          'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
-        )
+        if (width === 'trigger' && !hasTriggerElement) {
+          console.warn(
+            'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
+          )
+        }
       }
     }
 
