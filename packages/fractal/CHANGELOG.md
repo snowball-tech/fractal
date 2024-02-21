@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [7.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.7.0...@snowball-tech/fractal@7.8.0) (2024-02-21)
+
+### ✨ Features
+
+- **popover-dropdown:** support fraction of the trigger for `width` ([142f49f](https://github.com/snowball-tech/fractal/commit/142f49fc437b6d51c031bc7dc4fe0556926c8f9a))
+
+### 🐛 Bug Fixes
+
+- **popover-dropdown:** fix the types for the width prop ([0928957](https://github.com/snowball-tech/fractal/commit/092895772ddd5be6ff6811ddaeac03fb0aae4b01))
+
 # @snowball-tech/fractal [7.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.6.0...@snowball-tech/fractal@7.7.0) (2024-02-21)
 
 ### ✨ Features
