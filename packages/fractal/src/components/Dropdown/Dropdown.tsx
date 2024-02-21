@@ -9,6 +9,7 @@ import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 import {
+  type CSSProperties,
   type ForwardedRef,
   forwardRef,
   useEffect,
@@ -128,8 +129,10 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       }
 
     let widthClassNames = ''
+    let widthStyle: CSSProperties = {}
     if (isNumber(width)) {
-      widthClassNames = `w-[${width}px]`
+      widthClassNames = 'max-w-full'
+      widthStyle = { minWidth: `${width}px`, width: `${width}px` }
     } else {
       switch (width) {
         case 'fit':
@@ -137,7 +140,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
           break
 
         case 'full':
-          widthClassNames = 'w-full'
+          widthClassNames = 'w-[var(--radix-popper-available-width)]'
           break
 
         case 'auto':
@@ -151,7 +154,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
 
       if (width === 'trigger' && !hasTriggerElement) {
         console.warn(
-          'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `fit`...',
+          'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
         )
       }
     }
@@ -249,7 +252,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 loop
                 style={{
                   display: undefined,
-                  width: isNumber(width) ? `${width}px` : undefined,
+                  ...widthStyle,
                   ...(dropdown.style ?? {}),
                 }}
                 onInteractOutside={handleDropdownInteractOutside}
