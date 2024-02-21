@@ -78,6 +78,10 @@ const meta: Meta<PopoverProps> = {
       },
       options: ['Nothing', 'Text', 'Button', 'Icon Button'],
     },
+    width: {
+      control: 'radio',
+      options: ['auto', 'trigger', 'fit', 'full', 100, 500, 1000],
+    },
   },
   args: {
     align: 'Auto',
@@ -86,6 +90,7 @@ const meta: Meta<PopoverProps> = {
     fullWidth: false,
     side: 'Auto',
     trigger: 'Text',
+    width: 'fit',
     withArrow: true,
     withCloseButton: false,
   },
@@ -122,7 +127,7 @@ const meta: Meta<PopoverProps> = {
     },
   ],
   parameters: {
-    componentSubtitle: `TODO`,
+    componentSubtitle: `🤖 Pop. You Pop - Wall-E, talking to Eve - Wall-E`,
   },
 
   title: 'Molecules/Popover',
