@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.8.0...@snowball-tech/fractal@7.9.0) (2024-02-21)
+
+### ✨ Features
+
+- **popover:** allow to disable scroll ([604fade](https://github.com/snowball-tech/fractal/commit/604fade42b8206c201f222b828154ebeceeb41c5))
+
 # @snowball-tech/fractal [7.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.7.0...@snowball-tech/fractal@7.8.0) (2024-02-21)
 
 ### ✨ Features
