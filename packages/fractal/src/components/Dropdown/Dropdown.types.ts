@@ -89,7 +89,7 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    *    For example '*0.5' will make the popover width half the width of the
    *    trigger.
    */
-  width?: 'auto' | 'fit' | 'full' | 'trigger' | number
+  width?: 'auto' | 'fit' | 'full' | 'trigger' | number | string
   /** Indicates if the trigger should have an indicator (arrow). */
   withIndicator?: boolean
 }

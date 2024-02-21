@@ -89,7 +89,7 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    *    For example '*0.5' will make the popover width half the width of the
    *    trigger.
    */
-  width?: 'auto' | 'fit' | 'full' | 'trigger' | number
+  width?: 'auto' | 'fit' | 'full' | 'trigger' | number | string
   /** Indicates if the popover should have an arrow indicator on the side. */
   withArrow?: boolean
   /** Indicates if the popover should have a small "x" close button. */
