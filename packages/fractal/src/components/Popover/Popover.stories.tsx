@@ -104,6 +104,7 @@ const meta: Meta<PopoverProps> = {
     width: 'fit',
     withArrow: true,
     withCloseButton: false,
+    withScroll: false,
   },
   component: Popover,
   decorators: [

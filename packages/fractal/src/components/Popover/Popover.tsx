@@ -49,6 +49,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       width = 'fit',
       withArrow = true,
       withCloseButton = false,
+      withScroll = true,
       ...props
     }: PopoverProps,
     ref: ForwardedRef<CombinedRefs>,
@@ -282,40 +283,44 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                     </RxPopover.Close>
                   )}
 
-                  <RxScrollArea.Root
-                    className={`${PREFIX}-${GROUP_NAME}__popover__scrollarea`}
-                    {...(props.dir !== undefined
-                      ? { dir: props.dir as RxScrollArea.Direction }
-                      : {})}
-                    type="hover"
-                  >
-                    <RxScrollArea.Viewport
-                      className={cj(
-                        `${PREFIX}-${GROUP_NAME}__popover__scrollarea__viewport`,
-                        `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                      )}
-                      style={{
-                        overflowY: undefined,
-                      }}
+                  {withScroll ? (
+                    <RxScrollArea.Root
+                      className={`${PREFIX}-${GROUP_NAME}__popover__scrollarea`}
+                      {...(props.dir !== undefined
+                        ? { dir: props.dir as RxScrollArea.Direction }
+                        : {})}
+                      type="hover"
                     >
-                      {children}
-                    </RxScrollArea.Viewport>
-
-                    <RxScrollArea.Scrollbar
-                      className={cj(
-                        `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y`,
-                        '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70',
-                      )}
-                      orientation="vertical"
-                    >
-                      <RxScrollArea.Thumb
+                      <RxScrollArea.Viewport
                         className={cj(
-                          `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y__thumb`,
-                          'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                          `${PREFIX}-${GROUP_NAME}__popover__scrollarea__viewport`,
+                          `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
                         )}
-                      />
-                    </RxScrollArea.Scrollbar>
-                  </RxScrollArea.Root>
+                        style={{
+                          overflowY: undefined,
+                        }}
+                      >
+                        {children}
+                      </RxScrollArea.Viewport>
+
+                      <RxScrollArea.Scrollbar
+                        className={cj(
+                          `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y`,
+                          '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70',
+                        )}
+                        orientation="vertical"
+                      >
+                        <RxScrollArea.Thumb
+                          className={cj(
+                            `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y__thumb`,
+                            'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                          )}
+                        />
+                      </RxScrollArea.Scrollbar>
+                    </RxScrollArea.Root>
+                  ) : (
+                    children
+                  )}
 
                   {withArrow && <RxPopover.Arrow />}
                 </Paper>
