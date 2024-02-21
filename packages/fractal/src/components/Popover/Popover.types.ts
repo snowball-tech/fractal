@@ -71,6 +71,16 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   toggleOnTriggerClick?: boolean
   /** The trigger of the popover. */
   trigger?: ReactNode
+  /**
+   * Indicates how to compute the width of the popover:
+   *  - `fit`: the width of the popover will be computed in order to fit the
+   *    content of the popover;
+   *  - `trigger`: the width of the popover will be the same as the trigger;
+   *  - `full`: the width of the popover will take as much space as available;
+   *  - `auto`: the width of the popover will be computed using the best
+   *    option;
+   */
+  width?: 'auto' | 'fit' | 'full' | 'trigger' | number
   /** Indicates if the popover should have an arrow indicator on the side. */
   withArrow?: boolean
   /** Indicates if the popover should have a small "x" close button. */

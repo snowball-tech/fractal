@@ -2,9 +2,11 @@ import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
 import * as RxPopover from '@radix-ui/react-popover'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import isFunction from 'lodash/fp/isFunction'
+import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 import {
+  type CSSProperties,
   type ForwardedRef,
   forwardRef,
   useEffect,
@@ -44,6 +46,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       popover = {},
       toggleOnTriggerClick = true,
       trigger,
+      width = 'fit',
       withArrow = true,
       withCloseButton = false,
       ...props
@@ -68,7 +71,8 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       },
     }))
 
-    const hasTrigger = Boolean(trigger)
+    const hasTriggerElement = Boolean(trigger)
+    const hasTrigger = hasTriggerElement
     const hasChildren = Boolean(children)
 
     const [isOpen, setIsOpen] = useState(
@@ -126,6 +130,37 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
         }
       }
 
+    let widthClassNames = ''
+    let widthStyle: CSSProperties = {}
+    if (isNumber(width)) {
+      widthClassNames = 'max-w-full'
+      widthStyle = { minWidth: `${width}px`, width: `${width}px` }
+    } else {
+      switch (width) {
+        case 'fit':
+          widthClassNames = 'w-fit'
+          break
+
+        case 'full':
+          widthClassNames = 'w-[var(--radix-popper-available-width)]'
+          break
+
+        case 'auto':
+        case 'trigger':
+        default:
+          widthClassNames = hasTriggerElement
+            ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
+            : 'w-fit'
+          break
+      }
+
+      if (width === 'trigger' && !hasTriggerElement) {
+        console.warn(
+          'The `width` prop is set to `trigger` but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
+        )
+      }
+    }
+
     return (
       <div
         ref={containerRef}
@@ -150,6 +185,9 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
               'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none',
+              width === 'fit' || width === 'full'
+                ? ''
+                : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
               !hasTrigger
                 ? 'invisible h-0 max-h-0 border-y-0 py-0'
                 : 'flex items-center',
@@ -194,6 +232,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                   popover.side === 'left' ? 'mr-1' : '',
                   popover.side === 'top' ? 'mb-1 mt-0' : '',
                   popover.side === 'right' ? 'ml-1' : '',
+                  widthClassNames,
                   !hasChildren
                     ? `${PREFIX}-${GROUP_NAME}__popover--empty invisible`
                     : '',
@@ -201,6 +240,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 )}
                 style={{
                   display: undefined,
+                  ...widthStyle,
                   ...(popover.style ?? {}),
                 }}
                 onInteractOutside={handleInteractOutside}
