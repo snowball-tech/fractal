@@ -94,4 +94,6 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   withArrow?: boolean
   /** Indicates if the popover should have a small "x" close button. */
   withCloseButton?: boolean
+  /** Indicates if the popover should have a scroll integrated. */
+  withScroll?: boolean
 }
