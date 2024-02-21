@@ -136,7 +136,18 @@ const meta: Meta<DropdownProps> = {
     },
     width: {
       control: 'radio',
-      options: ['auto', 'trigger', 'fit', 'full', 100, 500, 1000],
+      options: [
+        'auto',
+        'trigger',
+        'fit',
+        'full',
+        '*0.25',
+        '*0.5',
+        '*0.75',
+        100,
+        500,
+        1000,
+      ],
     },
   },
   args: {
