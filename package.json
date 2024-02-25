@@ -79,7 +79,7 @@
     "@types/is-ci": "^3.0.4",
     "@types/node": "^20.11.19",
     "@types/prettier": "^3.0.0",
-    "chromatic": "^10.9.6",
+    "chromatic": "^11.0.0",
     "concurrently": "^8.2.2",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.56.0",

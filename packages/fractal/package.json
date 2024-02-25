@@ -101,7 +101,7 @@
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react-swc": "^3.6.0",
-    "chromatic": "^10.9.6",
+    "chromatic": "^11.0.0",
     "eslint": "^8.56.0",
     "postcss": "^8.4.35",
     "postcss-flexbugs-fixes": "^5.0.2",

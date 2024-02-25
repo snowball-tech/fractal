@@ -4800,7 +4800,7 @@ __metadata:
     "@types/react": "npm:^18.2.57"
     "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
-    chromatic: "npm:^10.9.6"
+    chromatic: "npm:^11.0.0"
     clsx: "npm:^2.1.0"
     country-flag-icons: "npm:^1.5.9"
     eslint: "npm:^8.56.0"
@@ -8367,9 +8367,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^10.9.6":
-  version: 10.9.6
-  resolution: "chromatic@npm:10.9.6"
+"chromatic@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "chromatic@npm:11.0.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.5.2 || ^1.0.0
     "@chromatic-com/playwright": ^0.5.2 || ^1.0.0
@@ -8382,7 +8382,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/c25fed1c0f9b7f66343818dede9cea0112e72f1a658c19951fbeca5d8d1ba47f7a735457211855d06217b8245942fff49be04e2c1de40642affcfc1714a8af98
+  checksum: 10/3d5d853bf860ab47200a2c7962d0647cf462db84355f397f69f48828ee5f2be7ccf692514d0c60f077e8cbbcab4cc79f4b66f59ff66f9f65d5a3b9cc12edcd8a
   languageName: node
   linkType: hard
 
@@ -11896,7 +11896,7 @@ __metadata:
     "@types/node": "npm:^20.11.19"
     "@types/prettier": "npm:^3.0.0"
     "@yarnpkg/types": "npm:^4.0.0"
-    chromatic: "npm:^10.9.6"
+    chromatic: "npm:^11.0.0"
     concurrently: "npm:^8.2.2"
     dotenv-cli: "npm:^7.3.0"
     eslint: "npm:^8.56.0"
