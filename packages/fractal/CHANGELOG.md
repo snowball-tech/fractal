@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [7.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.9.0...@snowball-tech/fractal@7.10.0) (2024-03-06)
+
+### ✨ Features
+
+- **menu:** add a menu component ([2339181](https://github.com/snowball-tech/fractal/commit/23391817b3b7fbf94becc928b24fafaf1bef6809))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([06191dc](https://github.com/snowball-tech/fractal/commit/06191dced0577ee6951d748fd474d075a034ec5c))
+
 # @snowball-tech/fractal [7.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.8.0...@snowball-tech/fractal@7.9.0) (2024-02-21)
 
 ### ✨ Features
