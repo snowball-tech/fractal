@@ -85,12 +85,8 @@ export const Playground: Story = {}
 export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    const body = within(canvasElement.ownerDocument.body)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    await userEvent.click(canvas.getAllByRole('button').at(0)!)
-
-    const menuItems = body.getAllByRole('menuitem')
+    const menuItems = canvas.getAllByRole('menuitem')
     if (menuItems.length > 0) {
       /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
