@@ -153,6 +153,7 @@ const meta: Meta<DropdownProps> = {
   args: {
     align: 'Auto',
     children: 'Text',
+    defaultOpen: false,
     disabled: false,
     fullWidth: false,
     side: 'Auto',
