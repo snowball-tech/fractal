@@ -35,6 +35,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
   (
     {
       children,
+      defaultOpen = false,
       disabled = false,
       dropdown = {},
       fullWidth = false,
@@ -190,6 +191,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
         {...omit(['className'], props)}
       >
         <RxDropdown.Root
+          {...(defaultOpen ? { defaultOpen: true } : {})}
           {...(disabled ? { open: false } : { open: isOpen })}
           modal={false}
           onOpenChange={handleOpenChange}

@@ -28,6 +28,8 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * For the best result, please use the `DropdownItem` components.
    */
   children: ReactNode
+  /** Indicates if the dropdown should be opened by default. */
+  defaultOpen?: boolean
   /** Indicates if the dropdown menu is disabled. */
   disabled?: boolean
   /**
