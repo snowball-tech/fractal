@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.1...@snowball-tech/fractal@7.10.2) (2024-03-06)
+
+### 🚦 Tests
+
+- **menu:** fix interactive test ([b38d71f](https://github.com/snowball-tech/fractal/commit/b38d71fa351fd52028f43345a43079f4517b0c23))
+
 ## @snowball-tech/fractal [7.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.0...@snowball-tech/fractal@7.10.1) (2024-03-06)
 
 ### 🐛 Bug Fixes
