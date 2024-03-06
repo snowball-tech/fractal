@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.3...@snowball-tech/fractal@7.11.0) (2024-03-06)
+
+### ✨ Features
+
+- **menu:** add ref to menu item ([e27c07c](https://github.com/snowball-tech/fractal/commit/e27c07cf1f381d6c72f4e1ac17ff759d1356b991))
+
 ## @snowball-tech/fractal [7.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.2...@snowball-tech/fractal@7.10.3) (2024-03-06)
 
 ### 🐛 Bug Fixes
