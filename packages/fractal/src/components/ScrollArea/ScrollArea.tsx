@@ -18,6 +18,7 @@ export const ScrollArea = ({
   orientation = 'vertical',
   scrollHideDelay = 600,
   type = 'hover',
+  viewportClassName,
   ...props
 }: ScrollAreaProps) => {
   const scrollBarClassNames =
@@ -28,13 +29,22 @@ export const ScrollArea = ({
 
   return (
     <RxScrollArea.Root
-      className={`${PREFIX}-${GROUP_NAME}`}
+      className={cn(
+        `${PREFIX}-${GROUP_NAME}`,
+        orientation === 'vertical' || orientation === 'both'
+          ? 'h-full max-h-full min-h-0'
+          : '',
+        orientation === 'horizontal' || orientation === 'both'
+          ? 'w-full min-w-0 max-w-full'
+          : '',
+        props.className,
+      )}
       scrollHideDelay={scrollHideDelay}
       type={type}
       {...omit(['className'], props)}
     >
       <RxScrollArea.Viewport
-        className={cn('relative h-full w-full', props.className)}
+        className={cn('relative h-full w-full', viewportClassName)}
       >
         {children}
       </RxScrollArea.Viewport>

@@ -35,4 +35,6 @@ export interface ScrollAreaProps extends RxScrollAreaProps {
    *    and when the user is hovering over the scroll area.
    */
   type?: RxScrollAreaProps['type']
+  /** The CSS class names to apply to the scrollarea viewport element. */
+  viewportClassName?: string
 }
