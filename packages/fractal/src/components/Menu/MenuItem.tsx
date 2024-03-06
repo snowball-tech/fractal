@@ -44,7 +44,7 @@ export const MenuItem = ({
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item`,
         'alternatee',
-        'flex items-center gap-1',
+        'flex flex-row items-center gap-1',
         'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
         icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
         isDisabled
@@ -61,18 +61,18 @@ export const MenuItem = ({
       aria-label={label}
       title={label}
     >
-      <Typography element={isLink ? 'a' : 'div'}>
-        {icon && (
-          <div
-            className={cj(
-              `${PREFIX}-${GROUP_NAME}__item__icon`,
-              'max-h-3 max-w-3',
-            )}
-          >
-            {icon}
-          </div>
-        )}
+      {icon && (
+        <div
+          className={cj(
+            `${PREFIX}-${GROUP_NAME}__item__icon`,
+            'max-h-3 max-w-3',
+          )}
+        >
+          {icon}
+        </div>
+      )}
 
+      <Typography element={isLink ? 'a' : 'div'}>
         {hasChildren ? children : label}
       </Typography>
     </div>
