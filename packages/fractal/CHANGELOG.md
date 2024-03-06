@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.2...@snowball-tech/fractal@7.10.3) (2024-03-06)
+
+### 🐛 Bug Fixes
+
+- **scrollarea:** make the scrollarea actually scroll overflow ([a3b1c6c](https://github.com/snowball-tech/fractal/commit/a3b1c6cd7a1795be6aa65ac8a6e2a15269f656e3))
+
 ## @snowball-tech/fractal [7.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.1...@snowball-tech/fractal@7.10.2) (2024-03-06)
 
 ### 🚦 Tests
