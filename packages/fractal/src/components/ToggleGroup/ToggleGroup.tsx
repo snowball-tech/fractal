@@ -28,9 +28,9 @@ export const ToggleGroup = ({
   disabled = false,
   fullWidth = false,
   label,
+  multiple = false,
   onValueChange,
   orientation = 'vertical',
-  type = 'single',
   value,
   variant = DEFAULT_VARIANT,
   ...props
@@ -53,7 +53,7 @@ export const ToggleGroup = ({
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       disabled={disabled}
       {...(orientation !== undefined ? { orientation } : {})}
-      type={type}
+      type={multiple ? 'multiple' : 'single'}
       value={value}
       {...(isFunction(onValueChange)
         ? {

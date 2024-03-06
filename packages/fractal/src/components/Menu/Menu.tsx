@@ -12,9 +12,6 @@ import type { MenuProps } from './Menu.types'
 
 /**
  * `Menu` component displays a menu menu when a trigger is clicked.
- *
- * See https://www.radix-ui.com/primitives/docs/components/menu-menu for
- * more information.
  */
 export const Menu = forwardRef<HTMLDivElement, MenuProps>(
   (

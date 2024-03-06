@@ -1,3 +1,4 @@
+export { Orientations as MenuOrientations } from './Menu.constants.js'
 export { default as Menu } from './Menu.js'
 export type {
   MenuItemGroupProps,

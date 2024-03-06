@@ -4774,6 +4774,7 @@ __metadata:
     "@radix-ui/react-tabs": "npm:^1.0.4"
     "@radix-ui/react-toggle": "npm:^1.0.3"
     "@radix-ui/react-toggle-group": "npm:^1.0.4"
+    "@radix-ui/react-toolbar": "npm:^1.0.4"
     "@snowball-tech/design-tokens": "npm:9.0.9"
     "@snowball-tech/eslint-config": "npm:^5.3.5"
     "@storybook/addon-a11y": "npm:^7.6.17"

@@ -10,7 +10,7 @@ export interface ToggleGroupProps extends RxToggleGroupProps {
   /** The toggles to display inside of the toggle group. */
   children: ReactNode
   /**
-   * The controlled value of the toggle group (i.e. the value of the default
+   * The uncontrolled value of the toggle group (i.e. the value of the default
    * toggled toggle).
    *
    * Pass a string for a `single` typed toggle group and an array of strings for
@@ -25,12 +25,17 @@ export interface ToggleGroupProps extends RxToggleGroupProps {
   /** Indicates if the toggle group should take all the available width. */
   fullWidth?: boolean
   /**
-   * The accessible label of the badge.
+   * The accessible label of the toggle group.
    *
    * If provided, this will be used as the `aria-label` and the `title` of the
-   * badge.
+   * toggle group.
    */
   label?: string
+  /**
+   * Indicates if multiple toggles can be toggled at the same time inside of the
+   * toggle group.
+   */
+  multiple?: boolean
   /**
    * Event handler called when the value of the toggle group (i.e. the toggled
    * toggle) changes.
@@ -38,13 +43,6 @@ export interface ToggleGroupProps extends RxToggleGroupProps {
   onValueChange?: (value: Array<string> | string) => void
   /** The display orientation of the contained toggles. */
   orientation?: RxToggleGroupProps['orientation']
-  /**
-   * The type of toggle group.
-   *
-   * `single` indicates that only one toggle can be toggled at a time.
-   * `multiple` indicates that multiple toggles can be toggled at a time.
-   */
-  type?: 'multiple' | 'single'
   /**
    * The controlled value of the toggle group (i.e. the value of the toggled
    * toggle).
