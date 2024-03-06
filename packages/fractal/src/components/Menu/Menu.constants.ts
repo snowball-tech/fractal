@@ -5,4 +5,4 @@ export enum Orientations {
   Vertical = 'vertical',
 }
 
-export const DEFAULT_ORIENTATION = Orientations.Horizontal
+export const DEFAULT_ORIENTATION = Orientations.Vertical

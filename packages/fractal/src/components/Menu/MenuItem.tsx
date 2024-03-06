@@ -12,9 +12,6 @@ import { MenuGroupContext } from './MenuGroupContext'
 
 /**
  * `Item` displays items in a menu.
- *
- * See https://www.radix-ui.com/primitives/docs/components/menu-menu#item
- * for more information.
  */
 export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
   (

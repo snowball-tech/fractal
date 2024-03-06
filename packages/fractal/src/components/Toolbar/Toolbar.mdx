@@ -1,0 +1,37 @@
+import {
+  ArgTypes,
+  Controls,
+  Description,
+  Meta,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/blocks'
+
+import * as ToolbarStories from './Toolbar.stories'
+
+<Meta of={ToolbarStories} />
+
+<Title />
+
+<Subtitle />
+
+<Description />
+
+---
+
+## Props
+
+On top of all the props, attributes and event handler you can set on a
+`<div />` element, the component accepts the following props:
+
+<ArgTypes />
+
+<Stories includePrimary={false} title="Toolbars" />
+
+## Playground
+
+<Primary />
+
+<Controls />

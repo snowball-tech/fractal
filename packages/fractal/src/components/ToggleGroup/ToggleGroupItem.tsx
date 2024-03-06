@@ -27,10 +27,10 @@ import type { ToggleGroupItemProps } from './ToggleGroup.types'
 import { ToggleGroupContext } from './ToggleGroupContext'
 
 /**
- * `ToggleGroupItem` component is used to allow the user to make a single choice
+ * `ToggleGroupItem` component is used to allow the user to make a choice
  * amongst a group of multiple choices.
  *
- * You must use this component with the `InputRadioGroup` component.
+ * You must use this component with the `ToggleGroup` component.
  *
  * See https://www.radix-ui.com/primitives/docs/components/toggle-group#item for
  * more information.

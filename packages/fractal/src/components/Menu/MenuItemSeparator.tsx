@@ -10,9 +10,6 @@ import { MenuItemSeparatorProps } from './Menu.types'
 /**
  * `ItemSeparator` component is used to display a separator between groups or
  * items in a menu.
- *
- * See https://www.radix-ui.com/primitives/docs/components/select#separator for
- * more information.
  */
 export default function MenuItemSeparator({
   ...props
@@ -28,3 +25,4 @@ export default function MenuItemSeparator({
     />
   )
 }
+MenuItemSeparator.displayName = 'MenuItemSeparator'

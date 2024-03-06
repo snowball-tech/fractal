@@ -1,3 +1,4 @@
+export { Variants as ToggleGroupVariants } from '../Toggle/Toggle.constants.js'
 export { default as ToggleGroup } from './ToggleGroup.js'
 export type {
   ToggleGroupItemProps,
