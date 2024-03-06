@@ -87,6 +87,7 @@ type ToolbarProps = ComponentProps<typeof Toolbar>
 
 const meta = {
   argTypes: {
+    children: { control: { disable: true } },
     orientation: {
       options: Object.values(ToolbarOrientations),
       table: {
