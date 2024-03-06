@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.10.0...@snowball-tech/fractal@7.10.1) (2024-03-06)
+
+### 🐛 Bug Fixes
+
+- **menu:** fix the position of the icon in the menu item ([c21fa76](https://github.com/snowball-tech/fractal/commit/c21fa76237fde8787905d24117e8ea43d4ee1de7))
+
 # @snowball-tech/fractal [7.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.9.0...@snowball-tech/fractal@7.10.0) (2024-03-06)
 
 ### ✨ Features
