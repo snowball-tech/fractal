@@ -105,7 +105,7 @@ jobs:
           yarn workspace @snowball-tech/fractal build-chromatic --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Storybook build log
           path: ./packages/fractal/build-storybook.log
