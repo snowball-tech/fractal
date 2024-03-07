@@ -76,6 +76,11 @@ export interface SelectProps
   open?: boolean
   /** A text to display when there is no selected value. */
   placeholder?: string
+  /**
+   * Indicates if the select dropdown must be portaller into the body or
+   * inserted in place after the trigger box.
+   */
+  portalled?: boolean
   /** Prevents the user to change the selected value. */
   readOnly?: boolean
   /** Indicates if a value must be selected. */
