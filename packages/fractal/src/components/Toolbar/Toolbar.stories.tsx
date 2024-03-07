@@ -14,13 +14,18 @@ import { Typography } from '@/components/Typography'
 
 import {
   Toolbar,
+  ToolbarElevations,
   ToolbarOrientations,
   ToolbarSeparator,
   ToolbarToggle,
   ToolbarToggleGroup,
   ToolbarVariants,
 } from '.'
-import { DEFAULT_ORIENTATION, DEFAULT_VARIANT } from './Toolbar.constants'
+import {
+  DEFAULT_ELEVATION,
+  DEFAULT_ORIENTATION,
+  DEFAULT_VARIANT,
+} from './Toolbar.constants'
 
 const tools = (
   <>
@@ -88,6 +93,13 @@ type ToolbarProps = ComponentProps<typeof Toolbar>
 const meta = {
   argTypes: {
     children: { control: { disable: true } },
+    elevation: {
+      control: 'radio',
+      table: {
+        defaultValue: { summary: DEFAULT_ELEVATION },
+        type: { summary: Object.values(ToolbarElevations).join('|') },
+      },
+    },
     orientation: {
       options: Object.values(ToolbarOrientations),
       table: {
@@ -107,6 +119,7 @@ const meta = {
   args: {
     children: tools,
     disabled: false,
+    elevation: DEFAULT_ELEVATION,
     fullWidth: false,
   },
   component: Toolbar,
@@ -123,6 +136,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: {
+    elevation: DEFAULT_ELEVATION,
     orientation: DEFAULT_ORIENTATION,
     variant: DEFAULT_VARIANT,
   },
