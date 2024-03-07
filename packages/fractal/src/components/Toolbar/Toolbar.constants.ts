@@ -1,3 +1,5 @@
+import { Elevations } from '@/components/Paper/Paper.constants'
+
 export const GROUP_NAME = 'toolbar'
 
 export enum Orientations {
@@ -8,8 +10,9 @@ export enum Orientations {
 export const DEFAULT_ORIENTATION = Orientations.Horizontal
 
 export enum Variants {
-  Primary = 'primary',
   Secondary = 'secondary',
 }
 
 export const DEFAULT_VARIANT = Variants.Secondary
+
+export const DEFAULT_ELEVATION = Elevations.Elevated

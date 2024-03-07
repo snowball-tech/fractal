@@ -70,7 +70,7 @@ const meta: Meta<ToggleGroupProps> = {
     children: items,
     disabled: false,
     fullWidth: false,
-    type: 'single',
+    multiple: false,
   },
   component: ToggleGroup,
   decorators: [
@@ -153,8 +153,8 @@ export const Primary: Story = {
       <Title>Who are the best Jedis?</Title>
       <ToggleGroup
         defaultValue={['yoda', 'luke-skywalker']}
+        multiple
         orientation="horizontal"
-        type="multiple"
         variant="primary"
       >
         {jedisItems}
@@ -191,7 +191,7 @@ export const Primary: Story = {
       <Title>Who are the best Jedis?</Title>
       <ToggleGroup
         defaultValue={['yoda', 'luke-skywalker']}
-        type="multiple"
+        multiple
         variant="primary"
       >
         {jedisItems}

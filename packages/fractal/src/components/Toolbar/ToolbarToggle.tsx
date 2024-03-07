@@ -58,15 +58,11 @@ export const ToolbarToggle = forwardRef<HTMLButtonElement, ToolbarToggleProps>(
     const combinedRef = composeRefs(ref, buttonRef)
 
     const variantClassNames = {
-      [Variants.Primary]:
-        'bg-white text-dark aria-not-pressed:shadow-subtle aria-not-pressed:hover:shadow-brutal aria-not-pressed:focus:shadow-brutal aria-not-pressed:active:shadow-none border-1 border-normal aria-not-pressed:active:-translate-x-quarter aria-not-pressed:active:translate-y-half aria-not-pressed:hover:translate-x-0 aria-not-pressed:hover:-translate-y-quarter aria-not-pressed:focus:translate-x-0 aria-not-pressed:focus:-translate-y-quarter aria-pressed:bg-secondary aria-pressed:text-light aria-unchecked:shadow-subtle aria-unchecked:hover:shadow-brutal aria-unchecked:focus:shadow-brutal aria-unchecked:active:shadow-none aria-unchecked:active:-translate-x-quarter aria-unchecked:active:translate-y-half aria-unchecked:hover:translate-x-0 aria-unchecked:hover:-translate-y-quarter aria-unchecked:focus:translate-x-0 aria-unchecked:focus:-translate-y-quarter aria-checked:bg-secondary aria-checked:text-light',
       [Variants.Secondary]:
         'bg-white text-dark border-1 aria-not-pressed:hover:shadow-hover aria-not-pressed:focus:shadow-hover aria-not-pressed:active:shadow-none border-normal aria-pressed:bg-secondary aria-pressed:text-light aria-unchecked:hover:shadow-hover aria-unchecked:focus:shadow-hover aria-unchecked:active:shadow-none aria-checked:bg-secondary aria-checked:text-light',
     }
 
     const disabledVariantClassNames = {
-      [Variants.Primary]:
-        'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
       [Variants.Secondary]:
         'bg-white text-disabled shadow-none border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
     }

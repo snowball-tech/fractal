@@ -1,6 +1,8 @@
 import { Root, ToggleGroup, ToggleItem } from '@radix-ui/react-toolbar'
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
+import { Paper } from '@/components/Paper/Paper'
+
 import { Orientations, Variants } from './Toolbar.constants'
 
 export interface ToolbarProps
@@ -17,6 +19,7 @@ export interface ToolbarProps
   children?: ReactNode
   /** Indicates if the toolbar is disabled. */
   disabled?: boolean
+  elevation?: ComponentProps<typeof Paper>['elevation']
   /** Indicates if the toolbar should take all the available width. */
   fullWidth?: boolean
   /** The orientation of the toolbar. */

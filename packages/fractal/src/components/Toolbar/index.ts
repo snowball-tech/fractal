@@ -1,3 +1,4 @@
+export { Elevations as ToolbarElevations } from '../Paper/Paper.constants.js'
 export {
   Orientations as ToolbarOrientations,
   Variants as ToolbarVariants,
