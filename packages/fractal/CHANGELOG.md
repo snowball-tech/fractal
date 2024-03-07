@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [7.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.12.0...@snowball-tech/fractal@7.13.0) (2024-03-07)
+
+### ✨ Features
+
+- **select:** allow to not portal the dropdown ([cf8d1f7](https://github.com/snowball-tech/fractal/commit/cf8d1f795a2d943a1584098cf79aa755b8aa6e58))
+
 # @snowball-tech/fractal [7.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.11.0...@snowball-tech/fractal@7.12.0) (2024-03-07)
 
 ### ✨ Features
