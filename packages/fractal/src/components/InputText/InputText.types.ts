@@ -84,7 +84,15 @@ export interface InputTextProps
    *
    * Must be a valid HTML5 type for an `input` element.
    */
-  type?: 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url'
+  type?:
+    | 'email'
+    | 'number'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
   /**
    * The controlled value of the text input.
    *
