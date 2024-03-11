@@ -22,7 +22,7 @@
     "directory": "packages/design-tokens"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.1.1",
   "engines": {
     "yarn": "^4.0.0",
     "node": "18.x"
