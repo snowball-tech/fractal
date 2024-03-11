@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { InputDate } from '.'
@@ -106,7 +106,13 @@ export const Playground: Story = {
 }
 
 export const Interactive: Story = {
-  args: { value: { day: '', month: '', year: '' } },
+  args: {
+    onClick: fn(),
+    onKeyDown: fn(),
+    onKeyUp: fn(),
+    value: { day: '', month: '', year: '' },
+  },
+
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
