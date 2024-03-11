@@ -9,9 +9,20 @@ import { Switch } from '.'
 type SwitchProps = ComponentProps<typeof Switch>
 
 const meta: Meta<SwitchProps> = {
+  argTypes: {
+    labels: {
+      control: 'radio',
+      mapping: {
+        Double: ['Left label', 'Right label'],
+        Single: [],
+      },
+      options: ['Single', 'Double'],
+    },
+  },
   args: {
     disabled: false,
-    label: 'Punch it, Chewie!',
+    label: 'Right single label',
+    labels: undefined,
     required: false,
     switchPosition: 'left',
   },

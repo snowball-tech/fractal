@@ -27,6 +27,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
       disabled = false,
       id,
       label,
+      labels = [],
       name,
       onToggle,
       required = false,
@@ -37,26 +38,57 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && isEmpty(label) && isEmpty(labels)) {
       console.warn(
-        'You must provide a `label` or `children` to the `Switch` component',
+        'You must provide `labels` or a `label` or `children` to the `Switch` component',
+      )
+    }
+    if (!isEmpty(labels) && labels.length !== 2) {
+      console.warn(
+        'You must provide exactly two value when using `labels` in the `Switch` component',
       )
     }
 
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
+    const hasLabels = !isEmpty(labels) && labels.length === 2
+    const actualSwitchPosition =
+      !isEmpty(labels) && labels.length === 2 ? 'center' : switchPosition
+
     return (
       <div
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          `${PREFIX}-${GROUP_NAME}--${switchPosition}`,
+          `${PREFIX}-${GROUP_NAME}--${actualSwitchPosition}`,
           'flex items-center gap-1',
-          switchPosition === 'right' ? 'flex-row-reverse' : '',
+          actualSwitchPosition === 'right' ? 'flex-row-reverse' : '',
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           props.className,
         )}
       >
+        {hasLabels && (
+          <RxLabel
+            asChild
+            className={cj(
+              `${PREFIX}-${GROUP_NAME}__label`,
+              `${PREFIX}-${GROUP_NAME}__label--left`,
+              'h-full max-h-full w-fit max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-middle',
+              disabled
+                ? 'cursor-not-allowed text-disabled'
+                : 'cursor-pointer text-dark',
+              required
+                ? `${PREFIX}-${GROUP_NAME}__label--required ${PREFIX}-${GROUP_NAME}__label--left--required after:text-feedback-danger-50 after:content-required`
+                : '',
+            )}
+            htmlFor={uniqueId}
+          >
+            <Typography element="label" variant="body-2">
+              {labels[0]}
+            </Typography>
+          </RxLabel>
+        )}
+
         <RxSwitch.Root
           id={uniqueId}
           ref={ref}
@@ -97,18 +129,22 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           asChild
           className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
+            `${PREFIX}-${GROUP_NAME}__label--right`,
             'h-full max-h-full w-fit max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-middle',
             disabled
               ? 'cursor-not-allowed text-disabled'
               : 'cursor-pointer text-dark',
             required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
+              ? `${PREFIX}-${GROUP_NAME}__label--required ${PREFIX}-${GROUP_NAME}__label--right--required after:text-feedback-danger-50 after:content-required`
               : '',
           )}
           htmlFor={uniqueId}
         >
-          <Typography element={hasChildren ? 'div' : 'label'} variant="body-2">
-            {hasChildren ? children : label}
+          <Typography
+            element={hasChildren && !hasLabels ? 'div' : 'label'}
+            variant="body-2"
+          >
+            {hasChildren && !hasLabels ? children : labels?.[1] ?? label}
           </Typography>
         </RxLabel>
       </div>
