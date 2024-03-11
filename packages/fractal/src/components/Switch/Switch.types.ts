@@ -44,6 +44,14 @@ export interface SwitchProps
    */
   label?: string
   /**
+   * The labels of the switch if you want to display two labels.
+   *
+   * The first element of the array will be the label for the unchecked state
+   * (presented on the left of the switch) and the second element will be the
+   * label for the checked state (presented on the right of the switch).
+   */
+  labels?: Array<string>
+  /**
    * The name of the switch.
    *
    * It is used to reference the switch in a form submission.
