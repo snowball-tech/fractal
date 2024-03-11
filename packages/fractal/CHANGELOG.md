@@ -1,3 +1,22 @@
+# @snowball-tech/fractal [7.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.13.0...@snowball-tech/fractal@7.14.0) (2024-03-11)
+
+### ✨ Features
+
+- **input-text:** allow the `time` type ([74e742d](https://github.com/snowball-tech/fractal/commit/74e742d9e09c61037d76865ff96735b40d7bba4e))
+
+### 🐛 Bug Fixes
+
+- **typography:** allow to have empty children ([771ff1f](https://github.com/snowball-tech/fractal/commit/771ff1fc6aa7b17e63db7f02049e1743809af27c))
+
+### 📦 Dependencies
+
+- update Yarn ([6261ff7](https://github.com/snowball-tech/fractal/commit/6261ff72f521fe1a774dec0ba3ad0e82c3673f0e))
+- upgrade dependencies ([435f7c3](https://github.com/snowball-tech/fractal/commit/435f7c30ac44d896810e8edea5f86549b1d78c24))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 9.0.10
+
 # @snowball-tech/fractal [7.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.12.0...@snowball-tech/fractal@7.13.0) (2024-03-07)
 
 ### ✨ Features
