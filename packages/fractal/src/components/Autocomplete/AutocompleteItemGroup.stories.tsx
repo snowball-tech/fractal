@@ -2,7 +2,10 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Autocomplete, AutocompleteItem, AutocompleteItemGroup } from '.'
+import AutocompleteItem from '@/components/Dropdown/DropdownItem'
+import AutocompleteItemGroup from '@/components/Dropdown/DropdownItemGroup'
+
+import Autocomplete from './Autocomplete'
 
 type AutocompleteItemGroupProps = ComponentProps<typeof AutocompleteItemGroup>
 

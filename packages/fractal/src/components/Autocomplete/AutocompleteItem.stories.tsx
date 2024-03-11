@@ -2,7 +2,9 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Autocomplete, AutocompleteItem } from '.'
+import AutocompleteItem from '@/components/Dropdown/DropdownItem'
+
+import Autocomplete from './Autocomplete'
 
 type AutocompleteItemProps = ComponentProps<typeof AutocompleteItem>
 

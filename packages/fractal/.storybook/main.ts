@@ -13,7 +13,6 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath('storybook-addon-mock'),
     {
       name: '@storybook/addon-docs',
       options: {
@@ -44,7 +43,6 @@ const config: StorybookConfig = {
   stories: [
     '../stories/Introduction.mdx',
     '../stories/**/!(Introduction).mdx',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],

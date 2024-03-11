@@ -22,17 +22,15 @@ import {
   useEffect,
 } from 'react'
 
+import AutocompleteItem from '@/components/Dropdown/DropdownItem'
+import AutocompleteItemGroup from '@/components/Dropdown/DropdownItemGroup'
+import AutocompleteItemSeparator from '@/components/Dropdown/DropdownItemSeparator'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import {
-  Autocomplete,
-  AutocompleteEmpty,
-  AutocompleteItem,
-  AutocompleteItemGroup,
-  AutocompleteItemSeparator,
-  AutocompleteLoading,
-} from '.'
+import Autocomplete from './Autocomplete'
+import AutocompleteEmpty from './AutocompleteEmpty'
+import AutocompleteLoading from './AutocompleteLoading'
 
 type AutocompleteProps = ComponentProps<typeof Autocomplete>
 
@@ -76,7 +74,9 @@ const itemsWithGroupsAndSeparators = (
   <>
     <AutocompleteItemGroup label="Jedis">{jedisItems}</AutocompleteItemGroup>
     <AutocompleteItemGroup label="Siths">{sithsItems}</AutocompleteItemGroup>
+
     <AutocompleteItemSeparator />
+
     {othersItems}
   </>
 )
