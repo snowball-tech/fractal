@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [7.15.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.0...@snowball-tech/fractal@7.15.1) (2024-03-11)
+
+### 🐛 Bug Fixes
+
+- **autocomplete:** fix the position of the dropdown ([8e6d968](https://github.com/snowball-tech/fractal/commit/8e6d9683672dd6f843ad0efc7620bcd5097115d3))
+
+### 📝 Documentation
+
+- **autocomplete:** fix the Star Wars API URL ([dbe35c5](https://github.com/snowball-tech/fractal/commit/dbe35c517b4c819c44b9fb91851290827d760e2c))
+
+### 📦 Dependencies
+
+- upgrade to Storybook 8 ([c09fba9](https://github.com/snowball-tech/fractal/commit/c09fba9a7928d8d8fa2341d9b6919238ceff2113))
+
 # @snowball-tech/fractal [7.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.14.0...@snowball-tech/fractal@7.15.0) (2024-03-11)
 
 ### ✨ Features
