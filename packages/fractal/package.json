@@ -1,6 +1,6 @@
 {
   "name": "@snowball-tech/fractal",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
   "contributors": [
