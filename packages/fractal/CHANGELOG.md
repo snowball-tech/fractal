@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [8.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@8.0.0...@snowball-tech/fractal@8.0.1) (2024-03-11)
+
+### 🚦 Tests
+
+- **input-date:** fix interactive test ([880116c](https://github.com/snowball-tech/fractal/commit/880116ccd2e96c667bd4688931193d08b1e8f1e6))
+
 # @snowball-tech/fractal [8.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.2...@snowball-tech/fractal@8.0.0) (2024-03-11)
 
 ### 💥 Breaking changes
