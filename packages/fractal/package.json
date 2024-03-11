@@ -112,13 +112,12 @@
     "prop-types": "^15.8.1",
     "remark-gfm": "^4.0.0",
     "storybook": "^8.0.0",
-    "storybook-addon-mock": "^4.3.0",
     "tailwind-merge": "^2.2.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2",
     "vercel": "^33.5.5",
     "vite": "^5.1.6",
-    "vite-tsconfig-paths": "^4.2.2"
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "dependencies": {
     "@iconscout/react-unicons": "git+https://github.com/Azuky/react-unicons",

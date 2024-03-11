@@ -6,7 +6,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
-import { InputFile } from '@/components/InputFile'
+import InputFile from '@/components/InputFile/InputFile'
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'

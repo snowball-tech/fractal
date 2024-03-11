@@ -3,7 +3,8 @@ import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Autocomplete, AutocompleteLoading } from '.'
+import Autocomplete from './Autocomplete'
+import AutocompleteLoading from './AutocompleteLoading'
 
 type AutocompleteLoadingProps = ComponentProps<typeof AutocompleteLoading>
 

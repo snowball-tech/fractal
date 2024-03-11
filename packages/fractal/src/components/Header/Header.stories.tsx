@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import isEmpty from 'lodash/fp/isEmpty'
 import type { CSSProperties, ComponentProps } from 'react'
 
-import { Autocomplete } from '@/components/Autocomplete'
+import Autocomplete from '@/components/Autocomplete/Autocomplete'
 import { Button } from '@/components/Button'
 import { Logo } from '@/components/Logo'
 
