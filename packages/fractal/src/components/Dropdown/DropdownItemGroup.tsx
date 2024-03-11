@@ -2,6 +2,7 @@
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import omit from 'lodash/fp/omit'
+import { useContext } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
@@ -9,6 +10,7 @@ import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemGroupProps } from './Dropdown.types'
+import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
@@ -24,12 +26,16 @@ export default function DropdownItemGroup({
   label,
   ...props
 }: DropdownItemGroupProps) {
+  const { disabled: dropdownDisabled } = useContext(DropdownContext)
+
+  const isDisabled = disabled || dropdownDisabled
+
   return (
     <RxDropdownMenu.Group
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         'p-2 py-0',
-        disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
+        isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
       {...omit(['className'], props)}
@@ -39,7 +45,7 @@ export default function DropdownItemGroup({
         className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__label`,
           'block py-2',
-          disabled
+          isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
             : 'cursor-default text-placeholder',
         )}
@@ -50,13 +56,13 @@ export default function DropdownItemGroup({
       <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
-          disabled
+          isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
             : alternatingBgColorLightClassNames,
         )}
         element="div"
       >
-        <DropdownGroupContext.Provider value={{ disabled }}>
+        <DropdownGroupContext.Provider value={{ disabled: isDisabled }}>
           {items}
         </DropdownGroupContext.Provider>
       </Typography>

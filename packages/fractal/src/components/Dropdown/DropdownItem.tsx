@@ -10,6 +10,7 @@ import { cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemProps } from './Dropdown.types'
+import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
@@ -19,6 +20,7 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  * for more information.
  */
 export const DropdownItem = ({
+  active = false,
   children,
   disabled,
   href,
@@ -37,9 +39,10 @@ export const DropdownItem = ({
     )
   }
 
+  const { disabled: dropdownDisabled } = useContext(DropdownContext)
   const { disabled: groupDisabled } = useContext(DropdownGroupContext)
 
-  const isDisabled = disabled || groupDisabled
+  const isDisabled = disabled || groupDisabled || dropdownDisabled
 
   const isLink = !isEmpty(href)
 
@@ -57,6 +60,7 @@ export const DropdownItem = ({
         isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
         props.className,
       )}
+      {...(active ? { 'aria-highlighted': active } : {})}
       {...(isLink ? { href, target } : {})}
       {...(value !== undefined ? { 'data-value': value } : {})}
       disabled={isDisabled}
