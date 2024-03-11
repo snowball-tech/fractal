@@ -8,8 +8,9 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The elevation level of the paper.
    *
-   * 1 (bordered) is a non elevated bordered paper
-   * 2 (low) is a lightly raised (small shadow) bordered paper
+   * 1 (bordered) is a non elevated bordered block
+   * 2 (elevated) is a lightly raised (small shadow) bordered block
+   * 3 (higher) is a raised bordered block
    */
   elevation?: `${Elevations}`
 }
