@@ -5,7 +5,7 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-excla
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { userEvent, within } from '@storybook/test'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'

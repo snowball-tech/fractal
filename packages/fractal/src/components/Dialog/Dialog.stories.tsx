@@ -1,6 +1,6 @@
 import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { userEvent, within } from '@storybook/test'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
