@@ -1,12 +1,29 @@
+import { dirname, join } from 'path'
+
 import type { StorybookConfig } from '@storybook/react-vite'
+import remarkGfm from 'remark-gfm'
+
+function getAbsolutePath(value: string) {
+  return dirname(require.resolve(join(value, 'package.json')))
+}
 
 const config: StorybookConfig = {
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-links',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    'storybook-addon-mock',
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-interactions'),
+    getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('storybook-addon-mock'),
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
 
   docs: {
@@ -43,7 +60,6 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
       skipChildrenPropWithoutDoc: false,
     },
-    skipBabel: true,
   },
 }
 

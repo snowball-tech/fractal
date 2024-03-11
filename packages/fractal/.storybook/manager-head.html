@@ -73,6 +73,7 @@ build Snowball's products, apps, marketing contents and documentations"
 
   /* stylelint-disable selector-class-pattern */
   .sidebar-item,
+  .sidebar-item svg,
   .search-result-item--label,
   .search-result-back > svg,
   .search-result-back > span,
@@ -93,20 +94,30 @@ build Snowball's products, apps, marketing contents and documentations"
   }
   /* stylelint-enable selector-class-pattern */
 
-  .sidebar-item svg[color='primary'] {
-    color: #ff8acd !important;
+  .sidebar-item[data-nodetype='document'] svg,
+  .sidebar-item svg[type='document'] {
+    color: hsl(52deg 100% 80%) !important;
   }
 
-  .sidebar-item svg[color='secondary'] {
-    color: #d6faff !important;
-  }
-
-  .sidebar-item[data-nodetype='document'] svg {
-    color: #ffe959 !important;
+  .sidebar-item[data-nodetype='story'] svg,
+  .sidebar-item svg[type='story'] {
+    color: hsl(265deg 100% 87%) !important;
   }
 
   .sidebar-item[data-selected='true'] svg {
-    color: #76f7ae !important;
+    color: hsl(146deg 89% 83%) !important;
+  }
+
+  .sidebar-item svg[data-nodetype='group'] svg,
+  .sidebar-item svg[color='primary'],
+  .sidebar-item svg[type='group'] {
+    color: hsl(326deg 100% 77%) !important;
+  }
+
+  .sidebar-item svg[data-nodetype='component'] svg,
+  .sidebar-item svg[color='secondary'],
+  .sidebar-item svg[type='component'] {
+    color: hsl(187deg 100% 85%) !important;
   }
 
   #fractal--documentation {

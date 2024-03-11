@@ -4,7 +4,7 @@ import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/dist/icons/uil-user-circle'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import { userEvent, within } from '@storybook/test'
 import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps, ReactNode } from 'react'
 
