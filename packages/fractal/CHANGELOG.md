@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [7.15.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.1...@snowball-tech/fractal@7.15.2) (2024-03-11)
+
+### 👷 Build
+
+- fix the build and optimize chunks ([4fcd06c](https://github.com/snowball-tech/fractal/commit/4fcd06c8c0d2cb59610d3cfae49d977ab85ac481))
+
 ## @snowball-tech/fractal [7.15.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.0...@snowball-tech/fractal@7.15.1) (2024-03-11)
 
 ### 🐛 Bug Fixes
