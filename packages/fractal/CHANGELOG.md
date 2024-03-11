@@ -1,3 +1,22 @@
+# @snowball-tech/fractal [7.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.14.0...@snowball-tech/fractal@7.15.0) (2024-03-11)
+
+### ✨ Features
+
+- **dropdown:** add submenus ([0765944](https://github.com/snowball-tech/fractal/commit/0765944381cf10486fdf7705dbdcf5e0e2a8a677))
+- **switch:** add the possibility to have two labels ([25f1758](https://github.com/snowball-tech/fractal/commit/25f175896f1b1ff6d86de62667096213437c48ce))
+
+### 🐛 Bug Fixes
+
+- **paper:** add a slight margin to see the full shadow ([472ca14](https://github.com/snowball-tech/fractal/commit/472ca143254ffe8c6d2d409b10264660d723ea3b))
+
+### 📝 Documentation
+
+- add a padding to the stories ([9747371](https://github.com/snowball-tech/fractal/commit/97473711538fe8c2f51d9a971fe8eab561155ffe))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([42f2b01](https://github.com/snowball-tech/fractal/commit/42f2b0105ebeae18ced978bdc62788e62da17e86))
+
 # @snowball-tech/fractal [7.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.13.0...@snowball-tech/fractal@7.14.0) (2024-03-11)
 
 ### ✨ Features
