@@ -92,12 +92,12 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
 
   const promises = []
   promises.push(
-    fetch(`https://swapi.dev/api/people/?search=${newValue}`, {
+    fetch(`https://swapi.tech/api/people/?search=${newValue}`, {
       signal: abort?.signal,
     }),
   )
   promises.push(
-    fetch(`https://swapi.dev/api/planets/?search=${newValue}`, {
+    fetch(`https://swapi.tech/api/planets/?search=${newValue}`, {
       signal: abort?.signal,
     }),
   )
