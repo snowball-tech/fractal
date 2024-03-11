@@ -298,10 +298,10 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             align: 'end',
             className: cn(
               `${PREFIX}-${GROUP_NAME}__dropdown`,
-              'mt-0',
               dropdown.className,
             ),
             onPointerDownOutside: handleDropdownPointerDownOutside,
+            style: { marginTop: 0 },
             ...omit(['className', 'onPointerDownOutside'], dropdown),
           }}
           fullWidth={fullWidth}
