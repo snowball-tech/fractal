@@ -4891,7 +4891,7 @@ __metadata:
     "@types/react": "npm:^18.2.64"
     "@types/react-dom": "npm:^18.2.21"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
-    chromatic: "npm:^11.0.7"
+    chromatic: "npm:^11.0.8"
     clsx: "npm:^2.1.0"
     country-flag-icons: "npm:^1.5.9"
     eslint: "npm:^8.57.0"
@@ -4917,7 +4917,7 @@ __metadata:
     tsup: "npm:^8.0.2"
     typescript: "npm:^5.4.2"
     vercel: "npm:^33.5.5"
-    vite: "npm:^5.1.5"
+    vite: "npm:^5.1.6"
     vite-tsconfig-paths: "npm:^4.2.2"
   peerDependencies:
     "@iconscout/react-unicons": "*"
@@ -8604,12 +8604,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^11.0.7":
-  version: 11.0.7
-  resolution: "chromatic@npm:11.0.7"
+"chromatic@npm:^11.0.8":
+  version: 11.0.8
+  resolution: "chromatic@npm:11.0.8"
   peerDependencies:
-    "@chromatic-com/cypress": ^0.5.2 || ^1.0.0
-    "@chromatic-com/playwright": ^0.5.2 || ^1.0.0
+    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
+    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
   peerDependenciesMeta:
     "@chromatic-com/cypress":
       optional: true
@@ -8619,7 +8619,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/2c99aa699f99ee17dde4a4fc8f84e14eba89eed321d7a5a38421e0d0798a13e9b156ce803cedfb75c223d5264f94bd9b4aee616c06997123ffc37813e530e382
+  checksum: 10/f51a43d0f164b939d0330ce6f073a942e47dda83d446a0dc04fdac0c260b8b882841c022b24a4c5cf5ea554988e503c622174b6ee36d7d82dca3a428ee71e1b8
   languageName: node
   linkType: hard
 
@@ -12202,7 +12202,7 @@ __metadata:
     "@types/node": "npm:^20.11.25"
     "@types/prettier": "npm:^3.0.0"
     "@yarnpkg/types": "npm:^4.0.0"
-    chromatic: "npm:^11.0.7"
+    chromatic: "npm:^11.0.8"
     concurrently: "npm:^8.2.2"
     dotenv-cli: "npm:^7.4.1"
     eslint: "npm:^8.57.0"
@@ -22714,9 +22714,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.1.5":
-  version: 5.1.5
-  resolution: "vite@npm:5.1.5"
+"vite@npm:^5.1.6":
+  version: 5.1.6
+  resolution: "vite@npm:5.1.6"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -22750,7 +22750,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/ada0a9138ca541723008ee261d80a97f6b70173508ded0f87834e2142660f45dff9801d143551aa3a8979ed446f0aec71ae114ab3ae978b3fbd5cf1f8c4bc331
+  checksum: 10/f48073e93ead62fa58034398442de4517c824b3e50184f8b4059fb24077a26f2c04e910e29d7fb7ec51ea53eb61b9c7d94d56b14a38851de80c67480094cc79d
   languageName: node
   linkType: hard
 
