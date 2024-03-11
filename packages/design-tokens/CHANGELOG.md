@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [9.0.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.9...@snowball-tech/design-tokens@9.0.10) (2024-03-11)
+
+### 📦 Dependencies
+
+- update Yarn ([6261ff7](https://github.com/snowball-tech/fractal/commit/6261ff72f521fe1a774dec0ba3ad0e82c3673f0e))
+
 ## @snowball-tech/design-tokens [9.0.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.8...@snowball-tech/design-tokens@9.0.9) (2024-02-12)
 
 ### 📦 Dependencies
