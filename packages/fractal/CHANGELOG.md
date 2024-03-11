@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [8.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.2...@snowball-tech/fractal@8.0.0) (2024-03-11)
+
+### 💥 Breaking changes
+
+- **dialog:** remove scroll area from Dialog component ([c01d5cc](https://github.com/snowball-tech/fractal/commit/c01d5cc304479b7c1a699bb66e7a8b9edd3b1cb9))
+
 ## @snowball-tech/fractal [7.15.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@7.15.1...@snowball-tech/fractal@7.15.2) (2024-03-11)
 
 ### 👷 Build
