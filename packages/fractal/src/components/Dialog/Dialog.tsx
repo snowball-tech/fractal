@@ -17,7 +17,6 @@ import {
 
 import { Button } from '@/components/Button'
 import { Paper } from '@/components/Paper'
-import { ScrollArea } from '@/components/ScrollArea'
 import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
@@ -220,9 +219,8 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                         </RxDialog.Close>
                       )}
                     </div>
-                    {hasChildren && (
-                      <ScrollArea orientation="both">{children}</ScrollArea>
-                    )}
+
+                    {hasChildren && children}
                   </Paper>
                 </RxDialog.Content>
               </>
