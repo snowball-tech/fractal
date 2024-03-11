@@ -12,7 +12,7 @@ const meta: Meta<DropdownItemGroupProps> = {
       table: {
         type: {
           summary:
-            'DropdownItem | DropdownItemSeparator | Array<DropdownItem | DropdownItemSeparator>',
+            'DropdownItem | DropdownItemSeparator | SubDropdown | DropdownRadioGroup | Array<DropdownItem | DropdownItemSeparator | SubDropdown | DropdownRadioGroup>',
         },
       },
     },

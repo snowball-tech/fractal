@@ -1,0 +1,265 @@
+'use client'
+
+import AngleRightIcon from '@iconscout/react-unicons/dist/icons/uil-angle-right'
+import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
+import * as RxScrollArea from '@radix-ui/react-scroll-area'
+import type { DismissableLayerProps } from '@radix-ui/react-select'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+import {
+  ForwardedRef,
+  forwardRef,
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
+
+import { Typography } from '@/components/Typography/Typography'
+import { PREFIX } from '@/constants'
+import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
+
+import { GROUP_NAME } from './Dropdown.constants'
+import type {
+  SubDropdownCombinedRefs,
+  SubDropdownProps,
+} from './Dropdown.types'
+import { DropdownContext } from './DropdownContext'
+import { DropdownGroupContext } from './DropdownGroupContext'
+/**
+ * `SubDropdown` component is used to display a submenu in a dropdown.
+ *
+ * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#sub
+ * for more information.
+ */
+export const SubDropdown = forwardRef<
+  SubDropdownCombinedRefs,
+  SubDropdownProps
+>(
+  (
+    {
+      children: items,
+      content,
+      defaultOpen = false,
+      disabled = false,
+      icon,
+      label,
+      onClick,
+      onClose,
+      onInteractOutside,
+      onOpen,
+      onSubMenuOpenChange,
+      open,
+      withIndicator = true,
+      ...props
+    }: SubDropdownProps,
+    ref: ForwardedRef<SubDropdownCombinedRefs>,
+  ) => {
+    const triggerRef = useRef<HTMLElement>(null)
+    const contentRef = useRef<HTMLDivElement>(null)
+
+    useImperativeHandle(ref, () => ({
+      get content() {
+        return contentRef?.current ?? null
+      },
+
+      get trigger() {
+        return triggerRef?.current ?? null
+      },
+    }))
+
+    const hasChildren = Boolean(items)
+
+    const [isOpen, setIsOpen] = useState(open === true)
+
+    const handleOpenChange = (isOpened: boolean) => {
+      if (disabled) {
+        return
+      }
+
+      const wasOpened = isOpen
+      setIsOpen(isOpened)
+
+      if (isFunction(onSubMenuOpenChange) && wasOpened !== isOpened) {
+        onSubMenuOpenChange(isOpened)
+      }
+
+      if (!wasOpened && isOpened && isFunction(onOpen)) {
+        onOpen()
+      }
+
+      if (wasOpened && !isOpened && isFunction(onClose)) {
+        onClose()
+      }
+    }
+
+    useEffect(() => {
+      if (open === true) {
+        handleOpenChange(true)
+      } else {
+        handleOpenChange(false)
+      }
+      // We don't want to reopen the dropdown based on the `handleOpenChange`
+      // function. So we don't include it in the dependencies.
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [items, open])
+
+    const { disabled: dropdownDisabled } = useContext(DropdownContext)
+    const { disabled: groupDisabled } = useContext(DropdownGroupContext)
+
+    const isDisabled = disabled || groupDisabled || dropdownDisabled
+
+    const handleSubMenuInteractOutside: DismissableLayerProps['onInteractOutside'] =
+      (event) => {
+        const { target } = event
+        if (target === window || target === null || target === undefined) {
+          return
+        }
+
+        if (
+          triggerRef?.current?.contains(target as Element) ||
+          contentRef?.current?.contains(target as Element)
+        ) {
+          event.preventDefault()
+        }
+
+        if (isFunction(onInteractOutside)) {
+          onInteractOutside(event)
+        }
+      }
+
+    return (
+      <RxDropdownMenu.Sub
+        {...(defaultOpen ? { defaultOpen: true } : {})}
+        {...(disabled ? { open: false } : { open: isOpen })}
+        onOpenChange={handleOpenChange}
+        {...omit(['className'], props)}
+      >
+        <RxDropdownMenu.SubTrigger
+          asChild
+          className={cn(
+            `${PREFIX}-${GROUP_NAME}__sub-menu`,
+            'flex items-center gap-1',
+            'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+            icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__with-icon` : '',
+            isDisabled
+              ? `${PREFIX}-${GROUP_NAME}__sub-menu--disabled cursor-not-allowed !bg-transparent text-disabled`
+              : 'cursor-pointer text-dark',
+            props.className,
+          )}
+          onClick={onClick}
+        >
+          <div
+            className={cj(
+              `${PREFIX}-${GROUP_NAME}__sub-menu__label`,
+              'alternatee',
+              'flex items-center justify-between gap-1',
+              disabled
+                ? `${PREFIX}-${GROUP_NAME}__sub-menu__label--disabled text-disabled`
+                : '',
+            )}
+          >
+            {icon && (
+              <div
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__sub-menu__icon`,
+                  'max-h-3 max-w-3',
+                )}
+              >
+                {icon}
+              </div>
+            )}
+
+            <Typography element="label">{label}</Typography>
+
+            {withIndicator && (
+              <div
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__sub-menu__indicator`,
+                  'max-h-3 max-w-3',
+                )}
+              >
+                <AngleRightIcon />
+              </div>
+            )}
+          </div>
+        </RxDropdownMenu.SubTrigger>
+
+        <RxDropdownMenu.Portal>
+          <RxDropdownMenu.SubContent
+            ref={contentRef}
+            className={cn(
+              `${PREFIX}-${GROUP_NAME}__sub-menu__content`,
+              'pointer-events-auto relative z-50 -mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-2 data-[side="right"]:ml-2 data-[side="top"]:mb-1',
+              !hasChildren
+                ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`
+                : '',
+              content?.className,
+            )}
+            loop
+            style={{
+              display: undefined,
+              ...(content?.style ?? {}),
+            }}
+            onInteractOutside={handleSubMenuInteractOutside}
+            {...omit(
+              ['asChild', 'className', 'style', 'onInteractOutside'],
+              content,
+            )}
+          >
+            <RxScrollArea.Root
+              className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
+              {...(props.dir !== undefined
+                ? { dir: props.dir as RxScrollArea.Direction }
+                : {})}
+              type="hover"
+            >
+              <RxScrollArea.Viewport
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__viewport`,
+                  `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+                )}
+                style={{
+                  overflowY: undefined,
+                }}
+              >
+                <Typography
+                  className={cj(
+                    `${PREFIX}-${GROUP_NAME}__sub-menu__items`,
+                    disabled
+                      ? `${PREFIX}-${GROUP_NAME}__sub-menu__items--disabled`
+                      : alternatingBgColorLightClassNames,
+                  )}
+                  element="div"
+                >
+                  <DropdownGroupContext.Provider value={{ disabled }}>
+                    {items}
+                  </DropdownGroupContext.Provider>
+                </Typography>
+              </RxScrollArea.Viewport>
+
+              <RxScrollArea.Scrollbar
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
+                  'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+                )}
+                orientation="vertical"
+              >
+                <RxScrollArea.Thumb
+                  className={cj(
+                    `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
+                    'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                  )}
+                />
+              </RxScrollArea.Scrollbar>
+            </RxScrollArea.Root>
+          </RxDropdownMenu.SubContent>
+        </RxDropdownMenu.Portal>
+      </RxDropdownMenu.Sub>
+    )
+  },
+)
+SubDropdown.displayName = 'SubDropdown'
+
+export default SubDropdown

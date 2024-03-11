@@ -4,17 +4,24 @@ import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
-import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps } from 'react'
 
-import { Dropdown, DropdownItem } from '.'
+import { Dropdown, DropdownItem, SubDropdown } from '.'
 
-type DropdownItemProps = ComponentProps<typeof DropdownItem>
+type SubDropdownItemProps = ComponentProps<typeof SubDropdown>
 
-const meta: Meta<DropdownItemProps> = {
+const meta: Meta<SubDropdownItemProps> = {
   argTypes: {
+    children: {
+      control: false,
+      table: {
+        type: {
+          summary:
+            'DropdownItem | DropdownItemSeparator | SubDropdow | DropdownRadioGroup | Array<DropdownItem | DropdownItemSeparator | SubDropdown | DropdownRadioGroup>',
+        },
+      },
+    },
     icon: {
       control: 'radio',
       mapping: {
@@ -30,31 +37,43 @@ const meta: Meta<DropdownItemProps> = {
     },
   },
   args: {
+    defaultOpen: false,
     disabled: false,
-    href: '',
     icon: undefined,
-    label: 'Luke Skywalker',
+    label: 'Masters',
+    open: false,
+    withIndicator: true,
   },
-  component: DropdownItem,
+  component: SubDropdown,
+  parameters: {
+    chromatic: { delay: 2000 },
+  },
 
-  title: 'Molecules/Dropdown/DropdownItem',
-} satisfies Meta<DropdownItemProps>
+  title: 'Molecules/Dropdown/SubDropdown',
+} satisfies Meta<SubDropdownItemProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, href = '', icon, label = 'Luke Skywalker' }) => (
-    <div style={{ height: '100px' }}>
-      <Dropdown trigger="Jedi">
-        <DropdownItem
+  render: ({
+    disabled = false,
+    icon,
+    label = 'Masters',
+    withIndicator = true,
+  }) => (
+    <div style={{ height: '300px' }}>
+      <Dropdown trigger="Jedis">
+        <SubDropdown
           disabled={disabled}
-          href={href}
           icon={icon}
           label={label}
-          target={!isEmpty(href) ? '_blank' : undefined}
-          onClick={action('onClick')}
-        />
+          withIndicator={withIndicator}
+        >
+          <DropdownItem label="Luke Skywalker" />
+          <DropdownItem label="Obi-Wan Kenobi" />
+          <DropdownItem label="Yoda" />
+        </SubDropdown>
       </Dropdown>
     </div>
   ),

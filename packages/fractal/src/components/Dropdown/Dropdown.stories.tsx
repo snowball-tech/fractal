@@ -98,6 +98,12 @@ const meta: Meta<DropdownProps> = {
         'Text with icons': iconsMenu,
       },
       options: ['Text', 'Text with icons', 'Radio buttons', 'Mixed'],
+      table: {
+        type: {
+          summary:
+            'DropdownItem | DropdownItemSeparator | SubDropdow | DropdownRadioGroup | Array<DropdownItem | DropdownItemSeparator | SubDropdown | DropdownRadioGroup>',
+        },
+      },
     },
     side: {
       control: 'radio',
@@ -156,6 +162,7 @@ const meta: Meta<DropdownProps> = {
     defaultOpen: false,
     disabled: false,
     fullWidth: false,
+    open: false,
     side: 'Auto',
     trigger: 'Text',
     width: 'fit',
