@@ -5,7 +5,7 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-excla
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -135,6 +135,9 @@ export const Primary: Story = {
 }
 
 export const InteractivePrimary: Story = {
+  args: {
+    onToggle: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 

@@ -137,6 +137,11 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {}
 
 export const InteractiveOpen: Story = {
+  args: {
+    onClose: fn(),
+    onOpen: fn(),
+    onSelect: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
