@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [9.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@9.0.0...@snowball-tech/fractal@9.0.1) (2024-03-12)
+
+### 🚦 Tests
+
+- fix all interactive tests in Storybook ([86187c8](https://github.com/snowball-tech/fractal/commit/86187c834804c07f3886d30f30284ac9952fa6d2))
+
 # @snowball-tech/fractal [9.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@8.0.1...@snowball-tech/fractal@9.0.0) (2024-03-12)
 
 ### 💥 Breaking changes
