@@ -6,11 +6,20 @@ module.exports = {
 
         value: '{color.base.black.value}',
       },
-
       light: {
         comment: 'Text color over dark background.',
 
         value: '{color.base.white.value}',
+      },
+      primary: {
+        comment: 'Primary text color.',
+
+        value: '{color.brand.primary.value}',
+      },
+      secondary: {
+        comment: 'Secondary text color.',
+
+        value: '{color.brand.secondary.value}',
       },
 
       //
