@@ -6,7 +6,7 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -95,12 +95,13 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: {
+    onHeightChange: fn(),
     value: '',
   },
 }
-
 export const Interactive: Story = {
   args: {
+    onHeightChange: fn(),
     value: '',
   },
   play: async ({ canvasElement }) => {

@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
@@ -158,8 +158,12 @@ export const InteractiveOpen: Story = {
     await userEvent.hover(body.getByLabelText(/c3po/i))
   },
 }
-
 export const InteractiveSelected: Story = {
+  args: {
+    onClose: fn(),
+    onOpen: fn(),
+    onSelect: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
