@@ -9,6 +9,8 @@ import type {
   ReactNode,
 } from 'react'
 
+import { Elevations } from '../Paper/Paper.constants'
+
 export type CombinedRefs = {
   container: HTMLDivElement | null
   content: HTMLDivElement | null
@@ -16,6 +18,8 @@ export type CombinedRefs = {
 }
 
 export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
+  /** Indicates where to align the popover relative to the trigger. */
+  align: RxPopoverContentProps['align']
   /**
    * The content of the popover.
    */
@@ -27,6 +31,14 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   closeButtonLabel?: string
   /** Indicates if the popover is disabled. */
   disabled?: boolean
+  /**
+   * The elevation level of the popover.
+   *
+   * 1 (bordered) is a non elevated bordered block
+   * 2 (elevated) is a lightly raised (small shadow) bordered block
+   * 3 (higher) is a raised bordered block
+   */
+  elevation?: `${Elevations}`
   /** Indicates if the popover should take all the available width. */
   fullWidth?: boolean
   /** Event handler called when the popover is closed. */
@@ -56,11 +68,16 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    * customize the style of the popover.
    */
   popover?: Partial<
-    Omit<RxPopoverContentProps, 'asChild' | 'onInteractOutside'> & {
+    Omit<
+      RxPopoverContentProps,
+      'align' | 'asChild' | 'onInteractOutside' | 'side'
+    > & {
       className?: string
       style?: CSSProperties
     }
   >
+  /** The preferred side of the trigger to render the popover. */
+  side?: RxPopoverContentProps['side']
   /**
    * Indicates if you want to toggle the popover when clicking on the trigger
    * (if provided of course).

@@ -34,7 +34,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
   (
     {
       autoFocus = false,
-      children: items,
+      children,
       defaultValue,
       description,
       disabled = false,
@@ -175,7 +175,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 element="div"
                 variant="body-1"
               >
-                {items}
+                {children}
               </Typography>
             </RxScrollArea.Viewport>
           </RxSelect.Viewport>

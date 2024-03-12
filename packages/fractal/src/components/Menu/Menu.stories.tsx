@@ -7,7 +7,16 @@ import type { ComponentProps } from 'react'
 
 import { sleep } from '@/utils'
 
-import { Menu, MenuItem, MenuItemGroup, MenuItemSeparator } from '.'
+import {
+  Menu,
+  MenuElevations,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemSeparator,
+  MenuOrientations,
+  SubMenu,
+} from '.'
+import { DEFAULT_ELEVATION, DEFAULT_ORIENTATION } from './Menu.constants'
 
 const textMenu = (
   <>
@@ -44,6 +53,16 @@ const mixedMenu = (
 
     <MenuItemSeparator />
 
+    <SubMenu label="SubMenu 1">
+      <MenuItem label="Item 1" />
+      <MenuItem label="Item 2" />
+    </SubMenu>
+
+    <SubMenu label="SubMenu 2">
+      <MenuItem label="Item 1" />
+      <MenuItem label="Item 2" />
+    </SubMenu>
+
     <MenuItemSeparator />
 
     <MenuItem icon={<SignoutIcon />} label="Sign out" />
@@ -63,15 +82,32 @@ const meta: Meta<MenuProps> = {
       },
       options: ['Text', 'Text with icons', 'Mixed'],
     },
+    elevation: {
+      control: 'radio',
+      table: {
+        defaultValue: { summary: DEFAULT_ELEVATION },
+        type: { summary: Object.values(MenuElevations).join('|') },
+      },
+    },
+    orientation: {
+      options: Object.values(MenuOrientations),
+      table: {
+        defaultValue: { summary: DEFAULT_ORIENTATION },
+        type: { summary: Object.values(MenuOrientations).join('|') },
+      },
+    },
   },
   args: {
     children: 'Text',
     disabled: false,
+    elevation: DEFAULT_ELEVATION,
+    embedded: false,
     fullWidth: false,
+    orientation: DEFAULT_ORIENTATION,
   },
   component: Menu,
   parameters: {
-    componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
+    componentSubtitle: `🐀 And he's going to order something, something from our menu. - Linguini - Ratatouille`,
   },
 
   title: 'Molecules/Menu',

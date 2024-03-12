@@ -1,18 +1,60 @@
-import type { AllHTMLAttributes, ReactNode } from 'react'
+import type {
+  AllHTMLAttributes,
+  CSSProperties,
+  ComponentProps,
+  ReactNode,
+} from 'react'
+
+import { Elevations } from '@/components/Paper/Paper.constants'
+import { Popover } from '@/components/Popover/Popover'
 
 import { Orientations } from './Menu.constants'
+
+export type CombinedRefs = {
+  container: HTMLDivElement | null
+  menu: HTMLDivElement | null
+}
+
+export type SubMenuCombinedRefs = {
+  content: HTMLDivElement | null
+  trigger: HTMLElement | null
+}
 
 export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The content of the menu.
    *
-   * For the best result, please use the `MenuItem` components.
+   * For the best result, please use the `MenuItem`, `MenuItemGroup`,
+   * `MenuItemSeparator` or `SubMenu`.
    */
   children: ReactNode
   /** Indicates if the menu is disabled. */
   disabled?: boolean
+  /**
+   * The elevation level of the menu.
+   *
+   * 1 (bordered) is a non elevated bordered block
+   * 2 (elevated) is a lightly raised (small shadow) bordered block
+   * 3 (higher) is a raised bordered block
+   */
+  elevation?: `${Elevations}`
+  /**
+   * Indicates that the menu is embedded somewhere and that you would like to
+   * get rid of the default styling (background, border, elevation, ...).
+   */
+  embedded?: boolean
   /** Indicates if the menu should take all the available width. */
   fullWidth?: boolean
+  /**
+   * Options to tweak the menu.
+   *
+   * You can add the `className` and `style` properties to customize the style
+   * of the menu itself.
+   */
+  menu?: {
+    className?: string
+    style?: CSSProperties
+  }
   /** The orientations of the menu. */
   orientation?: `${Orientations}`
 }
@@ -44,6 +86,11 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * and `title` for the menu item.
    */
   label?: string
+  /**
+   * Event handler called when the menu item is activated (either with the mouse
+   * by a click or with the keyboard by pressing enter or space).
+   */
+  onActivate?: () => void
   /** Indicates where you want to open the link (if a `href` is provided). */
   target?: HTMLAnchorElement['target']
 }
@@ -58,3 +105,82 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
+
+export interface SubMenuProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
+  /**
+   * Indicates where to align the sub-menu content relative to the trigger
+   * (label).
+   */
+  align?: ComponentProps<typeof Popover>['align']
+  /**
+   * The content of the sub-menu.
+   *
+   * For the best result, please use the `MenuItem`, `MenuItemGroup`,
+   * `MenuItemSeparator` or `SubMenu`.
+   */
+  children: ReactNode
+  /**
+   * Options to tweak the sub-menu content.
+   *
+   * You can on top of that add the `className` and `style` properties to
+   * customize the style of the sub-menu content.
+   */
+  content?: {
+    className?: string
+    style?: CSSProperties
+  }
+  /** Indicates if the sub-menu should be opened by default. */
+  defaultOpen?: boolean
+  /** Indicates if the sub-menu is disabled. */
+  disabled?: boolean
+  /**
+   * The elevation level of the sub-menu.
+   *
+   * 1 (bordered) is a non elevated bordered block
+   * 2 (elevated) is a lightly raised (small shadow) bordered block
+   * 3 (higher) is a raised bordered block
+   */
+  elevation?: `${Elevations}`
+  /** An icon to display on the left of the sub-menu label. */
+  icon?: ReactNode
+  /** Event handler called when the sub-menu is closed. */
+  onClose?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the sub-menu.
+   */
+  onInteractOutside?: ComponentProps<typeof Popover>['onInteractOutside']
+  /** Event handler called when the submenu is opened. */
+  onOpen?: () => void
+  /**
+   * Event handler called when the sub-menu is opened or closed.
+   */
+  onSubMenuOpenChange?: ComponentProps<typeof Popover>['onOpenChange']
+  /**
+   * Indicates if the sub-menu is open.
+   *
+   * Can be used to force a state of the sub-menu or when using a custom
+   * (non-text) trigger (label).
+   */
+  open?: boolean
+  /**
+   * The preferred side of the trigger (label) to render the popover.
+   *
+   * If no value is given, the popover will be rendered on the right side of the
+   * trigger (label) on a vertical menu and on the bottom side of the trigger
+   * (label) on a horizontal menu.
+   */
+  side?: ComponentProps<typeof Popover>['side']
+  /**
+   * Indicates if we want to trigger the sub-menu display when hovering the
+   * trigger (label).
+   */
+  triggerOnHover?: boolean
+  /**
+   * Indicates if the sub-menu trigger (label) should have an indicator (right
+   * chevron on the right of the label).
+   */
+  withIndicator?: boolean
+  /** Indicates if the sub-menu should have a scroll integrated. */
+  withScroll?: boolean
+}

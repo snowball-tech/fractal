@@ -53,6 +53,8 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
     return (
       <RxDropdownMenu.Item
         ref={ref}
+        aria-label={label}
+        asChild
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
           'alternatee',
@@ -65,16 +67,14 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
           isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
           props.className,
         )}
+        disabled={isDisabled}
+        title={label}
         {...(active ? { 'data-highlighted': active } : {})}
         {...(isLink ? { href, target } : {})}
         {...(value !== undefined ? { 'data-value': value } : {})}
-        disabled={isDisabled}
         {...(isFunction(onClick) ? { onSelect: onClick } : {})}
         {...(isFunction(onSelect) ? { onSelect } : {})}
         {...omit(['className', 'data-value'], props)}
-        aria-label={label}
-        asChild
-        title={label}
       >
         <Typography element={isLink ? 'a' : 'div'}>
           {icon && (

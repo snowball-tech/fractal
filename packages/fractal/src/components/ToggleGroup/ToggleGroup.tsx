@@ -23,7 +23,7 @@ import { ToggleGroupContext } from './ToggleGroupContext'
  * information.
  */
 export const ToggleGroup = ({
-  children: radioButtons,
+  children,
   defaultValue,
   disabled = false,
   fullWidth = false,
@@ -63,7 +63,7 @@ export const ToggleGroup = ({
       {...omit(['className'], props)}
     >
       <ToggleGroupContext.Provider value={{ disabled, variant }}>
-        {radioButtons}
+        {children}
       </ToggleGroupContext.Provider>
     </RxToggleGroup.Root>
   )

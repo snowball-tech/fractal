@@ -21,7 +21,7 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  * for more information.
  */
 export default function DropdownItemGroup({
-  children: items,
+  children,
   disabled = false,
   label,
   ...props
@@ -63,7 +63,7 @@ export default function DropdownItemGroup({
         element="div"
       >
         <DropdownGroupContext.Provider value={{ disabled: isDisabled }}>
-          {items}
+          {children}
         </DropdownGroupContext.Provider>
       </Typography>
     </RxDropdownMenu.Group>

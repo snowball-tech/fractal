@@ -22,7 +22,7 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME, Orientations } from './Dropdown.constants'
+import { GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
 import { DropdownContext } from './DropdownContext'
 
@@ -307,8 +307,6 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                       <DropdownContext.Provider
                         value={{
                           disabled,
-                          from: 'dropdown',
-                          orientation: Orientations.Vertical,
                         }}
                       >
                         {children}
