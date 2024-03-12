@@ -49,7 +49,7 @@
     "setup": "(yarn run -T is-ci || yarn install) && yarn run build"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.202",
+    "@types/lodash": "^4.17.0",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",
     "tailwindcss": "^3.4.1",
