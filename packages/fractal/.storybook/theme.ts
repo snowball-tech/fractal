@@ -10,7 +10,7 @@ import {
 import type { ThemeVars } from '@storybook/theming'
 import { create } from '@storybook/theming/create'
 
-const SidebarBackgroundColor = SecondaryColor
+const SidebarBackgroundColor = Black
 const TopbarBackgroundColor = PrimaryColor
 
 const theme: ThemeVars = create({

@@ -9,8 +9,8 @@ module.exports = {
         light: { comment: 'Yellowish White Tone 90', value: '#FFFBF4' },
       },
 
-      primary: { comment: 'Tone 50', value: '#FF8ACD' },
-      secondary: { comment: 'Tone 0', value: '{color.base.black}' },
+      primary: { comment: 'Tone 90', value: '#FF8ACD' },
+      secondary: { comment: 'Tone 90', value: '#FFE2F3' },
 
       separator: {
         comment: 'Used for line separators',

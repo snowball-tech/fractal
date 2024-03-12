@@ -52,7 +52,7 @@ layer(fractal);
   }
 
   a {
-    color: var(--color-brand-secondary);
+    color: var(--color-base-black);
   }
 
   * {
