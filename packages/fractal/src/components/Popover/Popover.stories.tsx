@@ -1,8 +1,6 @@
 import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
-import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -33,10 +31,7 @@ const popoverContent = (
   </div>
 )
 
-type PopoverProps = ComponentProps<typeof Popover> & {
-  align?: 'Auto' | 'Center' | 'End' | 'Start'
-  side?: 'Auto' | 'Bottom' | 'Left' | 'Right' | 'Top'
-}
+type PopoverProps = ComponentProps<typeof Popover>
 
 const meta: Meta<PopoverProps> = {
   argTypes: {
@@ -95,11 +90,11 @@ const meta: Meta<PopoverProps> = {
     },
   },
   args: {
-    align: 'Auto',
+    align: undefined,
     children: popoverContent,
     disabled: false,
     fullWidth: false,
-    side: 'Auto',
+    side: undefined,
     trigger: 'Text',
     width: 'fit',
     withArrow: true,
@@ -121,22 +116,6 @@ const meta: Meta<PopoverProps> = {
         {storyFn()}
       </div>
     ),
-    function WithArgs(Story, context) {
-      const [{ popover, side }] = useArgs<typeof context.args>()
-
-      return (
-        <Story
-          args={{
-            ...context.args,
-            popover: {
-              ...popover,
-              avoidCollisions: isEmpty(side),
-              side: side as 'bottom' | 'left' | 'right' | 'top',
-            },
-          }}
-        />
-      )
-    },
   ],
   parameters: {
     componentSubtitle: `🤖 Pop. You Pop - Wall-E, talking to Eve - Wall-E`,
