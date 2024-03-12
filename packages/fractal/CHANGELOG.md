@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.2...@snowball-tech/fractal@10.0.3) (2024-03-12)
+
+### 🐛 Bug Fixes
+
+- **dropdown-item:** add forward ref ([a956cc7](https://github.com/snowball-tech/fractal/commit/a956cc7564d485fadd438cd6995dad72dba0248e))
+
 ## @snowball-tech/fractal [10.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.1...@snowball-tech/fractal@10.0.2) (2024-03-12)
 
 ### 🐛 Bug Fixes
