@@ -37,7 +37,7 @@ import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
  * https://fractal.snowball.xyz/?path=/docs/molecules-dropdown--documentation
  * for more information.
  */
-const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
+export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
   (
     {
       autoFocus = false,
