@@ -63,7 +63,7 @@
     "presetup": "is-ci || yarn install",
     "setup": "yarn run presetup && (yarn setup-freezer & yarn setup-husky) && yarn workspaces foreach --all -p --topological-dev run setup",
     "setup-freezer": "is-ci && ./scripts/setup-freezer.sh",
-    "setup-husky": "is-ci || yarn husky install",
+    "setup-husky": "is-ci || yarn husky",
     "setup-vercel": "yarn setup-freezer && yarn workspaces foreach --all -p run setup-vercel",
     "types-check": "yarn workspaces foreach --all -p run types-check",
     "update-references": "workspaces-to-typescript-project-references --includesRoot"
