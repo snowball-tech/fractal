@@ -1,3 +1,21 @@
+# @snowball-tech/fractal [10.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@9.0.1...@snowball-tech/fractal@10.0.0) (2024-03-12)
+
+### 🎨 Code Style and Formatting
+
+- fix format of 3 files ([9d617c8](https://github.com/snowball-tech/fractal/commit/9d617c830b51da3264fad4bdc968a22be05fc198))
+
+### 💥 Breaking changes
+
+- **color:** revert the change for the secondary color ([09266f3](https://github.com/snowball-tech/fractal/commit/09266f3de25a3180202025acc275bab7f59bf1df))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([bf6f84c](https://github.com/snowball-tech/fractal/commit/bf6f84cd394da4f8ff618d7ccb25d87605b3032f))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.0.0
+
 ## @snowball-tech/fractal [9.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@9.0.0...@snowball-tech/fractal@9.0.1) (2024-03-12)
 
 ### 🚦 Tests
