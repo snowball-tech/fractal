@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.0...@snowball-tech/fractal@10.0.1) (2024-03-12)
+
+### 🎨 Code Style and Formatting
+
+- fix format of three files ([63b2924](https://github.com/snowball-tech/fractal/commit/63b29241a530cace8e4986070a1cae4c32349959))
+
+### 📦 Dependencies
+
+- cleanup lockfile ([2d8c663](https://github.com/snowball-tech/fractal/commit/2d8c6635d0337bc8d939de3484f9c069d154c079))
+
 # @snowball-tech/fractal [10.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@9.0.1...@snowball-tech/fractal@10.0.0) (2024-03-12)
 
 ### 🎨 Code Style and Formatting
