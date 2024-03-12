@@ -7,7 +7,13 @@ import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, waitForElementToBeRemoved, within } from '@storybook/test'
+import {
+  fn,
+  userEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+  within,
+} from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
 // eslint-disable-next-line lodash-fp/use-fp
 import debounce from 'lodash/debounce'
@@ -31,6 +37,8 @@ import { sleep } from '@/utils'
 import Autocomplete from './Autocomplete'
 import AutocompleteEmpty from './AutocompleteEmpty'
 import AutocompleteLoading from './AutocompleteLoading'
+
+const EMPTY_SEARCH = 'pzgvf'
 
 type AutocompleteProps = ComponentProps<typeof Autocomplete>
 
@@ -107,7 +115,10 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
       const { results: characters } = (await charactersResponse?.json()) ?? {}
       const { results: planets } = (await planetsResponse?.json()) ?? {}
 
-      if (isEmpty(characters) && isEmpty(planets)) {
+      if (
+        (isEmpty(characters) && isEmpty(planets)) ||
+        newValue === EMPTY_SEARCH
+      ) {
         setArgs({
           children: (
             <AutocompleteEmpty>
@@ -345,9 +356,15 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: { value: '' },
 }
-
 export const InteractiveSearching: Story = {
-  args: { value: '' },
+  args: {
+    onChange: fn(),
+    onClick: fn(),
+    onClose: fn(),
+    onInputChange: fn(),
+    onOpen: fn(),
+    value: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
@@ -360,12 +377,21 @@ export const InteractiveSearching: Story = {
       delay: 100,
     })
 
-    await body.getByText(/loading star wars/i)
+    await waitFor(() => body.getByText(/loading star wars/i), {
+      timeout: 10000,
+    })
   },
 }
 
 export const InteractiveSearch: Story = {
-  args: { value: '' },
+  args: {
+    onChange: fn(),
+    onClick: fn(),
+    onClose: fn(),
+    onInputChange: fn(),
+    onOpen: fn(),
+    value: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
@@ -376,6 +402,10 @@ export const InteractiveSearch: Story = {
     await sleep(500)
     await userEvent.type(input, 'an', {
       delay: 100,
+    })
+
+    await waitFor(() => body.getByText(/loading star wars/i), {
+      timeout: 10000,
     })
 
     const loader = await body.getByText(/loading star wars/i)
@@ -403,7 +433,14 @@ export const InteractiveSearch: Story = {
 }
 
 export const InteractiveSearchAndSelect: Story = {
-  args: { value: '' },
+  args: {
+    onChange: fn(),
+    onClick: fn(),
+    onClose: fn(),
+    onInputChange: fn(),
+    onOpen: fn(),
+    value: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
@@ -414,6 +451,10 @@ export const InteractiveSearchAndSelect: Story = {
     await sleep(500)
     await userEvent.type(input, 'an', {
       delay: 100,
+    })
+
+    await waitFor(() => body.getByText(/loading star wars/i), {
+      timeout: 10000,
     })
 
     const loader = await body.getByText(/loading star wars/i)
@@ -431,7 +472,14 @@ export const InteractiveSearchAndSelect: Story = {
 }
 
 export const InteractiveEmptySearch: Story = {
-  args: { value: '' },
+  args: {
+    onChange: fn(),
+    onClick: fn(),
+    onClose: fn(),
+    onInputChange: fn(),
+    onOpen: fn(),
+    value: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
@@ -440,7 +488,11 @@ export const InteractiveEmptySearch: Story = {
     await userEvent.click(input)
 
     await sleep(500)
-    await userEvent.type(input, 'pzgvf')
+    await userEvent.type(input, EMPTY_SEARCH)
+
+    await waitFor(() => body.getByText(/loading star wars/i), {
+      timeout: 10000,
+    })
 
     const loader = await body.getByText(/loading star wars/i)
     await waitForElementToBeRemoved(loader, { timeout: 30000 })
