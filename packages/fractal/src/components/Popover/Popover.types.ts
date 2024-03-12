@@ -19,7 +19,7 @@ export type CombinedRefs = {
 
 export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Indicates where to align the popover relative to the trigger. */
-  align: RxPopoverContentProps['align']
+  align?: RxPopoverContentProps['align']
   /**
    * The content of the popover.
    */
