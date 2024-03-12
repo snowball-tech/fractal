@@ -108,7 +108,7 @@ perfectionist/sort-objects */
             'h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
-              : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-decorative-pink-90',
+              : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-secondary',
           )}
           disabled={isDisabled}
           required={required}

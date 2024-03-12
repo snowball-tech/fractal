@@ -59,12 +59,12 @@ export const ToolbarToggle = forwardRef<HTMLButtonElement, ToolbarToggleProps>(
 
     const variantClassNames = {
       [Variants.Secondary]:
-        'bg-white text-dark border-1 aria-not-pressed:hover:shadow-hover aria-not-pressed:focus:shadow-hover aria-not-pressed:active:shadow-none border-normal aria-pressed:bg-secondary aria-pressed:text-light aria-unchecked:hover:shadow-hover aria-unchecked:focus:shadow-hover aria-unchecked:active:shadow-none aria-checked:bg-secondary aria-checked:text-light',
+        'bg-white text-dark border-1 aria-not-pressed:hover:shadow-hover aria-not-pressed:focus:shadow-hover aria-not-pressed:active:shadow-none border-normal aria-pressed:bg-black aria-pressed:text-light aria-unchecked:hover:shadow-hover aria-unchecked:focus:shadow-hover aria-unchecked:active:shadow-none aria-checked:bg-black aria-checked:text-light',
     }
 
     const disabledVariantClassNames = {
       [Variants.Secondary]:
-        'bg-white text-disabled shadow-none border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
+        'bg-white text-disabled shadow-none border-disabled aria-checked:bg-black aria-checked:text-disabled',
     }
 
     const {

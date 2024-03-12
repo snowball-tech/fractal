@@ -100,7 +100,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
             '',
             disabled
               ? `${PREFIX}-${GROUP_NAME}__toggle--disabled cursor-not-allowed !border-disabled`
-              : 'cursor-pointer data-state-checked:bg-decorative-pink-90',
+              : 'cursor-pointer data-state-checked:bg-secondary',
           )}
           {...(defaultChecked !== undefined ? { defaultChecked } : {})}
           disabled={disabled}
@@ -119,7 +119,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
               'block h-2 w-2 -translate-x-quarter translate-y-[-5.5px] rounded-full border-1 border-normal bg-white transition-transform duration-100',
               'data-state-checked:translate-x-[15px]',
               disabled
-                ? '!border-disabled data-state-checked:bg-decorative-pink-90'
+                ? '!border-disabled data-state-checked:bg-secondary'
                 : 'border-normal data-state-checked:bg-primary',
             )}
           />
