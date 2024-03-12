@@ -60,7 +60,7 @@ export const DropdownItem = ({
         isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
         props.className,
       )}
-      {...(active ? { 'aria-highlighted': active } : {})}
+      {...(active ? { 'data-highlighted': active } : {})}
       {...(isLink ? { href, target } : {})}
       {...(value !== undefined ? { 'data-value': value } : {})}
       disabled={isDisabled}
