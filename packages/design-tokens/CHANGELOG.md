@@ -1,3 +1,13 @@
+# @snowball-tech/design-tokens [11.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@10.0.0...@snowball-tech/design-tokens@11.0.0) (2024-03-12)
+
+### 💥 Breaking changes
+
+- **color:** revert the change for the secondary color ([09266f3](https://github.com/snowball-tech/fractal/commit/09266f3de25a3180202025acc275bab7f59bf1df))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([bf6f84c](https://github.com/snowball-tech/fractal/commit/bf6f84cd394da4f8ff618d7ccb25d87605b3032f))
+
 # @snowball-tech/design-tokens [10.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@9.0.10...@snowball-tech/design-tokens@10.0.0) (2024-03-12)
 
 ### 💥 Breaking changes
