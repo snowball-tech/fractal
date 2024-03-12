@@ -65,12 +65,12 @@ export const ToggleGroupItem = forwardRef<
 
     const variantClassNames = {
       [Variants.Primary]:
-        'bg-white text-dark aria-unchecked:shadow-subtle aria-unchecked:hover:shadow-brutal aria-unchecked:focus:shadow-brutal aria-unchecked:active:shadow-none border-1 border-normal aria-unchecked:active:-translate-x-quarter aria-unchecked:active:translate-y-half aria-unchecked:hover:translate-x-0 aria-unchecked:hover:-translate-y-quarter aria-unchecked:focus:translate-x-0 aria-unchecked:focus:-translate-y-quarter aria-checked:bg-black aria-checked:text-light',
+        'bg-white text-dark aria-unchecked:shadow-subtle aria-unchecked:hover:shadow-brutal aria-unchecked:focus:shadow-brutal aria-unchecked:active:shadow-none border-1 border-normal aria-unchecked:active:-translate-x-quarter aria-unchecked:active:translate-y-half aria-unchecked:hover:translate-x-0 aria-unchecked:hover:-translate-y-quarter aria-unchecked:focus:translate-x-0 aria-unchecked:focus:-translate-y-quarter aria-checked:bg-secondary aria-checked:text-light',
     }
 
     const disabledVariantClassNames = {
       [Variants.Primary]:
-        'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-black aria-checked:text-disabled',
+        'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
     }
 
     const { disabled: groupDisabled, variant } = useContext(ToggleGroupContext)

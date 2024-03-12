@@ -6,11 +6,20 @@ module.exports = {
 
         value: '{color.base.black.value}',
       },
-
       light: {
         comment: 'Icon color over dark background.',
 
         value: '{color.base.white.value}',
+      },
+      primary: {
+        comment: 'Primary icon color.',
+
+        value: '{color.brand.primary.value}',
+      },
+      secondary: {
+        comment: 'Secondary icon color.',
+
+        value: '{color.brand.secondary.value}',
       },
 
       //

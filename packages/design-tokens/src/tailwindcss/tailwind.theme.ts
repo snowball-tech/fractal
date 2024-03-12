@@ -22,6 +22,7 @@ const baseColors = {
 }
 
 const brandColors = {
+  highlight: 'var(--color-brand-highlight)',
   primary: 'var(--color-brand-primary)',
   secondary: 'var(--color-brand-secondary)',
 }
@@ -107,6 +108,8 @@ export const tailwindTheme: Config['theme'] = {
     disabled: 'var(--color-border-disabled)',
     error: 'var(--color-feedback-danger-50)',
     normal: 'var(--color-border-default)',
+    primary: 'var(--color-border-primary)',
+    secondary: 'var(--color-border-secondary)',
     success: 'var(--color-feedback-success-50)',
     warning: 'var(--color-feedback-warning-50)',
   }),
@@ -198,6 +201,10 @@ export const tailwindTheme: Config['theme'] = {
     },
     feedback: {
       danger: {
+        50: 'var(--color-feedback-danger-50)',
+        90: 'var(--color-feedback-danger-90)',
+      },
+      error: {
         50: 'var(--color-feedback-danger-50)',
         90: 'var(--color-feedback-danger-90)',
       },
