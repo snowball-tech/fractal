@@ -24,7 +24,7 @@ import { ToolbarToggleGroupContext } from './ToolbarToggleGroupContext'
  * information.
  */
 export const ToolbarToggleGroup = ({
-  children: toggles,
+  children,
   defaultValue,
   disabled = false,
   label,
@@ -70,7 +70,7 @@ export const ToolbarToggleGroup = ({
       {...omit(['className'], props)}
     >
       <ToolbarToggleGroupContext.Provider value={{ disabled }}>
-        {toggles}
+        {children}
       </ToolbarToggleGroupContext.Provider>
     </RxToolbar.ToggleGroup>
   )

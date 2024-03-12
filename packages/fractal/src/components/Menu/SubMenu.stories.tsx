@@ -4,17 +4,24 @@ import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
-import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps } from 'react'
 
-import { Menu, MenuItem } from '.'
+import { Menu, MenuItem, SubMenu } from '.'
 
-type MenuItemProps = ComponentProps<typeof MenuItem>
+type SubMenuProps = ComponentProps<typeof SubMenu>
 
-const meta: Meta<MenuItemProps> = {
+const meta: Meta<SubMenuProps> = {
   argTypes: {
+    children: {
+      control: false,
+      table: {
+        type: {
+          summary:
+            'MenuItem | MenuItemSeparator | Array<MenuItem | MenuItemSeparator>',
+        },
+      },
+    },
     icon: {
       control: 'radio',
       mapping: {
@@ -30,40 +37,59 @@ const meta: Meta<MenuItemProps> = {
     },
   },
   args: {
-    active: false,
+    align: undefined,
+    defaultOpen: false,
     disabled: false,
-    href: '',
-    label: 'Luke Skywalker',
+    icon: undefined,
+    label: 'Masters',
+    open: false,
+    side: undefined,
+    triggerOnHover: true,
+    withIndicator: true,
+    withScroll: true,
   },
-  component: MenuItem,
+  component: SubMenu,
+  parameters: {
+    chromatic: { delay: 2000 },
+  },
 
-  title: 'Molecules/Menu/MenuItem',
-} satisfies Meta<MenuItemProps>
+  title: 'Molecules/Menu/SubMenu',
+} satisfies Meta<SubMenuProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({
-    active = false,
+    align,
+    defaultOpen,
     disabled = false,
-    href = '',
     icon,
-    label = 'Luke Skywalker',
+    label = 'Masters',
+    open,
+    side,
+    triggerOnHover = true,
+    withIndicator = true,
+    withScroll = true,
   }) => (
-    <div style={{ height: '100px' }}>
+    <div style={{ height: '300px' }}>
       <Menu>
-        <MenuItem
-          active={active}
+        <SubMenu
+          align={align}
+          defaultOpen={defaultOpen}
           disabled={disabled}
-          href={href}
           icon={icon}
           label={label}
-          target={!isEmpty(href) ? '_blank' : undefined}
-          onActivate={action('onActivate')}
-          onClick={action('onClick')}
-          onKeyDown={action('onKeyDown')}
-        />
+          open={open}
+          side={side}
+          triggerOnHover={triggerOnHover}
+          withIndicator={withIndicator}
+          withScroll={withScroll}
+        >
+          <MenuItem label="Luke Skywalker" />
+          <MenuItem label="Obi-Wan Kenobi" />
+          <MenuItem label="Yoda" />
+        </SubMenu>
       </Menu>
     </div>
   ),

@@ -1,4 +1,3 @@
-export { Orientations as AutocompleteOrientations } from '../Dropdown/Dropdown.constants.js'
 export { default as AutocompleteItem } from '../Dropdown/DropdownItem.js'
 export { default as AutocompleteItemGroup } from '../Dropdown/DropdownItemGroup.js'
 export { default as AutocompleteItemSeparator } from '../Dropdown/DropdownItemSeparator.js'

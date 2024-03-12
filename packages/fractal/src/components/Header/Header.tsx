@@ -15,7 +15,7 @@ import type { HeaderProps } from './Header.types'
  * header can adapt its display to the available size.
  */
 export const Header = ({
-  children: middle,
+  children,
   left,
   onClick,
   right,
@@ -54,7 +54,7 @@ export const Header = ({
         element="div"
         variant="heading-4"
       >
-        {middle}
+        {children}
       </Typography>
 
       {right ? (

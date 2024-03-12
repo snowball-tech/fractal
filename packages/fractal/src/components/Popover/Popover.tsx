@@ -21,7 +21,7 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Popover.constants'
+import { DEFAULT_ELEVATION, GROUP_NAME } from './Popover.constants'
 import type { CombinedRefs, PopoverProps } from './Popover.types'
 
 /**
@@ -33,9 +33,11 @@ import type { CombinedRefs, PopoverProps } from './Popover.types'
 export const Popover = forwardRef<CombinedRefs, PopoverProps>(
   (
     {
+      align,
       children,
       closeButtonLabel = 'Close',
       disabled = false,
+      elevation = DEFAULT_ELEVATION,
       fullWidth = false,
       onClose,
       onCloseButtonClick,
@@ -44,6 +46,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       onOpenChange,
       open,
       popover = {},
+      side,
       toggleOnTriggerClick = true,
       trigger,
       width = 'fit',
@@ -226,6 +229,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
               <Typography
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__content`,
+                  'w-full',
                   disabled
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',
@@ -241,19 +245,18 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
             {isOpen && (
               <RxPopover.Content
                 ref={contentRef}
+                align={align}
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__popover`,
-                  'pointer-events-auto relative z-50 mt-1',
-                  popover.side === 'left' ? 'mr-1' : '',
-                  popover.side === 'top' ? 'mb-1 mt-0' : '',
-                  popover.side === 'right' ? 'ml-1' : '',
+                  'pointer-events-auto relative z-50 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
                   !hasChildren
                     ? `${PREFIX}-${GROUP_NAME}__popover--empty invisible`
                     : '',
                   popover?.className,
                 )}
+                side={side}
                 style={{
                   display: undefined,
                   ...widthStyle,
@@ -261,11 +264,18 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 }}
                 onInteractOutside={handleInteractOutside}
                 {...omit(
-                  ['asChild', 'className', 'style', 'onInteractOutside'],
+                  [
+                    'align',
+                    'asChild',
+                    'className',
+                    'side',
+                    'style',
+                    'onInteractOutside',
+                  ],
                   popover,
                 )}
               >
-                <Paper className="relative" elevation="2">
+                <Paper className="relative" elevation={elevation}>
                   {withCloseButton && (
                     <RxPopover.Close
                       asChild

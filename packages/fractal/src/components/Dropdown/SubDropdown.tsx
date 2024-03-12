@@ -39,7 +39,7 @@ export const SubDropdown = forwardRef<
 >(
   (
     {
-      children: items,
+      children,
       content,
       defaultOpen = false,
       disabled = false,
@@ -69,7 +69,7 @@ export const SubDropdown = forwardRef<
       },
     }))
 
-    const hasChildren = Boolean(items)
+    const hasChildren = Boolean(children)
 
     const [isOpen, setIsOpen] = useState(open === true)
 
@@ -103,7 +103,7 @@ export const SubDropdown = forwardRef<
       // We don't want to reopen the dropdown based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [items, open])
+    }, [children, open])
 
     const { disabled: dropdownDisabled } = useContext(DropdownContext)
     const { disabled: groupDisabled } = useContext(DropdownGroupContext)
@@ -234,7 +234,7 @@ export const SubDropdown = forwardRef<
                   element="div"
                 >
                   <DropdownGroupContext.Provider value={{ disabled }}>
-                    {items}
+                    {children}
                   </DropdownGroupContext.Provider>
                 </Typography>
               </RxScrollArea.Viewport>
