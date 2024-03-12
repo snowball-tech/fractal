@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [10.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.3...@snowball-tech/fractal@10.1.0) (2024-03-12)
+
+### ✨ Features
+
+- **menu:** implemente submenu ([7d871ea](https://github.com/snowball-tech/fractal/commit/7d871ea66b1509c3d58b83a02d2524c0e30e9a82))
+
+### 📝 Documentation
+
+- **popover:** fix the story ([42d23e2](https://github.com/snowball-tech/fractal/commit/42d23e2c79d9b4ac8d94527bd045f7685045a0e3))
+
 ## @snowball-tech/fractal [10.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.2...@snowball-tech/fractal@10.0.3) (2024-03-12)
 
 ### 🐛 Bug Fixes
