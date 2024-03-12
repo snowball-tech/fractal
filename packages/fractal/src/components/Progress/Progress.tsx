@@ -24,7 +24,7 @@ export const Progress = ({
     <RxProgress.Root
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        'relative h-1 w-full max-w-full overflow-hidden rounded-full border-1 border-normal bg-highlight',
+        'bg-highlight relative h-1 w-full max-w-full overflow-hidden rounded-full border-1 border-normal',
         props.className,
       )}
       max={max}
