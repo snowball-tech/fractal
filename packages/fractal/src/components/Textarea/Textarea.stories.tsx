@@ -101,7 +101,9 @@ export const Playground: Story = {
 }
 export const Interactive: Story = {
   args: {
+    onChange: fn(),
     onHeightChange: fn(),
+    onIconClick: fn(),
     value: '',
   },
   play: async ({ canvasElement }) => {

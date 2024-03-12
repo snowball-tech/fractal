@@ -358,8 +358,8 @@ export const Playground: Story = {
 }
 export const InteractiveSearching: Story = {
   args: {
+    onBlur: fn(),
     onChange: fn(),
-    onClick: fn(),
     onClose: fn(),
     onInputChange: fn(),
     onOpen: fn(),
@@ -385,8 +385,8 @@ export const InteractiveSearching: Story = {
 
 export const InteractiveSearch: Story = {
   args: {
+    onBlur: fn(),
     onChange: fn(),
-    onClick: fn(),
     onClose: fn(),
     onInputChange: fn(),
     onOpen: fn(),
@@ -434,8 +434,8 @@ export const InteractiveSearch: Story = {
 
 export const InteractiveSearchAndSelect: Story = {
   args: {
+    onBlur: fn(),
     onChange: fn(),
-    onClick: fn(),
     onClose: fn(),
     onInputChange: fn(),
     onOpen: fn(),
@@ -473,8 +473,8 @@ export const InteractiveSearchAndSelect: Story = {
 
 export const InteractiveEmptySearch: Story = {
   args: {
+    onBlur: fn(),
     onChange: fn(),
-    onClick: fn(),
     onClose: fn(),
     onInputChange: fn(),
     onOpen: fn(),

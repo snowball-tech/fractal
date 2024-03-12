@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type {
   ChangeEvent,
   ClipboardEvent,
@@ -64,7 +64,15 @@ export const Playground: Story = {
 }
 
 export const Interactive: Story = {
-  args: { value: '' },
+  args: {
+    onBlur: fn(),
+    onChange: fn(),
+    onComplete: fn(),
+    onFieldChange: fn(),
+    onFocus: fn(),
+    onKeyDown: fn(),
+    value: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 

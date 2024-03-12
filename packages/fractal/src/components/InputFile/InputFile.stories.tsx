@@ -3,7 +3,7 @@ import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -131,6 +131,9 @@ export const Display: Story = {
 }
 
 export const InteractiveDisplay: Story = {
+  args: {
+    onChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
@@ -198,6 +201,9 @@ export const Primary: Story = {
 }
 
 export const InteractivePrimary: Story = {
+  args: {
+    onChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
@@ -273,6 +279,9 @@ export const Secondary: Story = {
 }
 
 export const InteractiveSecondary: Story = {
+  args: {
+    onChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
@@ -348,6 +357,9 @@ export const Text: Story = {
 }
 
 export const InteractiveText: Story = {
+  args: {
+    onChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 

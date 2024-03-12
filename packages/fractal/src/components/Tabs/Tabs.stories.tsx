@@ -3,7 +3,7 @@ import HeartIcon from '@iconscout/react-unicons/dist/icons/uil-heart-alt'
 import BrokenHeartIcon from '@iconscout/react-unicons/dist/icons/uil-heart-break'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
@@ -166,6 +166,9 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {}
 
 export const Interactive: Story = {
+  args: {
+    onTabChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 

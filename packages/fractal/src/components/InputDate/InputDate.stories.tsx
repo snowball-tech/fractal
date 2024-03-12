@@ -107,7 +107,10 @@ export const Playground: Story = {
 
 export const Interactive: Story = {
   args: {
-    onClick: fn(),
+    onBlur: fn(),
+    onChange: fn(),
+    onFieldChange: fn(),
+    onFocus: fn(),
     onKeyDown: fn(),
     onKeyUp: fn(),
     value: { day: '', month: '', year: '' },

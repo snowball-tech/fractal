@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import kebabCase from 'lodash/fp/kebabCase'
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -192,6 +192,9 @@ export const Primary: Story = {
 }
 
 export const InteractivePrimary: Story = {
+  args: {
+    onValueChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
@@ -283,6 +286,9 @@ export const Secondary: Story = {
 }
 
 export const InteractiveSecondary: Story = {
+  args: {
+    onValueChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
@@ -374,6 +380,9 @@ export const Tertiary: Story = {
 }
 
 export const InteractiveTertiary: Story = {
+  args: {
+    onValueChange: fn(),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 

@@ -1,6 +1,6 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { userEvent, within } from '@storybook/test'
+import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -96,7 +96,10 @@ export const Playground: Story = {
 }
 
 export const Interactive: Story = {
-  args: { value: { number: '' } },
+  args: {
+    onChange: fn(),
+    value: { number: '' },
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
