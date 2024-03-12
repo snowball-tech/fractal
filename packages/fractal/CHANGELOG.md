@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [9.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@8.0.1...@snowball-tech/fractal@9.0.0) (2024-03-12)
+
+### 💥 Breaking changes
+
+- **design-tokens:** change the secondary color ([c783adf](https://github.com/snowball-tech/fractal/commit/c783adffbc475340250864d2f99f1bfda296af3a))
+
+### 📝 Documentation
+
+- fix stories and tests failing in Chromatic with new Storybook 8 ([2a9d05c](https://github.com/snowball-tech/fractal/commit/2a9d05c40f83f7a9354552eac552a28e4884b5bf))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 10.0.0
+
 ## @snowball-tech/fractal [8.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@8.0.0...@snowball-tech/fractal@8.0.1) (2024-03-11)
 
 ### 🚦 Tests
