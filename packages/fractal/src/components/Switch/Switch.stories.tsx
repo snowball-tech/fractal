@@ -100,6 +100,11 @@ export const Enabled: Story = {
           switchPosition="right"
         />
       </Wrapper>
+
+      <Wrapper>
+        <Switch labels={['Left', 'Right']} />
+        <Switch defaultChecked labels={['Left', 'Right']} />
+      </Wrapper>
     </div>
   ),
 }
@@ -125,6 +130,11 @@ export const Disabled: Story = {
           label="Right checked disabled switch"
           switchPosition="right"
         />
+      </Wrapper>
+
+      <Wrapper>
+        <Switch disabled labels={['Left', 'Right']} />
+        <Switch defaultChecked disabled labels={['Left', 'Right']} />
       </Wrapper>
     </div>
   ),

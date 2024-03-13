@@ -24,7 +24,5 @@ export default {
     require('@tailwindcss/container-queries'),
   ],
 
-  safelist: [{ pattern: /^[fF]ractal/ }],
-
   theme: tailwindTheme,
 } satisfies Config

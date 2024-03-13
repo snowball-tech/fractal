@@ -168,7 +168,9 @@ perfectionist/sort-objects */
               `${PREFIX}-${GROUP_NAME}__box__mark--${color}`,
               'flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-xs border-2 pt-half',
               variant === Variants.Tertiary ? 'mr-2' : 'mx-2',
-              disabled ? 'border-disabled bg-transparent' : `border-normal`,
+              disabled || readOnly
+                ? 'border-disabled bg-transparent text-disabled'
+                : `border-normal text-dark`,
             )}
           >
             <RxCheckbox.Indicator>
