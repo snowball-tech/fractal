@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.1.0...@snowball-tech/fractal@10.1.1) (2024-03-13)
+
+### 🐛 Bug Fixes
+
+- **tailwind:** remove an useless safelist ([fb7bc80](https://github.com/snowball-tech/fractal/commit/fb7bc800dd2a3fc84e2258f913270b67f50b662e))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.0.1
+
 # @snowball-tech/fractal [10.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.0.3...@snowball-tech/fractal@10.1.0) (2024-03-12)
 
 ### ✨ Features
