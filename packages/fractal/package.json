@@ -97,7 +97,7 @@
     "@types/prettier": "^3.0.0",
     "@types/prop-types": "^15.7.11",
     "@types/react": "^18.2.65",
-    "@types/react-dom": "^18.2.21",
+    "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "chromatic": "^11.0.8",
     "eslint": "^8.57.0",
