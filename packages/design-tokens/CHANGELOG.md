@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [11.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.0.0...@snowball-tech/design-tokens@11.0.1) (2024-03-13)
+
+### 🐛 Bug Fixes
+
+- **tailwind:** remove an useless safelist ([fb7bc80](https://github.com/snowball-tech/fractal/commit/fb7bc800dd2a3fc84e2258f913270b67f50b662e))
+
 # @snowball-tech/design-tokens [11.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@10.0.0...@snowball-tech/design-tokens@11.0.0) (2024-03-12)
 
 ### 💥 Breaking changes
