@@ -43,7 +43,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       active = false,
       align = 'start',
       children,
-      content,
       defaultOpen = false,
       disabled = false,
       elevation = DEFAULT_SUB_MENU_ELEVATION,
@@ -55,6 +54,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       onSubMenuOpenChange,
       open,
       popover = true,
+      popup,
       side,
       triggerOnHover = true,
       withIndicator = true,
@@ -184,7 +184,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--disabled pointer-events-none cursor-not-allowed !bg-transparent text-disabled`
             : 'cursor-pointer text-dark',
-          props.className,
+          popup?.trigger?.className,
         )}
         data-highlighted={active || isOpen || undefined}
         element="div"
@@ -197,6 +197,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           : triggerOnHover
             ? { onMouseEnter: handleMouseEnter }
             : {})}
+        style={popup?.trigger?.style}
         onKeyDown={handleKeyDown}
       >
         {icon && (
@@ -212,6 +213,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         <Typography className="flex-1" element="label">
           {label}
         </Typography>
+
         {withIndicator && (
           <div
             className={cj(
@@ -254,9 +256,9 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           !hasChildren
             ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`
             : '',
-          content?.className,
+          popup?.content?.className,
         )}
-        {...omit(['className'], content)}
+        style={popup?.content?.style}
       >
         {withScroll ? (
           <RxScrollArea.Root
@@ -308,34 +310,49 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
     return !popover ? (
       <div
         ref={nonPopoverRef}
-        className={cj(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup--non-popover`,
           'alternatee',
           'relative rounded-sm outline-none transition-background-color duration-300 ease-out',
+          props.className,
+          popup?.className,
         )}
+        style={{
+          ...(props.style ?? {}),
+          ...(popup?.style ?? {}),
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        {...omit(['className', 'style'], props)}
       >
         <div
-          className={`${PREFIX}-${GROUP_NAME}__sub-menu__popup__trigger-wrapper`}
+          className={cn(
+            `${PREFIX}-${GROUP_NAME}__sub-menu__popup__trigger-wrapper`,
+            popup?.trigger?.wrapper?.className,
+          )}
+          style={popup?.trigger?.wrapper?.style}
         >
           {trigger}
         </div>
 
         <div
-          className={cj(
+          className={cn(
             `${PREFIX}-${GROUP_NAME}__sub-menu__popup__content-positionner`,
-            'absolute left-full top-0 z-50 pl-2',
+            'absolute left-full top-0 z-[5000] pl-2',
             isOpen ? '' : 'hidden',
+            popup?.content?.positionner?.className,
           )}
+          style={popup?.content?.positionner?.style}
         >
           <Paper
-            className={cj(
+            className={cn(
               `${PREFIX}-${GROUP_NAME}__sub-menu__popup__content-wrapper`,
               'p-0',
+              popup?.content?.wrapper?.className,
             )}
             elevation={elevation}
+            style={popup?.content?.wrapper?.style}
           >
             <div className={subMenuClassName}>{wrappedElement}</div>
           </Paper>
@@ -344,17 +361,19 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
     ) : (
       <Popover
         align={align}
-        className={cj(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup--popover`,
           'alternatee',
           'rounded-sm',
+          props.className,
         )}
         disabled={disabled}
         elevation={elevation}
         fullWidth
         popover={{
           className: subMenuClassName,
+          style: popup?.style,
         }}
         side={
           // eslint-disable-next-line no-nested-ternary
@@ -364,6 +383,10 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
               ? 'right'
               : 'bottom'
         }
+        style={{
+          ...(props.style ?? {}),
+          ...(popup?.style ?? {}),
+        }}
         trigger={trigger}
         withArrow={false}
         withCloseButton={false}
@@ -374,8 +397,8 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         onOpenChange={handleOpenChange}
         {...(defaultOpen ? { defaultOpen: true } : {})}
         {...(disabled ? { open: false } : { open: isOpen })}
-        {...omit(['className'], props)}
         onMouseLeave={handleMouseLeave}
+        {...omit(['className', 'style'], props)}
       >
         {wrappedElement}
       </Popover>
