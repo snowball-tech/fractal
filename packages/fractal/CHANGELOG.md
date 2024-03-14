@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.0...@snowball-tech/fractal@10.2.1) (2024-03-14)
+
+### 🐛 Bug Fixes
+
+- **menu:** improve behavior in non popover mode ([a9a2989](https://github.com/snowball-tech/fractal/commit/a9a2989a81841a8d258b83f1b6c5dd81b4ed84ef))
+
 # @snowball-tech/fractal [10.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.1.1...@snowball-tech/fractal@10.2.0) (2024-03-14)
 
 ### ✨ Features
