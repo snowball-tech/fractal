@@ -122,16 +122,6 @@ export interface SubMenuProps
    * `MenuItemSeparator` or `SubMenu`.
    */
   children: ReactNode
-  /**
-   * Options to tweak the sub-menu content.
-   *
-   * You can on top of that add the `className` and `style` properties to
-   * customize the style of the sub-menu content.
-   */
-  content?: {
-    className?: string
-    style?: CSSProperties
-  }
   /** Indicates if the sub-menu should be opened by default. */
   defaultOpen?: boolean
   /** Indicates if the sub-menu is disabled. */
@@ -175,6 +165,37 @@ export interface SubMenuProps
    * positioning" trick to display the sub-menu.
    */
   popover?: boolean
+  /**
+   * Options to tweak the sub-menu popup, trigger and content.
+   *
+   * You can use the `className` and `style` properties to customize the style
+   * of the sub-menu popup, trigger (element and wrapper) and content (element,
+   * wrapper and positionner (in non popover mode)).
+   */
+  popup?: {
+    className?: string
+    content?: {
+      className?: string
+      positionner?: {
+        className?: string
+        style?: CSSProperties
+      }
+      style?: CSSProperties
+      wrapper?: {
+        className?: string
+        style?: CSSProperties
+      }
+    }
+    style?: CSSProperties
+    trigger?: {
+      className?: string
+      style?: CSSProperties
+      wrapper: {
+        className?: string
+        style?: CSSProperties
+      }
+    }
+  }
   /**
    * The preferred side of the trigger (label) to render the popover.
    *
