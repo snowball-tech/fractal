@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.1...@snowball-tech/fractal@10.2.2) (2024-03-14)
+
+### 🐛 Bug Fixes
+
+- **menu:** improve and simplify behavior of sub menu ([515bfb1](https://github.com/snowball-tech/fractal/commit/515bfb174661618dbdd992f73758bd215dcc816c))
+
+### 📝 Documentation
+
+- improve some docs and fix some typo ([9deb836](https://github.com/snowball-tech/fractal/commit/9deb8364dd0d377cd127afa1ac526556e9e487e3))
+
 ## @snowball-tech/fractal [10.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.0...@snowball-tech/fractal@10.2.1) (2024-03-14)
 
 ### 🐛 Bug Fixes
