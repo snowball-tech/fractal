@@ -4,6 +4,7 @@ import StarIcon from '@iconscout/react-unicons/dist/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/dist/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/dist/icons/uil-search-alt'
+import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
@@ -42,8 +43,8 @@ const meta: Meta<SubMenuProps> = {
     disabled: false,
     icon: undefined,
     label: 'Masters',
-    popover: true,
     open: false,
+    popover: true,
     side: undefined,
     triggerOnHover: true,
     withIndicator: true,
@@ -67,8 +68,8 @@ export const Playground: Story = {
     disabled = false,
     icon,
     label = 'Masters',
-    popover = true,
     open,
+    popover = true,
     side,
     triggerOnHover = true,
     withIndicator = true,
@@ -82,16 +83,59 @@ export const Playground: Story = {
           disabled={disabled}
           icon={icon}
           label={label}
-          popover={popover}
           open={open}
+          popover={popover}
           side={side}
           triggerOnHover={triggerOnHover}
           withIndicator={withIndicator}
           withScroll={withScroll}
         >
-          <MenuItem label="Luke Skywalker" />
-          <MenuItem label="Obi-Wan Kenobi" />
-          <MenuItem label="Yoda" />
+          <MenuItem
+            label="Luke Skywalker"
+            onActivate={() => action('onActivate')('Luke Skywalker')}
+            onClick={() => action('onClick')('Luke Skywalker')}
+            onKeyDown={() => action('onKeyDown')('Luke Skywalker')}
+          />
+          <MenuItem
+            label="Obi-Wan Kenobi"
+            onActivate={() => action('onActivate')('Obi-Wan Kenobi')}
+            onClick={() => action('onClick')('Obi-Wan Kenobi')}
+            onKeyDown={() => action('onKeyDown')('Obi-Wan Kenobi')}
+          />
+          <MenuItem
+            label="Yoda"
+            onActivate={() => action('onActivate')('Yoda')}
+            onClick={() => action('onClick')('Yoda')}
+            onKeyDown={() => action('onKeyDown')('Yoda')}
+          />
+        </SubMenu>
+
+        <SubMenu
+          align={align}
+          label="Siths"
+          popover={popover}
+          side={side}
+          triggerOnHover={triggerOnHover}
+          withScroll={withScroll}
+        >
+          <MenuItem
+            label="Darth Sidious"
+            onActivate={() => action('onActivate')('Darth Sidious')}
+            onClick={() => action('onClick')('Darth Sidious')}
+            onKeyDown={() => action('onKeyDown')('Darth Sidious')}
+          />
+          <MenuItem
+            label="Darth Maul"
+            onActivate={() => action('onActivate')('Darth Maul')}
+            onClick={() => action('onClick')('Darth Maul')}
+            onKeyDown={() => action('onKeyDown')('Darth Maul')}
+          />
+          <MenuItem
+            label="Darth Vader"
+            onActivate={() => action('onActivate')('Darth Vader')}
+            onClick={() => action('onClick')('Darth Vader')}
+            onKeyDown={() => action('onKeyDown')('Darth Vader')}
+          />
         </SubMenu>
       </Menu>
     </div>

@@ -1,6 +1,8 @@
-import UserProfileIcon from '@iconscout/react-unicons/dist/icons/uil-house-user'
+import SettingsIcon from '@iconscout/react-unicons/dist/icons/uil-cog'
+import DarkModeIcon from '@iconscout/react-unicons/dist/icons/uil-moon'
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
-import UserAccountIcon from '@iconscout/react-unicons/dist/icons/uil-user-circle'
+import LightModeIcon from '@iconscout/react-unicons/dist/icons/uil-sun'
+import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'
 import type { ComponentProps } from 'react'
@@ -18,54 +20,66 @@ import {
 } from '.'
 import { DEFAULT_ELEVATION, DEFAULT_ORIENTATION } from './Menu.constants'
 
-const textMenu = (
+const children = (
   <>
     <MenuItemGroup label="Account">
-      <MenuItem label="My profile" />
-      <MenuItem label="My account" />
+      <MenuItem
+        label="My profile"
+        onActivate={() => action('onActivate')('My profile')}
+        onClick={() => action('onClick')('My profile')}
+        onKeyDown={() => action('onKeyDown')('My profile')}
+      />
+      <MenuItem
+        label="My account"
+        onActivate={() => action('onActivate')('My account')}
+        onClick={() => action('onClick')('My account')}
+        onKeyDown={() => action('onKeyDown')('My account')}
+      />
     </MenuItemGroup>
 
     <MenuItemSeparator />
 
-    <MenuItem label="Sign out" />
-  </>
-)
-
-const iconsMenu = (
-  <>
-    <MenuItemGroup label="Account">
-      <MenuItem icon={<UserProfileIcon />} label="My profile" />
-      <MenuItem icon={<UserAccountIcon />} label="My account" />
-    </MenuItemGroup>
-
-    <MenuItemSeparator />
-
-    <MenuItem icon={<SignoutIcon />} label="Sign out" />
-  </>
-)
-
-const mixedMenu = (
-  <>
-    <MenuItemGroup label="Account">
-      <MenuItem icon={<UserProfileIcon />} label="My profile" />
-      <MenuItem label="My account" />
-    </MenuItemGroup>
-
-    <MenuItemSeparator />
-
-    <SubMenu label="SubMenu 1">
-      <MenuItem label="Item 1" />
-      <MenuItem label="Item 2" />
+    <SubMenu icon={<SettingsIcon />} label="Settings">
+      <MenuItem
+        icon={<LightModeIcon />}
+        label="Light Mode"
+        onActivate={() => action('onActivate')('Settings - Light Mode')}
+        onClick={() => action('onClick')('Settings - Light Mode')}
+        onKeyDown={() => action('onKeyDown')('Settings - Light Mode')}
+      />
+      <MenuItem
+        icon={<DarkModeIcon />}
+        label="Dark Mode"
+        onActivate={() => action('onActivate')('Settings - Dark Mode')}
+        onClick={() => action('onClick')('Settings - Dark Mode')}
+        onKeyDown={() => action('onKeyDown')('Settings - Dark Mode')}
+      />
     </SubMenu>
 
-    <SubMenu label="SubMenu 2">
-      <MenuItem label="Item 1" />
-      <MenuItem label="Item 2" />
+    <SubMenu label="Help">
+      <MenuItem
+        label="Knowledge center"
+        onActivate={() => action('onActivate')('Help - Knowledge center')}
+        onClick={() => action('onClick')('Help - Knowledge center')}
+        onKeyDown={() => action('onKeyDown')('Help - Knowledge center')}
+      />
+      <MenuItem
+        label="Contact support"
+        onActivate={() => action('onActivate')('Help - Contact support')}
+        onClick={() => action('onClick')('Help - Contact support')}
+        onKeyDown={() => action('onKeyDown')('Help - Contact support')}
+      />
     </SubMenu>
 
     <MenuItemSeparator />
 
-    <MenuItem icon={<SignoutIcon />} label="Sign out" />
+    <MenuItem
+      icon={<SignoutIcon />}
+      label="Sign out"
+      onActivate={() => action('onActivate')('Sign out')}
+      onClick={() => action('onClick')('Sign out')}
+      onKeyDown={() => action('onKeyDown')('Sign out')}
+    />
   </>
 )
 
@@ -74,13 +88,13 @@ type MenuProps = ComponentProps<typeof Menu>
 const meta: Meta<MenuProps> = {
   argTypes: {
     children: {
-      control: 'radio',
-      mapping: {
-        Mixed: mixedMenu,
-        Text: textMenu,
-        'Text with icons': iconsMenu,
+      control: false,
+      table: {
+        type: {
+          summary:
+            'MenuItem | MenuItemGroup | SubMenu | MenuItemSeparator | Array<MenuItem | MenuItemGroup | SubMenu MenuItemSeparator>',
+        },
       },
-      options: ['Text', 'Text with icons', 'Mixed'],
     },
     elevation: {
       control: 'radio',
@@ -98,7 +112,7 @@ const meta: Meta<MenuProps> = {
     },
   },
   args: {
-    children: 'Text',
+    children,
     disabled: false,
     elevation: DEFAULT_ELEVATION,
     embedded: false,
@@ -131,5 +145,5 @@ export const Interactive: Story = {
       /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
-  render: () => <Menu>{mixedMenu}</Menu>,
+  render: () => <Menu>{children}</Menu>,
 }
