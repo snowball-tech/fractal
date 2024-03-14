@@ -14,7 +14,6 @@ import {
   forwardRef,
   useContext,
   useEffect,
-  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -64,8 +63,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
     }: SubMenuProps,
     ref: ForwardedRef<SubMenuCombinedRefs>,
   ) => {
-    const generatedId = useId()
-
     const triggerRef = useRef<HTMLElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
@@ -108,22 +105,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
 
     const display = () => {
       handleOpenChange(true)
-
-      if (!popover) {
-        const otherSubMenus = document.querySelectorAll(
-          `.${PREFIX}-${GROUP_NAME}__sub-menu__popup__wrapper`,
-        )
-
-        if (!otherSubMenus) {
-          return
-        }
-
-        otherSubMenus.forEach((otherSubMenu) => {
-          if (otherSubMenu.parentElement?.id !== generatedId) {
-            otherSubMenu?.classList.add('hidden')
-          }
-        })
-      }
     }
 
     const hide = () => {
@@ -175,22 +156,15 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       }
     }
 
-    const timeout = useRef<NodeJS.Timeout | null>(null)
-
     const handleMouseEnter = () => {
       if (triggerOnHover) {
-        if (timeout.current !== null) {
-          clearTimeout(timeout.current)
-          timeout.current = null
-        }
-
         display()
       }
     }
 
     const handleMouseLeave = () => {
       if (triggerOnHover) {
-        timeout.current = setTimeout(hide, 200)
+        hide()
       }
     }
 
@@ -331,7 +305,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
 
     return !popover ? (
       <div
-        id={generatedId}
         ref={nonPopoverRef}
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
@@ -342,22 +315,32 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div>{trigger}</div>
+        <div
+          className={`${PREFIX}-${GROUP_NAME}__sub-menu__popup__trigger-wrapper`}
+        >
+          {trigger}
+        </div>
 
-        <Paper
+        <div
           className={cj(
-            `${PREFIX}-${GROUP_NAME}__sub-menu__popup__wrapper`,
-            'absolute left-[calc(100%+theme(spacing.2))] top-0 z-50 p-0',
+            `${PREFIX}-${GROUP_NAME}__sub-menu__popup__content-positionner`,
+            'absolute left-full top-0 z-50 pl-2',
             isOpen ? '' : 'hidden',
           )}
-          elevation={elevation}
         >
-          <div className={subMenuClassName}>{wrappedElement}</div>
-        </Paper>
+          <Paper
+            className={cj(
+              `${PREFIX}-${GROUP_NAME}__sub-menu__popup__content-wrapper`,
+              'p-0',
+            )}
+            elevation={elevation}
+          >
+            <div className={subMenuClassName}>{wrappedElement}</div>
+          </Paper>
+        </div>
       </div>
     ) : (
       <Popover
-        id={generatedId}
         align={align}
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
