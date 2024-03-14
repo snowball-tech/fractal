@@ -62,22 +62,6 @@ const jedisItems = asItem(jedis)
 const sithsItems = asItem(siths)
 const othersItems = asItem(others, true)
 
-const items = (
-  <>
-    {jedisItems}
-    {sithsItems}
-    {othersItems}
-  </>
-)
-
-const itemsWithGroups = (
-  <>
-    <AutocompleteItemGroup label="Jedis">{jedisItems}</AutocompleteItemGroup>
-    <AutocompleteItemGroup label="Siths">{sithsItems}</AutocompleteItemGroup>
-    <AutocompleteItemGroup label="Others">{othersItems}</AutocompleteItemGroup>
-  </>
-)
-
 const itemsWithGroupsAndSeparators = (
   <>
     <AutocompleteItemGroup label="Jedis">{jedisItems}</AutocompleteItemGroup>
@@ -200,22 +184,14 @@ const meta: Meta<AutocompleteProps> = {
             This indicates that there are no item matching your search!
           </AutocompleteEmpty>
         ),
-        'Grouped items': itemsWithGroups,
         Loading: (
           <AutocompleteLoading>
             This indicates that your search is loading...
           </AutocompleteLoading>
         ),
         'Mixed items': itemsWithGroupsAndSeparators,
-        'Simple items': items,
       },
-      options: [
-        'Empty',
-        'Loading',
-        'Simple items',
-        'Grouped items',
-        'Mixed items',
-      ],
+      options: ['Empty', 'Loading', 'Mixed items'],
       table: {
         type: {
           summary:
@@ -354,7 +330,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  args: { value: '' },
+  args: {
+    onOpen: fn(),
+    value: '',
+  },
 }
 export const InteractiveSearching: Story = {
   args: {
