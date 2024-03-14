@@ -112,6 +112,7 @@ export const Playground: Story = {
 
         <SubMenu
           align={align}
+          icon={icon}
           label="Siths"
           popover={popover}
           side={side}
