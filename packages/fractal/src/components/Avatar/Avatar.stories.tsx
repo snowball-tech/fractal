@@ -1,4 +1,5 @@
 import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
+import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'
 import type { ComponentProps } from 'react'
@@ -14,8 +15,15 @@ type AvatarProps = ComponentProps<typeof Avatar>
 
 const menu = (
   <>
-    <DropdownItem label="My profile" />
-    <DropdownItem icon={<SignoutIcon />} label="Sign out" />
+    <DropdownItem
+      label="My profile"
+      onSelect={() => action('onSelect')('My profile')}
+    />
+    <DropdownItem
+      icon={<SignoutIcon />}
+      label="Sign out"
+      onSelect={() => action('onSelect')('Sign out')}
+    />
   </>
 )
 
@@ -42,7 +50,7 @@ const meta = {
     },
   },
   args: {
-    children: 'None',
+    children: undefined,
     disabled: false,
     fluidSize: 240,
     imageUrl: '',

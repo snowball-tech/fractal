@@ -7,7 +7,8 @@ export interface AvatarProps
   /**
    * The content of the dropdown menu of the avatar (if you want one).
    *
-   * For the best result, pease only pass `DropdownItem` components.
+   * For the best result, please use the `DropdownItem`, `DropdownItemGroup`,
+   * `DropdownItemSeparator`, `SubDropdown` or `DropdownRadioGroup` components.
    */
   children?: ReactNode
   /** Indicates if the avatar menu dropdown is disabled. */
