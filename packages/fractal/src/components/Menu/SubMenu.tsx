@@ -178,7 +178,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         aria-label={label}
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__trigger`,
-          'flex w-full flex-row items-center justify-between gap-1',
+          'flex w-full flex-row items-center gap-1',
           'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
           icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--with-icon` : '',
           isDisabled
@@ -209,7 +209,9 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             {icon}
           </div>
         )}
-        <Typography element="label">{label}</Typography>
+        <Typography className="flex-1" element="label">
+          {label}
+        </Typography>
         {withIndicator && (
           <div
             className={cj(
