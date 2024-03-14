@@ -42,6 +42,7 @@ const meta: Meta<SubMenuProps> = {
     disabled: false,
     icon: undefined,
     label: 'Masters',
+    popover: true,
     open: false,
     side: undefined,
     triggerOnHover: true,
@@ -66,6 +67,7 @@ export const Playground: Story = {
     disabled = false,
     icon,
     label = 'Masters',
+    popover = true,
     open,
     side,
     triggerOnHover = true,
@@ -80,6 +82,7 @@ export const Playground: Story = {
           disabled={disabled}
           icon={icon}
           label={label}
+          popover={popover}
           open={open}
           side={side}
           triggerOnHover={triggerOnHover}

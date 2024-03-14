@@ -84,7 +84,7 @@ export const MenuItem = forwardRef<
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
           'alternatee',
-          'flex flex-row items-center gap-1',
+          'flex flex-row items-center gap-1 text-nowrap',
           'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
           icon ? `${PREFIX}-${GROUP_NAME}--with-icon` : '',
           isDisabled

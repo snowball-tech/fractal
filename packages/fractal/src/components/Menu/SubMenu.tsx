@@ -3,6 +3,8 @@
 import AngleRightIcon from '@iconscout/react-unicons/dist/icons/uil-angle-right'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
+import { useClickOutside } from '@react-hookz/web'
+import constant from 'lodash/fp/constant'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -17,6 +19,7 @@ import {
   useState,
 } from 'react'
 
+import { Paper } from '@/components/Paper/Paper'
 import { Popover } from '@/components/Popover/Popover'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
@@ -37,6 +40,7 @@ import { MenuGroupContext } from './MenuGroupContext'
 export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
   (
     {
+      active = false,
       align = 'start',
       children,
       content,
@@ -45,11 +49,13 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       elevation = DEFAULT_SUB_MENU_ELEVATION,
       icon,
       label,
+      popover = true,
       onClose,
       onInteractOutside,
       onOpen,
       onSubMenuOpenChange,
       open,
+      side,
       triggerOnHover = true,
       withIndicator = true,
       withScroll = true,
@@ -70,9 +76,11 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       },
     }))
 
+    const nonPopoverRef = useRef<HTMLDivElement>(null)
+
     const hasChildren = Boolean(children)
 
-    const [isOpen, setIsOpen] = useState(open === true)
+    const [isOpen, setIsOpen] = useState(open === true && hasChildren)
 
     const handleOpenChange = (isOpened: boolean) => {
       if (disabled) {
@@ -80,7 +88,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       }
 
       const wasOpened = isOpen
-      setIsOpen(isOpened)
+      setIsOpen(constant(isOpened))
 
       if (isFunction(onSubMenuOpenChange) && wasOpened !== isOpened) {
         onSubMenuOpenChange(isOpened)
@@ -95,11 +103,19 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       }
     }
 
+    const display = () => {
+      handleOpenChange(true)
+    }
+
+    const hide = () => {
+      handleOpenChange(false)
+    }
+
     useEffect(() => {
-      if (open === true) {
-        handleOpenChange(true)
+      if (open === true && hasChildren) {
+        display()
       } else {
-        handleOpenChange(false)
+        hide()
       }
       // We don't want to reopen the menu based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
@@ -136,9 +152,32 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       }
 
       if (event.key === 'Enter' || event.key === ' ') {
-        setIsOpen(true)
+        display()
       }
     }
+
+    const timeout = useRef<NodeJS.Timeout | null>(null)
+
+    const handleMouseEnter = () => {
+      if (triggerOnHover) {
+        if (timeout.current !== null) {
+          clearTimeout(timeout.current)
+          timeout.current = null
+        }
+
+        display()
+      }
+    }
+
+    const handleMouseLeave = () => {
+      if (triggerOnHover) {
+        timeout.current = setTimeout(hide, 200)
+      }
+    }
+
+    useClickOutside(nonPopoverRef, () => {
+      hide()
+    })
 
     const trigger = (
       <Typography
@@ -154,14 +193,18 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             : 'cursor-pointer text-dark',
           props.className,
         )}
+        data-highlighted={active || isOpen || undefined}
         element="div"
         role="menuitem"
         tabIndex={-1}
         title={label}
+        // eslint-disable-next-line no-nested-ternary
+        {...(!popover
+          ? { onClick: display }
+          : triggerOnHover
+            ? { onMouseEnter: handleMouseEnter }
+            : {})}
         onKeyDown={handleKeyDown}
-        {...(triggerOnHover
-          ? { onMouseEnter: () => setTimeout(() => setIsOpen(true)) }
-          : {})}
       >
         {icon && (
           <div
@@ -173,9 +216,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             {icon}
           </div>
         )}
-
         <Typography element="label">{label}</Typography>
-
         {withIndicator && (
           <div
             className={cj(
@@ -206,31 +247,107 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       </Typography>
     )
 
-    return (
+    const wrappedElement = (
+      <div
+        ref={contentRef}
+        className={cn(
+          `${PREFIX}-${GROUP_NAME}__sub-menu__content`,
+          'w-full',
+          isDisabled
+            ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--disabled`
+            : '',
+          !hasChildren
+            ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`
+            : '',
+          content?.className,
+        )}
+        {...omit(['className'], content)}
+      >
+        {withScroll ? (
+          <RxScrollArea.Root
+            className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
+            {...(props.dir !== undefined
+              ? { dir: props.dir as RxScrollArea.Direction }
+              : {})}
+            type="hover"
+          >
+            <RxScrollArea.Viewport
+              className={cj(
+                `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__viewport`,
+                `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+              )}
+              style={{
+                overflowY: undefined,
+              }}
+            >
+              {contentElement}
+            </RxScrollArea.Viewport>
+
+            <RxScrollArea.Scrollbar
+              className={cj(
+                `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
+                'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+              )}
+              orientation="vertical"
+            >
+              <RxScrollArea.Thumb
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
+                  'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                )}
+              />
+            </RxScrollArea.Scrollbar>
+          </RxScrollArea.Root>
+        ) : (
+          contentElement
+        )}
+      </div>
+    )
+
+    const subMenuClassName = cn(
+      `${PREFIX}-${GROUP_NAME}__sub-menu`,
+      isDisabled ? `${PREFIX}-${GROUP_NAME}__sub-menu--disabled` : '',
+      'pointer-events-auto relative z-50 overflow-hidden rounded-sm p-0 data-[side="bottom"]:mt-1 data-[side="left"]:mr-2 data-[side="right"]:ml-2 data-[side="top"]:mb-1',
+    )
+
+    return !popover ? (
+      <div
+        ref={nonPopoverRef}
+        className="alternatee relative rounded-sm outline-none transition-background-color duration-300 ease-out"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div>{trigger}</div>
+
+        <Paper
+          className={cj(
+            'absolute left-[calc(100%+theme(spacing.2))] top-0 z-50 p-0',
+            isOpen ? '' : 'hidden',
+          )}
+          elevation={elevation}
+        >
+          <div className={subMenuClassName}>{wrappedElement}</div>
+        </Paper>
+      </div>
+    ) : (
       <Popover
         align={align}
         className="alternatee rounded-sm"
-        data-highlighted={isOpen || undefined}
         disabled={disabled}
         elevation={elevation}
         fullWidth
         popover={{
-          className: cn(
-            `${PREFIX}-${GROUP_NAME}__sub-menu`,
-            isDisabled ? `${PREFIX}-${GROUP_NAME}__sub-menu--disabled` : '',
-            'pointer-events-auto relative z-50 overflow-hidden rounded-sm p-0 data-[side="bottom"]:mt-1 data-[side="left"]:mr-2 data-[side="right"]:ml-2 data-[side="top"]:mb-1',
-          ),
+          className: subMenuClassName,
         }}
         side={
           // eslint-disable-next-line no-nested-ternary
-          !isEmpty(props.side)
-            ? props.side
+          !isEmpty(side)
+            ? side
             : orientation === Orientations.Vertical
               ? 'right'
               : 'bottom'
         }
         trigger={trigger}
-        width="trigger"
         withArrow={false}
         withCloseButton={false}
         withScroll={withScroll}
@@ -241,62 +358,9 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         {...(defaultOpen ? { defaultOpen: true } : {})}
         {...(disabled ? { open: false } : { open: isOpen })}
         {...omit(['className'], props)}
-        {...(triggerOnHover ? { onMouseLeave: () => setIsOpen(false) } : {})}
+        onMouseLeave={handleMouseLeave}
       >
-        <div
-          ref={contentRef}
-          className={cn(
-            `${PREFIX}-${GROUP_NAME}__sub-menu__content`,
-            'w-full',
-            isDisabled
-              ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--disabled`
-              : '',
-            !hasChildren
-              ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`
-              : '',
-            content?.className,
-          )}
-          {...omit(['className'], content)}
-        >
-          {withScroll ? (
-            <RxScrollArea.Root
-              className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
-              {...(props.dir !== undefined
-                ? { dir: props.dir as RxScrollArea.Direction }
-                : {})}
-              type="hover"
-            >
-              <RxScrollArea.Viewport
-                className={cj(
-                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__viewport`,
-                  `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                )}
-                style={{
-                  overflowY: undefined,
-                }}
-              >
-                {contentElement}
-              </RxScrollArea.Viewport>
-
-              <RxScrollArea.Scrollbar
-                className={cj(
-                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
-                  'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
-                )}
-                orientation="vertical"
-              >
-                <RxScrollArea.Thumb
-                  className={cj(
-                    `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
-                    'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
-                  )}
-                />
-              </RxScrollArea.Scrollbar>
-            </RxScrollArea.Root>
-          ) : (
-            contentElement
-          )}
-        </div>
+        {wrappedElement}
       </Popover>
     )
   },
