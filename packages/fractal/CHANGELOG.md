@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.3...@snowball-tech/fractal@10.3.0) (2024-03-14)
+
+### ✨ Features
+
+- **menu:** allow to further customize className and styles of submenu ([3db8fbe](https://github.com/snowball-tech/fractal/commit/3db8fbe990f1af63cab26f68b38110eecc2b2095))
+
 ## @snowball-tech/fractal [10.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.2...@snowball-tech/fractal@10.2.3) (2024-03-14)
 
 ### 🐛 Bug Fixes
