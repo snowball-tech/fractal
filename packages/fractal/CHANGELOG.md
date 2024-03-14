@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.2...@snowball-tech/fractal@10.2.3) (2024-03-14)
+
+### 🐛 Bug Fixes
+
+- **menu:** fix the placement of labels in sub-menu triggers ([0995067](https://github.com/snowball-tech/fractal/commit/0995067138a610379ab22cadb52c6b302f398410))
+
 ## @snowball-tech/fractal [10.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.1...@snowball-tech/fractal@10.2.2) (2024-03-14)
 
 ### 🐛 Bug Fixes
