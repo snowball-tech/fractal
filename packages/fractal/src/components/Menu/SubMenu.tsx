@@ -14,6 +14,7 @@ import {
   forwardRef,
   useContext,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
   useState,
@@ -49,12 +50,12 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       elevation = DEFAULT_SUB_MENU_ELEVATION,
       icon,
       label,
-      popover = true,
       onClose,
       onInteractOutside,
       onOpen,
       onSubMenuOpenChange,
       open,
+      popover = true,
       side,
       triggerOnHover = true,
       withIndicator = true,
@@ -63,6 +64,8 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
     }: SubMenuProps,
     ref: ForwardedRef<SubMenuCombinedRefs>,
   ) => {
+    const generatedId = useId()
+
     const triggerRef = useRef<HTMLElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
@@ -105,6 +108,22 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
 
     const display = () => {
       handleOpenChange(true)
+
+      if (!popover) {
+        const otherSubMenus = document.querySelectorAll(
+          `.${PREFIX}-${GROUP_NAME}__sub-menu__popup__wrapper`,
+        )
+
+        if (!otherSubMenus) {
+          return
+        }
+
+        otherSubMenus.forEach((otherSubMenu) => {
+          if (otherSubMenu.parentElement?.id !== generatedId) {
+            otherSubMenu?.classList.add('hidden')
+          }
+        })
+      }
     }
 
     const hide = () => {
@@ -312,8 +331,14 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
 
     return !popover ? (
       <div
+        id={generatedId}
         ref={nonPopoverRef}
-        className="alternatee relative rounded-sm outline-none transition-background-color duration-300 ease-out"
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
+          `${PREFIX}-${GROUP_NAME}__sub-menu__popup--non-popover`,
+          'alternatee',
+          'relative rounded-sm outline-none transition-background-color duration-300 ease-out',
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -321,6 +346,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
 
         <Paper
           className={cj(
+            `${PREFIX}-${GROUP_NAME}__sub-menu__popup__wrapper`,
             'absolute left-[calc(100%+theme(spacing.2))] top-0 z-50 p-0',
             isOpen ? '' : 'hidden',
           )}
@@ -331,8 +357,14 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       </div>
     ) : (
       <Popover
+        id={generatedId}
         align={align}
-        className="alternatee rounded-sm"
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
+          `${PREFIX}-${GROUP_NAME}__sub-menu__popup--popover`,
+          'alternatee',
+          'rounded-sm',
+        )}
         disabled={disabled}
         elevation={elevation}
         fullWidth

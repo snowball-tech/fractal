@@ -146,16 +146,6 @@ export interface SubMenuProps
   elevation?: `${Elevations}`
   /** An icon to display on the left of the sub-menu label. */
   icon?: ReactNode
-  /**
-   * Indicates if you want the sub-menu to be in a popover but in a simple div
-   * instead.
-   *
-   * There are some usecases (e.g. blocknotejs.org) where the focus trap of the
-   * popover from RadixUI is causing some issue.
-   * With this option you can fallback to a simpler "hidden div + absolute
-   * positioning" trick to display the sub-menu.
-   */
-  popover?: boolean
   /** Event handler called when the sub-menu is closed. */
   onClose?: () => void
   /**
@@ -175,6 +165,16 @@ export interface SubMenuProps
    * (non-text) trigger (label).
    */
   open?: boolean
+  /**
+   * Indicates if you want the sub-menu to be in a popover but in a simple div
+   * instead.
+   *
+   * There are some usecases (e.g. blocknotejs.org) where the focus trap of the
+   * popover from RadixUI is causing some issue.
+   * With this option you can fallback to a simpler "hidden div + absolute
+   * positioning" trick to display the sub-menu.
+   */
+  popover?: boolean
   /**
    * The preferred side of the trigger (label) to render the popover.
    *
