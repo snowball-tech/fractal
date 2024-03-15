@@ -53,6 +53,7 @@ const preview: Preview = {
           'Organisms',
           'Templates',
           'Pages',
+          '[Work In Progress]',
         ],
       },
     },
