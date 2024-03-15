@@ -1,5 +1,7 @@
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
+import { Themes } from '@/constants'
+
 import { Elevations } from './Paper.constants'
 
 export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
@@ -13,4 +15,10 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
    * 3 (higher) is a raised bordered block
    */
   elevation?: `${Elevations}`
+  /**
+   * Force the theme of the paper.
+   *
+   * If none is given, it will use the one provided by the Context/Provider.
+   */
+  theme?: Themes
 }

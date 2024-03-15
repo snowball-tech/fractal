@@ -13,8 +13,19 @@ module.exports = {
         comment: 'Tone 90',
         value: '{color.decorative.pink.90.value}',
       },
+
       primary: { comment: 'Tone 90', value: '#FF8ACD' },
+      'primary-dark': { comment: 'Tone 90', value: '#FF8ACD' },
+      'primary-light': { comment: 'Tone 90', value: '#FF8ACD' },
       secondary: {
+        comment: 'Black Tone 0',
+        value: '{color.base.black.value}',
+      },
+      'secondary-dark': {
+        comment: 'White Tone 100',
+        value: '{color.base.white.value}',
+      },
+      'secondary-light': {
         comment: 'Black Tone 0',
         value: '{color.base.black.value}',
       },
