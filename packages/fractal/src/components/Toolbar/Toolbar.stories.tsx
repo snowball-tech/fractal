@@ -128,7 +128,7 @@ const meta = {
       '🧌 Drool is a tool, kids. Use it - Prof. Knight - Monsters University',
   },
 
-  title: 'Molecules/Toolbar',
+  title: '[Work In Progress]/Toolbar',
 } satisfies Meta<ToolbarProps>
 
 export default meta

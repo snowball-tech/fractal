@@ -20,6 +20,7 @@
     "src/**/*.tsx",
     "./.storybook/*.ts",
     "./.storybook/*.tsx",
+    "./.storybook/*.mdx",
     "./stories"
   ],
   "files": [],
