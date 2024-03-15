@@ -114,32 +114,12 @@ export const FullLogo: Story = {
 
       {separator}
 
-      <Wrapper style={{ backgroundColor: 'grey' }}>
-        <Logo brandVariant="dark" pictoVariant="light" size="s" />
-        <Logo brandVariant="dark" pictoVariant="light" size="m" />
-        <Logo brandVariant="dark" pictoVariant="light" size="l" />
-        <Logo brandVariant="dark" pictoVariant="light" size="xl" />
-        <Logo brandVariant="dark" pictoVariant="light" size="fluid" />
-      </Wrapper>
-
-      {separator}
-
       <Wrapper>
         <Logo brandVariant="dark" pictoVariant="primary" size="s" />
         <Logo brandVariant="dark" pictoVariant="primary" size="m" />
         <Logo brandVariant="dark" pictoVariant="primary" size="l" />
         <Logo brandVariant="dark" pictoVariant="primary" size="xl" />
         <Logo brandVariant="dark" pictoVariant="primary" size="fluid" />
-      </Wrapper>
-
-      {separator}
-
-      <Wrapper style={{ backgroundColor: 'grey' }}>
-        <Logo brandVariant="light" pictoVariant="dark" size="s" />
-        <Logo brandVariant="light" pictoVariant="dark" size="m" />
-        <Logo brandVariant="light" pictoVariant="dark" size="l" />
-        <Logo brandVariant="light" pictoVariant="dark" size="xl" />
-        <Logo brandVariant="light" pictoVariant="dark" size="fluid" />
       </Wrapper>
 
       {separator}
@@ -160,26 +140,6 @@ export const FullLogo: Story = {
         <Logo brandVariant="light" pictoVariant="primary" size="l" />
         <Logo brandVariant="light" pictoVariant="primary" size="xl" />
         <Logo brandVariant="light" pictoVariant="primary" size="fluid" />
-      </Wrapper>
-
-      {separator}
-
-      <Wrapper>
-        <Logo brandVariant="primary" pictoVariant="dark" size="s" />
-        <Logo brandVariant="primary" pictoVariant="dark" size="m" />
-        <Logo brandVariant="primary" pictoVariant="dark" size="l" />
-        <Logo brandVariant="primary" pictoVariant="dark" size="xl" />
-        <Logo brandVariant="primary" pictoVariant="dark" size="fluid" />
-      </Wrapper>
-
-      {separator}
-
-      <Wrapper style={{ backgroundColor: 'grey' }}>
-        <Logo brandVariant="primary" pictoVariant="light" size="s" />
-        <Logo brandVariant="primary" pictoVariant="light" size="m" />
-        <Logo brandVariant="primary" pictoVariant="light" size="l" />
-        <Logo brandVariant="primary" pictoVariant="light" size="xl" />
-        <Logo brandVariant="primary" pictoVariant="light" size="fluid" />
       </Wrapper>
 
       {separator}
