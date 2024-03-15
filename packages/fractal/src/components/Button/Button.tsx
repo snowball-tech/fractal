@@ -11,37 +11,64 @@ import {
 } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
-import { PREFIX } from '@/constants'
+import { PREFIX, Themes } from '@/constants'
+import useTheme from '@/hooks/useTheme'
 import { cj, cn } from '@/styles/helpers'
 
 import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Button.constants'
 import type { ButtonProps } from './Button.types'
 
-export const variantClassNames = {
+export const variantClassNames: Record<Themes, Record<Variants, string>> = {
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
-  [Variants.Display]:
-    'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
-  [Variants.Primary]:
-    'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
-  [Variants.Secondary]:
-    'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
-  [Variants.Text]: 'bg-transparent text-dark',
+  [Themes.Light]: {
+    [Variants.Display]:
+      'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Primary]:
+      'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
+    [Variants.Secondary]:
+      'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Text]: 'bg-transparent text-dark',
+  },
 
+  [Themes.Dark]: {
+    [Variants.Display]:
+      'bg-white text-dark shadow-subtle-dark hover:shadow-brutal-dark focus:shadow-brutal-dark active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Primary]:
+      'bg-primary-dark hover:bg-light active:bg-primary-dark focus:bg-light active:!border-transparent text-dark hover:text-dark active:text-light focus:text-dark border-2 border-transparent hover:border-light focus:border-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
+    [Variants.Secondary]:
+      'bg-white active:bg-primary-dark text-dark active:text-light border-1 border-light px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Text]: 'bg-transparent text-light',
+  },
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
 }
 
-export const variantDisabledClassNames = {
+export const variantDisabledClassNames: Record<
+  Themes,
+  Record<Variants, string>
+> = {
   /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
-  [Variants.Display]:
-    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
-  [Variants.Primary]:
-    'bg-disabled text-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
-  [Variants.Secondary]:
-    'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
-  [Variants.Text]: 'bg-transparent text-disabled',
+  [Themes.Light]: {
+    [Variants.Display]:
+      'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Primary]:
+      'bg-disabled text-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
+    [Variants.Secondary]:
+      'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Text]: 'bg-transparent text-disabled',
+  },
+
+  [Themes.Dark]: {
+    [Variants.Display]:
+      'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Primary]:
+      'bg-disabled text-disabled px-[calc(theme(spacing.3)-theme(spacing.half))] py-[calc(theme(spacing.1)-theme(spacing.half))]',
+    [Variants.Secondary]:
+      'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+    [Variants.Text]: 'bg-transparent text-grey-30',
+  },
 
   /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -64,6 +91,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       label,
       onClick,
       target,
+      theme: themeOverride,
       truncate = true,
       type = 'button',
       underlined,
@@ -73,6 +101,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const theme = useTheme(themeOverride)
+
     const hasIcon = Boolean(icon)
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
@@ -126,8 +156,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
       disabled
-        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[variant]}`
-        : `${variantClassNames[variant]} cursor-pointer`,
+        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[theme][variant]}`
+        : `${variantClassNames[theme][variant]} cursor-pointer`,
       hasIcon
         ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
         : '',

@@ -1,5 +1,7 @@
 import type { AllHTMLAttributes, MouseEvent, ReactNode } from 'react'
 
+import { Themes } from '@/constants'
+
 import { Variants } from './Button.constants'
 
 export interface ButtonProps
@@ -45,6 +47,12 @@ export interface ButtonProps
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void
   /** The `target` attribute of the `a` element (when a `href` is provided). */
   target?: string
+  /**
+   * Force the theme of the button.
+   *
+   * If none is given, it will use the one provided by the Context/Provider.
+   */
+  theme?: Themes
   /**
    * Indicates if the label should be truncated if the size of the button is to
    * wide.

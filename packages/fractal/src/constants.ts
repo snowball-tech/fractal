@@ -87,3 +87,9 @@ export const DARK_FG_COLORS_CLASSNAMES = {
   success: 'text-feedback-success-50',
   warning: 'text-feedback-warning-50',
 }
+
+export enum Themes {
+  Dark = 'dark',
+  Light = 'light',
+}
+export const DEFAULT_THEME = Themes.Light
