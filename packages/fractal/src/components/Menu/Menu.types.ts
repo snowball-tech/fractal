@@ -190,7 +190,7 @@ export interface SubMenuProps
     trigger?: {
       className?: string
       style?: CSSProperties
-      wrapper: {
+      wrapper?: {
         className?: string
         style?: CSSProperties
       }
