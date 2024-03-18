@@ -1,3 +1,18 @@
+# @snowball-tech/fractal [10.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.3.0...@snowball-tech/fractal@10.4.0) (2024-03-18)
+
+### ✨ Features
+
+- add a "condensed" variant to dropdown, menu and radio ([16abfb3](https://github.com/snowball-tech/fractal/commit/16abfb36cfbdfe636629b261eee083d29230806c))
+
+### 🐛 Bug Fixes
+
+- **menu:** fix typings ([edde786](https://github.com/snowball-tech/fractal/commit/edde7867a5544dc8a94a22a78ff41d078b536234))
+
+### 📝 Documentation
+
+- create a WIP category ([f0c7fc6](https://github.com/snowball-tech/fractal/commit/f0c7fc6bf6e1d32558d1b92aec978d4231e2c275))
+- **logo:** remove unwanted combination ([c84f74e](https://github.com/snowball-tech/fractal/commit/c84f74e25e711df50c11fd1326a6a284d09da57a))
+
 # @snowball-tech/fractal [10.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.2.3...@snowball-tech/fractal@10.3.0) (2024-03-14)
 
 ### ✨ Features
