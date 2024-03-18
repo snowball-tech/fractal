@@ -1,15 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps, ReactNode } from 'react'
 
+import { cj, cn } from '@/styles/helpers'
+
 import { Logo, LogoSizes } from '.'
 import { DEFAULT_SIZE } from './Logo.constants'
 
 const note = (
-  <blockquote style={{ marginBottom: 'var(--size-spacing-8)', marginLeft: 0 }}>
+  <blockquote className="mb-8 ml-0">
     <h5>ℹ️ Note</h5>
     <hr />
     <p>
-      The grey background is only there to make light logo/picto/brand variants
+      The black background is only there to make light logo/picto/brand variants
       visible in the Storybook, it won&#39;t be there when actually using the
       component.
     </p>
@@ -39,14 +41,7 @@ const meta: Meta<LogoProps> = {
         <>
           {isLight && note}
 
-          <div
-            style={{
-              backgroundColor: isLight ? 'grey' : 'initial',
-              borderRadius: 'var(--size-radius-m)',
-              padding: 'var(--size-spacing-2)',
-              width: 'fit-content',
-            }}
-          >
+          <div className={cj('w-fit rounded-md p-2', isLight ? 'bg-dark' : '')}>
             <Story args={{ ...context.args }} />
           </div>
         </>
@@ -69,32 +64,16 @@ export const Playground: Story = {
   },
 }
 
-const separator = (
-  <hr
-    style={{
-      margin: 'var(--size-spacing-3) 0',
-      width: '100%',
-    }}
-  />
-)
+const separator = <hr className="my-3 w-full" />
 
 const Wrapper = ({
   children,
-  style = {},
+  className,
 }: {
   children: ReactNode
-  style?: Record<string, unknown>
+  className?: string
 }) => (
-  <div
-    style={{
-      ...style,
-      borderRadius: 'var(--size-radius-m)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 'var(--size-spacing-2)',
-      padding: 'var(--size-spacing-2)',
-    }}
-  >
+  <div className={cn('flex flex-col gap-2 rounded-md p-2', className)}>
     {children}
   </div>
 )
@@ -124,7 +103,7 @@ export const FullLogo: Story = {
 
       {separator}
 
-      <Wrapper style={{ backgroundColor: 'grey' }}>
+      <Wrapper className="bg-dark">
         <Logo brandVariant="light" pictoVariant="light" size="s" />
         <Logo brandVariant="light" pictoVariant="light" size="m" />
         <Logo brandVariant="light" pictoVariant="light" size="l" />
@@ -134,7 +113,7 @@ export const FullLogo: Story = {
 
       {separator}
 
-      <Wrapper style={{ backgroundColor: 'grey' }}>
+      <Wrapper className="bg-dark">
         <Logo brandVariant="light" pictoVariant="primary" size="s" />
         <Logo brandVariant="light" pictoVariant="primary" size="m" />
         <Logo brandVariant="light" pictoVariant="primary" size="l" />
@@ -170,7 +149,7 @@ export const PictoOnly: Story = {
 
       {separator}
 
-      <Wrapper style={{ backgroundColor: 'grey' }}>
+      <Wrapper className="bg-dark">
         <Logo brandVariant="none" pictoVariant="light" size="s" />
         <Logo brandVariant="none" pictoVariant="light" size="m" />
         <Logo brandVariant="none" pictoVariant="light" size="l" />
@@ -205,7 +184,7 @@ export const BrandNameOnly: Story = {
 
       {separator}
 
-      <Wrapper style={{ backgroundColor: 'grey' }}>
+      <Wrapper className="bg-dark">
         <Logo brandVariant="light" pictoVariant="none" size="s" />
         <Logo brandVariant="light" pictoVariant="none" size="m" />
         <Logo brandVariant="light" pictoVariant="none" size="l" />

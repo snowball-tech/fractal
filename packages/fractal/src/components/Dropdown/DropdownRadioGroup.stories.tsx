@@ -57,6 +57,7 @@ const meta: Meta<DropdownRadioGroupProps> = {
   },
   args: {
     children: items,
+    condensed: false,
     disabled: false,
   },
   component: DropdownRadioGroup,
@@ -89,9 +90,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, onValueChange = noop }) => (
-    <div style={{ height: '1200px' }}>
-      <Dropdown trigger="Jedis">
+  render: ({ condensed = false, disabled = false, onValueChange = noop }) => (
+    <div className="h-[1200px]">
+      <Dropdown condensed={condensed} trigger="Jedis">
         <DropdownRadioGroup
           disabled={disabled}
           value="luke"

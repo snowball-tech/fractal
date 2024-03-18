@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ disabled = false, label, multiple = false }) => (
-    <div style={{ height: '300px' }}>
+    <div className="h-[300px]">
       <Toolbar>
         <ToolbarToggleGroup
           disabled={disabled}

@@ -1,6 +1,6 @@
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { useId } from 'react'
+import { useContext, useId } from 'react'
 
 import { Variants as InputRadioVariants } from '@/components/InputRadio/InputRadio.constants'
 import { InputRadioGroup } from '@/components/InputRadio/InputRadioGroup'
@@ -9,6 +9,8 @@ import { alternatingBgColorLightClassNames, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioGroupProps } from './Dropdown.types'
+import { DropdownContext } from './DropdownContext'
+import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
  * `DropdownRadioGroup` component is used to group multiple `DropdownRadioItem`
@@ -21,6 +23,7 @@ import type { DropdownRadioGroupProps } from './Dropdown.types'
  */
 export const DropdownRadioGroup = ({
   children: dropdownRadioItems,
+  condensed = false,
   defaultValue,
   disabled = false,
   onValueChange,
@@ -30,17 +33,26 @@ export const DropdownRadioGroup = ({
   const generatedId = useId()
   const uniqueId = (props.id ?? generatedId) || generatedId
 
+  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
+    useContext(DropdownContext)
+  const { condensed: groupCondensed, disabled: groupDisabled } =
+    useContext(DropdownGroupContext)
+
+  const isDisabled = disabled || groupDisabled || dropdownDisabled
+  const isCondensed = condensed || groupCondensed || dropdownCondensed
+
   return (
     <InputRadioGroup
       id={uniqueId}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__group-radio`,
         'group/dropdown-radio-group',
-        disabled
+        isDisabled
           ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled`
           : alternatingBgColorLightClassNames,
         props.className,
       )}
+      condensed={isCondensed}
       {...(defaultValue !== undefined ? { defaultValue } : {})}
       {...(disabled !== undefined ? { disabled } : {})}
       fullWidth
@@ -53,7 +65,11 @@ export const DropdownRadioGroup = ({
         : {})}
       {...omit(['className'], props)}
     >
-      {dropdownRadioItems}
+      <DropdownGroupContext.Provider
+        value={{ condensed: isCondensed, disabled: isDisabled }}
+      >
+        {dropdownRadioItems}
+      </DropdownGroupContext.Provider>
     </InputRadioGroup>
   )
 }

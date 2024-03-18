@@ -46,13 +46,7 @@ export const Papers: Story = {
     },
   },
   render: ({ children }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Paper elevation="1">{children}</Paper>
       <Paper elevation="2">{children}</Paper>
       <Paper elevation="3">{children}</Paper>

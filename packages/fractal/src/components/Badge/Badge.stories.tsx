@@ -37,13 +37,7 @@ export const Playground: Story = {}
 export const Badges: Story = {
   parameters: { ...perVariantStoriesParameters },
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Badge />
       <Badge count={-42} />
       <Badge count={-1} />

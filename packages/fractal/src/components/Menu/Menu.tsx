@@ -28,6 +28,7 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
   (
     {
       children,
+      condensed = false,
       disabled = false,
       elevation = DEFAULT_ELEVATION,
       embedded = false,
@@ -81,7 +82,7 @@ perfectionist/sort-objects */
         {...omit(['className'], props)}
       >
         <div ref={menuRef} aria-orientation={orientation} role="menu" {...menu}>
-          <MenuContext.Provider value={{ disabled, orientation }}>
+          <MenuContext.Provider value={{ condensed, disabled, orientation }}>
             <Typography
               className={alternatingBgColorLightClassNames}
               element="div"

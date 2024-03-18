@@ -28,6 +28,10 @@ export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
    * `MenuItemSeparator` or `SubMenu`.
    */
   children: ReactNode
+  /**
+   * Indicates if the menu should be condensed (less spacing in menu and items).
+   */
+  condensed?: boolean
   /** Indicates if the menu is disabled. */
   disabled?: boolean
   /**
@@ -69,6 +73,14 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * not enough.
    */
   children?: ReactNode
+  /**
+   * Indicates if the menu item should be condensed (less spacing in item).
+   *
+   * If you pass the `condensed` prop to the `Menu`, `MenuItemGroup` or
+   * `SubMenu` component, you don't need to pass it to each `MenuItem`
+   * component, they will inherit it automatically.
+   */
+  condensed?: boolean
   /** Indicates if the menu item is disabled. */
   disabled?: boolean
   /** The URL to open when clicking on the item. */
@@ -98,6 +110,15 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
 export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The menu items to display inside of the group. */
   children: ReactNode
+  /**
+   * Indicates if the menu item group should be condensed (less spacing in group
+   * and items).
+   *
+   * If you pass the `condensed` prop to the `Menu` or `SubMenu` component, you
+   * don't need to pass it to each `MenuItemGroup` component, they will inherit
+   * it automatically.
+   */
+  condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
   /** The label of the menu items group. */
@@ -122,6 +143,20 @@ export interface SubMenuProps
    * `MenuItemSeparator` or `SubMenu`.
    */
   children: ReactNode
+  /**
+   * Indicates if the sub-menu should be condensed (less spacing in sub-menu
+   * trigger/label).
+   *
+   * If you pass the `condensed` prop to the `Menu` or `MenuItemGroup`
+   * component, you don't need to pass it to each `SubMenu` component, they will
+   * inherit it automatically.
+   */
+  condensed?: boolean
+  /**
+   * Indicates if the sub-menu items should be condensed (less spacing in
+   * sub-menu items).
+   */
+  condensedItems?: boolean
   /** Indicates if the sub-menu should be opened by default. */
   defaultOpen?: boolean
   /** Indicates if the sub-menu is disabled. */

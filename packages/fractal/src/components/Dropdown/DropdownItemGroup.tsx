@@ -22,19 +22,22 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  */
 export default function DropdownItemGroup({
   children,
+  condensed = false,
   disabled = false,
   label,
   ...props
 }: DropdownItemGroupProps) {
-  const { disabled: dropdownDisabled } = useContext(DropdownContext)
+  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
+    useContext(DropdownContext)
 
   const isDisabled = disabled || dropdownDisabled
+  const isCondensed = condensed || dropdownCondensed
 
   return (
     <RxDropdownMenu.Group
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
-        'p-2 py-0',
+        'px-2',
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
@@ -44,7 +47,8 @@ export default function DropdownItemGroup({
         asChild
         className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__label`,
-          'block py-2',
+          'block',
+          isCondensed ? 'py-1' : 'py-2',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
             : 'cursor-default text-placeholder',
@@ -62,7 +66,9 @@ export default function DropdownItemGroup({
         )}
         element="div"
       >
-        <DropdownGroupContext.Provider value={{ disabled: isDisabled }}>
+        <DropdownGroupContext.Provider
+          value={{ condensed: isCondensed, disabled: isDisabled }}
+        >
           {children}
         </DropdownGroupContext.Provider>
       </Typography>

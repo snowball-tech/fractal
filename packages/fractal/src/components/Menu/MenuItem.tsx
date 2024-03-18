@@ -28,6 +28,7 @@ export const MenuItem = forwardRef<
     {
       active = false,
       children,
+      condensed = false,
       disabled,
       href,
       icon,
@@ -47,10 +48,13 @@ export const MenuItem = forwardRef<
       )
     }
 
-    const { disabled: menuDisabled } = useContext(MenuContext)
-    const { disabled: groupDisabled } = useContext(MenuGroupContext)
+    const { condensed: menuCondensed, disabled: menuDisabled } =
+      useContext(MenuContext)
+    const { condensed: groupCondensed, disabled: groupDisabled } =
+      useContext(MenuGroupContext)
 
     const isDisabled = disabled || menuDisabled || groupDisabled
+    const isCondensed = condensed || menuCondensed || groupCondensed
 
     const isLink = !isEmpty(href)
 
@@ -85,7 +89,8 @@ export const MenuItem = forwardRef<
           `${PREFIX}-${GROUP_NAME}__item`,
           'alternatee',
           'flex flex-row items-center gap-1 text-nowrap',
-          'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+          'rounded-sm outline-none transition-background-color duration-300 ease-out',
+          isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}--with-icon` : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item--disabled pointer-events-none cursor-not-allowed !bg-transparent text-disabled`

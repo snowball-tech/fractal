@@ -74,13 +74,7 @@ export const Playground: Story = {
 export const BasicCards: Story = {
   parameters: { ...perCardTypesStoriesParameters },
   render: ({ children, dismissable = false, icon, title = '' }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Card color="blue" dismissable={dismissable} icon={icon} title={title}>
         {children}
       </Card>
@@ -103,13 +97,7 @@ export const BasicCards: Story = {
 export const FeedbackCards: Story = {
   parameters: { ...perCardTypesStoriesParameters },
   render: ({ children, dismissable = false, icon, title = '' }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Card color="error" dismissable={dismissable} icon={icon} title={title}>
         {children}
       </Card>

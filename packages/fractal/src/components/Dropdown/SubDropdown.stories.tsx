@@ -62,7 +62,7 @@ export const Playground: Story = {
     label = 'Masters',
     withIndicator = true,
   }) => (
-    <div style={{ height: '300px' }}>
+    <div className="h-[300px]">
       <Dropdown trigger="Jedis">
         <SubDropdown
           disabled={disabled}

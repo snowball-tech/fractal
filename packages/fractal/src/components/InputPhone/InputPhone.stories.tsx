@@ -47,7 +47,7 @@ const meta: Meta<InputPhoneProps> = {
     ...(isChromatic()
       ? [
           (storyFn: () => ReactNode) => (
-            <div style={{ height: '1200px' }}>{storyFn()}</div>
+            <div className="h-[1200px]">{storyFn()}</div>
           ),
         ]
       : []),
@@ -137,27 +137,10 @@ export const Interactive: Story = {
   },
 }
 
-const separator = (
-  <hr
-    style={{
-      margin: 'var(--size-spacing-3) 0',
-      width: '100%',
-    }}
-  />
-)
+const separator = <hr className="my-3 w-full" />
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div
-    style={{
-      alignItems: 'flex-start',
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: 'var(--size-spacing-2)',
-      marginBottom: 'var(--size-spacing-2)',
-    }}
-  >
-    {children}
-  </div>
+  <div className="mb-2 flex flex-wrap items-start gap-2">{children}</div>
 )
 
 export const Examples: Story = {

@@ -113,6 +113,7 @@ const meta: Meta<MenuProps> = {
   },
   args: {
     children,
+    condensed: false,
     disabled: false,
     elevation: DEFAULT_ELEVATION,
     embedded: false,

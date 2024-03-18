@@ -30,7 +30,7 @@ const meta: Meta<SwitchProps> = {
   decorators: [
     function WithArgs(Story, context) {
       return (
-        <div style={{ width: 'fit-content' }}>
+        <div className="w-fit">
           <Story args={{ ...context.args }} />
         </div>
       )
@@ -67,22 +67,12 @@ export const Interactive: Story = {
 }
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div
-    style={{
-      alignItems: 'flex-end',
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: 'var(--size-spacing-2)',
-      marginBottom: 'var(--size-spacing-2)',
-    }}
-  >
-    {children}
-  </div>
+  <div className="mb-2 flex flex-wrap items-end gap-2">{children}</div>
 )
 
 export const Enabled: Story = {
   render: () => (
-    <div style={{ width: 'fit-content' }}>
+    <div className="w-fit">
       <Wrapper>
         <Switch label="Left switch" switchPosition="left" />
         <Switch
@@ -111,7 +101,7 @@ export const Enabled: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <div style={{ width: 'fit-content' }}>
+    <div className="w-fit">
       <Wrapper>
         <Switch disabled label="Left disabled switch" switchPosition="left" />
         <Switch

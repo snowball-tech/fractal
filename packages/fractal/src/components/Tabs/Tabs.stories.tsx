@@ -145,7 +145,7 @@ const meta: Meta<TabsProps> = {
   decorators: [
     function WithArgs(Story, context) {
       return (
-        <div style={{ maxWidth: '600px' }}>
+        <div className="max-w-[600px]">
           <Story args={{ ...context.args }} />
         </div>
       )

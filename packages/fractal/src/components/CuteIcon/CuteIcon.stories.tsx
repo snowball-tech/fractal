@@ -60,13 +60,7 @@ export const CuteIcons: Story = {
     },
   },
   render: ({ icon }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <CuteIcon color="blue" icon={icon} />
       <CuteIcon color="yellow" icon={icon} />
       <CuteIcon color="pink" icon={icon} />

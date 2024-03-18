@@ -55,9 +55,7 @@ const meta: Meta<DialogProps> = {
   component: Dialog,
   decorators: [
     (storyFn: () => ReactNode) => (
-      <div style={{ height: '350px', position: 'relative', width: '500px' }}>
-        {storyFn()}
-      </div>
+      <div className="relative h-[350px] w-[500px]">{storyFn()}</div>
     ),
   ],
 

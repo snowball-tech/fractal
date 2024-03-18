@@ -12,7 +12,7 @@ import '../src/styles/global.css'
 
 const preview: Preview = {
   decorators: isChromatic()
-    ? [(storyFn) => <div style={{ padding: '16px' }}>{storyFn()}</div>]
+    ? [(storyFn) => <div className="p-2">{storyFn()}</div>]
     : [],
 
   parameters: {

@@ -57,13 +57,7 @@ export const Playground: Story = {
 export const SmallTags: Story = {
   parameters: { ...perVariantStoriesParameters },
   render: ({ children, disabled = false, fullWidth = false }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Tag color="white" disabled={disabled} fullWidth={fullWidth}>
         {children}
       </Tag>
@@ -89,13 +83,7 @@ export const SmallTags: Story = {
 export const BigTags: Story = {
   parameters: { ...perVariantStoriesParameters },
   render: ({ children, disabled = false, fullWidth = false }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Tag color="white" disabled={disabled} fullWidth={fullWidth} size="m">
         {children}
       </Tag>

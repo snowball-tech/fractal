@@ -31,6 +31,7 @@ const meta: Meta<MenuItemProps> = {
   },
   args: {
     active: false,
+    condensed: false,
     disabled: false,
     href: '',
     label: 'Luke Skywalker',
@@ -46,15 +47,17 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({
     active = false,
+    condensed = false,
     disabled = false,
     href = '',
     icon,
     label = 'Luke Skywalker',
   }) => (
-    <div style={{ height: '100px' }}>
+    <div className="h-13">
       <Menu>
         <MenuItem
           active={active}
+          condensed={condensed}
           disabled={disabled}
           href={href}
           icon={icon}

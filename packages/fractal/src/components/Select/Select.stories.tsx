@@ -104,7 +104,7 @@ const meta: Meta<SelectProps> = {
     ...(isChromatic()
       ? [
           (storyFn: () => ReactNode) => (
-            <div style={{ height: '1200px' }}>{storyFn()}</div>
+            <div className="h-[1200px]">{storyFn()}</div>
           ),
         ]
       : []),

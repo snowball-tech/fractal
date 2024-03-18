@@ -104,15 +104,7 @@ const meta: Meta<PopoverProps> = {
   component: Popover,
   decorators: [
     (storyFn: () => ReactNode) => (
-      <div
-        style={{
-          alignItems: 'center',
-          display: 'flex',
-          height: '500px',
-          justifyContent: 'center',
-          maxWidth: '500px',
-        }}
-      >
+      <div className="flex h-[500px] max-w-[500px] items-center justify-center">
         {storyFn()}
       </div>
     ),

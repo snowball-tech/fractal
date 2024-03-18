@@ -115,27 +115,10 @@ export const Interactive: Story = {
   },
 }
 
-const separator = (
-  <hr
-    style={{
-      margin: 'var(--size-spacing-3) 0',
-      width: '100%',
-    }}
-  />
-)
+const separator = <hr className="my-3 w-full" />
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div
-    style={{
-      alignItems: 'flex-end',
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: 'var(--size-spacing-2)',
-      marginBottom: 'var(--size-spacing-2)',
-    }}
-  >
-    {children}
-  </div>
+  <div className="mb-2 flex flex-wrap items-end gap-2">{children}</div>
 )
 
 export const Basics: Story = {

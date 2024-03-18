@@ -43,6 +43,8 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       active = false,
       align = 'start',
       children,
+      condensed = false,
+      condensedItems = false,
       defaultOpen = false,
       disabled = false,
       elevation = DEFAULT_SUB_MENU_ELEVATION,
@@ -122,10 +124,16 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
 
-    const { disabled: menuDisabled, orientation } = useContext(MenuContext)
-    const { disabled: groupDisabled } = useContext(MenuGroupContext)
+    const {
+      condensed: menuCondensed,
+      disabled: menuDisabled,
+      orientation,
+    } = useContext(MenuContext)
+    const { condensed: groupCondensed, disabled: groupDisabled } =
+      useContext(MenuGroupContext)
 
     const isDisabled = disabled || groupDisabled || menuDisabled
+    const isCondensed = condensed || groupCondensed || menuCondensed
 
     const handleSubMenuInteractOutside: DismissableLayerProps['onInteractOutside'] =
       (event) => {
@@ -179,7 +187,8 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__trigger`,
           'flex w-full flex-row items-center gap-1',
-          'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+          'rounded-sm outline-none transition-background-color duration-300 ease-out',
+          isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--with-icon` : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--disabled pointer-events-none cursor-not-allowed !bg-transparent text-disabled`
@@ -238,7 +247,9 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         )}
         element="div"
       >
-        <MenuGroupContext.Provider value={{ disabled }}>
+        <MenuGroupContext.Provider
+          value={{ condensed: condensedItems, disabled: isDisabled }}
+        >
           {children}
         </MenuGroupContext.Provider>
       </Typography>

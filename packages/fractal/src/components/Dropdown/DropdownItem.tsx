@@ -24,6 +24,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
     {
       active = false,
       children,
+      condensed = false,
       disabled,
       href,
       icon,
@@ -43,10 +44,13 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
       )
     }
 
-    const { disabled: dropdownDisabled } = useContext(DropdownContext)
-    const { disabled: groupDisabled } = useContext(DropdownGroupContext)
+    const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
+      useContext(DropdownContext)
+    const { condensed: groupCondensed, disabled: groupDisabled } =
+      useContext(DropdownGroupContext)
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
+    const isCondensed = condensed || groupCondensed || dropdownCondensed
 
     const isLink = !isEmpty(href)
 
@@ -59,7 +63,8 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
           `${PREFIX}-${GROUP_NAME}__item`,
           'alternatee',
           'flex items-center gap-1',
-          'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+          'rounded-sm outline-none transition-background-color duration-300 ease-out',
+          isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`

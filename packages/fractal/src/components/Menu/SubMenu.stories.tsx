@@ -39,6 +39,8 @@ const meta: Meta<SubMenuProps> = {
   },
   args: {
     align: undefined,
+    condensed: false,
+    condensedItems: false,
     defaultOpen: false,
     disabled: false,
     icon: undefined,
@@ -64,6 +66,8 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({
     align,
+    condensed = false,
+    condensedItems = false,
     defaultOpen,
     disabled = false,
     icon,
@@ -75,10 +79,12 @@ export const Playground: Story = {
     withIndicator = true,
     withScroll = true,
   }) => (
-    <div style={{ height: '300px' }}>
+    <div className="h-[300px]">
       <Menu>
         <SubMenu
           align={align}
+          condensed={condensed}
+          condensedItems={condensedItems}
           defaultOpen={defaultOpen}
           disabled={disabled}
           icon={icon}
@@ -112,6 +118,9 @@ export const Playground: Story = {
 
         <SubMenu
           align={align}
+          condensed={condensed}
+          condensedItems={condensedItems}
+          disabled={disabled}
           icon={icon}
           label="Siths"
           popover={popover}
