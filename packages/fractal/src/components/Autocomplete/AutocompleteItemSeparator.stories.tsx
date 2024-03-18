@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <div style={{ height: '1200px' }}>
+    <div className="h-[1200px]">
       <Autocomplete
         placeholder="Start typing to autocomplete"
         onChange={action('onChange')}

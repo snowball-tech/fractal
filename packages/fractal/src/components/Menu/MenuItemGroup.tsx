@@ -18,19 +18,22 @@ import { MenuGroupContext } from './MenuGroupContext'
  */
 export default function MenuItemGroup({
   children,
+  condensed = false,
   disabled = false,
   label,
   ...props
 }: MenuItemGroupProps) {
-  const { disabled: menuDisabled } = useContext(MenuContext)
+  const { condensed: menuCondensed, disabled: menuDisabled } =
+    useContext(MenuContext)
 
   const isDisabled = disabled || menuDisabled
+  const isCondensed = condensed || menuCondensed
 
   return (
     <div
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
-        'p-2 py-0',
+        'px-2',
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
@@ -39,7 +42,8 @@ export default function MenuItemGroup({
       <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__item-group__label`,
-          'block py-2',
+          'block',
+          isCondensed ? 'py-1' : 'py-2',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
             : 'cursor-default text-placeholder',
@@ -58,7 +62,9 @@ export default function MenuItemGroup({
         )}
         element="div"
       >
-        <MenuGroupContext.Provider value={{ disabled: isDisabled }}>
+        <MenuGroupContext.Provider
+          value={{ condensed: isCondensed, disabled: isDisabled }}
+        >
           {children}
         </MenuGroupContext.Provider>
       </Typography>

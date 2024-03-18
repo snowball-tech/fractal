@@ -60,32 +60,26 @@ export const Playground: Story = {
 export const Shapes: Story = {
   parameters: { ...perVariantStoriesParameters },
   render: ({ children, color = DEFAULT_COLOR }) => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-3)',
-      }}
-    >
-      <div style={{ height: '200px', width: '400px' }}>
+    <div className="flex flex-col gap-2">
+      <div className="h-[200px] w-[400px]">
         <Skeleton color={color} shape="circle">
           {children}
         </Skeleton>
       </div>
 
-      <div style={{ height: '200px', width: '400px' }}>
+      <div className="h-[200px] w-[400px]">
         <Skeleton color={color} shape="rectangle">
           {children}
         </Skeleton>
       </div>
 
-      <div style={{ height: '200px', width: '400px' }}>
+      <div className="h-[200px] w-[400px]">
         <Skeleton color={color} shape="roundedRectangle">
           {children}
         </Skeleton>
       </div>
 
-      <div style={{ height: '200px', width: '400px' }}>
+      <div className="h-[200px] w-[400px]">
         <Skeleton color={color} shape="square">
           {children}
         </Skeleton>
@@ -123,17 +117,11 @@ export const RealLifeExample: Story = {
     )
 
     return (
-      <div
-        className="flex flex-col overflow-hidden border-1 border-normal @container"
-        style={{ height: '550px', width: '1200px' }}
-      >
+      <div className="flex h-[550px] w-[1200px] flex-col overflow-hidden border-1 border-normal @container">
         <Header className="min-h-8">Header</Header>
 
         <div className="flex h-full">
-          <div
-            className="flex h-full flex-col gap-2 border-r-1 border-grey-50 p-2"
-            style={{ width: '300px' }}
-          >
+          <div className="flex h-full w-[300px] flex-col gap-2 border-r-1 border-grey-50 p-2">
             {sidebarItem}
             {sidebarItem}
             {sidebarItem}

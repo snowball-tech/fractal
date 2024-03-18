@@ -18,6 +18,7 @@ const meta: Meta<DropdownItemGroupProps> = {
     },
   },
   args: {
+    condensed: false,
     disabled: false,
     label: 'Jedis',
   },
@@ -33,10 +34,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, label }) => (
-    <div style={{ height: '300px' }}>
+  render: ({ condensed = false, disabled = false, label }) => (
+    <div className="h-[300px]">
       <Dropdown trigger="Jedis">
-        <DropdownItemGroup disabled={disabled} label={label}>
+        <DropdownItemGroup
+          condensed={condensed}
+          disabled={disabled}
+          label={label}
+        >
           <DropdownItem label="Luke Skywalker" />
           <DropdownItem label="Obi-Wan Kenobi" />
           <DropdownItem label="Yoda" />

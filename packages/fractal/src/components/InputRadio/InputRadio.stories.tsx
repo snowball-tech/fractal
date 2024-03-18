@@ -11,6 +11,7 @@ const meta: Meta<InputRadioProps & { required?: boolean }> = {
     asChild: { table: { disable: true } },
   },
   args: {
+    condensed: false,
     disabled: false,
     fullWidth: false,
     label: 'Jar Jar Binks',
@@ -30,6 +31,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({
+    condensed = false,
     disabled = false,
     fullWidth = false,
     label,
@@ -42,6 +44,7 @@ export const Playground: Story = {
       onValueChange={action('onValueChange')}
     >
       <InputRadio
+        condensed={condensed}
         disabled={disabled}
         fullWidth={fullWidth}
         label={label}

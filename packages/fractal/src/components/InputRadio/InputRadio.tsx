@@ -36,6 +36,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
   (
     {
       children,
+      condensed = false,
       disabled = false,
       fullWidth = false,
       id,
@@ -57,7 +58,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
 
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
       [Variants.Secondary]: 'bg-white border-1 border-normal',
-      [Variants.Tertiary]: 'bgtransparent',
+      [Variants.Tertiary]: 'bg-transparent',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
@@ -76,12 +77,14 @@ perfectionist/sort-objects */
     }
 
     const {
+      condensed: groupCondensed,
       disabled: groupDisabled,
       required = false,
       variant,
     } = useContext(InputRadioContext)
 
     const isDisabled = disabled || groupDisabled
+    const isCondensed = condensed || groupCondensed
 
     return (
       <Typography
@@ -134,6 +137,7 @@ perfectionist/sort-objects */
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio__label`,
             'flex-1 overflow-auto break-words py-2 pr-2',
+            isCondensed ? 'py-1' : 'py-2',
             isDisabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required
               ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`

@@ -53,7 +53,7 @@ export const Playground: Story = {
     label = 'Luke Skywalker',
     value = 'luke-skywalker',
   }) => (
-    <div style={{ height: '100px' }}>
+    <div className="h-13">
       <Toolbar>
         <ToolbarToggleGroup>
           <ToolbarToggle

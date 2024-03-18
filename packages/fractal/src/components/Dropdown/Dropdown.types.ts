@@ -37,6 +37,11 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * `DropdownItemSeparator`, `SubDropdown` or `DropdownRadioGroup` components.
    */
   children: ReactNode
+  /**
+   * Indicates if the dropdown should be condensed (less spacing in dropdown and
+   * items).
+   */
+  condensed?: boolean
   /** Indicates if the dropdown should be opened by default. */
   defaultOpen?: boolean
   /** Indicates if the dropdown menu is disabled. */
@@ -106,6 +111,8 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * the opening status of the dropdown) chevron on the right of the label).
    */
   withIndicator?: boolean
+  /** Indicates if the dropdown should have a scroll integrated. */
+  withScroll?: boolean
 }
 
 export interface DropdownItemProps
@@ -123,6 +130,14 @@ export interface DropdownItemProps
    * not enough.
    */
   children?: ReactNode
+  /**
+   * Indicates if the dropdown item should be condensed (less spacing in item).
+   *
+   * If you pass the `condensed` prop to the `Dropdown`, `DropdownItemGroup` or
+   * `SubDropdown` component, you don't need to pass it to each `DropdownItem`
+   * component, they will inherit it automatically.
+   */
+  condensed?: boolean
   /** Indicates if the item is disabled. */
   disabled?: boolean
   /** The URL to open when clicking on the item. */
@@ -157,6 +172,15 @@ export interface DropdownItemGroupProps
   extends AllHTMLAttributes<HTMLDivElement> {
   /** The dropdown items to display inside of the group. */
   children: ReactNode
+  /**
+   * Indicates if the dropdown item group should be condensed (less spacing in
+   * group and items).
+   *
+   * If you pass the `condensed` prop to the `Dropdown` or `SubDropdown`
+   * component, you don't need to pass it to each `DropdownItemGroup` component,
+   * they will inherit it automatically.
+   */
+  condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
   /** The label of the dropdown items group. */
@@ -169,18 +193,32 @@ export interface SubDropdownProps
     'asChild' | 'content' | 'onClick'
   > {
   /**
-   * The content of the dropdown's sub-menu.
+   * The content of the dropdown's sub-dropdown.
    *
    * For the best result, please use the `DropdownItem`, `DropdownItemGroup`,
    * `DropdownItemSeparator`, `SubDropdown` or `DropdownRadioGroup` components.
    */
   children: ReactNode
   /**
-   * Options to tweak the dropdown's sub-menu content.
+   * Indicates if the sub-dropdown should be condensed (less spacing in
+   * sub-dropdown trigger/label).
+   *
+   * If you pass the `condensed` prop to the `Dropdown` or `DropdownItemGroup`
+   * component, you don't need to pass it to each `SubDropdown` component, they
+   * will inherit it automatically.
+   */
+  condensed?: boolean
+  /**
+   * Indicates if the sub-dropdown items should be condensed (less spacing in
+   * sub-dropdown items).
+   */
+  condensedItems?: boolean
+  /**
+   * Options to tweak the dropdown's sub-dropdown content.
    * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#subcontent
    *
    * You can on top of that add the `className` and `style` properties to
-   * customize the style of the sub-menu content.
+   * customize the style of the sub-dropdown content.
    */
   content?: Partial<
     Omit<RxDropdownMenuSubContentProps, 'asChild' | 'onInteractOutside'> & {
@@ -188,46 +226,68 @@ export interface SubDropdownProps
       style?: CSSProperties
     }
   >
-  /** Indicates if the dropdown's sub-menu should be opened by default. */
+  /** Indicates if the dropdown's sub-dropdown should be opened by default. */
   defaultOpen?: boolean
-  /** Indicates if the dropdown's sub-menu is disabled. */
+  /** Indicates if the dropdown's sub-dropdown is disabled. */
   disabled?: boolean
-  /** An icon to display on the left of the sub-menu label. */
+  /** An icon to display on the left of the sub-dropdown label. */
   icon?: ReactNode
-  /** The event handler to call when the sub-menu is clicked. */
+  /** The event handler to call when the sub-dropdown is clicked. */
   onClick?: ComponentProps<typeof SubTrigger>['onSelect']
-  /** Event handler called when the dropdown's sub-menu is closed. */
+  /** Event handler called when the dropdown's sub-dropdown is closed. */
   onClose?: () => void
   /**
    * Event handler called when an interaction is made outside of the dropdown's
-   * sub-menu.
+   * sub-dropdown.
    */
   onInteractOutside?: RxDropdownMenuSubContentProps['onInteractOutside']
   /** Event handler called when the dropdown's submenu is opened. */
   onOpen?: () => void
   /**
-   * Event handler called when the dropdown's sub-menu is opened or closed.
+   * Event handler called when the dropdown's sub-dropdown is opened or closed.
    */
   onSubMenuOpenChange?: ComponentProps<typeof Sub>['onOpenChange']
   /**
-   * Indicates if the dropdown's sub-menu is open.
+   * Indicates if the dropdown's sub-dropdown is open.
    *
-   * Can be used to force a state of the dropdown's sub-menu or when using a
+   * Can be used to force a state of the dropdown's sub-dropdown or when using a
    * custom (non-text) trigger.
    */
   open?: boolean
   /**
-   * Indicates if the dropdown's sub-menu trigger should have an
+   * Indicates if the dropdown's sub-dropdown trigger should have an
    * indicator (right chevron on the right of the label).
    */
   withIndicator?: boolean
+  /** Indicates if the sub-dropdown should have a scroll integrated. */
+  withScroll?: boolean
 }
 
 export type DropdownRadioGroupProps = Omit<
   InputRadioGroupProps,
   'fullWidth' | 'orientation' | 'variant'
->
+> & {
+  /**
+   * Indicates if the radio group should be condensed (less spacing in radio
+   * group and radio items).
+   *
+   * If you pass the `condensed` prop to the `Dropdown`, `DropdownItemGroup` or
+   * 'SubDropdown` component, you don't need to pass it to each `RadioGroup` or
+   * `RadioItem` component, they will inherit it automatically.
+   */
+  condensed?: boolean
+}
 
-export type DropdownRadioItemProps = Omit<InputRadioProps, 'fullWidth'>
+export type DropdownRadioItemProps = Omit<InputRadioProps, 'fullWidth'> & {
+  /**
+   * Indicates if the radio item should be condensed (less spacing in radio
+   * item).
+   *
+   * If you pass the `condensed` prop to the `Dropdown`, `DropdownItemGroup`,
+   * 'SubDropdown` or `DropdownRadioGroup` component, you don't need to pass it
+   * to each RadioItem` component, they will inherit it automatically.
+   */
+  condensed?: boolean
+}
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

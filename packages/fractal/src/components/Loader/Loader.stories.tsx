@@ -35,13 +35,7 @@ export const Playground: Story = {
 
 export const Loaders: Story = {
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Loader size="xxs" />
       <Loader size="xs" />
       <Loader size="s" />

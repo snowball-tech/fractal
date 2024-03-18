@@ -10,6 +10,11 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
   /** The radio buttons to display inside of the radio group. */
   children: ReactNode
   /**
+   * Indicates if the radio group should be condensed (less spacing in group and
+   * items).
+   */
+  condensed?: boolean
+  /**
    * The uncontrolled value of the radio group (i.e. the value of the default
    * selected radio button).
    */
@@ -61,6 +66,14 @@ export interface InputRadioProps extends RxRadioProps {
    * not enough.
    */
   children?: ReactNode
+  /**
+   * Indicates if the radio should be condensed (less spacing in radio).
+   *
+   * If you pass the `condensed` prop to the `InputRadioGroup` component, you
+   * don't need to pass it to each `InputRadio` component, they will inherit it
+   * automatically.
+   */
+  condensed?: boolean
   /** Prevents the user from interacting with the radio button. */
   disabled?: boolean
   /** Indicates if the radio button should take all the available width. */

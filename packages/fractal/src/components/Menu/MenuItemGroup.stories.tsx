@@ -18,6 +18,7 @@ const meta: Meta<MenuItemGroupProps> = {
     },
   },
   args: {
+    condensed: false,
     disabled: false,
     label: 'Jedis',
   },
@@ -33,10 +34,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, label }) => (
-    <div style={{ height: '300px' }}>
+  render: ({ condensed = false, disabled = false, label }) => (
+    <div className="h-[300px]">
       <Menu>
-        <MenuItemGroup disabled={disabled} label={label}>
+        <MenuItemGroup condensed={condensed} disabled={disabled} label={label}>
           <MenuItem
             label="Luke Skywalker"
             onActivate={() => action('onActivate')('Luke Skywalker')}

@@ -11,6 +11,7 @@ const meta: Meta<DropdownRadioItemProps> = {
     asChild: { table: { disable: true } },
   },
   args: {
+    condensed: false,
     disabled: false,
     label: 'Jar Jar Binks',
     value: 'jar-jar-binks',
@@ -24,9 +25,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, label, value }) => (
-    <div style={{ height: '1200px' }}>
-      <Dropdown trigger="Click me">
+  render: ({ condensed = false, disabled = false, label, value }) => (
+    <div className="h-[1200px]">
+      <Dropdown condensed={condensed} trigger="Click me">
         <DropdownRadioGroup onValueChange={action('onValueChange')}>
           <DropdownRadioItem disabled={disabled} label={label} value={value} />
         </DropdownRadioGroup>

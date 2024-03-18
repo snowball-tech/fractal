@@ -68,17 +68,7 @@ export const Playground: Story = {
 }
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <div
-    style={{
-      alignItems: 'flex-end',
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: 'var(--size-spacing-2)',
-      marginBottom: 'var(--size-spacing-2)',
-    }}
-  >
-    {children}
-  </div>
+  <div className="mb-2 flex flex-wrap items-end gap-2">{children}</div>
 )
 
 export const Display: Story = {

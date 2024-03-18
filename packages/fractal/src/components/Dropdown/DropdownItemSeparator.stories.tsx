@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
+import { Typography } from '@/components/Typography'
+
 import { Dropdown, DropdownItem, DropdownItemSeparator } from '.'
 
 type DropdownItemSeparatorProps = ComponentProps<typeof DropdownItemSeparator>
@@ -19,12 +21,26 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <div style={{ height: '200px' }}>
-      <Dropdown trigger="Fighter">
-        <DropdownItem label="Yoda" />
-        <DropdownItemSeparator />
-        <DropdownItem label="Darth Sidious" />
-      </Dropdown>
+    <div className="flex h-[200px] flex-row gap-4">
+      <div className="space-y-2">
+        <Typography variant="heading-4">Normal dropdown</Typography>
+
+        <Dropdown trigger="Fighter">
+          <DropdownItem label="Yoda" />
+          <DropdownItemSeparator />
+          <DropdownItem label="Darth Sidious" />
+        </Dropdown>
+      </div>
+
+      <div className="space-y-2">
+        <Typography variant="heading-4">Condensed dropdown</Typography>
+
+        <Dropdown condensed trigger="Fighter">
+          <DropdownItem label="Yoda" />
+          <DropdownItemSeparator />
+          <DropdownItem label="Darth Sidious" />
+        </Dropdown>
+      </div>
     </div>
   ),
 }

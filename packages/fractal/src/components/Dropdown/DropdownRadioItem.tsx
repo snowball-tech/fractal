@@ -1,5 +1,5 @@
 import omit from 'lodash/fp/omit'
-import { useId } from 'react'
+import { useContext, useId } from 'react'
 
 import { InputRadio } from '@/components/InputRadio/InputRadio'
 import { PREFIX } from '@/constants'
@@ -7,6 +7,8 @@ import { cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioItemProps } from './Dropdown.types'
+import { DropdownContext } from './DropdownContext'
+import { DropdownGroupContext } from './DropdownGroupContext'
 
 /**
  * `DropdownRadioItem` component is used to allow the user to make a single
@@ -20,6 +22,7 @@ import type { DropdownRadioItemProps } from './Dropdown.types'
  * for more information.
  */
 export const DropdownRadioItem = ({
+  condensed = false,
   disabled = false,
   id,
   label,
@@ -29,6 +32,14 @@ export const DropdownRadioItem = ({
   const generatedId = useId()
   const uniqueId = (id ?? generatedId) || generatedId
 
+  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
+    useContext(DropdownContext)
+  const { condensed: groupCondensed, disabled: groupDisabled } =
+    useContext(DropdownGroupContext)
+
+  const isDisabled = disabled || groupDisabled || dropdownDisabled
+  const isCondensed = condensed || groupCondensed || dropdownCondensed
+
   return (
     <InputRadio
       id={uniqueId}
@@ -36,9 +47,10 @@ export const DropdownRadioItem = ({
         `${PREFIX}-${GROUP_NAME}__radio`,
         'alternatee',
         'group/radio-group',
-        disabled ? `${PREFIX}-${GROUP_NAME}__radio--disabled` : '',
+        isDisabled ? `${PREFIX}-${GROUP_NAME}__radio--disabled` : '',
         props.className,
       )}
+      condensed={isCondensed}
       disabled={disabled}
       fullWidth
       label={label}

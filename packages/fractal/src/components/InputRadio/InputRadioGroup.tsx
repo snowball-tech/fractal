@@ -21,6 +21,7 @@ import { InputRadioContext } from './InputRadioContext'
  */
 export const InputRadioGroup = ({
   children,
+  condensed = false,
   defaultValue,
   disabled = false,
   fullWidth = false,
@@ -63,7 +64,9 @@ export const InputRadioGroup = ({
         : {})}
       {...omit(['className'], props)}
     >
-      <InputRadioContext.Provider value={{ disabled, required, variant }}>
+      <InputRadioContext.Provider
+        value={{ condensed, disabled, required, variant }}
+      >
         {children}
       </InputRadioContext.Provider>
     </RxRadio.Root>

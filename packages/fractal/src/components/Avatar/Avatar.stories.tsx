@@ -88,18 +88,12 @@ export const Playground: Story = {
 
 export const Icon: Story = {
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Avatar size="s" />
       <Avatar size="m" />
       <Avatar size="l" />
       <Avatar size="xl" />
-      <div style={{ height: '240px', width: '240px' }}>
+      <div className="size-[240px]">
         <Avatar size="fluid" />
       </div>
     </div>
@@ -108,18 +102,12 @@ export const Icon: Story = {
 
 export const Name: Story = {
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Avatar name="Luke Skywalker" size="s" />
       <Avatar name="Luke Skywalker" size="m" />
       <Avatar name="Luke Skywalker" size="l" />
       <Avatar name="Luke Skywalker" size="xl" />
-      <div style={{ height: '240px', width: '240px' }}>
+      <div className="size-[240px]">
         <Avatar name="Luke Skywalker" size="fluid" />
       </div>
     </div>
@@ -128,19 +116,13 @@ export const Name: Story = {
 
 export const Image: Story = {
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="s" />
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="m" />
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="l" />
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl" />
 
-      <div style={{ height: '240px', width: '240px' }}>
+      <div className="size-[240px]">
         <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="fluid" />
       </div>
     </div>
@@ -149,13 +131,7 @@ export const Image: Story = {
 
 export const WithMenu: Story = {
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-      }}
-    >
+    <div className="flex flex-col gap-2">
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl">
         {menu}
       </Avatar>
@@ -177,14 +153,7 @@ export const InteractiveMenu: Story = {
     await userEvent.hover(body.getByRole('menuitem', { name: 'Sign out' }))
   },
   render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--size-spacing-2)',
-        height: '800px',
-      }}
-    >
+    <div className="flex h-[800px] flex-col gap-2">
       <Avatar imageUrl={avatarUrl} name="Luke Skywalker" size="xl">
         {menu}
       </Avatar>

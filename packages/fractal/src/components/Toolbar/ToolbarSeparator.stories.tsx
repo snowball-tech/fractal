@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <div style={{ height: '200px' }}>
+    <div className="h-[200px]">
       <Toolbar>
         <ToolbarToggleGroup multiple>
           <ToolbarToggle label="Luke Skywalker" value="luke-skywalker" />

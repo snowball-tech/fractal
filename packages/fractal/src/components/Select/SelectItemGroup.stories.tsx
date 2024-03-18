@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({ disabled = false, label }) => (
-    <div style={{ height: '1200px' }}>
+    <div className="h-[1200px]">
       <Select placeholder="Click to open" onSelect={action('onSelect')}>
         <SelectItemGroup disabled={disabled} label={label}>
           <SelectItem value="luke-skywalker">Luke Skywalker</SelectItem>

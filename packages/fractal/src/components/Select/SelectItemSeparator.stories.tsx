@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: () => (
-    <div style={{ height: '800px' }}>
+    <div className="h-[800px]">
       <Select placeholder="Click to open" onSelect={action('onSelect')}>
         <SelectItem value="yoda">Yoda</SelectItem>
         <SelectItemSeparator />

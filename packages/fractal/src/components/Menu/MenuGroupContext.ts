@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 
 export const MenuGroupContext = createContext<{
+  condensed: boolean
   disabled: boolean
-}>({ disabled: false })
+}>({ condensed: false, disabled: false })

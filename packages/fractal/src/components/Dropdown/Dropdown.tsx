@@ -36,6 +36,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
   (
     {
       children,
+      condensed = false,
       defaultOpen = false,
       disabled = false,
       dropdown = {},
@@ -49,6 +50,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       trigger,
       width = 'fit',
       withIndicator = true,
+      withScroll = true,
       ...props
     }: DropdownProps,
     ref: ForwardedRef<CombinedRefs>,
@@ -177,6 +179,23 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       }
     }
 
+    const contentElement = (
+      <Typography
+        className={alternatingBgColorLightClassNames}
+        element="div"
+        variant="body-1"
+      >
+        <DropdownContext.Provider
+          value={{
+            condensed,
+            disabled,
+          }}
+        >
+          {children}
+        </DropdownContext.Provider>
+      </Typography>
+    )
+
     return (
       <div
         ref={containerRef}
@@ -283,52 +302,44 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   dropdown,
                 )}
               >
-                <RxScrollArea.Root
-                  className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
-                  {...(props.dir !== undefined
-                    ? { dir: props.dir as RxScrollArea.Direction }
-                    : {})}
-                  type="hover"
-                >
-                  <RxScrollArea.Viewport
-                    className={cj(
-                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
-                      `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                    )}
-                    style={{
-                      overflowY: undefined,
-                    }}
+                {withScroll ? (
+                  <RxScrollArea.Root
+                    className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
+                    {...(props.dir !== undefined
+                      ? { dir: props.dir as RxScrollArea.Direction }
+                      : {})}
+                    type="hover"
                   >
-                    <Typography
-                      className={alternatingBgColorLightClassNames}
-                      element="div"
-                      variant="body-1"
-                    >
-                      <DropdownContext.Provider
-                        value={{
-                          disabled,
-                        }}
-                      >
-                        {children}
-                      </DropdownContext.Provider>
-                    </Typography>
-                  </RxScrollArea.Viewport>
-
-                  <RxScrollArea.Scrollbar
-                    className={cj(
-                      `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
-                      'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
-                    )}
-                    orientation="vertical"
-                  >
-                    <RxScrollArea.Thumb
+                    <RxScrollArea.Viewport
                       className={cj(
-                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                        'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
+                        `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
                       )}
-                    />
-                  </RxScrollArea.Scrollbar>
-                </RxScrollArea.Root>
+                      style={{
+                        overflowY: undefined,
+                      }}
+                    >
+                      {contentElement}
+                    </RxScrollArea.Viewport>
+
+                    <RxScrollArea.Scrollbar
+                      className={cj(
+                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
+                        'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+                      )}
+                      orientation="vertical"
+                    >
+                      <RxScrollArea.Thumb
+                        className={cj(
+                          `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
+                          'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                        )}
+                      />
+                    </RxScrollArea.Scrollbar>
+                  </RxScrollArea.Root>
+                ) : (
+                  contentElement
+                )}
               </RxDropdown.Content>
             )}
           </RxDropdown.Portal>

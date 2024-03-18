@@ -40,6 +40,8 @@ export const SubDropdown = forwardRef<
   (
     {
       children,
+      condensed = false,
+      condensedItems = false,
       content,
       defaultOpen = false,
       disabled = false,
@@ -52,6 +54,7 @@ export const SubDropdown = forwardRef<
       onSubMenuOpenChange,
       open,
       withIndicator = true,
+      withScroll = true,
       ...props
     }: SubDropdownProps,
     ref: ForwardedRef<SubDropdownCombinedRefs>,
@@ -105,10 +108,13 @@ export const SubDropdown = forwardRef<
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
 
-    const { disabled: dropdownDisabled } = useContext(DropdownContext)
-    const { disabled: groupDisabled } = useContext(DropdownGroupContext)
+    const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
+      useContext(DropdownContext)
+    const { condensed: groupCondensed, disabled: groupDisabled } =
+      useContext(DropdownGroupContext)
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
+    const isCondensed = condensed || groupCondensed || dropdownCondensed
 
     const handleSubMenuInteractOutside: DismissableLayerProps['onInteractOutside'] =
       (event) => {
@@ -129,6 +135,24 @@ export const SubDropdown = forwardRef<
         }
       }
 
+    const contentElement = (
+      <Typography
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__sub-menu__items`,
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}__sub-menu__items--disabled`
+            : alternatingBgColorLightClassNames,
+        )}
+        element="div"
+      >
+        <DropdownGroupContext.Provider
+          value={{ condensed: condensedItems, disabled }}
+        >
+          {children}
+        </DropdownGroupContext.Provider>
+      </Typography>
+    )
+
     return (
       <RxDropdownMenu.Sub
         {...(defaultOpen ? { defaultOpen: true } : {})}
@@ -141,7 +165,8 @@ export const SubDropdown = forwardRef<
           className={cn(
             `${PREFIX}-${GROUP_NAME}__sub-menu`,
             'flex items-center gap-1',
-            'rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+            'rounded-sm outline-none transition-background-color duration-300 ease-out',
+            isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
             icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__with-icon` : '',
             isDisabled
               ? `${PREFIX}-${GROUP_NAME}__sub-menu--disabled cursor-not-allowed !bg-transparent text-disabled`
@@ -208,52 +233,44 @@ export const SubDropdown = forwardRef<
               content,
             )}
           >
-            <RxScrollArea.Root
-              className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
-              {...(props.dir !== undefined
-                ? { dir: props.dir as RxScrollArea.Direction }
-                : {})}
-              type="hover"
-            >
-              <RxScrollArea.Viewport
-                className={cj(
-                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__viewport`,
-                  `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                )}
-                style={{
-                  overflowY: undefined,
-                }}
+            {withScroll ? (
+              <RxScrollArea.Root
+                className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
+                {...(props.dir !== undefined
+                  ? { dir: props.dir as RxScrollArea.Direction }
+                  : {})}
+                type="hover"
               >
-                <Typography
+                <RxScrollArea.Viewport
                   className={cj(
-                    `${PREFIX}-${GROUP_NAME}__sub-menu__items`,
-                    disabled
-                      ? `${PREFIX}-${GROUP_NAME}__sub-menu__items--disabled`
-                      : alternatingBgColorLightClassNames,
+                    `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__viewport`,
+                    `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
                   )}
-                  element="div"
+                  style={{
+                    overflowY: undefined,
+                  }}
                 >
-                  <DropdownGroupContext.Provider value={{ disabled }}>
-                    {children}
-                  </DropdownGroupContext.Provider>
-                </Typography>
-              </RxScrollArea.Viewport>
+                  {contentElement}
+                </RxScrollArea.Viewport>
 
-              <RxScrollArea.Scrollbar
-                className={cj(
-                  `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
-                  'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
-                )}
-                orientation="vertical"
-              >
-                <RxScrollArea.Thumb
+                <RxScrollArea.Scrollbar
                   className={cj(
-                    `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
-                    'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                    `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
+                    'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
                   )}
-                />
-              </RxScrollArea.Scrollbar>
-            </RxScrollArea.Root>
+                  orientation="vertical"
+                >
+                  <RxScrollArea.Thumb
+                    className={cj(
+                      `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
+                      'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                    )}
+                  />
+                </RxScrollArea.Scrollbar>
+              </RxScrollArea.Root>
+            ) : (
+              contentElement
+            )}
           </RxDropdownMenu.SubContent>
         </RxDropdownMenu.Portal>
       </RxDropdownMenu.Sub>

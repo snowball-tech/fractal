@@ -66,6 +66,7 @@ const meta: Meta<InputRadioGroupProps> = {
   },
   args: {
     children: items,
+    condensed: false,
     disabled: false,
     fullWidth: false,
     required: false,
@@ -101,21 +102,14 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   args: {
+    condensed: false,
     orientation: 'vertical',
     value: '',
     variant: DEFAULT_VARIANT,
   },
 }
 
-const separator = (
-  <hr
-    style={{
-      margin: 'var(--size-spacing-3) 0',
-      marginTop: 0,
-      width: '100%',
-    }}
-  />
-)
+const separator = <hr className="mb-3 w-full" />
 
 const Title = ({
   children,
@@ -125,9 +119,9 @@ const Title = ({
   main?: boolean
 }) => {
   return main ? (
-    <h1 style={{ marginTop: '2rem' }}>{children}</h1>
+    <h1 className="mt-4">{children}</h1>
   ) : (
-    <h3 style={{ marginBlock: '1rem' }}>{children}</h3>
+    <h3 className="my-2">{children}</h3>
   )
 }
 
