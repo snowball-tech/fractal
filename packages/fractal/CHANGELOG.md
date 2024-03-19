@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.4.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.3...@snowball-tech/fractal@10.4.4) (2024-03-19)
+
+### 🏗 Chores
+
+- add missing types ([cccaf74](https://github.com/snowball-tech/fractal/commit/cccaf74ee1054372a68ba3f496ee475e94f87faf))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.1.0
+
 ## @snowball-tech/fractal [10.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.2...@snowball-tech/fractal@10.4.3) (2024-03-19)
 
 ### 📦 Dependencies
