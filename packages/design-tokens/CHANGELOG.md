@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [11.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.0.1...@snowball-tech/design-tokens@11.1.0) (2024-03-19)
+
+### 💄 UI/UX
+
+- fix line height in body-1 typo ([3c48a93](https://github.com/snowball-tech/fractal/commit/3c48a9348b65deee7dec02ee911801746085cc6b))
+
 ## @snowball-tech/design-tokens [11.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.0.0...@snowball-tech/design-tokens@11.0.1) (2024-03-13)
 
 ### 🐛 Bug Fixes
