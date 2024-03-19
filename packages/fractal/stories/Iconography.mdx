@@ -35,7 +35,7 @@ A good practice is to import each single icon instead of using the barrel file
 to allow tree-shaking and reduce the size of your bundle:
 
 ```jsx
-import UilIcons from '@iconscout/react-unicons/dist/icons/uil-icons'
+import UilIcons from '@iconscout/react-unicons/icons/uil-icons'
 ```
 
 ## Available icons
@@ -57,7 +57,7 @@ import UilIcons from '@iconscout/react-unicons/dist/icons/uil-icons'
       title={iconName}
       onClick={() => {
         navigator.clipboard.writeText(
-          `import ${iconName} from '@iconscout/react-unicons/dist/icons/${kebabCase(
+          `import ${iconName} from '@iconscout/react-unicons/icons/${kebabCase(
             iconName,
           )}'`,
         )

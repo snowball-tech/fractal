@@ -1,4 +1,4 @@
-import SignoutIcon from '@iconscout/react-unicons/dist/icons/uil-signout'
+import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'

@@ -10,3 +10,14 @@ declare module '@snowball-tech/design-tokens/dist/web/typescript/constants' {
     /* eslint-enable perfectionist/sort-object-types */
   }
 }
+
+declare module '@iconscout/react-unicons/icons/*' {
+  type IconProps = {
+    className?: string
+    color?: string
+    size?: string
+    style?: Record<string, number | string | null | undefined>
+  }
+  const icon: (props: IconProps) => JSX.Element
+  export = icon
+}

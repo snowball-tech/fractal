@@ -1,6 +1,6 @@
 'use client'
 
-import CheckIcon from '@iconscout/react-unicons/dist/icons/uil-check'
+import CheckIcon from '@iconscout/react-unicons/icons/uil-check'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'

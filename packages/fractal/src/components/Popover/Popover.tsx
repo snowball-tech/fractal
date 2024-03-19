@@ -1,4 +1,4 @@
-import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
+import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxPopover from '@radix-ui/react-popover'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import isFunction from 'lodash/fp/isFunction'
