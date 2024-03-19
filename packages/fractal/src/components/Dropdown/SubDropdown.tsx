@@ -164,7 +164,7 @@ export const SubDropdown = forwardRef<
           asChild
           className={cn(
             `${PREFIX}-${GROUP_NAME}__sub-menu`,
-            'flex items-center gap-1',
+            'flex w-full flex-row items-center gap-1',
             'rounded-sm outline-none transition-background-color duration-300 ease-out',
             isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
             icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__with-icon` : '',
@@ -179,7 +179,7 @@ export const SubDropdown = forwardRef<
             className={cj(
               `${PREFIX}-${GROUP_NAME}__sub-menu__label`,
               'alternatee',
-              'flex items-center justify-between gap-1',
+              'flex w-full flex-row items-center gap-1',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__sub-menu__label--disabled text-disabled`
                 : '',
@@ -196,7 +196,9 @@ export const SubDropdown = forwardRef<
               </div>
             )}
 
-            <Typography element="label">{label}</Typography>
+            <Typography className="flex-1" element="label">
+              {label}
+            </Typography>
 
             {withIndicator && (
               <div
