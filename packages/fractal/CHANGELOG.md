@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.4.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.2...@snowball-tech/fractal@10.4.3) (2024-03-19)
+
+### 📦 Dependencies
+
+- use the original unicon package ([f91cb0e](https://github.com/snowball-tech/fractal/commit/f91cb0e11aef4bdbaf9d8dc4daf02b620eba7046))
+
 ## @snowball-tech/fractal [10.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.1...@snowball-tech/fractal@10.4.2) (2024-03-19)
 
 ### 📦 Dependencies
