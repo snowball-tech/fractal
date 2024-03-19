@@ -120,7 +120,7 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {
-    "@iconscout/react-unicons": "git+https://github.com/Azuky/react-unicons",
+    "@iconscout/react-unicons": "^2.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-compose-refs": "^1.0.1",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -152,7 +152,6 @@
     "tailwindcss": "^3.4.1"
   },
   "peerDependencies": {
-    "@iconscout/react-unicons": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

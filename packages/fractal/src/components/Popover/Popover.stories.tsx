@@ -1,4 +1,4 @@
-import MoreMenuIcon from '@iconscout/react-unicons/dist/icons/uil-ellipsis-v'
+import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
 import type { ComponentProps, ReactNode } from 'react'

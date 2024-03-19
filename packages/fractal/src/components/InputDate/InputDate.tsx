@@ -1,7 +1,7 @@
 'use client'
 
-import CheckCircleIcon from '@iconscout/react-unicons/dist/icons/uil-check-circle'
-import ExclamationCircleIcon from '@iconscout/react-unicons/dist/icons/uil-exclamation-circle'
+import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
+import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'

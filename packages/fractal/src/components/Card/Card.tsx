@@ -1,4 +1,4 @@
-import CloseIcon from '@iconscout/react-unicons/dist/icons/uil-times'
+import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
