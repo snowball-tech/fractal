@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.0...@snowball-tech/fractal@10.4.1) (2024-03-19)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix the label position of a subdropdown trigger whith icon ([a6aeaef](https://github.com/snowball-tech/fractal/commit/a6aeaef49e6067f069703f06a100eef255d0a411))
+
 # @snowball-tech/fractal [10.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.3.0...@snowball-tech/fractal@10.4.0) (2024-03-18)
 
 ### ✨ Features
