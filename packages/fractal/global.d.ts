@@ -15,8 +15,12 @@ declare module '@iconscout/react-unicons/icons/*' {
   type IconProps = {
     className?: string
     color?: string
+    fill?: string
+    height?: number
     size?: string
+    stroke?: string
     style?: Record<string, number | string | null | undefined>
+    width?: number
   }
   const icon: (props: IconProps) => JSX.Element
   export = icon
