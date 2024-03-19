@@ -219,6 +219,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             {icon}
           </div>
         )}
+
         <Typography className="flex-1" element="label">
           {label}
         </Typography>
