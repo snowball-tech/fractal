@@ -335,7 +335,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 22,
+          value: 24,
         },
       },
 
