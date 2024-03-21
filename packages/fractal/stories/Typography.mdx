@@ -63,115 +63,127 @@ You can use 4 levels of typography in Fractal:
 ### Display
 
 **Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
-**Weights:** `800` (bold)
+**Weight:** `800`
 
 #### Desktop
+
+**Sizes:** `80px` (`display-1`), `72px` (`display-2`)
 
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[80, 72]}
-  fontWeight={{
-    bold: 800,
-    median: 600,
-    regular: 400,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 #### Mobile
 
+**Sizes:** `48px` (`display-1`), `40px` (`display-2`)
+
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[48, 40]}
-  fontWeight={{
-    bold: 800,
-    median: 600,
-    regular: 400,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 ### Display Wide
 
 **Font:** `PolySansWide, "Arial Black", sans-serif`  
-**Weights:** `800` (bold)
+**Weight:** `800`
 
 #### Desktop
+
+**Size:** `56px`
 
 <Typeset
   fontFamily={`PolySansWide, "Arial Black", sans-serif`}
   fontSizes={[56]}
-  fontWeight={{
-    bold: 800,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 #### Mobile
 
+**Size:** `32px`
+
 <Typeset
   fontFamily={`PolySansWide, "Arial Black", sans-serif`}
   fontSizes={[32]}
-  fontWeight={{
-    bold: 800,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 ### Heading
 
 **Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
-**Weights:** `800` (bold)
+**Weight:** `800` (regular and `-link`)
 
 #### Desktop
+
+**Sizes:** `40px` (`heading-1`), `32px` (`heading-2`), `28px` (`heading-3`), `24px` (`heading-4`)
 
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[40, 32, 24, 20]}
-  fontWeight={{
-    bold: 800,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 #### Mobile
 
+**Sizes:** `32px` (`heading-1`), `28px` (`heading-2`), `24px` (`heading-3`), `20px` (`heading-4`)
+
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[32, 28, 24, 20]}
-  fontWeight={{
-    bold: 800,
-  }}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 ### Body
 
 **Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
-**Weights:** `400` (regular), `600` (median), `800` (bold)
+**Sizes:** `16px` (`body-1`), `14px` (`body-2`)  
+**Weights:** `400`, `600` (`-median`), `800` (`-bold` and `-link`)
 
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[16, 14]}
-  fontWeight={{
-    bold: 800,
-    median: 600,
-    regular: 400,
-  }}
+  fontWeight={400}
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={600}
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 ### Caption
 
 **Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
-**Weights:** `600` (median), `800` (bold)
+**Size:** `12px`  
+**Weights:** `600` (`-median`), `800` (`-bold` and `-link`)
 
 <Typeset
   fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
   fontSizes={[12]}
-  fontWeight={{
-    bold: 800,
-    median: 600,
-  }}
+  fontWeight={600}
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontSizes={[12]}
+  fontWeight={800}
   sampleText="May the force be with you!"
 />
