@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.4.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.4...@snowball-tech/fractal@10.4.5) (2024-03-21)
+
+### 📝 Documentation
+
+- **typography:** fix the weights of the fonts ([4439650](https://github.com/snowball-tech/fractal/commit/44396502f81d432602dc43eab5b67364e7736502))
+
 ## @snowball-tech/fractal [10.4.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.3...@snowball-tech/fractal@10.4.4) (2024-03-19)
 
 ### 🏗 Chores
