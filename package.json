@@ -86,7 +86,7 @@
     "lint-staged": "^15.2.2",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
-    "semantic-release": "^22.0.12",
+    "semantic-release": "^23.0.0",
     "serve": "^14.2.1",
     "stylelint": "^16.2.1"
   },
