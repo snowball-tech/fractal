@@ -49,7 +49,8 @@
     "lint-fix": "yarn run -T eslint --cache --fix .",
     "quality": "yarn run lint & yarn run format",
     "quality-fix": "yarn run lint-fix && yarn run format-fix",
-    "setup": "(yarn run -T is-ci || yarn install) && yarn run build"
+    "setup": "(yarn run -T is-ci || yarn install) && yarn run build",
+    "update-deps": "yarn run -T update-deps"
   },
   "devDependencies": {
     "@snowball-tech/eslint-config": "^5.3.5",
