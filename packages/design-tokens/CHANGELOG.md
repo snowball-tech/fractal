@@ -1,3 +1,10 @@
+## @snowball-tech/design-tokens [11.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.1.0...@snowball-tech/design-tokens@11.1.1) (2024-03-22)
+
+### 📦 Dependencies
+
+- fix lockfile and dedupe deps ([0f0c0d8](https://github.com/snowball-tech/fractal/commit/0f0c0d8c9c850d5b6a6da9cc9366d4ed759e6403))
+- improves dependencies ([c554de4](https://github.com/snowball-tech/fractal/commit/c554de47057400ec16e9828c2d6dc51dbad4d67f))
+
 # @snowball-tech/design-tokens [11.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.0.1...@snowball-tech/design-tokens@11.1.0) (2024-03-19)
 
 ### 💄 UI/UX
