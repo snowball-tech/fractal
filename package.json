@@ -49,6 +49,7 @@
   "scripts": {
     "build": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build",
     "build-vercel": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build-vercel",
+    "check-deps": "yarn depcheck --ignores='@snowball-tech/semantic-release-config,@snowball-tech/stylelint-config,chromatic,lint-staged,nodemon,semantic-release,serve,stylelint' & yarn workspaces foreach --all -p run check-deps",
     "format": "yarn run -T format-root & yarn workspaces foreach --all -p run format",
     "format-fix": "yarn run -T format-root-fix & yarn workspaces foreach --all -p run format-fix",
     "format-root": "prettier --cache --check \"./!(apps|packages)\"",
@@ -59,13 +60,15 @@
     "lint-root-fix": "eslint --cache --fix \"./!(apps|packages)\"",
     "publish-all": "multi-semantic-release",
     "publish-all-local": "CI=true yarn publish-all",
-    "quality": "yarn run format && yarn run lint && yarn run types-check",
+    "quality": "yarn run lint & yarn run format & yarn run types-check",
+    "quality-fix": "yarn run lint-fix && yarn run format-fix && yarn run types-check",
     "presetup": "is-ci || yarn install",
     "setup": "yarn run presetup && (yarn setup-freezer & yarn setup-husky) && yarn workspaces foreach --all -p --topological-dev run setup",
     "setup-freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup-husky": "is-ci || yarn husky",
     "setup-vercel": "yarn setup-freezer && yarn workspaces foreach --all -p run setup-vercel",
     "types-check": "yarn workspaces foreach --all -p run types-check",
+    "update-deps": "yarn upgrade-interactive",
     "update-references": "workspaces-to-typescript-project-references --includesRoot"
   },
   "devDependencies": {
@@ -75,13 +78,8 @@
     "@snowball-tech/prettier-config": "^1.4.5",
     "@snowball-tech/semantic-release-config": "^2.1.5",
     "@snowball-tech/stylelint-config": "^2.2.5",
-    "@types/eslint": "^8.56.5",
-    "@types/is-ci": "^3.0.4",
-    "@types/node": "^20.11.29",
-    "@types/prettier": "^3.0.0",
-    "chromatic": "^11.1.0",
-    "concurrently": "^8.2.2",
-    "dotenv-cli": "^7.4.1",
+    "chromatic": "^11.2.0",
+    "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "is-ci": "^3.0.1",
@@ -90,9 +88,7 @@
     "prettier": "^3.2.5",
     "semantic-release": "^23.0.5",
     "serve": "^14.2.1",
-    "stylelint": "^16.2.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "stylelint": "^16.2.1"
   },
   "dependencies": {
     "@yarnpkg/types": "^4.0.0"
