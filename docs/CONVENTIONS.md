@@ -96,9 +96,7 @@ packages/applications
 _(by adding a `tsconfig.json` file in the appropriate folder and extending the base configuration with `"extends": "<relative path to>/tsconfig.json"`)_.
 
 When you want to use TypeScript in a package/application, you
-**will have to add `typescript` as a development dependency**.  
-Note however that `ts-node` is available as a global dependency if you need it.
-All you have to do to use it is run `yarn run -T ts-node`.
+**will have to add `typescript` as a development dependency**.
 
 ### Special notes
 

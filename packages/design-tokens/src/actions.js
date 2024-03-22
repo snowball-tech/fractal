@@ -27,7 +27,7 @@ StyleDictionary.registerAction({
   do: () => {
     const destinationDirectory = 'dist/web/'
 
-    execSync(`yarn run -T tsc --outDir ${destinationDirectory}`)
+    execSync(`yarn run tsc --outDir ${destinationDirectory}`)
     console.log(
       `✔︎ ${destinationDirectory}/tailwindcss/tailwind.config.js (ESM)`,
     )
