@@ -94,7 +94,7 @@
     "@storybook/react-vite": "^8.0.4",
     "@storybook/theming": "^8.0.4",
     "@types/lodash": "^4.17.0",
-    "@types/react": "^18.2.67",
+    "@types/react": "^18.2.70",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "chromatic": "^11.2.0",
@@ -111,7 +111,7 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.3",
     "vercel": "^33.6.1",
-    "vite": "^5.2.2",
+    "vite": "^5.2.6",
     "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {
