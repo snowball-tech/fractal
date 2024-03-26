@@ -73,6 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }: ButtonProps,
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
+    const hasIcon = Boolean(icon)
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
       console.warn(
@@ -127,8 +128,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled
         ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[variant]}`
         : `${variantClassNames[variant]} cursor-pointer`,
-      !isEmpty(icon)
-        ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition}`
+      hasIcon
+        ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
         : '',
       // eslint-disable-next-line no-nested-ternary
       iconOnly
@@ -153,8 +154,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {icon}
       </div>
     )
-
-    const hasIcon = Boolean(icon)
 
     const labelElement = (
       <Typography
@@ -182,7 +181,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             className={cj(
               wrap || truncate ? 'min-w-0' : '',
               wrap ? 'whitespace-break-spaces' : '',
-              truncate ? 'truncate' : 'truncate',
+              truncate ? 'truncate' : '',
             )}
           >
             {label}
