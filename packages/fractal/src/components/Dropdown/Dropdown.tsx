@@ -18,7 +18,7 @@ import {
   useState,
 } from 'react'
 
-import { Paper } from '@/components/Paper'
+import { Elevations } from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
@@ -36,6 +36,7 @@ import { DropdownContext } from './DropdownContext'
 export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
   (
     {
+      align,
       children,
       condensed = false,
       defaultOpen = false,
@@ -48,6 +49,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       onMenuOpenChange,
       onOpen,
       open,
+      side,
       toggleOnTriggerClick = true,
       trigger,
       width = 'fit',
@@ -181,32 +183,39 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       }
     }
 
+    const elevationClassNames = {
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      [Elevations.Bordered]: 'rounded-sm shadow-none',
+      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+      [Elevations.Higher]: 'rounded-md shadow-brutal ml-quarter mb-half',
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+    }
+
     const contentElement = (
-      <Paper
+      <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__dropdown__wrapper`,
+          alternatingBgColorLightClassNames,
           'mb-half',
           condensed
             ? `${PREFIX}-${GROUP_NAME}__dropdown__wrapper--condensed py-1`
             : '',
         )}
-        elevation={elevation}
+        element="div"
+        variant="body-1"
       >
-        <Typography
-          className={alternatingBgColorLightClassNames}
-          element="div"
-          variant="body-1"
+        <DropdownContext.Provider
+          value={{
+            condensed,
+            disabled,
+          }}
         >
-          <DropdownContext.Provider
-            value={{
-              condensed,
-              disabled,
-            }}
-          >
-            {children}
-          </DropdownContext.Provider>
-        </Typography>
-      </Paper>
+          {children}
+        </DropdownContext.Provider>
+      </Typography>
     )
 
     return (
@@ -286,11 +295,12 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             {isOpen && (
               <RxDropdown.Content
                 ref={dropdownRef}
-                align={dropdown.align ?? withIndicator ? 'end' : 'center'}
+                align={align ?? withIndicator ? 'end' : 'center'}
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  'pointer-events-auto relative z-50 overflow-hidden p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
+                  elevationClassNames[elevation],
+                  'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
                   !hasChildren
                     ? `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`
@@ -298,6 +308,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                   dropdown?.className,
                 )}
                 loop
+                side={side}
                 style={{
                   display: undefined,
                   ...widthStyle,
@@ -306,10 +317,11 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 onInteractOutside={handleDropdownInteractOutside}
                 {...omit(
                   [
+                    'align',
                     'asChild',
                     'className',
+                    'side',
                     'style',
-                    'align',
                     'onInteractOutside',
                   ],
                   dropdown,

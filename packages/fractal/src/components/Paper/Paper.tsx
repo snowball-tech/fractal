@@ -20,8 +20,8 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
       [Elevations.Bordered]: 'rounded-sm shadow-none',
-      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
-      [Elevations.Higher]: 'rounded-md shadow-brutal ml-quarter',
+      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+      [Elevations.Higher]: 'rounded-md shadow-brutal ml-quarter mb-half',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */

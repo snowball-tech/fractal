@@ -2,10 +2,8 @@ import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import UserProfileIcon from '@iconscout/react-unicons/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
-import isEmpty from 'lodash/fp/isEmpty'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
@@ -74,10 +72,7 @@ const mixedMenu = (
   </>
 )
 
-type DropdownProps = ComponentProps<typeof Dropdown> & {
-  align?: 'Auto' | 'Center' | 'End' | 'Start'
-  side?: 'Auto' | 'Bottom' | 'Left' | 'Right' | 'Top'
-}
+type DropdownProps = ComponentProps<typeof Dropdown>
 
 const meta: Meta<DropdownProps> = {
   argTypes: {
@@ -166,7 +161,7 @@ const meta: Meta<DropdownProps> = {
     },
   },
   args: {
-    align: 'Auto',
+    align: undefined,
     children: 'Text',
     condensed: false,
     defaultOpen: false,
@@ -174,7 +169,7 @@ const meta: Meta<DropdownProps> = {
     elevation: DEFAULT_ELEVATION,
     fullWidth: false,
     open: false,
-    side: 'Auto',
+    side: undefined,
     trigger: 'Text',
     width: 'fit',
     withIndicator: true,
@@ -186,27 +181,6 @@ const meta: Meta<DropdownProps> = {
         {storyFn()}
       </div>
     ),
-    function WithArgs(Story, context) {
-      const [{ align, dropdown, side, withIndicator }] =
-        useArgs<typeof context.args>()
-
-      return (
-        <Story
-          args={{
-            ...context.args,
-            dropdown: {
-              ...dropdown,
-              align:
-                (align as 'center' | 'end' | 'start') ?? withIndicator
-                  ? 'end'
-                  : 'center',
-              avoidCollisions: isEmpty(side),
-              side: side as 'bottom' | 'left' | 'right' | 'top',
-            },
-          }}
-        />
-      )
-    },
   ],
   parameters: {
     componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
