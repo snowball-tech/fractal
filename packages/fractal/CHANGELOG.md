@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.0...@snowball-tech/fractal@10.7.1) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- **submenu:** fix the 'active' property ([1d0219a](https://github.com/snowball-tech/fractal/commit/1d0219af9ff337504417a90130eb5e7d57ac26cc))
+
 # @snowball-tech/fractal [10.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.6.0...@snowball-tech/fractal@10.7.0) (2024-03-26)
 
 ### ✨ Features
