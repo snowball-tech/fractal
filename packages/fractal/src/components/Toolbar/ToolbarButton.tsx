@@ -102,7 +102,7 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
                 : `cursor-pointer`,
             )}
             element={hasChildren ? 'div' : 'label'}
-            variant={active ? 'body-1-bold' : 'body-1'}
+            variant={active ? 'body-1-median' : 'body-1'}
           >
             {hasChildren ? children : label}
           </Typography>

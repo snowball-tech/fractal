@@ -122,7 +122,7 @@ export const ToolbarDropdown = forwardRef<
                     : `cursor-pointer`,
                 )}
                 element="label"
-                variant={active ? 'body-1-bold' : 'body-1'}
+                variant={active ? 'body-1-median' : 'body-1'}
               >
                 {label}
               </Typography>
