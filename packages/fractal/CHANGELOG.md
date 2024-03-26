@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.6.0...@snowball-tech/fractal@10.7.0) (2024-03-26)
+
+### ✨ Features
+
+- **toolbar-button:** allow to have a link ([6678a3c](https://github.com/snowball-tech/fractal/commit/6678a3c9bdc5848c8109fabe56a05d0b7673b524))
+
 # @snowball-tech/fractal [10.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.4...@snowball-tech/fractal@10.6.0) (2024-03-26)
 
 ### 💄 UI/UX
