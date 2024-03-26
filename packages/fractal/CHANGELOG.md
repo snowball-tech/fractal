@@ -1,3 +1,14 @@
+# @snowball-tech/fractal [10.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.7...@snowball-tech/fractal@10.5.0) (2024-03-26)
+
+### ✨ Features
+
+- **toolbar:** revamp the style of the toolbar ([fcea60d](https://github.com/snowball-tech/fractal/commit/fcea60de3141d54e577d166ffeb0ed7b7e4cafc1))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([a2ee9ef](https://github.com/snowball-tech/fractal/commit/a2ee9ef5fde6ca14ae3a33e28bd97f5fca5fe0a0))
+- upgrade dependencies ([94c78f0](https://github.com/snowball-tech/fractal/commit/94c78f0560e3fdba5f9736ca15acbc5b5f6c0a02))
+
 ## @snowball-tech/fractal [10.4.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.6...@snowball-tech/fractal@10.4.7) (2024-03-22)
 
 ### 📦 Dependencies
