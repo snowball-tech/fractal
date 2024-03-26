@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.4...@snowball-tech/fractal@10.6.0) (2024-03-26)
+
+### 💄 UI/UX
+
+- **toolbar:** change the typo of an active element ([264774d](https://github.com/snowball-tech/fractal/commit/264774db2ad6eade014118f0393ddf54a5e63bee))
+
 ## @snowball-tech/fractal [10.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.3...@snowball-tech/fractal@10.5.4) (2024-03-26)
 
 ### 🐛 Bug Fixes
