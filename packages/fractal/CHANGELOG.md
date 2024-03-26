@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.1...@snowball-tech/fractal@10.5.2) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix positioning of the dropdown with elevation ([4e55b78](https://github.com/snowball-tech/fractal/commit/4e55b785459e0c4a6f2b8831447eda960462e493))
+
 ## @snowball-tech/fractal [10.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.0...@snowball-tech/fractal@10.5.1) (2024-03-26)
 
 ### 🐛 Bug Fixes
