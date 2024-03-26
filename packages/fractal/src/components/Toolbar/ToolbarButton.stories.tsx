@@ -31,10 +31,15 @@ const meta: Meta<ToolbarButtonProps> = {
   args: {
     active: false,
     disabled: false,
-    icon: 'None',
+    fullWidth: false,
+    href: '',
+    icon: 'Send',
     iconOnly: false,
-    iconPosition: 'left',
+    iconPosition: 'right',
     label: 'Luke Skywalker',
+    target: '_blank',
+    type: 'button',
+    underlined: false,
   },
   component: ToolbarButton,
 
@@ -48,20 +53,30 @@ export const Playground: Story = {
   render: ({
     active = false,
     disabled = false,
-    icon = undefined,
+    fullWidth = false,
+    href = '',
+    icon = <SendIcon />,
     iconOnly = false,
-    iconPosition = 'left',
+    iconPosition = 'right',
     label = 'Luke Skywalker',
+    target = '_blank',
+    type = 'button',
+    underlined = false,
   }) => (
     <div className="h-13">
       <Toolbar>
         <ToolbarButton
           active={active}
           disabled={disabled}
+          fullWidth={fullWidth}
+          href={href}
           icon={icon}
           iconOnly={iconOnly}
           iconPosition={iconPosition}
           label={label}
+          target={target}
+          type={type}
+          underlined={underlined}
           onClick={action('onClick')}
         />
       </Toolbar>

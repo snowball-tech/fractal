@@ -1,11 +1,7 @@
 import { Root } from '@radix-ui/react-toolbar'
-import type {
-  AllHTMLAttributes,
-  ComponentProps,
-  MouseEvent,
-  ReactNode,
-} from 'react'
+import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
+import { ButtonProps } from '@/components/Button'
 import type {
   CombinedRefs as DropdownCombinedRefs,
   DropdownItemGroupProps,
@@ -41,42 +37,12 @@ export interface ToolbarProps
   orientation?: `${Orientations}`
 }
 
-export interface ToolbarButtonProps
-  extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'type'> {
+export type ToolbarButtonProps = Omit<
+  ButtonProps,
+  'truncate' | 'variant' | 'wrap'
+> & {
   /** Indicates if the toolbar button is active. */
   active?: boolean
-  /**
-   * The content of the toolbar button.
-   *
-   * Use this for complex content where a string (passed to the `label` prop) is
-   * not enough.
-   */
-  children?: ReactNode
-  /** Indicates if the toolbar button is disabled. */
-  disabled?: boolean
-  /** An icon to display in the toolbar button. */
-  icon?: ReactNode
-  /**
-   * Indicates if you want to only display the icon.
-   * The label still is mandatory and will be used as an `aria-label` for
-   * accessibility.
-   */
-  iconOnly?: boolean
-  /** The position of the icon relative to the label. */
-  iconPosition?: 'left' | 'right'
-  /**
-   * The content of the toolbar button.
-   *
-   * Use this when you only need to display text in a toolbar button.
-   * If you need more complex content, use the `children` prop.
-   *
-   * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the toolbar button.
-   */
-  label?: string
-  /** Event handler called when the toolbar button is clicked. */
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
 }
 
 export type ToolbarDropdownProps = Omit<
