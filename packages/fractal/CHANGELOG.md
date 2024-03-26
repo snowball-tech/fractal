@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [10.7.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.1...@snowball-tech/fractal@10.7.2) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- add missing classname for alternating color ([adddd64](https://github.com/snowball-tech/fractal/commit/adddd64049c7ee82c2a05dcde395ae5712104778))
+- fix alternating color style ([8d0a92f](https://github.com/snowball-tech/fractal/commit/8d0a92fb931c344a486301fa7b4e53d05e09f32d))
+
 ## @snowball-tech/fractal [10.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.0...@snowball-tech/fractal@10.7.1) (2024-03-26)
 
 ### 🐛 Bug Fixes
