@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.3...@snowball-tech/fractal@10.5.4) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix an extra padding ([a8e4e88](https://github.com/snowball-tech/fractal/commit/a8e4e88a50f07cea54f0273a7eef34e7451521db))
+
 ## @snowball-tech/fractal [10.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.2...@snowball-tech/fractal@10.5.3) (2024-03-26)
 
 ### 🐛 Bug Fixes
