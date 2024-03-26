@@ -195,7 +195,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             : 'cursor-pointer text-dark',
           popup?.trigger?.className,
         )}
-        data-highlighted={active || isOpen || undefined}
         element="div"
         role="menuitem"
         tabIndex={-1}
@@ -330,6 +329,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           props.className,
           popup?.className,
         )}
+        data-highlighted={active || isOpen || undefined}
         style={{
           ...(props.style ?? {}),
           ...(popup?.style ?? {}),
@@ -380,6 +380,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           'rounded-sm',
           props.className,
         )}
+        data-highlighted={active || isOpen || undefined}
         disabled={disabled}
         elevation={elevation}
         fullWidth

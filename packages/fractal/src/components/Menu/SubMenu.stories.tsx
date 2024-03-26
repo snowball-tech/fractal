@@ -38,6 +38,7 @@ const meta: Meta<SubMenuProps> = {
     },
   },
   args: {
+    active: false,
     align: undefined,
     condensed: false,
     condensedItems: false,
@@ -65,6 +66,7 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({
+    active = false,
     align,
     condensed = false,
     condensedItems = false,
@@ -82,6 +84,7 @@ export const Playground: Story = {
     <div className="h-[300px]">
       <Menu>
         <SubMenu
+          active={active}
           align={align}
           condensed={condensed}
           condensedItems={condensedItems}
