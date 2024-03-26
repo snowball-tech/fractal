@@ -160,7 +160,7 @@ const meta: Meta<ToolbarDropdownProps> = {
     ),
   ],
 
-  title: 'Molecules/Toolbar/ToolbarDropdown/ToolbarDrodown',
+  title: 'Molecules/Toolbar/ToolbarDropdown/ToolbarDropdown',
 } satisfies Meta<ToolbarDropdownProps>
 
 export default meta

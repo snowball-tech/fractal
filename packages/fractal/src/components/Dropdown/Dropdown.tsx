@@ -199,9 +199,8 @@ perfectionist/sort-objects */
         className={cj(
           `${PREFIX}-${GROUP_NAME}__dropdown__wrapper`,
           alternatingBgColorLightClassNames,
-          'mb-half',
           condensed
-            ? `${PREFIX}-${GROUP_NAME}__dropdown__wrapper--condensed py-1`
+            ? `${PREFIX}-${GROUP_NAME}__dropdown__wrapper--condensed`
             : '',
         )}
         element="div"
