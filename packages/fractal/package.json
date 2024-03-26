@@ -140,7 +140,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "clsx": "^2.1.0",
     "country-flag-icons": "^1.5.10",
-    "libphonenumber-js": "^1.10.58",
+    "libphonenumber-js": "^1.10.59",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",

@@ -4702,7 +4702,7 @@ __metadata:
     clsx: "npm:^2.1.0"
     country-flag-icons: "npm:^1.5.10"
     eslint: "npm:^8.57.0"
-    libphonenumber-js: "npm:^1.10.58"
+    libphonenumber-js: "npm:^1.10.59"
     lodash: "npm:^4.17.21"
     normalize.css: "npm:^8.0.1"
     postcss: "npm:^8.4.38"
@@ -14680,10 +14680,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.10.58":
-  version: 1.10.58
-  resolution: "libphonenumber-js@npm:1.10.58"
-  checksum: 10/8ac5a23a8b37ad4a8e75de29e0436270272429e1deebf090257f23c67a23138938619822c260408c1ade7170e1859e4ced732b80011e38148ed9a0848dd9a850
+"libphonenumber-js@npm:^1.10.59":
+  version: 1.10.59
+  resolution: "libphonenumber-js@npm:1.10.59"
+  checksum: 10/71bd840fd3f884564fb11dd21355a195908f32c974537531887bc0373045fc98b6fbf7afb9e7c1b71f71da8468acbb24e16e13041aad4faa6c866fd5c0ee1cd5
   languageName: node
   linkType: hard
 
