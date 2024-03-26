@@ -10,6 +10,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
 import { Button } from '@/components/Button'
+import { Elevations } from '@/components/Paper/Paper.constants'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
@@ -21,6 +22,7 @@ import {
   DropdownRadioGroup,
   DropdownRadioItem,
 } from '.'
+import { DEFAULT_ELEVATION } from './Dropdown.constants'
 
 const textMenu = (
   <>
@@ -105,6 +107,13 @@ const meta: Meta<DropdownProps> = {
         },
       },
     },
+    elevation: {
+      control: 'radio',
+      table: {
+        defaultValue: { summary: DEFAULT_ELEVATION },
+        type: { summary: Object.values(Elevations).join('|') },
+      },
+    },
     side: {
       control: 'radio',
       mapping: {
@@ -162,6 +171,7 @@ const meta: Meta<DropdownProps> = {
     condensed: false,
     defaultOpen: false,
     disabled: false,
+    elevation: DEFAULT_ELEVATION,
     fullWidth: false,
     open: false,
     side: 'Auto',

@@ -18,11 +18,12 @@ import {
   useState,
 } from 'react'
 
+import { Paper } from '@/components/Paper'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
+import { DEFAULT_ELEVATION, GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
 import { DropdownContext } from './DropdownContext'
 
@@ -40,6 +41,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       defaultOpen = false,
       disabled = false,
       dropdown = {},
+      elevation = DEFAULT_ELEVATION,
       fullWidth = false,
       onClose,
       onInteractOutside,
@@ -180,20 +182,31 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
     }
 
     const contentElement = (
-      <Typography
-        className={alternatingBgColorLightClassNames}
-        element="div"
-        variant="body-1"
+      <Paper
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__dropdown__wrapper`,
+          'mb-half',
+          condensed
+            ? `${PREFIX}-${GROUP_NAME}__dropdown__wrapper--condensed py-1`
+            : '',
+        )}
+        elevation={elevation}
       >
-        <DropdownContext.Provider
-          value={{
-            condensed,
-            disabled,
-          }}
+        <Typography
+          className={alternatingBgColorLightClassNames}
+          element="div"
+          variant="body-1"
         >
-          {children}
-        </DropdownContext.Provider>
-      </Typography>
+          <DropdownContext.Provider
+            value={{
+              condensed,
+              disabled,
+            }}
+          >
+            {children}
+          </DropdownContext.Provider>
+        </Typography>
+      </Paper>
     )
 
     return (
@@ -277,7 +290,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  'pointer-events-auto relative z-50 overflow-hidden rounded-sm border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
+                  'pointer-events-auto relative z-50 overflow-hidden p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
                   !hasChildren
                     ? `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`

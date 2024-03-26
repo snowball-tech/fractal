@@ -37,6 +37,7 @@ export default function DropdownItemGroup({
     <RxDropdownMenu.Group
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
+        isCondensed ? `${PREFIX}-${GROUP_NAME}__item-group--condensed` : '',
         'px-2',
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,

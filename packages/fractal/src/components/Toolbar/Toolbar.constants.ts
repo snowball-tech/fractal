@@ -9,10 +9,4 @@ export enum Orientations {
 
 export const DEFAULT_ORIENTATION = Orientations.Horizontal
 
-export enum Variants {
-  Secondary = 'secondary',
-}
-
-export const DEFAULT_VARIANT = Variants.Secondary
-
 export const DEFAULT_ELEVATION = Elevations.Elevated

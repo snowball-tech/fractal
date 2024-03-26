@@ -1,9 +1,24 @@
-import { Root, ToggleGroup, ToggleItem } from '@radix-ui/react-toolbar'
-import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
+import { Root } from '@radix-ui/react-toolbar'
+import type {
+  AllHTMLAttributes,
+  ComponentProps,
+  MouseEvent,
+  ReactNode,
+} from 'react'
 
+import type {
+  CombinedRefs as DropdownCombinedRefs,
+  DropdownItemGroupProps,
+  DropdownItemProps,
+  DropdownItemSeparatorProps,
+  DropdownProps,
+} from '@/components/Dropdown/Dropdown.types'
 import { Paper } from '@/components/Paper/Paper'
+import { SelectProps } from '@/components/Select'
 
-import { Orientations, Variants } from './Toolbar.constants'
+import { Orientations } from './Toolbar.constants'
+
+export type CombinedRefs = DropdownCombinedRefs
 
 export interface ToolbarProps
   extends Omit<
@@ -24,74 +39,22 @@ export interface ToolbarProps
   fullWidth?: boolean
   /** The orientation of the toolbar. */
   orientation?: `${Orientations}`
-  /** The variant of the toggles to use. */
-  variant?: `${Variants}`
 }
 
-export interface ToolbarToggleGroupProps
-  extends Omit<
-    ComponentProps<typeof ToggleGroup> & AllHTMLAttributes<HTMLDivElement>,
-    'asChild' | 'type'
-  > {
-  /** The toggles to display inside of the group. */
-  children: ReactNode
+export interface ToolbarButtonProps
+  extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'type'> {
+  /** Indicates if the toolbar button is active. */
+  active?: boolean
   /**
-   * The uncontrolled value of the toggle group (i.e. the value of the default
-   * toggled toggle).
-   *
-   * Pass a string for a single toggle group and an array of strings for a
-   * `multiple` toggle group.
-   */
-  defaultValue?: Array<string> | string
-  /**
-   * Prevents the user from interacting with any of the toggles in the toggle
-   * group.
-   */
-  disabled?: boolean
-  /**
-   * The accessible label of the toggle group.
-   *
-   * If provided, this will be used as the `aria-label` and the `title` of the
-   * toggle group.
-   */
-  label?: string
-  /**
-   * Indicates if multiple toggles can be toggled at the same time inside of the
-   * toggle group.
-   */
-  multiple?: boolean
-  /**
-   * Event handler called when the value of the toggle group (i.e. the toggled
-   * toggle) changes.
-   */
-  onValueChange?: (value: Array<string> | string) => void
-  /**
-   * The controlled value of the toggle group (i.e. the value of the toggled
-   * toggle).
-   *
-   * Must be used in conjunction with `onValueChange`.
-   *
-   * Pass a string for a single toggle group and an array of strings for a
-   * `multiple` toggle group.
-   */
-  value?: Array<string> | string
-}
-
-export interface ToolbarToggleProps
-  extends Omit<
-    ComponentProps<typeof ToggleItem> & AllHTMLAttributes<HTMLButtonElement>,
-    'asChild'
-  > {
-  /**
-   * The content of the toggle.
+   * The content of the toolbar button.
    *
    * Use this for complex content where a string (passed to the `label` prop) is
    * not enough.
    */
   children?: ReactNode
-  /** Indicates if the toggle is disabled. */
+  /** Indicates if the toolbar button is disabled. */
   disabled?: boolean
-  /** An icon to display on the left of the toggle. */
+  /** An icon to display in the toolbar button. */
   icon?: ReactNode
   /**
    * Indicates if you want to only display the icon.
@@ -102,22 +65,47 @@ export interface ToolbarToggleProps
   /** The position of the icon relative to the label. */
   iconPosition?: 'left' | 'right'
   /**
-   * The content of the toggle.
+   * The content of the toolbar button.
    *
-   * Use this when you only need to display text in a toggle.
+   * Use this when you only need to display text in a toolbar button.
    * If you need more complex content, use the `children` prop.
    *
    * When using the `children` prop, you can use this prop to set a simple
    * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the toggle.
+   * and `title` for the toolbar button.
    */
   label?: string
-  /** Event handler called when the toggle is clicked. */
-  onToggle?: (toggled: boolean) => void
-  /**
-   * The value of the toggle.
-   */
-  value: string
+  /** Event handler called when the toolbar button is clicked. */
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
 }
+
+export type ToolbarDropdownProps = Omit<
+  DropdownProps,
+  'children' | 'condensed' | 'trigger'
+> &
+  Pick<ToolbarButtonProps, 'active' | 'icon' | 'iconOnly' | 'iconPosition'> & {
+    /**
+     * The content of the toolbar dropdown menu.
+     *
+     * For the best result, please use the `ToolbarDropdownItem`, `ToolbarDropdownItemGroup`,
+     * `ToolbarDropdownItemSeparator` or `ToolbarSubDropdown` components.
+     */
+    children: ReactNode
+    /**
+     * The label of the toolbar dropdown menu.
+     */
+    label: string
+  }
+
+export type ToolbarDropdownItemProps = Omit<DropdownItemProps, 'condensed'>
+
+export type ToolbarDropdownItemGroupProps = Omit<
+  DropdownItemGroupProps,
+  'condensed'
+>
+
+export type ToolbarDropdownItemSeparatorProps = DropdownItemSeparatorProps
+
+export type ToolbarSelectProps = SelectProps
 
 export type ToolbarSeparatorProps = AllHTMLAttributes<HTMLDivElement>

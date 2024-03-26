@@ -16,12 +16,14 @@ const meta: Meta<AutocompleteItemGroupProps> = {
       table: {
         type: {
           summary:
-            'SelectItem | SelectItemSeparator | Array<SelectItem | SelectItemSeparator>',
+            'DropdownItem | DropdownItemGroup | DropdownItemSeparator | Array<DropdownItem | DropdownItemGroup | DropdownItemSeparator>',
         },
       },
     },
   },
   args: {
+    condensed: false,
+    disabled: false,
     label: 'Jedis',
   },
   component: AutocompleteItemGroup,
@@ -36,13 +38,17 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ label }) => (
+  render: ({ condensed = false, disabled = false, label }) => (
     <div className="h-[1200px]">
       <Autocomplete
         placeholder="Start typing to autocomplete"
         onChange={action('onChange')}
       >
-        <AutocompleteItemGroup label={label}>
+        <AutocompleteItemGroup
+          condensed={condensed}
+          disabled={disabled}
+          label={label}
+        >
           <AutocompleteItem label="Luke Skywalker" value="luke-skywalker" />
           <AutocompleteItem label="Obi-Wan Kenobi" value="obi-wan-kenobi" />
           <AutocompleteItem label="Yoda" value="yoda" />

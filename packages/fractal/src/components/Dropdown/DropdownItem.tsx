@@ -51,6 +51,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
     const isCondensed = condensed || groupCondensed || dropdownCondensed
+    console.log({ isCondensed })
 
     const isLink = !isEmpty(href)
 
@@ -64,7 +65,9 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
           'alternatee',
           'flex items-center gap-1',
           'rounded-sm outline-none transition-background-color duration-300 ease-out',
-          isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
+          isCondensed
+            ? `${PREFIX}-${GROUP_NAME}__item--condensed max-h-6 px-2 py-1`
+            : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`

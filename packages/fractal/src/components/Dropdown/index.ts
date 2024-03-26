@@ -1,3 +1,4 @@
+export { Elevations as DropdownElevations } from '../Paper/Paper.constants.js'
 export { default as Dropdown } from './Dropdown.js'
 export type {
   DropdownItemGroupProps,

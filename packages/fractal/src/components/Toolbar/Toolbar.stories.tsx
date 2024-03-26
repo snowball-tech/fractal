@@ -4,87 +4,64 @@ import AlignLeftIcon from '@iconscout/react-unicons/icons/uil-align-left'
 import AlignRightIcon from '@iconscout/react-unicons/icons/uil-align-right'
 import BoldIcon from '@iconscout/react-unicons/icons/uil-bold'
 import ItalicIcon from '@iconscout/react-unicons/icons/uil-italic'
+import LinkIcon from '@iconscout/react-unicons/icons/uil-link-h'
 import UnderlineIcon from '@iconscout/react-unicons/icons/uil-underline'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Button } from '@/components/Button'
-import { Select, SelectItem } from '@/components/Select'
-import { Typography } from '@/components/Typography'
-
 import {
   Toolbar,
+  ToolbarButton,
+  ToolbarDropdown,
+  ToolbarDropdownItem,
   ToolbarElevations,
   ToolbarOrientations,
   ToolbarSeparator,
-  ToolbarToggle,
-  ToolbarToggleGroup,
-  ToolbarVariants,
 } from '.'
-import {
-  DEFAULT_ELEVATION,
-  DEFAULT_ORIENTATION,
-  DEFAULT_VARIANT,
-} from './Toolbar.constants'
+import { DEFAULT_ELEVATION, DEFAULT_ORIENTATION } from './Toolbar.constants'
 
 const tools = (
   <>
-    <Typography>Toolbar</Typography>
+    <ToolbarButton icon={<BoldIcon />} iconOnly label="Bold" value="bold" />
+    <ToolbarButton
+      icon={<ItalicIcon />}
+      iconOnly
+      label="Italic"
+      value="italic"
+    />
+    <ToolbarButton
+      icon={<UnderlineIcon />}
+      iconOnly
+      label="Underline"
+      value="underline"
+    />
 
-    <ToolbarSeparator />
-
-    <div>
-      <Select className="min-w-20" placeholder="Pick an option">
-        <SelectItem label="Option 1" value="option-1" />
-        <SelectItem label="Option 2" value="option-2" />
-        <SelectItem label="Option 3" value="option-3" />
-      </Select>
-    </div>
-
-    <ToolbarSeparator />
-
-    <ToolbarToggleGroup multiple>
-      <ToolbarToggle icon={<BoldIcon />} iconOnly label="Bold" value="bold" />
-      <ToolbarToggle
-        icon={<ItalicIcon />}
-        iconOnly
-        label="Italic"
-        value="italic"
+    <ToolbarDropdown icon={<AlignLeftIcon />} iconOnly label="Alignment">
+      <ToolbarDropdownItem
+        icon={<AlignLeftIcon />}
+        label="Align left"
+        value="left"
       />
-      <ToolbarToggle
-        icon={<UnderlineIcon />}
-        iconOnly
-        label="Underline"
-        value="underline"
-      />
-    </ToolbarToggleGroup>
-
-    <ToolbarToggleGroup>
-      <ToolbarToggle icon={<AlignLeftIcon />} label="Align left" value="left" />
-      <ToolbarToggle
+      <ToolbarDropdownItem
         icon={<AlignCenterIcon />}
         label="Align center"
         value="center"
       />
-      <ToolbarToggle
-        icon={<JustifyIcon />}
-        iconPosition="right"
-        label="Justify"
-        value="justify"
-      />
-      <ToolbarToggle
+      <ToolbarDropdownItem
         icon={<AlignRightIcon />}
-        iconPosition="right"
         label="Align right"
         value="right"
       />
-    </ToolbarToggleGroup>
+      <ToolbarDropdownItem
+        icon={<JustifyIcon />}
+        label="Justify"
+        value="justify"
+      />
+    </ToolbarDropdown>
 
     <ToolbarSeparator />
 
-    <div className="w-full justify-end">
-      <Button label="Save" />
-    </div>
+    <ToolbarButton icon={<LinkIcon />} label="Link" value="link" />
   </>
 )
 
@@ -107,14 +84,6 @@ const meta = {
         type: { summary: Object.values(ToolbarOrientations).join('|') },
       },
     },
-    variant: {
-      options: Object.values(ToolbarVariants),
-      table: {
-        defaultValue: { summary: DEFAULT_VARIANT },
-        disable: true,
-        type: { summary: Object.values(ToolbarVariants).join('|') },
-      },
-    },
   },
   args: {
     children: tools,
@@ -128,7 +97,7 @@ const meta = {
       '🧌 Drool is a tool, kids. Use it - Prof. Knight - Monsters University',
   },
 
-  title: '[Work In Progress]/Toolbar',
+  title: 'Molecules/Toolbar',
 } satisfies Meta<ToolbarProps>
 
 export default meta
@@ -138,6 +107,5 @@ export const Playground: Story = {
   args: {
     elevation: DEFAULT_ELEVATION,
     orientation: DEFAULT_ORIENTATION,
-    variant: DEFAULT_VARIANT,
   },
 }

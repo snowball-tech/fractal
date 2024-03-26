@@ -18,6 +18,8 @@ import type {
   InputRadioProps,
 } from '@/components/InputRadio/InputRadio.types'
 
+import { Elevations } from '../Paper/Paper.constants'
+
 export type CombinedRefs = {
   container: HTMLDivElement | null
   dropdown: HTMLDivElement | null
@@ -59,6 +61,14 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
       style?: CSSProperties
     }
   >
+  /**
+   * The elevation level of the dropdown.
+   *
+   * 1 (bordered) is a non elevated bordered block
+   * 2 (elevated) is a lightly raised (small shadow) bordered block
+   * 3 (higher) is a raised bordered block
+   */
+  elevation?: `${Elevations}`
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean
   /** Event handler called when the dropdown is closed. */
