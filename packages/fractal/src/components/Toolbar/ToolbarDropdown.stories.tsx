@@ -62,6 +62,16 @@ const mixedMenu = (
 
 const meta: Meta<ToolbarDropdownProps> = {
   argTypes: {
+    align: {
+      control: 'radio',
+      mapping: {
+        Auto: undefined,
+        Center: 'center',
+        End: 'end',
+        Start: 'start',
+      },
+      options: ['Auto', 'Start', 'Center', 'End'],
+    },
     children: {
       control: 'radio',
       mapping: {
@@ -97,6 +107,17 @@ const meta: Meta<ToolbarDropdownProps> = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
+    side: {
+      control: 'radio',
+      mapping: {
+        Auto: undefined,
+        Bottom: 'bottom',
+        Left: 'left',
+        Right: 'right',
+        Top: 'top',
+      },
+      options: ['Auto', 'Top', 'Right', 'Bottom', 'Left'],
+    },
     width: {
       control: 'radio',
       options: [
@@ -115,6 +136,7 @@ const meta: Meta<ToolbarDropdownProps> = {
   },
   args: {
     active: false,
+    align: undefined,
     children: 'Text',
     defaultOpen: false,
     disabled: false,
@@ -125,6 +147,7 @@ const meta: Meta<ToolbarDropdownProps> = {
     iconPosition: 'left',
     label: 'Star wars characters',
     open: false,
+    side: undefined,
     width: 'fit',
     withIndicator: true,
   },

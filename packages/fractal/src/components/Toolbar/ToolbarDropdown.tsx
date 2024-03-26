@@ -58,7 +58,7 @@ export const ToolbarDropdown = forwardRef<
         aria-label={label}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__dropdown`,
-          `group h-3 max-h-3 rounded-xs [&_.fractal-dropdown\\\\_\\\\_trigger\\\\_\\\\_indicator>svg]:size-one-and-half`,
+          'group h-3 max-h-3 rounded-xs',
           // eslint-disable-next-line no-nested-ternary
           isOpen && !isDisabled
             ? 'text-dark'
@@ -72,6 +72,10 @@ export const ToolbarDropdown = forwardRef<
         )}
         condensed
         disabled={isDisabled}
+        dropdown={{
+          className:
+            'data-[side="bottom"]:mt-2 data-[side="top"]:mb-2 data-[side="right"]:ml-[calc(theme(spacing.2)+theme(spacing.half))] data-[side="left"]:mr-[calc(theme(spacing.2)+theme(spacing.half))]',
+        }}
         elevation={elevation}
         title={label}
         trigger={

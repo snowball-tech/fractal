@@ -293,9 +293,9 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
 
         <Dropdown
           ref={dropdownRef}
+          align="end"
           disabled={disabled}
           dropdown={{
-            align: 'end',
             className: cn(
               `${PREFIX}-${GROUP_NAME}__dropdown`,
               dropdown.className,
