@@ -295,7 +295,7 @@ perfectionist/sort-objects */
             {isOpen && (
               <RxDropdown.Content
                 ref={dropdownRef}
-                align={align ?? withIndicator ? 'end' : 'center'}
+                align={align || (withIndicator ? 'end' : 'center')}
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
