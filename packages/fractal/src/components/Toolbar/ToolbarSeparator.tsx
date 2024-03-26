@@ -20,6 +20,7 @@ export default function ToolbarSeparator({ ...props }: ToolbarSeparatorProps) {
     <RxToolbar.Separator
       className={cn(
         `${PREFIX}-${GROUP_NAME}__separator`,
+        `${PREFIX}-${GROUP_NAME}__separator--${orientation}`,
         'bg-separator',
         orientation === Orientations.Horizontal ? 'h-full w-px' : 'h-px w-full',
         props.className,

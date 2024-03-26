@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Toolbar, ToolbarSeparator, ToolbarToggle, ToolbarToggleGroup } from '.'
+import { Toolbar, ToolbarButton, ToolbarSeparator } from '.'
 
 type ToolbarSeparatorProps = ComponentProps<typeof ToolbarSeparator>
 
@@ -21,19 +21,15 @@ export const Playground: Story = {
   render: () => (
     <div className="h-[200px]">
       <Toolbar>
-        <ToolbarToggleGroup multiple>
-          <ToolbarToggle label="Luke Skywalker" value="luke-skywalker" />
-          <ToolbarToggle label="Obi-Wan Kenobi" value="obi-wan-kenobi" />
-          <ToolbarToggle label="Yoda" value="yoda" />
-        </ToolbarToggleGroup>
+        <ToolbarButton label="Luke Skywalker" value="luke-skywalker" />
+        <ToolbarButton label="Obi-Wan Kenobi" value="obi-wan-kenobi" />
+        <ToolbarButton label="Yoda" value="yoda" />
 
         <ToolbarSeparator />
 
-        <ToolbarToggleGroup>
-          <ToolbarToggle label="Darth Sidious" value="darth-sidious" />
-          <ToolbarToggle label="Darth Maul" value="darth-maul" />
-          <ToolbarToggle label="Darth Vader" value="darth-vader" />
-        </ToolbarToggleGroup>
+        <ToolbarButton label="Darth Sidious" value="darth-sidious" />
+        <ToolbarButton label="Darth Maul" value="darth-maul" />
+        <ToolbarButton label="Darth Vader" value="darth-vader" />
       </Toolbar>
     </div>
   ),

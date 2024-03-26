@@ -6,10 +6,12 @@ import type { ComponentProps, ReactNode } from 'react'
 import { Button } from '@/components/Button'
 import InputFile from '@/components/InputFile/InputFile'
 import { InputText } from '@/components/InputText'
+import { Elevations } from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'
 
 import { Popover } from '.'
+import { DEFAULT_ELEVATION } from './Popover.constants'
 
 const popoverContent = (
   <div className="flex flex-col gap-2">
@@ -44,6 +46,13 @@ const meta: Meta<PopoverProps> = {
         Start: 'start',
       },
       options: ['Auto', 'Start', 'Center', 'End'],
+    },
+    elevation: {
+      control: 'radio',
+      table: {
+        defaultValue: { summary: DEFAULT_ELEVATION },
+        type: { summary: Object.values(Elevations).join('|') },
+      },
     },
     side: {
       control: 'radio',
@@ -93,6 +102,7 @@ const meta: Meta<PopoverProps> = {
     align: undefined,
     children: popoverContent,
     disabled: false,
+    elevation: DEFAULT_ELEVATION,
     fullWidth: false,
     side: undefined,
     trigger: 'Text',

@@ -10,7 +10,6 @@ import { cj, cn } from '@/styles/helpers'
 import {
   DEFAULT_ELEVATION,
   DEFAULT_ORIENTATION,
-  DEFAULT_VARIANT,
   GROUP_NAME,
   Orientations,
 } from './Toolbar.constants'
@@ -31,7 +30,6 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
       elevation = DEFAULT_ELEVATION,
       fullWidth = false,
       orientation = DEFAULT_ORIENTATION,
-      variant = DEFAULT_VARIANT,
       ...props
     }: ToolbarProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -41,7 +39,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__wrapper`,
           `${PREFIX}-${GROUP_NAME}__wrapper--${orientation}`,
-          'px-half py-0',
+          'h-5 max-h-5 min-h-5 px-half py-0',
           fullWidth
             ? `${PREFIX}-${GROUP_NAME}__wrapper--full-width w-full`
             : 'w-fit',
@@ -54,11 +52,9 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
           className={cn(
             `${PREFIX}-${GROUP_NAME}`,
             `${PREFIX}-${GROUP_NAME}--${orientation}`,
-            'flex items-center gap-one-and-half',
+            'flex items-center gap-1 p-1',
             elevation === Elevations.Higher ? 'rounded-full' : 'rounded-sm',
-            orientation === Orientations.Horizontal
-              ? 'h-7 flex-row px-half'
-              : 'w-7 flex-col p-half',
+            orientation === Orientations.Horizontal ? 'flex-row' : 'flex-col',
             fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
             disabled
               ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
@@ -68,7 +64,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
           {...(orientation !== undefined ? { orientation } : {})}
           {...omit(['className'], props)}
         >
-          <ToolbarContext.Provider value={{ disabled, orientation, variant }}>
+          <ToolbarContext.Provider value={{ disabled, orientation }}>
             {children}
           </ToolbarContext.Provider>
         </RxToolbar.Root>

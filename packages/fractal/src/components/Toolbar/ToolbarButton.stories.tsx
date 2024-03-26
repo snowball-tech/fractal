@@ -8,11 +8,11 @@ import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ComponentProps } from 'react'
 
-import { Toolbar, ToolbarToggle, ToolbarToggleGroup } from '.'
+import { Toolbar, ToolbarButton } from '.'
 
-type ToolbarToggleProps = ComponentProps<typeof ToolbarToggle>
+type ToolbarButtonProps = ComponentProps<typeof ToolbarButton>
 
-const meta: Meta<ToolbarToggleProps> = {
+const meta: Meta<ToolbarButtonProps> = {
   argTypes: {
     icon: {
       control: 'radio',
@@ -29,43 +29,41 @@ const meta: Meta<ToolbarToggleProps> = {
     },
   },
   args: {
+    active: false,
     disabled: false,
     icon: 'None',
     iconOnly: false,
     iconPosition: 'left',
     label: 'Luke Skywalker',
-    value: 'luke-skywalker',
   },
-  component: ToolbarToggle,
+  component: ToolbarButton,
 
-  title: 'Molecules/Toolbar/ToolbarToggle',
-} satisfies Meta<ToolbarToggleProps>
+  title: 'Molecules/Toolbar/ToolbarButton',
+} satisfies Meta<ToolbarButtonProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
   render: ({
+    active = false,
     disabled = false,
     icon = undefined,
     iconOnly = false,
     iconPosition = 'left',
     label = 'Luke Skywalker',
-    value = 'luke-skywalker',
   }) => (
     <div className="h-13">
       <Toolbar>
-        <ToolbarToggleGroup>
-          <ToolbarToggle
-            disabled={disabled}
-            icon={icon}
-            iconOnly={iconOnly}
-            iconPosition={iconPosition}
-            label={label}
-            value={value}
-            onToggle={action('onToggle')}
-          />
-        </ToolbarToggleGroup>
+        <ToolbarButton
+          active={active}
+          disabled={disabled}
+          icon={icon}
+          iconOnly={iconOnly}
+          iconPosition={iconPosition}
+          label={label}
+          onClick={action('onClick')}
+        />
       </Toolbar>
     </div>
   ),
