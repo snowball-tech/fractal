@@ -51,7 +51,6 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
     const isCondensed = condensed || groupCondensed || dropdownCondensed
-    console.log({ isCondensed })
 
     const isLink = !isEmpty(href)
 

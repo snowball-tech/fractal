@@ -32,6 +32,8 @@ export type SubDropdownCombinedRefs = {
 }
 
 export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
+  /** Indicates where to align the dropdown relative to the trigger. */
+  align?: RxDropdownMenuContentProps['align']
   /**
    * The content of the dropdown menu.
    *
@@ -56,7 +58,10 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * customize the style of the dropdown.
    */
   dropdown?: Partial<
-    Omit<RxDropdownMenuContentProps, 'asChild' | 'onInteractOutside'> & {
+    Omit<
+      RxDropdownMenuContentProps,
+      'align' | 'asChild' | 'onInteractOutside' | 'side'
+    > & {
       className?: string
       style?: CSSProperties
     }
@@ -90,6 +95,8 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * (non-text) trigger.
    */
   open?: boolean
+  /** The preferred side of the trigger to render the popover. */
+  side?: RxDropdownMenuContentProps['side']
   /**
    * Indicates if you want to toggle the dropdown when clicking on the trigger
    * (if provided of course).
