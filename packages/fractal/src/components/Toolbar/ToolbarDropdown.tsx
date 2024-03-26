@@ -83,7 +83,7 @@ export const ToolbarDropdown = forwardRef<
                 ? `${PREFIX}-${GROUP_NAME}__dropdown__trigger--disabled cursor-not-allowed`
                 : `cursor-pointer hover:text-dark group-hover:text-dark`,
               // eslint-disable-next-line no-nested-ternary
-              active && !isDisabled
+              (active || isOpen) && !isDisabled
                 ? 'text-dark'
                 : isDisabled
                   ? 'text-disabled'
