@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.0...@snowball-tech/fractal@10.5.1) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- **toolbar-dropdown:** make the trigger black when opened ([490a87d](https://github.com/snowball-tech/fractal/commit/490a87da1ac0dd6a89cd23d6dbff8449e9087161))
+
 # @snowball-tech/fractal [10.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.4.7...@snowball-tech/fractal@10.5.0) (2024-03-26)
 
 ### ✨ Features
