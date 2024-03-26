@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.5.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.2...@snowball-tech/fractal@10.5.3) (2024-03-26)
+
+### 🐛 Bug Fixes
+
+- **dropdown:** fix alignment ([f11cfcc](https://github.com/snowball-tech/fractal/commit/f11cfcca71fd81f1c8d763c0cca3019961b9e747))
+
 ## @snowball-tech/fractal [10.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.5.1...@snowball-tech/fractal@10.5.2) (2024-03-26)
 
 ### 🐛 Bug Fixes
