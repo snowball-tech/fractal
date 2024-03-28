@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.7.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.2...@snowball-tech/fractal@10.7.3) (2024-03-28)
+
+### 🐛 Bug Fixes
+
+- **toolbar-dropdown:** fix onMenuOpenChange callback ([8518ea6](https://github.com/snowball-tech/fractal/commit/8518ea608669d4c11a44beda00671b7129366955))
+
 ## @snowball-tech/fractal [10.7.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.1...@snowball-tech/fractal@10.7.2) (2024-03-26)
 
 ### 🐛 Bug Fixes
