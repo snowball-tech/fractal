@@ -158,7 +158,6 @@ export const SubDropdown = forwardRef<
         {...(defaultOpen ? { defaultOpen: true } : {})}
         {...(disabled ? { open: false } : { open: isOpen })}
         onOpenChange={handleOpenChange}
-        {...omit(['className'], props)}
       >
         <RxDropdownMenu.SubTrigger
           asChild
@@ -174,6 +173,7 @@ export const SubDropdown = forwardRef<
             props.className,
           )}
           onClick={onClick}
+          {...omit(['className'], props)}
         >
           <div
             className={cj(
