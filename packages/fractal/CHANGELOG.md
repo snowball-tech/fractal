@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.7.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.4...@snowball-tech/fractal@10.7.5) (2024-03-28)
+
+### 🐛 Bug Fixes
+
+- **dropdown-menu:** fix pointer over label ([50c9ee0](https://github.com/snowball-tech/fractal/commit/50c9ee0ee7370ff649e9ad693b28a186e678229c))
+
 ## @snowball-tech/fractal [10.7.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.3...@snowball-tech/fractal@10.7.4) (2024-03-28)
 
 ### 🐛 Bug Fixes
