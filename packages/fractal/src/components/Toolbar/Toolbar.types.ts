@@ -47,7 +47,11 @@ export type ToolbarButtonProps = Omit<
 
 export type ToolbarDropdownProps = Omit<
   DropdownProps,
-  'children' | 'condensed' | 'trigger' | 'triggerAsButton'
+  | 'children'
+  | 'condensed'
+  | 'toggleOnTriggerClick'
+  | 'trigger'
+  | 'triggerAsButton'
 > &
   Pick<ToolbarButtonProps, 'active' | 'icon' | 'iconOnly' | 'iconPosition'> & {
     /**
