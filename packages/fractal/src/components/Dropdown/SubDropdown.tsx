@@ -181,8 +181,8 @@ export const SubDropdown = forwardRef<
               'alternatee',
               'flex w-full flex-row items-center gap-1',
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__sub-menu__label--disabled text-disabled`
-                : '',
+                ? `${PREFIX}-${GROUP_NAME}__sub-menu__label--disabled cursor-not-allowed text-disabled`
+                : 'cursor-pointer',
             )}
           >
             {icon && (
@@ -196,7 +196,13 @@ export const SubDropdown = forwardRef<
               </div>
             )}
 
-            <Typography className="flex-1" element="label">
+            <Typography
+              className={cj(
+                'flex-1',
+                disabled ? `cursor-not-allowed` : 'cursor-pointer',
+              )}
+              element="label"
+            >
               {label}
             </Typography>
 

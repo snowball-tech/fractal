@@ -113,6 +113,10 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       handleOpenChange(false)
     }
 
+    const toggle = () => {
+      handleOpenChange(!isOpen)
+    }
+
     useEffect(() => {
       if (open === true && hasChildren) {
         display()
@@ -201,9 +205,12 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         title={label}
         // eslint-disable-next-line no-nested-ternary
         {...(!popover
-          ? { onClick: display }
+          ? { onClick: toggle }
           : triggerOnHover
-            ? { onMouseEnter: handleMouseEnter }
+            ? {
+                onClick: (e) => e.preventDefault(),
+                onMouseEnter: handleMouseEnter,
+              }
             : {})}
         style={popup?.trigger?.style}
         onKeyDown={handleKeyDown}
@@ -219,7 +226,13 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           </div>
         )}
 
-        <Typography className="flex-1" element="label">
+        <Typography
+          className={cj(
+            'flex-1',
+            disabled ? `cursor-not-allowed` : 'cursor-pointer',
+          )}
+          element="label"
+        >
           {label}
         </Typography>
 
