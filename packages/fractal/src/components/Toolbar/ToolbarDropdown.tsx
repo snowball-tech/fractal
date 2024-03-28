@@ -1,6 +1,7 @@
 'use client'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { type ForwardedRef, forwardRef, useContext, useState } from 'react'
 
@@ -49,6 +50,10 @@ export const ToolbarDropdown = forwardRef<
 
     const [isOpen, setIsOpen] = useState(props.defaultOpen || props.open)
     const handleMenuOpenChange = (open: boolean) => {
+      if (isFunction(props.onMenuOpenChange)) {
+        props.onMenuOpenChange(open)
+      }
+
       setIsOpen(open)
     }
 
