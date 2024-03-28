@@ -1,3 +1,10 @@
+## @snowball-tech/fractal [10.7.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.3...@snowball-tech/fractal@10.7.4) (2024-03-28)
+
+### 🐛 Bug Fixes
+
+- **dropdown-popover:** allow to unwrap trigger from `button` ([6d5a4cd](https://github.com/snowball-tech/fractal/commit/6d5a4cdd6ccb6d741f44c26305353e822fad954e))
+- **toolbar-dropdown:** remove a useless props ([7586bdc](https://github.com/snowball-tech/fractal/commit/7586bdcd63867bebd7f2481ace67fcf419aeec37))
+
 ## @snowball-tech/fractal [10.7.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.2...@snowball-tech/fractal@10.7.3) (2024-03-28)
 
 ### 🐛 Bug Fixes
