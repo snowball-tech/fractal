@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.7.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.5...@snowball-tech/fractal@10.7.6) (2024-03-28)
+
+### 🐛 Bug Fixes
+
+- **subdropdown:** attach the props to the right thing ([76467ce](https://github.com/snowball-tech/fractal/commit/76467ce159f50f6a8266a6d57bec8999244f548b))
+
 ## @snowball-tech/fractal [10.7.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.4...@snowball-tech/fractal@10.7.5) (2024-03-28)
 
 ### 🐛 Bug Fixes
