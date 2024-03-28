@@ -52,6 +52,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       side,
       toggleOnTriggerClick = true,
       trigger,
+      triggerAsButton = true,
       width = 'fit',
       withIndicator = true,
       withScroll = true,
@@ -271,7 +272,9 @@ perfectionist/sort-objects */
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',
                 )}
-                element={toggleOnTriggerClick ? 'button' : 'div'}
+                element={
+                  toggleOnTriggerClick && triggerAsButton ? 'button' : 'div'
+                }
               >
                 {trigger}
 

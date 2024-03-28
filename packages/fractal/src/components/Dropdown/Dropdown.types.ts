@@ -108,6 +108,12 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The trigger of the dropdown menu. */
   trigger?: ReactNode
   /**
+   * Indicates if you want the trigger to be wrapped in a `button` element.
+   *
+   * This is useful when you provide a button as trigger yourself.
+   */
+  triggerAsButton?: boolean
+  /**
    * Indicates how to compute the width of the dropdown:
    *  - `fit`: the width of the dropdown will be computed in order to fit the
    *    content of the dropdown;

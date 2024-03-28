@@ -89,6 +89,12 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The trigger of the popover. */
   trigger?: ReactNode
   /**
+   * Indicates if you want the trigger to be wrapped in a `button` element.
+   *
+   * This is useful when you provide a button as trigger yourself.
+   */
+  triggerAsButton?: boolean
+  /**
    * Indicates how to compute the width of the popover:
    *  - `fit`: the width of the popover will be computed in order to fit the
    *    content of the popover;

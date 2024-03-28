@@ -49,6 +49,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       side,
       toggleOnTriggerClick = true,
       trigger,
+      triggerAsButton = true,
       width = 'fit',
       withArrow = true,
       withCloseButton = false,
@@ -234,7 +235,9 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',
                 )}
-                element={toggleOnTriggerClick ? 'button' : 'div'}
+                element={
+                  toggleOnTriggerClick && triggerAsButton ? 'button' : 'div'
+                }
               >
                 {trigger}
               </Typography>
