@@ -132,7 +132,7 @@ export const RealLifeExample: Story = {
             {sidebarItem}
           </div>
           <div className="size-full p-3">
-            <div className="flex h-[calc(100%-theme(spacing.7))] w-full flex-col rounded-md border-1 border-grey-50">
+            <div className="flex h-[calc(100%-theme(spacing.7))] w-full flex-col rounded-sm border-1 border-grey-50">
               <div className="flex h-10 items-center gap-2 rounded-t-md border-b-1 border-grey-50 bg-white p-2">
                 <Skeleton className="size-5" shape="circle" />
                 <Skeleton

@@ -189,7 +189,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
 
       [Elevations.Bordered]: 'rounded-sm shadow-none',
       [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
-      [Elevations.Higher]: 'rounded-md shadow-brutal ml-quarter mb-half',
+      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */
