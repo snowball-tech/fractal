@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [11.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.1.2...@snowball-tech/design-tokens@11.1.3) (2024-04-03)
+
+### 📦 Dependencies
+
+- upgrade dependencies ([ecbaacc](https://github.com/snowball-tech/fractal/commit/ecbaacc3485ebf903d8776b6c478e7ca8b1f4233))
+
 ## @snowball-tech/design-tokens [11.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.1.1...@snowball-tech/design-tokens@11.1.2) (2024-03-22)
 
 ### 📦 Dependencies
