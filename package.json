@@ -78,7 +78,7 @@
     "@snowball-tech/prettier-config": "^1.4.6",
     "@snowball-tech/semantic-release-config": "^2.1.7",
     "@snowball-tech/stylelint-config": "^2.2.6",
-    "chromatic": "^11.2.0",
+    "chromatic": "^11.3.0",
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
@@ -88,7 +88,7 @@
     "prettier": "^3.2.5",
     "semantic-release": "^22.0.12",
     "serve": "^14.2.1",
-    "stylelint": "^16.3.0"
+    "stylelint": "^16.3.1"
   },
   "dependencies": {
     "@yarnpkg/types": "^4.0.0"
