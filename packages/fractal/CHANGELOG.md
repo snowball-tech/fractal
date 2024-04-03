@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [10.7.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.6...@snowball-tech/fractal@10.7.7) (2024-04-03)
+
+### 🐛 Bug Fixes
+
+- change the radius of highly elevated blocks ([d5ab3a6](https://github.com/snowball-tech/fractal/commit/d5ab3a6c52d7c7b53d09a4f859ffe7b4dfea4840))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([ecbaacc](https://github.com/snowball-tech/fractal/commit/ecbaacc3485ebf903d8776b6c478e7ca8b1f4233))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.1.3
+
 ## @snowball-tech/fractal [10.7.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.5...@snowball-tech/fractal@10.7.6) (2024-03-28)
 
 ### 🐛 Bug Fixes
