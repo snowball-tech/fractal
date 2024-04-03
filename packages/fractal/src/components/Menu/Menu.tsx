@@ -59,7 +59,7 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
 
       [Elevations.Bordered]: 'rounded-sm shadow-none',
       [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
-      [Elevations.Higher]: 'rounded-md shadow-brutal ml-quarter',
+      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter',
 
       /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
 perfectionist/sort-objects */

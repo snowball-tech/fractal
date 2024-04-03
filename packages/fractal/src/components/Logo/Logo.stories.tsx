@@ -41,7 +41,7 @@ const meta: Meta<LogoProps> = {
         <>
           {isLight && note}
 
-          <div className={cj('w-fit rounded-md p-2', isLight ? 'bg-dark' : '')}>
+          <div className={cj('w-fit rounded-sm p-2', isLight ? 'bg-dark' : '')}>
             <Story args={{ ...context.args }} />
           </div>
         </>
@@ -73,7 +73,7 @@ const Wrapper = ({
   children: ReactNode
   className?: string
 }) => (
-  <div className={cn('flex flex-col gap-2 rounded-md p-2', className)}>
+  <div className={cn('flex flex-col gap-2 rounded-sm p-2', className)}>
     {children}
   </div>
 )
