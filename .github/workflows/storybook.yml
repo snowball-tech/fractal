@@ -74,7 +74,7 @@ jobs:
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for security to pass
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
           check-name: Checking Yarn cache's integrity
@@ -83,7 +83,7 @@ jobs:
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality

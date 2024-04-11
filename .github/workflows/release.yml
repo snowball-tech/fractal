@@ -39,7 +39,7 @@ jobs:
         run: yarn run -T build
 
       - name: Waiting for security to pass
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
           check-name: Checking Yarn cache's integrity
@@ -47,7 +47,7 @@ jobs:
           wait-interval: 10
 
       - name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality
