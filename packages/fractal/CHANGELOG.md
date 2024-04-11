@@ -1,3 +1,17 @@
+# @snowball-tech/fractal [10.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.7...@snowball-tech/fractal@10.8.0) (2024-04-11)
+
+### 💄 UI/UX
+
+- start dark mode ([#208](https://github.com/snowball-tech/fractal/issues/208)) ([45b203e](https://github.com/snowball-tech/fractal/commit/45b203e767a6de8202dbcce8f9c367a5bb034826))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([de9b120](https://github.com/snowball-tech/fractal/commit/de9b12000ac1922381ea67787d0de76b609229ac))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.2.0
+
 ## @snowball-tech/fractal [10.7.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.6...@snowball-tech/fractal@10.7.7) (2024-04-03)
 
 ### 🐛 Bug Fixes
