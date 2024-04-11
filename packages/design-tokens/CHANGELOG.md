@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [11.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.1.3...@snowball-tech/design-tokens@11.2.0) (2024-04-11)
+
+### 💄 UI/UX
+
+- start dark mode ([#208](https://github.com/snowball-tech/fractal/issues/208)) ([45b203e](https://github.com/snowball-tech/fractal/commit/45b203e767a6de8202dbcce8f9c367a5bb034826))
+
 ## @snowball-tech/design-tokens [11.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.1.2...@snowball-tech/design-tokens@11.1.3) (2024-04-03)
 
 ### 📦 Dependencies
