@@ -6,20 +6,45 @@ module.exports = {
 
         value: '{color.base.black.value}',
       },
+      default: {
+        comment: 'Default text color (over light background).',
+
+        value: '{color.base.black.value}',
+      },
       light: {
         comment: 'Text color over dark background.',
 
         value: '{color.base.white.value}',
       },
       primary: {
-        comment: 'Primary text color.',
+        comment: 'Primary text color (over light background).',
 
         value: '{color.brand.primary.value}',
       },
+      'primary-dark': {
+        comment: 'Primary text color over dark background.',
+
+        value: '{color.brand.primary-dark.value}',
+      },
+      'primary-light': {
+        comment: 'Primary text color over light background.',
+
+        value: '{color.brand.primary-light.value}',
+      },
       secondary: {
-        comment: 'Secondary text color.',
+        comment: 'Secondary text color (over light background).',
 
         value: '{color.brand.secondary.value}',
+      },
+      'secondary-dark': {
+        comment: 'Secondary text color over dark background.',
+
+        value: '{color.brand.secondary-dark.value}',
+      },
+      'secondary-light': {
+        comment: 'Secondary text color over light background.',
+
+        value: '{color.brand.secondary-light.value}',
       },
 
       //

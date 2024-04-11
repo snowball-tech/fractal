@@ -6,20 +6,45 @@ module.exports = {
 
         value: '{color.base.black.value}',
       },
+      default: {
+        comment: 'Default icon color (over light background).',
+
+        value: '{color.base.black.value}',
+      },
       light: {
         comment: 'Icon color over dark background.',
 
         value: '{color.base.white.value}',
       },
       primary: {
-        comment: 'Primary icon color.',
+        comment: 'Primary icon color (over light background).',
 
         value: '{color.brand.primary.value}',
       },
+      'primary-dark': {
+        comment: 'Primary icon color over dark background.',
+
+        value: '{color.brand.primary-dark.value}',
+      },
+      'primary-light': {
+        comment: 'Primary icon color over light background.',
+
+        value: '{color.brand.primary-light.value}',
+      },
       secondary: {
-        comment: 'Secondary icon color.',
+        comment: 'Secondary icon color (over light background).',
 
         value: '{color.brand.secondary.value}',
+      },
+      'secondary-dark': {
+        comment: 'Secondary icon color over dark background.',
+
+        value: '{color.brand.secondary-dark.value}',
+      },
+      'secondary-light': {
+        comment: 'Secondary icon color over light background.',
+
+        value: '{color.brand.secondary-light.value}',
       },
 
       //

@@ -85,8 +85,8 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
       disabled
-        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[variant]}`
-        : `${variantClassNames[variant]} cursor-pointer`,
+        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames.light[variant]}`
+        : `${variantClassNames.light[variant]} cursor-pointer`,
       !isEmpty(triggerProps.icon)
         ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`
         : '',
