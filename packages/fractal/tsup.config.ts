@@ -38,6 +38,7 @@ export default defineConfig([
       './src/types.ts',
       './src/ThemeProvider.tsx',
       './src/hooks/index.ts',
+      './src/hooks/*.ts',
       './src/styles/helpers.ts',
       './src/components/index.ts',
       './src/components/**/index.ts',
