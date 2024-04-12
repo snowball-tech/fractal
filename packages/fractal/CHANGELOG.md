@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.9.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.4...@snowball-tech/fractal@10.9.5) (2024-04-12)
+
+### 🐛 Bug Fixes
+
+- add missing 'use client' in chunks ([4bcf61e](https://github.com/snowball-tech/fractal/commit/4bcf61e4a5e0d72162a7e07132ac2a2a921db0a6))
+
 ## @snowball-tech/fractal [10.9.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.3...@snowball-tech/fractal@10.9.4) (2024-04-12)
 
 ### 🐛 Bug Fixes
