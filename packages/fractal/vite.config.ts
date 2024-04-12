@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import react from '@vitejs/plugin-react-swc'
+import preserveDirectives from 'rollup-plugin-preserve-directives'
 import { type Plugin, defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -69,7 +70,9 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
+        preserveModules: true,
       },
+      plugins: [preserveDirectives()],
     },
   },
 
