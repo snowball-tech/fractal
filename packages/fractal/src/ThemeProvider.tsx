@@ -1,3 +1,5 @@
+'use client'
+
 import { type ReactNode, createContext } from 'react'
 
 import { DEFAULT_THEME, Themes } from './constants'

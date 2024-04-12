@@ -1,3 +1,5 @@
+'use client'
+
 import * as RxToolbar from '@radix-ui/react-toolbar'
 import omit from 'lodash/fp/omit'
 import { useContext } from 'react'

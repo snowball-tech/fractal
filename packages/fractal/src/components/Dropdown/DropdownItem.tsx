@@ -1,3 +1,5 @@
+'use client'
+
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'

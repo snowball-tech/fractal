@@ -1,3 +1,5 @@
+'use client'
+
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import type { DismissableLayerProps } from '@radix-ui/react-select'

@@ -1,3 +1,5 @@
+'use client'
+
 import { Label as RxLabel } from '@radix-ui/react-label'
 import type { DismissableLayerProps } from '@radix-ui/react-select'
 import isEmpty from 'lodash/fp/isEmpty'

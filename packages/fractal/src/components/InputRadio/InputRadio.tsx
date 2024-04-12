@@ -1,3 +1,5 @@
+'use client'
+
 import CheckIcon from '@iconscout/react-unicons/icons/uil-check'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'

@@ -1,3 +1,5 @@
+'use client'
+
 import { Label as RxLabel } from '@radix-ui/react-label'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
