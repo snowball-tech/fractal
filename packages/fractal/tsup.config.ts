@@ -19,6 +19,11 @@ async function addDirectivesToChunkFiles(distPath = DIST_PATH) {
 
         // eslint-disable-next-line no-await-in-loop -- We need to wait for each file to be read
         const data = await fs.readFile(filePath, 'utf8')
+        if (data.startsWith("'use client';")) {
+          // eslint-disable-next-line no-console -- We need to log the result
+          console.log(`Directive already exists in ${file}`)
+          continue
+        }
 
         const updatedContent = `'use client';\n${data}`
 
@@ -46,6 +51,9 @@ const commonConfig: Options = {
   external: ['react', 'react-dom', '@iconscout/react-unicons'],
   format: 'esm',
   minify: true,
+  async onSuccess() {
+    await addDirectivesToChunkFiles()
+  },
   outDir: DIST_PATH,
   replaceNodeEnv: true,
   sourcemap: true,
@@ -76,8 +84,5 @@ export default defineConfig([
       './src/hooks/*.ts',
       './src/components/**/index.ts',
     ],
-    async onSuccess() {
-      await addDirectivesToChunkFiles()
-    },
   },
 ])
