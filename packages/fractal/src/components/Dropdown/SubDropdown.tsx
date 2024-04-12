@@ -1,5 +1,3 @@
-'use client'
-
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'

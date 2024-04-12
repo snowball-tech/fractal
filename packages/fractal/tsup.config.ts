@@ -9,6 +9,10 @@ const commonConfig: Options = {
   esbuildOptions(options) {
     // eslint-disable-next-line no-param-reassign
     options.outbase = './'
+    // eslint-disable-next-line no-param-reassign
+    options.banner = {
+      js: '"use client"',
+    }
   },
   external: ['react', 'react-dom', '@iconscout/react-unicons'],
   format: 'esm',

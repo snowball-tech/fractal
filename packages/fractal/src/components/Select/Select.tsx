@@ -1,5 +1,3 @@
-'use client'
-
 import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'

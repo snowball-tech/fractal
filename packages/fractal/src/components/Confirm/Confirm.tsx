@@ -1,5 +1,3 @@
-'use client'
-
 import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'

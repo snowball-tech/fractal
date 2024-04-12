@@ -1,5 +1,3 @@
-'use client'
-
 import * as RxToolbar from '@radix-ui/react-toolbar'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
