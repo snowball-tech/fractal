@@ -107,6 +107,7 @@
     "postcss-styled-syntax": "^0.6.4",
     "prettier": "^3.2.5",
     "remark-gfm": "^4.0.0",
+    "rollup-plugin-preserve-directives": "^0.4.0",
     "storybook": "^8.0.8",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",

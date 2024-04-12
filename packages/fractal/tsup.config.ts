@@ -17,7 +17,6 @@ const commonConfig: Options = {
   replaceNodeEnv: true,
   sourcemap: true,
   target: 'esnext',
-  treeshake: true,
   tsconfig: path.resolve(__dirname, './tsconfig.build.json'),
 }
 
@@ -37,6 +36,8 @@ export default defineConfig([
       './src/index.ts',
       './src/constants.ts',
       './src/types.ts',
+      './src/ThemeProvider.tsx',
+      './src/hooks/index.ts',
       './src/styles/helpers.ts',
       './src/components/index.ts',
       './src/components/**/index.ts',
