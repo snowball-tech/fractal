@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.9.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.2...@snowball-tech/fractal@10.9.3) (2024-04-12)
+
+### 🐛 Bug Fixes
+
+- add 'use client' during build ([77f0761](https://github.com/snowball-tech/fractal/commit/77f076167787a2e54b3b163e9351d4afc57cc8ac))
+
 ## @snowball-tech/fractal [10.9.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.1...@snowball-tech/fractal@10.9.2) (2024-04-12)
 
 ### 🐛 Bug Fixes
