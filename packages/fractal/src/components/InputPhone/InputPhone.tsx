@@ -1,5 +1,3 @@
-'use client'
-
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'

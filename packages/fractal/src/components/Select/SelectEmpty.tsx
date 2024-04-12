@@ -1,5 +1,3 @@
-'use client'
-
 import * as RxSelect from '@radix-ui/react-select'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'

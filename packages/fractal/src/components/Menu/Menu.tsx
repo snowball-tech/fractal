@@ -1,5 +1,3 @@
-'use client'
-
 import omit from 'lodash/fp/omit'
 import {
   type ForwardedRef,

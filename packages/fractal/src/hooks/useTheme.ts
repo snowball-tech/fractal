@@ -1,5 +1,3 @@
-'use client'
-
 import isEmpty from 'lodash/fp/isEmpty'
 import { useContext } from 'react'
 
