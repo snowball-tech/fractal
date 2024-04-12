@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.9.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.1...@snowball-tech/fractal@10.9.2) (2024-04-12)
+
+### 🐛 Bug Fixes
+
+- add missing 'use client' directive to useTheme hook ([55315c9](https://github.com/snowball-tech/fractal/commit/55315c9b17b9bbd842acf512d07c7b274b4ce18a))
+
 ## @snowball-tech/fractal [10.9.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.0...@snowball-tech/fractal@10.9.1) (2024-04-12)
 
 ### 🐛 Bug Fixes
