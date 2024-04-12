@@ -1,3 +1,5 @@
+'use client'
+
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSwitch from '@radix-ui/react-switch'
 import isEmpty from 'lodash/fp/isEmpty'

@@ -1,3 +1,5 @@
+'use client'
+
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import { useContext, useId } from 'react'

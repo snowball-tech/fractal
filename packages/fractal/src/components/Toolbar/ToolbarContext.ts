@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext } from 'react'
 
 import { DEFAULT_ORIENTATION, Orientations } from './Toolbar.constants'

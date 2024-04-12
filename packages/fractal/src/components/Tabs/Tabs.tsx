@@ -1,3 +1,5 @@
+'use client'
+
 import * as RxTabs from '@radix-ui/react-tabs'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'

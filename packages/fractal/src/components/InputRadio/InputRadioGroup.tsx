@@ -1,3 +1,5 @@
+'use client'
+
 import * as RxRadio from '@radix-ui/react-radio-group'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'

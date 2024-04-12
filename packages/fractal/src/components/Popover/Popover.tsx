@@ -1,3 +1,5 @@
+'use client'
+
 import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxPopover from '@radix-ui/react-popover'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'

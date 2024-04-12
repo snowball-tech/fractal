@@ -1,6 +1,39 @@
+import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { type Options, defineConfig } from 'tsup'
+
+const DIST_PATH = './dist'
+
+async function addDirectivesToChunkFiles(distPath = DIST_PATH) {
+  try {
+    const files = await fs.readdir(distPath)
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const file of files) {
+      if (
+        file.startsWith('chunk-') &&
+        (file.endsWith('.mjs') || file.endsWith('.js'))
+      ) {
+        const filePath = path.join(distPath, file)
+
+        // eslint-disable-next-line no-await-in-loop -- We need to wait for each file to be read
+        const data = await fs.readFile(filePath, 'utf8')
+
+        const updatedContent = `'use client';\n${data}`
+
+        // eslint-disable-next-line no-await-in-loop -- We need to wait for each file to be written
+        await fs.writeFile(filePath, updatedContent, 'utf8')
+
+        // eslint-disable-next-line no-console -- We need to log the result
+        console.log(`Directive has been added to ${file}`)
+      }
+    }
+  } catch (err) {
+    // eslint-disable-next-line no-console -- We need to log the error
+    console.error('Error:', err)
+  }
+}
 
 const commonConfig: Options = {
   // Cleaning of the directory is made by the `build` NPM script
@@ -9,15 +42,11 @@ const commonConfig: Options = {
   esbuildOptions(options) {
     // eslint-disable-next-line no-param-reassign
     options.outbase = './'
-    // eslint-disable-next-line no-param-reassign
-    options.banner = {
-      js: '"use client"',
-    }
   },
   external: ['react', 'react-dom', '@iconscout/react-unicons'],
   format: 'esm',
   minify: true,
-  outDir: './dist',
+  outDir: DIST_PATH,
   replaceNodeEnv: true,
   sourcemap: true,
   target: 'esnext',
@@ -40,12 +69,15 @@ export default defineConfig([
       './src/index.ts',
       './src/constants.ts',
       './src/types.ts',
-      './src/ThemeProvider.tsx',
       './src/hooks/index.ts',
-      './src/hooks/*.ts',
       './src/styles/helpers.ts',
       './src/components/index.ts',
+      './src/ThemeProvider.tsx',
+      './src/hooks/*.ts',
       './src/components/**/index.ts',
     ],
+    async onSuccess() {
+      await addDirectivesToChunkFiles()
+    },
   },
 ])
