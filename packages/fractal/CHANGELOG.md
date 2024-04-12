@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.8.0...@snowball-tech/fractal@10.9.0) (2024-04-12)
+
+### ✨ Features
+
+- preserve 'use client' directives ([84c7398](https://github.com/snowball-tech/fractal/commit/84c73983eb5dead1bade0ff1b5adc1374b124c1a))
+
 # @snowball-tech/fractal [10.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.7.7...@snowball-tech/fractal@10.8.0) (2024-04-11)
 
 ### 💄 UI/UX
