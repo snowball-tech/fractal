@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.9.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.0...@snowball-tech/fractal@10.9.1) (2024-04-12)
+
+### 🐛 Bug Fixes
+
+- **theme:** add missing use client directive ([76912b2](https://github.com/snowball-tech/fractal/commit/76912b2f9e7a6b4c99b158acba38c1a07664efbc))
+
 # @snowball-tech/fractal [10.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.8.0...@snowball-tech/fractal@10.9.0) (2024-04-12)
 
 ### ✨ Features
