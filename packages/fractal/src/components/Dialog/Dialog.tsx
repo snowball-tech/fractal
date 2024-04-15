@@ -167,6 +167,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                 <RxDialog.Overlay
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__overlay`,
+                    'z-[9999]',
                     'inset-0 bg-[rgba(255,251,244,0.8)]',
                   )}
                   style={{ position }}
@@ -178,6 +179,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   asChild
                   className={cn(
                     `${PREFIX}-${GROUP_NAME}__content`,
+                    'z-[9999]',
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
