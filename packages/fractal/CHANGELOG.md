@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.9.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.5...@snowball-tech/fractal@10.9.6) (2024-04-15)
+
+### 🐛 Bug Fixes
+
+- **dialog-confirm:** increase significantly the z-index ([ffa3bf7](https://github.com/snowball-tech/fractal/commit/ffa3bf744aa171960bf91588f6a772d3dae69629))
+
 ## @snowball-tech/fractal [10.9.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.4...@snowball-tech/fractal@10.9.5) (2024-04-12)
 
 ### 🐛 Bug Fixes
