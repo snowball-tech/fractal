@@ -74,7 +74,7 @@ export const InputPinCode = ({
     newValue: string,
     index: number,
   ) => {
-    const newValueAsInt = parseInt(newValue, 10)
+    const newValueAsInt = Number.parseInt(newValue, 10)
     let digit = newValue
 
     if (
@@ -87,8 +87,8 @@ export const InputPinCode = ({
     }
 
     const oldCode = value || defaultValue || ''
-    const newCode = `${oldCode.substring(0, index)}${digit}${oldCode.substring(
-      index + 1,
+    const newCode = `${oldCode.slice(0, Math.max(0, index))}${digit}${oldCode.slice(
+      Math.max(0, index + 1),
     )}`
 
     if (isFunction(onChange)) {
@@ -112,8 +112,8 @@ export const InputPinCode = ({
 
     if (index < length - 1) {
       const nextIndex = Math.min(newCode.length, index + 1)
-      const nextInput = document.getElementById(
-        `${uniqueId}-${nextIndex}`,
+      const nextInput = document.querySelector(
+        `#${uniqueId}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
@@ -143,10 +143,10 @@ export const InputPinCode = ({
     }
 
     switch (event.key) {
-      case 'ArrowLeft':
+      case 'ArrowLeft': {
         if (index > 0) {
-          const previousInput = document.getElementById(
-            `${uniqueId}-${index - 1}`,
+          const previousInput = document.querySelector(
+            `#${uniqueId}-${index - 1}`,
           ) as HTMLInputElement
           if (previousInput) {
             previousInput.focus()
@@ -154,8 +154,9 @@ export const InputPinCode = ({
         }
         event.preventDefault()
         break
+      }
 
-      case 'Backspace':
+      case 'Backspace': {
         if (!isEmpty(event.currentTarget.value)) {
           handleChange(
             event as unknown as ChangeEvent<HTMLInputElement>,
@@ -167,8 +168,8 @@ export const InputPinCode = ({
         }
 
         if (index > 0) {
-          const previousInput = document.getElementById(
-            `${uniqueId}-${index - 1}`,
+          const previousInput = document.querySelector(
+            `#${uniqueId}-${index - 1}`,
           ) as HTMLInputElement
           if (previousInput) {
             previousInput.focus()
@@ -176,11 +177,12 @@ export const InputPinCode = ({
         }
         event.preventDefault()
         break
+      }
 
-      case 'ArrowRight':
+      case 'ArrowRight': {
         if (index < length - 1) {
-          const nextInput = document.getElementById(
-            `${uniqueId}-${index + 1}`,
+          const nextInput = document.querySelector(
+            `#${uniqueId}-${index + 1}`,
           ) as HTMLInputElement
           if (nextInput) {
             nextInput.focus()
@@ -188,14 +190,17 @@ export const InputPinCode = ({
         }
         event.preventDefault()
         break
+      }
 
       case 'ArrowUp':
-      case 'ArrowDown':
+      case 'ArrowDown': {
         skipFocusChange.current = true
         break
+      }
 
-      default:
+      default: {
         break
+      }
     }
   }
 
@@ -211,7 +216,7 @@ export const InputPinCode = ({
     if (isEmpty(pastedValue)) {
       return
     }
-    const parsedPastedValue = parseInt(pastedValue, 10)
+    const parsedPastedValue = Number.parseInt(pastedValue, 10)
     if (
       !isNumber(parsedPastedValue) ||
       !isInteger(parsedPastedValue) ||
@@ -221,11 +226,11 @@ export const InputPinCode = ({
     }
 
     const newValue = pastedValue
-      .substring(0, length - index)
+      .slice(0, Math.max(0, length - index))
       .padEnd(length - index - 1, '0')
 
     const oldCode = value || defaultValue || ''
-    const newCode = `${oldCode.substring(0, index)}${newValue}`
+    const newCode = `${oldCode.slice(0, Math.max(0, index))}${newValue}`
 
     if (isFunction(onChange)) {
       onChange(event, newCode)
@@ -242,8 +247,8 @@ export const InputPinCode = ({
       }
     } else {
       const nextIndex = newCode.length
-      const nextInput = document.getElementById(
-        `${uniqueId}-${nextIndex}`,
+      const nextInput = document.querySelector(
+        `#${uniqueId}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
@@ -264,7 +269,9 @@ export const InputPinCode = ({
         props.className,
       )}
     >
-      {!isEmpty(label) ? (
+      {isEmpty(label) ? (
+        false
+      ) : (
         <RxLabel
           asChild
           className={cj(
@@ -278,8 +285,6 @@ export const InputPinCode = ({
         >
           <Typography element="label">{label}</Typography>
         </RxLabel>
-      ) : (
-        false
       )}
 
       <div
@@ -308,11 +313,11 @@ export const InputPinCode = ({
             )}
             {...(isString(defaultValue)
               ? {
-                  defaultValue: !isInteger(
-                    parseInt(defaultValue[index] ?? '', 10),
+                  defaultValue: isInteger(
+                    Number.parseInt(defaultValue[index] ?? '', 10),
                   )
-                    ? ''
-                    : defaultValue[index],
+                    ? defaultValue[index]
+                    : '',
                 }
               : {})}
             disabled={disabled}
@@ -342,9 +347,9 @@ export const InputPinCode = ({
             type="number"
             {...(isString(value)
               ? {
-                  value: !isInteger(parseInt(value[index] ?? '', 10))
-                    ? ''
-                    : value[index],
+                  value: isInteger(Number.parseInt(value[index] ?? '', 10))
+                    ? value[index]
+                    : '',
                 }
               : {})}
             onBlur={(event) => handleBlur(event, index)}

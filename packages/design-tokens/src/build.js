@@ -11,13 +11,10 @@ const platforms = Object.keys(config.platforms)
 let message = `Building design tokens on ${platforms.length} platform${
   platforms.length > 1 ? 's' : ''
 }:`
-if (platforms.length > 1) {
-  message = `${message} ${platforms.slice(0, -1).join(', ')} and ${
-    platforms[platforms.length - 1]
-  }`
-} else {
-  message = `${message} ${platforms[0]}`
-}
+message =
+  platforms.length > 1
+    ? `${message} ${platforms.slice(0, -1).join(', ')} and ${platforms.at(-1)}`
+    : `${message} ${platforms[0]}`
 console.info(`${message}...`)
 
 const sdInstance = StyleDictionary.extend(config)

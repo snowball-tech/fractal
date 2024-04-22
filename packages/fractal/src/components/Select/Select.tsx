@@ -148,16 +148,16 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         side="bottom"
         style={{
           display: undefined,
-          ...(props.style ?? {}),
+          ...props.style,
         }}
         onPointerDownOutside={handlePointerDownOutside}
         {...omit(['className', 'onPointerDownOutside'], dropdown)}
       >
         <RxScrollArea.Root
           className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
-          {...(props.dir !== undefined
-            ? { dir: props.dir as RxScrollArea.Direction }
-            : {})}
+          {...(props.dir === undefined
+            ? {}
+            : { dir: props.dir as RxScrollArea.Direction })}
           type="hover"
         >
           <RxSelect.Viewport asChild>
@@ -204,7 +204,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}writable`,
           `${PREFIX}-${GROUP_NAME}--${isOpen ? 'opened' : 'closed'}`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
@@ -214,7 +214,9 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           props.className,
         )}
       >
-        {!isEmpty(label) ? (
+        {isEmpty(label) ? (
+          false
+        ) : (
           <RxLabel
             asChild
             className={cj(
@@ -230,21 +232,19 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           >
             <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <RxSelect.Root
-          {...(defaultValue !== undefined ? { defaultValue } : {})}
+          {...(defaultValue === undefined ? {} : { defaultValue })}
           defaultOpen={autoFocus}
-          {...(props.dir !== undefined
-            ? { dir: props.dir as RxSelect.Direction }
-            : {})}
+          {...(props.dir === undefined
+            ? {}
+            : { dir: props.dir as RxSelect.Direction })}
           disabled={!writable}
           name={name || uniqueId}
           open={isOpen}
           required={required}
-          {...(value !== undefined ? { value } : {})}
+          {...(value === undefined ? {} : { value })}
           onOpenChange={handleDropdownToggle}
           onValueChange={handleSelect}
           // Be careful, arguments of `omit` from lodash FP are flipped!

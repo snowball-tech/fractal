@@ -8,7 +8,7 @@ import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './ToggleGoup.constants'
+import { GROUP_NAME } from './ToggleGroup.constants'
 import type { ToggleGroupProps } from './ToggleGroup.types'
 import { ToggleGroupContext } from './ToggleGroupContext'
 
@@ -50,9 +50,9 @@ export const ToggleGroup = ({
         props.className,
       )}
       title={label}
-      {...(defaultValue !== undefined ? { defaultValue } : {})}
+      {...(defaultValue === undefined ? {} : { defaultValue })}
       disabled={disabled}
-      {...(orientation !== undefined ? { orientation } : {})}
+      {...(orientation === undefined ? {} : { orientation })}
       type={multiple ? 'multiple' : 'single'}
       value={value}
       {...(isFunction(onValueChange)

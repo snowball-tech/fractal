@@ -138,7 +138,7 @@ perfectionist/sort-objects */
         <RxCheckbox.Root
           id={uniqueId}
           ref={combinedRef}
-          {...(checked !== undefined ? { checked } : {})}
+          {...(checked === undefined ? {} : { checked })}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
@@ -152,7 +152,7 @@ perfectionist/sort-objects */
               ? `${colorClassNames.hover[color]} cursor-pointer`
               : '',
           )}
-          {...(defaultChecked !== undefined ? { defaultChecked } : {})}
+          {...(defaultChecked === undefined ? {} : { defaultChecked })}
           aria-readonly={readOnly}
           disabled={disabled}
           name={name || uniqueId}

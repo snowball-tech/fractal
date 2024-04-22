@@ -9,7 +9,9 @@ const muteWarningsPlugin = (warningsToIgnore: string[][]): Plugin => {
 
   return {
     closeBundle() {
-      const diff = warningsToIgnore.filter((x) => !mutedMessages.has(x.join()))
+      const diff = warningsToIgnore.filter(
+        (x) => !mutedMessages.has(x.join(',')),
+      )
       if (diff.length > 0) {
         this.warn(
           'Some of your muted warnings never appeared during the build process:',
@@ -29,7 +31,7 @@ const muteWarningsPlugin = (warningsToIgnore: string[][]): Plugin => {
               )
 
               if (muted) {
-                mutedMessages.add(muted.join())
+                mutedMessages.add(muted.join(','))
 
                 return
               }

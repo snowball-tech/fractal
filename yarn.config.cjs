@@ -26,7 +26,7 @@ function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
 }
 
 module.exports = defineConfig({
-  constraints: async (ctx) => {
-    enforceConsistentDependenciesAcrossTheProject(ctx)
+  constraints: async (context) => {
+    enforceConsistentDependenciesAcrossTheProject(context)
   },
 })

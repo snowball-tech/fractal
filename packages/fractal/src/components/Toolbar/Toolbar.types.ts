@@ -18,7 +18,7 @@ export type CombinedRefs = DropdownCombinedRefs
 
 export interface ToolbarProps
   extends Omit<
-    ComponentProps<typeof Root> & AllHTMLAttributes<HTMLDivElement>,
+    AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Root>,
     'asChild' | 'dir' | 'loop' | 'size'
   > {
   /**
@@ -37,15 +37,24 @@ export interface ToolbarProps
   orientation?: `${Orientations}`
 }
 
-export type ToolbarButtonProps = Omit<
-  ButtonProps,
-  'truncate' | 'variant' | 'wrap'
-> & {
+export type ToolbarButtonProps = {
   /** Indicates if the toolbar button is active. */
   active?: boolean
-}
+} & Omit<ButtonProps, 'truncate' | 'variant' | 'wrap'>
 
-export type ToolbarDropdownProps = Omit<
+export type ToolbarDropdownProps = {
+  /**
+   * The content of the toolbar dropdown menu.
+   *
+   * For the best result, please use the `ToolbarDropdownItem`, `ToolbarDropdownItemGroup`,
+   * `ToolbarDropdownItemSeparator` or `ToolbarSubDropdown` components.
+   */
+  children: ReactNode
+  /**
+   * The label of the toolbar dropdown menu.
+   */
+  label: string
+} & Omit<
   DropdownProps,
   | 'children'
   | 'condensed'
@@ -53,19 +62,7 @@ export type ToolbarDropdownProps = Omit<
   | 'trigger'
   | 'triggerAsButton'
 > &
-  Pick<ToolbarButtonProps, 'active' | 'icon' | 'iconOnly' | 'iconPosition'> & {
-    /**
-     * The content of the toolbar dropdown menu.
-     *
-     * For the best result, please use the `ToolbarDropdownItem`, `ToolbarDropdownItemGroup`,
-     * `ToolbarDropdownItemSeparator` or `ToolbarSubDropdown` components.
-     */
-    children: ReactNode
-    /**
-     * The label of the toolbar dropdown menu.
-     */
-    label: string
-  }
+  Pick<ToolbarButtonProps, 'active' | 'icon' | 'iconOnly' | 'iconPosition'>
 
 export type ToolbarDropdownItemProps = Omit<DropdownItemProps, 'condensed'>
 

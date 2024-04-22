@@ -10,9 +10,11 @@ export function sleep(timeInMs: number) {
 
 export function hasChildWithProps(
   children: ReactNode,
-  propNames: Array<string> | string,
+  propertyNames: Array<string> | string,
 ): boolean {
-  const propsToCheck = Array.isArray(propNames) ? propNames : [propNames]
+  const propsToCheck = Array.isArray(propertyNames)
+    ? propertyNames
+    : [propertyNames]
 
   let hasProps = false
 
@@ -26,13 +28,13 @@ export function hasChildWithProps(
     }
 
     hasProps = propsToCheck.every(
-      (propName) =>
-        Object.prototype.hasOwnProperty.call(child.props, propName) &&
-        Boolean(child.props[propName]),
+      (propertyName) =>
+        Object.prototype.hasOwnProperty.call(child.props, propertyName) &&
+        Boolean(child.props[propertyName]),
     )
 
     if (!hasProps && child.props.children) {
-      hasProps = hasChildWithProps(child.props.children, propNames)
+      hasProps = hasChildWithProps(child.props.children, propertyNames)
     }
   })
 
@@ -42,8 +44,8 @@ export function hasChildWithProps(
 export function rangeStep(start: number, end: number, step: number): number[] {
   const result: number[] = []
 
-  for (let i = start; i <= end; i += step) {
-    result.push(i)
+  for (let index = start; index <= end; index += step) {
+    result.push(index)
   }
 
   return result
@@ -64,9 +66,9 @@ export function extendChildren(
       if (
         isObject(childType) &&
         (
-          childType as unknown as Record<string, unknown> & {
+          childType as unknown as {
             displayName: string
-          }
+          } & Record<string, unknown>
         ).displayName !== displayName
       ) {
         return cloneElement(child, props(child.props))

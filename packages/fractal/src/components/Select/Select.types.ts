@@ -39,7 +39,7 @@ export interface SelectProps
    * of the dropdown.
    */
   dropdown?: Partial<
-    Omit<RxSelectContentProps, 'asChild'> & { className?: string }
+    { className?: string } & Omit<RxSelectContentProps, 'asChild'>
   >
   /** Indicates if the select should take all the available width. */
   fullWidth?: boolean

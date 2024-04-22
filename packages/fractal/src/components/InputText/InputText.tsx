@@ -75,28 +75,34 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     let inputMode = props.inputMode ?? 'text'
     switch (type) {
-      case 'number':
+      case 'number': {
         inputMode = 'decimal'
         break
+      }
 
-      case 'tel':
+      case 'tel': {
         inputMode = 'tel'
         break
+      }
 
-      case 'email':
+      case 'email': {
         inputMode = 'email'
         break
+      }
 
-      case 'url':
+      case 'url': {
         inputMode = 'url'
         break
+      }
 
-      case 'search':
+      case 'search': {
         inputMode = 'search'
         break
+      }
 
-      default:
+      default: {
         break
+      }
     }
 
     const writable = !disabled && !readOnly
@@ -111,7 +117,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}-writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           readOnly && !disabled ? 'cursor-default' : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
@@ -119,15 +125,17 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           !isEmpty(prefix) || !isEmpty(suffix)
             ? `${PREFIX}-${GROUP_NAME}--with-addendum`
             : '',
-          !isEmpty(prefix) ? `${PREFIX}-${GROUP_NAME}--with-prefix` : '',
-          !isEmpty(suffix) ? `${PREFIX}-${GROUP_NAME}--with-suffix` : '',
+          isEmpty(prefix) ? '' : `${PREFIX}-${GROUP_NAME}--with-prefix`,
+          isEmpty(suffix) ? '' : `${PREFIX}-${GROUP_NAME}--with-suffix`,
           readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
           required ? `${PREFIX}-${GROUP_NAME}--required` : '',
           isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
           props.className,
         )}
       >
-        {!isEmpty(label) ? (
+        {isEmpty(label) ? (
+          false
+        ) : (
           <RxLabel
             asChild
             className={cj(
@@ -144,8 +152,6 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           >
             <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <Typography
@@ -161,7 +167,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
                 addendumClasses,
-                !writable ? 'text-disabled' : '',
+                writable ? '' : 'text-disabled',
                 'left-1',
               )}
             >
@@ -196,12 +202,12 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               hasPrefix ? 'pl-5' : '',
               hasSuffix ? 'pr-5' : '',
               required ? `${PREFIX}-${GROUP_NAME}--required` : '',
-              !withSpinButton
-                ? '[appearance:textfield] [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden'
-                : '',
+              withSpinButton
+                ? ''
+                : '[appearance:textfield] [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden',
             )}
             disabled={disabled}
-            {...(defaultValue !== undefined ? { defaultValue } : {})}
+            {...(defaultValue === undefined ? {} : { defaultValue })}
             id={uniqueId}
             ref={ref}
             inputMode={inputMode}

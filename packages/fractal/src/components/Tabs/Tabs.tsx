@@ -59,8 +59,8 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           props.className,
         )}
-        {...(defaultTab !== undefined ? { defaultValue: defaultTab } : {})}
-        {...(tab !== undefined ? { value: tab } : {})}
+        {...(defaultTab === undefined ? {} : { defaultValue: defaultTab })}
+        {...(tab === undefined ? {} : { value: tab })}
         orientation={orientation}
         {...(isFunction(onTabChange) ? { onValueChange: onTabChange } : {})}
         {...omit(

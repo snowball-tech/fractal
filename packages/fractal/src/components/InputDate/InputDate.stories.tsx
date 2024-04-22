@@ -69,7 +69,9 @@ const meta: Meta<InputDateProps> = {
   },
   component: InputDate,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (

@@ -34,9 +34,9 @@ async function addDirectivesToChunkFiles(distPath = DIST_PATH) {
         console.log(`Directive has been added to ${file}`)
       }
     }
-  } catch (err) {
+  } catch (error) {
     // eslint-disable-next-line no-console -- We need to log the error
-    console.error('Error:', err)
+    console.error('Error:', error)
   }
 }
 

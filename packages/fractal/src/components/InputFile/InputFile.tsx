@@ -80,22 +80,22 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
       `${PREFIX}-${GROUP_NAME}--${variant}`,
       props.required ? `${PREFIX}-${GROUP_NAME}--required` : '',
       'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-unset appearance-none box-border',
-      !isTextVariant ? 'h-6 px-3 py-1' : '',
+      isTextVariant ? '' : 'h-6 px-3 py-1',
       triggerProps.fullWidth && !triggerProps.iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
       disabled
         ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames.light[variant]}`
         : `${variantClassNames.light[variant]} cursor-pointer`,
-      !isEmpty(triggerProps.icon)
-        ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`
-        : '',
+      isEmpty(triggerProps.icon)
+        ? ''
+        : `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`,
       // eslint-disable-next-line no-nested-ternary
       triggerProps.iconOnly
         ? `${PREFIX}-${GROUP_NAME}--icon-only w-6`
-        : !triggerProps.fullWidth
-          ? 'w-fit'
-          : '',
+        : triggerProps.fullWidth
+          ? ''
+          : 'w-fit',
       props.className,
     )
 
@@ -134,9 +134,9 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
     return (
       <>
         <button
-          {...(triggerProps.id !== undefined
-            ? { id: triggerProps.id as string }
-            : {})}
+          {...(triggerProps.id === undefined
+            ? {}
+            : { id: triggerProps.id as string })}
           ref={triggerRef}
           aria-label={label}
           className={classNames}

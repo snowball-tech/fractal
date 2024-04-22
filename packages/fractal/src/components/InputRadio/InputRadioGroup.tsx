@@ -51,10 +51,10 @@ export const InputRadioGroup = ({
         required ? `${PREFIX}-${GROUP_NAME}__group--required` : '',
         props.className,
       )}
-      {...(defaultValue !== undefined ? { defaultValue } : {})}
+      {...(defaultValue === undefined ? {} : { defaultValue })}
       disabled={disabled}
       name={name || uniqueId}
-      {...(orientation !== undefined ? { orientation } : {})}
+      {...(orientation === undefined ? {} : { orientation })}
       required={required}
       value={value}
       {...(isFunction(onValueChange)

@@ -16,45 +16,48 @@ StyleDictionary.registerFormat({
 
     const extensions = ['woff', 'woff2']
 
-    return dictionary.allTokens
-      .reduce((fontList, prop) => {
-        const {
-          attributes: { item: family },
-          display: { value: display },
-          styles,
-          value: fontName,
-          weights,
-        } = prop
+    return (
+      dictionary.allTokens
+        // eslint-disable-next-line unicorn/no-array-reduce
+        .reduce((fontList, property) => {
+          const {
+            attributes: { item: family },
+            display: { value: display },
+            styles,
+            value: fontName,
+            weights,
+          } = property
 
-        const fontCss = weights
-          .map((weight) =>
-            styles
-              .map((style) =>
-                [
-                  '@font-face {',
-                  `\n\tfont-family: "${family}";`,
-                  `\n\tfont-style: ${style};`,
-                  `\n\tfont-weight: ${weight};`,
-                  `\n\tsrc:`,
-                  `\n\t\t${extensions
-                    .map(
-                      (extension) =>
-                        `url("${fontPathPrefix}${fontName}-${weight}${
-                          style === 'italic' ? '-Italic' : ''
-                        }.${extension}") format("${formatsMap[extension]}")`,
-                    )
-                    .join(',\n\t\t')};`,
-                  `\n\tfont-display: ${display};`,
-                  '\n}\n',
-                ].join(''),
-              )
-              .join('\n'),
-          )
-          .join('\n')
+          const fontCss = weights
+            .map((weight) =>
+              styles
+                .map((style) =>
+                  [
+                    '@font-face {',
+                    `\n\tfont-family: "${family}";`,
+                    `\n\tfont-style: ${style};`,
+                    `\n\tfont-weight: ${weight};`,
+                    `\n\tsrc:`,
+                    `\n\t\t${extensions
+                      .map(
+                        (extension) =>
+                          `url("${fontPathPrefix}${fontName}-${weight}${
+                            style === 'italic' ? '-Italic' : ''
+                          }.${extension}") format("${formatsMap[extension]}")`,
+                      )
+                      .join(',\n\t\t')};`,
+                    `\n\tfont-display: ${display};`,
+                    '\n}\n',
+                  ].join(''),
+                )
+                .join('\n'),
+            )
+            .join('\n')
 
-        return [...fontList, fontCss]
-      }, [])
-      .join('\n')
+          return [...fontList, fontCss]
+        }, [])
+        .join('\n')
+    )
   },
   name: 'css/fontface',
 })

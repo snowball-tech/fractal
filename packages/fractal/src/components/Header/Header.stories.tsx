@@ -30,7 +30,7 @@ const SAFE_AREAS: Record<string, string> = {
   'the-iphone': '',
 }
 
-const meta: Meta<HeaderProps & { device: string }> = {
+const meta: Meta<{ device: string } & HeaderProps> = {
   argTypes: {
     children: {
       control: 'radio',
@@ -112,17 +112,17 @@ const meta: Meta<HeaderProps & { device: string }> = {
   component: Header,
 
   title: 'Organisms/Header',
-} satisfies Meta<HeaderProps & { device: string }>
+} satisfies Meta<{ device: string } & HeaderProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ device, ...args }) => {
+  render: ({ device, ...arguments_ }) => {
     if (device === 'none') {
       return (
         <div className="@container">
-          <Header {...args} />
+          <Header {...arguments_} />
         </div>
       )
     }
@@ -142,7 +142,7 @@ export const Playground: Story = {
         <div className={`device device-${device}`}>
           <div className="device-frame">
             <div className="device-screen @container">
-              <Header {...args} style={style} />
+              <Header {...arguments_} style={style} />
             </div>
           </div>
           <div className="device-stripe"></div>

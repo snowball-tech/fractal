@@ -103,12 +103,14 @@ const meta: Meta<SelectProps> = {
   decorators: [
     ...(isChromatic()
       ? [
-          (storyFn: () => ReactNode) => (
-            <div className="h-[1200px]">{storyFn()}</div>
+          (storyFunction: () => ReactNode) => (
+            <div className="h-[1200px]">{storyFunction()}</div>
           ),
         ]
       : []),
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onSelect = (newValue: string) => {

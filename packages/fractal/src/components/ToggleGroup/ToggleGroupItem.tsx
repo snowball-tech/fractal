@@ -22,7 +22,7 @@ import {
   variantClassNames as toggleVariantClassNames,
 } from '../Toggle/Toggle'
 import { Variants } from '../Toggle/Toggle.constants'
-import { GROUP_NAME } from './ToggleGoup.constants'
+import { GROUP_NAME } from './ToggleGroup.constants'
 import type { ToggleGroupItemProps } from './ToggleGroup.types'
 import { ToggleGroupContext } from './ToggleGroupContext'
 
@@ -94,7 +94,7 @@ export const ToggleGroupItem = forwardRef<
 
     return (
       <RxToggleGroup.Item
-        {...(props.id !== undefined ? { id: props.id } : {})}
+        {...(props.id === undefined ? {} : { id: props.id })}
         ref={combinedRef}
         aria-label={label}
         className={cn(
@@ -107,9 +107,9 @@ export const ToggleGroupItem = forwardRef<
           fullWidth && !iconOnly
             ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
             : 'w-fit',
-          !isEmpty(icon)
-            ? `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`
-            : '',
+          isEmpty(icon)
+            ? ''
+            : `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`,
           iconOnly ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 p-1` : 'px-3 py-1',
           props.className,
         )}

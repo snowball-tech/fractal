@@ -38,19 +38,23 @@ function isValid(type: keyof DateFormat, value: '' | number, max?: number) {
   }
 
   switch (type) {
-    case 'day':
+    case 'day': {
       return value >= 1 && value <= 31
+    }
 
-    case 'month':
+    case 'month': {
       return value >= 1 && value <= 12
+    }
 
-    case 'year':
+    case 'year': {
       return max === undefined || !isInteger(max)
         ? value >= 1900
         : value >= 1900 && value <= max
+    }
 
-    default:
+    default: {
       return false
+    }
   }
 }
 
@@ -129,28 +133,22 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       const newErrors = { ...errors }
 
       const day = value?.day || defaultValue?.day
-      if (!isNil(day) && (!isInteger(day) || !isValid('day', day))) {
-        newErrors.day = true
-      } else {
-        newErrors.day = false
-      }
+      newErrors.day = !!(
+        !isNil(day) &&
+        (!isInteger(day) || !isValid('day', day))
+      )
 
       const month = value?.month || defaultValue?.month
-      if (!isNil(month) && (!isInteger(month) || !isValid('month', month))) {
-        newErrors.month = true
-      } else {
-        newErrors.month = false
-      }
+      newErrors.month = !!(
+        !isNil(month) &&
+        (!isInteger(month) || !isValid('month', month))
+      )
 
       const year = value?.year || defaultValue?.year
-      if (
+      newErrors.year = !!(
         !isNil(year) &&
         (!isInteger(year) || !isValid('year', year, maxYear))
-      ) {
-        newErrors.year = true
-      } else {
-        newErrors.year = false
-      }
+      )
 
       if (
         newErrors.day !== errors.day ||
@@ -176,7 +174,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       newValue: string,
       type: keyof DateFormat,
     ) => {
-      const newValueAsInt = parseInt(newValue, 10)
+      const newValueAsInt = Number.parseInt(newValue, 10)
 
       if (isFunction(onChange)) {
         onChange(event, {
@@ -203,26 +201,30 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         autoSwitch
       ) {
         switch (type) {
-          case 'day':
+          case 'day': {
             if (newValue.length === 2 && monthRef?.current) {
               monthRef.current.focus()
             }
             break
+          }
 
-          case 'month':
+          case 'month': {
             if (newValue.length === 2 && yearRef?.current) {
               yearRef.current.focus()
             }
             break
+          }
 
-          case 'year':
+          case 'year': {
             if (newValue.length === 4 && yearRef?.current) {
               yearRef.current.blur()
             }
             break
+          }
 
-          default:
+          default: {
             break
+          }
         }
       }
     }
@@ -236,55 +238,65 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       }
 
       switch (event.key) {
-        case 'ArrowLeft':
+        case 'ArrowLeft': {
           switch (type) {
-            case 'month':
+            case 'month': {
               if (dayRef?.current) {
                 dayRef.current.focus()
                 event.preventDefault()
               }
               break
+            }
 
-            case 'year':
+            case 'year': {
               if (monthRef?.current) {
                 monthRef.current.focus()
                 event.preventDefault()
               }
               break
+            }
 
-            default:
+            default: {
               break
+            }
           }
           break
+        }
 
-        case 'ArrowRight':
+        case 'ArrowRight': {
           switch (type) {
-            case 'day':
+            case 'day': {
               if (monthRef?.current) {
                 monthRef.current.focus()
                 event.preventDefault()
               }
               break
+            }
 
-            case 'month':
+            case 'month': {
               if (yearRef?.current) {
                 yearRef.current.focus()
                 event.preventDefault()
               }
               break
+            }
 
-            default:
+            default: {
               break
+            }
           }
           break
+        }
 
         case 'ArrowUp':
-        case 'ArrowDown':
+        case 'ArrowDown': {
           skipFocusChange = true
           break
+        }
 
-        default:
+        default: {
           break
+        }
       }
 
       if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
@@ -303,7 +315,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-fit max-w-full flex-col gap-1',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
           readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
@@ -312,7 +324,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           props.className,
         )}
       >
-        {!isEmpty(label) ? (
+        {isEmpty(label) ? (
+          false
+        ) : (
           <RxLabel
             asChild
             className={cj(
@@ -326,8 +340,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           >
             <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <div
@@ -342,9 +354,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:min-w-9',
             )}
-            {...(defaultValue?.day !== undefined
-              ? { defaultValue: defaultValue.day }
-              : {})}
+            {...(defaultValue?.day === undefined
+              ? {}
+              : { defaultValue: defaultValue.day })}
             description={descriptions?.day ?? ''}
             disabled={disabled}
             error={errors.day || hasErrorMessage}
@@ -361,7 +373,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             success={isSuccessful}
             suffix={errors.day ? <ExclamationCircleIcon /> : undefined}
             type="number"
-            {...(value?.day !== undefined ? { value: value.day } : {})}
+            {...(value?.day === undefined ? {} : { value: value.day })}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'day') }
               : {})}
@@ -384,9 +396,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:min-w-9',
             )}
-            {...(defaultValue?.month !== undefined
-              ? { defaultValue: defaultValue.month }
-              : {})}
+            {...(defaultValue?.month === undefined
+              ? {}
+              : { defaultValue: defaultValue.month })}
             description={descriptions?.month ?? ''}
             disabled={disabled}
             error={errors.month || hasErrorMessage}
@@ -403,7 +415,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             success={isSuccessful}
             suffix={errors.month ? <ExclamationCircleIcon /> : undefined}
             type="number"
-            {...(value?.month !== undefined ? { value: value.month } : {})}
+            {...(value?.month === undefined ? {} : { value: value.month })}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'month') }
               : {})}
@@ -428,9 +440,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:!w-unset [&_input]:min-w-11',
             )}
-            {...(defaultValue?.year !== undefined
-              ? { defaultValue: defaultValue.year }
-              : {})}
+            {...(defaultValue?.year === undefined
+              ? {}
+              : { defaultValue: defaultValue.year })}
             description={descriptions?.year ?? ''}
             disabled={disabled}
             error={errors.year || hasErrorMessage}
@@ -454,7 +466,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ) : undefined
             }
             type="number"
-            {...(value?.year !== undefined ? { value: value.year } : {})}
+            {...(value?.year === undefined ? {} : { value: value.year })}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'year') }
               : {})}

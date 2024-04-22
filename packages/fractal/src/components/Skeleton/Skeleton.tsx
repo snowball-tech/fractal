@@ -50,24 +50,29 @@ export const Skeleton = ({
 
   let skeletonShapeClassNames = ''
   switch (shape) {
-    case Shapes.Circle:
+    case Shapes.Circle: {
       skeletonShapeClassNames = 'rounded-full [aspect-ratio:1/1]'
       break
+    }
 
-    case Shapes.Rectangle:
+    case Shapes.Rectangle: {
       skeletonShapeClassNames = 'w-full rounded-sm'
       break
+    }
 
-    case Shapes.RoundedRectangle:
+    case Shapes.RoundedRectangle: {
       skeletonShapeClassNames = 'w-full rounded-full'
       break
+    }
 
-    case Shapes.Square:
+    case Shapes.Square: {
       skeletonShapeClassNames = 'rounded-sm [aspect-ratio:1/1] '
       break
+    }
 
-    default:
+    default: {
       return false
+    }
   }
 
   if (isEmpty(skeletonShapeClassNames)) {

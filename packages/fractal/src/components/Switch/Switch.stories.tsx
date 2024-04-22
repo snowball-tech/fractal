@@ -28,6 +28,7 @@ const meta: Meta<SwitchProps> = {
   },
   component: Switch,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       return (
         <div className="w-fit">

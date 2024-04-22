@@ -55,10 +55,10 @@ export const DropdownRadioGroup = ({
         props.className,
       )}
       condensed={isCondensed}
-      {...(defaultValue !== undefined ? { defaultValue } : {})}
-      {...(disabled !== undefined ? { disabled } : {})}
+      {...(defaultValue === undefined ? {} : { defaultValue })}
+      {...(disabled === undefined ? {} : { disabled })}
       fullWidth
-      {...(value !== undefined ? { value } : {})}
+      {...(value === undefined ? {} : { value })}
       variant={InputRadioVariants.Tertiary}
       {...(isFunction(onValueChange)
         ? {

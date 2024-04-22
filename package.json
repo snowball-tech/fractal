@@ -34,7 +34,7 @@
   "packageManager": "yarn@4.1.1",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "18.x"
+    "node": ">=18 <=20"
   },
   "workspaces": [
     "apps/*",
@@ -74,10 +74,10 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
     "@qiwi/multi-semantic-release": "^7.1.1",
-    "@snowball-tech/eslint-config": "^5.3.6",
-    "@snowball-tech/prettier-config": "^1.4.6",
-    "@snowball-tech/semantic-release-config": "^2.1.7",
-    "@snowball-tech/stylelint-config": "^2.2.6",
+    "@snowball-tech/eslint-config": "^5.3.7",
+    "@snowball-tech/prettier-config": "^1.4.7",
+    "@snowball-tech/semantic-release-config": "^2.1.8",
+    "@snowball-tech/stylelint-config": "^2.2.7",
     "chromatic": "^11.3.0",
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
@@ -86,8 +86,8 @@
     "lint-staged": "^15.2.2",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
-    "semantic-release": "^22.0.12",
-    "serve": "^14.2.1",
+    "semantic-release": "^23.0.8",
+    "serve": "^14.2.2",
     "stylelint": "^16.3.1"
   },
   "dependencies": {

@@ -37,9 +37,9 @@ the size of the screen of the user.
       const minWidth = DesignTokens[
         `SizeBreakpoint${pascalCaseBreakpointName}`
       ]
-      const maxWidth = !isEmpty(nextBreakpointName)
-        ? `${parseInt(DesignTokens[`SizeBreakpoint${pascalCaseNextBreakpointName}`], 10) - 1}px`
-        : '∞'
+      const maxWidth = isEmpty(nextBreakpointName)
+        ? '∞'
+        : `${Number.parseInt(DesignTokens[`SizeBreakpoint${pascalCaseNextBreakpointName}`], 10) - 1}px`
 
       return (
       <tr key={breakpointName}>

@@ -67,7 +67,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
 
     return (
       <RxToggle.Root
-        {...(props.id !== undefined ? { id: props.id } : {})}
+        {...(props.id === undefined ? {} : { id: props.id })}
         ref={combinedRef}
         aria-label={label}
         className={cn(
@@ -80,18 +80,18 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
           fullWidth && !iconOnly
             ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
             : 'w-fit',
-          !isEmpty(icon)
-            ? `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`
-            : '',
+          isEmpty(icon)
+            ? ''
+            : `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`,
           iconOnly ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 p-1` : 'px-3 py-1',
           props.className,
         )}
-        {...(defaultToggled !== undefined
-          ? { defaultPressed: defaultToggled }
-          : {})}
+        {...(defaultToggled === undefined
+          ? {}
+          : { defaultPressed: defaultToggled })}
         disabled={disabled}
         title={label}
-        {...(toggled !== undefined ? { pressed: toggled } : {})}
+        {...(toggled === undefined ? {} : { pressed: toggled })}
         onPressedChange={handleToggle}
         {...omit(['className', 'id'], props)}
       >
