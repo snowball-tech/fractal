@@ -4783,7 +4783,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
-    "@snowball-tech/eslint-config": "npm:^5.4.1"
+    "@snowball-tech/eslint-config": "npm:^5.4.2"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@types/lodash": "npm:^4.17.0"
@@ -4795,9 +4795,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/eslint-config@npm:^5.4.1":
-  version: 5.4.1
-  resolution: "@snowball-tech/eslint-config@npm:5.4.1"
+"@snowball-tech/eslint-config@npm:^5.4.2":
+  version: 5.4.2
+  resolution: "@snowball-tech/eslint-config@npm:5.4.2"
   dependencies:
     "@next/eslint-plugin-next": "npm:^14.2.2"
     "@rushstack/eslint-patch": "npm:^1.10.2"
@@ -4835,7 +4835,7 @@ __metadata:
     prettier: "npm:^3.2.5"
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 10/d4d11cf47e741f0cd93f50ab85505e197407ec04fb11265f681eab9c030d9d32ece5b1c7f3ccc42d071041fc92a3f9b5292dee6bc96b8711f5a0db9cde8fc07f
+  checksum: 10/f840abb245c28272e1ea2b48c0e67cf6129fa61014d42fab8b57d2311f4d8ac9a4133aa8d5a4ae0ec9aa0e802a6d21da06849855165bd852ff18e8b7db6d84cc
   languageName: node
   linkType: hard
 
@@ -4862,7 +4862,7 @@ __metadata:
     "@radix-ui/react-toolbar": "npm:^1.0.4"
     "@react-hookz/web": "npm:^24.0.4"
     "@snowball-tech/design-tokens": "npm:11.2.2"
-    "@snowball-tech/eslint-config": "npm:^5.4.1"
+    "@snowball-tech/eslint-config": "npm:^5.4.2"
     "@snowball-tech/prettier-config": "npm:^1.4.7"
     "@storybook/addon-a11y": "npm:^8.0.9"
     "@storybook/addon-actions": "npm:^8.0.9"
@@ -12254,7 +12254,7 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": "npm:^2.10.4"
     "@qiwi/multi-semantic-release": "npm:^7.1.1"
-    "@snowball-tech/eslint-config": "npm:^5.4.1"
+    "@snowball-tech/eslint-config": "npm:^5.4.2"
     "@snowball-tech/prettier-config": "npm:^1.4.7"
     "@snowball-tech/semantic-release-config": "npm:^2.1.8"
     "@snowball-tech/stylelint-config": "npm:^2.2.7"
