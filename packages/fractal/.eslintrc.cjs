@@ -32,26 +32,6 @@ module.exports = {
     'import/no-named-as-default': 'off',
 
     'storybook/no-uninstalled-addons': 'off',
-
-    'unicorn/prevent-abbreviations': [
-      'error',
-      {
-        replacements: {
-          dist: {
-            distribution: false,
-          },
-          props: {
-            properties: false,
-          },
-          ref: {
-            reference: false,
-          },
-          refs: {
-            references: false,
-          },
-        },
-      },
-    ],
   },
 
   settings: {
