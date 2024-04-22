@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.9.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.9...@snowball-tech/fractal@10.9.10) (2024-04-22)
+
+### 📦 Dependencies
+
+- update linter ([2d89d4e](https://github.com/snowball-tech/fractal/commit/2d89d4efb5042b690956cd094d54357d8d5205ed))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.2.3
+
 ## @snowball-tech/fractal [10.9.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.8...@snowball-tech/fractal@10.9.9) (2024-04-22)
 
 ### 📦 Dependencies
