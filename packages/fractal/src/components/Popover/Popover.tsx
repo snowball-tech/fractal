@@ -158,21 +158,22 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
         }
       } else {
         switch (width) {
-          case 'fit':
+          case 'fit': {
             widthClassNames = 'w-fit'
             break
+          }
 
-          case 'full':
+          case 'full': {
             widthClassNames = 'w-[var(--radix-popper-available-width)]'
             break
+          }
 
-          case 'auto':
-          case 'trigger':
-          default:
+          default: {
             widthClassNames = hasTriggerElement
               ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
               : 'w-fit'
             break
+          }
         }
 
         if (width === 'trigger' && !hasTriggerElement) {
@@ -210,13 +211,13 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
-              !hasTrigger
-                ? 'invisible h-0 max-h-0 border-y-0 py-0'
-                : 'flex items-center',
+              hasTrigger
+                ? 'flex items-center'
+                : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
                 : '!cursor-pointer',
-              !toggleOnTriggerClick ? '!cursor-default' : '',
+              toggleOnTriggerClick ? '' : '!cursor-default',
             )}
             disabled={!toggleOnTriggerClick}
             onPointerDown={
@@ -256,16 +257,16 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                   `${PREFIX}-${GROUP_NAME}__popover`,
                   'pointer-events-auto relative z-50 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
-                  !hasChildren
-                    ? `${PREFIX}-${GROUP_NAME}__popover--empty invisible`
-                    : '',
+                  hasChildren
+                    ? ''
+                    : `${PREFIX}-${GROUP_NAME}__popover--empty invisible`,
                   popover?.className,
                 )}
                 side={side}
                 style={{
                   display: undefined,
                   ...widthStyle,
-                  ...(popover.style ?? {}),
+                  ...popover.style,
                 }}
                 onInteractOutside={handleInteractOutside}
                 {...omit(
@@ -301,9 +302,9 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                   {withScroll ? (
                     <RxScrollArea.Root
                       className={`${PREFIX}-${GROUP_NAME}__popover__scrollarea`}
-                      {...(props.dir !== undefined
-                        ? { dir: props.dir as RxScrollArea.Direction }
-                        : {})}
+                      {...(props.dir === undefined
+                        ? {}
+                        : { dir: props.dir as RxScrollArea.Direction })}
                       type="hover"
                     >
                       <RxScrollArea.Viewport

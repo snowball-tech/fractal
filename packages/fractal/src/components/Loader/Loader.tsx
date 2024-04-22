@@ -29,7 +29,7 @@ export const Loader = ({
 perfectionist/sort-objects */
   }
 
-  const transformDuration = parseFloat(DURATION) / 4
+  const transformDuration = Number.parseFloat(DURATION) / 4
 
   return (
     <svg

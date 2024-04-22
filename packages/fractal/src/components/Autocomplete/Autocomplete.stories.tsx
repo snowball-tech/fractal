@@ -75,6 +75,7 @@ const itemsWithGroupsAndSeparators = (
 
 let abort: AbortController | null = null
 
+// eslint-disable-next-line unicorn/prevent-abbreviations
 const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
   if (!isNil(abort) && isFunction(abort?.abort)) {
     abort.abort()
@@ -87,8 +88,6 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
     fetch(`https://swapi.tech/api/people/?search=${newValue}`, {
       signal: abort?.signal,
     }),
-  )
-  promises.push(
     fetch(`https://swapi.tech/api/planets/?search=${newValue}`, {
       signal: abort?.signal,
     }),
@@ -241,12 +240,14 @@ const meta: Meta<AutocompleteProps> = {
   decorators: [
     ...(isChromatic()
       ? [
-          (storyFn: () => ReactNode) => (
-            <div className="h-[1200px]">{storyFn()}</div>
+          (storyFunction: () => ReactNode) => (
+            <div className="h-[1200px]">{storyFunction()}</div>
           ),
         ]
       : []),
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onSelect = (event: Event) => {
@@ -357,7 +358,7 @@ export const InteractiveSearching: Story = {
     })
 
     await waitFor(() => body.getByText(/loading star wars/i), {
-      timeout: 10000,
+      timeout: 10_000,
     })
   },
 }
@@ -384,11 +385,11 @@ export const InteractiveSearch: Story = {
     })
 
     await waitFor(() => body.getByText(/loading star wars/i), {
-      timeout: 10000,
+      timeout: 10_000,
     })
 
     const loader = await body.getByText(/loading star wars/i)
-    await waitForElementToBeRemoved(loader, { timeout: 30000 })
+    await waitForElementToBeRemoved(loader, { timeout: 30_000 })
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
@@ -433,11 +434,11 @@ export const InteractiveSearchAndSelect: Story = {
     })
 
     await waitFor(() => body.getByText(/loading star wars/i), {
-      timeout: 10000,
+      timeout: 10_000,
     })
 
     const loader = await body.getByText(/loading star wars/i)
-    await waitForElementToBeRemoved(loader, { timeout: 30000 })
+    await waitForElementToBeRemoved(loader, { timeout: 30_000 })
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
@@ -470,11 +471,11 @@ export const InteractiveEmptySearch: Story = {
     await userEvent.type(input, EMPTY_SEARCH)
 
     await waitFor(() => body.getByText(/loading star wars/i), {
-      timeout: 10000,
+      timeout: 10_000,
     })
 
     const loader = await body.getByText(/loading star wars/i)
-    await waitForElementToBeRemoved(loader, { timeout: 30000 })
+    await waitForElementToBeRemoved(loader, { timeout: 30_000 })
 
     await body.getByText(/nothing found/i)
   },

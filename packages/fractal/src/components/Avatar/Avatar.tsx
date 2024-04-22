@@ -77,9 +77,9 @@ perfectionist/sort-objects */
       className={cj(
         baseBubbleClassName,
         'flex items-center justify-center overflow-hidden bg-decorative-pink-70 text-dark',
-        !isEmpty(initials)
-          ? `${PREFIX}-${GROUP_NAME}__bubble--with-initials`
-          : `${PREFIX}-${GROUP_NAME}__bubble--with-icon`,
+        isEmpty(initials)
+          ? `${PREFIX}-${GROUP_NAME}__bubble--with-icon`
+          : `${PREFIX}-${GROUP_NAME}__bubble--with-initials`,
         size === Sizes.Fluid
           ? `[font-size:0.75rem] @[56px]:[font-size:1rem] @[64px]:[font-size:1.2rem] @[72px]:[font-size:1.4rem] @[80px]:[font-size:1.6rem] @[88px]:[font-size:1.8rem] @[96px]:[font-size:2rem] @[104px]:[font-size:2.2rem] @[112px]:[font-size:2.44rem] @[120px]:[font-size:2.6rem] @[128px]:[font-size:2.8rem] @[136px]:[font-size:3rem] @[144px]:[font-size:3.2rem] @[152px]:[font-size:3.44rem] @[160px]:[font-size:3.6rem] @[168px]:[font-size:3.83rem] @[176px]:[font-size:4rem] @[184px]:[font-size:4.2rem] @[192px]:[font-size:4.4rem] @[200px]:[font-size:4.6rem] @[208px]:[font-size:4.81rem] @[216px]:[font-size:5rem] @[224px]:[font-size:5.2rem] @[232px]:[font-size:5.4rem] @[240px]:[font-size:5.65rem]`
           : '',

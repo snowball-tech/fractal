@@ -95,7 +95,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           id={uniqueId}
           ref={ref}
           aria-label={label}
-          {...(checked !== undefined ? { checked } : {})}
+          {...(checked === undefined ? {} : { checked })}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__toggle`,
             'relative h-1 max-h-1 w-5 max-w-4 rounded-full border-1 border-normal bg-body-light px-unset py-unset text-left text-color-unset [display:unset]',
@@ -104,7 +104,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
               ? `${PREFIX}-${GROUP_NAME}__toggle--disabled cursor-not-allowed !border-disabled`
               : 'cursor-pointer data-state-checked:bg-highlight',
           )}
-          {...(defaultChecked !== undefined ? { defaultChecked } : {})}
+          {...(defaultChecked === undefined ? {} : { defaultChecked })}
           disabled={disabled}
           name={name || uniqueId}
           required={required}

@@ -225,15 +225,15 @@ export const SubDropdown = forwardRef<
             className={cn(
               `${PREFIX}-${GROUP_NAME}__sub-menu__content`,
               'pointer-events-auto relative z-50 -mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-2 data-[side="right"]:ml-2 data-[side="top"]:mb-1',
-              !hasChildren
-                ? `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`
-                : '',
+              hasChildren
+                ? ''
+                : `${PREFIX}-${GROUP_NAME}__sub-menu__content--empty invisible`,
               content?.className,
             )}
             loop
             style={{
               display: undefined,
-              ...(content?.style ?? {}),
+              ...content?.style,
             }}
             onInteractOutside={handleSubMenuInteractOutside}
             {...omit(
@@ -244,9 +244,9 @@ export const SubDropdown = forwardRef<
             {withScroll ? (
               <RxScrollArea.Root
                 className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
-                {...(props.dir !== undefined
-                  ? { dir: props.dir as RxScrollArea.Direction }
-                  : {})}
+                {...(props.dir === undefined
+                  ? {}
+                  : { dir: props.dir as RxScrollArea.Direction })}
                 type="hover"
               >
                 <RxScrollArea.Viewport

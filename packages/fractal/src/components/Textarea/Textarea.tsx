@@ -95,7 +95,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           readOnly && !disabled ? 'cursor-default' : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
@@ -110,7 +110,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           props.className,
         )}
       >
-        {!isEmpty(label) ? (
+        {isEmpty(label) ? (
+          false
+        ) : (
           <RxLabel
             asChild
             className={cj(
@@ -123,8 +125,6 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           >
             <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <Typography
@@ -163,11 +163,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               hasIcon ? 'pr-6' : '',
             )}
             disabled={disabled}
-            {...(defaultValue !== undefined ? { defaultValue } : {})}
+            {...(defaultValue === undefined ? {} : { defaultValue })}
             id={uniqueId}
             ref={ref}
-            {...(maxRows !== undefined ? { maxRows } : {})}
-            {...(minRows !== undefined ? { minRows } : {})}
+            {...(maxRows === undefined ? {} : { maxRows })}
+            {...(minRows === undefined ? {} : { minRows })}
             name={name || uniqueId}
             placeholder={placeholder}
             readOnly={readOnly}

@@ -17,7 +17,7 @@ StyleDictionary.registerTransform({
       return token.value
     }
 
-    const floatValue = parseFloat(token.value)
+    const floatValue = Number.parseFloat(token.value)
     if (!isFinite(floatValue)) {
       return token.value
     }
@@ -41,7 +41,7 @@ StyleDictionary.registerTransform({
       return token.value
     }
 
-    const floatValue = parseFloat(token.value)
+    const floatValue = Number.parseFloat(token.value)
     if (!isFinite(floatValue)) {
       return token.value
     }

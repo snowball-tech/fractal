@@ -68,13 +68,13 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    * customize the style of the popover.
    */
   popover?: Partial<
-    Omit<
-      RxPopoverContentProps,
-      'align' | 'asChild' | 'onInteractOutside' | 'side'
-    > & {
+    {
       className?: string
       style?: CSSProperties
-    }
+    } & Omit<
+      RxPopoverContentProps,
+      'align' | 'asChild' | 'onInteractOutside' | 'side'
+    >
   >
   /** The preferred side of the trigger to render the popover. */
   side?: RxPopoverContentProps['side']

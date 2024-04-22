@@ -62,7 +62,9 @@ const meta: Meta<DropdownRadioGroupProps> = {
   },
   component: DropdownRadioGroup,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onValueChange = (newValue: string) => {

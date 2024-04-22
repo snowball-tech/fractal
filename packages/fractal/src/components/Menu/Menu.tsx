@@ -75,8 +75,8 @@ perfectionist/sort-objects */
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           'pointer-events-auto relative z-50',
           embedded ? '' : 'rounded-sm border-1 border-normal bg-white p-1',
-          !hasChildren ? `${PREFIX}-${GROUP_NAME}__menu--empty invisible` : '',
-          !embedded ? elevationClassNames[elevation] : '',
+          hasChildren ? '' : `${PREFIX}-${GROUP_NAME}__menu--empty invisible`,
+          embedded ? '' : elevationClassNames[elevation],
           props.className,
         )}
         {...omit(['className'], props)}

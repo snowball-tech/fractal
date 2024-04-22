@@ -124,13 +124,13 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         setSelectedCountry(newSelectedCountry)
 
         const { countryCode } = newPrefix
-        if (!isEmpty(countryCode)) {
+        if (isEmpty(countryCode)) {
+          setActualPlaceholder(placeholder)
+        } else {
           setActualPlaceholder(
             getExampleNumber(countryCode, examples)?.formatNational() ??
               placeholder,
           )
-        } else {
-          setActualPlaceholder(placeholder)
         }
       },
       [placeholder],
@@ -213,8 +213,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         return
       }
 
-      const newPhoneNumber = `+${prefixToEmit.prefix}${numberToEmit.replace(
-        /^[+]/g,
+      const newPhoneNumber = `+${prefixToEmit.prefix}${numberToEmit.replaceAll(
+        /^\+/g,
         '',
       )}`
       const parsedNewPhone = parsePhoneNumber(newPhoneNumber)
@@ -278,7 +278,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex max-w-full flex-col gap-1',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}-writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}-writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           readOnly && !disabled ? 'cursor-default' : '',
           isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
@@ -288,7 +288,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           props.className,
         )}
       >
-        {!isEmpty(label) ? (
+        {isEmpty(label) ? (
+          false
+        ) : (
           <RxLabel
             asChild
             className={cj(
@@ -304,8 +306,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           >
             <Typography element="label">{label}</Typography>
           </RxLabel>
-        ) : (
-          false
         )}
 
         <div
@@ -353,9 +353,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                     'fixed top-2 !w-[calc(100%-theme(spacing.3))]',
                   )}
                   fullWidth
-                  {...(placeholder !== undefined
-                    ? { placeholder: searchPlaceholder }
-                    : {})}
+                  {...(placeholder === undefined
+                    ? {}
+                    : { placeholder: searchPlaceholder })}
                   prefix={<SearchIcon />}
                   selectOnFocus={!keepFocus}
                   value={search}

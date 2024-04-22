@@ -60,7 +60,7 @@ export const Playground: Story = {
           href={href}
           icon={icon}
           label={label}
-          target={!isEmpty(href) ? '_blank' : undefined}
+          target={isEmpty(href) ? undefined : '_blank'}
           onClick={action('onClick')}
         />
       </Dropdown>

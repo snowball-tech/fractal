@@ -63,7 +63,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
               : 'cursor-default',
             props.className,
           )}
-          {...(orientation !== undefined ? { orientation } : {})}
+          {...(orientation === undefined ? {} : { orientation })}
           {...omit(['className'], props)}
         >
           <ToolbarContext.Provider value={{ disabled, orientation }}>

@@ -58,13 +58,13 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
    * customize the style of the dropdown.
    */
   dropdown?: Partial<
-    Omit<
-      RxDropdownMenuContentProps,
-      'align' | 'asChild' | 'onInteractOutside' | 'side'
-    > & {
+    {
       className?: string
       style?: CSSProperties
-    }
+    } & Omit<
+      RxDropdownMenuContentProps,
+      'align' | 'asChild' | 'onInteractOutside' | 'side'
+    >
   >
   /**
    * The elevation level of the dropdown.
@@ -140,8 +140,8 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
 
 export interface DropdownItemProps
   extends Omit<
-    ComponentProps<typeof DropdownMenuItem> &
-      AllHTMLAttributes<HTMLAnchorElement>,
+    AllHTMLAttributes<HTMLAnchorElement> &
+      ComponentProps<typeof DropdownMenuItem>,
     'asChild' | 'onClick'
   > {
   /** Indicates if the item should be displayed as active. */
@@ -212,7 +212,7 @@ export interface DropdownItemGroupProps
 
 export interface SubDropdownProps
   extends Omit<
-    ComponentProps<typeof Sub> & AllHTMLAttributes<HTMLDivElement>,
+    AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Sub>,
     'asChild' | 'content' | 'onClick'
   > {
   /**
@@ -244,10 +244,10 @@ export interface SubDropdownProps
    * customize the style of the sub-dropdown content.
    */
   content?: Partial<
-    Omit<RxDropdownMenuSubContentProps, 'asChild' | 'onInteractOutside'> & {
+    {
       className?: string
       style?: CSSProperties
-    }
+    } & Omit<RxDropdownMenuSubContentProps, 'asChild' | 'onInteractOutside'>
   >
   /** Indicates if the dropdown's sub-dropdown should be opened by default. */
   defaultOpen?: boolean
@@ -286,10 +286,7 @@ export interface SubDropdownProps
   withScroll?: boolean
 }
 
-export type DropdownRadioGroupProps = Omit<
-  InputRadioGroupProps,
-  'fullWidth' | 'orientation' | 'variant'
-> & {
+export type DropdownRadioGroupProps = {
   /**
    * Indicates if the radio group should be condensed (less spacing in radio
    * group and radio items).
@@ -299,9 +296,9 @@ export type DropdownRadioGroupProps = Omit<
    * `RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
-}
+} & Omit<InputRadioGroupProps, 'fullWidth' | 'orientation' | 'variant'>
 
-export type DropdownRadioItemProps = Omit<InputRadioProps, 'fullWidth'> & {
+export type DropdownRadioItemProps = {
   /**
    * Indicates if the radio item should be condensed (less spacing in radio
    * item).
@@ -311,6 +308,6 @@ export type DropdownRadioItemProps = Omit<InputRadioProps, 'fullWidth'> & {
    * to each RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
-}
+} & Omit<InputRadioProps, 'fullWidth'>
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

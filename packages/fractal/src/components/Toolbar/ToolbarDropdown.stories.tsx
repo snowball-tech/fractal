@@ -153,9 +153,9 @@ const meta: Meta<ToolbarDropdownProps> = {
   },
   component: ToolbarDropdown,
   decorators: [
-    (storyFn: () => ReactNode) => (
+    (storyFunction: () => ReactNode) => (
       <div className="flex h-[500px] max-w-[500px] items-center justify-center">
-        <Toolbar>{storyFn()}</Toolbar>
+        <Toolbar>{storyFunction()}</Toolbar>
       </div>
     ),
   ],

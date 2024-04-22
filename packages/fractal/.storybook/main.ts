@@ -1,10 +1,10 @@
-import { dirname, join } from 'path'
+import path from 'node:path'
 
 import type { StorybookConfig } from '@storybook/react-vite'
 import remarkGfm from 'remark-gfm'
 
 function getAbsolutePath(value: string) {
-  return dirname(require.resolve(join(value, 'package.json')))
+  return path.dirname(require.resolve(path.join(value, 'package.json')))
 }
 
 const config: StorybookConfig = {

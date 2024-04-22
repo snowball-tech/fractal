@@ -6,7 +6,7 @@ import { InputRadio, InputRadioGroup } from '.'
 
 type InputRadioProps = ComponentProps<typeof InputRadio>
 
-const meta: Meta<InputRadioProps & { required?: boolean }> = {
+const meta: Meta<{ required?: boolean } & InputRadioProps> = {
   argTypes: {
     asChild: { table: { disable: true } },
   },
@@ -24,7 +24,7 @@ const meta: Meta<InputRadioProps & { required?: boolean }> = {
   },
 
   title: 'Molecules/Input/InputRadio',
-} satisfies Meta<InputRadioProps & { required?: boolean }>
+} satisfies Meta<{ required?: boolean } & InputRadioProps>
 
 export default meta
 type Story = StoryObj<typeof meta>

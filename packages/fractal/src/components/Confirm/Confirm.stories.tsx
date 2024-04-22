@@ -55,8 +55,8 @@ const meta: Meta<ConfirmProps> = {
   },
   component: Confirm,
   decorators: [
-    (storyFn: () => ReactNode) => (
-      <div className="relative h-[350px] w-[500px]">{storyFn()}</div>
+    (storyFunction: () => ReactNode) => (
+      <div className="relative h-[350px] w-[500px]">{storyFunction()}</div>
     ),
   ],
 

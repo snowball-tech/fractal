@@ -32,6 +32,7 @@ const meta: Meta<LogoProps> = {
   },
   component: Logo,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       const isLight =
         context.args.pictoVariant === 'light' ||

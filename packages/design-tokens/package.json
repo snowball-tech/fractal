@@ -25,7 +25,7 @@
   "packageManager": "yarn@4.1.1",
   "engines": {
     "yarn": "^4.0.0",
-    "node": "18.x"
+    "node": ">=18 <=20"
   },
   "main": "dist/web/typescript/design-tokens.js",
   "files": [
@@ -54,7 +54,7 @@
     "update-deps": "yarn run -T update-deps"
   },
   "devDependencies": {
-    "@snowball-tech/eslint-config": "^5.3.6",
+    "@snowball-tech/eslint-config": "^5.3.7",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/lodash": "^4.17.0",

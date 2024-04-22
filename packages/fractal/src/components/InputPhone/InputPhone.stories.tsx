@@ -46,12 +46,14 @@ const meta: Meta<InputPhoneProps> = {
   decorators: [
     ...(isChromatic()
       ? [
-          (storyFn: () => ReactNode) => (
-            <div className="h-[1200px]">{storyFn()}</div>
+          (storyFunction: () => ReactNode) => (
+            <div className="h-[1200px]">{storyFunction()}</div>
           ),
         ]
       : []),
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (newPhoneNumber: PhoneNumber, isValid?: boolean) => {
@@ -59,16 +61,16 @@ const meta: Meta<InputPhoneProps> = {
 
         // Check if the component is controlled.
         if (context.args.value !== undefined) {
-          if (!isValid) {
+          if (isValid) {
             setArgs({
-              error: 'The phone number is not valid',
-              success: '',
+              error: '',
+              success: 'The phone number is valid',
               value: newPhoneNumber,
             })
           } else {
             setArgs({
-              error: '',
-              success: 'The phone number is valid',
+              error: 'The phone number is not valid',
+              success: '',
               value: newPhoneNumber,
             })
           }

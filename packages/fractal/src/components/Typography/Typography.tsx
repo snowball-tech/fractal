@@ -32,107 +32,127 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
   ) => {
     let typographyClassNames = ''
     switch (variant) {
-      case Variants.Display1:
+      case Variants.Display1: {
         typographyClassNames =
           'tracking-normal xs:text-display-1-xs md:text-display-1-md font-display-1 font-weight-display-1 xs:leading-display-1-xs md:leading-display-1-md'
         break
+      }
 
-      case Variants.Display2:
+      case Variants.Display2: {
         typographyClassNames =
           'tracking-normal xs:text-display-2-xs md:text-display-2-md font-display-2 font-weight-display-2 xs:leading-display-2-xs md:leading-display-2-md'
         break
+      }
 
-      case Variants.DisplayWide:
+      case Variants.DisplayWide: {
         typographyClassNames =
           'tracking-normal xs:text-display-wide-xs md:text-display-wide-md font-display-wide font-weight-display-wide xs:leading-display-wide-xs md:leading-display-wide-md'
         break
+      }
 
-      case Variants.Heading1:
+      case Variants.Heading1: {
         typographyClassNames =
           'tracking-normal xs:text-heading-1-xs md:text-heading-1-md font-heading-1 font-weight-heading-1 xs:leading-heading-1-xs md:leading-heading-1-md'
         break
+      }
 
-      case Variants.Heading2:
+      case Variants.Heading2: {
         typographyClassNames =
           'tracking-normal xs:text-heading-2-xs md:text-heading-2-md font-heading-2 font-weight-heading-2 leading-heading-2'
         break
+      }
 
-      case Variants.Heading3:
+      case Variants.Heading3: {
         typographyClassNames =
           'tracking-normal text-heading-3 font-heading-3 font-weight-heading-3 leading-heading-3'
         break
+      }
 
-      case Variants.Heading3Link:
+      case Variants.Heading3Link: {
         typographyClassNames =
           'tracking-normal text-heading-3 font-heading-3 font-weight-heading-3 leading-heading-3 underline'
         break
+      }
 
-      case Variants.Heading4:
+      case Variants.Heading4: {
         typographyClassNames =
           'tracking-normal text-heading-4 font-heading-4 font-weight-heading-4 leading-heading-4'
         break
+      }
 
-      case Variants.Heading4Link:
+      case Variants.Heading4Link: {
         typographyClassNames =
           'tracking-normal text-heading-4 font-heading-4 font-weight-heading-4 leading-heading-4 underline'
         break
+      }
 
       // eslint-disable-next-line default-case-last
       default:
-      case Variants.Body1:
+      case Variants.Body1: {
         typographyClassNames =
           'tracking-normal text-body-1 font-body-1 font-weight-body-1 leading-body-1'
         break
+      }
 
-      case Variants.Body1Bold:
+      case Variants.Body1Bold: {
         typographyClassNames =
           'tracking-normal text-body-1 font-body-1 font-weight-body-1-bold leading-body-1'
         break
+      }
 
-      case Variants.Body1Median:
+      case Variants.Body1Median: {
         typographyClassNames =
           'tracking-normal text-body-1 font-body-1 font-weight-body-1-median leading-body-1'
         break
+      }
 
-      case Variants.Body1Link:
+      case Variants.Body1Link: {
         typographyClassNames =
           'tracking-normal text-body-1 font-body-1 font-weight-body-1-link leading-body-1 underline'
         break
+      }
 
-      case Variants.Body2:
+      case Variants.Body2: {
         typographyClassNames =
           'tracking-normal text-body-2 font-body-2 font-weight-body-2 leading-body-2'
         break
+      }
 
-      case Variants.Body2Bold:
+      case Variants.Body2Bold: {
         typographyClassNames =
           'tracking-normal text-body-2 font-body-2 font-weight-body-2-bold leading-body-2'
         break
+      }
 
-      case Variants.Body2Median:
+      case Variants.Body2Median: {
         typographyClassNames =
           'tracking-normal text-body-2 font-body-2 font-weight-body-2-median leading-body-2'
         break
+      }
 
-      case Variants.Body2Link:
+      case Variants.Body2Link: {
         typographyClassNames =
           'tracking-normal text-body-2 font-body-2 font-weight-body-2-link leading-body-2 underline'
         break
+      }
 
-      case Variants.CaptionBold:
+      case Variants.CaptionBold: {
         typographyClassNames =
           'tracking-normal text-caption font-caption font-weight-caption-bold leading-caption'
         break
+      }
 
-      case Variants.CaptionMedian:
+      case Variants.CaptionMedian: {
         typographyClassNames =
           'tracking-normal text-caption font-caption font-weight-caption-median leading-caption'
         break
+      }
 
-      case Variants.CaptionLink:
+      case Variants.CaptionLink: {
         typographyClassNames =
           'tracking-normal text-caption font-caption font-weight-caption-link leading-caption underline'
         break
+      }
     }
 
     const actualElement =

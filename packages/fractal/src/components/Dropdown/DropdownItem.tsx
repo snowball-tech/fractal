@@ -80,7 +80,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
         title={label}
         {...(active ? { 'data-highlighted': active } : {})}
         {...(isLink ? { href, target } : {})}
-        {...(value !== undefined ? { 'data-value': value } : {})}
+        {...(value === undefined ? {} : { 'data-value': value })}
         {...(isFunction(onClick) ? { onSelect: onClick } : {})}
         {...(isFunction(onSelect) ? { onSelect } : {})}
         {...omit(['className', 'data-value'], props)}

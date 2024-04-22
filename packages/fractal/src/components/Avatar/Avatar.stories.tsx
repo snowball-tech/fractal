@@ -63,10 +63,10 @@ const meta = {
   },
 
   title: 'Molecules/Avatar',
-} satisfies Meta<AvatarProps & { fluidSize?: number }>
+} satisfies Meta<{ fluidSize?: number } & AvatarProps>
 
 export default meta
-type Story = StoryObj<AvatarProps & { fluidSize?: number }>
+type Story = StoryObj<{ fluidSize?: number } & AvatarProps>
 
 export const Playground: Story = {
   args: {

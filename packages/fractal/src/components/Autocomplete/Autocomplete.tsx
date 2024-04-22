@@ -181,44 +181,59 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         props.onKeyDown(event)
       }
 
-      if (event.key === 'Escape') {
-        event.preventDefault()
+      switch (event.key) {
+        case 'Escape': {
+          event.preventDefault()
 
-        if (isOpen) {
-          handleDropdownToggle(false)
-        } else if (inputRef?.current) {
-          setKeepFocus(false)
-          inputRef.current.blur()
-        }
-      } else if (event.key === 'Enter') {
-        event.preventDefault()
+          if (isOpen) {
+            handleDropdownToggle(false)
+          } else if (inputRef?.current) {
+            setKeepFocus(false)
+            inputRef.current.blur()
+          }
 
-        if (isFunction(onChange)) {
-          onChange(null, String(value) ?? '')
+          break
         }
-      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        if (!hasChildren) {
-          return
+        case 'Enter': {
+          event.preventDefault()
+
+          if (isFunction(onChange)) {
+            onChange(null, String(value) ?? '')
+          }
+
+          break
+        }
+        case 'ArrowDown':
+        case 'ArrowUp': {
+          if (!hasChildren) {
+            return
+          }
+
+          if (!isOpen) {
+            setKeepFocus(true)
+            handleDropdownToggle(true)
+          } else if (dropdownRef?.current) {
+            dropdownRef.current.dropdown?.focus()
+          }
+
+          event.preventDefault()
+
+          break
         }
 
-        if (!isOpen) {
-          setKeepFocus(true)
-          handleDropdownToggle(true)
-        } else if (dropdownRef?.current) {
-          dropdownRef.current.dropdown?.focus()
+        default: {
+          break
         }
-
-        event.preventDefault()
       }
     }
 
     const handleDropdownKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-      if (event.key === 'Escape') {
-        if (inputRef?.current) {
-          if (document.activeElement === inputRef.current) {
-            setKeepFocus(true)
-          }
-        }
+      if (
+        event.key === 'Escape' &&
+        inputRef?.current &&
+        document.activeElement === inputRef.current
+      ) {
+        setKeepFocus(true)
       }
     }
 
@@ -227,10 +242,8 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         props.onClick(event)
       }
 
-      if (inputRef?.current) {
-        if (document.activeElement !== inputRef.current) {
-          inputRef.current.focus()
-        }
+      if (inputRef?.current && document.activeElement !== inputRef.current) {
+        inputRef.current.focus()
       }
 
       if (hasChildren) {
@@ -263,7 +276,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col',
-          `${PREFIX}-${GROUP_NAME}--${!writable ? 'not-' : ''}writable`,
+          `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
@@ -315,18 +328,18 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               ref={inputRef}
               autoFocus={autoFocus}
               className={cj(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
-              {...(defaultValue !== undefined ? { defaultValue } : {})}
+              {...(defaultValue === undefined ? {} : { defaultValue })}
               disabled={disabled}
               error={hasErrorMessage}
               fullWidth={fullWidth}
               name={name || uniqueId}
-              {...(placeholder !== undefined ? { placeholder } : {})}
+              {...(placeholder === undefined ? {} : { placeholder })}
               readOnly={readOnly}
               required={required}
               selectOnFocus={false}
               success={isSuccessful}
               type="text"
-              {...(value !== undefined ? { value } : {})}
+              {...(value === undefined ? {} : { value })}
               onBlur={handleInputBlur}
               onChange={handleInputChange}
               onClick={handleInputClick}

@@ -27,7 +27,9 @@ const meta: Meta<InputPinCodeProps> = {
   },
   component: InputPinCode,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (
@@ -104,6 +106,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 
 export const Examples = () => {
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   const [{ value = '' }, setArgs] = useArgs()
 
   const handleChange = (_: unknown, newCode: string) => {

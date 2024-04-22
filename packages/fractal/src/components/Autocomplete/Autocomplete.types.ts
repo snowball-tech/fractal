@@ -38,7 +38,7 @@ export interface AutocompleteProps
    * of the dropdown.
    */
   dropdown?: Partial<
-    Omit<RxDropdownMenuContentProps, 'asChild'> & { className?: string }
+    { className?: string } & Omit<RxDropdownMenuContentProps, 'asChild'>
   >
   /**
    * An error message to display below the autocomplete if there is

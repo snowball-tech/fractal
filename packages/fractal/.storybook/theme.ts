@@ -34,7 +34,7 @@ const theme: ThemeVars = create({
 
   // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   appBorderColor: Black,
-  appBorderRadius: parseInt(Radius, 10),
+  appBorderRadius: Number.parseInt(Radius, 10),
 
   colorPrimary: PrimaryColor,
   colorSecondary: SecondaryColor,

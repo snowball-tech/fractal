@@ -159,21 +159,22 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
         }
       } else {
         switch (width) {
-          case 'fit':
+          case 'fit': {
             widthClassNames = 'w-fit'
             break
+          }
 
-          case 'full':
+          case 'full': {
             widthClassNames = 'w-[var(--radix-popper-available-width)]'
             break
+          }
 
-          case 'auto':
-          case 'trigger':
-          default:
+          default: {
             widthClassNames = hasTriggerElement
               ? 'w-[var(--radix-popper-anchor-width,"100%")]'
               : 'w-fit'
             break
+          }
         }
 
         if (width === 'trigger' && !hasTriggerElement) {
@@ -246,13 +247,13 @@ perfectionist/sort-objects */
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
-              !hasTrigger
-                ? 'invisible h-0 max-h-0 border-y-0 py-0'
-                : 'flex items-center',
+              hasTrigger
+                ? 'flex items-center'
+                : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
                 : '!cursor-pointer',
-              !toggleOnTriggerClick ? '!cursor-default' : '',
+              toggleOnTriggerClick ? '' : '!cursor-default',
             )}
             disabled={!toggleOnTriggerClick}
             onPointerDown={
@@ -304,9 +305,9 @@ perfectionist/sort-objects */
                   elevationClassNames[elevation],
                   'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
-                  !hasChildren
-                    ? `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`
-                    : '',
+                  hasChildren
+                    ? ''
+                    : `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`,
                   dropdown?.className,
                 )}
                 loop
@@ -314,7 +315,7 @@ perfectionist/sort-objects */
                 style={{
                   display: undefined,
                   ...widthStyle,
-                  ...(dropdown.style ?? {}),
+                  ...dropdown.style,
                 }}
                 onInteractOutside={handleDropdownInteractOutside}
                 {...omit(
@@ -332,9 +333,9 @@ perfectionist/sort-objects */
                 {withScroll ? (
                   <RxScrollArea.Root
                     className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
-                    {...(props.dir !== undefined
-                      ? { dir: props.dir as RxScrollArea.Direction }
-                      : {})}
+                    {...(props.dir === undefined
+                      ? {}
+                      : { dir: props.dir as RxScrollArea.Direction })}
                     type="hover"
                   >
                     <RxScrollArea.Viewport

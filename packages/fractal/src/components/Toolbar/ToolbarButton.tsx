@@ -108,18 +108,19 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
       // eslint-disable-next-line no-nested-ternary
       iconOnly
         ? `${PREFIX}-${GROUP_NAME}__button--icon-only px-half`
-        : !fullWidth
-          ? 'w-fit'
-          : '',
+        : fullWidth
+          ? ''
+          : 'w-fit',
       // eslint-disable-next-line no-nested-ternary
-      !iconOnly
+      iconOnly
         ? // eslint-disable-next-line no-nested-ternary
+          ''
+        : // eslint-disable-next-line no-nested-ternary
           hasIcon
           ? iconPosition === 'left'
             ? 'pl-half pr-1'
             : 'pl-1 pr-half'
-          : 'px-1'
-        : '',
+          : 'px-1',
       props.className,
     )
 
@@ -169,11 +170,11 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
     if (asLink) {
       return (
         <a
-          {...(props.id !== undefined ? { id: props.id } : {})}
+          {...(props.id === undefined ? {} : { id: props.id })}
           aria-label={label}
           className={classNames}
           href={href}
-          {...(!isEmpty(target) ? { target } : {})}
+          {...(isEmpty(target) ? {} : { target })}
           title={label}
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
@@ -185,13 +186,13 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
 
     return (
       <RxToolbar.Button
-        {...(props.id !== undefined ? { id: props.id } : {})}
+        {...(props.id === undefined ? {} : { id: props.id })}
         ref={ref}
         aria-label={label}
         className={classNames}
-        {...(props.dir !== undefined
-          ? { dir: props.dir as 'ltr' | 'rtl' }
-          : {})}
+        {...(props.dir === undefined
+          ? {}
+          : { dir: props.dir as 'ltr' | 'rtl' })}
         disabled={isDisabled}
         title={label}
         type={type}

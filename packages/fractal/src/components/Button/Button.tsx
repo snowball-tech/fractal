@@ -150,8 +150,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         : '',
       (asLink && !isTextVariant) || underlined === false ? 'no-underline' : '',
       'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
-      !wrap ? 'max-h-6' : '',
-      !isTextVariant ? 'min-h-6' : 'min-h-3',
+      wrap ? '' : 'max-h-6',
+      isTextVariant ? 'min-h-3' : 'min-h-6',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
@@ -164,9 +164,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       // eslint-disable-next-line no-nested-ternary
       iconOnly
         ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 max-w-6 max-h-6 h-6`
-        : !fullWidth
-          ? 'w-fit'
-          : '',
+        : fullWidth
+          ? ''
+          : 'w-fit',
       iconOnly && isTextVariant ? 'w-3 max-w-3 h-3 max-h-3' : '',
       props.className,
     )
@@ -224,11 +224,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     if (asLink) {
       return (
         <a
-          {...(props.id !== undefined ? { id: props.id } : {})}
+          {...(props.id === undefined ? {} : { id: props.id })}
           aria-label={label}
           className={classNames}
           href={href}
-          {...(!isEmpty(target) ? { target } : {})}
+          {...(isEmpty(target) ? {} : { target })}
           title={label}
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
@@ -240,13 +240,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        {...(props.id !== undefined ? { id: props.id } : {})}
+        {...(props.id === undefined ? {} : { id: props.id })}
         ref={ref}
         aria-label={label}
         className={classNames}
-        {...(props.dir !== undefined
-          ? { dir: props.dir as 'ltr' | 'rtl' }
-          : {})}
+        {...(props.dir === undefined
+          ? {}
+          : { dir: props.dir as 'ltr' | 'rtl' })}
         disabled={disabled}
         title={label}
         type={type}

@@ -150,9 +150,9 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
               isString(trigger)
                 ? 'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none'
                 : '',
-              !hasTrigger
-                ? 'invisible h-0 max-h-0 border-y-0 py-0'
-                : 'flex items-center',
+              hasTrigger
+                ? 'flex items-center'
+                : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
                 : 'cursor-pointer',

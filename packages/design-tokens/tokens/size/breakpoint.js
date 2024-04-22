@@ -34,12 +34,12 @@ const mediaQuery = {
   from: {},
   to: {},
 }
-Object.values(breakpoints).forEach((breakpoint, i) => {
-  const nextBreakpoint = Object.values(breakpoints)[i + 1]
+Object.values(breakpoints).forEach((breakpoint, index) => {
+  const nextBreakpoint = Object.values(breakpoints)[index + 1]
 
   const upTo = {}
-  Object.values(breakpoints).forEach((secondaryBreakpoint, j) => {
-    if (j > i) {
+  Object.values(breakpoints).forEach((secondaryBreakpoint, index_) => {
+    if (index_ > index) {
       upTo[secondaryBreakpoint] = {
         value: `(min-width: {size.breakpoint.${breakpoint}.value}) and (max-width: ${
           breakpointsValues[secondaryBreakpoint].value - 1

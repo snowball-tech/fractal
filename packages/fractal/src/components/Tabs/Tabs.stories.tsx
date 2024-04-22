@@ -143,6 +143,7 @@ const meta: Meta<TabsProps> = {
   },
   component: Tabs,
   decorators: [
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       return (
         <div className="max-w-[600px]">
