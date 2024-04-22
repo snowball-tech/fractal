@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [11.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.1...@snowball-tech/design-tokens@11.2.2) (2024-04-22)
+
+### 📦 Dependencies
+
+- update linter and fix the config ([6479e8a](https://github.com/snowball-tech/fractal/commit/6479e8a021aa0e3b22b5f78f9244b1edf5821b96))
+
 ## @snowball-tech/design-tokens [11.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.0...@snowball-tech/design-tokens@11.2.1) (2024-04-22)
 
 ### 📦 Dependencies
