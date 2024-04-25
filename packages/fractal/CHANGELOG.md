@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [10.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.10...@snowball-tech/fractal@10.10.0) (2024-04-25)
+
+### ✨ Features
+
+- **slider:** add the Slider component ([9bf6a0b](https://github.com/snowball-tech/fractal/commit/9bf6a0bf4e892f8ec01edcce7b711c499cc18aa6))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([5eb37ce](https://github.com/snowball-tech/fractal/commit/5eb37cec5f6f9056cd6d0914c5eb3f4474988d03))
+
 ## @snowball-tech/fractal [10.9.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.9...@snowball-tech/fractal@10.9.10) (2024-04-22)
 
 ### 📦 Dependencies
