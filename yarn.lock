@@ -1921,7 +1921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/selector-specificity@npm:^3.0.2, @csstools/selector-specificity@npm:^3.0.3":
+"@csstools/selector-specificity@npm:^3.0.3":
   version: 3.0.3
   resolution: "@csstools/selector-specificity@npm:3.0.3"
   peerDependencies:
@@ -4883,7 +4883,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.25"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
     chromatic: "npm:^11.3.0"
-    clsx: "npm:^2.1.0"
+    clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.5.11"
     eslint: "npm:^8.57.0"
     libphonenumber-js: "npm:^1.10.61"
@@ -4893,7 +4893,7 @@ __metadata:
     postcss-flexbugs-fixes: "npm:^5.0.2"
     postcss-import: "npm:^16.1.0"
     postcss-logical: "npm:^7.0.1"
-    postcss-preset-env: "npm:^9.5.8"
+    postcss-preset-env: "npm:^9.5.9"
     postcss-styled-syntax: "npm:^0.6.4"
     prettier: "npm:^3.2.5"
     react: "npm:^18.2.0"
@@ -4905,7 +4905,7 @@ __metadata:
     tailwindcss: "npm:^3.4.3"
     tsup: "npm:^8.0.2"
     typescript: "npm:^5.4.5"
-    vercel: "npm:^34.1.1"
+    vercel: "npm:^34.1.2"
     vite: "npm:^5.2.10"
     vite-tsconfig-paths: "npm:^4.3.2"
   peerDependencies:
@@ -6846,12 +6846,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:4.2.1":
-  version: 4.2.1
-  resolution: "@vercel/next@npm:4.2.1"
+"@vercel/next@npm:4.2.2":
+  version: 4.2.2
+  resolution: "@vercel/next@npm:4.2.2"
   dependencies:
     "@vercel/nft": "npm:0.26.4"
-  checksum: 10/5d34bd4f107ba3f0e42cb00f0616952caff47a280ec81a83375569aa0309e052b6c66338b77e97fcb78e81ba68e1a1aaf37ea248d76066456605413e69492ec6
+  checksum: 10/b1aecc14af52da049b3931949957812a0a79dc7a9c885ffc0530cce89308d809cce4afa56368ff15a04dfa7f5374b8b5bdb35daeec9aac521c9a65fab40cc75e
   languageName: node
   linkType: hard
 
@@ -6905,10 +6905,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/python@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@vercel/python@npm:4.1.1"
-  checksum: 10/1a4a040f6c97966d63fab88d327e920362bf9266bebe52f52e0fdc1172d7f5d96d8a8b478e010b3621bb0e12b080a56dde006c108d159d37e5421ecfd13b47bc
+"@vercel/python@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@vercel/python@npm:4.2.0"
+  checksum: 10/8c1e3e64091312bf58be0aa873ea134709835f3b79b9a9f935661293fbd229c69e96ca0114a8eff24b093c4fe5dbe2857cacc9fd97d8b6b4dfbe8b3bf1a614e2
   languageName: node
   linkType: hard
 
@@ -8841,10 +8841,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "clsx@npm:2.1.0"
-  checksum: 10/2e0ce7c3b6803d74fc8147c408f88e79245583202ac14abd9691e2aebb9f312de44270b79154320d10bb7804a9197869635d1291741084826cff20820f31542b
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10/cdfb57fa6c7649bbff98d9028c2f0de2f91c86f551179541cf784b1cfdc1562dcb951955f46d54d930a3879931a980e32a46b598acaea274728dbe068deca919
   languageName: node
   linkType: hard
 
@@ -9361,10 +9361,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-functions-list@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "css-functions-list@npm:3.2.1"
-  checksum: 10/57d7deb3b05e84d95b88ba9b3244cf60d33b40652b3357f084c805b24a9febda5987ade44ef25a56be41e73249a7dcc157abd704d8a0e998b2c1c2e2d5de6461
+"css-functions-list@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "css-functions-list@npm:3.2.2"
+  checksum: 10/b8a564118b93b87b63236a57132a3ef581416896a70c1d0df73360a9ec43dc582f7c2a586b578feb8476179518e557c6657570a8b6185b16300c7232a84d43e3
   languageName: node
   linkType: hard
 
@@ -12269,7 +12269,7 @@ __metadata:
     prettier: "npm:^3.2.5"
     semantic-release: "npm:^23.0.8"
     serve: "npm:^14.2.2"
-    stylelint: "npm:^16.3.1"
+    stylelint: "npm:^16.4.0"
   languageName: unknown
   linkType: soft
 
@@ -18433,9 +18433,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-custom-properties@npm:^13.3.7":
-  version: 13.3.7
-  resolution: "postcss-custom-properties@npm:13.3.7"
+"postcss-custom-properties@npm:^13.3.8":
+  version: 13.3.8
+  resolution: "postcss-custom-properties@npm:13.3.8"
   dependencies:
     "@csstools/cascade-layer-name-parser": "npm:^1.0.9"
     "@csstools/css-parser-algorithms": "npm:^2.6.1"
@@ -18444,7 +18444,7 @@ __metadata:
     postcss-value-parser: "npm:^4.2.0"
   peerDependencies:
     postcss: ^8.4
-  checksum: 10/49eaae48fc366592ce60cb3c35a260026ced615b684213c668a29fcd98d56874da6b6ce224df5d52e8738aa1a52845bc4bf70ab6ceb2c22ec4bcfe9a60f6e9f9
+  checksum: 10/8255eb47763df505e83a57435682a96ac597c66a7dd820184c659dfea9080691870482c6318b300f0a3b968294e7e739c34ad793229c7d4cbd3dfd7b123e24e0
   languageName: node
   linkType: hard
 
@@ -18704,9 +18704,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:^9.5.8":
-  version: 9.5.8
-  resolution: "postcss-preset-env@npm:9.5.8"
+"postcss-preset-env@npm:^9.5.9":
+  version: 9.5.9
+  resolution: "postcss-preset-env@npm:9.5.9"
   dependencies:
     "@csstools/postcss-cascade-layers": "npm:^4.0.4"
     "@csstools/postcss-color-function": "npm:^3.0.14"
@@ -18749,7 +18749,7 @@ __metadata:
     postcss-color-hex-alpha: "npm:^9.0.4"
     postcss-color-rebeccapurple: "npm:^9.0.3"
     postcss-custom-media: "npm:^10.0.4"
-    postcss-custom-properties: "npm:^13.3.7"
+    postcss-custom-properties: "npm:^13.3.8"
     postcss-custom-selectors: "npm:^7.1.8"
     postcss-dir-pseudo-class: "npm:^8.0.1"
     postcss-double-position-gradients: "npm:^5.0.6"
@@ -18770,7 +18770,7 @@ __metadata:
     postcss-selector-not: "npm:^7.0.2"
   peerDependencies:
     postcss: ^8.4
-  checksum: 10/c142332d1b015761ca8b12c174bbe558ee3eabe7d38550df5730aee621d8ac697734b7ccf4948de40c080e45dcd158287d1b07f1443495f6211bc21b1cd7248a
+  checksum: 10/5ee14e53a2515588c498559b468d42ba62f036531407660a5a4a7b7ed8391248f01689b85c14e8bf420d21590615089dd7378ced910f5bd8c7e500e1f620915f
   languageName: node
   linkType: hard
 
@@ -21273,19 +21273,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^16.3.1":
-  version: 16.3.1
-  resolution: "stylelint@npm:16.3.1"
+"stylelint@npm:^16.3.1, stylelint@npm:^16.4.0":
+  version: 16.4.0
+  resolution: "stylelint@npm:16.4.0"
   dependencies:
     "@csstools/css-parser-algorithms": "npm:^2.6.1"
     "@csstools/css-tokenizer": "npm:^2.2.4"
     "@csstools/media-query-list-parser": "npm:^2.1.9"
-    "@csstools/selector-specificity": "npm:^3.0.2"
+    "@csstools/selector-specificity": "npm:^3.0.3"
     "@dual-bundle/import-meta-resolve": "npm:^4.0.0"
     balanced-match: "npm:^2.0.0"
     colord: "npm:^2.9.3"
     cosmiconfig: "npm:^9.0.0"
-    css-functions-list: "npm:^3.2.1"
+    css-functions-list: "npm:^3.2.2"
     css-tree: "npm:^2.3.1"
     debug: "npm:^4.3.4"
     fast-glob: "npm:^3.3.2"
@@ -21314,11 +21314,11 @@ __metadata:
     strip-ansi: "npm:^7.1.0"
     supports-hyperlinks: "npm:^3.0.0"
     svg-tags: "npm:^1.0.0"
-    table: "npm:^6.8.1"
+    table: "npm:^6.8.2"
     write-file-atomic: "npm:^5.0.1"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10/2dbc040512a7a97d4565de7af3289e7ecdf2a56d9174c253ad18c6aef55cd221731240e89c9b8c52bb9894205fe3929e06a6d8c8269e130e8947952210db4e68
+  checksum: 10/0cb81898e26f10e941c4c636d9da220a2308c6fcebb718c69260f01cea8b34b883d85660bd52b1bdd3b9a3fd0a7675cc1f65b5dbb6d2b154214bac54f28f34c2
   languageName: node
   linkType: hard
 
@@ -21438,7 +21438,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"table@npm:^6.8.1":
+"table@npm:^6.8.2":
   version: 6.8.2
   resolution: "table@npm:6.8.2"
   dependencies:
@@ -22862,17 +22862,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^34.1.1":
-  version: 34.1.1
-  resolution: "vercel@npm:34.1.1"
+"vercel@npm:^34.1.2":
+  version: 34.1.2
+  resolution: "vercel@npm:34.1.2"
   dependencies:
     "@vercel/build-utils": "npm:7.12.0"
     "@vercel/fun": "npm:1.1.0"
     "@vercel/go": "npm:3.1.1"
     "@vercel/hydrogen": "npm:1.0.2"
-    "@vercel/next": "npm:4.2.1"
+    "@vercel/next": "npm:4.2.2"
     "@vercel/node": "npm:3.0.27"
-    "@vercel/python": "npm:4.1.1"
+    "@vercel/python": "npm:4.2.0"
     "@vercel/redwood": "npm:2.0.8"
     "@vercel/remix-builder": "npm:2.1.5"
     "@vercel/ruby": "npm:2.0.5"
@@ -22881,7 +22881,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/75a9cdb0e3664bd3fc9231703c2004f4dbf06e14bde27da0a76e9e35831609f8f9ef08efc4e1c7c4abe3fc10ab20b77a8b50efd1b070fef955995cf562bd470a
+  checksum: 10/01e5ebe098cc690ee51fca502d872a60e9d6079e284366740b0b5d8ea8af8984095b186d6948af421891377836a7543e5b05b5850d32043e0f0971d760c4711c
   languageName: node
   linkType: hard
 
