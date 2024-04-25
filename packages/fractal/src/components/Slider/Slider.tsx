@@ -87,7 +87,7 @@ export const Slider = ({
       <RxSlider.Track
         className={cj(
           `${PREFIX}-${GROUP_NAME}__track`,
-          'relative h-full w-full flex-1 rounded-full',
+          'relative h-full w-full flex-1',
           disabled ? 'bg-disabled' : 'bg-highlight',
           orientation === Orientations.Vertical ? 'w-1' : '',
         )}
@@ -95,7 +95,7 @@ export const Slider = ({
         <RxSlider.Range
           className={cj(
             `${PREFIX}-${GROUP_NAME}__range`,
-            'absolute rounded-full bg-secondary transition-transform delay-100 duration-600 [transition-property:cubic-bezier(0.65,0,0.35,1)]',
+            'absolute bg-secondary transition-transform delay-100 duration-600 [transition-property:cubic-bezier(0.65,0,0.35,1)]',
             orientation === Orientations.Vertical ? 'w-full' : 'h-full',
           )}
         />
