@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.10.0...@snowball-tech/fractal@10.10.1) (2024-04-25)
+
+### 🐛 Bug Fixes
+
+- **slider:** remove rounded of track ([11f3b1f](https://github.com/snowball-tech/fractal/commit/11f3b1f1e1c6bc7dc19193380f232a7d7c24556e))
+
 # @snowball-tech/fractal [10.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.9.10...@snowball-tech/fractal@10.10.0) (2024-04-25)
 
 ### ✨ Features
