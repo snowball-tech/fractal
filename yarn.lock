@@ -7170,10 +7170,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zeit/schemas@npm:2.29.0":
-  version: 2.29.0
-  resolution: "@zeit/schemas@npm:2.29.0"
-  checksum: 10/ad6afd42e77acdac32651ab594d8caafa0abe121db0de8858b276819a366f257d8b87476949c845e4e4293b24fa7c15def60b6e823ee7d65714dc9f150195e1b
+"@zeit/schemas@npm:2.36.0":
+  version: 2.36.0
+  resolution: "@zeit/schemas@npm:2.36.0"
+  checksum: 10/0d6e2ecf57f0e12c2b17dbdfa2f06f88519c1241275b5b8a1679dd591ee72fe45f5d87ef6ab35e068b07554b768c824dce3e2536f29d03c77cff4259209903e0
   languageName: node
   linkType: hard
 
@@ -20482,10 +20482,10 @@ __metadata:
   linkType: hard
 
 "serve@npm:^14.2.2":
-  version: 14.2.2
-  resolution: "serve@npm:14.2.2"
+  version: 14.2.3
+  resolution: "serve@npm:14.2.3"
   dependencies:
-    "@zeit/schemas": "npm:2.29.0"
+    "@zeit/schemas": "npm:2.36.0"
     ajv: "npm:8.12.0"
     arg: "npm:5.0.2"
     boxen: "npm:7.0.0"
@@ -20498,7 +20498,7 @@ __metadata:
     update-check: "npm:1.5.4"
   bin:
     serve: build/main.js
-  checksum: 10/3c2a0ff464dd2a70c2be7b1a70935bd6977778eeb46bbf8eb962a152e9d46a880ab51352e8584e798e093ca8c45104321b6f0a71535c4db78bcbe1ecca4a4e5e
+  checksum: 10/8ca6a8cc0a22bc1eb539c065938c2d7addacf14d09efb7623de1b6ab36ac2eb06a449bc5ac1fb3ef33184a6211fa914a1875c277b761b207f2a812af98e5bd9f
   languageName: node
   linkType: hard
 
