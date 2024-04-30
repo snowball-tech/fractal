@@ -24,4 +24,9 @@ export {
   VERSIONS as EmojiPickerEmojisVersions,
 } from './EmojiPicker.constants.js'
 export { default as EmojiPicker } from './EmojiPicker.js'
-export type { EmojiPickerProps, EmojiProps } from './EmojiPicker.types.js'
+export type {
+  Emoji as EmojiType,
+  EmojiPickerProps,
+  EmojiProps,
+  EmojisCategory,
+} from './EmojiPicker.types.js'
