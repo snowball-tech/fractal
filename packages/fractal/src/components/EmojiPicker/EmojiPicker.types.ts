@@ -92,6 +92,8 @@ export interface EmojiPickerProps
    * If you pass `false`, the preview will be hidden
    */
   previewPosition?: `${Positions}` | false
+  /** The value to enter in the search of the emoji picker. */
+  search?: string
   /**
    * Indicates the position of the search input in the emoji picker.
    *
