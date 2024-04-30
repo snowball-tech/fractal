@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.12.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.12.0...@snowball-tech/fractal@10.12.1) (2024-04-30)
+
+### ♻️ Code Refactoring
+
+- **emoji-picker:** move styles inside of the component ([cea1360](https://github.com/snowball-tech/fractal/commit/cea1360389279481c71f8e1ed992f8a8f3c17ac6))
+
 # @snowball-tech/fractal [10.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.11.1...@snowball-tech/fractal@10.12.0) (2024-04-30)
 
 ### ✨ Features
