@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.10.1...@snowball-tech/fractal@10.11.0) (2024-04-30)
+
+### ✨ Features
+
+- **emoji:** add an emoji picker and emoji component ([8822ddd](https://github.com/snowball-tech/fractal/commit/8822ddd6758fa79238d40b40e62ad541d90fac70))
+
 ## @snowball-tech/fractal [10.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.10.0...@snowball-tech/fractal@10.10.1) (2024-04-25)
 
 ### 🐛 Bug Fixes
