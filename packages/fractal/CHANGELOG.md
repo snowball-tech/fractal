@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.12.1...@snowball-tech/fractal@10.13.0) (2024-04-30)
+
+### ✨ Features
+
+- **emoji-picker:** add an indicator below nav ([c7b5d17](https://github.com/snowball-tech/fractal/commit/c7b5d17bf0856fe1fad200fee2255d62cf07da0e))
+
 ## @snowball-tech/fractal [10.12.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.12.0...@snowball-tech/fractal@10.12.1) (2024-04-30)
 
 ### ♻️ Code Refactoring
