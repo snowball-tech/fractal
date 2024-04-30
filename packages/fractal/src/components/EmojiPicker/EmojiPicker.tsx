@@ -42,6 +42,7 @@ export const EmojiPicker = ({
   onSelect,
   perLine = 12,
   previewPosition = DEFAULT_PREVIEW_POSITION,
+  search,
   searchPosition = DEFAULT_SEARCH_POSITION,
   set = DEFAULT_EMOJIS_SET,
   skinTone = DEFAULT_SKIN_TONE,
@@ -137,9 +138,16 @@ export const EmojiPicker = ({
     if (searchWrapper) {
       searchWrapper.setAttribute('part', 'search-wrapper')
 
-      const search = searchWrapper.querySelector('input[type="search"]')
-      if (search) {
-        search.setAttribute('part', 'search-input')
+      const searchInput = searchWrapper.querySelector(
+        'input[type="search"]',
+      ) as HTMLInputElement
+      if (searchInput) {
+        searchInput.setAttribute('part', 'search-input')
+
+        if (!isEmpty(search)) {
+          searchInput.value = search
+          searchInput.dispatchEvent(new Event('input', { bubbles: true }))
+        }
       }
       const searchIcon = searchWrapper.querySelector('.icon')
       if (searchIcon) {

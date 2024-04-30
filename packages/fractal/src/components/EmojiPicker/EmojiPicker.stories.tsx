@@ -111,6 +111,7 @@ const meta = {
     navPosition: DEFAULT_NAV_POSITION,
     perLine: 12,
     previewPosition: DEFAULT_PREVIEW_POSITION,
+    search: '',
     searchPosition: DEFAULT_SEARCH_POSITION,
     set: DEFAULT_EMOJIS_SET,
     skinTone: DEFAULT_SKIN_TONE,
