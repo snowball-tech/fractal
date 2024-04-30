@@ -23,6 +23,6 @@
     "./.storybook/*.mdx",
     "./stories"
   ],
-  "files": [],
+  "files": ["global.d.ts"],
   "references": []
 }

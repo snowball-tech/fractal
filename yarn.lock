@@ -1990,6 +1990,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emoji-mart/data@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@emoji-mart/data@npm:1.2.1"
+  checksum: 10/a9f50edaf354aadfede604fb26d80055a085e9160db2c924fd5e6afc27033cd5beb0006a9ee48240ce9c543e58e1bf1cf9ed83baba5db83a395154984b30bd91
+  languageName: node
+  linkType: hard
+
+"@emoji-mart/react@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@emoji-mart/react@npm:1.1.1"
+  peerDependencies:
+    emoji-mart: ^5.2
+    react: ^16.8 || ^17 || ^18
+  checksum: 10/def4dddaa01ce88c396510d84d1878b881fe0f9c484a836a50e3db784a91ab98edf94816cff503b4d1cab7b00400a01c87e32d19dee2d950f64ef9243f79101e
+  languageName: node
+  linkType: hard
+
 "@emotion/use-insertion-effect-with-fallbacks@npm:^1.0.1":
   version: 1.0.1
   resolution: "@emotion/use-insertion-effect-with-fallbacks@npm:1.0.1"
@@ -4874,6 +4891,8 @@ __metadata:
   resolution: "@snowball-tech/fractal@workspace:packages/fractal"
   dependencies:
     "@csstools/postcss-cascade-layers": "npm:^4.0.4"
+    "@emoji-mart/data": "npm:^1.2.1"
+    "@emoji-mart/react": "npm:^1.1.1"
     "@iconscout/react-unicons": "npm:^2.0.2"
     "@radix-ui/react-checkbox": "npm:^1.0.4"
     "@radix-ui/react-compose-refs": "npm:^1.0.1"
@@ -4910,12 +4929,13 @@ __metadata:
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@types/lodash": "npm:^4.17.0"
-    "@types/react": "npm:^18.2.79"
-    "@types/react-dom": "npm:^18.2.25"
+    "@types/react": "npm:^18.3.1"
+    "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
     chromatic: "npm:^11.3.0"
     clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.5.11"
+    emoji-mart: "npm:^5.6.0"
     eslint: "npm:^8.57.0"
     libphonenumber-js: "npm:^1.10.61"
     lodash: "npm:^4.17.21"
@@ -4927,8 +4947,8 @@ __metadata:
     postcss-preset-env: "npm:^9.5.9"
     postcss-styled-syntax: "npm:^0.6.4"
     prettier: "npm:^3.2.5"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
     react-textarea-autosize: "npm:^8.5.3"
     remark-gfm: "npm:^4.0.0"
     storybook: "npm:^8.0.9"
@@ -4936,7 +4956,7 @@ __metadata:
     tailwindcss: "npm:^3.4.3"
     tsup: "npm:^8.0.2"
     typescript: "npm:^5.4.5"
-    vercel: "npm:^34.1.2"
+    vercel: "npm:^34.1.4"
     vite: "npm:^5.2.10"
     vite-tsconfig-paths: "npm:^4.3.2"
   peerDependencies:
@@ -6457,22 +6477,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.25":
-  version: 18.2.25
-  resolution: "@types/react-dom@npm:18.2.25"
+"@types/react-dom@npm:^18.3.0":
+  version: 18.3.0
+  resolution: "@types/react-dom@npm:18.3.0"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/0e45856a2fdbf09e74632b132b3af773c6b18fc2ab0bd04595c9f2bcc0bb04d5e732ac8156d145b712dedab7484a8fe9dce5cf720a5437b5d26099c7060c7ba4
+  checksum: 10/6ff53f5a7b7fba952a68e114d3b542ebdc1e87a794234785ebab0bcd9bde7fb4885f21ebaf93d26dc0a1b5b93287f42cad68b78ae04dddf6b20da7aceff0beaf
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, @types/react@npm:^18.2.79":
-  version: 18.2.79
-  resolution: "@types/react@npm:18.2.79"
+"@types/react@npm:*, @types/react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, @types/react@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "@types/react@npm:18.3.1"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/2ef833e7d0a5c226beddbbe090811582371f6ae5e2f092a3d9f47cc6087c8bce0b96ee33e351de6d1d470f0a0ec5892d971933f841ef31538c1821681fc6569e
+  checksum: 10/baa6b8a75c471c89ebf3477b4feab57102ced25f0c1e553dd04ef6a1f0def28d5e0172fa626a631f22e223f840b5aaa2403b2d4bb671c83c5a9d6c7ae39c7a05
   languageName: node
   linkType: hard
 
@@ -6877,12 +6897,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:4.2.2":
-  version: 4.2.2
-  resolution: "@vercel/next@npm:4.2.2"
+"@vercel/next@npm:4.2.4":
+  version: 4.2.4
+  resolution: "@vercel/next@npm:4.2.4"
   dependencies:
     "@vercel/nft": "npm:0.26.4"
-  checksum: 10/b1aecc14af52da049b3931949957812a0a79dc7a9c885ffc0530cce89308d809cce4afa56368ff15a04dfa7f5374b8b5bdb35daeec9aac521c9a65fab40cc75e
+  checksum: 10/4eb9e5036e540e4b6bd9dad97c1b189ff4f5e4ece93c7acacaf148d7de1be3642d5c46a816b83f5b81fde4d98ba03518bc083f63000cac672d41b9d1274debab
   languageName: node
   linkType: hard
 
@@ -7170,10 +7190,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zeit/schemas@npm:2.29.0":
-  version: 2.29.0
-  resolution: "@zeit/schemas@npm:2.29.0"
-  checksum: 10/ad6afd42e77acdac32651ab594d8caafa0abe121db0de8858b276819a366f257d8b87476949c845e4e4293b24fa7c15def60b6e823ee7d65714dc9f150195e1b
+"@zeit/schemas@npm:2.36.0":
+  version: 2.36.0
+  resolution: "@zeit/schemas@npm:2.36.0"
+  checksum: 10/0d6e2ecf57f0e12c2b17dbdfa2f06f88519c1241275b5b8a1679dd591ee72fe45f5d87ef6ab35e068b07554b768c824dce3e2536f29d03c77cff4259209903e0
   languageName: node
   linkType: hard
 
@@ -10097,6 +10117,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"emoji-mart@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "emoji-mart@npm:5.6.0"
+  checksum: 10/fbbd6ce6fe6bc30020a7de4bfd6375f3c00da9880a147fdbee37303d985856e5463a48a61177166ad056a355e0bd589df9c0866bd54f9c065d60a9efa80639dd
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^10.2.1, emoji-regex@npm:^10.3.0":
   version: 10.3.0
   resolution: "emoji-regex@npm:10.3.0"
@@ -12299,7 +12326,7 @@ __metadata:
     nodemon: "npm:^3.1.0"
     prettier: "npm:^3.2.5"
     semantic-release: "npm:^23.0.8"
-    serve: "npm:^14.2.2"
+    serve: "npm:^14.2.3"
     stylelint: "npm:^16.4.0"
   languageName: unknown
   linkType: soft
@@ -19369,15 +19396,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react-dom@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-dom@npm:18.2.0"
+"react-dom@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react-dom@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.0"
+    scheduler: "npm:^0.23.2"
   peerDependencies:
-    react: ^18.2.0
-  checksum: 10/ca5e7762ec8c17a472a3605b6f111895c9f87ac7d43a610ab7024f68cd833d08eda0625ce02ec7178cc1f3c957cf0b9273cdc17aa2cd02da87544331c43b1d21
+    react: ^18.3.1
+  checksum: 10/3f4b73a3aa083091173b29812b10394dd06f4ac06aff410b74702cfb3aa29d7b0ced208aab92d5272919b612e5cda21aeb1d54191848cf6e46e9e354f3541f81
   languageName: node
   linkType: hard
 
@@ -19499,12 +19526,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+"react@npm:^16.8.0 || ^17.0.0 || ^18.0.0, react@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: 10/b9214a9bd79e99d08de55f8bef2b7fc8c39630be97c4e29d7be173d14a9a10670b5325e94485f74cd8bff4966ef3c78ee53c79a7b0b9b70cba20aa8973acc694
+  checksum: 10/261137d3f3993eaa2368a83110466fc0e558bc2c7f7ae7ca52d94f03aac945f45146bd85e5f481044db1758a1dbb57879e2fcdd33924e2dde1bdc550ce73f7bf
   languageName: node
   linkType: hard
 
@@ -20263,12 +20290,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "scheduler@npm:0.23.0"
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: 10/0c4557aa37bafca44ff21dc0ea7c92e2dbcb298bc62eae92b29a39b029134f02fb23917d6ebc8b1fa536b4184934314c20d8864d156a9f6357f3398aaf7bfda8
+  checksum: 10/e8d68b89d18d5b028223edf090092846868a765a591944760942b77ea1f69b17235f7e956696efbb62c8130ab90af7e0949bfb8eba7896335507317236966bc9
   languageName: node
   linkType: hard
 
@@ -20481,11 +20508,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serve@npm:^14.2.2":
-  version: 14.2.2
-  resolution: "serve@npm:14.2.2"
+"serve@npm:^14.2.3":
+  version: 14.2.3
+  resolution: "serve@npm:14.2.3"
   dependencies:
-    "@zeit/schemas": "npm:2.29.0"
+    "@zeit/schemas": "npm:2.36.0"
     ajv: "npm:8.12.0"
     arg: "npm:5.0.2"
     boxen: "npm:7.0.0"
@@ -20498,7 +20525,7 @@ __metadata:
     update-check: "npm:1.5.4"
   bin:
     serve: build/main.js
-  checksum: 10/3c2a0ff464dd2a70c2be7b1a70935bd6977778eeb46bbf8eb962a152e9d46a880ab51352e8584e798e093ca8c45104321b6f0a71535c4db78bcbe1ecca4a4e5e
+  checksum: 10/8ca6a8cc0a22bc1eb539c065938c2d7addacf14d09efb7623de1b6ab36ac2eb06a449bc5ac1fb3ef33184a6211fa914a1875c277b761b207f2a812af98e5bd9f
   languageName: node
   linkType: hard
 
@@ -22893,15 +22920,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^34.1.2":
-  version: 34.1.2
-  resolution: "vercel@npm:34.1.2"
+"vercel@npm:^34.1.4":
+  version: 34.1.4
+  resolution: "vercel@npm:34.1.4"
   dependencies:
     "@vercel/build-utils": "npm:7.12.0"
     "@vercel/fun": "npm:1.1.0"
     "@vercel/go": "npm:3.1.1"
     "@vercel/hydrogen": "npm:1.0.2"
-    "@vercel/next": "npm:4.2.2"
+    "@vercel/next": "npm:4.2.4"
     "@vercel/node": "npm:3.0.27"
     "@vercel/python": "npm:4.2.0"
     "@vercel/redwood": "npm:2.0.8"
@@ -22912,7 +22939,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/01e5ebe098cc690ee51fca502d872a60e9d6079e284366740b0b5d8ea8af8984095b186d6948af421891377836a7543e5b05b5850d32043e0f0971d760c4711c
+  checksum: 10/6a6764cfd2e3d7a5d4ea2c29e31b07caad32d082a3235c9a188932ccaafcd54eb3869ef0714a1aaac2cf1098bbcd5613e40ecf38587e4c8203405d6d7246bb26
   languageName: node
   linkType: hard
 

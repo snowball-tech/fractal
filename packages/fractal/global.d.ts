@@ -25,3 +25,17 @@ declare module '@iconscout/react-unicons/icons/*' {
   const icon: (props: IconProps) => JSX.Element
   export = icon
 }
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    'em-emoji': {
+      fallback?: string
+      id?: string
+      native?: string
+      set?: 'apple' | 'facebook' | 'google' | 'native' | 'twitter'
+      shortcodes?: string
+      size?: number | string
+      skin?: number | string
+    } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+  }
+}
