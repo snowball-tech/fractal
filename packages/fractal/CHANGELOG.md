@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.12.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.11.1...@snowball-tech/fractal@10.12.0) (2024-04-30)
+
+### ✨ Features
+
+- **emoji-picker:** make the search programmatically accessible ([c762705](https://github.com/snowball-tech/fractal/commit/c7627055e1e04a0fa8623ecfc43e424e5740006b))
+
 ## @snowball-tech/fractal [10.11.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.11.0...@snowball-tech/fractal@10.11.1) (2024-04-30)
 
 ### 🐛 Bug Fixes
