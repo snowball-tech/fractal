@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.11.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.11.0...@snowball-tech/fractal@10.11.1) (2024-04-30)
+
+### 🐛 Bug Fixes
+
+- **emoji-picker:** export the proper type ([e700311](https://github.com/snowball-tech/fractal/commit/e7003116ccd58285418f2b5604019e0a20ceb280))
+
 # @snowball-tech/fractal [10.11.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.10.1...@snowball-tech/fractal@10.11.0) (2024-04-30)
 
 ### ✨ Features
