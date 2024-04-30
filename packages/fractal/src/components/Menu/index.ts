@@ -1,5 +1,10 @@
 export { Elevations as MenuElevations } from '../Paper/Paper.constants.js'
-export { Orientations as MenuOrientations } from './Menu.constants.js'
+export {
+  DEFAULT_ELEVATION as DEFAULT_MENU_ELEVATION,
+  DEFAULT_ORIENTATION as DEFAULT_MENU_ORIENTATION,
+  DEFAULT_SUB_MENU_ELEVATION as DEFAULT_MENU_SUB_MENU_ELEVATION,
+  Orientations as MenuOrientations,
+} from './Menu.constants.js'
 export { default as Menu } from './Menu.js'
 export type {
   MenuItemGroupProps,

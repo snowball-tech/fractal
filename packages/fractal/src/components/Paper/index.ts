@@ -1,3 +1,6 @@
-export { Elevations as PaperElevations } from './Paper.constants.js'
+export {
+  DEFAULT_ELEVATION as DEFAULT_PAPER_ELEVATION,
+  Elevations as PaperElevations,
+} from './Paper.constants.js'
 export { default as Paper } from './Paper.js'
 export type { PaperProps } from './Paper.types.js'

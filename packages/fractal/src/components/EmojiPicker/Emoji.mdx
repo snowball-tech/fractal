@@ -1,0 +1,49 @@
+import {
+  ArgTypes,
+  Controls,
+  Description,
+  Meta,
+  Primary,
+  Subtitle,
+  Title,
+} from '@storybook/blocks'
+
+import * as EmojiStories from './Emoji.stories'
+
+<Meta of={EmojiStories} />
+
+<Title />
+
+<Subtitle />
+
+<Description />
+
+---
+
+> **Its is important to note that to be able to use this component, you must
+> have loaded the `emoji-mart` data first:**
+>
+> ```
+> import data from '@emoji-mart/data'
+> import { init } from 'emoji-mart'
+>
+> init({ data })
+> ```
+>
+> **See https://github.com/missive/emoji-mart#-emoji-component for more
+> information**.
+
+---
+
+## Props
+
+On top of all the props, attributes and event handler you can set on a
+`<div />` element, the component accepts the following props:
+
+<ArgTypes />
+
+## Playground
+
+<Primary />
+
+<Controls />
