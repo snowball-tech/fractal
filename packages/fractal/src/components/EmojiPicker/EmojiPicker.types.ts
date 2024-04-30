@@ -14,16 +14,21 @@ import {
 } from './EmojiPicker.constants'
 
 export type EmojisCategory = {
-  emojis: Array<EmojiDefinition>
+  emojis: Array<Emoji>
   id: string
   name: string
 }
-export type EmojiDefinition = {
+
+export type Emoji = {
+  emoticons?: Array<string>
   id: string
   keywords?: Array<string>
   name: string
-  skins: Array<{ src: string }>
+  native: string
+  shortcodes: string
+  unified: string
 }
+
 export interface EmojiPickerProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onSelect'> {
   /**
@@ -78,7 +83,7 @@ export interface EmojiPickerProps
    * Event handler called when an emoji is selected (clicked) in the emoji
    * picker.
    */
-  onSelect?: (emoji: EmojiDefinition) => void
+  onSelect?: (emoji: Emoji) => void
   /** The number of emojis to display per line in the emoji picker. */
   perLine?: number
   /**
