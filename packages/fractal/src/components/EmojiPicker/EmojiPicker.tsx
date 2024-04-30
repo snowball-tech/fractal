@@ -1,6 +1,7 @@
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 import isEmpty from 'lodash/fp/isEmpty'
+import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
@@ -95,9 +96,11 @@ export const EmojiPicker = ({
     }
   }, [rootElement])
 
-  useEffect(() => {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  const delayedUpdateShadowDom = () => setTimeout(updateShadowDom, 1)
+  const updateShadowDom = useCallback(() => {
     if (!rootElement) {
-      return
+      return noop
     }
 
     rootElement.setAttribute('part', `root root-${theme}`)
@@ -120,16 +123,23 @@ export const EmojiPicker = ({
     rootElement.setAttribute('class', className)
 
     const nav = rootElement.querySelector('#nav')
+    let navInner: Element | null = null
     if (nav) {
       nav.setAttribute('part', `nav nav-${navPosition}`)
 
-      const navInner = nav.querySelector('div.flex')
+      navInner = nav.querySelector('div.flex')
       if (navInner) {
         navInner.setAttribute('part', `nav-inner`)
 
         const categoriesNavWrapper = navInner.querySelectorAll('button')
         categoriesNavWrapper.forEach((categoryNav) => {
-          categoryNav.setAttribute('part', `nav-button`)
+          categoryNav.setAttribute(
+            'part',
+            `nav-button${categoryNav.getAttribute('aria-selected') ? ' nav-button-active' : ''}`,
+          )
+
+          categoryNav.removeEventListener('click', delayedUpdateShadowDom)
+          categoryNav.addEventListener('click', delayedUpdateShadowDom)
         })
       }
     }
@@ -160,9 +170,11 @@ export const EmojiPicker = ({
       }
     }
 
-    const scrollArea = rootElement.querySelector('.scroll')
+    const scrollArea = rootElement.querySelector('.scroll') as HTMLDivElement
     if (scrollArea) {
       scrollArea.setAttribute('part', 'scroll-area')
+
+      scrollArea.addEventListener('scroll', delayedUpdateShadowDom)
 
       const categoriesWrappers = scrollArea.querySelectorAll('.category')
       categoriesWrappers.forEach((category) => {
@@ -198,7 +210,36 @@ export const EmojiPicker = ({
         placeholder.setAttribute('part', 'preview-placeholder')
       }
     }
-  })
+
+    return () => {
+      if (nav && navInner) {
+        const categoriesNavWrapper = navInner.querySelectorAll('button')
+        categoriesNavWrapper.forEach((categoryNav) => {
+          categoryNav.setAttribute(
+            'part',
+            `nav-button${categoryNav.getAttribute('aria-selected') ? ' nav-button-active' : ''}`,
+          )
+
+          categoryNav.addEventListener('click', delayedUpdateShadowDom)
+        })
+      }
+
+      if (scrollArea) {
+        scrollArea.removeEventListener('scroll', delayedUpdateShadowDom)
+      }
+    }
+  }, [
+    navPosition,
+    previewPosition,
+    props.className,
+    props.style,
+    rootElement,
+    search,
+    theme,
+  ])
+  useEffect(() => {
+    return updateShadowDom()
+  }, [updateShadowDom])
 
   const styles = `
     em-emoji-picker {
@@ -288,12 +329,22 @@ export const EmojiPicker = ({
       outline-offset: 2px;
       outline: 2px solid transparent;
       padding: var(--size-spacing-1);
+      position: relative;
       text-decoration-line: none;
       transition-property: 0.3s;
       transition-property: color, background-color, border-color,
         text-decoration-color, fill, stroke;
       transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
       width: var(--category-icon-size);
+    }
+
+    em-emoji-picker::part(nav-button-active)::after {
+      content: '';
+      position: absolute;
+      bottom: calc(var(--size-spacing-1) * -1);
+      height: 2px;
+      width: 100%;
+      background-color: var(--rgb-accent);
     }
 
     em-emoji-picker::part(nav-button):hover {
