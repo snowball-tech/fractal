@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.14.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.14.0...@snowball-tech/fractal@10.14.1) (2024-05-03)
+
+### 🚦 Tests
+
+- **datetime-picker:** fix chromatic tests ([bdc588a](https://github.com/snowball-tech/fractal/commit/bdc588a4e095d5166a47331a7133050b3f1ddc38))
+
 # @snowball-tech/fractal [10.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.13.0...@snowball-tech/fractal@10.14.0) (2024-05-03)
 
 ### ✨ Features
