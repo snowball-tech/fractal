@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.14.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.13.0...@snowball-tech/fractal@10.14.0) (2024-05-03)
+
+### ✨ Features
+
+- **datetime-picker:** add the datetime picker component ([adc61e0](https://github.com/snowball-tech/fractal/commit/adc61e01e7194982176f04ca0d1d6daa7c9f1af5))
+
 # @snowball-tech/fractal [10.13.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.12.1...@snowball-tech/fractal@10.13.0) (2024-04-30)
 
 ### ✨ Features
