@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.15.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.15.0...@snowball-tech/fractal@10.15.1) (2024-05-03)
+
+### 🚦 Tests
+
+- fix failing tests ([9a476f1](https://github.com/snowball-tech/fractal/commit/9a476f1798ea72288885fbdbaa5f1e2d593f04c1))
+
 # @snowball-tech/fractal [10.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.14.1...@snowball-tech/fractal@10.15.0) (2024-05-03)
 
 ### ✨ Features
