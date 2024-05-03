@@ -228,6 +228,8 @@ export const EmojiPicker = ({
         scrollArea.removeEventListener('scroll', delayedUpdateShadowDom)
       }
     }
+    // We don't want to depend on `delayedUpdateShadowDom`.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     navPosition,
     previewPosition,

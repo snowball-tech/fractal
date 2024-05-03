@@ -63,8 +63,11 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    *    closest (relatively) positioned ancestor.
    */
   position?: `${Positions}`
+  /** Options to customize the root element of the dialog. */
+  root?: Partial<AllHTMLAttributes<HTMLDivElement>>
   /** A title to display at the top of the dialog. */
   title?: string
+
   /**
    * The trigger of the dialog.
    *

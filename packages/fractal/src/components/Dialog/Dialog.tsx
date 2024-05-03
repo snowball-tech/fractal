@@ -47,6 +47,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onToggle,
       open,
       position = DEFAULT_POSITION,
+      root,
       title,
       trigger,
       ...props
@@ -136,7 +137,9 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
             ? `${PREFIX}-${GROUP_NAME}--opened`
             : `${PREFIX}-${GROUP_NAME}--closed`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+          root?.className,
         )}
+        {...omit(['className'], root)}
       >
         <RxDialog.Root
           {...(disabled ? { open: false } : { open: isOpen })}

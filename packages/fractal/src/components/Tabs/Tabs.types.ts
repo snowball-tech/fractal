@@ -80,6 +80,12 @@ export interface TabProps
   /** An icon to display before the label. */
   icon?: ReactNode
   /**
+   * Indicates if you want to only display the icon.
+   * The label still is mandatory and will be used as an `aria-label` for
+   * accessibility.
+   */
+  iconOnly?: boolean
+  /**
    * The content of the tab.
    *
    * Use this when you only need to display text in a tab.

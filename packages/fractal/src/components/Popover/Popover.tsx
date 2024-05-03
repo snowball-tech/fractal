@@ -41,6 +41,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       disabled = false,
       elevation = DEFAULT_ELEVATION,
       fullWidth = false,
+      modal = false,
       onClose,
       onCloseButtonClick,
       onInteractOutside,
@@ -200,7 +201,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       >
         <RxPopover.Root
           {...(disabled ? { open: false } : { open: isOpen })}
-          modal={false}
+          modal={modal}
           onOpenChange={handleOpenChange}
         >
           <RxPopover.Trigger

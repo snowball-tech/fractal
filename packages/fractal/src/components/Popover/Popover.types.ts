@@ -41,6 +41,13 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   elevation?: `${Elevations}`
   /** Indicates if the popover should take all the available width. */
   fullWidth?: boolean
+  /**
+   * Indicates if the popover should be displayed as a modal (i.e. blocking any
+   * other interaction on the page).
+   *
+   * It's usually recommended on mobile usages.
+   */
+  modal?: boolean
   /** Event handler called when the popover is closed. */
   onClose?: () => void
   /** Event handler called when the small "x" close button is clicked. */

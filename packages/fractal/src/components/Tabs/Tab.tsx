@@ -28,6 +28,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       children,
       disabled = false,
       icon,
+      iconOnly = false,
       label,
       large = false,
       name,
@@ -98,7 +99,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
           variant="caption-median"
         >
           {icon}
-          {hasChildren ? children : label}
+          {!iconOnly && (hasChildren ? children : label)}
         </Typography>
       </RxTabs.Trigger>
     )
