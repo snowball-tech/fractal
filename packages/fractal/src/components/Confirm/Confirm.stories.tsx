@@ -56,7 +56,7 @@ const meta: Meta<ConfirmProps> = {
   component: Confirm,
   decorators: [
     (storyFunction: () => ReactNode) => (
-      <div className="relative h-[350px] w-[500px]">{storyFunction()}</div>
+      <div className="relative min-h-[1200px] w-[500px]">{storyFunction()}</div>
     ),
   ],
 
@@ -114,12 +114,13 @@ export const InteractiveClose: Story = {
 
     await sleep(500)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    await userEvent.click(body.getAllByRole('button').at(0)!)
+    await userEvent.click(body.getAllByLabelText('Close').at(0)!)
   },
   render: () => (
     <Confirm
       cancel="Cancel"
       className="min-w-[500px]"
+      closeButtonLabel="Close"
       confirm="Confirm"
       title="This is the title"
       trigger={<Button label="Open the confirm" />}

@@ -19,6 +19,7 @@ import {
 
 type DateTimePickerProps = ComponentProps<typeof DateTimePicker>
 
+const defaultDate = new Date('1985-10-11T14:30:42Z')
 const i18n = {
   buttons: { clear: 'Clear', close: 'Close', now: 'Now', today: 'Today' },
   tabs: { bar: 'Tabs' },
@@ -53,7 +54,7 @@ const meta: Meta<DateTimePickerProps> = {
     staticPicker: false,
     theme: Themes.Light,
     timeVariant: DEFAULT_TIME_VARIANT,
-    value: new Date(),
+    value: defaultDate,
     withClose: true,
     withDatePicker: true,
     withNow: true,
@@ -66,7 +67,7 @@ const meta: Meta<DateTimePickerProps> = {
     ...(isChromatic()
       ? [
           (storyFunction: () => ReactNode) => (
-            <div className="min-h-[1200px]">{storyFunction()}</div>
+            <div className="min-h-[1200px] w-[500px]">{storyFunction()}</div>
           ),
         ]
       : []),
@@ -187,7 +188,7 @@ export const InteractiveModalManipulateAndClose: Story = {
     await userEvent.click(nowButton)
     await sleep(500)
 
-    const closeButton = body.getAllByLabelText('Close').at(0)
+    const closeButton = body.getAllByLabelText('Close').at(-1)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(closeButton!)
     await sleep(500)
@@ -622,12 +623,12 @@ export const InPopover: Story = {
       </Wrapper>
 
       <Wrapper>
-        <DateTimePicker i18n={i18n} label="With value" value={new Date()} />
+        <DateTimePicker i18n={i18n} label="With value" value={defaultDate} />
         <DateTimePicker
           amPm
           i18n={i18n}
           label="AM/PM mode"
-          value={new Date()}
+          value={defaultDate}
         />
       </Wrapper>
 
@@ -637,32 +638,32 @@ export const InPopover: Story = {
         <DateTimePicker
           i18n={i18n}
           label="Without picker"
-          value={new Date()}
+          value={defaultDate}
           withPicker={false}
         />
         <DateTimePicker
           i18n={i18n}
           label="Modal picker"
           modal
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           i18n={i18n}
           label={'Without "Close" button'}
-          value={new Date()}
+          value={defaultDate}
           withClose={false}
         />
         <DateTimePicker
           clearable={false}
           i18n={i18n}
           label="Not clearable"
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           clearable={false}
           i18n={i18n}
           label="No action button"
-          value={new Date()}
+          value={defaultDate}
           withClose={false}
         />
       </Wrapper>
@@ -671,19 +672,19 @@ export const InPopover: Story = {
         <DateTimePicker
           i18n={i18n}
           label={'Without "Today" button'}
-          value={new Date()}
+          value={defaultDate}
           withToday={false}
         />
         <DateTimePicker
           i18n={i18n}
           label={'Without "Now" button'}
-          value={new Date()}
+          value={defaultDate}
           withNow={false}
         />
         <DateTimePicker
           i18n={i18n}
           label="No helper button"
-          value={new Date()}
+          value={defaultDate}
           withNow={false}
           withToday={false}
         />
@@ -691,7 +692,7 @@ export const InPopover: Story = {
           clearable={false}
           i18n={i18n}
           label="No button at all"
-          value={new Date()}
+          value={defaultDate}
           withClose={false}
           withNow={false}
           withToday={false}
@@ -702,13 +703,13 @@ export const InPopover: Story = {
         <DateTimePicker
           i18n={i18n}
           label="Date picker only"
-          value={new Date()}
+          value={defaultDate}
           withTimePicker={false}
         />
         <DateTimePicker
           i18n={i18n}
           label="Time picker only"
-          value={new Date()}
+          value={defaultDate}
           withDatePicker={false}
         />
       </Wrapper>
@@ -719,14 +720,14 @@ export const InPopover: Story = {
           label="Horizontal side by side pickers"
           orientation="horizontal"
           pickerVariant="side-by-side"
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           i18n={i18n}
           label="Vertical side by side pickers"
           orientation="vertical"
           pickerVariant="side-by-side"
-          value={new Date()}
+          value={defaultDate}
         />
       </Wrapper>
 
@@ -743,13 +744,13 @@ export const InPopover: Story = {
           disabled
           i18n={i18n}
           label="Disabled with value"
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           i18n={i18n}
           label="Read-only with value"
           readOnly
-          value={new Date()}
+          value={defaultDate}
         />
       </Wrapper>
 
@@ -788,7 +789,7 @@ export const InPopover: Story = {
           i18n={i18n}
           label="Valid date"
           success="The date is valid"
-          value={new Date()}
+          value={defaultDate}
         />
       </Wrapper>
     </>
@@ -834,14 +835,14 @@ export const StaticDisplay: Story = {
           i18n={i18n}
           label="With value"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           amPm
           i18n={i18n}
           label="AM/PM mode"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
       </StaticWrapper>
 
@@ -853,28 +854,28 @@ export const StaticDisplay: Story = {
           i18n={i18n}
           label="Not clearable"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
 
         <DateTimePicker
           i18n={i18n}
           label={'Without "Today" button'}
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withToday={false}
         />
         <DateTimePicker
           i18n={i18n}
           label={'Without "Now" button'}
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withNow={false}
         />
         <DateTimePicker
           i18n={i18n}
           label="No helper button"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withNow={false}
           withToday={false}
         />
@@ -883,7 +884,7 @@ export const StaticDisplay: Story = {
           i18n={i18n}
           label="No button at all"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withClose={false}
           withNow={false}
           withToday={false}
@@ -895,14 +896,14 @@ export const StaticDisplay: Story = {
           i18n={i18n}
           label="Date picker only"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withTimePicker={false}
         />
         <DateTimePicker
           i18n={i18n}
           label="Time picker only"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
           withDatePicker={false}
         />
       </StaticWrapper>
@@ -914,7 +915,7 @@ export const StaticDisplay: Story = {
           orientation="horizontal"
           pickerVariant="side-by-side"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           i18n={i18n}
@@ -922,7 +923,7 @@ export const StaticDisplay: Story = {
           orientation="vertical"
           pickerVariant="side-by-side"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
       </StaticWrapper>
 
@@ -941,14 +942,14 @@ export const StaticDisplay: Story = {
           i18n={i18n}
           label="Disabled with value"
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
         <DateTimePicker
           i18n={i18n}
           label="Read-only with value"
           readOnly
           staticPicker
-          value={new Date()}
+          value={defaultDate}
         />
       </StaticWrapper>
 
@@ -991,7 +992,7 @@ export const StaticDisplay: Story = {
           label="Valid date"
           staticPicker
           success="The date is valid"
-          value={new Date()}
+          value={defaultDate}
         />
       </StaticWrapper>
     </>
