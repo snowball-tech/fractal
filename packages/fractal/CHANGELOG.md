@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.15.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.14.1...@snowball-tech/fractal@10.15.0) (2024-05-03)
+
+### ✨ Features
+
+- **typography:** add an `inlineStyle` props ([2ac6d91](https://github.com/snowball-tech/fractal/commit/2ac6d9191831aade2883b98d3784f946297fc365))
+
 ## @snowball-tech/fractal [10.14.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.14.0...@snowball-tech/fractal@10.14.1) (2024-05-03)
 
 ### 🚦 Tests
