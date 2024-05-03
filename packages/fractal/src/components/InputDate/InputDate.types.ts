@@ -93,7 +93,7 @@ export interface InputDateProps
   onFieldChange?: (
     event: ChangeEvent<HTMLInputElement>,
     type: keyof DateFormat,
-    newDay: number,
+    newValue: number,
   ) => void
   /**
    * Event handler called when one of the field of the date input is focused.

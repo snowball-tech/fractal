@@ -68,8 +68,10 @@ layer(fractal);
   }
 }
 
-@supports (height: 100dvh) {
-  .h-screen {
-    height: 100dvh;
+@layer utilities {
+  @supports (height: 100dvh) {
+    .h-screen {
+      height: 100dvh;
+    }
   }
 }

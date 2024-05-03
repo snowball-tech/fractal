@@ -85,12 +85,15 @@ export interface InputTextProps
    * Must be a valid HTML5 type for an `input` element.
    */
   type?:
+    | 'date'
+    | 'datetime-local'
     | 'email'
     | 'number'
     | 'password'
     | 'search'
     | 'tel'
     | 'text'
+    | 'time'
     | 'time'
     | 'url'
   /**
