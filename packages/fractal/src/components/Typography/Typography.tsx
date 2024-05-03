@@ -1,5 +1,91 @@
+import {
+  TypographyBody1BoldFontFamily,
+  TypographyBody1BoldFontSize,
+  TypographyBody1BoldFontWeight,
+  TypographyBody1BoldLineHeight,
+  TypographyBody1FontFamily,
+  TypographyBody1FontSize,
+  TypographyBody1FontWeight,
+  TypographyBody1LineHeight,
+  TypographyBody1LinkFontFamily,
+  TypographyBody1LinkFontSize,
+  TypographyBody1LinkFontWeight,
+  TypographyBody1LinkLineHeight,
+  TypographyBody1LinkTextDecoration,
+  TypographyBody1MedianFontFamily,
+  TypographyBody1MedianFontSize,
+  TypographyBody1MedianFontWeight,
+  TypographyBody1MedianLineHeight,
+  TypographyBody2BoldFontFamily,
+  TypographyBody2BoldFontSize,
+  TypographyBody2BoldFontWeight,
+  TypographyBody2BoldLineHeight,
+  TypographyBody2FontFamily,
+  TypographyBody2FontSize,
+  TypographyBody2FontWeight,
+  TypographyBody2LineHeight,
+  TypographyBody2LinkFontFamily,
+  TypographyBody2LinkFontSize,
+  TypographyBody2LinkFontWeight,
+  TypographyBody2LinkLineHeight,
+  TypographyBody2LinkTextDecoration,
+  TypographyBody2MedianFontFamily,
+  TypographyBody2MedianFontSize,
+  TypographyBody2MedianFontWeight,
+  TypographyBody2MedianLineHeight,
+  TypographyCaptionBoldFontFamily,
+  TypographyCaptionBoldFontSize,
+  TypographyCaptionBoldFontWeight,
+  TypographyCaptionBoldLineHeight,
+  TypographyCaptionLinkFontFamily,
+  TypographyCaptionLinkFontSize,
+  TypographyCaptionLinkFontWeight,
+  TypographyCaptionLinkLineHeight,
+  TypographyCaptionLinkTextDecoration,
+  TypographyCaptionMedianFontFamily,
+  TypographyCaptionMedianFontSize,
+  TypographyCaptionMedianFontWeight,
+  TypographyCaptionMedianLineHeight,
+  TypographyDisplay1FontFamily,
+  TypographyDisplay1FontSizeXs,
+  TypographyDisplay1FontWeight,
+  TypographyDisplay1LineHeightXs,
+  TypographyDisplay2FontFamily,
+  TypographyDisplay2FontSizeXs,
+  TypographyDisplay2FontWeight,
+  TypographyDisplay2LineHeightXs,
+  TypographyDisplayWideFontFamily,
+  TypographyDisplayWideFontSizeXs,
+  TypographyDisplayWideFontWeight,
+  TypographyDisplayWideLineHeightXs,
+  TypographyHeading1FontFamily,
+  TypographyHeading1FontSizeXs,
+  TypographyHeading1FontWeight,
+  TypographyHeading1LineHeightXs,
+  TypographyHeading2FontFamily,
+  TypographyHeading2FontSizeXs,
+  TypographyHeading2FontWeight,
+  TypographyHeading2LineHeight,
+  TypographyHeading3FontFamily,
+  TypographyHeading3FontSize,
+  TypographyHeading3FontWeight,
+  TypographyHeading3LineHeight,
+  TypographyHeading3LinkFontFamily,
+  TypographyHeading3LinkFontSize,
+  TypographyHeading3LinkFontWeight,
+  TypographyHeading3LinkLineHeight,
+  TypographyHeading4FontFamily,
+  TypographyHeading4FontSize,
+  TypographyHeading4FontWeight,
+  TypographyHeading4LineHeight,
+  TypographyHeading4LinkFontFamily,
+  TypographyHeading4LinkFontSize,
+  TypographyHeading4LinkFontWeight,
+  TypographyHeading4LinkLineHeight,
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 import omit from 'lodash/fp/omit'
 import {
+  type CSSProperties,
   type ElementType,
   type ForwardedRef,
   createElement,
@@ -27,7 +113,13 @@ import type { TypographyProps } from './Typography.types'
  */
 export const Typography = forwardRef<HTMLElement, TypographyProps>(
   (
-    { children, element, variant = DEFAULT_VARIANT, ...props }: TypographyProps,
+    {
+      children,
+      element,
+      inlineStyle = false,
+      variant = DEFAULT_VARIANT,
+      ...props
+    }: TypographyProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
     let typographyClassNames = ''
@@ -155,6 +247,177 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       }
     }
 
+    const typographyStyles: CSSProperties = {
+      letterSpacing: 0,
+    }
+
+    switch (variant) {
+      case Variants.Display1: {
+        typographyStyles.fontFamily = TypographyDisplay1FontFamily
+        typographyStyles.fontSize = TypographyDisplay1FontSizeXs
+        typographyStyles.lineHeight = TypographyDisplay1LineHeightXs
+        typographyStyles.fontWeight = TypographyDisplay1FontWeight
+        break
+      }
+
+      case Variants.Display2: {
+        typographyStyles.fontFamily = TypographyDisplay2FontFamily
+        typographyStyles.fontSize = TypographyDisplay2FontSizeXs
+        typographyStyles.lineHeight = TypographyDisplay2LineHeightXs
+        typographyStyles.fontWeight = TypographyDisplay2FontWeight
+        break
+      }
+
+      case Variants.DisplayWide: {
+        typographyStyles.fontFamily = TypographyDisplayWideFontFamily
+        typographyStyles.fontSize = TypographyDisplayWideFontSizeXs
+        typographyStyles.lineHeight = TypographyDisplayWideLineHeightXs
+        typographyStyles.fontWeight = TypographyDisplayWideFontWeight
+        break
+      }
+
+      case Variants.Heading1: {
+        typographyStyles.fontFamily = TypographyHeading1FontFamily
+        typographyStyles.fontSize = TypographyHeading1FontSizeXs
+        typographyStyles.lineHeight = TypographyHeading1LineHeightXs
+        typographyStyles.fontWeight = TypographyHeading1FontWeight
+        break
+      }
+
+      case Variants.Heading2: {
+        typographyStyles.fontFamily = TypographyHeading2FontFamily
+        typographyStyles.fontSize = TypographyHeading2FontSizeXs
+        typographyStyles.lineHeight = TypographyHeading2LineHeight
+        typographyStyles.fontWeight = TypographyHeading2FontWeight
+        break
+      }
+
+      case Variants.Heading3: {
+        typographyStyles.fontFamily = TypographyHeading3FontFamily
+        typographyStyles.fontSize = TypographyHeading3FontSize
+        typographyStyles.lineHeight = TypographyHeading3LineHeight
+        typographyStyles.fontWeight = TypographyHeading3FontWeight
+        break
+      }
+
+      case Variants.Heading3Link: {
+        typographyStyles.fontFamily = TypographyHeading3LinkFontFamily
+        typographyStyles.fontSize = TypographyHeading3LinkFontSize
+        typographyStyles.lineHeight = TypographyHeading3LinkLineHeight
+        typographyStyles.fontWeight = TypographyHeading3LinkFontWeight
+        break
+      }
+
+      case Variants.Heading4: {
+        typographyStyles.fontFamily = TypographyHeading4FontFamily
+        typographyStyles.fontSize = TypographyHeading4FontSize
+        typographyStyles.lineHeight = TypographyHeading4LineHeight
+        typographyStyles.fontWeight = TypographyHeading4FontWeight
+        break
+      }
+
+      case Variants.Heading4Link: {
+        typographyStyles.fontFamily = TypographyHeading4LinkFontFamily
+        typographyStyles.fontSize = TypographyHeading4LinkFontSize
+        typographyStyles.lineHeight = TypographyHeading4LinkLineHeight
+        typographyStyles.fontWeight = TypographyHeading4LinkFontWeight
+        break
+      }
+
+      // eslint-disable-next-line default-case-last
+      default:
+      case Variants.Body1: {
+        typographyStyles.fontFamily = TypographyBody1FontFamily
+        typographyStyles.fontSize = TypographyBody1FontSize
+        typographyStyles.lineHeight = TypographyBody1LineHeight
+        typographyStyles.fontWeight = TypographyBody1FontWeight
+        break
+      }
+
+      case Variants.Body1Bold: {
+        typographyStyles.fontFamily = TypographyBody1BoldFontFamily
+        typographyStyles.fontSize = TypographyBody1BoldFontSize
+        typographyStyles.lineHeight = TypographyBody1BoldLineHeight
+        typographyStyles.fontWeight = TypographyBody1BoldFontWeight
+        break
+      }
+
+      case Variants.Body1Median: {
+        typographyStyles.fontFamily = TypographyBody1MedianFontFamily
+        typographyStyles.fontSize = TypographyBody1MedianFontSize
+        typographyStyles.lineHeight = TypographyBody1MedianLineHeight
+        typographyStyles.fontWeight = TypographyBody1MedianFontWeight
+        break
+      }
+
+      case Variants.Body1Link: {
+        typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+        typographyStyles.fontSize = TypographyBody1LinkFontSize
+        typographyStyles.lineHeight = TypographyBody1LinkLineHeight
+        typographyStyles.fontWeight = TypographyBody1LinkFontWeight
+        typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
+        break
+      }
+
+      case Variants.Body2: {
+        typographyStyles.fontFamily = TypographyBody2FontFamily
+        typographyStyles.fontSize = TypographyBody2FontSize
+        typographyStyles.lineHeight = TypographyBody2LineHeight
+        typographyStyles.fontWeight = TypographyBody2FontWeight
+        break
+      }
+
+      case Variants.Body2Bold: {
+        typographyStyles.fontFamily = TypographyBody2BoldFontFamily
+        typographyStyles.fontSize = TypographyBody2BoldFontSize
+        typographyStyles.lineHeight = TypographyBody2BoldLineHeight
+        typographyStyles.fontWeight = TypographyBody2BoldFontWeight
+        break
+      }
+
+      case Variants.Body2Median: {
+        typographyStyles.fontFamily = TypographyBody2MedianFontFamily
+        typographyStyles.fontSize = TypographyBody2MedianFontSize
+        typographyStyles.lineHeight = TypographyBody2MedianLineHeight
+        typographyStyles.fontWeight = TypographyBody2MedianFontWeight
+        break
+      }
+
+      case Variants.Body2Link: {
+        typographyStyles.fontFamily = TypographyBody2LinkFontFamily
+        typographyStyles.fontSize = TypographyBody2LinkFontSize
+        typographyStyles.lineHeight = TypographyBody2LinkLineHeight
+        typographyStyles.fontWeight = TypographyBody2LinkFontWeight
+        typographyStyles.textDecoration = TypographyBody2LinkTextDecoration
+        break
+      }
+
+      case Variants.CaptionBold: {
+        typographyStyles.fontFamily = TypographyCaptionBoldFontFamily
+        typographyStyles.fontSize = TypographyCaptionBoldFontSize
+        typographyStyles.lineHeight = TypographyCaptionBoldLineHeight
+        typographyStyles.fontWeight = TypographyCaptionBoldFontWeight
+        break
+      }
+
+      case Variants.CaptionMedian: {
+        typographyStyles.fontFamily = TypographyCaptionMedianFontFamily
+        typographyStyles.fontSize = TypographyCaptionMedianFontSize
+        typographyStyles.lineHeight = TypographyCaptionMedianLineHeight
+        typographyStyles.fontWeight = TypographyCaptionMedianFontWeight
+        break
+      }
+
+      case Variants.CaptionLink: {
+        typographyStyles.fontFamily = TypographyCaptionLinkFontFamily
+        typographyStyles.fontSize = TypographyCaptionLinkFontSize
+        typographyStyles.lineHeight = TypographyCaptionLinkLineHeight
+        typographyStyles.fontWeight = TypographyCaptionLinkFontWeight
+        typographyStyles.textDecoration = TypographyCaptionLinkTextDecoration
+        break
+      }
+    }
+
     const actualElement =
       element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType)
 
@@ -168,7 +431,13 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyClassNames,
           props.className,
         ),
-        ...omit(['className'], props),
+        style: inlineStyle
+          ? {
+              ...props.style,
+              ...typographyStyles,
+            }
+          : undefined,
+        ...omit(['className', 'style'], props),
         ref,
       },
       children,
