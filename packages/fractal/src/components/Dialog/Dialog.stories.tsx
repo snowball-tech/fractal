@@ -127,11 +127,12 @@ export const InteractiveClose: Story = {
 
     await sleep(500)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    await userEvent.click(body.getAllByRole('button').at(0)!)
+    await userEvent.click(body.getAllByLabelText('button').at(0)!)
   },
   render: () => (
     <Dialog
       className="min-w-[500px]"
+      closeButtonLabel="Close"
       title="This is the title"
       trigger={<Button label="Open the dialog" />}
     >
