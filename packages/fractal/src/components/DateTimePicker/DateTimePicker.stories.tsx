@@ -1,6 +1,7 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+import isChromatic from 'chromatic/isChromatic'
 import isArray from 'lodash/fp/isArray'
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -62,6 +63,13 @@ const meta: Meta<DateTimePickerProps> = {
   },
   component: DateTimePicker,
   decorators: [
+    ...(isChromatic()
+      ? [
+          (storyFunction: () => ReactNode) => (
+            <div className="min-h-[1200px]">{storyFunction()}</div>
+          ),
+        ]
+      : []),
     // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       // eslint-disable-next-line unicorn/prevent-abbreviations
@@ -97,13 +105,16 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
   },
 }
 
@@ -111,13 +122,16 @@ export const InteractiveModal: Story = {
   args: {
     modal: true,
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
   },
 
@@ -143,13 +157,16 @@ export const InteractiveModalManipulateAndClose: Story = {
   args: {
     modal: true,
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
   },
 
@@ -180,13 +197,16 @@ export const InteractiveModalManipulateAndClose: Story = {
 export const InteractiveHorizontal: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
   },
 
@@ -211,13 +231,16 @@ export const InteractiveHorizontal: Story = {
 export const InteractiveHorizontalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     pickerVariant: PickerVariants.SideBySide,
   },
@@ -233,13 +256,16 @@ export const InteractiveHorizontalSideBySide: Story = {
 export const InteractiveVertical: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
   },
 
@@ -264,13 +290,16 @@ export const InteractiveVertical: Story = {
 export const InteractiveVerticalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     pickerVariant: PickerVariants.SideBySide,
   },
@@ -286,13 +315,16 @@ export const InteractiveVerticalSideBySide: Story = {
 export const InteractiveStaticHorizontal: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     staticPicker: true,
   },
@@ -312,13 +344,16 @@ export const InteractiveStaticHorizontal: Story = {
 export const InteractiveStaticHorizontalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -328,13 +363,16 @@ export const InteractiveStaticHorizontalSideBySide: Story = {
 export const InteractiveStaticVertical: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     staticPicker: true,
   },
@@ -354,13 +392,16 @@ export const InteractiveStaticVertical: Story = {
 export const InteractiveStaticVerticalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -370,13 +411,16 @@ export const InteractiveStaticVerticalSideBySide: Story = {
 export const InteractiveClearedStaticHorizontalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -398,13 +442,16 @@ export const InteractiveClearedStaticHorizontalSideBySide: Story = {
 export const InteractiveClearedStaticVerticalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -426,13 +473,16 @@ export const InteractiveClearedStaticVerticalSideBySide: Story = {
 export const InteractiveTodayStaticHorizontalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -455,13 +505,16 @@ export const InteractiveTodayStaticHorizontalSideBySide: Story = {
 export const InteractiveTodayStaticVerticalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -484,13 +537,16 @@ export const InteractiveTodayStaticVerticalSideBySide: Story = {
 export const InteractiveNowStaticHorizontalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Horizontal,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
@@ -513,13 +569,16 @@ export const InteractiveNowStaticHorizontalSideBySide: Story = {
 export const InteractiveNowStaticVerticalSideBySide: Story = {
   args: {
     onChange: fn(),
+    onClear: fn(),
     onClose: fn(),
     onDateChange: fn(),
     onDismiss: fn(),
     onFieldChange: fn(),
+    onNow: fn(),
     onOpen: fn(),
     onOpenChange: fn(),
     onTimeChange: fn(),
+    onToday: fn(),
     orientation: Orientations.Vertical,
     pickerVariant: PickerVariants.SideBySide,
     staticPicker: true,
