@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.15.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.15.1...@snowball-tech/fractal@10.15.2) (2024-05-06)
+
+### 🐛 Bug Fixes
+
+- **typography:** fix styles prop ([3ce99a1](https://github.com/snowball-tech/fractal/commit/3ce99a194d280b94d067e6eafde70b096e2ca5a2))
+
 ## @snowball-tech/fractal [10.15.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.15.0...@snowball-tech/fractal@10.15.1) (2024-05-03)
 
 ### 🚦 Tests
