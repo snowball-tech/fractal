@@ -13,12 +13,6 @@ export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
    * The typical usage for this is when creating HTML for an email.
    */
   inlineStyle?: boolean
-  /**
-   * Indicates if you completely wants to get rid of the CSS class names.
-   *
-   * This only works with `inlineStyle` set to `true`.
-   */
-  removeClasses?: boolean
   /** The variant of typography (style and size) to use. */
   variant?: `${Variants}`
   /**

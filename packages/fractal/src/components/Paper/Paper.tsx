@@ -1,7 +1,23 @@
 'use client'
 
+import {
+  Border1,
+  ColorBackgroundBodyDark,
+  ColorBackgroundBodyWhite,
+  ColorTextDark,
+  ColorTextLight,
+  ShadowBrutal1Dark,
+  ShadowBrutal1Light,
+  ShadowBrutal2Dark,
+  ShadowBrutal2Light,
+  ShadowNone,
+  SizeRadiusS,
+  SizeSpacing2,
+  SizeSpacingHalf,
+  SizeSpacingQuarter,
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
+import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
@@ -19,6 +35,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
     {
       children,
       elevation = DEFAULT_ELEVATION,
+      inlineStyle = false,
       theme: themeOverride,
       ...props
     }: PaperProps,
@@ -43,6 +60,32 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 perfectionist/sort-objects */
     }
 
+    const elevationStyles: Record<Elevations, CSSProperties> = {
+      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+      [Elevations.Bordered]: {
+        borderRadius: SizeRadiusS,
+        boxShadow: ShadowNone,
+      },
+      [Elevations.Elevated]: {
+        borderRadius: SizeRadiusS,
+        boxShadow:
+          theme === Themes.Light ? ShadowBrutal1Light : ShadowBrutal1Dark,
+        marginLeft: SizeSpacingQuarter,
+        marginBottom: SizeSpacingQuarter,
+      },
+      [Elevations.Higher]: {
+        borderRadius: SizeRadiusS,
+        boxShadow:
+          theme === Themes.Light ? ShadowBrutal2Light : ShadowBrutal2Dark,
+        marginLeft: SizeSpacingQuarter,
+        marginBottom: SizeSpacingHalf,
+      },
+
+      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+    }
+
     return (
       <Typography
         ref={ref}
@@ -57,7 +100,23 @@ perfectionist/sort-objects */
           props.className,
         )}
         element="div"
-        {...omit(['className'], props)}
+        inlineStyle={inlineStyle}
+        style={
+          inlineStyle
+            ? {
+                ...elevationStyles[elevation],
+                backgroundColor:
+                  theme === Themes.Light
+                    ? ColorBackgroundBodyWhite
+                    : ColorBackgroundBodyDark,
+                border: Border1,
+                color: theme === Themes.Light ? ColorTextDark : ColorTextLight,
+                padding: SizeSpacing2,
+                ...props.style,
+              }
+            : props.style
+        }
+        {...omit(['className', 'style'], props)}
       >
         {children}
       </Typography>
