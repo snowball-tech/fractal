@@ -57,7 +57,7 @@
     "@snowball-tech/eslint-config": "^5.4.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@types/lodash": "^4.17.0",
+    "@types/lodash": "^4.17.1",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",
     "tailwindcss": "^3.4.3",
