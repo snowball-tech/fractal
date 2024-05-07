@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [11.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.3...@snowball-tech/design-tokens@11.2.4) (2024-05-07)
+
+### 🐛 Bug Fixes
+
+- **typography-paper:** remove classes when inlining styles ([813b37c](https://github.com/snowball-tech/fractal/commit/813b37ccead2dd85eb8f5ebe14f18ac6d6060b19))
+
 ## @snowball-tech/design-tokens [11.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.2...@snowball-tech/design-tokens@11.2.3) (2024-04-22)
 
 ### 📦 Dependencies
