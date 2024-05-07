@@ -453,8 +453,8 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}__${actualElement}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
-          typographyClassNames,
-          props.className,
+          !inlineStyle && typographyClassNames,
+          !inlineStyle && props.className,
         ),
         style: inlineStyle
           ? {

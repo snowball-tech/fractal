@@ -92,12 +92,13 @@ perfectionist/sort-objects */
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${elevation}`,
-          'relative flex flex-col border-1 border-normal p-2',
-          elevationClassNames[elevation],
-          theme === Themes.Light
-            ? 'bg-white text-dark'
-            : 'bg-body-dark text-light',
-          props.className,
+          !inlineStyle && 'relative flex flex-col border-1 border-normal p-2',
+          !inlineStyle && elevationClassNames[elevation],
+          !inlineStyle &&
+            (theme === Themes.Light
+              ? 'bg-white text-dark'
+              : 'bg-body-dark text-light'),
+          !inlineStyle && props.className,
         )}
         element="div"
         inlineStyle={inlineStyle}
