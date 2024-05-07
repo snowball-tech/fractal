@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.16.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.2...@snowball-tech/fractal@10.16.3) (2024-05-07)
+
+### 📦 Dependencies
+
+- fix lockfile ([a4da6d7](https://github.com/snowball-tech/fractal/commit/a4da6d757a9500adb703780760b68cbebd61107c))
+
 ## @snowball-tech/fractal [10.16.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.1...@snowball-tech/fractal@10.16.2) (2024-05-07)
 
 ### Dependencies
