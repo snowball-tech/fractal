@@ -62,8 +62,7 @@ module.exports = {
         'name/cti/pascal',
         'size/breakpoint-radius/px',
         'size/other/pxToRem',
-        // Use HSL instead of HEX to automatically support Alpha channel.
-        'color/hsl',
+        'color/css',
       ],
     },
 
