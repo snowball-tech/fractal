@@ -1,3 +1,9 @@
+# @snowball-tech/design-tokens [12.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.4...@snowball-tech/design-tokens@12.0.0) (2024-05-07)
+
+### 💥 Breaking changes
+
+- **design-tokens-colors:** use hex/RGBA instead of HSL for color tokens ([cb12a2f](https://github.com/snowball-tech/fractal/commit/cb12a2f49ad89fe0eb8804d1880d910de98e4e8e))
+
 ## @snowball-tech/design-tokens [11.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.3...@snowball-tech/design-tokens@11.2.4) (2024-05-07)
 
 ### 🐛 Bug Fixes
