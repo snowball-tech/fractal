@@ -16,6 +16,12 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
    */
   elevation?: `${Elevations}`
   /**
+   * Indicates to inline the styles instead of using Tailwind CSS classes.
+   *
+   * The typical usage for this is when creating HTML for an email.
+   */
+  inlineStyle?: boolean
+  /**
    * Force the theme of the paper.
    *
    * If none is given, it will use the one provided by the Context/Provider.

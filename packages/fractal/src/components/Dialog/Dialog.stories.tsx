@@ -127,7 +127,7 @@ export const InteractiveClose: Story = {
 
     await sleep(500)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    await userEvent.click(body.getAllByLabelText('button').at(0)!)
+    await userEvent.click(body.getAllByLabelText('Close').at(0)!)
   },
   render: () => (
     <Dialog

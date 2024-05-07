@@ -169,6 +169,7 @@ export const InteractiveModalManipulateAndClose: Story = {
     onTimeChange: fn(),
     onToday: fn(),
     orientation: Orientations.Horizontal,
+    value: defaultDate,
   },
 
   play: async ({ canvasElement }) => {
@@ -182,10 +183,6 @@ export const InteractiveModalManipulateAndClose: Story = {
 
     const clearButton = body.getByLabelText('Clear')
     await userEvent.click(clearButton)
-    await sleep(500)
-
-    const nowButton = body.getByLabelText('Now')
-    await userEvent.click(nowButton)
     await sleep(500)
 
     const closeButton = body.getAllByLabelText('Close').at(-1)
