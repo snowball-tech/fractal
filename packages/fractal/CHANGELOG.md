@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.16.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.0...@snowball-tech/fractal@10.16.1) (2024-05-07)
+
+### 🐛 Bug Fixes
+
+- **typography-paper:** remove classes when inlining styles ([813b37c](https://github.com/snowball-tech/fractal/commit/813b37ccead2dd85eb8f5ebe14f18ac6d6060b19))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 11.2.4
+
 # @snowball-tech/fractal [10.16.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.15.2...@snowball-tech/fractal@10.16.0) (2024-05-07)
 
 ### ✨ Features
