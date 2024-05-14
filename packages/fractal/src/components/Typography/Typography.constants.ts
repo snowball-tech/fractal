@@ -58,4 +58,4 @@ export const VARIANTS_MAPPING: Record<Variants, ElementType> = {
   [Variants.Heading4Link]: 'a',
 }
 
-export const DEFAULT_ELEMENT = 'p'
+export const DEFAULT_ELEMENT: ElementType = 'p'

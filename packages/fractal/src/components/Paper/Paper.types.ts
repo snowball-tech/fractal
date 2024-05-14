@@ -1,4 +1,4 @@
-import type { AllHTMLAttributes, ReactNode } from 'react'
+import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
 
 import { Themes } from '@/constants'
 
@@ -7,6 +7,8 @@ import { Elevations } from './Paper.constants'
 export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The content of the paper. */
   children: ReactNode
+  /** The HTML element to use to display your paper. */
+  element?: ElementType
   /**
    * The elevation level of the paper.
    *

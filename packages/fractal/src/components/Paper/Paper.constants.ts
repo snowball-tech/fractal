@@ -1,3 +1,5 @@
+import type { ElementType } from 'react'
+
 export const GROUP_NAME = 'paper'
 
 export enum Elevations {
@@ -9,3 +11,5 @@ export enum Elevations {
 }
 
 export const DEFAULT_ELEVATION = Elevations.Bordered
+
+export const DEFAULT_ELEMENT: ElementType = 'div'

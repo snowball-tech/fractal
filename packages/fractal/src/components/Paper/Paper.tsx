@@ -34,6 +34,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
   (
     {
       children,
+      element = 'div',
       elevation = DEFAULT_ELEVATION,
       inlineStyle = false,
       theme: themeOverride,
@@ -100,7 +101,7 @@ perfectionist/sort-objects */
               : 'bg-body-dark text-light'),
           !inlineStyle && props.className,
         )}
-        element="div"
+        element={element || 'div'}
         inlineStyle={inlineStyle}
         style={
           inlineStyle
