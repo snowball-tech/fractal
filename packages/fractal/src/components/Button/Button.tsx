@@ -370,6 +370,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               }
             : {}),
           ...(fullWidth ? { maxWidth: '100%', width: '100%' } : {}),
+          ...(asLink ? { color: ColorTextDark } : {}),
         }
       : undefined
 
@@ -387,6 +388,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         style={
           inlineStyle
             ? {
+                boxSizing: 'border-box',
                 display: 'inline-block',
                 height: SizeSpacing3,
                 width: SizeSpacing3,
@@ -423,6 +425,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         style={
           inlineStyle
             ? {
+                boxSizing: 'border-box',
                 marginTop: isTextVariant
                   ? '0'
                   : `calc(${SizeSpacingHalf} + ${SizeSpacingQuarter})`,
@@ -460,6 +463,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             style={
               inlineStyle
                 ? {
+                    boxSizing: 'border-box',
                     display: 'inline-block',
                     ...(wrap || truncate ? { minWidth: 0 } : {}),
                     ...(wrap ? { whiteSpace: 'break-spaces' } : {}),

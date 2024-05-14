@@ -151,6 +151,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         style={
           inlineStyle
             ? {
+                boxSizing: 'border-box',
                 ...elevationStyles[theme][elevation],
                 backgroundColor:
                   theme === Themes.Light

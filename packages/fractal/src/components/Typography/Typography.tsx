@@ -1,4 +1,7 @@
 import {
+  ColorDecorativePurple50,
+  ColorTextDark,
+  FontWeightMedian,
   TypographyBody1BoldFontFamily,
   TypographyBody1BoldFontSize,
   TypographyBody1BoldFontWeight,
@@ -95,6 +98,7 @@ import {
 import omit from 'lodash/fp/omit'
 import {
   type CSSProperties,
+  type ElementType,
   type ForwardedRef,
   createElement,
   forwardRef,
@@ -111,6 +115,13 @@ import {
   Variants,
 } from './Typography.constants'
 import type { TypographyProps } from './Typography.types'
+
+const MONOSPACED_ELEMENTS: Set<ElementType> = new Set([
+  'code',
+  'pre',
+  'kbd',
+  'samp',
+])
 
 /**
  * `Typography` component is the corner stone of Fractal. It defines and
@@ -457,7 +468,22 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         ),
         style: inlineStyle
           ? {
+              // Resets
+              boxSizing: 'border-box',
+              color: ColorTextDark,
+              margin: 0,
+
               ...typographyStyles,
+              fontFamily: MONOSPACED_ELEMENTS.has(actualElement)
+                ? 'monospace, monospace'
+                : typographyStyles.fontFamily,
+              ...(actualElement === 'code'
+                ? {
+                    color: ColorDecorativePurple50,
+                    fontWeight: FontWeightMedian,
+                  }
+                : {}),
+
               ...props.style,
             }
           : props.style,
