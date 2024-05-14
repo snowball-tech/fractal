@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.19.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.18.0...@snowball-tech/fractal@10.19.0) (2024-05-14)
+
+### ✨ Features
+
+- **button-paper:** export classNames and styles ([010bc5f](https://github.com/snowball-tech/fractal/commit/010bc5f87c82a93614cf4b499aa7b8c6ff0f0829))
+
 # @snowball-tech/fractal [10.18.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.17.0...@snowball-tech/fractal@10.18.0) (2024-05-14)
 
 ### ✨ Features
