@@ -354,8 +354,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 maxHeight: SizeSpacing6,
                 maxWidth: SizeSpacing6,
                 padding: asLink
-                  ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingHalf})`
-                  : `${SizeSpacingHalf} 0 0 ${SizeSpacingHalf}`,
+                  ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingQuarter})`
+                  : `${SizeSpacingHalf} 0 0 ${SizeSpacingQuarter}`,
                 width: SizeSpacing6,
               }
             : fullWidth
@@ -370,7 +370,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               }
             : {}),
           ...(fullWidth ? { maxWidth: '100%', width: '100%' } : {}),
-          ...(asLink ? { color: ColorTextDark } : {}),
+          ...(asLink && isTextVariant ? { color: ColorTextDark } : {}),
         }
       : undefined
 
