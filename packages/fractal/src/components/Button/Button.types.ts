@@ -33,6 +33,12 @@ export interface ButtonProps
   /** The position of the icon in the button. */
   iconPosition?: 'left' | 'right'
   /**
+   * Indicates to inline the styles instead of using Tailwind CSS classes.
+   *
+   * The typical usage for this is when creating HTML for an email.
+   */
+  inlineStyle?: boolean
+  /**
    * The label of the button.
    *
    * Use this when you only need to display text in a button.
