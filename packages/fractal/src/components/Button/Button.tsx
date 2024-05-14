@@ -331,6 +331,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           appearance: 'none',
           borderRadius: SizeRadiusRounded,
           boxSizing: 'border-box',
+          display: asLink ? 'inline-block' : undefined,
           outline: 'none',
           paddingLeft: 'unset',
           paddingRight: 'unset',
@@ -352,7 +353,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 height: SizeSpacing6,
                 maxHeight: SizeSpacing6,
                 maxWidth: SizeSpacing6,
-                padding: `${SizeSpacingHalf} 0 0 ${SizeSpacingHalf}`,
+                padding: asLink
+                  ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingHalf})`
+                  : `${SizeSpacingHalf} 0 0 ${SizeSpacingHalf}`,
                 width: SizeSpacing6,
               }
             : fullWidth
@@ -489,7 +492,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className={classNames}
           href={href}
           {...(isEmpty(target) ? {} : { target })}
-          style={{ display: 'inline-block', ...style, ...props.style }}
+          style={{ ...style, ...props.style }}
           title={label}
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id', 'style'], props)}

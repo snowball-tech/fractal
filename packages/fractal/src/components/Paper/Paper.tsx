@@ -61,8 +61,7 @@ export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
     ),
   },
 
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 const baseElevationStyles: Record<Elevations, CSSProperties> = {
@@ -113,8 +112,7 @@ export const elevationStyles: Record<
     },
   },
 
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 /**
