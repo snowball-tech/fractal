@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.20.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.0...@snowball-tech/fractal@10.20.1) (2024-05-14)
+
+### 🐛 Bug Fixes
+
+- **button:** fix the positionning of icon ([d6f56fc](https://github.com/snowball-tech/fractal/commit/d6f56fcd821cec23e0947e20429519f833e3706b))
+
 # @snowball-tech/fractal [10.20.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.19.1...@snowball-tech/fractal@10.20.0) (2024-05-14)
 
 ### ✨ Features
