@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.17.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.3...@snowball-tech/fractal@10.17.0) (2024-05-14)
+
+### ✨ Features
+
+- **paper:** add an `element` props ([669ebac](https://github.com/snowball-tech/fractal/commit/669ebacaca5424c3e7618fee38005b6c27f986a4))
+
 ## @snowball-tech/fractal [10.16.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.2...@snowball-tech/fractal@10.16.3) (2024-05-07)
 
 ### 📦 Dependencies
