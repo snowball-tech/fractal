@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.19.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.19.0...@snowball-tech/fractal@10.19.1) (2024-05-14)
+
+### 🐛 Bug Fixes
+
+- **button:** fix display of button as a link ([e40ec73](https://github.com/snowball-tech/fractal/commit/e40ec73bfee474ca266a5c69df06a2375f251e73))
+
 # @snowball-tech/fractal [10.19.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.18.0...@snowball-tech/fractal@10.19.0) (2024-05-14)
 
 ### ✨ Features
