@@ -53,6 +53,7 @@ const meta = {
     icon: 'Send',
     iconOnly: false,
     iconPosition: 'right',
+    inlineStyle: false,
     label: 'Punch it, Chewie!',
     target: '',
     theme: DEFAULT_THEME,
