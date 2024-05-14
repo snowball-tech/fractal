@@ -6,8 +6,10 @@ import {
   ColorBackgroundBodyWhite,
   ColorTextDark,
   ColorTextLight,
+  ShadowBrutal1,
   ShadowBrutal1Dark,
   ShadowBrutal1Light,
+  ShadowBrutal2,
   ShadowBrutal2Dark,
   ShadowBrutal2Light,
   ShadowNone,
@@ -22,10 +24,98 @@ import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
-import { cj, cn } from '@/styles/helpers'
+import { cn } from '@/styles/helpers'
 
 import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
 import type { PaperProps } from './Paper.types'
+
+const baseElevationClassNames: Record<Elevations, string> = {
+  [Elevations.Bordered]: 'rounded-sm shadow-none',
+  [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+  [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
+}
+export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
+  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+  [Themes.Light]: {
+    [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
+    [Elevations.Elevated]: cn(
+      baseElevationClassNames[Elevations.Elevated],
+      'shadow-subtle-light',
+    ),
+    [Elevations.Higher]: cn(
+      baseElevationClassNames[Elevations.Higher],
+      'shadow-brutal-light',
+    ),
+  },
+
+  [Themes.Dark]: {
+    [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
+    [Elevations.Elevated]: cn(
+      baseElevationClassNames[Elevations.Elevated],
+      'shadow-subtle-dark',
+    ),
+    [Elevations.Higher]: cn(
+      baseElevationClassNames[Elevations.Higher],
+      'shadow-brutal-dark',
+    ),
+  },
+
+  /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+}
+
+const baseElevationStyles: Record<Elevations, CSSProperties> = {
+  [Elevations.Bordered]: {
+    borderRadius: SizeRadiusS,
+    boxShadow: ShadowNone,
+  },
+  [Elevations.Elevated]: {
+    borderRadius: SizeRadiusS,
+    boxShadow: ShadowBrutal1,
+    marginBottom: SizeSpacingQuarter,
+    marginLeft: SizeSpacingQuarter,
+  },
+  [Elevations.Higher]: {
+    borderRadius: SizeRadiusS,
+    boxShadow: ShadowBrutal2,
+    marginBottom: SizeSpacingHalf,
+    marginLeft: SizeSpacingQuarter,
+  },
+}
+export const elevationStyles: Record<
+  Themes,
+  Record<Elevations, CSSProperties>
+> = {
+  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+
+  [Themes.Light]: {
+    [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
+    [Elevations.Elevated]: {
+      ...baseElevationStyles[Elevations.Elevated],
+      boxShadow: ShadowBrutal1Light,
+    },
+    [Elevations.Higher]: {
+      ...baseElevationStyles[Elevations.Higher],
+      boxShadow: ShadowBrutal2Light,
+    },
+  },
+
+  [Themes.Dark]: {
+    [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
+    [Elevations.Elevated]: {
+      ...baseElevationStyles[Elevations.Elevated],
+      boxShadow: ShadowBrutal1Dark,
+    },
+    [Elevations.Higher]: {
+      ...baseElevationStyles[Elevations.Higher],
+      boxShadow: ShadowBrutal2Dark,
+    },
+  },
+
+  /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
+perfectionist/sort-objects */
+}
 
 /**
  * `Paper` component allow to build interface with level and hierarchy.
@@ -44,49 +134,6 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
   ) => {
     const theme = useTheme(themeOverride)
 
-    const elevationClassNames = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
-      [Elevations.Bordered]: 'rounded-sm shadow-none',
-      [Elevations.Elevated]: cj(
-        'rounded-sm shadow-subtle ml-quarter mb-quarter',
-        theme === Themes.Light ? 'shadow-subtle-light' : 'shadow-subtle-dark',
-      ),
-      [Elevations.Higher]: cj(
-        'rounded-sm shadow-brutal ml-quarter mb-half',
-        theme === Themes.Light ? 'shadow-brutal-light' : 'shadow-brutal-dark',
-      ),
-
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
-    }
-
-    const elevationStyles: Record<Elevations, CSSProperties> = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
-      [Elevations.Bordered]: {
-        borderRadius: SizeRadiusS,
-        boxShadow: ShadowNone,
-      },
-      [Elevations.Elevated]: {
-        borderRadius: SizeRadiusS,
-        boxShadow:
-          theme === Themes.Light ? ShadowBrutal1Light : ShadowBrutal1Dark,
-        marginLeft: SizeSpacingQuarter,
-        marginBottom: SizeSpacingQuarter,
-      },
-      [Elevations.Higher]: {
-        borderRadius: SizeRadiusS,
-        boxShadow:
-          theme === Themes.Light ? ShadowBrutal2Light : ShadowBrutal2Dark,
-        marginLeft: SizeSpacingQuarter,
-        marginBottom: SizeSpacingHalf,
-      },
-
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
-    }
-
     return (
       <Typography
         ref={ref}
@@ -94,7 +141,7 @@ perfectionist/sort-objects */
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${elevation}`,
           !inlineStyle && 'relative flex flex-col border-1 border-normal p-2',
-          !inlineStyle && elevationClassNames[elevation],
+          !inlineStyle && elevationClassNames[theme][elevation],
           !inlineStyle &&
             (theme === Themes.Light
               ? 'bg-white text-dark'
@@ -106,7 +153,7 @@ perfectionist/sort-objects */
         style={
           inlineStyle
             ? {
-                ...elevationStyles[elevation],
+                ...elevationStyles[theme][elevation],
                 backgroundColor:
                   theme === Themes.Light
                     ? ColorBackgroundBodyWhite
