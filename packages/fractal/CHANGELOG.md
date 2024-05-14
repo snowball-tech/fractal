@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [10.20.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.19.1...@snowball-tech/fractal@10.20.0) (2024-05-14)
+
+### ✨ Features
+
+- add some resets when inline styles ([b754e70](https://github.com/snowball-tech/fractal/commit/b754e70a5a7acf6216d2e63772b1fd4bf9c1da6e))
+
 ## @snowball-tech/fractal [10.19.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.19.0...@snowball-tech/fractal@10.19.1) (2024-05-14)
 
 ### 🐛 Bug Fixes
