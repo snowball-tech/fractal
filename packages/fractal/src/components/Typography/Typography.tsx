@@ -95,7 +95,6 @@ import {
 import omit from 'lodash/fp/omit'
 import {
   type CSSProperties,
-  type ElementType,
   type ForwardedRef,
   createElement,
   forwardRef,
@@ -444,7 +443,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }
 
     const actualElement =
-      element || VARIANTS_MAPPING[variant] || (DEFAULT_ELEMENT as ElementType)
+      element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
 
     return createElement(
       actualElement,
