@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [10.18.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.17.0...@snowball-tech/fractal@10.18.0) (2024-05-14)
+
+### ✨ Features
+
+- **button:** add an `inlineStyle` prop ([c4c7f47](https://github.com/snowball-tech/fractal/commit/c4c7f47aa0533e6a07a1aac002a2050b74d6c82d))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([b078e8e](https://github.com/snowball-tech/fractal/commit/b078e8ea2da4ccae07a9adbc111a0220c6010f90))
+
 # @snowball-tech/fractal [10.17.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.16.3...@snowball-tech/fractal@10.17.0) (2024-05-14)
 
 ### ✨ Features
