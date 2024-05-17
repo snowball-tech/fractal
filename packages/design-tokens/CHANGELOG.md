@@ -1,3 +1,9 @@
+## @snowball-tech/design-tokens [12.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.0.0...@snowball-tech/design-tokens@12.0.1) (2024-05-17)
+
+### ♻️ Code Refactoring
+
+- change the path to the fonts assets ([d98891e](https://github.com/snowball-tech/fractal/commit/d98891eaf1deb58afdd3feec7f70c28db1b76136))
+
 # @snowball-tech/design-tokens [12.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@11.2.4...@snowball-tech/design-tokens@12.0.0) (2024-05-07)
 
 ### 💥 Breaking changes
