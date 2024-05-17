@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.20.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.1...@snowball-tech/fractal@10.20.2) (2024-05-17)
+
+### ♻️ Code Refactoring
+
+- change the path to the fonts assets ([d98891e](https://github.com/snowball-tech/fractal/commit/d98891eaf1deb58afdd3feec7f70c28db1b76136))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.0.1
+
 ## @snowball-tech/fractal [10.20.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.0...@snowball-tech/fractal@10.20.1) (2024-05-14)
 
 ### 🐛 Bug Fixes
