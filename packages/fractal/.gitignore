@@ -5,4 +5,4 @@ storybook-static
 vite.config.ts.timestamp*
 
 # Fonts are not open-source
-assets/fonts*/PolySans*
+public/fonts/PolySans*

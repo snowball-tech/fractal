@@ -24,7 +24,7 @@ if [ -z "$destination" ]; then
   exit $exitCode
 fi
 
-if [ -n "$(ls -A "${destination}"fonts/*.woff* 2>/dev/null)" ]; then
+if [ -n "$(ls -A "${destination}"/fonts/*.woff* 2>/dev/null)" ]; then
   if [ "$force" != "--force" ]; then
     bold_success "Fonts seems to be already there."
     info "Launch \`yarn force-update-fonts\` to force the download/update of the fonts."
