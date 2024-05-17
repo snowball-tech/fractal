@@ -2,7 +2,7 @@ const StyleDictionary = require('style-dictionary')
 
 StyleDictionary.registerFormat({
   formatter: ({ dictionary, options }) => {
-    const fontPathPrefix = options.fontPathPrefix || '/assets/fonts/'
+    const fontPathPrefix = options.fontPathPrefix || '/fonts/'
 
     // https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src
     const formatsMap = {
