@@ -51,7 +51,7 @@ fi
 
 cd "$TMP_DIR" >/dev/null 2>&1 || exit 0
 
-sparseCheckout=$(git sparse-checkout set --no-cone "packages/fonts" 2>&1)
+sparseCheckout=$(git sparse-checkout set --no-cone "packages/assets/fonts" 2>&1)
 if [ $? -gt 0 ]; then
   bold_error "FAILED"
   error "$sparseCheckout"
@@ -85,7 +85,7 @@ if [ $? -gt 0 ]; then
   exit "$exitCode"
 fi
 
-copy=$(cp -r "$TMP_DIR/packages/fonts" "$destination" 2>&1)
+copy=$(cp -r "$TMP_DIR/packages/assets/fonts" "$destination" 2>&1)
 if [ $? -gt 0 ]; then
   bold_error "FAILED"
   error "$copy"
@@ -110,7 +110,7 @@ fi
 bold_success "PolySans fonts successfully updated!"
 echo ""
 
-info "assets/fonts"
+info "$destination/fonts"
 
 echo -n "$BLUE"
 ls "$destination/fonts"

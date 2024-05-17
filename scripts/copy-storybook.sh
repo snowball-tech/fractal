@@ -2,12 +2,6 @@
 
 # shellcheck disable=SC2181
 
-# Try to sparse checkout the private repository (Freezer) that contains the
-# original PolySans fonts.
-# If the sparse checkout fails, it means that the user does not have access to
-# it and we can just gracefuly fail (they won't be able to use the proper fonts
-# but will have access to the fallback fonts anyway).
-
 # shellcheck disable=SC1090
 source "$(dirname "$0")/colors.sh"
 
