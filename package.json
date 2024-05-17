@@ -78,7 +78,7 @@
     "@snowball-tech/prettier-config": "^1.4.7",
     "@snowball-tech/semantic-release-config": "^2.1.8",
     "@snowball-tech/stylelint-config": "^2.2.7",
-    "chromatic": "^11.3.2",
+    "chromatic": "^11.3.5",
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
