@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [10.21.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.3...@snowball-tech/fractal@10.21.0) (2024-05-21)
+
+### ✨ Features
+
+- **dropdown:** add a prop to display as a select ([3f6a8b3](https://github.com/snowball-tech/fractal/commit/3f6a8b349698ec800ea646f7077d9353edd59158))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.0
+
 ## @snowball-tech/fractal [10.20.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.2...@snowball-tech/fractal@10.20.3) (2024-05-17)
 
 ### 📦 Dependencies
