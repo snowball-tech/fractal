@@ -47,6 +47,7 @@ const meta: Meta<InputPinCodeProps> = {
       return <Story args={{ ...context.args, onChange }} />
     },
   ],
+
   parameters: {
     componentSubtitle:
       '🥷 Do they have a code clearance? - Darth Vader - Star Wars: Episode VI - Return of the Jedi.',

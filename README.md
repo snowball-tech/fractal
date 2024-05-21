@@ -182,7 +182,7 @@ Then make sure you have the latest 4.x.x version installed:
 yarn --version
 ```
 
-This should output a 4.x.x version _(e.g. "4.1.1")_.
+This should output a 4.x.x version _(e.g. "4.2.2")_.
 
 </details>
 

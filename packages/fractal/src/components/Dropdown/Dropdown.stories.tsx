@@ -4,6 +4,7 @@ import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+import isChromatic from 'chromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
@@ -162,6 +163,7 @@ const meta: Meta<DropdownProps> = {
   },
   args: {
     align: undefined,
+    asSelect: false,
     children: 'Text',
     condensed: false,
     defaultOpen: false,
@@ -176,12 +178,17 @@ const meta: Meta<DropdownProps> = {
   },
   component: Dropdown,
   decorators: [
-    (storyFunction: () => ReactNode) => (
-      <div className="flex h-[500px] max-w-[500px] items-center justify-center">
-        {storyFunction()}
-      </div>
-    ),
+    ...(isChromatic()
+      ? [
+          (storyFunction: () => ReactNode) => (
+            <div className="flex h-[500px] max-w-[500px] items-center justify-center">
+              {storyFunction()}
+            </div>
+          ),
+        ]
+      : []),
   ],
+
   parameters: {
     componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
   },

@@ -315,6 +315,7 @@ const meta: Meta<AutocompleteProps> = {
       return <Story args={{ ...context.args, onChange }} />
     },
   ],
+
   parameters: {
     chromatic: { delay: 500 },
     componentSubtitle:

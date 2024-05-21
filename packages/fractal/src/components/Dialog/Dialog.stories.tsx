@@ -1,6 +1,7 @@
 import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+import isChromatic from 'chromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -54,9 +55,15 @@ const meta: Meta<DialogProps> = {
   },
   component: Dialog,
   decorators: [
-    (storyFunction: () => ReactNode) => (
-      <div className="relative h-[350px] w-[500px]">{storyFunction()}</div>
-    ),
+    ...(isChromatic()
+      ? [
+          (storyFunction: () => ReactNode) => (
+            <div className="relative h-[350px] w-[500px]">
+              {storyFunction()}
+            </div>
+          ),
+        ]
+      : []),
   ],
 
   parameters: {

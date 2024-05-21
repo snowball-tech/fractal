@@ -37,6 +37,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
   (
     {
       align,
+      asSelect = false,
       children,
       condensed = false,
       defaultOpen = false,
@@ -228,7 +229,7 @@ perfectionist/sort-objects */
             ? `${PREFIX}-${GROUP_NAME}--opened`
             : `${PREFIX}-${GROUP_NAME}--closed`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
-          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'sm:w-fit',
           props.className,
         )}
         {...omit(['className'], props)}
@@ -243,10 +244,11 @@ perfectionist/sort-objects */
             asChild={hasTrigger}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none',
+              'w-full appearance-none text-left text-color-unset outline-none',
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
+              fullWidth ? `${PREFIX}-${GROUP_NAME}__trigger--full-width` : '',
               hasTrigger
                 ? 'flex items-center'
                 : 'invisible h-0 max-h-0 border-y-0 py-0',
@@ -254,6 +256,18 @@ perfectionist/sort-objects */
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
                 : '!cursor-pointer',
               toggleOnTriggerClick ? '' : '!cursor-default',
+              asSelect
+                ? 'flex h-6 max-h-6 min-h-6 items-center rounded-sm border-1 border-normal px-2 py-unset transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder'
+                : 'border-none bg-unset px-unset py-unset',
+              asSelect && !disabled
+                ? 'cursor-pointer border-normal bg-white hover:border-1 hover:shadow-hover'
+                : '',
+              asSelect && disabled
+                ? 'cursor-not-allowed border-disabled bg-disabled-light'
+                : '',
+              asSelect && !disabled && isOpen
+                ? 'hover:shadow-over border-primary shadow-primary'
+                : '',
             )}
             disabled={!toggleOnTriggerClick}
             onPointerDown={
@@ -269,6 +283,7 @@ perfectionist/sort-objects */
               <Typography
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__content`,
+                  'flex h-full w-full items-center justify-between',
                   disabled
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',

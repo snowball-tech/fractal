@@ -80,6 +80,7 @@ const meta: Meta<InputTextProps> = {
       return <Story args={{ ...context.args, onChange }} />
     },
   ],
+
   parameters: {
     componentSubtitle: '🤖 Malfunction, need input! - Johnny 5 - Short Circuit',
     controls: {
