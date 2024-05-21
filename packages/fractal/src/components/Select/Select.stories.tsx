@@ -122,6 +122,7 @@ const meta: Meta<SelectProps> = {
       return <Story args={{ ...context.args, onSelect }} />
     },
   ],
+
   parameters: {
     componentSubtitle:
       '🚀 Failure is not an option - Gene Kranz (NASA Flight Director) - Apollo 13',

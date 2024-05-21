@@ -5,9 +5,11 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamatio
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import type { Meta, StoryObj } from '@storybook/react'
+import isChromatic from 'chromatic'
 import type { ReactNode } from 'react'
 
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'
+import { cj } from '@/styles/helpers'
 
 import { Toolbar } from './Toolbar'
 import { ToolbarDropdownItemProps } from './Toolbar.types'
@@ -43,7 +45,12 @@ const meta: Meta<ToolbarDropdownItemProps> = {
   component: ToolbarDropdownItem,
   decorators: [
     (storyFunction: () => ReactNode) => (
-      <div className="flex h-[500px] max-w-[500px] items-center justify-center">
+      <div
+        className={cj(
+          'flex items-center justify-center',
+          isChromatic() ? 'h-[500px] max-w-[500px]' : '',
+        )}
+      >
         <Toolbar>
           <ToolbarDropdown label="Jedis">{storyFunction()}</ToolbarDropdown>
         </Toolbar>

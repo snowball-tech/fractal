@@ -35,6 +35,7 @@ const meta: Meta<SliderProps> = {
       return <Story args={{ ...context.args, onValueChange }} />
     },
   ],
+
   parameters: {
     componentSubtitle: '☃️ Slide, Anna! - Olaf - Frozen',
   },

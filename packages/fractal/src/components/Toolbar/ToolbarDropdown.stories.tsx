@@ -9,12 +9,14 @@ import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+import isChromatic from 'chromatic'
 import type { ReactNode } from 'react'
 
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'
 import ToolbarDropdownItemGroup from '@/components/Dropdown/DropdownItemGroup'
 import ToolbarDropdownItemSeparator from '@/components/Dropdown/DropdownItemSeparator'
 import { Elevations } from '@/components/Paper/Paper.constants'
+import { cj } from '@/styles/helpers'
 import { sleep } from '@/utils'
 
 import { Toolbar } from './Toolbar'
@@ -154,7 +156,12 @@ const meta: Meta<ToolbarDropdownProps> = {
   component: ToolbarDropdown,
   decorators: [
     (storyFunction: () => ReactNode) => (
-      <div className="flex h-[500px] max-w-[500px] items-center justify-center">
+      <div
+        className={cj(
+          'flex items-center justify-center',
+          isChromatic() ? 'h-[500px] max-w-[500px]' : '',
+        )}
+      >
         <Toolbar>{storyFunction()}</Toolbar>
       </div>
     ),

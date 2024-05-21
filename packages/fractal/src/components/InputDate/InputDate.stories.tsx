@@ -89,6 +89,7 @@ const meta: Meta<InputDateProps> = {
       return <Story args={{ ...context.args, onChange }} />
     },
   ],
+
   parameters: {
     componentSubtitle:
       "🧌 Well, I don't think that date could've gone any worse - Bob Razowski - Monsters, Inc.",

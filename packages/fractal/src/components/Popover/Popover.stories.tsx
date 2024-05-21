@@ -1,6 +1,7 @@
 import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+import isChromatic from 'chromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -113,12 +114,17 @@ const meta: Meta<PopoverProps> = {
   },
   component: Popover,
   decorators: [
-    (storyFunction: () => ReactNode) => (
-      <div className="flex h-[500px] max-w-[500px] items-center justify-center">
-        {storyFunction()}
-      </div>
-    ),
+    ...(isChromatic()
+      ? [
+          (storyFunction: () => ReactNode) => (
+            <div className="flex h-[500px] max-w-[500px] items-center justify-center">
+              {storyFunction()}
+            </div>
+          ),
+        ]
+      : []),
   ],
+
   parameters: {
     componentSubtitle: `🤖 Pop. You Pop - Wall-E, talking to Eve - Wall-E`,
   },

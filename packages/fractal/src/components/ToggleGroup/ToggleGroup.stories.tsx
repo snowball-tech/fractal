@@ -91,6 +91,7 @@ const meta: Meta<ToggleGroupProps> = {
       return <Story args={{ ...context.args, onValueChange }} />
     },
   ],
+
   parameters: {
     componentSubtitle:
       "🌋 The, hum... toggle switch isn't, hum... toggling, ahah! - Stanley - Meet the Robinson",

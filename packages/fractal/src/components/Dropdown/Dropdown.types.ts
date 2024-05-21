@@ -34,6 +34,8 @@ export type SubDropdownCombinedRefs = {
 export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Indicates where to align the dropdown relative to the trigger. */
   align?: RxDropdownMenuContentProps['align']
+  /** Indicates if you want to display the trigger styled as an select input. */
+  asSelect?: boolean
   /**
    * The content of the dropdown menu.
    *

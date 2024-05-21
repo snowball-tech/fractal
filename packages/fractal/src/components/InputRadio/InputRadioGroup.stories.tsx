@@ -90,6 +90,7 @@ const meta: Meta<InputRadioGroupProps> = {
       return <Story args={{ ...context.args, onValueChange }} />
     },
   ],
+
   parameters: {
     controls: {
       exclude: ['value'],
