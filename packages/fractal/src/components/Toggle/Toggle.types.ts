@@ -40,6 +40,13 @@ export interface ToggleProps
    * and `title` for the toggle.
    */
   label?: string
+  /**
+   * Output the label as a `div` element instead of a `label` element.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelAsDiv?: boolean
   /** Event handler called when the toggle is clicked. */
   onToggle?: (toggled: boolean) => void
   /**

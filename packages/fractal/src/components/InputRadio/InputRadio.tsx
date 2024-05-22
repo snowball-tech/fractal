@@ -41,6 +41,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
       fullWidth = false,
       id,
       label,
+      labelAsDiv = false,
       value,
       ...props
     }: InputRadioProps,
@@ -145,7 +146,7 @@ perfectionist/sort-objects */
           )}
           htmlFor={uniqueId}
         >
-          <Typography element={hasChildren ? 'div' : 'label'}>
+          <Typography element={labelAsDiv ? 'div' : 'label'}>
             {hasChildren ? children : label}
           </Typography>
         </RxLabel>

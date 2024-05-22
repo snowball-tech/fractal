@@ -47,6 +47,7 @@ export const ToggleGroupItem = forwardRef<
       icon,
       iconOnly = false,
       label,
+      labelAsDiv = false,
       onToggle,
       value,
       ...props
@@ -130,7 +131,7 @@ export const ToggleGroupItem = forwardRef<
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,
             )}
-            element={hasChildren ? 'div' : 'label'}
+            element={labelAsDiv ? 'div' : 'label'}
           >
             {hasChildren ? children : label}
           </Typography>

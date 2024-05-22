@@ -88,6 +88,13 @@ export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
    * and `title` for the toggle item.
    */
   label?: string
+  /**
+   * Output the label as a `div` element instead of a `label` element.
+   *
+   * This is useful for markup validity reasons, but note that you will lose
+   * the accessibility improvements.
+   */
+  labelAsDiv?: boolean
   /** Event handler called when the toggle is clicked. */
   onToggle?: (toggled: boolean) => void
   /** The value submitted in the submitted form. */

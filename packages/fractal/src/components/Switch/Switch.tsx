@@ -29,6 +29,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
       disabled = false,
       id,
       label,
+      labelAsDiv = false,
       labels = [],
       name,
       onToggle,
@@ -142,10 +143,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           )}
           htmlFor={uniqueId}
         >
-          <Typography
-            element={hasChildren && !hasLabels ? 'div' : 'label'}
-            variant="body-2"
-          >
+          <Typography element={labelAsDiv ? 'div' : 'label'} variant="body-2">
             {hasChildren && !hasLabels ? children : labels?.[1] ?? label}
           </Typography>
         </RxLabel>

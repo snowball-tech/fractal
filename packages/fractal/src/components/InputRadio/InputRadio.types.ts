@@ -97,6 +97,14 @@ export interface InputRadioProps extends RxRadioProps {
    * and `title` for the radio.
    */
   label?: string
+  /**
+   * Output the label as a `div` element instead of a `label` element.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the radio by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelAsDiv?: boolean
   /** The value submitted in the submitted form. */
   value: string
 }

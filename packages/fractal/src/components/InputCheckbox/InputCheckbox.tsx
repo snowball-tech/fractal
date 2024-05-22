@@ -45,6 +45,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       fullWidth = false,
       id,
       label,
+      labelAsDiv = false,
       name,
       onCheckedChange,
       readOnly = false,
@@ -195,7 +196,7 @@ perfectionist/sort-objects */
           )}
           htmlFor={uniqueId}
         >
-          <Typography element={hasChildren ? 'div' : 'label'}>
+          <Typography element={labelAsDiv ? 'div' : 'label'}>
             {hasChildren ? children : label}
           </Typography>
         </RxLabel>
