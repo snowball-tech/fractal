@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.21.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.0...@snowball-tech/fractal@10.21.1) (2024-05-22)
+
+### 🐛 Bug Fixes
+
+- keep `label` elements whenever possible ([46d8827](https://github.com/snowball-tech/fractal/commit/46d88275d79f134db513907d08be9bd5a67dc43e))
+
+### 📦 Dependencies
+
+- fix lockfile and update dependencies ([d45f7d4](https://github.com/snowball-tech/fractal/commit/d45f7d48ab627ef4a0dcaff862198b62136cef53))
+
 # @snowball-tech/fractal [10.21.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.20.3...@snowball-tech/fractal@10.21.0) (2024-05-21)
 
 ### ✨ Features
