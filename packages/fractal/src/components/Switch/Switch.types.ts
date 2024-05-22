@@ -44,6 +44,14 @@ export interface SwitchProps
    */
   label?: string
   /**
+   * Output the label(s) as a `div` element(s) instead of a `label` element(s).
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the switch by clicking on the label(s) as well as the
+   * accessibility improvements.
+   */
+  labelAsDiv?: boolean
+  /**
    * The labels of the switch if you want to display two labels.
    *
    * The first element of the array will be the label for the unchecked state

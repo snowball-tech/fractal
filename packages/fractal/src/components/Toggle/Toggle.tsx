@@ -40,6 +40,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       icon,
       iconOnly = false,
       label,
+      labelAsDiv = false,
       onToggle,
       toggled,
       variant = DEFAULT_VARIANT,
@@ -106,7 +107,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,
             )}
-            element={hasChildren ? 'div' : 'label'}
+            element={labelAsDiv ? 'div' : 'label'}
           >
             {hasChildren ? children : label}
           </Typography>
