@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.10...@snowball-tech/fractal@10.21.11) (2024-05-23)
+
+### 🏗 Chores
+
+- remove useless console.log ([786c88e](https://github.com/snowball-tech/fractal/commit/786c88ef5bad0683b72737570caab4e5ef830aa8))
+
 ## @snowball-tech/fractal [10.21.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.9...@snowball-tech/fractal@10.21.10) (2024-05-23)
 
 ### 🐛 Bug Fixes
