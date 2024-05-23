@@ -113,7 +113,7 @@ export const InputPinCode = ({
     if (index < length - 1) {
       const nextIndex = Math.min(newCode.length, index + 1)
       const nextInput = document.querySelector(
-        `#${uniqueId}-${nextIndex}`,
+        `#${CSS.escape(uniqueId)}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
@@ -146,7 +146,7 @@ export const InputPinCode = ({
       case 'ArrowLeft': {
         if (index > 0) {
           const previousInput = document.querySelector(
-            `#${uniqueId}-${index - 1}`,
+            `#${CSS.escape(uniqueId)}-${index - 1}`,
           ) as HTMLInputElement
           if (previousInput) {
             previousInput.focus()
@@ -169,7 +169,7 @@ export const InputPinCode = ({
 
         if (index > 0) {
           const previousInput = document.querySelector(
-            `#${uniqueId}-${index - 1}`,
+            `#${CSS.escape(uniqueId)}-${index - 1}`,
           ) as HTMLInputElement
           if (previousInput) {
             previousInput.focus()
@@ -182,7 +182,7 @@ export const InputPinCode = ({
       case 'ArrowRight': {
         if (index < length - 1) {
           const nextInput = document.querySelector(
-            `#${uniqueId}-${index + 1}`,
+            `#${CSS.escape(uniqueId)}-${index + 1}`,
           ) as HTMLInputElement
           if (nextInput) {
             nextInput.focus()
@@ -248,7 +248,7 @@ export const InputPinCode = ({
     } else {
       const nextIndex = newCode.length
       const nextInput = document.querySelector(
-        `#${uniqueId}-${nextIndex}`,
+        `#${CSS.escape(uniqueId)}-${nextIndex}`,
       ) as HTMLInputElement
       if (nextInput) {
         nextInput.focus()
