@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.9...@snowball-tech/fractal@10.21.10) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **datetime-picker:** fix a weird import behavior with timekeeper using react 18+ ([598c323](https://github.com/snowball-tech/fractal/commit/598c323f0c1419853c16b00e8c13ae36256dc66f))
+
 ## @snowball-tech/fractal [10.21.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.8...@snowball-tech/fractal@10.21.9) (2024-05-23)
 
 ### 📦 Dependencies
