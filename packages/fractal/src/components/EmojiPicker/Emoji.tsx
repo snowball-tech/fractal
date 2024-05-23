@@ -41,8 +41,6 @@ export const Emoji = ({
     }
   }, [emojiRef, props.className])
 
-  console.log({ actualShortCode, id, native, shortCode, skinTone })
-
   return (
     <em-emoji
       id={isEmpty(native) ? id : undefined}
