@@ -665,7 +665,9 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                       localTimeStringOptions,
                     )) ||
                   undefined
-            : undefined
+            : defaultValue === null
+              ? ''
+              : undefined
         }
         disabled={disabled}
         error={isInError}
@@ -705,7 +707,9 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                       localTimeStringOptions,
                     )) ||
                   undefined
-            : undefined
+            : value === null
+              ? ''
+              : undefined
         }
         withSpinButton={false}
       />
