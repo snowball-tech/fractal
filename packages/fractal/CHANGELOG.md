@@ -1,3 +1,17 @@
+## @snowball-tech/fractal [10.21.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.2...@snowball-tech/fractal@10.21.3) (2024-05-23)
+
+### 📝 Documentation
+
+- **datetime-picker:** only freeze date on Chromatic ([08c7e83](https://github.com/snowball-tech/fractal/commit/08c7e83d61c840c9180da299ac1bb1e553cd427a))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([3bb4ec7](https://github.com/snowball-tech/fractal/commit/3bb4ec76fdd2ab45ce021ccacfb827cdc9e153c5))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.1
+
 ## @snowball-tech/fractal [10.21.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.1...@snowball-tech/fractal@10.21.2) (2024-05-23)
 
 ### 🐛 Bug Fixes
