@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.7...@snowball-tech/fractal@10.21.8) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **tabs:** fix automatic large mode ([e3ac563](https://github.com/snowball-tech/fractal/commit/e3ac563c1351f6202404c3fd1eb2e590640bb81f))
+
 ## @snowball-tech/fractal [10.21.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.6...@snowball-tech/fractal@10.21.7) (2024-05-23)
 
 ### 🐛 Bug Fixes
