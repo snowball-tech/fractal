@@ -5198,12 +5198,12 @@ __metadata:
     react-timekeeper: "npm:^2.2.1"
     remark-gfm: "npm:^4.0.0"
     storybook: "npm:^8.1.2"
-    storybook-addon-mock-date: "npm:^0.4.3"
+    storybook-addon-mock-date: "npm:^0.5.0"
     tailwind-merge: "npm:^2.3.0"
     tailwindcss: "npm:^3.4.3"
     tsup: "npm:^8.0.2"
     typescript: "npm:^5.4.5"
-    vercel: "npm:^34.2.1"
+    vercel: "npm:^34.2.2"
     vite: "npm:^5.2.11"
     vite-tsconfig-paths: "npm:^4.3.2"
   peerDependencies:
@@ -7164,12 +7164,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:4.2.12":
-  version: 4.2.12
-  resolution: "@vercel/next@npm:4.2.12"
+"@vercel/next@npm:4.2.13":
+  version: 4.2.13
+  resolution: "@vercel/next@npm:4.2.13"
   dependencies:
     "@vercel/nft": "npm:0.27.0"
-  checksum: 10/e8b69550a4ef9baa303fb7755efd50917ab091bfa1ce9016bd552088f6afa3cfc7db6a91d1008978bb56372ef8172c63f1af4def14f36a095b3c1884aa4ac9a5
+  checksum: 10/248206c911f21064a15277607f734c347210d7fa0af58eeed5925b57708888989cff0486c6c87cf728f43e8af3ade8dfea9e613eb022155e998d96eda2a7dbe9
   languageName: node
   linkType: hard
 
@@ -21461,10 +21461,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-mock-date@npm:^0.4.3":
-  version: 0.4.3
-  resolution: "storybook-addon-mock-date@npm:0.4.3"
-  checksum: 10/442135fb71905ae6a8556baf923d6813730b5cb2d549fe919d15fe6f954e76e874d955adfa7f7ea6a669a717627bb8a151c7e05f8320809034d4eedfca58de61
+"storybook-addon-mock-date@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "storybook-addon-mock-date@npm:0.5.0"
+  checksum: 10/34650fdacbc3b55f32cd50a6ba16f59635210608c96a97c44cb1210d42ae6cc9f04ef78abfe08c522d9ccf206ac238c0da5c4cc545b2c4d7fb8dd6ff7dacdaa4
   languageName: node
   linkType: hard
 
@@ -23408,15 +23408,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^34.2.1":
-  version: 34.2.1
-  resolution: "vercel@npm:34.2.1"
+"vercel@npm:^34.2.2":
+  version: 34.2.2
+  resolution: "vercel@npm:34.2.2"
   dependencies:
     "@vercel/build-utils": "npm:8.2.0"
     "@vercel/fun": "npm:1.1.0"
     "@vercel/go": "npm:3.1.1"
     "@vercel/hydrogen": "npm:1.0.2"
-    "@vercel/next": "npm:4.2.12"
+    "@vercel/next": "npm:4.2.13"
     "@vercel/node": "npm:3.1.5"
     "@vercel/python": "npm:4.2.0"
     "@vercel/redwood": "npm:2.0.9"
@@ -23427,7 +23427,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/323280d8ac0a64efc33614461161eb8f7490f91a7a0c534199d1f129adecec438e3f1960e705a8168e42511d8b81e61d36273d6a82eeb62a2610a7c7399e3d4a
+  checksum: 10/fe17bec4f30376726e8342983c6c17cc22267d017051ad559f1e2e87412e71d94aa75d838c283ffd6517042a2af12a7a58ab3d1f0b5c3ad020052200fac3c914
   languageName: node
   linkType: hard
 

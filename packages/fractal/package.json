@@ -111,10 +111,10 @@
     "prettier": "^3.2.5",
     "remark-gfm": "^4.0.0",
     "storybook": "^8.1.2",
-    "storybook-addon-mock-date": "^0.4.3",
+    "storybook-addon-mock-date": "^0.5.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vercel": "^34.2.1",
+    "vercel": "^34.2.2",
     "vite": "^5.2.11",
     "vite-tsconfig-paths": "^4.3.2"
   },
