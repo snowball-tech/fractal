@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.11...@snowball-tech/fractal@10.21.12) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **datetime-picker:** fix clearing the input ([2ff82b3](https://github.com/snowball-tech/fractal/commit/2ff82b3e66265a08d58643664e3952c3cb2fed3a))
+
 ## @snowball-tech/fractal [10.21.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.10...@snowball-tech/fractal@10.21.11) (2024-05-23)
 
 ### 🏗 Chores
