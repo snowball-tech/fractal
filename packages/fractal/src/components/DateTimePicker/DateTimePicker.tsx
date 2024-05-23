@@ -21,7 +21,8 @@ import {
   useState,
 } from 'react'
 import Calendar from 'react-calendar'
-import TimeKeeper, { type TimeOutput } from 'react-timekeeper'
+import TimeKeeperImport from 'react-timekeeper'
+import type { TimeOutput } from 'react-timekeeper'
 
 import { Button } from '@/components/Button'
 import { Dialog } from '@/components/Dialog'
@@ -42,6 +43,12 @@ import {
   TimeVariants,
 } from './DateTimePicker.constants'
 import type { CombinedRefs, DateTimePickerProps } from './DateTimePicker.types'
+
+const TimeKeeper = isFunction(TimeKeeperImport)
+  ? TimeKeeperImport
+  : // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore - There is a weird behavior with this import
+    isFunction(TimeKeeperImport.default) && TimeKeeperImport.default
 
 /**
  * `DateTimePicker` component is used to allow the user to enter a date and a
