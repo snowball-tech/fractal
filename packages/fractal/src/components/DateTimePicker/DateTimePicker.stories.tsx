@@ -19,7 +19,7 @@ import {
 
 type DateTimePickerProps = ComponentProps<typeof DateTimePicker>
 
-const defaultDate = new Date('1985-10-11T14:30:42Z')
+const defaultDate = new Date(1985, 9, 11, 14, 30, 42, 0)
 const i18n = {
   buttons: { clear: 'Clear', close: 'Close', now: 'Now', today: 'Today' },
   tabs: { bar: 'Tabs' },
@@ -96,6 +96,7 @@ const meta: Meta<DateTimePickerProps> = {
   parameters: {
     componentSubtitle:
       "🐇 The time! The time! Who's got the time? - White Rabbit - Alice in Wonderland",
+    mockingDate: new Date(2023, 4, 3, 14, 30, 42, 0),
   },
 
   title: 'Molecules/Date & Time picker',
@@ -184,6 +185,10 @@ export const InteractiveModalManipulateAndClose: Story = {
 
     const clearButton = body.getByLabelText('Clear')
     await userEvent.click(clearButton)
+    await sleep(500)
+
+    const nowButton = body.getByLabelText('Now')
+    await userEvent.click(nowButton)
     await sleep(500)
 
     const closeButton = body.getAllByLabelText('Close').at(-1)
@@ -466,6 +471,134 @@ export const InteractiveClearedStaticVerticalSideBySide: Story = {
     await userEvent.hover(clearButton)
     await sleep(500)
     await userEvent.click(clearButton)
+  },
+}
+
+export const InteractiveTodayStaticHorizontalSideBySide: Story = {
+  args: {
+    onChange: fn(),
+    onClear: fn(),
+    onClose: fn(),
+    onDateChange: fn(),
+    onDismiss: fn(),
+    onFieldChange: fn(),
+    onNow: fn(),
+    onOpen: fn(),
+    onOpenChange: fn(),
+    onTimeChange: fn(),
+    onToday: fn(),
+    orientation: Orientations.Horizontal,
+    pickerVariant: PickerVariants.SideBySide,
+    staticPicker: true,
+    value: null,
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const todayButton = canvas.getByLabelText('Today')
+
+    await sleep(500)
+
+    await userEvent.hover(todayButton)
+    await sleep(500)
+    await userEvent.click(todayButton)
+  },
+}
+
+export const InteractiveTodayStaticVerticalSideBySide: Story = {
+  args: {
+    onChange: fn(),
+    onClear: fn(),
+    onClose: fn(),
+    onDateChange: fn(),
+    onDismiss: fn(),
+    onFieldChange: fn(),
+    onNow: fn(),
+    onOpen: fn(),
+    onOpenChange: fn(),
+    onTimeChange: fn(),
+    onToday: fn(),
+    orientation: Orientations.Vertical,
+    pickerVariant: PickerVariants.SideBySide,
+    staticPicker: true,
+    value: null,
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const todayButton = canvas.getByLabelText('Today')
+
+    await sleep(500)
+
+    await userEvent.hover(todayButton)
+    await sleep(500)
+    await userEvent.click(todayButton)
+  },
+}
+
+export const InteractiveNowStaticHorizontalSideBySide: Story = {
+  args: {
+    onChange: fn(),
+    onClear: fn(),
+    onClose: fn(),
+    onDateChange: fn(),
+    onDismiss: fn(),
+    onFieldChange: fn(),
+    onNow: fn(),
+    onOpen: fn(),
+    onOpenChange: fn(),
+    onTimeChange: fn(),
+    onToday: fn(),
+    orientation: Orientations.Horizontal,
+    pickerVariant: PickerVariants.SideBySide,
+    staticPicker: true,
+    value: null,
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const nowButton = canvas.getByLabelText('Now')
+
+    await sleep(500)
+
+    await userEvent.hover(nowButton)
+    await sleep(500)
+    await userEvent.click(nowButton)
+  },
+}
+
+export const InteractiveNowStaticVerticalSideBySide: Story = {
+  args: {
+    onChange: fn(),
+    onClear: fn(),
+    onClose: fn(),
+    onDateChange: fn(),
+    onDismiss: fn(),
+    onFieldChange: fn(),
+    onNow: fn(),
+    onOpen: fn(),
+    onOpenChange: fn(),
+    onTimeChange: fn(),
+    onToday: fn(),
+    orientation: Orientations.Vertical,
+    pickerVariant: PickerVariants.SideBySide,
+    staticPicker: true,
+    value: null,
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const nowButton = canvas.getByLabelText('Now')
+
+    await sleep(500)
+
+    await userEvent.hover(nowButton)
+    await sleep(500)
+    await userEvent.click(nowButton)
   },
 }
 

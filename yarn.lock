@@ -5198,6 +5198,7 @@ __metadata:
     react-timekeeper: "npm:^2.2.1"
     remark-gfm: "npm:^4.0.0"
     storybook: "npm:^8.1.2"
+    storybook-addon-mock-date: "npm:^0.4.3"
     tailwind-merge: "npm:^2.3.0"
     tailwindcss: "npm:^3.4.3"
     tsup: "npm:^8.0.2"
@@ -21457,6 +21458,13 @@ __metadata:
   version: 2.14.3
   resolution: "store2@npm:2.14.3"
   checksum: 10/f95f6fbacff14cc3bb9e5e16ced2f29e2d706e30b248c16cf19abed8b2bb31d8f3907c8ccf1a5284d806fdcaf06e96710e4f4f52195e51522a452536beaf7af9
+  languageName: node
+  linkType: hard
+
+"storybook-addon-mock-date@npm:^0.4.3":
+  version: 0.4.3
+  resolution: "storybook-addon-mock-date@npm:0.4.3"
+  checksum: 10/442135fb71905ae6a8556baf923d6813730b5cb2d549fe919d15fe6f954e76e874d955adfa7f7ea6a669a717627bb8a151c7e05f8320809034d4eedfca58de61
   languageName: node
   linkType: hard
 

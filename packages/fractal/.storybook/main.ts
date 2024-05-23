@@ -23,6 +23,7 @@ const config: StorybookConfig = {
         },
       },
     },
+    'storybook-addon-mock-date',
   ],
 
   docs: {
