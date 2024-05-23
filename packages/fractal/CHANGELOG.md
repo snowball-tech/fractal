@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.4...@snowball-tech/fractal@10.21.5) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **datetime-picker:** optimize sizing and positioning of pickers ([b85dba5](https://github.com/snowball-tech/fractal/commit/b85dba548761aea4fd145f83c989a8e7249d46ee))
+
 ## @snowball-tech/fractal [10.21.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.3...@snowball-tech/fractal@10.21.4) (2024-05-23)
 
 ### 🚦 Tests
