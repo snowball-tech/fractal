@@ -41,7 +41,7 @@
     "prebuild": "yarn run clean-build",
     "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
     "build:local": "NODE_ENV=production node ./src/build.js",
-    "check-deps": "yarn run -T depcheck --ignores='to-esm'",
+    "check-deps": "yarn run -T depcheck --ignores='to-esm,typescript,@tailwindcss/*,@types/lodash,tailwindcss' --ignore-patterns='src/tailwindcss/tailwind.*.ts'",
     "clean-build": "rm -Rf dist >/dev/null 2>&1 || true",
     "dev": "yarn run -T nodemon -x \"yarn build\"",
     "format": "yarn run -T prettier --cache --check .",

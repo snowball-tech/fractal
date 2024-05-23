@@ -5175,7 +5175,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.4"
     "@types/react": "npm:^18.3.2"
     "@types/react-dom": "npm:^18.3.0"
-    "@vitejs/plugin-react-swc": "npm:^3.6.0"
+    "@vitejs/plugin-react-swc": "npm:^3.7.0"
     chromatic: "npm:^11.4.0"
     clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.5.11"
@@ -5203,7 +5203,7 @@ __metadata:
     tailwindcss: "npm:^3.4.3"
     tsup: "npm:^8.0.2"
     typescript: "npm:^5.4.5"
-    vercel: "npm:^34.2.0"
+    vercel: "npm:^34.2.1"
     vite: "npm:^5.2.11"
     vite-tsconfig-paths: "npm:^4.3.2"
   peerDependencies:
@@ -6061,92 +6061,92 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-darwin-arm64@npm:1.4.15"
+"@swc/core-darwin-arm64@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-darwin-arm64@npm:1.5.7"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-darwin-x64@npm:1.4.15"
+"@swc/core-darwin-x64@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-darwin-x64@npm:1.5.7"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.4.15"
+"@swc/core-linux-arm-gnueabihf@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.5.7"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.4.15"
+"@swc/core-linux-arm64-gnu@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.5.7"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-linux-arm64-musl@npm:1.4.15"
+"@swc/core-linux-arm64-musl@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-linux-arm64-musl@npm:1.5.7"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-linux-x64-gnu@npm:1.4.15"
+"@swc/core-linux-x64-gnu@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-linux-x64-gnu@npm:1.5.7"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-linux-x64-musl@npm:1.4.15"
+"@swc/core-linux-x64-musl@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-linux-x64-musl@npm:1.5.7"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.4.15"
+"@swc/core-win32-arm64-msvc@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.5.7"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.4.15"
+"@swc/core-win32-ia32-msvc@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.5.7"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.4.15":
-  version: 1.4.15
-  resolution: "@swc/core-win32-x64-msvc@npm:1.4.15"
+"@swc/core-win32-x64-msvc@npm:1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core-win32-x64-msvc@npm:1.5.7"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.3.107":
-  version: 1.4.15
-  resolution: "@swc/core@npm:1.4.15"
+"@swc/core@npm:^1.5.7":
+  version: 1.5.7
+  resolution: "@swc/core@npm:1.5.7"
   dependencies:
-    "@swc/core-darwin-arm64": "npm:1.4.15"
-    "@swc/core-darwin-x64": "npm:1.4.15"
-    "@swc/core-linux-arm-gnueabihf": "npm:1.4.15"
-    "@swc/core-linux-arm64-gnu": "npm:1.4.15"
-    "@swc/core-linux-arm64-musl": "npm:1.4.15"
-    "@swc/core-linux-x64-gnu": "npm:1.4.15"
-    "@swc/core-linux-x64-musl": "npm:1.4.15"
-    "@swc/core-win32-arm64-msvc": "npm:1.4.15"
-    "@swc/core-win32-ia32-msvc": "npm:1.4.15"
-    "@swc/core-win32-x64-msvc": "npm:1.4.15"
+    "@swc/core-darwin-arm64": "npm:1.5.7"
+    "@swc/core-darwin-x64": "npm:1.5.7"
+    "@swc/core-linux-arm-gnueabihf": "npm:1.5.7"
+    "@swc/core-linux-arm64-gnu": "npm:1.5.7"
+    "@swc/core-linux-arm64-musl": "npm:1.5.7"
+    "@swc/core-linux-x64-gnu": "npm:1.5.7"
+    "@swc/core-linux-x64-musl": "npm:1.5.7"
+    "@swc/core-win32-arm64-msvc": "npm:1.5.7"
+    "@swc/core-win32-ia32-msvc": "npm:1.5.7"
+    "@swc/core-win32-x64-msvc": "npm:1.5.7"
     "@swc/counter": "npm:^0.1.2"
-    "@swc/types": "npm:^0.1.5"
+    "@swc/types": "npm:0.1.7"
   peerDependencies:
     "@swc/helpers": ^0.5.0
   dependenciesMeta:
@@ -6173,7 +6173,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 10/7f7b801d28bebdfbce06dfe0f1afa23f091acd2b16e6739a389b339e77194e7d59df7537d91ee9b6ca9925d0d325870b83697eefeaff97532d235ecaab3a4649
+  checksum: 10/83e03908db40f2133c3624a83d4550336d7a56e64af7d42fd959c746b8da950a253f3c6d9eaa3467e10abeda024aa6b039a987adc839326f969e1d26625f14ef
   languageName: node
   linkType: hard
 
@@ -6184,12 +6184,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/types@npm:^0.1.5":
-  version: 0.1.6
-  resolution: "@swc/types@npm:0.1.6"
+"@swc/types@npm:0.1.7":
+  version: 0.1.7
+  resolution: "@swc/types@npm:0.1.7"
   dependencies:
     "@swc/counter": "npm:^0.1.3"
-  checksum: 10/b42fbca6f1ad56d1909fa6114b62107418a665730bb9b4d8bd8fa1c86921f8758a73959928342638fb57490b5d618a46881045fa9f094763a00f939944835d36
+  checksum: 10/ed66c26b36972a74f852c1781fadc75946578abfeeea58f110684833b5d1e70f28a77ddb82fd5bf3cf3c4dad0e1b6a1c924d7e2cc7a99f9b16ed16fe266bba25
   languageName: node
   linkType: hard
 
@@ -7164,12 +7164,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/next@npm:4.2.11":
-  version: 4.2.11
-  resolution: "@vercel/next@npm:4.2.11"
+"@vercel/next@npm:4.2.12":
+  version: 4.2.12
+  resolution: "@vercel/next@npm:4.2.12"
   dependencies:
     "@vercel/nft": "npm:0.27.0"
-  checksum: 10/c7a9424e91d41e1bcedeb10ef8221daf858d1916ab1d877ccb5bdfe27f5a089309b68fd9b5ceea5e31a12f513de1aab4c881218a672a4b9744740624ef32ec9c
+  checksum: 10/e8b69550a4ef9baa303fb7755efd50917ab091bfa1ce9016bd552088f6afa3cfc7db6a91d1008978bb56372ef8172c63f1af4def14f36a095b3c1884aa4ac9a5
   languageName: node
   linkType: hard
 
@@ -7296,14 +7296,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react-swc@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "@vitejs/plugin-react-swc@npm:3.6.0"
+"@vitejs/plugin-react-swc@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@vitejs/plugin-react-swc@npm:3.7.0"
   dependencies:
-    "@swc/core": "npm:^1.3.107"
+    "@swc/core": "npm:^1.5.7"
   peerDependencies:
     vite: ^4 || ^5
-  checksum: 10/8bff5065e9689d0b0405932b5f2483bd0c388812dc13219a1511023f7eaca7a53c43f75f3eae785e27f7ce5a60e99d5d32bac4845a63ab095d5562180f7efa7c
+  checksum: 10/16498c65aca482f638f490a59c4ef49875e59d4f1631dad7515e2fce2f87a69a4ec0cd9774fc3666b8a6e211f65b78442411a743aea33762caa0044e3c04ad39
   languageName: node
   linkType: hard
 
@@ -23408,15 +23408,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^34.2.0":
-  version: 34.2.0
-  resolution: "vercel@npm:34.2.0"
+"vercel@npm:^34.2.1":
+  version: 34.2.1
+  resolution: "vercel@npm:34.2.1"
   dependencies:
     "@vercel/build-utils": "npm:8.2.0"
     "@vercel/fun": "npm:1.1.0"
     "@vercel/go": "npm:3.1.1"
     "@vercel/hydrogen": "npm:1.0.2"
-    "@vercel/next": "npm:4.2.11"
+    "@vercel/next": "npm:4.2.12"
     "@vercel/node": "npm:3.1.5"
     "@vercel/python": "npm:4.2.0"
     "@vercel/redwood": "npm:2.0.9"
@@ -23427,7 +23427,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/ae3c0d1a534e5f9ca6e02508854e190a54056a4d2b1aac5cb6902bc6351e24a43ad83fc0ac98456bd3280cc88c5f88aae5b91ef4e3977d69a10a0594b4bd422f
+  checksum: 10/323280d8ac0a64efc33614461161eb8f7490f91a7a0c534199d1f129adecec438e3f1960e705a8168e42511d8b81e61d36273d6a82eeb62a2610a7c7399e3d4a
   languageName: node
   linkType: hard
 
