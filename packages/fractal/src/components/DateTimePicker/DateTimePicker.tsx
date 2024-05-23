@@ -925,7 +925,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
     const timePicker = (
       <Typography
         className={cj(
-          `${PREFIX}-${GROUP_NAME}__picker__date-wrapper`,
+          `${PREFIX}-${GROUP_NAME}__picker__time-wrapper`,
           `${PREFIX}-${GROUP_NAME}__picker__time`,
           `${PREFIX}-${GROUP_NAME}__picker__time--${theme}`,
           `${PREFIX}-${GROUP_NAME}__picker__${timeVariant}`,

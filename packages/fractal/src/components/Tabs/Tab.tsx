@@ -48,7 +48,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
     const hasIcon = Boolean(icon)
 
     const isDisabled = disabled
-    const isLarge = large || (hasIcon && !isEmpty(label))
+    const isLarge = large || (hasIcon && !iconOnly && !isEmpty(label))
 
     let indicatorClassNames =
       'after:left-1/2 after:h-quarter after:w-0 after:-translate-x-1/2 after:transition-[width] '
@@ -74,7 +74,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
           `${PREFIX}-${GROUP_NAME}__tab`,
           'cursor-pointer border-0 bg-[unset] px-0 py-0 text-left',
           'relative h-full flex-1 self-end text-center text-grey-30',
-          isLarge ? 'min-h-10' : 'min-h-6',
+          isLarge ? `${PREFIX}-${GROUP_NAME}__tab--large min-h-10` : 'min-h-6',
           'after:absolute after:block after:bg-primary after:duration-300 after:content-empty',
           indicatorClassNames,
           'aria-selected:text-secondary',

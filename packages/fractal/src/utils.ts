@@ -1,7 +1,14 @@
 import isArray from 'lodash/fp/isArray'
 import isEmpty from 'lodash/fp/isEmpty'
+import isNil from 'lodash/fp/isNil'
 import isObject from 'lodash/fp/isObject'
-import { Children, type ReactNode, cloneElement, isValidElement } from 'react'
+import {
+  Children,
+  JSXElementConstructor,
+  type ReactNode,
+  cloneElement,
+  isValidElement,
+} from 'react'
 
 export function sleep(timeInMs: number) {
   // eslint-disable-next-line no-promise-executor-return
@@ -10,11 +17,22 @@ export function sleep(timeInMs: number) {
 
 export function hasChildWithProps(
   children: ReactNode,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  childType: '*' | JSXElementConstructor<any>,
   propertyNames: Array<string> | string,
+  notPropertyNames?: Array<string> | string,
 ): boolean {
   const propsToCheck = Array.isArray(propertyNames)
     ? propertyNames
     : [propertyNames]
+
+  const propsToCheckAreNotThere =
+    // eslint-disable-next-line no-nested-ternary
+    isNil(notPropertyNames) || isEmpty(notPropertyNames)
+      ? []
+      : Array.isArray(notPropertyNames)
+        ? notPropertyNames
+        : [notPropertyNames]
 
   let hasProps = false
 
@@ -27,15 +45,44 @@ export function hasChildWithProps(
       return
     }
 
-    hasProps = propsToCheck.every(
-      (propertyName) =>
-        Object.prototype.hasOwnProperty.call(child.props, propertyName) &&
-        Boolean(child.props[propertyName]),
+    hasProps =
+      (childType === '*' || child.type === childType) &&
+      propsToCheck.every(
+        (propertyName) =>
+          Object.prototype.hasOwnProperty.call(child.props, propertyName) &&
+          Boolean(child.props[propertyName]),
+      )
+
+    console.log(
+      'Before',
+      child,
+      child.type === childType,
+      propsToCheck,
+      hasProps,
     )
 
     if (!hasProps && child.props.children) {
-      hasProps = hasChildWithProps(child.props.children, propertyNames)
+      hasProps = hasChildWithProps(
+        child.props.children,
+        childType,
+        propertyNames,
+        notPropertyNames,
+      )
+    } else if (hasProps && !isEmpty(propsToCheckAreNotThere)) {
+      console.log('Checking for absence of props')
+      hasProps = propsToCheckAreNotThere.every(
+        (propertyName) =>
+          !Object.prototype.hasOwnProperty.call(child.props, propertyName),
+      )
     }
+
+    console.log(
+      'After',
+      child,
+      child.type === childType,
+      propsToCheck,
+      hasProps,
+    )
   })
 
   return hasProps
