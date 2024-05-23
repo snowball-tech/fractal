@@ -1,3 +1,13 @@
+## @snowball-tech/fractal [10.21.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.1...@snowball-tech/fractal@10.21.2) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **input-pin-code:** fix the query selector with react generated id ([866ec58](https://github.com/snowball-tech/fractal/commit/866ec58a9b7a43ac5eee865274a6db2ccfce08da))
+
+### 🚦 Tests
+
+- **datetime-picker:** freeze the date so that screenshots are not always updated ([5843261](https://github.com/snowball-tech/fractal/commit/5843261b8dcdeaf12f6e5dc957b13f3e0bbf3f91))
+
 ## @snowball-tech/fractal [10.21.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.0...@snowball-tech/fractal@10.21.1) (2024-05-22)
 
 ### 🐛 Bug Fixes
