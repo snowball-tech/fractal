@@ -144,7 +144,7 @@ export interface DropdownItemProps
   extends Omit<
     AllHTMLAttributes<HTMLAnchorElement> &
       ComponentProps<typeof DropdownMenuItem>,
-    'asChild' | 'onClick'
+    'asChild' | 'onClick' | 'onSelect'
   > {
   /** Indicates if the item should be displayed as active. */
   active?: boolean
@@ -182,6 +182,7 @@ export interface DropdownItemProps
   label?: string
   /** The event handler to call when the item is clicked. */
   onClick?: ComponentProps<typeof DropdownMenuItem>['onSelect']
+  onSelect?: ComponentProps<typeof DropdownMenuItem>['onSelect']
   /** Indicates where you want to open the link (if a `href` is provided). */
   target?: HTMLAnchorElement['target']
   /**

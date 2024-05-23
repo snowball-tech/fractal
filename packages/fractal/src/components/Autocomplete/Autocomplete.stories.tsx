@@ -15,8 +15,6 @@ import {
   within,
 } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
-// eslint-disable-next-line lodash-fp/use-fp
-import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
@@ -75,8 +73,12 @@ const itemsWithGroupsAndSeparators = (
 
 let abort: AbortController | null = null
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
-const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
+const loadData = (
+  newValue: string,
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  setArgs: (newArgs: Partial<AutocompleteProps>) => void,
+  onSelect: (event: Event) => void,
+) => {
   if (!isNil(abort) && isFunction(abort?.abort)) {
     abort.abort()
   }
@@ -169,7 +171,7 @@ const debouncedLoad = debounce((newValue: string, setArgs, onSelect) => {
         newValue,
       })
     })
-}, 200)
+}
 
 let unmounted = false
 
@@ -292,7 +294,7 @@ const meta: Meta<AutocompleteProps> = {
             ),
           })
 
-          debouncedLoad(newValue, setArgs, onSelect)
+          loadData(newValue, setArgs, onSelect)
         }
       }
 
@@ -304,7 +306,6 @@ const meta: Meta<AutocompleteProps> = {
 
         return () => {
           abort?.abort()
-          debouncedLoad.cancel()
 
           unmounted = true
         }

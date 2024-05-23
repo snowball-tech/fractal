@@ -216,7 +216,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       )
 
       onDateChange?.(newValue, newDateTime)
-      console.log(newDateTime)
       onChange?.(newDateTime)
     }
 
