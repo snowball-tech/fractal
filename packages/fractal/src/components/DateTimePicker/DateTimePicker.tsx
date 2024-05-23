@@ -378,6 +378,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       gap: var(--size-spacing-1);
       letter-spacing: 0;
       line-height: var(--typography-body-2-line-height);
+      min-width: calc((var(--size-spacing-5) * 7) + var(--size-spacing-1));
       width: ${fullWidth || !staticPicker ? '100%' : 'calc((var(--size-spacing-5) * 7) + var(--size-spacing-1))'};
     `,
       [fullWidth, staticPicker],
@@ -481,12 +482,12 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       }
 
       .react-calendar__month-view button.react-calendar__tile {
+        min-width: var(--size-spacing-5);
         ${
-          fullWidth || !staticPicker
+          fullWidth
             ? ''
             : `
               max-width: var(--size-spacing-5);
-              min-width: var(--size-spacing-5);
               width: var(--size-spacing-5);
             `
         }
