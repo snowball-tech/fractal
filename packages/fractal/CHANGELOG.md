@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.3...@snowball-tech/fractal@10.21.4) (2024-05-23)
+
+### 🚦 Tests
+
+- **autocomplete:** fix autocomplete interactive tests ([1189528](https://github.com/snowball-tech/fractal/commit/1189528cecb04204a5403fb13ff8f9b7afc1282a))
+
 ## @snowball-tech/fractal [10.21.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.2...@snowball-tech/fractal@10.21.3) (2024-05-23)
 
 ### 📝 Documentation
