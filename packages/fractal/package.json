@@ -99,7 +99,7 @@
     "@types/lodash": "^4.17.4",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.6.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "chromatic": "^11.4.0",
     "eslint": "^8.57.0",
     "postcss": "^8.4.38",
@@ -114,7 +114,7 @@
     "storybook-addon-mock-date": "^0.4.3",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vercel": "^34.2.0",
+    "vercel": "^34.2.1",
     "vite": "^5.2.11",
     "vite-tsconfig-paths": "^4.3.2"
   },
