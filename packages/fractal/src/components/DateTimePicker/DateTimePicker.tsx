@@ -378,7 +378,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       gap: var(--size-spacing-1);
       letter-spacing: 0;
       line-height: var(--typography-body-2-line-height);
-      width: ${fullWidth ? '100%' : 'calc((var(--size-spacing-5) * 7) + var(--size-spacing-1))'};
+      width: ${fullWidth || !staticPicker ? '100%' : 'calc((var(--size-spacing-5) * 7) + var(--size-spacing-1))'};
     `,
       [fullWidth, staticPicker],
     )
@@ -482,7 +482,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
 
       .react-calendar__month-view button.react-calendar__tile {
         ${
-          fullWidth
+          fullWidth || !staticPicker
             ? ''
             : `
               max-width: var(--size-spacing-5);
@@ -544,7 +544,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         background-color: var(--rgb-accent);
       }
     `,
-      [darkTheme, fullWidth, lightTheme, reset],
+      [darkTheme, fullWidth, lightTheme, reset, staticPicker],
     )
 
     const clockStyle = useMemo(
@@ -884,7 +884,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             (orientation === Orientations.Vertical || modal)
             ? 'border-b-1 border-normal pb-2'
             : '',
-          fullWidth ? 'w-full' : '',
+          fullWidth || !staticPicker ? 'w-full' : '',
         )}
         element="div"
       >
@@ -964,7 +964,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             : orientation === 'horizontal' && !modal
               ? 'flex-row gap-2'
               : 'flex-col',
-          fullWidth ? 'w-full' : '',
+          fullWidth || !staticPicker ? 'w-full' : '',
         )}
       >
         {withDatePicker &&
@@ -973,7 +973,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             <Tabs
               className={cj(
                 '[&>div]:bg-transparent',
-                fullWidth ? 'w-full' : '',
+                fullWidth || !staticPicker ? 'w-full' : '',
               )}
               defaultTab="date"
               label={i18n?.tabs?.bar}
@@ -1021,7 +1021,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__actions`,
-            'flex justify-between gap-1 border-t-1 border-normal pt-2',
+            'flex justify-between gap-3 border-t-1 border-normal pt-2',
           )}
         >
           {((withDatePicker && withToday) || (withTimePicker && withNow)) && (
