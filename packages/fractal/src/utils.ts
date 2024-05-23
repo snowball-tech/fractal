@@ -53,14 +53,6 @@ export function hasChildWithProps(
           Boolean(child.props[propertyName]),
       )
 
-    console.log(
-      'Before',
-      child,
-      child.type === childType,
-      propsToCheck,
-      hasProps,
-    )
-
     if (!hasProps && child.props.children) {
       hasProps = hasChildWithProps(
         child.props.children,
@@ -69,20 +61,11 @@ export function hasChildWithProps(
         notPropertyNames,
       )
     } else if (hasProps && !isEmpty(propsToCheckAreNotThere)) {
-      console.log('Checking for absence of props')
       hasProps = propsToCheckAreNotThere.every(
         (propertyName) =>
           !Object.prototype.hasOwnProperty.call(child.props, propertyName),
       )
     }
-
-    console.log(
-      'After',
-      child,
-      child.type === childType,
-      propsToCheck,
-      hasProps,
-    )
   })
 
   return hasProps
