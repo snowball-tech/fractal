@@ -21,6 +21,7 @@ const meta = {
     },
     theme: {
       control: 'radio',
+      options: Object.values(Themes),
       table: {
         defaultValue: { summary: DEFAULT_THEME },
         type: { summary: Object.values(Themes).join('|') },

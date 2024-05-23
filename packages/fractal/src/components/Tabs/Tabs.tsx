@@ -9,6 +9,7 @@ import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 import { extendChildren, hasChildWithProps } from '@/utils'
 
+import Tab from './Tab'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
@@ -44,8 +45,8 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   ) => {
     const shouldBeLarge =
       large ||
-      hasChildWithProps(tabs, 'large') ||
-      hasChildWithProps(tabs, ['icon', 'label'])
+      hasChildWithProps(tabs, Tab, 'large') ||
+      hasChildWithProps(tabs, Tab, ['icon', 'label'], ['iconOnly'])
 
     return (
       <RxTabs.Root
@@ -74,6 +75,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           aria-label={label}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__tabs`,
+            shouldBeLarge ? `${PREFIX}-${GROUP_NAME}__tabs--large` : '',
             'flex w-fit items-center justify-between border-normal bg-white [z-index:1]',
             orientation === Orientations.Vertical
               ? 'h-full w-6 min-w-6 flex-col'
