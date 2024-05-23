@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.5...@snowball-tech/fractal@10.21.6) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **datetime-picker:** fix the min width of the calendar ([1263942](https://github.com/snowball-tech/fractal/commit/126394201d73f6bf4a02582d0be40fae2c8079b2))
+
 ## @snowball-tech/fractal [10.21.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.4...@snowball-tech/fractal@10.21.5) (2024-05-23)
 
 ### 🐛 Bug Fixes
