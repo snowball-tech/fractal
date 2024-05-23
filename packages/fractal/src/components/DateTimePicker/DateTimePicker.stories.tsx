@@ -21,8 +21,22 @@ type DateTimePickerProps = ComponentProps<typeof DateTimePicker>
 
 const defaultDate = new Date(1985, 9, 11, 14, 30, 42, 0)
 const i18n = {
-  buttons: { clear: 'Clear', close: 'Close', now: 'Now', today: 'Today' },
-  tabs: { bar: 'Tabs' },
+  buttons: {
+    clear: 'Clear',
+    close: 'Close',
+    now: 'Now',
+    today: 'Today',
+  },
+  tabs: { bar: 'Date & Time', date: 'Date', time: 'Time' },
+}
+const frenchI18n = {
+  buttons: {
+    clear: 'Effacer',
+    close: 'Fermer',
+    now: 'Maintenant',
+    today: "Aujourd'hui",
+  },
+  tabs: { bar: 'Date et heure', date: 'Date', time: 'Heure' },
 }
 
 const meta: Meta<DateTimePickerProps> = {
@@ -637,6 +651,14 @@ export const InPopover: Story = {
         />
       </Wrapper>
 
+      <Wrapper>
+        <DateTimePicker
+          i18n={frenchI18n}
+          label="Translated in french"
+          value={defaultDate}
+        />
+      </Wrapper>
+
       {separator}
 
       <Wrapper>
@@ -846,6 +868,15 @@ export const StaticDisplay: Story = {
           amPm
           i18n={i18n}
           label="AM/PM mode"
+          staticPicker
+          value={defaultDate}
+        />
+      </StaticWrapper>
+
+      <StaticWrapper>
+        <DateTimePicker
+          i18n={frenchI18n}
+          label="Translated in french"
           staticPicker
           value={defaultDate}
         />
