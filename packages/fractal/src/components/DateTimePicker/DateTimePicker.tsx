@@ -379,7 +379,9 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       letter-spacing: 0;
       line-height: var(--typography-body-2-line-height);
       min-width: calc((var(--size-spacing-5) * 7) + var(--size-spacing-1));
-      width: ${fullWidth || !staticPicker ? '100%' : 'calc((var(--size-spacing-5) * 7) + var(--size-spacing-1))'};
+      max-width: calc((var(--size-spacing-5) * 7) + var(--size-spacing-1));
+      width: ${fullWidth ? '100%' : 'calc((var(--size-spacing-5) * 7) + var(--size-spacing-1))'};
+      margin: 0 auto;
     `,
       [fullWidth, staticPicker],
     )
@@ -545,7 +547,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         background-color: var(--rgb-accent);
       }
     `,
-      [darkTheme, fullWidth, lightTheme, reset, staticPicker],
+      [darkTheme, fullWidth, lightTheme, reset],
     )
 
     const clockStyle = useMemo(

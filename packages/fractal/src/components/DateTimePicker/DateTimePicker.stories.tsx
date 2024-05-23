@@ -669,7 +669,7 @@ export const InPopover: Story = {
           withPicker={false}
         />
         <DateTimePicker
-          i18n={i18n}
+          i18n={frenchI18n}
           label="Modal picker"
           modal
           value={defaultDate}
