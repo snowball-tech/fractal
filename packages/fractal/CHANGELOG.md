@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [10.21.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.6...@snowball-tech/fractal@10.21.7) (2024-05-23)
+
+### 🐛 Bug Fixes
+
+- **datetime-picker:** fix full width display ([da77d46](https://github.com/snowball-tech/fractal/commit/da77d462cca9495758c8aff85e145344b9508451))
+
 ## @snowball-tech/fractal [10.21.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.5...@snowball-tech/fractal@10.21.6) (2024-05-23)
 
 ### 🐛 Bug Fixes
