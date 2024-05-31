@@ -334,9 +334,7 @@ export const InputPinCode = ({
             size={1}
             success={isSuccessful}
             suffix={
-              // eslint-disable-next-line no-nested-ternary
               index === length - 1 ? (
-                // eslint-disable-next-line no-nested-ternary
                 isInError ? (
                   <ExclamationCircleIcon />
                 ) : isSuccessful ? (

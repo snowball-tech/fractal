@@ -458,7 +458,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             size={4}
             success={isSuccessful}
             suffix={
-              // eslint-disable-next-line no-nested-ternary
               errors.year || hasErrorMessage ? (
                 <ExclamationCircleIcon />
               ) : isSuccessful ? (

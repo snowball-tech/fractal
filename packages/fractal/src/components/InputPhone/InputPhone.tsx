@@ -424,7 +424,6 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             required={required}
             success={isSuccessful}
             suffix={
-              // eslint-disable-next-line no-nested-ternary
               hasErrorMessage ? (
                 <ExclamationCircleIcon />
               ) : isSuccessful ? (

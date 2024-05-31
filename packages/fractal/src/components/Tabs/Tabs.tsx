@@ -86,7 +86,6 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
             shouldBeLarge && orientation === Orientations.Horizontal
               ? 'min-h-10'
               : '',
-            // eslint-disable-next-line no-nested-ternary
             tabsPosition === Positions.Start
               ? orientation === Orientations.Horizontal
                 ? 'border-b-1'

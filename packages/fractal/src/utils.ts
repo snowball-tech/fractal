@@ -27,7 +27,6 @@ export function hasChildWithProps(
     : [propertyNames]
 
   const propsToCheckAreNotThere =
-    // eslint-disable-next-line no-nested-ternary
     isNil(notPropertyNames) || isEmpty(notPropertyNames)
       ? []
       : Array.isArray(notPropertyNames)

@@ -203,7 +203,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         role="menuitem"
         tabIndex={-1}
         title={label}
-        // eslint-disable-next-line no-nested-ternary
         {...(popover
           ? triggerOnHover
             ? {
@@ -350,7 +349,6 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           style: popup?.style,
         }}
         side={
-          // eslint-disable-next-line no-nested-ternary
           isEmpty(side)
             ? orientation === Orientations.Vertical
               ? 'right'
