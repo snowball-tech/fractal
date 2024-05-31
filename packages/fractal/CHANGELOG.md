@@ -1,3 +1,18 @@
+## @snowball-tech/fractal [10.21.13](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.12...@snowball-tech/fractal@10.21.13) (2024-05-31)
+
+### 🐛 Bug Fixes
+
+- **input-phone:** use a `search` type input ([bdda0bb](https://github.com/snowball-tech/fractal/commit/bdda0bb116dec315b0360061b521e97485d66c93))
+- **slider:** fix the display of the track ([b9abfa2](https://github.com/snowball-tech/fractal/commit/b9abfa22f9ee12b85bbd358586e9e80b9678da73))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([21ec86c](https://github.com/snowball-tech/fractal/commit/21ec86c942bd749009929d2e041b5c44d5d4c1c5))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.2
+
 ## @snowball-tech/fractal [10.21.12](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.11...@snowball-tech/fractal@10.21.12) (2024-05-23)
 
 ### 🐛 Bug Fixes
