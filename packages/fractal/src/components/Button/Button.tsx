@@ -316,7 +316,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           hasIcon
             ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
             : '',
-          // eslint-disable-next-line no-nested-ternary
           iconOnly && hasIcon
             ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 max-w-6 max-h-6 h-6`
             : fullWidth
@@ -347,7 +346,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 ...variantDisabledStyles[theme][variant],
               }
             : { cursor: 'pointer', ...variantStyles[theme][variant] }),
-          // eslint-disable-next-line no-nested-ternary
           ...(iconOnly && hasIcon
             ? {
                 height: SizeSpacing6,
@@ -444,7 +442,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         variant={isTextVariant ? 'body-1-link' : 'body-1-median'}
       >
         {hasIcon && iconPosition === 'left' && iconElement}
-        {/* eslint-disable-next-line no-nested-ternary */}
         {iconOnly && hasIcon ? (
           false
         ) : hasChildren ? (

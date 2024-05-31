@@ -64,7 +64,6 @@ export const ToolbarDropdown = forwardRef<
         className={cn(
           `${PREFIX}-${GROUP_NAME}__dropdown`,
           'group h-3 max-h-3 rounded-xs',
-          // eslint-disable-next-line no-nested-ternary
           isOpen && !isDisabled
             ? 'text-dark'
             : isDisabled

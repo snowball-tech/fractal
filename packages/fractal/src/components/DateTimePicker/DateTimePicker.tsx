@@ -345,7 +345,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       actualMaxTime = maxTime === 'now' ? new Date() : maxTime
     }
     const disabledTimeRange =
-      // eslint-disable-next-line no-nested-ternary
       disabled || readOnly
         ? { from: '00:00', to: '23:59' }
         : isDate(actualMinTime) || isDate(actualMaxTime)
@@ -633,7 +632,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
     const datePlaceholder = `--/--/----`
     const timePlaceholder = `--:--${amPm ? ' --' : ''}`
     const defaultPlaceholder =
-      // eslint-disable-next-line no-nested-ternary
       withDatePicker && withTimePicker
         ? `${datePlaceholder} ${timePlaceholder}`
         : withDatePicker
@@ -649,10 +647,8 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
           writable ? '[&_input]:cursor-pointer' : '',
         )}
         defaultValue={
-          // eslint-disable-next-line no-nested-ternary
           isDate(defaultValue)
-            ? // eslint-disable-next-line no-nested-ternary
-              withDatePicker && withTimePicker
+            ? withDatePicker && withTimePicker
               ? defaultValue.toLocaleString(undefined, localeStringOptions)
               : withDatePicker
                 ? defaultValue.toLocaleDateString(
@@ -673,7 +669,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         error={isInError}
         fullWidth={fullWidth}
         max={
-          // eslint-disable-next-line no-nested-ternary
           maxDateTime === 'now'
             ? new Date().toISOString()
             : isDate(maxDateTime)
@@ -681,7 +676,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
               : undefined
         }
         min={
-          // eslint-disable-next-line no-nested-ternary
           minDateTime === 'now'
             ? new Date().toISOString()
             : isDate(minDateTime)
@@ -694,10 +688,8 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         required={required}
         success={isSuccessful}
         value={
-          // eslint-disable-next-line no-nested-ternary
           isDate(value)
-            ? // eslint-disable-next-line no-nested-ternary
-              withDatePicker && withTimePicker
+            ? withDatePicker && withTimePicker
               ? value.toLocaleString(undefined, localeStringOptions)
               : withDatePicker
                 ? value.toLocaleDateString(undefined, localDateStringOptions)
@@ -774,7 +766,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             ? ''
             : `${PREFIX}-${GROUP_NAME}__static-display--${modal ? 'vertical' : orientation}`,
           'flex flex-col gap-1',
-          // eslint-disable-next-line no-nested-ternary
           (isEmpty(orientation) || orientation === Orientations.Responsive) &&
             !modal
             ? 'justify-start md:justify-between md:pb-2 md:pt-1'
@@ -782,7 +773,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
               ? 'justify-between pb-2 pt-1'
               : 'justify-start',
           pickerVariant === PickerVariants.SideBySide &&
-            // eslint-disable-next-line no-nested-ternary
             ((isEmpty(orientation) ||
               orientation === Orientations.Responsive) &&
             !modal
@@ -805,7 +795,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         <div
           className={cj(
             'flex',
-            // eslint-disable-next-line no-nested-ternary
             (isEmpty(orientation) || orientation === Orientations.Responsive) &&
               !modal
               ? 'flex-row items-end justify-between gap-2 md:flex-col md:items-start md:justify-start md:gap-0'
@@ -818,7 +807,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             <div
               className={cj(
                 'flex flex-col',
-                // eslint-disable-next-line no-nested-ternary
                 (isEmpty(orientation) ||
                   orientation === Orientations.Responsive) &&
                   !modal
@@ -863,7 +851,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                   element="div"
                   variant="body-1-bold"
                 >
-                  {/* eslint-disable-next-line no-nested-ternary */}
                   {isDate(valueToUse)
                     ? (valueToUse.getHours() ?? 0) >= 12
                       ? 'PM'
@@ -971,7 +958,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             ? `${PREFIX}-${GROUP_NAME}__picker--responsive`
             : `${PREFIX}-${GROUP_NAME}__picker--${modal ? 'vertical' : orientation}`,
           'flex',
-          // eslint-disable-next-line no-nested-ternary
           (isEmpty(orientation) || orientation === Orientations.Responsive) &&
             !modal
             ? 'flex-col md:flex-row md:gap-2'
@@ -1118,7 +1104,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
           </RxLabel>
         )}
 
-        {/* eslint-disable-next-line no-nested-ternary */}
         {staticPicker ? (
           <>
             <div
@@ -1130,7 +1115,6 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                   ? ''
                   : `${PREFIX}-${GROUP_NAME}__static-wrapper--${modal ? 'vertical' : orientation}`,
                 'flex gap-2',
-                // eslint-disable-next-line no-nested-ternary
                 (isEmpty(orientation) ||
                   orientation === Orientations.Responsive) &&
                   !modal
@@ -1147,8 +1131,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
 
             {actions}
           </>
-        ) : // eslint-disable-next-line no-nested-ternary
-        withPicker ? (
+        ) : withPicker ? (
           modal ? (
             <Dialog
               ref={pickerRef}

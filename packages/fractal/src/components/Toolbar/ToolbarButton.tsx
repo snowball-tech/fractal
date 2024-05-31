@@ -93,7 +93,6 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}__button--full-width w-full`
         : '',
-      // eslint-disable-next-line no-nested-ternary
       active && !isDisabled
         ? 'text-dark'
         : isDisabled
@@ -105,18 +104,14 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
       hasIcon
         ? `${PREFIX}-${GROUP_NAME}__button--with-addendum ${PREFIX}-${GROUP_NAME}__button--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
         : '',
-      // eslint-disable-next-line no-nested-ternary
       iconOnly
         ? `${PREFIX}-${GROUP_NAME}__button--icon-only px-half`
         : fullWidth
           ? ''
           : 'w-fit',
-      // eslint-disable-next-line no-nested-ternary
       iconOnly
-        ? // eslint-disable-next-line no-nested-ternary
-          ''
-        : // eslint-disable-next-line no-nested-ternary
-          hasIcon
+        ? ''
+        : hasIcon
           ? iconPosition === 'left'
             ? 'pl-half pr-1'
             : 'pl-1 pr-half'
@@ -145,7 +140,6 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
           `${PREFIX}-${GROUP_NAME}__button__label`,
           asLink ? `${PREFIX}-${GROUP_NAME}__button__link__label` : '',
           'flex max-h-full max-w-full flex-1 items-center justify-center gap-half overflow-hidden text-ellipsis whitespace-nowrap pt-0 text-center align-middle',
-          // eslint-disable-next-line no-nested-ternary
           underlined === false ? 'no-underline' : asLink ? 'underline' : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__button__label--disabled cursor-not-allowed`
@@ -155,7 +149,6 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
         variant={active ? 'body-1-median' : 'body-1'}
       >
         {hasIcon && iconPosition === 'left' && iconElement}
-        {/* eslint-disable-next-line no-nested-ternary */}
         {iconOnly ? (
           false
         ) : hasChildren ? (
