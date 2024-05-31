@@ -358,6 +358,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                     : { placeholder: searchPlaceholder })}
                   prefix={<SearchIcon />}
                   selectOnFocus={!keepFocus}
+                  type="search"
                   value={search}
                   onBlur={handleSearchBlur}
                   onChange={(_, newSearch) => handleSearch(newSearch, true)}
