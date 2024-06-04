@@ -45,6 +45,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       dropdown = {},
       elevation = DEFAULT_ELEVATION,
       fullWidth = false,
+      onClick,
       onClose,
       onInteractOutside,
       onMenuOpenChange,
@@ -232,7 +233,7 @@ perfectionist/sort-objects */
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'sm:w-fit',
           props.className,
         )}
-        {...omit(['className'], props)}
+        {...omit(['className', 'onClick'], props)}
       >
         <RxDropdown.Root
           {...(defaultOpen ? { defaultOpen: true } : {})}
@@ -288,9 +289,11 @@ perfectionist/sort-objects */
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',
                 )}
+                disabled={!toggleOnTriggerClick}
                 element={
                   toggleOnTriggerClick && triggerAsButton ? 'button' : 'div'
                 }
+                onClick={onClick}
               >
                 {trigger}
 
