@@ -10,6 +10,7 @@ import type {
   AllHTMLAttributes,
   CSSProperties,
   ComponentProps,
+  MouseEvent,
   ReactNode,
 } from 'react'
 
@@ -31,7 +32,8 @@ export type SubDropdownCombinedRefs = {
   trigger: HTMLElement | null
 }
 
-export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface DropdownProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onClick'> {
   /** Indicates where to align the dropdown relative to the trigger. */
   align?: RxDropdownMenuContentProps['align']
   /** Indicates if you want to display the trigger styled as an select input. */
@@ -78,6 +80,8 @@ export interface DropdownProps extends AllHTMLAttributes<HTMLDivElement> {
   elevation?: `${Elevations}`
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean
+  /** The event handler triggered when the trigger is clicked. */
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
   /** Event handler called when the dropdown is closed. */
   onClose?: () => void
   /**
