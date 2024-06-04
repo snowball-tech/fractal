@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [10.22.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.13...@snowball-tech/fractal@10.22.0) (2024-06-04)
+
+### ✨ Features
+
+- **dropdown:** add a `onClick` handler for when the trigger is clicked ([c52dd10](https://github.com/snowball-tech/fractal/commit/c52dd10042c4320d9d73ec110fc266ced46e674a))
+
+### 📦 Dependencies
+
+- upgrade dependencies ([0fe5d98](https://github.com/snowball-tech/fractal/commit/0fe5d9885e703a38b73fe68d301396f0735ebb12))
+
 ## @snowball-tech/fractal [10.21.13](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@10.21.12...@snowball-tech/fractal@10.21.13) (2024-05-31)
 
 ### 🐛 Bug Fixes
