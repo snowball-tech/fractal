@@ -185,7 +185,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                 : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
-                : ' text-dark',
+                : 'text-dark',
               readOnly && !disabled
                 ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
                 : '',

@@ -38,7 +38,7 @@ export const AutocompleteLoading = ({
     <RxDropdownMenu.Item
       className={cn(
         `${PREFIX}-${GROUP_NAME}__loading`,
-        'flex items-center gap-2 rounded-sm p-2 outline-none ',
+        'flex items-center gap-2 rounded-sm p-2 outline-none',
         icon ? `${PREFIX}-${GROUP_NAME}__loadingwith-icon` : '',
         spin && icon !== true
           ? `${PREFIX}-${GROUP_NAME}__loading--spinning`
