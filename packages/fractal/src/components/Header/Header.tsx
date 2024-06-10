@@ -49,7 +49,7 @@ export const Header = ({
         className={cj(
           `${PREFIX}-${GROUP_NAME}__middle`,
           'm-0 max-h-full w-full truncate',
-          '@md:col-start-3 @md:col-end-11 @md:grid @md:max-h-6 @md:justify-self-center  @md:text-center',
+          '@md:col-start-3 @md:col-end-11 @md:grid @md:max-h-6 @md:justify-self-center @md:text-center',
         )}
         element="div"
         variant="heading-4"
