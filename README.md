@@ -192,7 +192,7 @@ There is an automated setup process that will handle all the steps for you
 (dependencies, configuration, ...):
 
 ```bash
-yarn setup
+yarn && yarn setup && yarn husky
 ```
 
 ### There you go
@@ -205,7 +205,7 @@ You are now ready to start working on Fractal.
 > your local copy of the repository:
 >
 > ```bash
-> yarn setup
+> yarn
 > ```
 
 This repository is a mono-repository. This means that it contains multiple
