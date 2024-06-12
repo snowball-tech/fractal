@@ -19,6 +19,17 @@ type ButtonProps = ComponentProps<typeof Button>
 
 const meta = {
   argTypes: {
+    element: {
+      control: 'text',
+      table: {
+        defaultValue: {
+          summary: [
+            `<a /> for components with \`href\``,
+            `<button /> for components with \`onClick\` and anything else if you didn't provided an \`element\` prop.`,
+          ].join('; '),
+        },
+      },
+    },
     icon: {
       mapping: {
         Cancel: <CancelIcon />,
@@ -142,6 +153,14 @@ const displayButtons = (
     </Wrapper>
 
     <Wrapper>
+      <Button
+        element="p"
+        label='"Display" button as a `p` element'
+        variant="display"
+      />
+    </Wrapper>
+
+    <Wrapper>
       <Button fullWidth label='Full width "Display" button' variant="display" />
     </Wrapper>
   </>
@@ -207,6 +226,14 @@ const primaryButtons = (
         icon={<SendIcon />}
         iconOnly
         label="Primary disabled button with icon only"
+      />
+    </Wrapper>
+
+    <Wrapper>
+      <Button
+        element="p"
+        label="Primary button as a `p` element"
+        variant="display"
       />
     </Wrapper>
 
@@ -291,6 +318,14 @@ const secondaryButtons = (
 
     <Wrapper>
       <Button
+        element="p"
+        label="Seconcary button as a `p` element"
+        variant="display"
+      />
+    </Wrapper>
+
+    <Wrapper>
+      <Button
         fullWidth
         label="Full width secondary button"
         variant="secondary"
@@ -368,6 +403,14 @@ const textButtons = (
         iconOnly
         label="Text disabled button with icon only"
         variant="text"
+      />
+    </Wrapper>
+
+    <Wrapper>
+      <Button
+        element="p"
+        label="Text button as a `p` element"
+        variant="display"
       />
     </Wrapper>
 

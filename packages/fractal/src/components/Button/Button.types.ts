@@ -1,14 +1,16 @@
-import type { AllHTMLAttributes, MouseEvent, ReactNode } from 'react'
+import type {
+  AllHTMLAttributes,
+  ElementType,
+  MouseEvent,
+  ReactNode,
+} from 'react'
 
 import { Themes } from '@/constants'
 
 import { Variants } from './Button.constants'
 
 export interface ButtonProps
-  extends Omit<
-    AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
-    'onClick' | 'wrap'
-  > {
+  extends Omit<AllHTMLAttributes<HTMLElement>, 'onClick' | 'wrap'> {
   /**
    * The content of the button.
    *
@@ -18,6 +20,14 @@ export interface ButtonProps
   children?: ReactNode
   /** Prevents the user from interacting with the button. */
   disabled?: boolean
+  /**
+   * The HTML element to use to display your button.
+   *
+   * Note that this is ignored if you provide a `href` or an `onClick` props.
+   * `href` will make the button an `a` element and `onClick` will make it a
+   * `button` element.
+   */
+  element?: ElementType
   /** Indicates if the button should take all the available width. */
   fullWidth?: boolean
   /** The URL to link to when the button is clicked when `asLink` is used. */
@@ -50,7 +60,7 @@ export interface ButtonProps
    */
   label?: string
   /** Event handler called when the button is clicked. */
-  onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void
+  onClick?: (event: MouseEvent<HTMLElement>) => void
   /** The `target` attribute of the `a` element (when a `href` is provided). */
   target?: string
   /**
