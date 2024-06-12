@@ -5208,8 +5208,8 @@ __metadata:
     postcss-logical: "npm:^7.0.1"
     postcss-preset-env: "npm:^9.5.14"
     postcss-styled-syntax: "npm:^0.6.4"
-    prettier: "npm:^3.3.1"
-    prettier-plugin-tailwindcss: "npm:^0.6.2"
+    prettier: "npm:^3.3.2"
+    prettier-plugin-tailwindcss: "npm:^0.6.3"
     react: "npm:^18.3.1"
     react-calendar: "npm:^5.0.0"
     react-dom: "npm:^18.3.1"
@@ -12603,9 +12603,9 @@ __metadata:
     eslint: "npm:^8.57.0"
     husky: "npm:^9.0.11"
     is-ci: "npm:^3.0.1"
-    lint-staged: "npm:^15.2.5"
+    lint-staged: "npm:^15.2.6"
     nodemon: "npm:^3.1.3"
-    prettier: "npm:^3.3.1"
+    prettier: "npm:^3.3.2"
     semantic-release: "npm:^24.0.0"
     serve: "npm:^14.2.3"
     stylelint: "npm:^16.6.1"
@@ -15310,9 +15310,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.5":
-  version: 15.2.5
-  resolution: "lint-staged@npm:15.2.5"
+"lint-staged@npm:^15.2.6":
+  version: 15.2.6
+  resolution: "lint-staged@npm:15.2.6"
   dependencies:
     chalk: "npm:~5.3.0"
     commander: "npm:~12.1.0"
@@ -15326,7 +15326,7 @@ __metadata:
     yaml: "npm:~2.4.2"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10/2cb8e14e532a4de0a338da44dc5e22f94581390b988ba3d345d1132d592d9ce50be50846c9a9d25eaffaf3f1f634e0a056598f6abb705269ac21d0fd3bad3a45
+  checksum: 10/d2e7b610603ace80521d80afa7d355864a0f5f574aa2a2edbf5d96486e99ceeebb4d988e733c0b6ad8bfa899092f1c20db5cb02a0cc3e260919aeb92ef6f2d79
   languageName: node
   linkType: hard
 
@@ -19320,9 +19320,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.1, prettier-plugin-tailwindcss@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "prettier-plugin-tailwindcss@npm:0.6.2"
+"prettier-plugin-tailwindcss@npm:^0.6.1, prettier-plugin-tailwindcss@npm:^0.6.3":
+  version: 0.6.3
+  resolution: "prettier-plugin-tailwindcss@npm:0.6.3"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -19371,16 +19371,16 @@ __metadata:
       optional: true
     prettier-plugin-svelte:
       optional: true
-  checksum: 10/36734a0aff029fe40c0706692f5a778d3902854125ad95413fead7cabed1c7ea59d4e6aff4005a11b6a92ace65e277b665c23e13e33834c75a893e50ea900461
+  checksum: 10/d35c7a1e049c5f1a151b5982257dace77ffea1e3902b36dbe537ec92ea2b0110d404972a785620130b77055af03e6635e0ca5b83a10243598e990ad14179ac75
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.1, prettier@npm:^3.3.0, prettier@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "prettier@npm:3.3.1"
+"prettier@npm:^3.1.1, prettier@npm:^3.3.0, prettier@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "prettier@npm:3.3.2"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/31ca48d07a163fe6bff5483feb9bdf3bd7e4305e8d976373375cddc2949180a007be3ef08c36f4d7b31e449acef1ebbf46d3b94dc32f5a276837bf48c393be69
+  checksum: 10/83214e154afa5aa9b664c2506640212323eb1376b13379b2413dc351b7de0687629dca3f00ff2ec895ebd7e3a2adb7d7e231b6c77606e2358137f2150807405b
   languageName: node
   linkType: hard
 
