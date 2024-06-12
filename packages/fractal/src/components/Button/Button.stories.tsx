@@ -315,7 +315,7 @@ const secondaryButtons = (
     <Wrapper>
       <Button
         element="p"
-        label="Seconcary button as a `p` element"
+        label="Secondary button as a `p` element"
         variant="secondary"
       />
     </Wrapper>
