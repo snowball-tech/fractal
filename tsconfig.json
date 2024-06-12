@@ -11,7 +11,7 @@
     "incremental": true,
     "jsx": "react-jsx",
     "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "noEmit": false,
     "noErrorTruncation": true,
     "noImplicitOverride": true,
