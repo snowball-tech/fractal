@@ -33,6 +33,7 @@ import {
   type ForwardedRef,
   type MouseEvent,
   type TouchEvent,
+  createElement,
   forwardRef,
 } from 'react'
 
@@ -228,11 +229,12 @@ export const variantDisabledStyles: Record<
  * `Button` component is used to allow the user to make an interaction on either
  * a button or a link element.
  */
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLElement, ButtonProps>(
   (
     {
       children,
       disabled = false,
+      element,
       fullWidth = false,
       href,
       icon,
@@ -250,7 +252,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       wrap = false,
       ...props
     }: ButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref: ForwardedRef<HTMLElement>,
   ) => {
     const theme = useTheme(themeOverride)
 
@@ -270,9 +272,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }
 
       if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
-        onClick(
-          event as unknown as MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
-        )
+        onClick(event as unknown as MouseEvent<HTMLElement>)
       }
     }
 
@@ -485,10 +485,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       </Typography>
     )
 
-    if (asLink) {
+    const content = iconOnly && hasIcon ? iconElement : labelElement
+
+    if (element && element !== 'a' && element !== 'button' && !asLink) {
+      return createElement(
+        element,
+        {
+          'aria-label': label,
+          className: classNames,
+          ref,
+          style: { ...style, ...props.style },
+          title: label,
+          ...omit(['className', 'style'], props),
+        },
+        content,
+      )
+    }
+
+    if (asLink || element === 'a') {
       return (
         <a
           {...(props.id === undefined ? {} : { id: props.id })}
+          ref={ref as ForwardedRef<HTMLAnchorElement>}
           aria-label={label}
           className={classNames}
           href={href}
@@ -498,7 +516,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id', 'style'], props)}
         >
-          {iconOnly && hasIcon ? iconElement : labelElement}
+          {content}
         </a>
       )
     }
@@ -506,7 +524,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         {...(props.id === undefined ? {} : { id: props.id })}
-        ref={ref}
+        ref={ref as ForwardedRef<HTMLButtonElement>}
         aria-label={label}
         className={classNames}
         {...(props.dir === undefined
@@ -524,7 +542,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           props,
         )}
       >
-        {iconOnly && hasIcon ? iconElement : labelElement}
+        {content}
       </button>
     )
   },
