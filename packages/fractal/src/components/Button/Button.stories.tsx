@@ -230,11 +230,7 @@ const primaryButtons = (
     </Wrapper>
 
     <Wrapper>
-      <Button
-        element="p"
-        label="Primary button as a `p` element"
-        variant="display"
-      />
+      <Button element="p" label="Primary button as a `p` element" />
     </Wrapper>
 
     <Wrapper>
@@ -320,7 +316,7 @@ const secondaryButtons = (
       <Button
         element="p"
         label="Seconcary button as a `p` element"
-        variant="display"
+        variant="secondary"
       />
     </Wrapper>
 
@@ -407,11 +403,7 @@ const textButtons = (
     </Wrapper>
 
     <Wrapper>
-      <Button
-        element="p"
-        label="Text button as a `p` element"
-        variant="display"
-      />
+      <Button element="p" label="Text button as a `p` element" variant="text" />
     </Wrapper>
 
     <Wrapper>
