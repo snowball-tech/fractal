@@ -1,3 +1,11 @@
+# @snowball-tech/fractal [11.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.0.2...@snowball-tech/fractal@11.1.0) (2024-06-26)
+
+- **input-text:** add a "with button" mode ([bc1c16c](https://github.com/snowball-tech/fractal/commit/bc1c16c0cc420b854d191bfc2773c912b7da42ae))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.5
+
 ## @snowball-tech/fractal [11.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.0.1...@snowball-tech/fractal@11.0.2) (2024-06-12)
 
 ## @snowball-tech/fractal [11.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.0.0...@snowball-tech/fractal@11.0.1) (2024-06-12)
