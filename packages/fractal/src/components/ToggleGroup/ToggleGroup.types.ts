@@ -1,12 +1,13 @@
 import {
   ToggleGroupItemProps as RxToggleGroupItemProps,
-  ToggleGroupImplProps as RxToggleGroupProps,
+  ToggleGroupMultipleProps as RxToggleGroupProps,
 } from '@radix-ui/react-toggle-group'
 import type { ReactNode } from 'react'
 
 import { Variants } from '@/components/Toggle/Toggle.constants'
 
-export interface ToggleGroupProps extends RxToggleGroupProps {
+export interface ToggleGroupProps
+  extends Omit<RxToggleGroupProps, 'defaultValue' | 'type' | 'value'> {
   /** The toggles to display inside of the toggle group. */
   children: ReactNode
   /**

@@ -3,7 +3,6 @@
 import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import * as RxDropdown from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import type { DismissableLayerProps } from '@radix-ui/react-select'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
@@ -120,24 +119,25 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
 
-    const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
-      (event) => {
-        const { target } = event
-        if (target === window || target === null || target === undefined) {
-          return
-        }
-
-        if (
-          containerRef?.current?.contains(target as Element) ||
-          dropdownRef?.current?.contains(target as Element)
-        ) {
-          event.preventDefault()
-        }
-
-        if (isFunction(onInteractOutside)) {
-          onInteractOutside(event)
-        }
+    const handleDropdownInteractOutside: DropdownProps['onInteractOutside'] = (
+      event,
+    ) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
       }
+
+      if (
+        containerRef?.current?.contains(target as Element) ||
+        dropdownRef?.current?.contains(target as Element)
+      ) {
+        event.preventDefault()
+      }
+
+      if (isFunction(onInteractOutside)) {
+        onInteractOutside(event)
+      }
+    }
 
     let widthClassNames = 'max-w-[var(--radix-popper-available-width)]'
     let widthStyle: CSSProperties = {}
@@ -353,7 +353,9 @@ perfectionist/sort-objects */
                     className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
                     {...(props.dir === undefined
                       ? {}
-                      : { dir: props.dir as RxScrollArea.Direction })}
+                      : {
+                          dir: props.dir as RxScrollArea.ScrollAreaProps['dir'],
+                        })}
                     type="hover"
                   >
                     <RxScrollArea.Viewport

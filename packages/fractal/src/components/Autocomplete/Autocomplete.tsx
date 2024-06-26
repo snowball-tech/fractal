@@ -1,7 +1,7 @@
 'use client'
 
+import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import type { DismissableLayerProps } from '@radix-ui/react-select'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -20,7 +20,10 @@ import {
 } from 'react'
 
 import { Dropdown } from '@/components/Dropdown/Dropdown'
-import type { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Dropdown.types'
+import type {
+  CombinedRefs as DropdownCombinedRefs,
+  DropdownProps,
+} from '@/components/Dropdown/Dropdown.types'
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
@@ -133,23 +136,24 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
 
-    const handleDropdownInteractOutside: DismissableLayerProps['onInteractOutside'] =
-      (event) => {
-        const { target } = event
-        if (target === window || target === null || target === undefined) {
-          return
-        }
-
-        if (
-          containerRef?.current?.contains(target as Element) ||
-          dropdownRef?.current?.container?.contains(target as Element) ||
-          dropdownRef?.current?.dropdown?.contains(target as Element)
-        ) {
-          event.preventDefault()
-        } else if (isOpen && isFunction(onBlur)) {
-          inputRef.current?.blur()
-        }
+    const handleDropdownInteractOutside: DropdownProps['onInteractOutside'] = (
+      event,
+    ) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
       }
+
+      if (
+        containerRef?.current?.contains(target as Element) ||
+        dropdownRef?.current?.container?.contains(target as Element) ||
+        dropdownRef?.current?.dropdown?.contains(target as Element)
+      ) {
+        event.preventDefault()
+      } else if (isOpen && isFunction(onBlur)) {
+        inputRef.current?.blur()
+      }
+    }
 
     const handleDropdownPointerDownOutside: DismissableLayerProps['onPointerDownOutside'] =
       (event) => {

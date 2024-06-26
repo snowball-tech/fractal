@@ -1,6 +1,6 @@
 import {
   RadioGroupProps as RxRadioGroupProps,
-  RadioProps as RxRadioProps,
+  RadioGroupItemProps as RxRadioProps,
 } from '@radix-ui/react-radio-group'
 import type { ReactNode } from 'react'
 

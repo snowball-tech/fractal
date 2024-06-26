@@ -3,7 +3,6 @@
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import type { DismissableLayerProps } from '@radix-ui/react-select'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import {
@@ -22,6 +21,7 @@ import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import { GROUP_NAME } from './Dropdown.constants'
 import type {
+  DropdownProps,
   SubDropdownCombinedRefs,
   SubDropdownProps,
 } from './Dropdown.types'
@@ -116,24 +116,25 @@ export const SubDropdown = forwardRef<
     const isDisabled = disabled || groupDisabled || dropdownDisabled
     const isCondensed = condensed || groupCondensed || dropdownCondensed
 
-    const handleSubMenuInteractOutside: DismissableLayerProps['onInteractOutside'] =
-      (event) => {
-        const { target } = event
-        if (target === window || target === null || target === undefined) {
-          return
-        }
-
-        if (
-          triggerRef?.current?.contains(target as Element) ||
-          contentRef?.current?.contains(target as Element)
-        ) {
-          event.preventDefault()
-        }
-
-        if (isFunction(onInteractOutside)) {
-          onInteractOutside(event)
-        }
+    const handleSubMenuInteractOutside: DropdownProps['onInteractOutside'] = (
+      event,
+    ) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
       }
+
+      if (
+        triggerRef?.current?.contains(target as Element) ||
+        contentRef?.current?.contains(target as Element)
+      ) {
+        event.preventDefault()
+      }
+
+      if (isFunction(onInteractOutside)) {
+        onInteractOutside(event)
+      }
+    }
 
     const contentElement = (
       <Typography
@@ -246,7 +247,7 @@ export const SubDropdown = forwardRef<
                 className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
                 {...(props.dir === undefined
                   ? {}
-                  : { dir: props.dir as RxScrollArea.Direction })}
+                  : { dir: props.dir as RxScrollArea.ScrollAreaProps['dir'] })}
                 type="hover"
               >
                 <RxScrollArea.Viewport

@@ -2,7 +2,7 @@
 
 import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxDialog from '@radix-ui/react-dialog'
-import type { DismissableLayerProps } from '@radix-ui/react-select'
+import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
 import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
