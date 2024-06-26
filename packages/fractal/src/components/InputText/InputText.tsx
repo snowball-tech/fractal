@@ -15,7 +15,8 @@ import {
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { Typography } from '..'
+import { Button } from '../Button/Button'
+import { Typography } from '../Typography/Typography'
 import { GROUP_NAME } from './InputText.constants'
 import type { InputTextProps } from './InputText.types'
 
@@ -26,6 +27,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
   (
     {
       autoFocus = false,
+      buttonLabel,
+      buttonPosition = 'right',
       defaultValue,
       description,
       disabled = false,
@@ -34,6 +37,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       id,
       label,
       name,
+      onButtonClick,
       onChange,
       placeholder,
       prefix,
@@ -112,6 +116,21 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const addendumClasses =
       'flex max-w-full absolute top-1/2 -translate-y-1/2 w-fit'
 
+    const hasButton = !isEmpty(buttonLabel)
+
+    const button = hasButton && (
+      <Button
+        className={cj(
+          'rounded-0 border-1 border-l-0 hover:bg-primary hover:text-dark focus:bg-primary focus:text-dark active:border-2 active:border-l-0 active:!border-black',
+          buttonPosition === 'left' ? 'rounded-l-full' : 'rounded-r-full',
+        )}
+        disabled={disabled}
+        label={buttonLabel}
+        variant="primary"
+        onClick={onButtonClick}
+      />
+    )
+
     return (
       <div
         className={cn(
@@ -159,16 +178,19 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             `${PREFIX}-${GROUP_NAME}__wrapper`,
             'relative w-full max-w-full',
             fullWidth ? '' : 'sm:w-fit',
+            hasButton ? 'flex' : '',
           )}
           element="div"
         >
+          {hasButton && buttonPosition === 'left' && button}
+
           {hasPrefix && (
             <div
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
                 addendumClasses,
                 writable ? '' : 'text-disabled',
-                'left-1',
+                hasButton ? 'left-2' : 'left-1',
               )}
             >
               {prefix}
@@ -179,7 +201,12 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
             autoFocus={autoFocus}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__input`,
-              'box-border h-6 max-h-6 w-full min-w-6 max-w-full rounded-sm border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+              'box-border h-6 max-h-6 w-full min-w-6 max-w-full border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+              hasButton
+                ? `${PREFIX}-${GROUP_NAME}__input--with-button ${PREFIX}-${GROUP_NAME}__input--with-button--${buttonPosition}`
+                : 'rounded-sm',
+              hasButton && buttonPosition === 'left' ? 'rounded-r-full' : '',
+              hasButton && buttonPosition === 'right' ? 'rounded-l-full' : '',
               writable
                 ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
                 : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
@@ -199,8 +226,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                 ? `${PREFIX}-${GROUP_NAME}__input--with-success border-success shadow-success`
                 : '',
               writable && !isInError && !isSuccessful ? 'border-normal' : '',
-              hasPrefix ? 'pl-5' : '',
-              hasSuffix ? 'pr-5' : '',
+              hasPrefix ? (hasButton ? 'pl-6' : 'pl-5') : '',
+              hasSuffix ? (hasButton ? 'pr-6' : 'pr-5') : '',
               required ? `${PREFIX}-${GROUP_NAME}--required` : '',
               withSpinButton
                 ? ''
@@ -238,6 +265,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               {suffix}
             </div>
           )}
+
+          {hasButton && buttonPosition === 'right' && button}
         </Typography>
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (

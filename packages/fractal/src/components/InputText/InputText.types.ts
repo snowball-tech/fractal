@@ -1,9 +1,29 @@
-import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
+import type {
+  AllHTMLAttributes,
+  ChangeEvent,
+  MouseEvent,
+  ReactNode,
+} from 'react'
 
 export interface InputTextProps
   extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
   /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
+  /**
+   * The label for an optional button coupled to the input text.*
+   *
+   * This allows to have a nice design of an input with a "merged" button beside
+   * it.
+   *
+   * If none is given, then no button is displayed.
+   */
+  buttonLabel?: string
+  /**
+   * The position of the button relative to the text input.
+   *
+   * Only useful if `buttonLabel` is provided.
+   */
+  buttonPosition?: 'left' | 'right'
   /**
    * The value of the text input when it is initially rendered.
    *
@@ -47,6 +67,12 @@ export interface InputTextProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
+  /**
+   * Event handler called when the optional button is clicked.
+   *
+   * Only useful if `buttonLabel` is provided.
+   */
+  onButtonClick?: (event: MouseEvent<HTMLElement>) => void
   /**
    * Event handler called when the text input value is changed with the new
    * string value.

@@ -47,6 +47,8 @@ const meta: Meta<InputTextProps> = {
   },
   args: {
     autoFocus: false,
+    buttonLabel: '',
+    buttonPosition: 'right',
     description: 'These aren’t the droids you’re looking for!',
     disabled: false,
     fullWidth: false,
@@ -102,6 +104,7 @@ export const Playground: Story = {
 
 export const Interactive: Story = {
   args: {
+    onButtonClick: fn(),
     onChange: fn(),
     value: '',
   },
