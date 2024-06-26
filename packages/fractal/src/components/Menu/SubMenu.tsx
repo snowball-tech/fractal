@@ -2,7 +2,6 @@
 
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import type { DismissableLayerProps } from '@radix-ui/react-select'
 import { useClickOutside } from '@react-hookz/web'
 import constant from 'lodash/fp/constant'
 import isEmpty from 'lodash/fp/isEmpty'
@@ -25,6 +24,7 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
+import { PopoverProps } from '../Popover'
 import {
   DEFAULT_SUB_MENU_ELEVATION,
   GROUP_NAME,
@@ -139,24 +139,25 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
     const isDisabled = disabled || groupDisabled || menuDisabled
     const isCondensed = condensed || groupCondensed || menuCondensed
 
-    const handleSubMenuInteractOutside: DismissableLayerProps['onInteractOutside'] =
-      (event) => {
-        const { target } = event
-        if (target === window || target === null || target === undefined) {
-          return
-        }
-
-        if (
-          triggerRef?.current?.contains(target as Element) ||
-          contentRef?.current?.contains(target as Element)
-        ) {
-          event.preventDefault()
-        }
-
-        if (isFunction(onInteractOutside)) {
-          onInteractOutside(event)
-        }
+    const handleSubMenuInteractOutside: PopoverProps['onInteractOutside'] = (
+      event,
+    ) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
       }
+
+      if (
+        triggerRef?.current?.contains(target as Element) ||
+        contentRef?.current?.contains(target as Element)
+      ) {
+        event.preventDefault()
+      }
+
+      if (isFunction(onInteractOutside)) {
+        onInteractOutside(event)
+      }
+    }
 
     const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
       if (isFunction(props.onKeyDown)) {
@@ -288,7 +289,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             className={`${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea`}
             {...(props.dir === undefined
               ? {}
-              : { dir: props.dir as RxScrollArea.Direction })}
+              : { dir: props.dir as RxScrollArea.ScrollAreaProps['dir'] })}
             type="hover"
           >
             <RxScrollArea.Viewport

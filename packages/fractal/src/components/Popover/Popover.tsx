@@ -119,24 +119,25 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [children, open])
 
-    const handleInteractOutside: RxPopover.DismissableLayerProps['onInteractOutside'] =
-      (event) => {
-        const { target } = event
-        if (target === window || target === null || target === undefined) {
-          return
-        }
-
-        if (
-          containerRef?.current?.contains(target as Element) ||
-          contentRef?.current?.contains(target as Element)
-        ) {
-          event.preventDefault()
-        }
-
-        if (isFunction(onInteractOutside)) {
-          onInteractOutside(event)
-        }
+    const handleInteractOutside: PopoverProps['onInteractOutside'] = (
+      event,
+    ) => {
+      const { target } = event
+      if (target === window || target === null || target === undefined) {
+        return
       }
+
+      if (
+        containerRef?.current?.contains(target as Element) ||
+        contentRef?.current?.contains(target as Element)
+      ) {
+        event.preventDefault()
+      }
+
+      if (isFunction(onInteractOutside)) {
+        onInteractOutside(event)
+      }
+    }
 
     let widthClassNames = 'max-w-[var(--radix-popper-available-width)]'
     let widthStyle: CSSProperties = {}
@@ -305,7 +306,9 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                       className={`${PREFIX}-${GROUP_NAME}__popover__scrollarea`}
                       {...(props.dir === undefined
                         ? {}
-                        : { dir: props.dir as RxScrollArea.Direction })}
+                        : {
+                            dir: props.dir as RxScrollArea.ScrollAreaProps['dir'],
+                          })}
                       type="hover"
                     >
                       <RxScrollArea.Viewport

@@ -1,5 +1,5 @@
 import type {
-  CheckedState,
+  CheckboxProps,
   CheckboxProps as RxCheckboxProps,
 } from '@radix-ui/react-checkbox'
 import type { ReactNode } from 'react'
@@ -12,7 +12,7 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    *
    * Must be used in conjunction with `onCheckedChange`.
    */
-  checked?: CheckedState
+  checked?: CheckboxProps['checked']
   /**
    * The content of the checkbox.
    *
@@ -27,7 +27,7 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    *
    * Use this when you do not need to control its checked state.
    */
-  defaultChecked?: CheckedState
+  defaultChecked?: CheckboxProps['defaultChecked']
   /** Prevents the user from interacting with the checkbox. */
   disabled?: boolean
   /** Indicates if the checkbox should take all the available width. */
@@ -69,7 +69,7 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    */
   name?: string
   /** Event handler called when the checked state of the checkbox changes. */
-  onCheckedChange?: (checked: CheckedState) => void
+  onCheckedChange?: (checked: CheckboxProps['checked']) => void
   /**
    * Prevent the user from interacting with the checkbox but keep a
    * non-disabled visual state.

@@ -1,6 +1,7 @@
 'use client'
 
 import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
+import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'
@@ -111,7 +112,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       handleDropdownToggle(!isOpen)
     }
 
-    const handlePointerDownOutside: RxSelect.DismissableLayerProps['onPointerDownOutside'] =
+    const handlePointerDownOutside: DismissableLayerProps['onPointerDownOutside'] =
       (event) => {
         if (isFunction(dropdown.onPointerDownOutside)) {
           dropdown.onPointerDownOutside(event)
@@ -157,7 +158,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
           {...(props.dir === undefined
             ? {}
-            : { dir: props.dir as RxScrollArea.Direction })}
+            : { dir: props.dir as RxScrollArea.ScrollAreaProps['dir'] })}
           type="hover"
         >
           <RxSelect.Viewport asChild>
@@ -239,7 +240,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           defaultOpen={autoFocus}
           {...(props.dir === undefined
             ? {}
-            : { dir: props.dir as RxSelect.Direction })}
+            : { dir: props.dir as RxSelect.SelectProps['dir'] })}
           disabled={!writable}
           name={name || uniqueId}
           open={isOpen}
