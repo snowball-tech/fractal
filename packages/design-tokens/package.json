@@ -1,58 +1,10 @@
 {
-  "name": "@snowball-tech/design-tokens",
-  "version": "12.1.5",
-  "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "author": "Snowball Engineering Team <engineering@snowball.xyz> (https://github.com/orgs/snowball-tech)",
+  "bugs": "https://github.com/snowball-tech/fractal/issues",
   "contributors": [
     "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
   ],
-  "license": "MIT",
-  "keywords": [
-    "snowball",
-    "design-system",
-    "design-tokens",
-    "style-dictionary",
-    "figma",
-    "styleguide"
-  ],
-  "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/design-tokens",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/snowball-tech/fractal.git",
-    "directory": "packages/design-tokens"
-  },
-  "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.2.2",
-  "engines": {
-    "yarn": "^4.0.0",
-    "node": ">=18 <=20"
-  },
-  "main": "dist/web/typescript/design-tokens.js",
-  "files": [
-    "dist/*",
-    "dist/**"
-  ],
-  "types": "dist/web/typescript/design-tokens.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "scripts": {
-    "prebuild": "yarn run clean-build",
-    "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
-    "build:local": "NODE_ENV=production node ./src/build.js",
-    "check-deps": "yarn run -T depcheck --ignores='to-esm,typescript,@tailwindcss/*,@types/lodash,tailwindcss' --ignore-patterns='src/tailwindcss/tailwind.*.ts'",
-    "clean-build": "rm -Rf dist >/dev/null 2>&1 || true",
-    "dev": "yarn run -T nodemon -x \"yarn build\"",
-    "format": "yarn run -T prettier --cache --check .",
-    "format-fix": "yarn run -T prettier --cache --write .",
-    "lint": "yarn run -T eslint --cache .",
-    "lint-fix": "yarn run -T eslint --cache --fix .",
-    "quality": "yarn run lint & yarn run format",
-    "quality-fix": "yarn run lint-fix && yarn run format-fix",
-    "setup": "(yarn run -T is-ci || yarn install) && yarn run build",
-    "update-deps": "yarn run -T update-deps"
-  },
+  "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {
     "@snowball-tech/eslint-config": "^5.4.5",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -63,5 +15,53 @@
     "tailwindcss": "^3.4.4",
     "to-esm": "^2.27.3",
     "typescript": "^5.5.2"
-  }
+  },
+  "engines": {
+    "node": ">=18 <=20",
+    "yarn": "^4.0.0"
+  },
+  "files": [
+    "dist/*",
+    "dist/**"
+  ],
+  "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/design-tokens",
+  "keywords": [
+    "snowball",
+    "design-system",
+    "design-tokens",
+    "style-dictionary",
+    "figma",
+    "styleguide"
+  ],
+  "license": "MIT",
+  "main": "dist/web/typescript/design-tokens.js",
+  "name": "@snowball-tech/design-tokens",
+  "packageManager": "yarn@4.3.1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "directory": "packages/design-tokens",
+    "type": "git",
+    "url": "git+https://github.com/snowball-tech/fractal.git"
+  },
+  "scripts": {
+    "build": "yarn run prebuild && NODE_ENV=production node ./src/build.js",
+    "build:local": "NODE_ENV=production node ./src/build.js",
+    "check-deps": "yarn run -T depcheck --ignores='to-esm,typescript,@tailwindcss/*,@types/lodash,tailwindcss' --ignore-patterns='src/tailwindcss/tailwind.*.ts'",
+    "clean-build": "rm -Rf dist >/dev/null 2>&1 || true",
+    "dev": "yarn run -T nodemon -x \"yarn build\"",
+    "format": "yarn run -T prettier --cache --check .",
+    "format-fix": "yarn run -T prettier --cache --write .",
+    "lint": "yarn run -T eslint --cache .",
+    "lint-fix": "yarn run -T eslint --cache --fix .",
+    "prebuild": "yarn run clean-build",
+    "quality": "yarn run lint & yarn run format",
+    "quality-fix": "yarn run lint-fix && yarn run format-fix",
+    "setup": "(yarn run -T is-ci || yarn install) && yarn run build",
+    "update-deps": "yarn run -T update-deps"
+  },
+  "types": "dist/web/typescript/design-tokens.d.ts",
+  "version": "12.1.5"
 }

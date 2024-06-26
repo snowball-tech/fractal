@@ -5036,7 +5036,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.1.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.1.5, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -5122,7 +5122,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.1.4"
+    "@snowball-tech/design-tokens": "npm:12.1.5"
     "@snowball-tech/eslint-config": "npm:^5.4.5"
     "@snowball-tech/prettier-config": "npm:^1.4.10"
     "@storybook/addon-a11y": "npm:^8.1.10"
@@ -22721,11 +22721,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.5.2#optional!builtin<compat/typescript>":
   version: 5.5.2
-  resolution: "typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=b45daf"
+  resolution: "typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/28b3de2ddaf63a7620e7ddbe5d377af71ce93ecc558c41bf0e3d88661d8e6e7aa6c7739164fef98055f69819e41faca49252938ef3633a3dff2734cca6a9042e
+  checksum: 10/ac3145f65cf9e72ab29f2196e05d5816b355dc1a9195b9f010d285182a12457cfacd068be2dd22c877f88ebc966ac6e0e83f51c8586412b16499a27e3670ff4b
   languageName: node
   linkType: hard
 
