@@ -95,6 +95,7 @@ import {
   TypographyHeading4LinkFontWeight,
   TypographyHeading4LinkLineHeight,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 import {
   type CSSProperties,
@@ -453,8 +454,13 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       }
     }
 
-    const actualElement =
-      element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
+    let actualElement = element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
+    if (!isEmpty(props.href) && isEmpty(element)) {
+      actualElement = 'a'
+    }
+    if (element === 'a' && isEmpty(props.href)) {
+      actualElement = DEFAULT_ELEMENT
+    }
 
     return createElement(
       actualElement,
