@@ -26,7 +26,7 @@ export const Header = ({
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'flex h-8 w-full items-center gap-1 border-b-2 border-normal bg-primary px-3 pb-[calc(theme(spacing.1)-var(--size-border-2))] pt-1 text-dark',
-        '@md:grid @md:h-10 @md:grid-cols-12 @md:content-stretch @md:justify-stretch @md:gap-0',
+        '@md:h-10 @md:content-stretch @md:justify-stretch @md:gap-0',
         props.className,
       )}
       {...(isFunction(onClick) ? { onClick } : {})}
@@ -36,7 +36,7 @@ export const Header = ({
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__left`,
-            '@md:col-start-1 @md:col-end-3 @md:grid @md:max-h-8 @md:justify-self-start',
+            '@md:max-h-8 @md:justify-self-start',
           )}
         >
           {left}
@@ -49,7 +49,7 @@ export const Header = ({
         className={cj(
           `${PREFIX}-${GROUP_NAME}__middle`,
           'm-0 max-h-full w-full truncate',
-          '@md:col-start-3 @md:col-end-11 @md:grid @md:max-h-6 @md:justify-self-center @md:text-center',
+          '@md:max-h-6 @md:justify-self-center @md:text-center',
         )}
         element="div"
         variant="heading-4"
@@ -61,7 +61,7 @@ export const Header = ({
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__right`,
-            '@md:col-start-11 @md:col-end-13 @md:grid @md:max-h-6 @md:justify-self-end',
+            '@md:max-h-6 @md:justify-self-end',
           )}
         >
           {right}
