@@ -1,5 +1,6 @@
 'use client'
 
+import { composeRefs } from '@radix-ui/react-compose-refs'
 import {
   Border1,
   BorderTransparent2,
@@ -35,6 +36,7 @@ import {
   type TouchEvent,
   createElement,
   forwardRef,
+  useRef,
 } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -262,6 +264,17 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       console.warn(
         'You must provide a `label` or `children` to the `Button` component',
       )
+    }
+
+    const buttonRef = useRef<HTMLElement>(null)
+    const combinedRef = composeRefs(ref, buttonRef)
+
+    const handleClick = (event: MouseEvent<HTMLElement>) => {
+      if (!disabled && isFunction(onClick)) {
+        onClick(event)
+      }
+
+      buttonRef.current?.blur()
     }
 
     const handleTouchStart = (event: TouchEvent<HTMLButtonElement>) => {
@@ -493,7 +506,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         {
           'aria-label': label,
           className: classNames,
-          ref,
+          ref: combinedRef,
           style: { ...style, ...props.style },
           title: label,
           ...omit(['className', 'style'], props),
@@ -506,14 +519,14 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       return (
         <a
           {...(props.id === undefined ? {} : { id: props.id })}
-          ref={ref as ForwardedRef<HTMLAnchorElement>}
+          ref={combinedRef as ForwardedRef<HTMLAnchorElement>}
           aria-label={label}
           className={classNames}
           href={href}
           {...(isEmpty(target) ? {} : { target })}
           style={{ ...style, ...props.style }}
           title={label}
-          {...(!disabled && isFunction(onClick) ? { onClick } : {})}
+          onClick={handleClick}
           {...omit(['className', 'id', 'style'], props)}
         >
           {content}
@@ -524,7 +537,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     return (
       <button
         {...(props.id === undefined ? {} : { id: props.id })}
-        ref={ref as ForwardedRef<HTMLButtonElement>}
+        ref={combinedRef as ForwardedRef<HTMLButtonElement>}
         aria-label={label}
         className={classNames}
         {...(props.dir === undefined
@@ -534,9 +547,9 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         style={{ ...style, ...props.style }}
         title={label}
         type={type}
+        onClick={handleClick}
         onTouchEnd={handleTouchEnd}
         onTouchStart={handleTouchStart}
-        {...(isFunction(onClick) ? { onClick } : {})}
         {...omit(
           ['className', 'dir', 'id', 'style', 'onTouchEnd', 'onTouchStart'],
           props,
