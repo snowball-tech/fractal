@@ -1,5 +1,6 @@
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
+import DizzyFaceIcon from '@iconscout/react-unicons/icons/uil-dizzy-meh'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
@@ -47,8 +48,12 @@ const meta: Meta<InputTextProps> = {
   },
   args: {
     autoFocus: false,
-    buttonLabel: '',
-    buttonPosition: 'right',
+    button: {
+      icon: <DizzyFaceIcon />,
+      iconPosition: 'right',
+      label: 'Use force',
+      position: 'right',
+    },
     description: 'These aren’t the droids you’re looking for!',
     disabled: false,
     fullWidth: false,
@@ -59,6 +64,7 @@ const meta: Meta<InputTextProps> = {
     required: false,
     suffix: 'None',
     type: 'text',
+    withButton: false,
   },
   component: InputText,
   decorators: [
@@ -509,6 +515,292 @@ export const Validations: Story = {
           error="This is an error message!"
           fullWidth
           label="There is an error"
+        />
+      </Wrapper>
+    </>
+  ),
+}
+
+export const WithButton: Story = {
+  render: () => (
+    <>
+      <Wrapper>
+        <InputText button={{ label: 'This is a button' }} withButton />
+        <InputText
+          button={{ label: 'This is a button' }}
+          placeholder="This is the placeholder"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is the value"
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            label: 'This is a button with a right icon',
+          }}
+          withButton
+        />
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            iconPosition: 'left',
+            label: 'This is a button with a left icon',
+          }}
+          placeholder="This is the placeholder"
+          withButton
+        />
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            iconOnly: true,
+            label: 'This is a button with only an icon',
+          }}
+          defaultValue="This is the value"
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{ disabled: true, label: 'This is a button' }}
+          withButton
+        />
+        <InputText
+          button={{ disabled: true, label: 'This is a button' }}
+          placeholder="This is the placeholder"
+          withButton
+        />
+        <InputText
+          button={{ disabled: true, label: 'This is a button' }}
+          defaultValue="This is the value"
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with a label"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with a label"
+          placeholder="And the placeholder"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="And a value"
+          label="Input text with a label"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Required input text with a label"
+          required
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          description="This is the description"
+          label="This is the label"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          description="This is the description"
+          label="This is the label"
+          placeholder="This is the placeholder"
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is the value"
+          description="This is the description"
+          label="This is the label"
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with suffix icon"
+          suffix={<StarIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with suffix icon"
+          placeholder="And a placeholder"
+          suffix={<StarIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="And a value"
+          label="Input text with suffix icon"
+          suffix={<StarIcon />}
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with prefix icon"
+          prefix={<StarIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with prefix icon"
+          placeholder="And a placeholder"
+          prefix={<StarIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="And a value"
+          label="Input text with prefix icon"
+          prefix={<StarIcon />}
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with prefix and suffix icon"
+          prefix={<StarIcon />}
+          suffix={<SendIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          label="Input text with prefix and suffix icon"
+          placeholder="And a placeholder"
+          prefix={<StarIcon />}
+          suffix={<SendIcon />}
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="And a value"
+          label="Input text with prefix and suffix icon"
+          prefix={<StarIcon />}
+          suffix={<SendIcon />}
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="A value"
+          description="And a description"
+          fullWidth
+          label="This is a full width input text with a label"
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is the disabled value"
+          disabled
+          withButton
+        />
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is the read-only value"
+          readOnly
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            label: 'This is a disabled button with a right icon',
+          }}
+          disabled
+          withButton
+        />
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            iconPosition: 'left',
+            label: 'This is a disabled button with a left icon',
+          }}
+          defaultValue="With a value"
+          disabled
+          withButton
+        />
+        <InputText
+          button={{
+            icon: <DizzyFaceIcon />,
+            iconOnly: true,
+            label: 'This is a disabled button with only an icon',
+          }}
+          defaultValue="With a value"
+          disabled
+          withButton
+        />
+      </Wrapper>
+
+      <Wrapper>
+        <InputText
+          button={{ disabled: false, label: 'This is a button' }}
+          defaultValue="This is the disabled value"
+          disabled
+          withButton
+        />
+        <InputText
+          button={{ disabled: false, label: 'This is a button' }}
+          defaultValue="This is the read-only value"
+          readOnly
+          withButton
+        />
+      </Wrapper>
+
+      {separator}
+
+      <Wrapper>
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is a correct value"
+          success="With a success message!"
+          withButton
+        />
+
+        <InputText
+          button={{ label: 'This is a button' }}
+          defaultValue="This is an invalid value"
+          error="This is an error message!"
+          withButton
         />
       </Wrapper>
     </>
