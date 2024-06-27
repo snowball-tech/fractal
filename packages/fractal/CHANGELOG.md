@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.1...@snowball-tech/fractal@11.2.2) (2024-06-27)
+
+- **header:** remove grid from header component ([39f314b](https://github.com/snowball-tech/fractal/commit/39f314b6daa5154b051049c761b8b2bf7d64bfa2))
+
 ## @snowball-tech/fractal [11.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.0...@snowball-tech/fractal@11.2.1) (2024-06-27)
 
 - **button:** blur the button after click ([45bb8e3](https://github.com/snowball-tech/fractal/commit/45bb8e325c8552c98c243f5406d5b1d26f50387f))
