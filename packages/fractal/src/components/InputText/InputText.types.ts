@@ -5,25 +5,26 @@ import type {
   ReactNode,
 } from 'react'
 
+import type { ButtonProps } from '../Button/Button.types'
+
 export interface InputTextProps
   extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
   /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
   /**
-   * The label for an optional button coupled to the input text.*
+   * The props to pass to the buttons.
+   * Almost all props you can pass to a `Button` component can be passed here,
+   * except for `variant` (only one "special" variant is available here) and
+   * `onClick` (use `onButtonClick` on the input text component instead).
+   * You can also pass `position` (being 'left' or 'right') to indicate where
+   * you want the button to be positionned relative to the input.
    *
-   * This allows to have a nice design of an input with a "merged" button beside
-   * it.
-   *
-   * If none is given, then no button is displayed.
+   * Only useful if `withButton` is `true`.
    */
-  buttonLabel?: string
-  /**
-   * The position of the button relative to the text input.
-   *
-   * Only useful if `buttonLabel` is provided.
-   */
-  buttonPosition?: 'left' | 'right'
+  button?: { position?: 'left' | 'right' } & Omit<
+    ButtonProps,
+    'onClick' | 'variant'
+  >
   /**
    * The value of the text input when it is initially rendered.
    *
@@ -70,7 +71,7 @@ export interface InputTextProps
   /**
    * Event handler called when the optional button is clicked.
    *
-   * Only useful if `buttonLabel` is provided.
+   * Only useful if `withButton` is `true`.
    */
   onButtonClick?: (event: MouseEvent<HTMLElement>) => void
   /**
@@ -128,6 +129,8 @@ export interface InputTextProps
    * Must be used in conjunction with `onChange`.
    */
   value?: number | string
+  /** Indicates if we want to display a button "merged" with the input. */
+  withButton?: boolean
   /**
    * Indicates if the text input should display a spin button to
    * increment/decrement the value.

@@ -3,6 +3,7 @@
 import { Label as RxLabel } from '@radix-ui/react-label'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 import {
   type ChangeEvent,
@@ -27,8 +28,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
   (
     {
       autoFocus = false,
-      buttonLabel,
-      buttonPosition = 'right',
+      button: buttonProps = {},
       defaultValue,
       description,
       disabled = false,
@@ -48,6 +48,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       suffix,
       type = 'text',
       value,
+      withButton = false,
       withSpinButton = false,
       ...props
     }: InputTextProps,
@@ -116,18 +117,31 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const addendumClasses =
       'flex max-w-full absolute top-1/2 -translate-y-1/2 w-fit'
 
-    const hasButton = !isEmpty(buttonLabel)
-
-    const button = hasButton && (
+    const isButtonDisabled = isNil(buttonProps?.disabled)
+      ? disabled || readOnly
+      : buttonProps.disabled
+    const button = withButton && (
       <Button
-        className={cj(
-          'rounded-0 border-1 border-l-0 hover:bg-primary hover:text-dark focus:bg-primary focus:text-dark active:border-2 active:border-l-0 active:!border-black',
-          buttonPosition === 'left' ? 'rounded-l-full' : 'rounded-r-full',
+        className={cn(
+          'rounded-0 border-1 border-l-0 hover:bg-primary hover:text-dark focus:bg-primary focus:text-dark active:border-l-0 active:!border-black active:shadow-hover',
+          isButtonDisabled
+            ? 'border-disabled hover:bg-disabled hover:text-light focus:bg-disabled focus:text-light active:border-1 active:border-l-0 active:!border-disabled active:shadow-none'
+            : '',
+          (disabled || readOnly) && !isButtonDisabled
+            ? 'border-l-1 active:border-l-1'
+            : '',
+          buttonProps?.position === 'left'
+            ? 'rounded-l-full'
+            : 'rounded-r-full',
+          buttonProps?.className,
         )}
-        disabled={disabled}
-        label={buttonLabel}
+        disabled={isButtonDisabled}
         variant="primary"
         onClick={onButtonClick}
+        {...omit(
+          ['variant', 'onClick', 'className', 'position', 'disabled'],
+          buttonProps,
+        )}
       />
     )
 
@@ -176,97 +190,117 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         <Typography
           className={cj(
             `${PREFIX}-${GROUP_NAME}__wrapper`,
-            'relative w-full max-w-full',
+            'w-full max-w-full',
             fullWidth ? '' : 'sm:w-fit',
-            hasButton ? 'flex' : '',
+            withButton ? 'flex' : '',
           )}
           element="div"
         >
-          {hasButton && buttonPosition === 'left' && button}
+          {withButton && buttonProps?.position === 'left' && button}
 
-          {hasPrefix && (
-            <div
-              className={cj(
-                `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
-                addendumClasses,
-                writable ? '' : 'text-disabled',
-                hasButton ? 'left-2' : 'left-1',
-              )}
-            >
-              {prefix}
-            </div>
-          )}
-
-          <input
-            autoFocus={autoFocus}
-            className={cj(
-              `${PREFIX}-${GROUP_NAME}__input`,
-              'box-border h-6 max-h-6 w-full min-w-6 max-w-full border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
-              hasButton
-                ? `${PREFIX}-${GROUP_NAME}__input--with-button ${PREFIX}-${GROUP_NAME}__input--with-button--${buttonPosition}`
-                : 'rounded-sm',
-              hasButton && buttonPosition === 'left' ? 'rounded-r-full' : '',
-              hasButton && buttonPosition === 'right' ? 'rounded-l-full' : '',
-              writable
-                ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
-                : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
-              disabled
-                ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
-                : 'text-dark',
-              readOnly && !disabled
-                ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
-                : '',
-              fullWidth
-                ? `${PREFIX}-${GROUP_NAME}__input--full-width`
-                : 'sm:w-unset',
-              isInError
-                ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
-                : '',
-              isSuccessful
-                ? `${PREFIX}-${GROUP_NAME}__input--with-success border-success shadow-success`
-                : '',
-              writable && !isInError && !isSuccessful ? 'border-normal' : '',
-              hasPrefix ? (hasButton ? 'pl-6' : 'pl-5') : '',
-              hasSuffix ? (hasButton ? 'pr-6' : 'pr-5') : '',
-              required ? `${PREFIX}-${GROUP_NAME}--required` : '',
-              withSpinButton
-                ? ''
-                : '[appearance:textfield] [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden',
+          <div
+            className={cj(`${PREFIX}-${GROUP_NAME}__icon-wrapper`, 'relative')}
+          >
+            {hasPrefix && (
+              <div
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
+                  addendumClasses,
+                  writable ? '' : 'text-disabled',
+                  withButton ? 'left-2' : 'left-1',
+                )}
+              >
+                {prefix}
+              </div>
             )}
-            disabled={disabled}
-            {...(defaultValue === undefined ? {} : { defaultValue })}
-            id={uniqueId}
-            ref={ref}
-            inputMode={inputMode}
-            name={name || uniqueId}
-            pattern={props.pattern ?? type === 'number' ? '[0-9]*' : undefined}
-            placeholder={placeholder}
-            readOnly={readOnly}
-            required={required}
-            type={type}
-            value={value}
-            onChange={handleChange}
-            onFocus={handleFocus}
-            // Be careful, arguments of `omit` from lodash FP are flipped!
-            {...omit(['className', 'onFocus'], props)}
-          />
 
-          {hasSuffix && (
-            <div
+            <input
+              autoFocus={autoFocus}
               className={cj(
-                `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--suffix`,
-                addendumClasses,
-                'right-1',
-                !writable && !isInError && !isSuccessful ? 'text-disabled' : '',
-                isInError ? 'text-error' : '',
-                isSuccessful ? 'text-success' : '',
+                `${PREFIX}-${GROUP_NAME}__input`,
+                'box-border h-6 max-h-6 w-full min-w-6 max-w-full border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+                withButton
+                  ? `${PREFIX}-${GROUP_NAME}__input--with-button ${PREFIX}-${GROUP_NAME}__input--with-button--${buttonProps?.position ?? 'right'}`
+                  : 'rounded-sm',
+                withButton && buttonProps?.position === 'left'
+                  ? 'rounded-r-full'
+                  : '',
+                withButton &&
+                  (isEmpty(buttonProps?.position) ||
+                    buttonProps?.position === 'right')
+                  ? 'rounded-l-full'
+                  : '',
+                writable
+                  ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
+                  : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
+                disabled
+                  ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
+                  : 'text-dark',
+                readOnly && !disabled
+                  ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
+                  : '',
+                fullWidth
+                  ? `${PREFIX}-${GROUP_NAME}__input--full-width`
+                  : 'sm:w-unset',
+                isInError
+                  ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
+                  : '',
+                isSuccessful
+                  ? `${PREFIX}-${GROUP_NAME}__input--with-success border-success shadow-success`
+                  : '',
+                writable && !isInError && !isSuccessful ? 'border-normal' : '',
+                hasPrefix ? (withButton ? 'pl-6' : 'pl-5') : '',
+                hasSuffix ? (withButton ? 'pr-6' : 'pr-5') : '',
+                required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+                withSpinButton
+                  ? ''
+                  : '[appearance:textfield] [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden',
+                withButton && isButtonDisabled && writable
+                  ? 'border-r-disabled'
+                  : '',
               )}
-            >
-              {suffix}
-            </div>
-          )}
+              disabled={disabled}
+              {...(defaultValue === undefined ? {} : { defaultValue })}
+              id={uniqueId}
+              ref={ref}
+              inputMode={inputMode}
+              name={name || uniqueId}
+              pattern={
+                props.pattern ?? type === 'number' ? '[0-9]*' : undefined
+              }
+              placeholder={placeholder}
+              readOnly={readOnly}
+              required={required}
+              type={type}
+              value={value}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              // Be careful, arguments of `omit` from lodash FP are flipped!
+              {...omit(['className', 'onFocus'], props)}
+            />
 
-          {hasButton && buttonPosition === 'right' && button}
+            {hasSuffix && (
+              <div
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--suffix`,
+                  addendumClasses,
+                  'right-1',
+                  !writable && !isInError && !isSuccessful
+                    ? 'text-disabled'
+                    : '',
+                  isInError ? 'text-error' : '',
+                  isSuccessful ? 'text-success' : '',
+                )}
+              >
+                {suffix}
+              </div>
+            )}
+          </div>
+
+          {withButton &&
+            (isEmpty(buttonProps?.position) ||
+              buttonProps?.position === 'right') &&
+            button}
         </Typography>
 
         {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
