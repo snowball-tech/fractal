@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.0...@snowball-tech/fractal@11.2.1) (2024-06-27)
+
+- **button:** blur the button after click ([45bb8e3](https://github.com/snowball-tech/fractal/commit/45bb8e325c8552c98c243f5406d5b1d26f50387f))
+
 # @snowball-tech/fractal [11.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.1.1...@snowball-tech/fractal@11.2.0) (2024-06-27)
 
 - **input-text:** improve support of conjoined button ([d9cabe7](https://github.com/snowball-tech/fractal/commit/d9cabe7d1e390fecb2facce5ebb64c13705b5166))
