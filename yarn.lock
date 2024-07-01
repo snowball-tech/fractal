@@ -5026,7 +5026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.1.6, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.1.7, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -5112,7 +5112,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.1.6"
+    "@snowball-tech/design-tokens": "npm:12.1.7"
     "@snowball-tech/eslint-config": "npm:^5.4.5"
     "@snowball-tech/prettier-config": "npm:^1.4.10"
     "@storybook/addon-a11y": "npm:^8.1.11"
