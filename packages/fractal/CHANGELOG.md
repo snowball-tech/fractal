@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [11.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.2...@snowball-tech/fractal@11.2.3) (2024-07-01)
+
+- **input-text:** fix `fullWidth` with inline button ([1ff4958](https://github.com/snowball-tech/fractal/commit/1ff4958f0c2d0639b0e72ff0c8e969733b5d30e1))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.7
+
 ## @snowball-tech/fractal [11.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.1...@snowball-tech/fractal@11.2.2) (2024-06-27)
 
 - **header:** remove grid from header component ([39f314b](https://github.com/snowball-tech/fractal/commit/39f314b6daa5154b051049c761b8b2bf7d64bfa2))
