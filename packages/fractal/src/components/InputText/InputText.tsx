@@ -199,7 +199,11 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           {withButton && buttonProps?.position === 'left' && button}
 
           <div
-            className={cj(`${PREFIX}-${GROUP_NAME}__icon-wrapper`, 'relative')}
+            className={cj(
+              `${PREFIX}-${GROUP_NAME}__icon-wrapper`,
+              'relative',
+              fullWidth ? 'w-full' : '',
+            )}
           >
             {hasPrefix && (
               <div
@@ -240,7 +244,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                   ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
                   : '',
                 fullWidth
-                  ? `${PREFIX}-${GROUP_NAME}__input--full-width`
+                  ? `${PREFIX}-${GROUP_NAME}__input--full-width w-full`
                   : 'sm:w-unset',
                 isInError
                   ? `${PREFIX}-${GROUP_NAME}__input--with-error border-error shadow-error`
