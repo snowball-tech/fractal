@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [11.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.3...@snowball-tech/fractal@11.2.4) (2024-07-05)
+
+- **card:** make the children optional ([e3d1551](https://github.com/snowball-tech/fractal/commit/e3d15513c91c8662fcaa85473b52bc42011b364c))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.8
+
 ## @snowball-tech/fractal [11.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.2...@snowball-tech/fractal@11.2.3) (2024-07-01)
 
 - **input-text:** fix `fullWidth` with inline button ([1ff4958](https://github.com/snowball-tech/fractal/commit/1ff4958f0c2d0639b0e72ff0c8e969733b5d30e1))
