@@ -40,7 +40,7 @@
     "react-dom": "^18.3.1",
     "react-textarea-autosize": "^8.5.3",
     "react-timekeeper": "^2.2.1",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.4.4"
   },
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
@@ -70,7 +70,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.0",
     "postcss-logical": "^7.0.1",
-    "postcss-preset-env": "^9.5.15",
+    "postcss-preset-env": "^9.6.0",
     "postcss-styled-syntax": "^0.6.4",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
