@@ -1,6 +1,6 @@
 import { AllHTMLAttributes, ReactNode } from 'react'
 
-import { Orientations, Positions } from './Tabs.constants'
+import { Orientations, Positions, Sizes } from './Tabs.constants'
 
 export interface TabsProps
   extends Omit<
@@ -58,7 +58,7 @@ export interface TabsProps
 export interface TabProps
   extends Omit<
     AllHTMLAttributes<HTMLButtonElement>,
-    'label' | 'type' | 'value'
+    'label' | 'size' | 'type' | 'value'
   > {
   /**
    * The content of the tab.
@@ -123,6 +123,7 @@ export interface TabProps
    * Any value set here will be ignored anyway.
    */
   orientation?: `${Orientations}`
+  size?: `${Sizes}`
   /**
    * The positioning of the tabs in the tab bar.
    *

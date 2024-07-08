@@ -13,3 +13,11 @@ export enum Positions {
 }
 
 export const DEFAULT_POSITION = Positions.Start
+
+export enum Sizes {
+  Large = 'large',
+  Medium = 'medium',
+  Small = 'small',
+}
+
+export const DEFAULT_SIZE = Sizes.Small
