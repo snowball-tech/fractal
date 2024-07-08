@@ -6,7 +6,8 @@ import type { ComponentProps } from 'react'
 import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'
 
-import { Tab, TabContent, Tabs } from '.'
+import { Tab, TabContent, TabSizes, Tabs } from '.'
+import { DEFAULT_SIZE } from './Tabs.constants'
 
 const content = (
   <>
@@ -30,11 +31,19 @@ const meta: Meta<TabProps> = {
     children: {
       control: 'text',
     },
+    size: {
+      options: Object.values(TabSizes),
+      table: {
+        defaultValue: { summary: DEFAULT_SIZE },
+        type: { summary: Object.values(TabSizes).join('|') },
+      },
+    },
   },
   args: {
     disabled: false,
     label: 'Jedis',
     name: 'jedis',
+    size: DEFAULT_SIZE,
   },
   component: Tab,
 
@@ -50,19 +59,73 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, label = 'Jedis', name = 'jedis' }) => (
+  render: ({
+    disabled = false,
+    label = 'Jedis',
+    name = 'jedis',
+    size = DEFAULT_SIZE,
+  }) => (
     <Tabs
       tabs={
         <Tab
           disabled={disabled}
           label={label}
           name={name}
+          size={size}
           onClick={action('onClick')}
         />
       }
       onTabChange={action('onTabChange')}
     >
       <TabContent name={name}>{content}</TabContent>
+    </Tabs>
+  ),
+}
+
+export const Small: Story = {
+  render: () => (
+    <Tabs
+      tabs={
+        <>
+          <Tab label="Jedis" name="jedis" />
+          <Tab label="Siths" name="siths" />
+        </>
+      }
+    >
+      <TabContent name="jedis">{content}</TabContent>
+      <TabContent name="sith">Nothing to see here</TabContent>
+    </Tabs>
+  ),
+}
+
+export const Medium: Story = {
+  render: () => (
+    <Tabs
+      tabs={
+        <>
+          <Tab label="Jedis" name="jedis" size="medium" />
+          <Tab label="Siths" name="siths" size="medium" />
+        </>
+      }
+    >
+      <TabContent name="jedis">{content}</TabContent>
+      <TabContent name="sith">Nothing to see here</TabContent>
+    </Tabs>
+  ),
+}
+
+export const Large: Story = {
+  render: () => (
+    <Tabs
+      tabs={
+        <>
+          <Tab label="Jedis" name="jedis" size="large" />
+          <Tab label="Siths" name="siths" size="large" />
+        </>
+      }
+    >
+      <TabContent name="jedis">{content}</TabContent>
+      <TabContent name="sith">Nothing to see here</TabContent>
     </Tabs>
   ),
 }

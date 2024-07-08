@@ -10,9 +10,11 @@ import { cj, cn } from '@/styles/helpers'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
+  DEFAULT_SIZE,
   GROUP_NAME,
   Orientations,
   Positions,
+  Sizes,
 } from './Tabs.constants'
 import type { TabProps } from './Tabs.types'
 
@@ -33,6 +35,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       large = false,
       name,
       orientation = DEFAULT_ORIENTATION,
+      size = DEFAULT_SIZE,
       tabsPosition = DEFAULT_POSITION,
       ...props
     }: TabProps,
@@ -96,7 +99,13 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
             orientation === Orientations.Horizontal ? 'flex-col' : '',
           )}
           element="div"
-          variant="caption-median"
+          variant={
+            size === Sizes.Large
+              ? 'body-1-median'
+              : size === Sizes.Medium
+                ? 'body-2-median'
+                : 'caption-median'
+          }
         >
           {icon}
           {!iconOnly && (hasChildren ? children : label)}
