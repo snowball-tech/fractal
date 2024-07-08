@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [11.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.4...@snowball-tech/fractal@11.3.0) (2024-07-08)
+
+- **tab:** add sizes to tab label ([f131233](https://github.com/snowball-tech/fractal/commit/f131233aa9842005395ffd958180b0b240693f3e))
+
 ## @snowball-tech/fractal [11.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.3...@snowball-tech/fractal@11.2.4) (2024-07-05)
 
 - **card:** make the children optional ([e3d1551](https://github.com/snowball-tech/fractal/commit/e3d15513c91c8662fcaa85473b52bc42011b364c))
