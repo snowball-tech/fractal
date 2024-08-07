@@ -5158,7 +5158,7 @@ __metadata:
     postcss: "npm:^8.4.39"
     postcss-flexbugs-fixes: "npm:^5.0.2"
     postcss-import: "npm:^16.1.0"
-    postcss-logical: "npm:^7.0.1"
+    postcss-logical: "npm:^8.0.0"
     postcss-preset-env: "npm:^9.6.0"
     postcss-styled-syntax: "npm:^0.6.4"
     prettier: "npm:^3.3.2"
@@ -19036,6 +19036,17 @@ __metadata:
   peerDependencies:
     postcss: ^8.4
   checksum: 10/15e671ec72e12e304aef2ab2a999408e5957e7084fe687eb3957854e3343de2c3243a6d30b2a3c8fe19c627f453bf136d4e06584f1f8f1799d77cc641c7da5b4
+  languageName: node
+  linkType: hard
+
+"postcss-logical@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "postcss-logical@npm:8.0.0"
+  dependencies:
+    postcss-value-parser: "npm:^4.2.0"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10/bdaceacdc80b9b03e2af9e8eb5c195a96cd0a525836a362db357574293189c5ec0f581c71d1ec97856cfbb9ebd4239c24a0593e1f4e32b59aa878a98b5a6ae27
   languageName: node
   linkType: hard
 
