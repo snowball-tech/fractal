@@ -45,7 +45,7 @@
   },
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "devDependencies": {
-    "@csstools/postcss-cascade-layers": "^4.0.6",
+    "@csstools/postcss-cascade-layers": "^5.0.0",
     "@snowball-tech/eslint-config": "^5.4.5",
     "@snowball-tech/prettier-config": "^1.4.10",
     "@storybook/addon-a11y": "^8.1.11",

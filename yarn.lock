@@ -1567,6 +1567,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/postcss-cascade-layers@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@csstools/postcss-cascade-layers@npm:5.0.0"
+  dependencies:
+    "@csstools/selector-specificity": "npm:^4.0.0"
+    postcss-selector-parser: "npm:^6.1.0"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10/6b417e54d6312c985fa660d598395b60933006e796f305dd99926482445799ac3c093d4c09f65e59dac9cb324247456d9e7e3074ac489b85b6e501f42c751434
+  languageName: node
+  linkType: hard
+
 "@csstools/postcss-color-function@npm:^3.0.19":
   version: 3.0.19
   resolution: "@csstools/postcss-color-function@npm:3.0.19"
@@ -1941,6 +1953,15 @@ __metadata:
   peerDependencies:
     postcss-selector-parser: ^6.0.13
   checksum: 10/3786a6afea97b08ad739ee8f4004f7e0a9e25049cee13af809dbda6462090744012a54bd9275a44712791e8f103f85d21641f14e81799f9dab946b0459a5e1ef
+  languageName: node
+  linkType: hard
+
+"@csstools/selector-specificity@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@csstools/selector-specificity@npm:4.0.0"
+  peerDependencies:
+    postcss-selector-parser: ^6.1.0
+  checksum: 10/7076c1d8af0fba94f06718f87fba5bfea583f39089efa906ae38b5ecd6912d3d5865f7047a871ac524b1057e4c970622b2ade456b90d69fb9393902250057994
   languageName: node
   linkType: hard
 
@@ -5104,7 +5125,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@snowball-tech/fractal@workspace:packages/fractal"
   dependencies:
-    "@csstools/postcss-cascade-layers": "npm:^4.0.6"
+    "@csstools/postcss-cascade-layers": "npm:^5.0.0"
     "@emoji-mart/data": "npm:^1.2.1"
     "@emoji-mart/react": "npm:^1.1.1"
     "@iconscout/react-unicons": "npm:^2.0.2"
