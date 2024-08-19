@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [11.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.3.0...@snowball-tech/fractal@11.3.1) (2024-08-19)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.1.9
+
 # @snowball-tech/fractal [11.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.2.4...@snowball-tech/fractal@11.3.0) (2024-07-08)
 
 - **tab:** add sizes to tab label ([f131233](https://github.com/snowball-tech/fractal/commit/f131233aa9842005395ffd958180b0b240693f3e))
