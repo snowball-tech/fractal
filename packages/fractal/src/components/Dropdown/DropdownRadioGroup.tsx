@@ -1,16 +1,18 @@
 'use client'
 
+import { useContext, useId } from 'react'
+
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { useContext, useId } from 'react'
 
 import { Variants as InputRadioVariants } from '@/components/InputRadio/InputRadio.constants'
 import { InputRadioGroup } from '@/components/InputRadio/InputRadioGroup'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioGroupProps } from './Dropdown.types'
+
+import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 

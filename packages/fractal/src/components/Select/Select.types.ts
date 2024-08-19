@@ -1,4 +1,5 @@
 import type { SelectContentProps as RxSelectContentProps } from '@radix-ui/react-select'
+
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
 export type CombinedRefs = {
@@ -62,12 +63,6 @@ export interface SelectProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the select dropdown is closed. */
-  onClose?: () => void
-  /** Event handler called when the select dropdown is opened. */
-  onOpen?: () => void
-  /** Event handler called when a value is selected. */
-  onSelect?: (newValue: string) => void
   /**
    * The controlled open state of the select.
    *
@@ -91,6 +86,12 @@ export interface SelectProps
    * Must be used in conjunction with `onSelect`.
    */
   value?: string
+  /** Event handler called when the select dropdown is closed. */
+  onClose?: () => void
+  /** Event handler called when the select dropdown is opened. */
+  onOpen?: () => void
+  /** Event handler called when a value is selected. */
+  onSelect?: (newValue: string) => void
 }
 
 export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
@@ -117,6 +118,8 @@ export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
 }
 
 export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
+  /** The value of the select option. */
+  value: string
   /**
    * The content of the select item.
    *
@@ -137,18 +140,16 @@ export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * and `title` for the item.
    */
   label?: string
-  /** The value of the select option. */
-  value: string
 }
 
 export interface SelectItemGroupProps
   extends AllHTMLAttributes<HTMLDivElement> {
   /** The select options to display inside of the group. */
   children: ReactNode
-  /** Indicates if the whole group should be disabled. */
-  disabled?: boolean
   /** The label of the select options group. */
   label: string
+  /** Indicates if the whole group should be disabled. */
+  disabled?: boolean
 }
 
 export type SelectItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

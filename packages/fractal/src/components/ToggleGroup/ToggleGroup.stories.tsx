@@ -1,8 +1,11 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
-import kebabCase from 'lodash/fp/kebabCase'
+
 import type { ComponentProps, ReactNode } from 'react'
+
+import kebabCase from 'lodash/fp/kebabCase'
 
 import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { jedis, others, siths } from '@/mocks'
@@ -45,6 +48,12 @@ const items = (
 )
 
 const meta: Meta<ToggleGroupProps> = {
+  args: {
+    children: items,
+    disabled: false,
+    fullWidth: false,
+    multiple: false,
+  },
   argTypes: {
     asChild: { table: { disable: true } },
     children: {
@@ -66,17 +75,9 @@ const meta: Meta<ToggleGroupProps> = {
       },
     },
   },
-  args: {
-    children: items,
-    disabled: false,
-    fullWidth: false,
-    multiple: false,
-  },
   component: ToggleGroup,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onValueChange = (newValue: Array<string> | string) => {
@@ -214,7 +215,6 @@ export const InteractivePrimary: Story = {
 
     const toggles = canvas.getAllByRole('radio')
     if (toggles.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(toggles.at(0)!)
       await sleep(500)
       await userEvent.hover(toggles.at(1)!)
@@ -222,10 +222,8 @@ export const InteractivePrimary: Story = {
       await userEvent.hover(toggles.at(2)!)
       await sleep(500)
       await userEvent.hover(toggles.at(3)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(toggles.at(3)!)
   },
   render: () => (

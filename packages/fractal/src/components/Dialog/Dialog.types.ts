@@ -1,4 +1,5 @@
 import { DialogContentProps as RxDialogContentProps } from '@radix-ui/react-dialog'
+
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Positions } from './Dialog.constants'
@@ -34,20 +35,6 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * only dialog content will be visible to screen readers.
    */
   modal?: boolean
-  /** Event handler called when the dialog is closed. */
-  onClose?: () => void
-  /** Event handler called when the dialog is dismissed. */
-  onDismiss?: () => void
-  /**
-   * Event handler called when an interaction is made outside of the dropdown.
-   */
-  onInteractOutside?: RxDialogContentProps['onInteractOutside']
-  /** Event handler called when the dialog is opened. */
-  onOpen?: () => void
-  /**
-   * Event handler called when the dialog is opened or closed.
-   */
-  onToggle?: (open: boolean) => void
   /**
    * The controlled open state of the dialog.
    *
@@ -67,6 +54,20 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   root?: Partial<AllHTMLAttributes<HTMLDivElement>>
   /** A title to display at the top of the dialog. */
   title?: string
+  /** Event handler called when the dialog is closed. */
+  onClose?: () => void
+  /** Event handler called when the dialog is dismissed. */
+  onDismiss?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the dropdown.
+   */
+  onInteractOutside?: RxDialogContentProps['onInteractOutside']
+  /** Event handler called when the dialog is opened. */
+  onOpen?: () => void
+  /**
+   * Event handler called when the dialog is opened or closed.
+   */
+  onToggle?: (open: boolean) => void
 
   /**
    * The trigger of the dialog.

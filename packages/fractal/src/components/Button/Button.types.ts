@@ -59,8 +59,6 @@ export interface ButtonProps
    * and `title` for the button.
    */
   label?: string
-  /** Event handler called when the button is clicked. */
-  onClick?: (event: MouseEvent<HTMLElement>) => void
   /** The `target` attribute of the `a` element (when a `href` is provided). */
   target?: string
   /**
@@ -91,4 +89,6 @@ export interface ButtonProps
    * wide.
    */
   wrap?: boolean
+  /** Event handler called when the button is clicked. */
+  onClick?: (event: MouseEvent<HTMLElement>) => void
 }

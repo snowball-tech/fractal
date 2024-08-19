@@ -47,8 +47,6 @@ export interface ToggleProps
    * accessibility improvements.
    */
   labelAsDiv?: boolean
-  /** Event handler called when the toggle is clicked. */
-  onToggle?: (toggled: boolean) => void
   /**
    * The controlled toggled state of the toggle.
    *
@@ -57,4 +55,6 @@ export interface ToggleProps
   toggled?: boolean
   /** The variant of the toggle to use. */
   variant?: `${Variants}`
+  /** Event handler called when the toggle is clicked. */
+  onToggle?: (toggled: boolean) => void
 }

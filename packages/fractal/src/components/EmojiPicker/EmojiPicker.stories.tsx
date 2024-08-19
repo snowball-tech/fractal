@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { DEFAULT_THEME, Themes } from '@/constants'
@@ -18,8 +20,8 @@ import {
   EmojisSets,
   Locales,
   Positions,
-  SKIN_TONES,
   SearchPositions,
+  SKIN_TONES,
   SkinTonePositions,
   VERSIONS,
 } from './EmojiPicker.constants'
@@ -27,6 +29,24 @@ import {
 type EmojiPickerProps = ComponentProps<typeof EmojiPicker>
 
 const meta = {
+  args: {
+    autoFocus: true,
+    categories: DEFAULT_CATEGORIES,
+    custom: [],
+    customIcon: {},
+    exclude: [],
+    frequentsRowNumber: 4,
+    locale: DEFAULT_LOCALE,
+    navPosition: DEFAULT_NAV_POSITION,
+    perLine: 12,
+    previewPosition: DEFAULT_PREVIEW_POSITION,
+    search: '',
+    searchPosition: DEFAULT_SEARCH_POSITION,
+    set: DEFAULT_EMOJIS_SET,
+    skinTone: DEFAULT_SKIN_TONE,
+    skinTonePosition: DEFAULT_SKIN_TONE_POSITION,
+    version: DEFAULT_VERSION,
+  },
   argTypes: {
     categories: {
       control: { type: 'check' },
@@ -100,24 +120,6 @@ const meta = {
         type: { summary: VERSIONS.join('|') },
       },
     },
-  },
-  args: {
-    autoFocus: true,
-    categories: DEFAULT_CATEGORIES,
-    custom: [],
-    customIcon: {},
-    exclude: [],
-    frequentsRowNumber: 4,
-    locale: DEFAULT_LOCALE,
-    navPosition: DEFAULT_NAV_POSITION,
-    perLine: 12,
-    previewPosition: DEFAULT_PREVIEW_POSITION,
-    search: '',
-    searchPosition: DEFAULT_SEARCH_POSITION,
-    set: DEFAULT_EMOJIS_SET,
-    skinTone: DEFAULT_SKIN_TONE,
-    skinTonePosition: DEFAULT_SKIN_TONE_POSITION,
-    version: DEFAULT_VERSION,
   },
   component: EmojiPicker,
   parameters: {

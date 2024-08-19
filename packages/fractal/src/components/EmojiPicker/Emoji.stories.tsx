@@ -1,6 +1,8 @@
-import data from '@emoji-mart/data'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import data from '@emoji-mart/data'
 import { init } from 'emoji-mart'
+
 import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
@@ -18,6 +20,13 @@ init({ data })
 type EmojiProps = ComponentProps<typeof Emoji>
 
 const meta = {
+  args: {
+    id: '+1',
+    native: '',
+    set: DEFAULT_EMOJIS_SET,
+    shortCode: '',
+    skinTone: DEFAULT_SKIN_TONE,
+  },
   argTypes: {
     set: {
       options: Object.values(EmojisSets),
@@ -33,13 +42,6 @@ const meta = {
         type: { summary: SKIN_TONES.join('|') },
       },
     },
-  },
-  args: {
-    id: '+1',
-    native: '',
-    set: DEFAULT_EMOJIS_SET,
-    shortCode: '',
-    skinTone: DEFAULT_SKIN_TONE,
   },
   component: Emoji,
   parameters: {

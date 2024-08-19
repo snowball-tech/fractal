@@ -2,17 +2,20 @@
 
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSwitch from '@radix-ui/react-switch'
+
+import { type ForwardedRef, forwardRef, useId } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useId } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Switch.constants'
 import type { SwitchProps } from './Switch.types'
+
+import { GROUP_NAME } from './Switch.constants'
 
 /**
  * `Switch` component is used to allow the user to toggle an element on/off.
@@ -144,7 +147,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           htmlFor={uniqueId}
         >
           <Typography element={labelAsDiv ? 'div' : 'label'} variant="body-2">
-            {hasChildren && !hasLabels ? children : labels?.[1] ?? label}
+            {hasChildren && !hasLabels ? children : (labels?.[1] ?? label)}
           </Typography>
         </RxLabel>
       </div>

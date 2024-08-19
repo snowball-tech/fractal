@@ -1,7 +1,5 @@
 module.exports = {
   plugins: {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     'postcss-import': {},
 
     tailwindcss: {},
@@ -14,16 +12,14 @@ module.exports = {
       autoprefixer: {
         flexbox: 'no-2009',
       },
-      stage: 3,
       features: {
         'custom-properties': false,
       },
+      stage: 3,
     },
 
     'postcss-flexbugs-fixes': {},
 
     'postcss-logical': {},
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 }

@@ -1,12 +1,14 @@
 import * as RxProgress from '@radix-ui/react-progress'
+
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Progress.constants'
 import type { ProgressProps } from './Progress.types'
+
+import { GROUP_NAME } from './Progress.constants'
 
 /**
  * `Progress` component is used to display a progression to the user.

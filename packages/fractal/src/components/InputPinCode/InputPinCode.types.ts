@@ -63,6 +63,28 @@ export interface InputPinCodeProps
    */
   name?: string
   /**
+   * A string to display in each of the digit field when the value is
+   * empty.
+   */
+  placeholders?: Array<string> | string
+  /** Prevents the user to change the value of the pin code input. */
+  readOnly?: boolean
+  /** Indicates if the pin code input must be filled. */
+  required?: boolean
+  /**
+   * A message to display when the pin code input has a valid value.
+   *
+   * This will also change the display of the input to give an success feedback
+   * (green border).
+   */
+  success?: string
+  /**
+   * The controlled value of the pin code input.
+   *
+   * Must be used in conjunction with `onChange`.
+   */
+  value?: string
+  /**
    * Event handler called when one of the field of the pin code input is
    * blurred.
    */
@@ -93,26 +115,4 @@ export interface InputPinCodeProps
    * code input.
    */
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>, index: number) => void
-  /**
-   * A string to display in each of the digit field when the value is
-   * empty.
-   */
-  placeholders?: Array<string> | string
-  /** Prevents the user to change the value of the pin code input. */
-  readOnly?: boolean
-  /** Indicates if the pin code input must be filled. */
-  required?: boolean
-  /**
-   * A message to display when the pin code input has a valid value.
-   *
-   * This will also change the display of the input to give an success feedback
-   * (green border).
-   */
-  success?: string
-  /**
-   * The controlled value of the pin code input.
-   *
-   * Must be used in conjunction with `onChange`.
-   */
-  value?: string
 }

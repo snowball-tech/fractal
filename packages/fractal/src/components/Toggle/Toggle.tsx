@@ -2,17 +2,20 @@
 
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggle from '@radix-ui/react-toggle'
+
+import { type ForwardedRef, forwardRef, useRef } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useRef } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Toggle.constants'
 import type { ToggleProps } from './Toggle.types'
+
+import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Toggle.constants'
 
 export const variantClassNames = {
   [Variants.Primary]:

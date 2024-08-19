@@ -1,6 +1,8 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import Autocomplete from './Autocomplete'
@@ -9,6 +11,11 @@ import AutocompleteLoading from './AutocompleteLoading'
 type AutocompleteLoadingProps = ComponentProps<typeof AutocompleteLoading>
 
 const meta: Meta<AutocompleteLoadingProps> = {
+  args: {
+    children: 'Loading... please wait!',
+    icon: 'Default',
+    spin: true,
+  },
   argTypes: {
     children: {
       control: 'text',
@@ -23,11 +30,6 @@ const meta: Meta<AutocompleteLoadingProps> = {
       options: ['Default', 'None', 'Send', 'Star'],
       table: { type: { summary: 'ReactNode | boolean' } },
     },
-  },
-  args: {
-    children: 'Loading... please wait!',
-    icon: 'Default',
-    spin: true,
   },
   component: AutocompleteLoading,
   parameters: {

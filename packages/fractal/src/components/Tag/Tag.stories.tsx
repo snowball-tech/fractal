@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Tag, TagColors, TagSizes } from '.'
@@ -13,6 +14,11 @@ const perVariantStoriesParameters = {
 }
 
 const meta = {
+  args: {
+    children: 'I have a very bad feeling about this!',
+    disabled: false,
+    fullWidth: false,
+  },
   argTypes: {
     children: { control: 'text' },
     color: {
@@ -29,11 +35,6 @@ const meta = {
         type: { summary: Object.values(TagSizes).join('|') },
       },
     },
-  },
-  args: {
-    children: 'I have a very bad feeling about this!',
-    disabled: false,
-    fullWidth: false,
   },
   component: Tag,
   parameters: {

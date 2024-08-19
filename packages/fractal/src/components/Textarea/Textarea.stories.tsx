@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
@@ -5,8 +7,8 @@ import AttachmentIcon from '@iconscout/react-unicons/icons/uil-paperclip'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -28,6 +30,18 @@ Ex aliqua ipsum voluptate ea nostrud. Consequat fugiat nulla labore mollit ad of
 Labore cillum occaecat ipsum sit irure sunt anim. Ea nisi velit mollit consequat culpa veniam occaecat consequat dolor ut culpa velit nostrud non. Dolore duis commodo fugiat fugiat proident eu velit laboris aliquip anim consequat sit ut. Consectetur minim eu sint mollit ad.`
 
 const meta: Meta<TextareaProps> = {
+  args: {
+    autoFocus: false,
+    description: 'These aren’t the droids you’re looking for!',
+    disabled: false,
+    fullWidth: false,
+    icon: 'None',
+    iconDisabled: false,
+    label: 'You don’t need to see his identification!',
+    placeholder: 'I don’t need to see his identification...',
+    readOnly: false,
+    required: false,
+  },
   argTypes: {
     defaultValue: { control: 'text' },
     error: { control: 'text' },
@@ -47,23 +61,9 @@ const meta: Meta<TextareaProps> = {
     },
     success: { control: 'text' },
   },
-  args: {
-    autoFocus: false,
-    description: 'These aren’t the droids you’re looking for!',
-    disabled: false,
-    fullWidth: false,
-    icon: 'None',
-    iconDisabled: false,
-    label: 'You don’t need to see his identification!',
-    placeholder: 'I don’t need to see his identification...',
-    readOnly: false,
-    required: false,
-  },
   component: Textarea,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (

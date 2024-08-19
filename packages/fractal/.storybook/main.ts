@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import type { StorybookConfig } from '@storybook/react-vite'
+
 import remarkGfm from 'remark-gfm'
 
 function getAbsolutePath(value: string) {

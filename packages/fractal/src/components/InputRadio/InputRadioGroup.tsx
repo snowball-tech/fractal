@@ -1,15 +1,18 @@
 'use client'
 
 import * as RxRadio from '@radix-ui/react-radio-group'
+
+import { useId } from 'react'
+
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { useId } from 'react'
 
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { DEFAULT_VARIANT, GROUP_NAME } from './InputRadio.constants'
 import type { InputRadioGroupProps } from './InputRadio.types'
+
+import { DEFAULT_VARIANT, GROUP_NAME } from './InputRadio.constants'
 import { InputRadioContext } from './InputRadioContext'
 
 /**

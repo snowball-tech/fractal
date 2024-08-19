@@ -1,8 +1,9 @@
+import type { Preview } from '@storybook/react'
+
 import {
   ColorBaseBlack,
   ColorBaseWhite,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import type { Preview } from '@storybook/react'
 import isChromatic from 'chromatic/isChromatic'
 
 import DocumentationTemplate from './DocumentationTemplate.mdx'

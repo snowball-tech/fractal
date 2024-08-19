@@ -4,9 +4,7 @@ import CheckIcon from '@iconscout/react-unicons/icons/uil-check'
 import * as RxCheckbox from '@radix-ui/react-checkbox'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   type MouseEvent,
@@ -15,9 +13,15 @@ import {
   useRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+
+import type { InputCheckboxProps } from './InputCheckbox.types'
 
 import {
   Colors,
@@ -26,7 +30,6 @@ import {
   GROUP_NAME,
   Variants,
 } from './InputCheckbox.constants'
-import type { InputCheckboxProps } from './InputCheckbox.types'
 
 /**
  * `InputCheckbox` component is used to allow the user to make a binary choice.
@@ -64,38 +67,43 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     }
 
     const variantClassNames = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
-      [Variants.Secondary]: 'bg-white border-1 border-normal',
-      [Variants.Tertiary]: 'bg-transparent',
 
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+      [Variants.Secondary]: 'bg-white border-1 border-normal',
+
+      [Variants.Tertiary]: 'bg-transparent',
     }
 
     const colorClassNames = {
       checked: {
         [Colors.Blue]:
           '[&>:first-child]:data-state-checked:bg-decorative-blue-70',
+
         [Colors.Green]:
           '[&>:first-child]:data-state-checked:bg-decorative-green-70',
+
         [Colors.Pink]:
           '[&>:first-child]:data-state-checked:bg-decorative-pink-70',
+
         [Colors.Purple]:
           '[&>:first-child]:data-state-checked:bg-decorative-purple-70',
+
         [Colors.Yellow]:
           '[&>:first-child]:data-state-checked:bg-decorative-yellow-70',
       },
       hover: {
         [Colors.Blue]:
           'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-blue-90',
+
         [Colors.Green]:
           'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-green-90',
+
         [Colors.Pink]:
           'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-pink-90',
+
         [Colors.Purple]:
           'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-purple-90',
+
         [Colors.Yellow]:
           'group-hover/checkbox:[&>:first-child]:data-state-unchecked:bg-decorative-yellow-90',
       },

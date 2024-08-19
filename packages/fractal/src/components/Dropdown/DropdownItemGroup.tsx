@@ -1,15 +1,18 @@
 'use client'
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
-import omit from 'lodash/fp/omit'
+
 import { useContext } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemGroupProps } from './Dropdown.types'
+
+import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 

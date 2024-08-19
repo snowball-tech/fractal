@@ -1,16 +1,18 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps, ReactNode } from 'react'
 
-import ThemeProvider from '@/ThemeProvider'
 import { Paper } from '@/components/Paper'
 import { DEFAULT_THEME, Themes } from '@/constants'
+import ThemeProvider from '@/ThemeProvider'
 
 import { Button, ButtonVariants } from '.'
 import { DEFAULT_VARIANT } from './Button.constants'
@@ -18,6 +20,22 @@ import { DEFAULT_VARIANT } from './Button.constants'
 type ButtonProps = ComponentProps<typeof Button>
 
 const meta = {
+  args: {
+    disabled: false,
+    fullWidth: false,
+    href: '',
+    icon: 'Send',
+    iconOnly: false,
+    iconPosition: 'right',
+    inlineStyle: false,
+    label: 'Punch it, Chewie!',
+    target: '',
+    theme: DEFAULT_THEME,
+    truncate: true,
+    type: 'button',
+    underlined: true,
+    wrap: false,
+  },
   argTypes: {
     element: {
       control: 'text',
@@ -57,22 +75,6 @@ const meta = {
         type: { summary: Object.values(ButtonVariants).join('|') },
       },
     },
-  },
-  args: {
-    disabled: false,
-    fullWidth: false,
-    href: '',
-    icon: 'Send',
-    iconOnly: false,
-    iconPosition: 'right',
-    inlineStyle: false,
-    label: 'Punch it, Chewie!',
-    target: '',
-    theme: DEFAULT_THEME,
-    truncate: true,
-    type: 'button',
-    underlined: true,
-    wrap: false,
   },
   component: Button,
   parameters: {

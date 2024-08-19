@@ -1,5 +1,7 @@
-import UserIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import UserIcon from '@iconscout/react-unicons/icons/uil-user-circle'
+
 import type { ComponentProps } from 'react'
 
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'

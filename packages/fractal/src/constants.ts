@@ -12,7 +12,6 @@ export const LIGHT_BG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'bg-decorative-yellow-90',
 
-  //
   error: 'bg-feedback-danger-90',
   success: 'bg-feedback-success-90',
   warning: 'bg-feedback-warning-90',
@@ -26,7 +25,6 @@ export const MEDIUM_BG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'bg-decorative-yellow-70',
 
-  //
   error: 'bg-feedback-danger-70',
   success: 'bg-feedback-success-70',
   warning: 'bg-feedback-warning-70',
@@ -40,7 +38,6 @@ export const DARK_BG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'bg-decorative-yellow-50',
 
-  //
   error: 'bg-feedback-danger-50',
   success: 'bg-feedback-success-50',
   warning: 'bg-feedback-warning-50',
@@ -54,7 +51,6 @@ export const LIGHT_FG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'text-decorative-yellow-90',
 
-  //
   error: 'text-feedback-danger-90',
   success: 'text-feedback-success-90',
   warning: 'text-feedback-warning-90',
@@ -68,7 +64,6 @@ export const MEDIUM_FG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'text-decorative-yellow-70',
 
-  //
   error: 'text-feedback-danger-70',
   success: 'text-feedback-success-70',
   warning: 'text-feedback-warning-70',
@@ -82,7 +77,6 @@ export const DARK_FG_COLORS_CLASSNAMES = {
   white: 'bg-white',
   yellow: 'text-decorative-yellow-50',
 
-  //
   error: 'text-feedback-danger-50',
   success: 'text-feedback-success-50',
   warning: 'text-feedback-warning-50',

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Select, SelectEmpty } from '.'
@@ -6,13 +7,13 @@ import { Select, SelectEmpty } from '.'
 type SelectEmptyProps = ComponentProps<typeof SelectEmpty>
 
 const meta: Meta<SelectEmptyProps> = {
+  args: {
+    children: 'No results! Sorry about that!',
+  },
   argTypes: {
     children: {
       control: 'text',
     },
-  },
-  args: {
-    children: 'No results! Sorry about that!',
   },
   component: SelectEmpty,
   parameters: {

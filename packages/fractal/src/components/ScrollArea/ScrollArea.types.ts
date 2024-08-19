@@ -2,6 +2,7 @@ import type {
   ScrollAreaProps as RxScrollAreaProps,
   ScrollAreaScrollbarProps as RxScrollAreaScrollbarProps,
 } from '@radix-ui/react-scroll-area'
+
 import type { ReactNode } from 'react'
 
 export interface ScrollAreaProps extends RxScrollAreaProps {

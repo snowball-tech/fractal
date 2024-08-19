@@ -6,8 +6,9 @@ import { Progress } from '@/components/Progress'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Stepper.constants'
 import type { StepperProps } from './Stepper.types'
+
+import { GROUP_NAME } from './Stepper.constants'
 
 /**
  * `Stepper` component is used to display a progression to the user in the form

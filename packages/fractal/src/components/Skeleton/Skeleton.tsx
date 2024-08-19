@@ -4,8 +4,9 @@ import omit from 'lodash/fp/omit'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { Colors, DEFAULT_COLOR, GROUP_NAME, Shapes } from './Skeleton.constants'
 import type { SkeletonProps } from './Skeleton.types'
+
+import { Colors, DEFAULT_COLOR, GROUP_NAME, Shapes } from './Skeleton.constants'
 
 /**
  * `Skeleton` component is used to display animated placeholders of content
@@ -37,7 +38,6 @@ export const Skeleton = ({
     [Colors.Yellow]:
       'after:bg-[linear-gradient(90deg,transparent,var(--color-decorative-yellow-70),transparent)]',
 
-    //
     [Colors.Black]: '',
     [Colors.DarkGrey]: '',
     [Colors.Grey]:

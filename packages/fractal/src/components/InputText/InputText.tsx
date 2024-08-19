@@ -1,10 +1,7 @@
 'use client'
 
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import isNil from 'lodash/fp/isNil'
-import omit from 'lodash/fp/omit'
+
 import {
   type ChangeEvent,
   type FocusEvent,
@@ -13,13 +10,19 @@ import {
   useId,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
+import omit from 'lodash/fp/omit'
+
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+
+import type { InputTextProps } from './InputText.types'
 
 import { Button } from '../Button/Button'
 import { Typography } from '../Typography/Typography'
 import { GROUP_NAME } from './InputText.constants'
-import type { InputTextProps } from './InputText.types'
 
 /**
  * `InputText` component is used to allow the user to enter text values.
@@ -270,7 +273,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               inputMode={inputMode}
               name={name || uniqueId}
               pattern={
-                props.pattern ?? type === 'number' ? '[0-9]*' : undefined
+                (props.pattern ?? type === 'number') ? '[0-9]*' : undefined
               }
               placeholder={placeholder}
               readOnly={readOnly}

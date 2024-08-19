@@ -1,6 +1,8 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type {
   ChangeEvent,
   ClipboardEvent,
@@ -27,9 +29,7 @@ const meta: Meta<InputPinCodeProps> = {
   },
   component: InputPinCode,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (
@@ -81,7 +81,6 @@ export const Interactive: Story = {
 
     const inputs = canvas.getAllByRole('spinbutton')
 
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.click(inputs.at(0)!)
     await sleep(500)
     await userEvent.type(inputs.at(0)!, '0')
@@ -96,7 +95,6 @@ export const Interactive: Story = {
     await userEvent.type(inputs.at(3)!, '3')
 
     await userEvent.click(inputs.at(4)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 
@@ -107,7 +105,6 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 )
 
 export const Examples = () => {
-  // eslint-disable-next-line unicorn/prevent-abbreviations
   const [{ value = '' }, setArgs] = useArgs()
 
   const handleChange = (_: unknown, newCode: string) => {

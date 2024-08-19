@@ -2,6 +2,7 @@ import type {
   CheckboxProps,
   CheckboxProps as RxCheckboxProps,
 } from '@radix-ui/react-checkbox'
+
 import type { ReactNode } from 'react'
 
 import { Colors, Variants } from './InputCheckbox.constants'
@@ -68,8 +69,6 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the checked state of the checkbox changes. */
-  onCheckedChange?: (checked: CheckboxProps['checked']) => void
   /**
    * Prevent the user from interacting with the checkbox but keep a
    * non-disabled visual state.
@@ -88,4 +87,6 @@ export interface InputCheckboxProps extends Omit<RxCheckboxProps, 'asChild'> {
   value?: string
   /** The variant of the checkbox to use. */
   variant?: `${Variants}`
+  /** Event handler called when the checked state of the checkbox changes. */
+  onCheckedChange?: (checked: CheckboxProps['checked']) => void
 }

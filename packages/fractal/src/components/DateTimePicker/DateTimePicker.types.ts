@@ -14,7 +14,7 @@ import {
 export type CombinedRefs = {
   calendar: HTMLDivElement | null
   input: HTMLInputElement | null
-  picker: PopoverCombinedRefs | null
+  picker: null | PopoverCombinedRefs
 }
 
 export interface DateTimePickerProps
@@ -158,39 +158,6 @@ export interface DateTimePickerProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the full datetime value is changed. */
-  onChange?: (newDate: Date | null) => void
-  /** Event handler called when the datetime picker value is cleared. */
-  onClear?: () => void
-  /** Event handler called when the datetime picker is closed. */
-  onClose?: () => void
-  /** Event handler called when the date value of the datetime is changed. */
-  onDateChange?: (newDate: Date | null, newDateTime: Date | null) => void
-  /**
-   * Event handler called when the datetime picker is dismissed (i.e. the
-   * "Close" button, if any, is clicked).
-   */
-  onDismiss?: () => void
-  /**
-   * Event handler called when one of the field of the datetime input is
-   * changed.
-   */
-  onFieldChange?: (
-    type: 'ampm' | 'day' | 'hour' | 'minute' | 'month' | 'second' | 'year',
-    newValue: Date | null,
-  ) => void
-  /** Event handler called when the "Now" button is used. */
-  onNow?: () => void
-  /** Event handler called when the datetime picker is opened. */
-  onOpen?: () => void
-  /**
-   * Event handler called when the datetime picker is opened or closed.
-   */
-  onOpenChange?: (open: boolean) => void
-  /** Event handler called when the time value of the datetime is changed. */
-  onTimeChange?: (newTime: TimeOutput | null, newDateTime: Date | null) => void
-  /** Event handler called when the "Today" button is used. */
-  onToday?: () => void
   /**
    * The controlled open state of the datetime picker.
    *
@@ -300,4 +267,37 @@ export interface DateTimePickerProps
    * of the picker.
    */
   withToday?: boolean
+  /** Event handler called when the full datetime value is changed. */
+  onChange?: (newDate: Date | null) => void
+  /** Event handler called when the datetime picker value is cleared. */
+  onClear?: () => void
+  /** Event handler called when the datetime picker is closed. */
+  onClose?: () => void
+  /** Event handler called when the date value of the datetime is changed. */
+  onDateChange?: (newDate: Date | null, newDateTime: Date | null) => void
+  /**
+   * Event handler called when the datetime picker is dismissed (i.e. the
+   * "Close" button, if any, is clicked).
+   */
+  onDismiss?: () => void
+  /**
+   * Event handler called when one of the field of the datetime input is
+   * changed.
+   */
+  onFieldChange?: (
+    type: 'ampm' | 'day' | 'hour' | 'minute' | 'month' | 'second' | 'year',
+    newValue: Date | null,
+  ) => void
+  /** Event handler called when the "Now" button is used. */
+  onNow?: () => void
+  /** Event handler called when the datetime picker is opened. */
+  onOpen?: () => void
+  /**
+   * Event handler called when the datetime picker is opened or closed.
+   */
+  onOpenChange?: (open: boolean) => void
+  /** Event handler called when the time value of the datetime is changed. */
+  onTimeChange?: (newTime: null | TimeOutput, newDateTime: Date | null) => void
+  /** Event handler called when the "Today" button is used. */
+  onToday?: () => void
 }

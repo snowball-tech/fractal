@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Dropdown, DropdownItem, DropdownItemGroup } from '.'
@@ -6,6 +7,11 @@ import { Dropdown, DropdownItem, DropdownItemGroup } from '.'
 type DropdownItemGroupProps = ComponentProps<typeof DropdownItemGroup>
 
 const meta: Meta<DropdownItemGroupProps> = {
+  args: {
+    condensed: false,
+    disabled: false,
+    label: 'Jedis',
+  },
   argTypes: {
     children: {
       control: false,
@@ -16,11 +22,6 @@ const meta: Meta<DropdownItemGroupProps> = {
         },
       },
     },
-  },
-  args: {
-    condensed: false,
-    disabled: false,
-    label: 'Jedis',
   },
   component: DropdownItemGroup,
   parameters: {

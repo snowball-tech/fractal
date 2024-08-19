@@ -1,9 +1,11 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Card, CardColors } from '.'
@@ -18,6 +20,13 @@ const perCardTypesStoriesParameters = {
 }
 
 const meta = {
+  args: {
+    children:
+      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+    dismissable: false,
+    icon: 'None',
+    title: '',
+  },
   argTypes: {
     children: { control: 'text' },
     color: {
@@ -46,13 +55,6 @@ const meta = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-  },
-  args: {
-    children:
-      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
-    dismissable: false,
-    icon: 'None',
-    title: '',
   },
   component: Card,
   parameters: {

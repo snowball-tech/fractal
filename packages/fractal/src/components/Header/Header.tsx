@@ -5,8 +5,9 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Header.constants'
 import type { HeaderProps } from './Header.types'
+
+import { GROUP_NAME } from './Header.constants'
 
 /**
  * `Header` component displays a responsive header.

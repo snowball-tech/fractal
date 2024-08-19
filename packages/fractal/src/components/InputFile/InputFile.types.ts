@@ -11,12 +11,10 @@ export type CombinedRefs = {
 
 export interface InputFileProps
   extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange'> {
-  /** Prevents the user from interacting with the input file and the trigger. */
-  disabled?: boolean
   /** The label of the trigger of the input file. */
   label: string
-  /** Event handler called when one or multiple files are selected. */
-  onChange?: (files: FileList | null) => void
+  /** Prevents the user from interacting with the input file and the trigger. */
+  disabled?: boolean
   /** The props to pass to the trigger of the input file. */
   triggerProps?: Partial<
     Omit<
@@ -31,4 +29,6 @@ export interface InputFileProps
    * name follow the variants name of the `Button` component).
    */
   variant?: `${Variants}`
+  /** Event handler called when one or multiple files are selected. */
+  onChange?: (files: FileList | null) => void
 }

@@ -5,6 +5,8 @@ import { Typography } from '@/components/Typography/Typography'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
+import type { TagProps } from './Tag.types'
+
 import {
   Colors,
   DEFAULT_COLOR,
@@ -13,7 +15,6 @@ import {
   Sizes,
   sizeToTypographyVariant,
 } from './Tag.constants'
-import type { TagProps } from './Tag.types'
 
 /**
  * `Tag` component displays a small colored pill of text.

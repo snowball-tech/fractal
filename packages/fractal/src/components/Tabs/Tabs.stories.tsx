@@ -1,9 +1,11 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import GlobeIcon from '@iconscout/react-unicons/icons/uil-globe'
 import HeartIcon from '@iconscout/react-unicons/icons/uil-heart-alt'
 import BrokenHeartIcon from '@iconscout/react-unicons/icons/uil-heart-break'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
@@ -83,6 +85,16 @@ const children = (
 )
 
 const meta: Meta<TabsProps> = {
+  args: {
+    children,
+    defaultTab: 'Jedis',
+    disabled: false,
+    label: 'Star Wars',
+    onTabChange: action('onTabChange'),
+    orientation: DEFAULT_ORIENTATION,
+    tabs: 'Mixed',
+    tabsPosition: DEFAULT_POSITION,
+  },
   argTypes: {
     children: {
       control: false,
@@ -131,19 +143,8 @@ const meta: Meta<TabsProps> = {
       },
     },
   },
-  args: {
-    children,
-    defaultTab: 'Jedis',
-    disabled: false,
-    label: 'Star Wars',
-    onTabChange: action('onTabChange'),
-    orientation: DEFAULT_ORIENTATION,
-    tabs: 'Mixed',
-    tabsPosition: DEFAULT_POSITION,
-  },
   component: Tabs,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       return (
         <div className="max-w-[600px]">

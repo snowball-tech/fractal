@@ -1,8 +1,5 @@
 'use client'
 
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
 import {
   type ForwardedRef,
   type KeyboardEvent,
@@ -11,12 +8,17 @@ import {
   useContext,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Menu.constants'
 import type { MenuItemProps } from './Menu.types'
+
+import { GROUP_NAME } from './Menu.constants'
 import { MenuContext } from './MenuContext'
 import { MenuGroupContext } from './MenuGroupContext'
 /**

@@ -2,6 +2,7 @@ import {
   RadioGroupProps as RxRadioGroupProps,
   RadioGroupItemProps as RxRadioProps,
 } from '@radix-ui/react-radio-group'
+
 import type { ReactNode } from 'react'
 
 import { Variants } from './InputRadio.constants'
@@ -35,11 +36,6 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
    * If none is given, one will be generated.
    */
   name?: string
-  /**
-   * Event handler called when the value of the radio group (i.e. the selected
-   * radio button) changes.
-   */
-  onValueChange?: (value: string) => void
   /** The display orientation of the contained radio buttons. */
   orientation?: RxRadioGroupProps['orientation']
   /**
@@ -56,9 +52,16 @@ export interface InputRadioGroupProps extends RxRadioGroupProps {
   value?: string
   /** The variant of the radio button to use. */
   variant?: `${Variants}`
+  /**
+   * Event handler called when the value of the radio group (i.e. the selected
+   * radio button) changes.
+   */
+  onValueChange?: (value: string) => void
 }
 
 export interface InputRadioProps extends RxRadioProps {
+  /** The value submitted in the submitted form. */
+  value: string
   /**
    * The content of the radio.
    *
@@ -105,6 +108,4 @@ export interface InputRadioProps extends RxRadioProps {
    * accessibility improvements.
    */
   labelAsDiv?: boolean
-  /** The value submitted in the submitted form. */
-  value: string
 }

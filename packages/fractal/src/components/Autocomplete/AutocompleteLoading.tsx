@@ -1,6 +1,7 @@
 'use client'
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
+
 import isBoolean from 'lodash/fp/isBoolean'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
@@ -10,8 +11,9 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteLoadingProps } from './Autocomplete.types'
+
+import { GROUP_NAME } from './Autocomplete.constants'
 
 /**
  * `AutocompleteLoading` component is used to display a loader in the dropdown

@@ -1,7 +1,5 @@
 import * as RxToolbar from '@radix-ui/react-toolbar'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   type MouseEvent,
@@ -10,12 +8,17 @@ import {
   useContext,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Toolbar.constants'
 import type { ToolbarButtonProps } from './Toolbar.types'
+
+import { GROUP_NAME } from './Toolbar.constants'
 import { ToolbarContext } from './ToolbarContext'
 
 /**

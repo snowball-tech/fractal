@@ -1,6 +1,8 @@
 import { AllHTMLAttributes } from 'react'
 
 export interface StepperProps extends AllHTMLAttributes<HTMLDivElement> {
+  /** The number of steps. */
+  length: number
   /** The current step. */
   current?: number
   /**
@@ -17,8 +19,6 @@ export interface StepperProps extends AllHTMLAttributes<HTMLDivElement> {
    * If not provided, the value label will be read as "<current>/<length>".
    */
   getValueLabel?: (current: number, length: number) => string
-  /** The number of steps. */
-  length: number
   /**
    * When displaying the current step as a progress bar, the maximum value of
    * the progress bar.

@@ -1,9 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
-import type { Meta, StoryObj } from '@storybook/react'
+
+import type { ComponentProps, ReactNode } from 'react'
+
 import kebabCase from 'lodash/fp/kebabCase'
 import noop from 'lodash/fp/noop'
-import type { ComponentProps, ReactNode } from 'react'
 
 import { jedis, others, siths } from '@/mocks'
 
@@ -40,6 +43,11 @@ const items = (
 )
 
 const meta: Meta<DropdownRadioGroupProps> = {
+  args: {
+    children: items,
+    condensed: false,
+    disabled: false,
+  },
   argTypes: {
     asChild: { table: { disable: true } },
     children: {
@@ -55,16 +63,9 @@ const meta: Meta<DropdownRadioGroupProps> = {
       },
     },
   },
-  args: {
-    children: items,
-    condensed: false,
-    disabled: false,
-  },
   component: DropdownRadioGroup,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onValueChange = (newValue: string) => {

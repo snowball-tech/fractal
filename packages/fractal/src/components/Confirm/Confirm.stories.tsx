@@ -1,7 +1,9 @@
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -13,6 +15,16 @@ import { DEFAULT_POSITION } from '../Dialog/Dialog.constants'
 type ConfirmProps = ComponentProps<typeof Confirm>
 
 const meta: Meta<ConfirmProps> = {
+  args: {
+    cancel: 'No please, it was a mistake',
+    children:
+      'If you test this confirm dialog, you will have the overwhelming desire to use Fractal! Are you sure you want to carry on?',
+    confirm: 'Oh yeah!!',
+    defaultOpen: false,
+    position: 'fixed',
+    title: 'Are you sure you want to test this confirm dialog',
+    trigger: 'Text',
+  },
   argTypes: {
     cancel: { control: 'text' },
     children: {
@@ -43,16 +55,6 @@ const meta: Meta<ConfirmProps> = {
       },
       options: ['Nothing', 'Text', 'Button', 'Icon Button'],
     },
-  },
-  args: {
-    cancel: 'No please, it was a mistake',
-    children:
-      'If you test this confirm dialog, you will have the overwhelming desire to use Fractal! Are you sure you want to carry on?',
-    confirm: 'Oh yeah!!',
-    defaultOpen: false,
-    position: 'fixed',
-    title: 'Are you sure you want to test this confirm dialog',
-    trigger: 'Text',
   },
   component: Confirm,
   decorators: [
@@ -89,7 +91,6 @@ export const Interactive: Story = {
 
     await sleep(500)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
   },
   render: () => (
@@ -116,11 +117,9 @@ export const InteractiveClose: Story = {
 
     await sleep(500)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
 
     await sleep(500)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(body.getAllByLabelText('Close').at(0)!)
   },
   render: () => (

@@ -1,6 +1,7 @@
 'use client'
 
 import * as RxSelect from '@radix-ui/react-select'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
@@ -8,8 +9,9 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Select.constants'
 import type { SelectEmptyProps } from './Select.types'
+
+import { GROUP_NAME } from './Select.constants'
 
 /**
  * `SelectEmpty` component is used to display an empty state inside of the

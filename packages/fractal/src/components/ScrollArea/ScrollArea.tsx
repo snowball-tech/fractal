@@ -1,11 +1,13 @@
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
+
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './ScrollArea.constants'
 import type { ScrollAreaProps } from './ScrollArea.types'
+
+import { GROUP_NAME } from './ScrollArea.constants'
 
 /**
  * `ScrollArea` component allow to add nice scrollbar to a content.

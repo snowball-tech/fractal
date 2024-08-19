@@ -1,6 +1,8 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fireEvent, fn, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { sleep } from '@/utils'
@@ -21,9 +23,7 @@ const meta: Meta<SliderProps> = {
   },
   component: Slider,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onValueChange = (newValue: Array<number> | number) => {

@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import AlignCenterIcon from '@iconscout/react-unicons/icons/uil-align-center-alt'
 import JustifyIcon from '@iconscout/react-unicons/icons/uil-align-justify'
 import AlignLeftIcon from '@iconscout/react-unicons/icons/uil-align-left'
@@ -6,7 +8,7 @@ import BoldIcon from '@iconscout/react-unicons/icons/uil-bold'
 import ItalicIcon from '@iconscout/react-unicons/icons/uil-italic'
 import LinkIcon from '@iconscout/react-unicons/icons/uil-link-h'
 import UnderlineIcon from '@iconscout/react-unicons/icons/uil-underline'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import {
@@ -68,6 +70,12 @@ const tools = (
 type ToolbarProps = ComponentProps<typeof Toolbar>
 
 const meta = {
+  args: {
+    children: tools,
+    disabled: false,
+    elevation: DEFAULT_ELEVATION,
+    fullWidth: false,
+  },
   argTypes: {
     children: { control: { disable: true } },
     elevation: {
@@ -84,12 +92,6 @@ const meta = {
         type: { summary: Object.values(ToolbarOrientations).join('|') },
       },
     },
-  },
-  args: {
-    children: tools,
-    disabled: false,
-    elevation: DEFAULT_ELEVATION,
-    fullWidth: false,
   },
   component: Toolbar,
   parameters: {

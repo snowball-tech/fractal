@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
@@ -5,7 +7,7 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamatio
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Toolbar, ToolbarButton } from '.'
@@ -13,6 +15,19 @@ import { Toolbar, ToolbarButton } from '.'
 type ToolbarButtonProps = ComponentProps<typeof ToolbarButton>
 
 const meta: Meta<ToolbarButtonProps> = {
+  args: {
+    active: false,
+    disabled: false,
+    fullWidth: false,
+    href: '',
+    icon: 'Send',
+    iconOnly: false,
+    iconPosition: 'right',
+    label: 'Luke Skywalker',
+    target: '_blank',
+    type: 'button',
+    underlined: false,
+  },
   argTypes: {
     icon: {
       control: 'radio',
@@ -27,19 +42,6 @@ const meta: Meta<ToolbarButtonProps> = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-  },
-  args: {
-    active: false,
-    disabled: false,
-    fullWidth: false,
-    href: '',
-    icon: 'Send',
-    iconOnly: false,
-    iconPosition: 'right',
-    label: 'Luke Skywalker',
-    target: '_blank',
-    type: 'button',
-    underlined: false,
   },
   component: ToolbarButton,
 

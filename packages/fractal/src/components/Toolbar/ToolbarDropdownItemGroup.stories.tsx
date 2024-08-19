@@ -1,5 +1,6 @@
-import UserIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import UserIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'
 import ToolbarDropdownItemGroup from '@/components/Dropdown/DropdownItemGroup'
@@ -9,6 +10,10 @@ import { ToolbarDropdownItemGroupProps } from './Toolbar.types'
 import ToolbarDropdown from './ToolbarDropdown'
 
 const meta: Meta<ToolbarDropdownItemGroupProps> = {
+  args: {
+    disabled: false,
+    label: 'Jedis',
+  },
   argTypes: {
     children: {
       control: false,
@@ -24,10 +29,6 @@ const meta: Meta<ToolbarDropdownItemGroupProps> = {
     condensed: {
       table: { disable: true },
     },
-  },
-  args: {
-    disabled: false,
-    label: 'Jedis',
   },
   component: ToolbarDropdownItemGroup,
   parameters: {

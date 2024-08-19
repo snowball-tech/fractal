@@ -1,11 +1,12 @@
 import {
-  Root,
   type PopoverContentProps as RxPopoverContentProps,
+  Root,
 } from '@radix-ui/react-popover'
+
 import type {
   AllHTMLAttributes,
-  CSSProperties,
   ComponentProps,
+  CSSProperties,
   ReactNode,
 } from 'react'
 
@@ -18,12 +19,12 @@ export type CombinedRefs = {
 }
 
 export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
-  /** Indicates where to align the popover relative to the trigger. */
-  align?: RxPopoverContentProps['align']
   /**
    * The content of the popover.
    */
   children: ReactNode
+  /** Indicates where to align the popover relative to the trigger. */
+  align?: RxPopoverContentProps['align']
   /**
    * The label of the small "x" close button in the top right corner of the
    * popover.
@@ -48,18 +49,6 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    * It's usually recommended on mobile usages.
    */
   modal?: boolean
-  /** Event handler called when the popover is closed. */
-  onClose?: () => void
-  /** Event handler called when the small "x" close button is clicked. */
-  onCloseButtonClick?: () => void
-  /**
-   * Event handler called when an interaction is made outside of the popover.
-   */
-  onInteractOutside?: RxPopoverContentProps['onInteractOutside']
-  /** Event handler called when the popover is opened. */
-  onOpen?: () => void
-  /** Event handler called when the popover is opened or closed. */
-  onOpenChange?: ComponentProps<typeof Root>['onOpenChange']
   /**
    * Indicates if the popover is open.
    *
@@ -126,4 +115,16 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   withCloseButton?: boolean
   /** Indicates if the popover should have a scroll integrated. */
   withScroll?: boolean
+  /** Event handler called when the popover is closed. */
+  onClose?: () => void
+  /** Event handler called when the small "x" close button is clicked. */
+  onCloseButtonClick?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the popover.
+   */
+  onInteractOutside?: RxPopoverContentProps['onInteractOutside']
+  /** Event handler called when the popover is opened. */
+  onOpen?: () => void
+  /** Event handler called when the popover is opened or closed. */
+  onOpenChange?: ComponentProps<typeof Root>['onOpenChange']
 }

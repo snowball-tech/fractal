@@ -9,17 +9,14 @@ module.exports = {
         value: 1,
       },
 
-      //
       quarter: {
         value: 2,
       },
 
-      //
       half: {
         value: 4,
       },
 
-      //
       1: {
         value: 8,
       },

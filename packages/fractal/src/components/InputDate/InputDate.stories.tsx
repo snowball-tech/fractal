@@ -1,16 +1,37 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
-import { InputDate } from '.'
 import type { DateFormat } from './InputDate.types'
+
+import { InputDate } from '.'
 
 type InputDateProps = ComponentProps<typeof InputDate>
 
 const dateFormat = "{ day: '' | number, month: '' | number, year: '' | number }"
 
 const meta: Meta<InputDateProps> = {
+  args: {
+    autoFocus: false,
+    descriptions: {
+      day: 'Day',
+      month: 'Month',
+      year: 'Year',
+    },
+    disabled: false,
+    label: 'Your birth date',
+    maxYear: 2023 - 18,
+    placeholders: {
+      day: 'DD',
+      month: 'MM',
+      year: 'YYYY',
+    },
+    readOnly: false,
+    required: false,
+  },
   argTypes: {
     defaultValue: {
       table: {
@@ -49,29 +70,9 @@ const meta: Meta<InputDateProps> = {
       },
     },
   },
-  args: {
-    autoFocus: false,
-    descriptions: {
-      day: 'Day',
-      month: 'Month',
-      year: 'Year',
-    },
-    disabled: false,
-    label: 'Your birth date',
-    maxYear: 2023 - 18,
-    placeholders: {
-      day: 'DD',
-      month: 'MM',
-      year: 'YYYY',
-    },
-    readOnly: false,
-    required: false,
-  },
   component: InputDate,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (
@@ -122,7 +123,6 @@ export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     const inputDay = canvas.getAllByRole('spinbutton').at(0)
     await userEvent.click(inputDay!)
     await userEvent.type(inputDay!, '19')
@@ -134,7 +134,6 @@ export const Interactive: Story = {
     const inputYear = canvas.getAllByRole('spinbutton').at(2)
     await userEvent.click(inputYear!)
     await userEvent.type(inputYear!, '1977')
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 

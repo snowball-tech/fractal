@@ -3,7 +3,6 @@ const isEmpty = require('lodash/fp/isEmpty')
 const { breakpoints } = require('../../src/constants')
 
 const breakpointsValues = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   [breakpoints.xs]: {
     value: 0,
   },
@@ -27,7 +26,6 @@ const breakpointsValues = {
   [breakpoints.xxl]: {
     value: 1536,
   },
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 const mediaQuery = {

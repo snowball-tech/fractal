@@ -47,7 +47,6 @@ module.exports = {
         value: '{color.brand.secondary-light.value}',
       },
 
-      //
       disabled: {
         comment: 'Icon color of most disabled elements.',
 

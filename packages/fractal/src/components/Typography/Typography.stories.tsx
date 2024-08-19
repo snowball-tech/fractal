@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Typography, TypographyVariants } from '.'
@@ -13,6 +14,9 @@ const perVariantStoriesParameters = {
 }
 
 const meta = {
+  args: {
+    children: 'I have a very bad feeling about this!',
+  },
   argTypes: {
     children: { control: 'text' },
     element: {
@@ -37,9 +41,6 @@ const meta = {
         type: { summary: Object.values(TypographyVariants).join('|') },
       },
     },
-  },
-  args: {
-    children: 'I have a very bad feeling about this!',
   },
   component: Typography,
   parameters: {

@@ -1,10 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { CuteIcon, CuteIconColors } from '.'
@@ -13,6 +15,9 @@ import { DEFAULT_COLOR } from './CuteIcon.constants'
 type CuteIconProps = ComponentProps<typeof CuteIcon>
 
 const meta = {
+  args: {
+    icon: 'Star',
+  },
   argTypes: {
     color: {
       options: Object.values(CuteIconColors),
@@ -32,9 +37,6 @@ const meta = {
       },
       options: ['Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-  },
-  args: {
-    icon: 'Star',
   },
   component: CuteIcon,
   parameters: {

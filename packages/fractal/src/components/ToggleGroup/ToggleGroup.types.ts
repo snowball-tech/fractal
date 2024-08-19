@@ -2,6 +2,7 @@ import {
   ToggleGroupItemProps as RxToggleGroupItemProps,
   ToggleGroupMultipleProps as RxToggleGroupProps,
 } from '@radix-ui/react-toggle-group'
+
 import type { ReactNode } from 'react'
 
 import { Variants } from '@/components/Toggle/Toggle.constants'
@@ -37,11 +38,6 @@ export interface ToggleGroupProps
    * toggle group.
    */
   multiple?: boolean
-  /**
-   * Event handler called when the value of the toggle group (i.e. the toggled
-   * toggle) changes.
-   */
-  onValueChange?: (value: Array<string> | string) => void
   /** The display orientation of the contained toggles. */
   orientation?: RxToggleGroupProps['orientation']
   /**
@@ -56,9 +52,16 @@ export interface ToggleGroupProps
   value?: Array<string> | string
   /** The variant of the toggles to use. */
   variant?: `${Variants}`
+  /**
+   * Event handler called when the value of the toggle group (i.e. the toggled
+   * toggle) changes.
+   */
+  onValueChange?: (value: Array<string> | string) => void
 }
 
 export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
+  /** The value submitted in the submitted form. */
+  value: string
   /**
    * The content of the toggle item.
    *
@@ -98,6 +101,4 @@ export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
   labelAsDiv?: boolean
   /** Event handler called when the toggle is clicked. */
   onToggle?: (toggled: boolean) => void
-  /** The value submitted in the submitted form. */
-  value: string
 }

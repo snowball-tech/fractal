@@ -4,8 +4,7 @@ import CheckIcon from '@iconscout/react-unicons/icons/uil-check'
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'
-import isEmpty from 'lodash/fp/isEmpty'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   type MouseEvent,
@@ -15,12 +14,16 @@ import {
   useRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME, Variants } from './InputRadio.constants'
 import type { InputRadioProps } from './InputRadio.types'
+
+import { GROUP_NAME, Variants } from './InputRadio.constants'
 import { InputRadioContext } from './InputRadioContext'
 
 /**
@@ -55,14 +58,11 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
     }
 
     const variantClassNames = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
-      [Variants.Secondary]: 'bg-white border-1 border-normal',
-      [Variants.Tertiary]: 'bg-transparent',
 
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+      [Variants.Secondary]: 'bg-white border-1 border-normal',
+
+      [Variants.Tertiary]: 'bg-transparent',
     }
 
     const generatedId = useId()

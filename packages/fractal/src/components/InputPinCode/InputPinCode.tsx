@@ -3,13 +3,7 @@
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import isInteger from 'lodash/fp/isInteger'
-import isNumber from 'lodash/fp/isNumber'
-import isString from 'lodash/fp/isString'
-import omit from 'lodash/fp/omit'
-import range from 'lodash/fp/range'
+
 import {
   type ChangeEvent,
   type ClipboardEvent,
@@ -19,13 +13,22 @@ import {
   useRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isInteger from 'lodash/fp/isInteger'
+import isNumber from 'lodash/fp/isNumber'
+import isString from 'lodash/fp/isString'
+import omit from 'lodash/fp/omit'
+import range from 'lodash/fp/range'
+
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './InputPinCode.constants'
 import type { InputPinCodeProps } from './InputPinCode.types'
+
+import { GROUP_NAME } from './InputPinCode.constants'
 
 /**
  * `InputPinCode` component is used to allow the user to a X digit(s) pin code

@@ -1,15 +1,18 @@
 import * as RxSlider from '@radix-ui/react-slider'
+
+import { useId } from 'react'
+
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
-import { useId } from 'react'
 
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME, Orientations } from './Slider.constants'
 import type { SliderProps } from './Slider.types'
+
+import { GROUP_NAME, Orientations } from './Slider.constants'
 
 /**
  * `Slider` component is used to display a sliderion to the user.
@@ -38,7 +41,7 @@ export const Slider = ({
   const uniqueId = (id ?? generatedId) || generatedId
 
   const valueToUse = value || defaultValue
-  const length = isNumber(valueToUse) ? 1 : valueToUse?.length ?? 1
+  const length = isNumber(valueToUse) ? 1 : (valueToUse?.length ?? 1)
   const thumbsRange = range(0)(length)
 
   const handleValueChange = (newValue: number[]) => {
@@ -46,7 +49,6 @@ export const Slider = ({
       return
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     onValueChange(length === 1 ? newValue[0]! : newValue)
   }
 
@@ -55,7 +57,6 @@ export const Slider = ({
       return
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     onValueCommit(length === 1 ? committedValue[0]! : committedValue)
   }
 

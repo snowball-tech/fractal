@@ -1,13 +1,17 @@
 'use client'
 
 import * as RxToolbar from '@radix-ui/react-toolbar'
-import omit from 'lodash/fp/omit'
+
 import { type ForwardedRef, forwardRef } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { Paper } from '@/components/Paper/Paper'
 import { Elevations } from '@/components/Paper/Paper.constants'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+
+import type { ToolbarProps } from './Toolbar.types'
 
 import {
   DEFAULT_ELEVATION,
@@ -15,7 +19,6 @@ import {
   GROUP_NAME,
   Orientations,
 } from './Toolbar.constants'
-import type { ToolbarProps } from './Toolbar.types'
 import { ToolbarContext } from './ToolbarContext'
 
 /**

@@ -3,23 +3,32 @@ import { Variants as TypographyVariants } from '@/components/Typography/Typograp
 export const GROUP_NAME = 'avatar'
 
 export enum Sizes {
-  /* eslint-disable perfectionist/sort-enums */
+  // Small.
   S = 's',
+
+  // Medium.
   M = 'm',
+
+  // Large.
   L = 'l',
+
+  // Extra large.
   XL = 'xl',
+
+  // Fluid.
   Fluid = 'fluid',
-  /* eslint-enable perfectionist/sort-enums */
 }
 
 export const DEFAULT_SIZE = Sizes.M
 
 export const sizeToTypographyVariant: Record<Sizes, `${TypographyVariants}`> = {
-  /* eslint-disable perfectionist/sort-objects */
   [Sizes.S]: TypographyVariants.CaptionBold,
+
   [Sizes.M]: TypographyVariants.CaptionBold,
+
   [Sizes.L]: TypographyVariants.Body1Bold,
+
   [Sizes.XL]: TypographyVariants.Heading4,
+
   [Sizes.Fluid]: TypographyVariants.CaptionBold,
-  /* eslint-enable perfectionist/sort-objects */
 }

@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
@@ -7,9 +9,9 @@ import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic'
+
 import type { ReactNode } from 'react'
 
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'
@@ -63,6 +65,23 @@ const mixedMenu = (
 )
 
 const meta: Meta<ToolbarDropdownProps> = {
+  args: {
+    active: false,
+    align: undefined,
+    children: 'Text',
+    defaultOpen: false,
+    disabled: false,
+    elevation: Elevations.Elevated,
+    fullWidth: false,
+    icon: 'None',
+    iconOnly: false,
+    iconPosition: 'left',
+    label: 'Star wars characters',
+    open: false,
+    side: undefined,
+    width: 'fit',
+    withIndicator: true,
+  },
   argTypes: {
     align: {
       control: 'radio',
@@ -136,23 +155,6 @@ const meta: Meta<ToolbarDropdownProps> = {
       ],
     },
   },
-  args: {
-    active: false,
-    align: undefined,
-    children: 'Text',
-    defaultOpen: false,
-    disabled: false,
-    elevation: Elevations.Elevated,
-    fullWidth: false,
-    icon: 'None',
-    iconOnly: false,
-    iconPosition: 'left',
-    label: 'Star wars characters',
-    open: false,
-    side: undefined,
-    width: 'fit',
-    withIndicator: true,
-  },
   component: ToolbarDropdown,
   decorators: [
     (storyFunction: () => ReactNode) => (
@@ -187,16 +189,13 @@ export const Interactive: Story = {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(1)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
   render: () => (

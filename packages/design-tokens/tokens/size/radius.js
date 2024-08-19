@@ -5,17 +5,14 @@ module.exports = {
         value: 0,
       },
 
-      //
       xs: {
         value: 4,
       },
 
-      //
       s: {
         value: 8,
       },
 
-      //
       m: {
         value: 16,
       },

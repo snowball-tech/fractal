@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -9,6 +11,13 @@ import { Switch } from '.'
 type SwitchProps = ComponentProps<typeof Switch>
 
 const meta: Meta<SwitchProps> = {
+  args: {
+    disabled: false,
+    label: 'Right single label',
+    labels: undefined,
+    required: false,
+    switchPosition: 'left',
+  },
   argTypes: {
     labels: {
       control: 'radio',
@@ -19,16 +28,8 @@ const meta: Meta<SwitchProps> = {
       options: ['Single', 'Double'],
     },
   },
-  args: {
-    disabled: false,
-    label: 'Right single label',
-    labels: undefined,
-    required: false,
-    switchPosition: 'left',
-  },
   component: Switch,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
       return (
         <div className="w-fit">

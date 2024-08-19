@@ -1,14 +1,16 @@
 'use client'
 
-import omit from 'lodash/fp/omit'
 import { useContext } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Menu.constants'
 import type { MenuItemGroupProps } from './Menu.types'
+
+import { GROUP_NAME } from './Menu.constants'
 import { MenuContext } from './MenuContext'
 import { MenuGroupContext } from './MenuGroupContext'
 

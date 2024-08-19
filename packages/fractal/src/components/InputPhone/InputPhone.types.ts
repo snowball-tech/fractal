@@ -1,4 +1,5 @@
 import type { CountryCode } from 'libphonenumber-js'
+
 import type { HTMLAttributes } from 'react'
 
 import type { CombinedRefs as SelectCombinedRefs } from '@/components/Select/Select.types'
@@ -11,18 +12,18 @@ export type CountryDetails = {
 }
 
 export type PhoneNumber = {
-  countryCode?: CountryCode | undefined
   number: string
+  countryCode?: CountryCode | undefined
 }
 
 export type Prefix = {
-  countryCode?: CountryCode | undefined
   prefix: string
+  countryCode?: CountryCode | undefined
 }
 
 export type CombinedRefs = {
   phone: HTMLInputElement | null
-  prefix: SelectCombinedRefs | null
+  prefix: null | SelectCombinedRefs
   searchPrefixInput: HTMLInputElement | null
 }
 
@@ -77,8 +78,6 @@ export interface InputPhoneProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the phone value is changed. */
-  onChange?: (newPhoneNumber: PhoneNumber, isValid?: boolean) => void
   /**
    * A string to display when the text input is empty.
    *
@@ -116,4 +115,6 @@ export interface InputPhoneProps
   value?: PhoneNumber
   /** Indicates if you want to make the user pick a prefix or not. */
   withPrefix?: boolean
+  /** Event handler called when the phone value is changed. */
+  onChange?: (newPhoneNumber: PhoneNumber, isValid?: boolean) => void
 }

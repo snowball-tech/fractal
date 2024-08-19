@@ -3,7 +3,6 @@ module.exports = {
     decorative: {
       comment: 'Decorative colors used for branding and marketing.',
 
-      //
       blue: {
         50: { comment: 'Blue Tone 50', value: '#8AF1FF' },
         70: { comment: 'Blue Tone 70', value: '#B3F6FF' },

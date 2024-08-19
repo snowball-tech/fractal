@@ -1,12 +1,14 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
 import { userEvent, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'
 
-import { Tab, TabContent, TabSizes, Tabs } from '.'
+import { Tab, TabContent, Tabs, TabSizes } from '.'
 import { DEFAULT_SIZE } from './Tabs.constants'
 
 const content = (
@@ -27,6 +29,12 @@ const content = (
 type TabProps = ComponentProps<typeof Tab>
 
 const meta: Meta<TabProps> = {
+  args: {
+    disabled: false,
+    label: 'Jedis',
+    name: 'jedis',
+    size: DEFAULT_SIZE,
+  },
   argTypes: {
     children: {
       control: 'text',
@@ -38,12 +46,6 @@ const meta: Meta<TabProps> = {
         type: { summary: Object.values(TabSizes).join('|') },
       },
     },
-  },
-  args: {
-    disabled: false,
-    label: 'Jedis',
-    name: 'jedis',
-    size: DEFAULT_SIZE,
   },
   component: Tab,
 

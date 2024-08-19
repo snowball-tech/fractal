@@ -9,9 +9,7 @@ import parsePhoneNumber, {
   getExampleNumber,
 } from 'libphonenumber-js/max'
 import examples from 'libphonenumber-js/mobile/examples'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   forwardRef,
@@ -23,6 +21,10 @@ import {
   useState,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { InputText } from '@/components/InputText'
 import { Select } from '@/components/Select/Select'
 import { SelectEmpty } from '@/components/Select/SelectEmpty'
@@ -31,18 +33,19 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import {
-  DEFAULT_COUNTRY_CODE,
-  GROUP_NAME,
-  countryByCountryCode,
-  supportedCountries,
-} from './InputPhone.constants'
 import type {
   CombinedRefs,
   CountryDetails,
   InputPhoneProps,
   Prefix,
 } from './InputPhone.types'
+
+import {
+  countryByCountryCode,
+  DEFAULT_COUNTRY_CODE,
+  GROUP_NAME,
+  supportedCountries,
+} from './InputPhone.constants'
 
 /**
  * `InputPhone` component is used to allow the user to enter a phone number
@@ -105,7 +108,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const [search, setSearch] = useState('')
     const [prefixes, setPrefixes] = useState(supportedCountries)
 
-    const [prefix, setPrefix] = useState<Prefix | null>(null)
+    const [prefix, setPrefix] = useState<null | Prefix>(null)
     const [number, setNumber] = useState<string>('')
     const [selectedCountry, setSelectedCountry] =
       useState<CountryDetails | null>(null)
@@ -196,7 +199,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const isSuccessful = hasSuccessMessage && !isInError
 
     const emitNewPhoneNumber = (
-      prefixToEmit: Prefix | null,
+      prefixToEmit: null | Prefix,
       numberToEmit: string,
     ) => {
       if (!withPrefix) {

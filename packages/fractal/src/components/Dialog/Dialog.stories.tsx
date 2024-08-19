@@ -1,7 +1,9 @@
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -14,6 +16,16 @@ import { DEFAULT_POSITION } from './Dialog.constants'
 type DialogProps = ComponentProps<typeof Dialog>
 
 const meta: Meta<DialogProps> = {
+  args: {
+    children: 'You can enter any content you want here',
+    defaultOpen: false,
+    disabled: false,
+    dismissable: true,
+    modal: true,
+    position: 'fixed',
+    title: 'This is the title',
+    trigger: 'Text',
+  },
   argTypes: {
     children: {
       control: 'text',
@@ -42,16 +54,6 @@ const meta: Meta<DialogProps> = {
       },
       options: ['Nothing', 'Text', 'Button', 'Icon Button'],
     },
-  },
-  args: {
-    children: 'You can enter any content you want here',
-    defaultOpen: false,
-    disabled: false,
-    dismissable: true,
-    modal: true,
-    position: 'fixed',
-    title: 'This is the title',
-    trigger: 'Text',
   },
   component: Dialog,
   decorators: [
@@ -91,7 +93,6 @@ export const Interactive: Story = {
 
     await sleep(500)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
   },
   render: () => (
@@ -129,11 +130,9 @@ export const InteractiveClose: Story = {
 
     await sleep(500)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
 
     await sleep(500)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(body.getAllByLabelText('Close').at(0)!)
   },
   render: () => (

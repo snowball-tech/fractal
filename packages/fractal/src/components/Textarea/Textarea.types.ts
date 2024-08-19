@@ -74,17 +74,6 @@ export interface TextareaProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /**
-   * Event handler called when the textarea value is changed with the new
-   * string value.
-   */
-  onChange?: (event: ChangeEvent<HTMLTextAreaElement>, newValue: string) => void
-  /** Event handler called when the textarea is resized. */
-  onHeightChange?: TextareaAutosizeProps['onHeightChange']
-  /**
-   * Event handler called when the icon on the bottom right corner is clicked.
-   */
-  onIconClick?: () => void
   /** A string to display when the textarea is empty. */
   placeholder?: string
   /** Prevents the user to change the value of the textarea. */
@@ -114,4 +103,15 @@ export interface TextareaProps
    * Must be used in conjunction with `onChange`.
    */
   value?: number | string
+  /**
+   * Event handler called when the textarea value is changed with the new
+   * string value.
+   */
+  onChange?: (event: ChangeEvent<HTMLTextAreaElement>, newValue: string) => void
+  /** Event handler called when the textarea is resized. */
+  onHeightChange?: TextareaAutosizeProps['onHeightChange']
+  /**
+   * Event handler called when the icon on the bottom right corner is clicked.
+   */
+  onIconClick?: () => void
 }

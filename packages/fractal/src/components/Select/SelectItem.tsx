@@ -1,16 +1,19 @@
 'use client'
 
 import * as RxSelect from '@radix-ui/react-select'
+
+import { useContext } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
-import { useContext } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Select.constants'
 import type { SelectItemProps } from './Select.types'
+
+import { GROUP_NAME } from './Select.constants'
 import { SelectGroupContext } from './SelectGroupContext'
 
 /**

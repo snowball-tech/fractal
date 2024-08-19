@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
@@ -5,7 +7,7 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamatio
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { ToggleGroup, ToggleGroupItem } from '.'
@@ -13,6 +15,14 @@ import { ToggleGroup, ToggleGroupItem } from '.'
 type ToggleGroupItemsProps = ComponentProps<typeof ToggleGroupItem>
 
 const meta: Meta<ToggleGroupItemsProps> = {
+  args: {
+    disabled: false,
+    fullWidth: false,
+    icon: 'None',
+    iconOnly: false,
+    label: 'Jar Jar Binks',
+    value: 'jar-jar-binks',
+  },
   argTypes: {
     icon: {
       mapping: {
@@ -26,14 +36,6 @@ const meta: Meta<ToggleGroupItemsProps> = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-  },
-  args: {
-    disabled: false,
-    fullWidth: false,
-    icon: 'None',
-    iconOnly: false,
-    label: 'Jar Jar Binks',
-    value: 'jar-jar-binks',
   },
   component: ToggleGroupItem,
 

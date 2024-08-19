@@ -1,10 +1,12 @@
-import isEmpty from 'lodash/fp/isEmpty'
 import { useEffect, useRef } from 'react'
+
+import isEmpty from 'lodash/fp/isEmpty'
 
 import { cn } from '@/styles/helpers'
 
-import { DEFAULT_EMOJIS_SET, DEFAULT_SKIN_TONE } from './EmojiPicker.constants'
 import type { EmojiProps } from './EmojiPicker.types'
+
+import { DEFAULT_EMOJIS_SET, DEFAULT_SKIN_TONE } from './EmojiPicker.constants'
 
 /**
  * `Emoji` component displays an emoji based on it's id, short code or native

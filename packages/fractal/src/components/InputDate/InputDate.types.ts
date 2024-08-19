@@ -84,6 +84,28 @@ export interface InputDateProps
    */
   name?: string
   /**
+   * A string to display in each of the date field when the value is
+   * empty.
+   */
+  placeholders?: Placeholders
+  /** Prevents the user to change the value of the date input. */
+  readOnly?: boolean
+  /** Indicates if the date input must be filled. */
+  required?: boolean
+  /**
+   * A message to display when the date input has a valid value.
+   *
+   * This will also change the display of the input to give an success feedback
+   * (green border).
+   */
+  success?: string
+  /**
+   * The controlled value of the date input.
+   *
+   * Must be used in conjunction with `onChange`.
+   */
+  value?: DateFormat
+  /**
    * Event handler called when one of the field of the date input is blurred.
    */
   onBlur?: (event: FocusEvent<HTMLInputElement>, type: keyof DateFormat) => void
@@ -112,26 +134,4 @@ export interface InputDateProps
     event: KeyboardEvent<HTMLInputElement>,
     type: keyof DateFormat,
   ) => void
-  /**
-   * A string to display in each of the date field when the value is
-   * empty.
-   */
-  placeholders?: Placeholders
-  /** Prevents the user to change the value of the date input. */
-  readOnly?: boolean
-  /** Indicates if the date input must be filled. */
-  required?: boolean
-  /**
-   * A message to display when the date input has a valid value.
-   *
-   * This will also change the display of the input to give an success feedback
-   * (green border).
-   */
-  success?: string
-  /**
-   * The controlled value of the date input.
-   *
-   * Must be used in conjunction with `onChange`.
-   */
-  value?: DateFormat
 }

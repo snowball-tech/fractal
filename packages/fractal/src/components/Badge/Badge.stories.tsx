@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Badge } from '.'
@@ -12,13 +13,13 @@ const perVariantStoriesParameters = {
 }
 
 const meta = {
-  argTypes: {
-    count: { control: 'number' },
-    limit: { control: 'number' },
-  },
   args: {
     count: undefined,
     limit: 99,
+  },
+  argTypes: {
+    count: { control: 'number' },
+    limit: { control: 'number' },
   },
   component: Badge,
   parameters: {

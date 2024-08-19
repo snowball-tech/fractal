@@ -1,11 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -16,6 +18,13 @@ import { DEFAULT_VARIANT } from './Toggle.constants'
 type ToggleProps = ComponentProps<typeof Toggle>
 
 const meta = {
+  args: {
+    disabled: false,
+    fullWidth: false,
+    icon: 'None',
+    iconOnly: false,
+    label: 'Compact trash',
+  },
   argTypes: {
     icon: {
       mapping: {
@@ -37,13 +46,6 @@ const meta = {
         type: { summary: Object.values(ToggleVariants).join('|') },
       },
     },
-  },
-  args: {
-    disabled: false,
-    fullWidth: false,
-    icon: 'None',
-    iconOnly: false,
-    label: 'Compact trash',
   },
   component: Toggle,
   parameters: {

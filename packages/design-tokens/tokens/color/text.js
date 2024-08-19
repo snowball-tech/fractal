@@ -47,7 +47,6 @@ module.exports = {
         value: '{color.brand.secondary-light.value}',
       },
 
-      //
       disabled: {
         comment: 'Text color of most disabled elements.',
 
@@ -60,7 +59,6 @@ module.exports = {
         value: '{color.base.grey.30.value}',
       },
 
-      //
       error: {
         comment: 'Text color for error messages.',
 

@@ -1,7 +1,9 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { DropdownItem } from '@/components/Dropdown'
@@ -28,6 +30,14 @@ const menu = (
 )
 
 const meta = {
+  args: {
+    children: undefined,
+    disabled: false,
+    fluidSize: 240,
+    imageUrl: '',
+    name: '',
+    size: DEFAULT_SIZE,
+  },
   argTypes: {
     children: {
       control: 'radio',
@@ -48,14 +58,6 @@ const meta = {
         type: { summary: Object.values(AvatarSizes).join('|') },
       },
     },
-  },
-  args: {
-    children: undefined,
-    disabled: false,
-    fluidSize: 240,
-    imageUrl: '',
-    name: '',
-    size: DEFAULT_SIZE,
   },
   component: Avatar,
   parameters: {
