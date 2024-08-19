@@ -1,3 +1,5 @@
+import type { ThemeVars } from '@storybook/theming'
+
 import {
   ColorBaseBlack as Black,
   ColorBackgroundBodyLight as ContentBackgroundColor,
@@ -7,7 +9,6 @@ import {
   ColorBrandSecondary as SecondaryColor,
   ColorBaseWhite as White,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import type { ThemeVars } from '@storybook/theming'
 import { create } from '@storybook/theming/create'
 
 const SidebarBackgroundColor = Black
@@ -21,18 +22,15 @@ const theme: ThemeVars = create({
   brandTitle: 'Fractal',
   brandUrl: 'https://snowball.xyz',
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   appBg: SidebarBackgroundColor,
   appContentBg: ContentBackgroundColor,
   barBg: TopbarBackgroundColor,
   fontBase: FontFamily,
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   barTextColor: Black,
   textColor: Black,
   textInverseColor: White,
 
-  // eslint-disable-next-line sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects
   appBorderColor: Black,
   appBorderRadius: Number.parseInt(Radius, 10),
 

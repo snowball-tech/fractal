@@ -2,9 +2,7 @@
 
 import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   type MouseEvent,
@@ -13,9 +11,15 @@ import {
   useRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+
+import type { ToggleGroupItemProps } from './ToggleGroup.types'
 
 import {
   disabledVariantClassNames as toggleDisabledVariantClassNames,
@@ -23,7 +27,6 @@ import {
 } from '../Toggle/Toggle'
 import { Variants } from '../Toggle/Toggle.constants'
 import { GROUP_NAME } from './ToggleGroup.constants'
-import type { ToggleGroupItemProps } from './ToggleGroup.types'
 import { ToggleGroupContext } from './ToggleGroupContext'
 
 /**

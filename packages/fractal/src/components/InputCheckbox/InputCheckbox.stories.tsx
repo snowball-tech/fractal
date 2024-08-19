@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -16,6 +18,13 @@ type InputCheckboxProps = ComponentProps<typeof InputCheckbox>
 const checkStateType = { type: { summary: "boolean | 'indeterminate'" } }
 
 const meta = {
+  args: {
+    disabled: false,
+    fullWidth: false,
+    label: 'Han shot first',
+    readOnly: false,
+    required: false,
+  },
   argTypes: {
     checked: { table: { ...checkStateType } },
     color: {
@@ -39,13 +48,6 @@ const meta = {
         type: { summary: Object.values(InputCheckboxVariants).join('|') },
       },
     },
-  },
-  args: {
-    disabled: false,
-    fullWidth: false,
-    label: 'Han shot first',
-    readOnly: false,
-    required: false,
   },
   component: InputCheckbox,
   parameters: {

@@ -1,6 +1,5 @@
 'use client'
 
-import omit from 'lodash/fp/omit'
 import {
   type ForwardedRef,
   forwardRef,
@@ -8,17 +7,20 @@ import {
   useRef,
 } from 'react'
 
+import omit from 'lodash/fp/omit'
+
 import { Elevations } from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cn } from '@/styles/helpers'
+
+import type { CombinedRefs, MenuProps } from './Menu.types'
 
 import {
   DEFAULT_ELEVATION,
   DEFAULT_ORIENTATION,
   GROUP_NAME,
 } from './Menu.constants'
-import type { CombinedRefs, MenuProps } from './Menu.types'
 import { MenuContext } from './MenuContext'
 
 /**
@@ -55,14 +57,11 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
     const hasChildren = Boolean(children)
 
     const elevationClassNames = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
       [Elevations.Bordered]: 'rounded-sm shadow-none',
-      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
-      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter',
 
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
+
+      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter',
     }
 
     return (

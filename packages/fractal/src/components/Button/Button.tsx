@@ -26,9 +26,7 @@ import {
   SizeSpacingHalf,
   SizeSpacingQuarter,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type CSSProperties,
   type ForwardedRef,
@@ -39,63 +37,71 @@ import {
   useRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import { cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Button.constants'
 import type { ButtonProps } from './Button.types'
 
-export const variantClassNames: Record<Themes, Record<Variants, string>> = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './Button.constants'
 
+export const variantClassNames: Record<Themes, Record<Variants, string>> = {
   [Themes.Light]: {
     [Variants.Display]:
       'bg-white text-dark shadow-subtle hover:shadow-brutal focus:shadow-brutal active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Primary]:
       'bg-secondary hover:bg-white active:bg-primary focus:bg-white active:!border-transparent text-light hover:text-dark active:text-dark focus:text-dark border-2 border-transparent hover:border-normal focus:border-normal px-[calc(theme(spacing.3)-theme(spacing.half))] py-half',
+
     [Variants.Secondary]:
       'bg-white active:bg-secondary text-dark active:text-light hover:shadow-hover focus:shadow-hover active:shadow-hover border-1 border-normal px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Text]: 'bg-transparent text-dark',
   },
 
   [Themes.Dark]: {
     [Variants.Display]:
       'bg-white text-dark shadow-subtle-dark hover:shadow-brutal-dark focus:shadow-brutal-dark active:shadow-none border-1 border-normal active:-translate-x-quarter active:translate-y-half hover:translate-x-0 hover:-translate-y-quarter focus:translate-x-0 focus:-translate-y-quarter px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Primary]:
       'bg-primary-dark hover:bg-light active:bg-primary-dark focus:bg-light active:!border-transparent text-dark hover:text-dark active:text-light focus:text-dark border-2 border-transparent hover:border-light focus:border-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-half',
+
     [Variants.Secondary]:
       'bg-white active:bg-primary-dark text-dark active:text-light border-1 border-light px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Text]: 'bg-transparent text-light',
   },
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix,
-  perfectionist/sort-objects */
-
   [Themes.Light]: {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDark,
-      boxShadow: ShadowBrutal1,
       border: Border1,
+      boxShadow: ShadowBrutal1,
+      color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Primary]: {
       backgroundColor: ColorBrandSecondary,
-      color: ColorTextLight,
       border: BorderTransparent2,
+      color: ColorTextLight,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
+
     [Variants.Secondary]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDark,
       border: Border1,
+      color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Text]: {
       backgroundColor: ColorBaseTransparent,
       color: ColorTextDark,
@@ -105,91 +111,94 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
   [Themes.Dark]: {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDark,
-      boxShadow: ShadowBrutal1Dark,
       border: Border1,
+      boxShadow: ShadowBrutal1Dark,
+      color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Primary]: {
       backgroundColor: ColorBrandPrimaryDark,
-      color: ColorTextDark,
       border: BorderTransparent2,
+      color: ColorTextDark,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
+
     [Variants.Secondary]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDark,
       border: Border1,
       borderColor: ColorBorderLight,
+      color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Text]: {
       backgroundColor: ColorBaseTransparent,
       color: ColorTextLight,
     },
   },
-
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 export const variantDisabledClassNames: Record<
   Themes,
   Record<Variants, string>
 > = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
   [Themes.Light]: {
     [Variants.Display]:
       'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Primary]:
       'bg-disabled text-light px-[calc(theme(spacing.3)-theme(spacing.half))] py-half',
+
     [Variants.Secondary]:
       'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Text]: 'bg-transparent text-disabled',
   },
 
   [Themes.Dark]: {
     [Variants.Display]:
       'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Primary]:
       'bg-disabled text-disabled px-[calc(theme(spacing.3)-theme(spacing.half))] py-half',
+
     [Variants.Secondary]:
       'bg-white text-disabled shadow-none border-1 border-disabled px-[calc(theme(spacing.3)-theme(spacing.quarter))] py-[calc(theme(spacing.1)-theme(spacing.quarter))]',
+
     [Variants.Text]: 'bg-transparent text-grey-30',
   },
-
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 export const variantDisabledStyles: Record<
   Themes,
   Record<Variants, CSSProperties>
 > = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix,
-  perfectionist/sort-objects */
-
   [Themes.Light]: {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDisabled,
-      boxShadow: ShadowNone,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      boxShadow: ShadowNone,
+      color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Primary]: {
       backgroundColor: ColorBackgroundDisabled,
       color: ColorTextLight,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
+
     [Variants.Secondary]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDisabled,
-      boxShadow: ShadowNone,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      boxShadow: ShadowNone,
+      color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Text]: {
       backgroundColor: ColorBaseTransparent,
       color: ColorTextDisabled,
@@ -199,32 +208,33 @@ export const variantDisabledStyles: Record<
   [Themes.Dark]: {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDisabled,
-      boxShadow: ShadowNone,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      boxShadow: ShadowNone,
+      color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Primary]: {
       backgroundColor: ColorBackgroundDisabled,
       color: ColorTextDisabled,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
+
     [Variants.Secondary]: {
       backgroundColor: ColorBaseWhite,
-      color: ColorTextDisabled,
-      boxShadow: ShadowNone,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      boxShadow: ShadowNone,
+      color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
+
     [Variants.Text]: {
       backgroundColor: ColorBaseTransparent,
       color: ColorBaseGrey30,
     },
   },
-
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 /**

@@ -1,14 +1,16 @@
 'use client'
 
-import omit from 'lodash/fp/omit'
 import { useContext, useId } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { InputRadio } from '@/components/InputRadio/InputRadio'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownRadioItemProps } from './Dropdown.types'
+
+import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 

@@ -8,8 +8,9 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Badge.constants'
 import type { BadgeProps } from './Badge.types'
+
+import { GROUP_NAME } from './Badge.constants'
 
 /**
  * `Badge` component displays a number in a small colored bubble.

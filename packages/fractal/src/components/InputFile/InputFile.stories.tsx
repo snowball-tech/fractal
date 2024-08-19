@@ -1,9 +1,11 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -14,15 +16,6 @@ import { DEFAULT_VARIANT } from './InputFile.constants'
 type InputFileProps = ComponentProps<typeof InputFile>
 
 const meta = {
-  argTypes: {
-    variant: {
-      options: Object.values(InputFileVariants),
-      table: {
-        defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(InputFileVariants).join('|') },
-      },
-    },
-  },
   args: {
     disabled: false,
     label: 'Punch it, Chewie!',
@@ -31,6 +24,15 @@ const meta = {
       icon: <SendIcon />,
       iconOnly: false,
       iconPosition: 'right',
+    },
+  },
+  argTypes: {
+    variant: {
+      options: Object.values(InputFileVariants),
+      table: {
+        defaultValue: { summary: DEFAULT_VARIANT },
+        type: { summary: Object.values(InputFileVariants).join('|') },
+      },
     },
   },
   component: InputFile,

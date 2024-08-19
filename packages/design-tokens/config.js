@@ -6,7 +6,6 @@ const BASE_OPTIONS = {
 module.exports = {
   source: ['tokens/**/*.json', 'tokens/**/*.json5', 'tokens/**/*.js'],
 
-  //
   platforms: {
     css: {
       ...BASE_OPTIONS,
@@ -42,7 +41,6 @@ module.exports = {
       ],
     },
 
-    //
     typescript: {
       ...BASE_OPTIONS,
       actions: ['typescript/copy-constants'],
@@ -66,7 +64,6 @@ module.exports = {
       ],
     },
 
-    //
     tailwindcss: {
       ...BASE_OPTIONS,
       actions: ['tailwindcss/copy-config'],

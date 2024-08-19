@@ -1,13 +1,17 @@
 'use client'
 
 import * as RxTabs from '@radix-ui/react-tabs'
+
+import { type ForwardedRef, forwardRef } from 'react'
+
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 import { extendChildren, hasChildWithProps } from '@/utils'
+
+import type { TabsProps } from './Tabs.types'
 
 import Tab from './Tab'
 import {
@@ -17,7 +21,6 @@ import {
   Orientations,
   Positions,
 } from './Tabs.constants'
-import type { TabsProps } from './Tabs.types'
 
 /**
  * `Tabs` component is used to allow the user to change the content displayed in

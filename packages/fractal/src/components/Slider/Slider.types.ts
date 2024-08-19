@@ -39,6 +39,12 @@ export interface SliderProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
+  /** The orientations of the slider. */
+  orientation?: `${Orientations}`
+  /** The interval between each value of the slider. */
+  step?: number
+  /** The current slider value. */
+  value?: Array<number> | number
   /** Event handler called when the value of the slider changes. */
   onValueChange?: (value: Array<number> | number) => void
   /**
@@ -48,10 +54,4 @@ export interface SliderProps
    * Useful when you need to capture only the final change.
    */
   onValueCommit?: (value: Array<number> | number) => void
-  /** The orientations of the slider. */
-  orientation?: `${Orientations}`
-  /** The interval between each value of the slider. */
-  step?: number
-  /** The current slider value. */
-  value?: Array<number> | number
 }

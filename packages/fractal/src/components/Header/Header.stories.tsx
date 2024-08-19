@@ -1,10 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import LeftIcon from '@iconscout/react-unicons/icons/uil-arrow-left'
 import HamburgerBarsIcon from '@iconscout/react-unicons/icons/uil-bars'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
+
+import type { ComponentProps, CSSProperties } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
-import type { CSSProperties, ComponentProps } from 'react'
 
 import Autocomplete from '@/components/Autocomplete/Autocomplete'
 import { Button } from '@/components/Button'
@@ -12,7 +15,6 @@ import { Logo } from '@/components/Logo'
 
 import { Header } from '.'
 
-// eslint-disable-next-line perfectionist/sort-imports
 import '@/styles/smartphones.css'
 
 type HeaderProps = ComponentProps<typeof Header>
@@ -31,6 +33,12 @@ const SAFE_AREAS: Record<string, string> = {
 }
 
 const meta: Meta<{ device: string } & HeaderProps> = {
+  args: {
+    children: 'Title',
+    device: 'iPhone 14',
+    left: 'Back',
+    right: 'Hamburger',
+  },
   argTypes: {
     children: {
       control: 'radio',
@@ -46,14 +54,14 @@ const meta: Meta<{ device: string } & HeaderProps> = {
       mapping: {
         'Google Pixel': 'google-pixel',
         'Google Pixel 6 Pro': 'google-pixel-6-pro',
-        None: 'none',
-        'Samsung Galaxy S8': 'galaxy-s8',
         'iPad Pro': 'ipad-pro',
         iPhone: 'the-iphone',
         'iPhone 8': 'iphone-8',
         'iPhone 14': 'iphone-14',
         'iPhone 14 Pro': 'iphone-14-pro',
         'iPhone X': 'iphone-x',
+        None: 'none',
+        'Samsung Galaxy S8': 'galaxy-s8',
       },
       options: [
         'None',
@@ -102,12 +110,6 @@ const meta: Meta<{ device: string } & HeaderProps> = {
       },
       options: ['Avatar', 'Hamburger', 'Nothing'],
     },
-  },
-  args: {
-    children: 'Title',
-    device: 'iPhone 14',
-    left: 'Back',
-    right: 'Hamburger',
   },
   component: Header,
 

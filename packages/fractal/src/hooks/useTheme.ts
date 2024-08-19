@@ -1,10 +1,11 @@
 'use client'
 
-import isEmpty from 'lodash/fp/isEmpty'
 import { useContext } from 'react'
 
-import { ThemeContext } from '@/ThemeProvider'
+import isEmpty from 'lodash/fp/isEmpty'
+
 import { DEFAULT_THEME, Themes } from '@/constants'
+import { ThemeContext } from '@/ThemeProvider'
 
 export default function useTheme(
   themeOverride?: Themes,

@@ -14,6 +14,12 @@ export interface TabsProps
    */
   children: ReactNode
   /**
+   * The list of the tabs to display.
+   *
+   * You must use `Tab` components.
+   */
+  tabs: ReactNode
+  /**
    * The selected tab when tabs initially renders.
    *
    * Use this when you do not need to control the selected tab.
@@ -35,8 +41,6 @@ export interface TabsProps
    * Only has an effet in horizontal orientation.
    */
   large?: boolean
-  /** Event handler called when the selected tab changes. */
-  onTabChange?: (newTab: string) => void
   /** The orientations of the tabs. */
   orientation?: `${Orientations}`
   /**
@@ -45,14 +49,10 @@ export interface TabsProps
    * Must be used in conjunction with `onTabChange`.
    */
   tab?: string
-  /**
-   * The list of the tabs to display.
-   *
-   * You must use `Tab` components.
-   */
-  tabs: ReactNode
   /** The positioning of the tabs in the tab bar. */
   tabsPosition?: `${Positions}`
+  /** Event handler called when the selected tab changes. */
+  onTabChange?: (newTab: string) => void
 }
 
 export interface TabProps
@@ -60,6 +60,11 @@ export interface TabProps
     AllHTMLAttributes<HTMLButtonElement>,
     'label' | 'size' | 'type' | 'value'
   > {
+  /**
+   * The name of the tab.
+   * Must be the same as the linked content.
+   */
+  name: string
   /**
    * The content of the tab.
    *
@@ -111,11 +116,6 @@ export interface TabProps
    */
   large?: boolean
   /**
-   * The name of the tab.
-   * Must be the same as the linked content.
-   */
-  name: string
-  /**
    * The orientations of the tabs.
    *
    * You shouldn't use this prop directly in the `Tab` component as it is
@@ -139,15 +139,15 @@ export interface TabContentProps
   /** The actual content. */
   children: ReactNode
   /**
+   * The name of the content.
+   * Must be the same as the linked tab.
+   */
+  name: string
+  /**
    * Used to force mounting when more control is needed.
    *
    * Useful when controlling animation with React animation libraries for
    * example.
    */
   forceMount?: boolean
-  /**
-   * The name of the content.
-   * Must be the same as the linked tab.
-   */
-  name: string
 }

@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
@@ -6,7 +8,6 @@ import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
-import type { Meta, StoryObj } from '@storybook/react'
 import {
   fn,
   userEvent,
@@ -15,16 +16,18 @@ import {
   within,
 } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import isNil from 'lodash/fp/isNil'
-import kebabCase from 'lodash/fp/kebabCase'
+
 import {
   type ChangeEvent,
   type ComponentProps,
   type ReactNode,
   useEffect,
 } from 'react'
+
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
+import kebabCase from 'lodash/fp/kebabCase'
 
 import AutocompleteItem from '@/components/Dropdown/DropdownItem'
 import AutocompleteItemGroup from '@/components/Dropdown/DropdownItemGroup'
@@ -75,7 +78,6 @@ let abort: AbortController | null = null
 
 const loadData = (
   newValue: string,
-  // eslint-disable-next-line unicorn/prevent-abbreviations
   setArgs: (newArgs: Partial<AutocompleteProps>) => void,
   onSelect: (event: Event) => void,
 ) => {
@@ -176,6 +178,17 @@ const loadData = (
 let unmounted = false
 
 const meta: Meta<AutocompleteProps> = {
+  args: {
+    autoFocus: false,
+    description: 'Find any character or planet in Star Wars',
+    disabled: false,
+    fullWidth: false,
+    label: 'Search the Star Wars universe',
+    placeholder: 'Enter your search',
+    prefix: 'Search',
+    readOnly: false,
+    required: false,
+  },
   argTypes: {
     children: {
       control: 'radio',
@@ -227,17 +240,6 @@ const meta: Meta<AutocompleteProps> = {
     },
     type: { table: { disable: true } },
   },
-  args: {
-    autoFocus: false,
-    description: 'Find any character or planet in Star Wars',
-    disabled: false,
-    fullWidth: false,
-    label: 'Search the Star Wars universe',
-    placeholder: 'Enter your search',
-    prefix: 'Search',
-    readOnly: false,
-    required: false,
-  },
   component: Autocomplete,
   decorators: [
     ...(isChromatic()
@@ -247,9 +249,7 @@ const meta: Meta<AutocompleteProps> = {
           ),
         ]
       : []),
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onSelect = (event: Event) => {
@@ -395,7 +395,6 @@ export const InteractiveSearch: Story = {
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(1)!)
@@ -409,7 +408,6 @@ export const InteractiveSearch: Story = {
       await userEvent.hover(menuItems.at(5)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(6)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
 }
@@ -444,10 +442,8 @@ export const InteractiveSearchAndSelect: Story = {
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       await userEvent.click(menuItems.at(0)!)
     }
   },

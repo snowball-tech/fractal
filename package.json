@@ -31,7 +31,7 @@
     "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.3.1",
+  "packageManager": "yarn@4.4.0",
   "engines": {
     "yarn": "^4.0.0",
     "node": ">=18 <=20"
@@ -73,22 +73,22 @@
   },
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
-    "@qiwi/multi-semantic-release": "^7.1.1",
-    "@snowball-tech/eslint-config": "^5.4.5",
-    "@snowball-tech/prettier-config": "^1.4.10",
-    "@snowball-tech/semantic-release-config": "^2.1.11",
-    "@snowball-tech/stylelint-config": "^2.2.8",
-    "chromatic": "^11.5.4",
+    "@qiwi/multi-semantic-release": "^7.1.2",
+    "@snowball-tech/eslint-config": "^5.4.9",
+    "@snowball-tech/prettier-config": "^1.4.11",
+    "@snowball-tech/semantic-release-config": "^2.1.12",
+    "@snowball-tech/stylelint-config": "^2.2.9",
+    "chromatic": "^11.7.1",
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
-    "husky": "^9.0.11",
+    "husky": "^9.1.4",
     "is-ci": "^3.0.1",
-    "lint-staged": "^15.2.7",
+    "lint-staged": "^15.2.9",
     "nodemon": "^3.1.4",
-    "prettier": "^3.3.2",
-    "semantic-release": "^24.0.0",
+    "prettier": "^3.3.3",
+    "semantic-release": "^24.1.0",
     "serve": "^14.2.3",
-    "stylelint": "^16.6.1"
+    "stylelint": "^16.8.2"
   },
   "dependencies": {
     "@yarnpkg/types": "^4.0.0"

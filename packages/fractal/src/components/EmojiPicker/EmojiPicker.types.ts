@@ -3,12 +3,12 @@ import type { AllHTMLAttributes } from 'react'
 import { Themes } from '@/constants'
 
 import {
+  type SkinTone,
   Categories,
   EmojisSets,
   Locales,
   Positions,
   SearchPositions,
-  type SkinTone,
   SkinTonePositions,
   Version,
 } from './EmojiPicker.constants'
@@ -20,30 +20,32 @@ export type EmojisCategory = {
 }
 
 export type Emoji = {
-  emoticons?: Array<string>
   id: string
-  keywords?: Array<string>
   name: string
   native: string
   shortcodes: string
   unified: string
+  emoticons?: Array<string>
+  keywords?: Array<string>
 }
 
 export interface EmojiPickerProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onSelect'> {
-  /**
-   * Indicates if the search input inside of the emoji picker must be
-   * automatically focused when the emoji picker opens.
-   */
-  autoFocus?: boolean
+  /** The set of emoji to display in the emoji picker. */
+  set: `${EmojisSets}`
   /**
    * The categories of emojis to display in the emoji picker.
    *
    * Note that the order is respected.
    */
-  /* eslint-disable perfectionist/sort-union-types */
+  /** The skin tone of the emojis in the emoji picker. */
+  skinTone: SkinTone
+  /**
+   * Indicates if the search input inside of the emoji picker must be
+   * automatically focused when the emoji picker opens.
+   */
+  autoFocus?: boolean
   categories?: Array<`${Categories}`>
-  /* eslint-enable perfectionist/sort-union-types */
   /**
    * A list of custom emojis to display in the emoji picker.
    *
@@ -77,13 +79,6 @@ export interface EmojiPickerProps
    * If you pass `false`, the tabs will be hidden
    */
   navPosition?: `${Positions}` | false
-  /** Event handler called when the user clicks outside of the emoji picker. */
-  onClickOutside?: () => void
-  /**
-   * Event handler called when an emoji is selected (clicked) in the emoji
-   * picker.
-   */
-  onSelect?: (emoji: Emoji) => void
   /** The number of emojis to display per line in the emoji picker. */
   perLine?: number
   /**
@@ -100,10 +95,6 @@ export interface EmojiPickerProps
    * If you pass `false`, the search will be hidden
    */
   searchPosition?: `${SearchPositions}` | false
-  /** The set of emoji to display in the emoji picker. */
-  set: `${EmojisSets}`
-  /** The skin tone of the emojis in the emoji picker. */
-  skinTone: SkinTone
   /**
    * Indicates the position of the skin tone selector in the emoji picker.
    *
@@ -114,10 +105,19 @@ export interface EmojiPickerProps
   theme?: Themes
   /** The version of the emojis to use in the emoji picker. */
   version?: Version
+  /** Event handler called when the user clicks outside of the emoji picker. */
+  onClickOutside?: () => void
+  /**
+   * Event handler called when an emoji is selected (clicked) in the emoji
+   * picker.
+   */
+  onSelect?: (emoji: Emoji) => void
 }
 
 export interface EmojiProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'size'> {
+  /** The set of emoji to use to display the emoji. */
+  set: `${EmojisSets}`
   /**
    * The id of the emoji to display.
    *
@@ -130,8 +130,6 @@ export interface EmojiProps
    * Use this, `id` or `shortcode` to display an emoji.
    */
   native?: string
-  /** The set of emoji to use to display the emoji. */
-  set: `${EmojisSets}`
   /**
    * The shortcode of the emoji to display.
    *

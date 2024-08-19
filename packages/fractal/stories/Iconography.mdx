@@ -1,7 +1,9 @@
 import * as icons from '@iconscout/react-unicons'
 import { Meta } from '@storybook/blocks'
-import kebabCase from 'lodash/fp/kebabCase'
+
 import { createElement } from 'react'
+
+import kebabCase from 'lodash/fp/kebabCase'
 
 <Meta title="Atoms/Iconography" />
 
@@ -50,10 +52,11 @@ import UilIcons from '@iconscout/react-unicons/icons/uil-icons'
 
 <div className="icons">
   {Object.entries(icons).map(([iconName, icon], index) => (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       key={index}
       className="icon"
+      role="button"
+      tabIndex={-1}
       title={iconName}
       onClick={() => {
         navigator.clipboard.writeText(
@@ -61,6 +64,15 @@ import UilIcons from '@iconscout/react-unicons/icons/uil-icons'
             iconName,
           )}'`,
         )
+      }}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter') {
+          navigator.clipboard.writeText(
+            `import ${iconName} from '@iconscout/react-unicons/icons/${kebabCase(
+              iconName,
+            )}'`,
+          )
+        }
       }}
     >
       <div className="icon-name">{iconName}</div>

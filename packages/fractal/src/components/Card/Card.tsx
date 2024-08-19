@@ -1,4 +1,5 @@
 import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
@@ -12,8 +13,9 @@ import {
 } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_COLOR, GROUP_NAME } from './Card.constants'
 import type { CardProps } from './Card.types'
+
+import { DEFAULT_COLOR, GROUP_NAME } from './Card.constants'
 
 /**
  * `Card` component allow to build nice interface by offering user colored
@@ -24,8 +26,8 @@ import type { CardProps } from './Card.types'
 export const Card = ({
   children,
   color = DEFAULT_COLOR,
-  dismissButtonLabel = 'Close',
   dismissable = false,
+  dismissButtonLabel = 'Close',
   fontSize = 1,
   icon,
   onDismiss,

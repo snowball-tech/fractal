@@ -1,19 +1,35 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import { InputPhone } from '.'
 import type { PhoneNumber } from './InputPhone.types'
+
+import { InputPhone } from '.'
 
 type InputPhoneProps = ComponentProps<typeof InputPhone>
 
 const phoneNumberFormat = '{ countryCode?: string, number: string }'
 
 const meta: Meta<InputPhoneProps> = {
+  args: {
+    autoFocus: false,
+    description: 'This is a description',
+    disabled: false,
+    emptyPrefixLabel: 'There is no phone prefix matching your search...',
+    label: 'This is the label',
+    placeholder: 'This is the placeholder',
+    readOnly: false,
+    required: false,
+    searchPlaceholder: 'This is the search placeholder',
+    updateOnInvalid: true,
+    withPrefix: true,
+  },
   argTypes: {
     defaultValue: {
       table: {
@@ -29,19 +45,6 @@ const meta: Meta<InputPhoneProps> = {
       },
     },
   },
-  args: {
-    autoFocus: false,
-    description: 'This is a description',
-    disabled: false,
-    emptyPrefixLabel: 'There is no phone prefix matching your search...',
-    label: 'This is the label',
-    placeholder: 'This is the placeholder',
-    readOnly: false,
-    required: false,
-    searchPlaceholder: 'This is the search placeholder',
-    updateOnInvalid: true,
-    withPrefix: true,
-  },
   component: InputPhone,
   decorators: [
     ...(isChromatic()
@@ -51,9 +54,7 @@ const meta: Meta<InputPhoneProps> = {
           ),
         ]
       : []),
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (newPhoneNumber: PhoneNumber, isValid?: boolean) => {
@@ -129,13 +130,11 @@ export const Interactive: Story = {
 
     const menuItems = body.getAllByLabelText(/\(+/i)
     if (menuItems.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(1)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(2)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
 }

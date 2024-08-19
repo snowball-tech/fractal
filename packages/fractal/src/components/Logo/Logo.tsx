@@ -3,6 +3,8 @@ import omit from 'lodash/fp/omit'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
+import type { LogoProps } from './Logo.types'
+
 import {
   BrandColors,
   DEFAULT_BRAND_COLOR,
@@ -12,7 +14,6 @@ import {
   PictoColors,
   Sizes,
 } from './Logo.constants'
-import type { LogoProps } from './Logo.types'
 
 /**
  * `Logo` component allow to display the SnowBall logo.
@@ -27,28 +28,26 @@ export const Logo = ({
     return false
   }
   const logoSizeClassNames = {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     [Sizes.S]: 'h-[22px] w-[75px]',
-    [Sizes.M]: 'h-[44px] w-[150px]',
-    [Sizes.L]: 'h-[66px] w-[225px]',
-    [Sizes.XL]: 'h-[88px] w-[300px]',
-    [Sizes.Fluid]: 'h-auto w-full',
 
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+    [Sizes.M]: 'h-[44px] w-[150px]',
+
+    [Sizes.L]: 'h-[66px] w-[225px]',
+
+    [Sizes.XL]: 'h-[88px] w-[300px]',
+
+    [Sizes.Fluid]: 'h-auto w-full',
   }
   const pictoClassNames = {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     [Sizes.S]: 'h-[22px] w-[22px]',
-    [Sizes.M]: 'h-[44px] w-[44px]',
-    [Sizes.L]: 'h-[66px] w-[66px]',
-    [Sizes.XL]: 'h-[88px] w-[88px]',
-    [Sizes.Fluid]: 'h-auto w-full',
 
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+    [Sizes.M]: 'h-[44px] w-[44px]',
+
+    [Sizes.L]: 'h-[66px] w-[66px]',
+
+    [Sizes.XL]: 'h-[88px] w-[88px]',
+
+    [Sizes.Fluid]: 'h-auto w-full',
   }
 
   const pictoColor = PictoColors[pictoVariant]

@@ -56,7 +56,7 @@ module.exports = {
             group: 'size',
             value: 48,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 80,
@@ -73,7 +73,7 @@ module.exports = {
             group: 'size',
             value: 64,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 96,
@@ -92,7 +92,7 @@ module.exports = {
             group: 'size',
             value: 40,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 72,
@@ -109,7 +109,7 @@ module.exports = {
             group: 'size',
             value: 48,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 80,
@@ -128,7 +128,7 @@ module.exports = {
             group: 'size',
             value: 32,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 56,
@@ -145,7 +145,7 @@ module.exports = {
             group: 'size',
             value: 40,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 64,
@@ -166,7 +166,7 @@ module.exports = {
             group: 'size',
             value: 32,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 40,
@@ -183,7 +183,7 @@ module.exports = {
             group: 'size',
             value: 44,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 56,
@@ -202,7 +202,7 @@ module.exports = {
             group: 'size',
             value: 28,
           },
-          //
+
           [breakpoints.md]: {
             group: 'size',
             value: 32,
@@ -315,7 +315,6 @@ module.exports = {
       },
     },
 
-    //
     body: {
       1: {
         comment: 'Use for marketing and/or product regular body text',
@@ -361,7 +360,6 @@ module.exports = {
         },
       },
 
-      //
       '1-bold': {
         comment: 'Use for marketing and/or product bold body text',
 
@@ -453,7 +451,6 @@ module.exports = {
         },
       },
 
-      //
       '2-bold': {
         comment: 'Use for marketing and/or product bold low body text',
 
@@ -507,7 +504,6 @@ module.exports = {
       // reference in the other tokens below.
       ignored: true,
 
-      //
       fontFamily: {
         value: '{font.family.normal.value}',
       },
@@ -527,7 +523,6 @@ module.exports = {
       },
     },
 
-    //
     'caption-median': {
       comment: 'Use for marketing and/or product labels and captions',
 
@@ -550,7 +545,6 @@ module.exports = {
       },
     },
 
-    //
     'caption-bold': {
       comment: 'Use for marketing and/or product bold labels and captions',
 

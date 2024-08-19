@@ -3,14 +3,11 @@
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import { useClickOutside } from '@react-hookz/web'
-import constant from 'lodash/fp/constant'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   ForwardedRef,
-  KeyboardEvent,
   forwardRef,
+  KeyboardEvent,
   useContext,
   useEffect,
   useImperativeHandle,
@@ -18,11 +15,18 @@ import {
   useState,
 } from 'react'
 
+import constant from 'lodash/fp/constant'
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Paper } from '@/components/Paper/Paper'
 import { Popover } from '@/components/Popover/Popover'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
+
+import type { SubMenuCombinedRefs, SubMenuProps } from './Menu.types'
 
 import { PopoverProps } from '../Popover'
 import {
@@ -30,7 +34,6 @@ import {
   GROUP_NAME,
   Orientations,
 } from './Menu.constants'
-import type { SubMenuCombinedRefs, SubMenuProps } from './Menu.types'
 import { MenuContext } from './MenuContext'
 import { MenuGroupContext } from './MenuGroupContext'
 
@@ -123,10 +126,10 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       } else {
         hide()
       }
-      // We don't want to reopen the menu based on the `handleOpenChange`
-      // function. So we don't include it in the dependencies.
+      // We don't want to reopen the menu based on the `display` or `hide`
+      // functions. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }, [hasChildren, open])
 
     const {
       condensed: menuCondensed,

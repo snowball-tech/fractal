@@ -10,7 +10,6 @@ module.exports = {
       },
       white: { comment: 'White Tone 100', value: '#FFFFFF' },
 
-      //
       transparent: { comment: 'Transparent', value: 'transparent' },
     },
   },

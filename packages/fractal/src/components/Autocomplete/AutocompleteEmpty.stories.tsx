@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import Autocomplete from './Autocomplete'
@@ -7,13 +8,13 @@ import AutocompleteEmpty from './AutocompleteEmpty'
 type AutocompleteEmptyProps = ComponentProps<typeof AutocompleteEmpty>
 
 const meta: Meta<AutocompleteEmptyProps> = {
+  args: {
+    children: 'No results! Sorry about that!',
+  },
   argTypes: {
     children: {
       control: 'text',
     },
-  },
-  args: {
-    children: 'No results! Sorry about that!',
   },
   component: AutocompleteEmpty,
   parameters: {

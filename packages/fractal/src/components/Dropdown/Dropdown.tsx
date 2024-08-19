@@ -3,10 +3,7 @@
 import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import * as RxDropdown from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import isFunction from 'lodash/fp/isFunction'
-import isNumber from 'lodash/fp/isNumber'
-import noop from 'lodash/fp/noop'
-import omit from 'lodash/fp/omit'
+
 import {
   type CSSProperties,
   type ForwardedRef,
@@ -17,13 +14,19 @@ import {
   useState,
 } from 'react'
 
+import isFunction from 'lodash/fp/isFunction'
+import isNumber from 'lodash/fp/isNumber'
+import noop from 'lodash/fp/noop'
+import omit from 'lodash/fp/omit'
+
 import { Elevations } from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_ELEVATION, GROUP_NAME } from './Dropdown.constants'
 import type { CombinedRefs, DropdownProps } from './Dropdown.types'
+
+import { DEFAULT_ELEVATION, GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 
 /**
@@ -117,7 +120,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       // We don't want to reopen the dropdown based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }, [hasChildren, hasTrigger, open])
 
     const handleDropdownInteractOutside: DropdownProps['onInteractOutside'] = (
       event,
@@ -188,14 +191,11 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
     }
 
     const elevationClassNames = {
-      /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
       [Elevations.Bordered]: 'rounded-sm shadow-none',
-      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
-      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
 
-      /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+
+      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
     }
 
     const contentElement = (

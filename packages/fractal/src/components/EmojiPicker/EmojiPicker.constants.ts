@@ -89,5 +89,4 @@ export const DEFAULT_SKIN_TONE: SkinTone = 1
 
 export const VERSIONS = [1, 2, 3, 4, 5, 11, 12, 12.1, 13, 13.1, 14, 15] as const
 export type Version = (typeof VERSIONS)[number]
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const DEFAULT_VERSION: Version = VERSIONS.at(-1)!

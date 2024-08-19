@@ -68,17 +68,6 @@ export interface InputTextProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /**
-   * Event handler called when the optional button is clicked.
-   *
-   * Only useful if `withButton` is `true`.
-   */
-  onButtonClick?: (event: MouseEvent<HTMLElement>) => void
-  /**
-   * Event handler called when the text input value is changed with the new
-   * string value.
-   */
-  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void
   /** A string to display when the text input is empty. */
   placeholder?: string
   /** The prefix (icon or text) to display to the left of the text input. */
@@ -138,4 +127,15 @@ export interface InputTextProps
    * Only useful for `type="number"` inputs.
    */
   withSpinButton?: boolean
+  /**
+   * Event handler called when the optional button is clicked.
+   *
+   * Only useful if `withButton` is `true`.
+   */
+  onButtonClick?: (event: MouseEvent<HTMLElement>) => void
+  /**
+   * Event handler called when the text input value is changed with the new
+   * string value.
+   */
+  onChange?: (event: ChangeEvent<HTMLInputElement>, newValue: string) => void
 }

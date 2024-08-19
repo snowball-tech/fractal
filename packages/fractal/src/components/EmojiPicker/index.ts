@@ -16,10 +16,10 @@ export {
   Locales as EmojiPickerLocales,
   Positions as EmojiPickerNavPositions,
   Positions as EmojiPickerPreviewPositions,
+  SearchPositions as EmojiPickerSearchPositions,
   SKIN_TONES as EmojiPickerSkinTones,
   SKIN_TONES as EmojiSkinTones,
   SKIN_TONES as SkinTones,
-  SearchPositions as EmojiPickerSearchPositions,
   SkinTonePositions as EmojiPickerSkinTonePositions,
   VERSIONS as EmojiPickerEmojisVersions,
 } from './EmojiPicker.constants.js'

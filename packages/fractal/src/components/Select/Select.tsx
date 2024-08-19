@@ -1,13 +1,12 @@
 'use client'
 
-import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
+
+import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import * as RxSelect from '@radix-ui/react-select'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   forwardRef,
@@ -18,12 +17,17 @@ import {
   useState,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Select.constants'
 import type { CombinedRefs, SelectProps } from './Select.types'
+
+import { GROUP_NAME } from './Select.constants'
 
 /**
  * `Select` component is used to offer the user choices they can select.

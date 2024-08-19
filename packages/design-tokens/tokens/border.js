@@ -6,7 +6,6 @@ module.exports = {
       value: 'none',
     },
 
-    //
     1: {
       comment: 'A subtle border.',
 

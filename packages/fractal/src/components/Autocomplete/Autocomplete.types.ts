@@ -1,4 +1,5 @@
 import type { DropdownMenuContentProps as RxDropdownMenuContentProps } from '@radix-ui/react-dropdown-menu'
+
 import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
 
 import type {
@@ -6,6 +7,7 @@ import type {
   DropdownItemGroupProps,
   DropdownItemProps,
 } from '@/components/Dropdown/Dropdown.types'
+
 import { InputTextProps } from '@/components/InputText/InputText.types'
 
 export type CombinedRefs = {
@@ -71,31 +73,6 @@ export interface AutocompleteProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /**
-   * Event handler called when the autocomplete input AND the dropdown have lost
-   * focus.
-   */
-  onBlur?: () => void
-  /**
-   * Event handler called when the autocomplete input value is changed or a
-   * value is selected.
-   */
-  onChange?: (
-    event: ChangeEvent<HTMLInputElement> | null,
-    newValue: string,
-  ) => void
-  /** Event handler called when the autocomplete dropdown is closed. */
-  onClose?: () => void
-  /**
-   * Event handler called when the autocomplete input value is changed with the
-   * new string value.
-   */
-  onInputChange?: (
-    event: ChangeEvent<HTMLInputElement>,
-    newValue: string,
-  ) => void
-  /** Event handler called when the autocomplete dropdown is opened. */
-  onOpen?: () => void
   /** Indicates if the dropdown should be opened at the beginning. */
   open?: boolean
   /** A string to display when the autocomplete is empty. */
@@ -124,6 +101,31 @@ export interface AutocompleteProps
    * Must be used in conjunction with `onChange`.
    */
   value?: number | string
+  /**
+   * Event handler called when the autocomplete input AND the dropdown have lost
+   * focus.
+   */
+  onBlur?: () => void
+  /**
+   * Event handler called when the autocomplete input value is changed or a
+   * value is selected.
+   */
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement> | null,
+    newValue: string,
+  ) => void
+  /** Event handler called when the autocomplete dropdown is closed. */
+  onClose?: () => void
+  /**
+   * Event handler called when the autocomplete input value is changed with the
+   * new string value.
+   */
+  onInputChange?: (
+    event: ChangeEvent<HTMLInputElement>,
+    newValue: string,
+  ) => void
+  /** Event handler called when the autocomplete dropdown is opened. */
+  onOpen?: () => void
 }
 
 export interface AutocompleteLoadingProps
@@ -141,7 +143,7 @@ export interface AutocompleteLoadingProps
    * You can pass either a boolean to use/disable the default icon or an icon of
    * your choice.
    */
-  icon?: ReactNode | boolean
+  icon?: boolean | ReactNode
   /**
    * The content of the loading item.
    *

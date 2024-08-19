@@ -1,12 +1,15 @@
 import * as RxTabs from '@radix-ui/react-tabs'
-import omit from 'lodash/fp/omit'
+
 import { type ForwardedRef, forwardRef } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Tabs.constants'
 import type { TabContentProps } from './Tabs.types'
+
+import { GROUP_NAME } from './Tabs.constants'
 
 /**
  * `TabContent` component is used to display the content of a tab inside of a

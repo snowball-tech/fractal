@@ -1,6 +1,6 @@
-export * from './ThemeProvider.js'
 export * from './components/index.js'
 export * from './constants.js'
 export * from './hooks/index.js'
 export * from './styles/helpers.js'
+export * from './ThemeProvider.js'
 export * from './types.js'

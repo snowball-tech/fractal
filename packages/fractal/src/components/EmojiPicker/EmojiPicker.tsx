@@ -1,13 +1,17 @@
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
+
+import { useCallback, useEffect, useRef, useState } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
-import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { PREFIX } from '@/constants'
 import { useTheme } from '@/hooks'
 import { cn } from '@/styles/helpers'
+
+import type { EmojiPickerProps } from './EmojiPicker.types'
 
 import {
   DEFAULT_CATEGORIES,
@@ -21,7 +25,6 @@ import {
   DEFAULT_VERSION,
   GROUP_NAME,
 } from './EmojiPicker.constants'
-import type { EmojiPickerProps } from './EmojiPicker.types'
 
 /**
  * `EmojiPicker` component displays an emoji picker with search, preview and

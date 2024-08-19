@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import AutocompleteItem from '@/components/Dropdown/DropdownItem'
@@ -10,6 +12,11 @@ import Autocomplete from './Autocomplete'
 type AutocompleteItemGroupProps = ComponentProps<typeof AutocompleteItemGroup>
 
 const meta: Meta<AutocompleteItemGroupProps> = {
+  args: {
+    condensed: false,
+    disabled: false,
+    label: 'Jedis',
+  },
   argTypes: {
     children: {
       control: false,
@@ -20,11 +27,6 @@ const meta: Meta<AutocompleteItemGroupProps> = {
         },
       },
     },
-  },
-  args: {
-    condensed: false,
-    disabled: false,
-    label: 'Jedis',
   },
   component: AutocompleteItemGroup,
   parameters: {

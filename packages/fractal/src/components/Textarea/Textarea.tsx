@@ -1,10 +1,7 @@
 'use client'
 
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import isNil from 'lodash/fp/isNil'
-import omit from 'lodash/fp/omit'
+
 import {
   type ChangeEvent,
   type FocusEvent,
@@ -14,13 +11,19 @@ import {
 } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
+import omit from 'lodash/fp/omit'
+
 import { Button } from '@/components/Button'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Textarea.constants'
 import type { TextareaProps } from './Textarea.types'
+
+import { GROUP_NAME } from './Textarea.constants'
 
 /**
  * `Textarea` component is used to allow the user to enter long textual values.

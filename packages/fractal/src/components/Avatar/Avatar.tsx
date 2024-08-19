@@ -1,6 +1,7 @@
 'use client'
 
 import UserIcon from '@iconscout/react-unicons/icons/uil-user'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
@@ -9,13 +10,14 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
+import type { AvatarProps } from './Avatar.types'
+
 import {
   DEFAULT_SIZE,
   GROUP_NAME,
   Sizes,
   sizeToTypographyVariant,
 } from './Avatar.constants'
-import type { AvatarProps } from './Avatar.types'
 
 /**
  * `Avatar` component allow to display an avatar with an optional dropdown menu.
@@ -29,32 +31,30 @@ export const Avatar = ({
   ...props
 }: AvatarProps) => {
   const sizeClassNames = {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     [Sizes.S]: 'h-5 max-h-5 min-h-5 w-5 max-w-5 min-w-5',
-    [Sizes.M]: 'h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6',
-    [Sizes.L]: 'h-7 max-h-7 min-h-7 w-7 max-w-7 min-w-7',
-    [Sizes.XL]: 'h-8 max-h-8 min-h-8 w-8 max-w-8 min-w-8',
-    [Sizes.Fluid]: 'w-full h-full min-h-5 min-w-5',
 
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
+    [Sizes.M]: 'h-6 max-h-6 min-h-6 w-6 max-w-6 min-w-6',
+
+    [Sizes.L]: 'h-7 max-h-7 min-h-7 w-7 max-w-7 min-w-7',
+
+    [Sizes.XL]: 'h-8 max-h-8 min-h-8 w-8 max-w-8 min-w-8',
+
+    [Sizes.Fluid]: 'w-full h-full min-h-5 min-w-5',
   }
 
   const iconSizeClassNames = {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     [Sizes.S]:
       'h-[calc(theme(spacing.5)/2)] max-h-[calc(theme(spacing.5)/2)] min-h-[calc(theme(spacing.5)/2)] w-[calc(theme(spacing.5)/2)] max-w-[calc(theme(spacing.5)/2)] min-w-[calc(theme(spacing.5)/2)]',
+
     [Sizes.M]: 'h-3 max-h-3 min-h-3 w-3 max-w-3 min-w-3',
+
     [Sizes.L]:
       'h-[calc(theme(spacing.7)/2)] max-h-[calc(theme(spacing.7)/2)] min-h-[calc(theme(spacing.7)/2)] w-[calc(theme(spacing.7)/2)] max-w-[calc(theme(spacing.7)/2)] min-w-[calc(theme(spacing.7)/2)]',
+
     [Sizes.XL]: 'h-4 max-h-4 min-h-4 w-4 max-w-4 min-w-4',
+
     [Sizes.Fluid]:
       'w-full h-full min-h-[calc(theme(spacing.5)/2)] min-w-[calc(theme(spacing.5)/2)]',
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix,
-perfectionist/sort-objects */
   }
 
   const baseBubbleClassName = cj(

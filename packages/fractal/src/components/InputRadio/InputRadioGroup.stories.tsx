@@ -1,8 +1,11 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
-import kebabCase from 'lodash/fp/kebabCase'
+
 import type { ComponentProps, ReactNode } from 'react'
+
+import kebabCase from 'lodash/fp/kebabCase'
 
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
@@ -44,6 +47,13 @@ const items = (
 )
 
 const meta: Meta<InputRadioGroupProps> = {
+  args: {
+    children: items,
+    condensed: false,
+    disabled: false,
+    fullWidth: false,
+    required: false,
+  },
   argTypes: {
     asChild: { table: { disable: true } },
     children: {
@@ -64,18 +74,9 @@ const meta: Meta<InputRadioGroupProps> = {
       },
     },
   },
-  args: {
-    children: items,
-    condensed: false,
-    disabled: false,
-    fullWidth: false,
-    required: false,
-  },
   component: InputRadioGroup,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onValueChange = (newValue: string) => {
@@ -197,7 +198,6 @@ export const InteractivePrimary: Story = {
 
     const radios = canvas.getAllByRole('radio')
 
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(radios.at(0)!)
     await sleep(500)
     await userEvent.hover(radios.at(1)!)
@@ -209,7 +209,6 @@ export const InteractivePrimary: Story = {
     await userEvent.click(radios.at(3)!)
 
     radios.at(3)!.blur()
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
   render: () => (
     <InputRadioGroup
@@ -291,7 +290,6 @@ export const InteractiveSecondary: Story = {
 
     const radios = canvas.getAllByRole('radio')
 
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(radios.at(0)!)
     await sleep(500)
     await userEvent.hover(radios.at(1)!)
@@ -303,7 +301,6 @@ export const InteractiveSecondary: Story = {
     await userEvent.click(radios.at(3)!)
 
     radios.at(3)!.blur()
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
   render: () => (
     <InputRadioGroup
@@ -385,7 +382,6 @@ export const InteractiveTertiary: Story = {
 
     const radios = canvas.getAllByRole('radio')
 
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(radios.at(0)!)
     await sleep(500)
     await userEvent.hover(radios.at(1)!)
@@ -397,7 +393,6 @@ export const InteractiveTertiary: Story = {
     await userEvent.click(radios.at(3)!)
 
     radios.at(3)!.blur()
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
   render: () => (
     <InputRadioGroup

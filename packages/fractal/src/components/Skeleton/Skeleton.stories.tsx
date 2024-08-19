@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
 import { Header } from '@/components/Header'
@@ -15,6 +16,11 @@ const perVariantStoriesParameters = {
 }
 
 const meta: Meta<StepperProps> = {
+  args: {
+    children: '',
+    color: DEFAULT_COLOR,
+    shape: SkeletonShapes.Rectangle,
+  },
   argTypes: {
     color: {
       options: Object.values(SkeletonColors),
@@ -29,11 +35,6 @@ const meta: Meta<StepperProps> = {
         type: { summary: Object.values(SkeletonShapes).join('|') },
       },
     },
-  },
-  args: {
-    children: '',
-    color: DEFAULT_COLOR,
-    shape: SkeletonShapes.Rectangle,
   },
   component: Skeleton,
   parameters: {

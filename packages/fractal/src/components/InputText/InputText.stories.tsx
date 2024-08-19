@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import DizzyFaceIcon from '@iconscout/react-unicons/icons/uil-dizzy-meh'
@@ -5,8 +7,8 @@ import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import { useArgs } from '@storybook/preview-api'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
+
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
@@ -16,6 +18,26 @@ import { InputText } from '.'
 type InputTextProps = ComponentProps<typeof InputText>
 
 const meta: Meta<InputTextProps> = {
+  args: {
+    autoFocus: false,
+    button: {
+      icon: <DizzyFaceIcon />,
+      iconPosition: 'right',
+      label: 'Use force',
+      position: 'right',
+    },
+    description: 'These aren’t the droids you’re looking for!',
+    disabled: false,
+    fullWidth: false,
+    label: 'You don’t need to see his identification!',
+    placeholder: 'I don’t need to see his identification...',
+    prefix: 'None',
+    readOnly: false,
+    required: false,
+    suffix: 'None',
+    type: 'text',
+    withButton: false,
+  },
   argTypes: {
     defaultValue: { control: 'text' },
     error: { control: 'text' },
@@ -46,31 +68,9 @@ const meta: Meta<InputTextProps> = {
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
   },
-  args: {
-    autoFocus: false,
-    button: {
-      icon: <DizzyFaceIcon />,
-      iconPosition: 'right',
-      label: 'Use force',
-      position: 'right',
-    },
-    description: 'These aren’t the droids you’re looking for!',
-    disabled: false,
-    fullWidth: false,
-    label: 'You don’t need to see his identification!',
-    placeholder: 'I don’t need to see his identification...',
-    prefix: 'None',
-    readOnly: false,
-    required: false,
-    suffix: 'None',
-    type: 'text',
-    withButton: false,
-  },
   component: InputText,
   decorators: [
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (

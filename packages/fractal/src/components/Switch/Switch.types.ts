@@ -1,4 +1,5 @@
 import type { SwitchProps as RxSwitchProps } from '@radix-ui/react-switch'
+
 import type { ReactNode } from 'react'
 
 export interface SwitchProps
@@ -67,8 +68,6 @@ export interface SwitchProps
    * If none is given, the ID (provided or auto-generated) will be used.
    */
   name?: string
-  /** Event handler called when the switch is clicked. */
-  onToggle?: (newState: boolean) => void
   /**
    * Indicates that the user must check the switch before continuing (e.g.
    * sending a form).
@@ -82,4 +81,6 @@ export interface SwitchProps
    * Default value (`on`) should be good most of the time.
    */
   value?: string
+  /** Event handler called when the switch is clicked. */
+  onToggle?: (newState: boolean) => void
 }

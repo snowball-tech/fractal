@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { Select, SelectItem, SelectItemGroup } from '.'
@@ -7,6 +9,10 @@ import { Select, SelectItem, SelectItemGroup } from '.'
 type SelectItemGroupProps = ComponentProps<typeof SelectItemGroup>
 
 const meta: Meta<SelectItemGroupProps> = {
+  args: {
+    disabled: false,
+    label: 'Jedis',
+  },
   argTypes: {
     children: {
       control: false,
@@ -17,10 +23,6 @@ const meta: Meta<SelectItemGroupProps> = {
         },
       },
     },
-  },
-  args: {
-    disabled: false,
-    label: 'Jedis',
   },
   component: SelectItemGroup,
 

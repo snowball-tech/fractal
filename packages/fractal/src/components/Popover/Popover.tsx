@@ -3,10 +3,7 @@
 import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxPopover from '@radix-ui/react-popover'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import isFunction from 'lodash/fp/isFunction'
-import isNumber from 'lodash/fp/isNumber'
-import noop from 'lodash/fp/noop'
-import omit from 'lodash/fp/omit'
+
 import {
   type CSSProperties,
   type ForwardedRef,
@@ -17,14 +14,20 @@ import {
   useState,
 } from 'react'
 
+import isFunction from 'lodash/fp/isFunction'
+import isNumber from 'lodash/fp/isNumber'
+import noop from 'lodash/fp/noop'
+import omit from 'lodash/fp/omit'
+
 import { Button } from '@/components/Button'
 import { Paper } from '@/components/Paper'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_ELEVATION, GROUP_NAME } from './Popover.constants'
 import type { CombinedRefs, PopoverProps } from './Popover.types'
+
+import { DEFAULT_ELEVATION, GROUP_NAME } from './Popover.constants'
 
 /**
  * `Popover` component is used to display a popoverion to the user.
@@ -117,7 +120,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       // We don't want to reopen the popover based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }, [hasChildren, hasTrigger, open])
 
     const handleInteractOutside: PopoverProps['onInteractOutside'] = (
       event,

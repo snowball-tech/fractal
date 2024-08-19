@@ -95,8 +95,7 @@ import {
   TypographyHeading4LinkFontWeight,
   TypographyHeading4LinkLineHeight,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import isEmpty from 'lodash/fp/isEmpty'
-import omit from 'lodash/fp/omit'
+
 import {
   type CSSProperties,
   type ElementType,
@@ -105,17 +104,21 @@ import {
   forwardRef,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import omit from 'lodash/fp/omit'
+
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
+
+import type { TypographyProps } from './Typography.types'
 
 import {
   DEFAULT_ELEMENT,
   DEFAULT_VARIANT,
   GROUP_NAME,
-  VARIANTS_MAPPING,
   Variants,
+  VARIANTS_MAPPING,
 } from './Typography.constants'
-import type { TypographyProps } from './Typography.types'
 
 const MONOSPACED_ELEMENTS: Set<ElementType> = new Set([
   'code',

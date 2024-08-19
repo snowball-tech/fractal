@@ -1,7 +1,7 @@
 import { Root } from '@radix-ui/react-toolbar'
+
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
-import { ButtonProps } from '@/components/Button'
 import type {
   CombinedRefs as DropdownCombinedRefs,
   DropdownItemGroupProps,
@@ -9,6 +9,8 @@ import type {
   DropdownItemSeparatorProps,
   DropdownProps,
 } from '@/components/Dropdown/Dropdown.types'
+
+import { ButtonProps } from '@/components/Button'
 import { Paper } from '@/components/Paper/Paper'
 import { SelectProps } from '@/components/Select'
 

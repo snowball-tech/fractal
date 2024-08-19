@@ -7,13 +7,20 @@ import {
 export const GROUP_NAME = 'logo'
 
 export enum Sizes {
-  /* eslint-disable perfectionist/sort-enums */
+  // Small.
   S = 's',
+
+  // Medium
   M = 'm',
+
+  // Large.
   L = 'l',
+
+  // Extra Large.
   XL = 'xl',
+
+  // Fluid.
   Fluid = 'fluid',
-  /* eslint-enable perfectionist/sort-enums */
 }
 
 export const DEFAULT_SIZE = Sizes.Fluid

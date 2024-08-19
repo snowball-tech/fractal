@@ -1,10 +1,9 @@
 'use client'
 
 import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
+
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   type ChangeEvent,
   type FocusEvent,
@@ -19,18 +18,24 @@ import {
   useState,
 } from 'react'
 
-import { Dropdown } from '@/components/Dropdown/Dropdown'
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import type {
   CombinedRefs as DropdownCombinedRefs,
   DropdownProps,
 } from '@/components/Dropdown/Dropdown.types'
+
+import { Dropdown } from '@/components/Dropdown/Dropdown'
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteProps, CombinedRefs } from './Autocomplete.types'
+
+import { GROUP_NAME } from './Autocomplete.constants'
 
 /**
  * `Autocomplete` component is used to allow the user to enter text and offer
@@ -131,10 +136,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       } else {
         handleDropdownToggle(false)
       }
-      // We don't want to reopen the toggle based on the `handleOpenChange`
-      // function. So we don't include it in the dependencies.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }, [hasChildren, open])
 
     const handleDropdownInteractOutside: DropdownProps['onInteractOutside'] = (
       event,

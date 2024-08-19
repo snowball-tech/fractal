@@ -7,7 +7,7 @@ export enum Colors {
   Purple = 'purple',
   Yellow = 'yellow',
 
-  // eslint-disable-next-line perfectionist/sort-enums
+  // Greyscale.
   Black = 'black',
   DarkGrey = 'dark-grey',
   Grey = 'grey',

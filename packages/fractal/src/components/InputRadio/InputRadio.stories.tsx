@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { InputRadio, InputRadioGroup } from '.'
@@ -7,9 +9,6 @@ import { InputRadio, InputRadioGroup } from '.'
 type InputRadioProps = ComponentProps<typeof InputRadio>
 
 const meta: Meta<{ required?: boolean } & InputRadioProps> = {
-  argTypes: {
-    asChild: { table: { disable: true } },
-  },
   args: {
     condensed: false,
     disabled: false,
@@ -17,6 +16,9 @@ const meta: Meta<{ required?: boolean } & InputRadioProps> = {
     label: 'Jar Jar Binks',
     required: false,
     value: 'jar-jar-binks',
+  },
+  argTypes: {
+    asChild: { table: { disable: true } },
   },
   component: InputRadio,
   parameters: {

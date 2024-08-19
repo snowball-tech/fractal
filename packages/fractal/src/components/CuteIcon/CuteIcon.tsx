@@ -3,8 +3,9 @@ import omit from 'lodash/fp/omit'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { DEFAULT_COLOR, GROUP_NAME } from './CuteIcon.constants'
 import type { CuteIconProps } from './CuteIcon.types'
+
+import { DEFAULT_COLOR, GROUP_NAME } from './CuteIcon.constants'
 
 /**
  * `CuteIcon` component displays an icon in a small cute colored bubble.

@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { Select, SelectItem } from '.'
@@ -7,13 +9,13 @@ import { Select, SelectItem } from '.'
 type SelectItemProps = ComponentProps<typeof SelectItem>
 
 const meta: Meta<SelectItemProps> = {
-  argTypes: {
-    children: { control: 'text' },
-  },
   args: {
     children: 'Jar Jar Binks',
     disabled: false,
     value: 'jar-jar-binks',
+  },
+  argTypes: {
+    children: { control: 'text' },
   },
   component: SelectItem,
 

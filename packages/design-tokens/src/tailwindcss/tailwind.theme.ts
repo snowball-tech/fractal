@@ -1,3 +1,5 @@
+import type { Config } from 'tailwindcss'
+
 import {
   SizeBreakpointLg,
   SizeBreakpointMd,
@@ -6,9 +8,9 @@ import {
   SizeBreakpointXs,
   SizeBreakpointXxl,
 } from '@snowball-tech/design-tokens'
+
 import omit from 'lodash/fp/omit'
 import pick from 'lodash/fp/pick'
-import type { Config } from 'tailwindcss'
 
 const baseColors = {
   black: 'var(--color-base-black)',
@@ -76,7 +78,6 @@ export const tailwindTheme: Config['theme'] = {
     },
   },
 
-  //
   aria: {
     busy: 'busy="true"',
     checked: 'checked="true"',
@@ -102,8 +103,8 @@ export const tailwindTheme: Config['theme'] = {
   backgroundColor: ({ theme }) => ({
     ...theme('colors'),
     ...theme('colors.body'),
-    DEFAULT: 'var(--color-background-body-default)',
     browser: 'initial',
+    DEFAULT: 'var(--color-background-body-default)',
     disabled: 'var(--color-background-disabled)',
     'disabled-light': 'var(--color-base-grey-90)',
     separator: 'var(--color-base-grey-70)',
@@ -112,8 +113,8 @@ export const tailwindTheme: Config['theme'] = {
 
   borderColor: ({ theme }) => ({
     ...theme('colors'),
-    DEFAULT: 'var(--color-border-default)',
     dark: 'var(--color-border-dark)',
+    DEFAULT: 'var(--color-border-default)',
     disabled: 'var(--color-border-disabled)',
     error: 'var(--color-feedback-danger-50)',
     light: 'var(--color-border-light)',
@@ -131,7 +132,6 @@ export const tailwindTheme: Config['theme'] = {
   borderRadius: {
     DEFAULT: 'var(--size-radius-0)',
 
-    //
     '0': 'var(--size-radius-0)',
     browser: 'initial',
     full: 'var(--size-radius-rounded)',
@@ -148,8 +148,8 @@ export const tailwindTheme: Config['theme'] = {
     '0': '0px',
     '1': 'var(--size-border-1)',
     '2': 'var(--size-border-2)',
-    DEFAULT: '0px',
     browser: 'initial',
+    DEFAULT: '0px',
     half: 'var(--size-spacing-half)',
     unset: 'unset',
   },
@@ -165,7 +165,6 @@ export const tailwindTheme: Config['theme'] = {
     '2-light': 'var(--shadow-brutal-2-light)',
     '2-primary': 'var(--shadow-brutal-2-primary)',
     '2-secondary': 'var(--shadow-brutal-2-secondary)',
-    DEFAULT: 'var(--shadow-none)',
     brutal: 'var(--shadow-brutal-2)',
     'brutal-1': 'var(--shadow-brutal-1)',
     'brutal-1-dark': 'var(--shadow-brutal-1-dark)',
@@ -181,6 +180,7 @@ export const tailwindTheme: Config['theme'] = {
     'brutal-light': 'var(--shadow-brutal-2-light)',
     'brutal-primary': 'var(--shadow-brutal-2-primary)',
     'brutal-secondary': 'var(--shadow-brutal-2-secondary)',
+    DEFAULT: 'var(--shadow-none)',
     disabled: 'var(--shadow-none)',
     error: 'inset 0 0 0 1px var(--color-feedback-danger-50)',
     hover: 'inset 0 0 0 1px var(--color-border-default)',
@@ -206,9 +206,9 @@ export const tailwindTheme: Config['theme'] = {
     ...brandColors,
     base: baseColors,
     body: {
-      DEFAULT: 'var(--color-background-body-default)',
       black: 'var(--color-background-body-black)',
       dark: 'var(--color-background-body-dark)',
+      DEFAULT: 'var(--color-background-body-default)',
       light: 'var(--color-background-body-light)',
       primary: 'var(--color-background-body-primary)',
       secondary: 'var(--color-background-body-secondary)',
@@ -269,16 +269,17 @@ export const tailwindTheme: Config['theme'] = {
   },
 
   containers: {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     xs: SizeBreakpointXs,
-    sm: SizeBreakpointSm,
-    md: SizeBreakpointMd,
-    lg: SizeBreakpointLg,
-    xl: SizeBreakpointXl,
-    xxl: SizeBreakpointXxl,
 
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    sm: SizeBreakpointSm,
+
+    md: SizeBreakpointMd,
+
+    lg: SizeBreakpointLg,
+
+    xl: SizeBreakpointXl,
+
+    xxl: SizeBreakpointXxl,
   },
 
   content: {
@@ -310,11 +311,8 @@ export const tailwindTheme: Config['theme'] = {
     'family-browser': 'initial',
     'family-unset': 'unset',
 
-    //
     'family-normal': 'var(--font-family-normal)',
     'family-wide': 'var(--font-family-wide)',
-
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     'display-1': 'var(--typography-display-1-font-family)',
     'display-2': 'var(--typography-display-2-font-family)',
@@ -329,56 +327,49 @@ export const tailwindTheme: Config['theme'] = {
     'body-2': 'var(--typography-body-2-font-family)',
 
     caption: 'var(--typography-caption-font-family)',
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 
   fontSize: {
     size: 'var(--typography-body-1-font-size)',
 
-    //
     'size-browser': 'initial',
     'size-unset': 'unset',
 
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
     'display-1-xs': 'var(--typography-display-1-font-size-xs)',
     'display-1-md': 'var(--typography-display-1-font-size-md)',
     'display-2-xs': 'var(--typography-display-2-font-size-xs)',
     'display-2-md': 'var(--typography-display-2-font-size-md)',
     'display-wide-xs': 'var(--typography-display-wide-font-size-xs)',
     'display-wide-md': 'var(--typography-display-wide-font-size-md)',
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
     'heading-1-xs': 'var(--typography-heading-1-font-size-xs)',
     'heading-1-md': 'var(--typography-heading-1-font-size-md)',
     'heading-2-xs': 'var(--typography-heading-2-font-size-xs)',
     'heading-2-md': 'var(--typography-heading-2-font-size-md)',
     'heading-3': 'var(--typography-heading-3-font-size)',
     'heading-4': 'var(--typography-heading-4-font-size)',
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     'body-1': 'var(--typography-body-1-font-size)',
     'body-2': 'var(--typography-body-2-font-size)',
 
     caption: 'var(--typography-caption-font-size)',
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 
   fontWeight: {
     weight: 'var(--font-weight-standard)',
 
-    //
     'weight-browser': 'initial',
     'weight-unset': 'unset',
 
-    //
     'weight-bold': 'var(--font-weight-bold)',
     'weight-median': 'var(--font-weight-median)',
     'weight-medium': 'var(--font-weight-median)',
     'weight-normal': 'var(--font-weight-standard)',
     'weight-standard': 'var(--font-weight-standard)',
-
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     'weight-display-1': 'var(--typography-display-1-font-weight)',
     'weight-display-2': 'var(--typography-display-2-font-weight)',
@@ -392,17 +383,19 @@ export const tailwindTheme: Config['theme'] = {
     'weight-body-1': 'var(--typography-body-1-font-weight)',
     'weight-body-1-bold': 'var(--typography-body-1-bold-font-weight)',
     'weight-body-1-median': 'var(--typography-body-1-median-font-weight)',
+    // eslint-disable-next-line perfectionist/sort-objects
     'weight-body-1-link': 'var(--typography-body-1-link-font-weight)',
+
     'weight-body-2': 'var(--typography-body-2-font-weight)',
     'weight-body-2-bold': 'var(--typography-body-2-bold-font-weight)',
     'weight-body-2-median': 'var(--typography-body-2-median-font-weight)',
+    // eslint-disable-next-line perfectionist/sort-objects
     'weight-body-2-link': 'var(--typography-body-2-link-font-weight)',
 
     'weight-caption-bold': 'var(--typography-caption-bold-font-weight)',
     'weight-caption-median': 'var(--typography-caption-median-font-weight)',
+    // eslint-disable-next-line perfectionist/sort-objects
     'weight-caption-link': 'var(--typography-caption-link-font-weight)',
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 
   height: ({ breakpoints, theme }) => ({
@@ -426,31 +419,31 @@ export const tailwindTheme: Config['theme'] = {
   lineHeight: {
     DEFAULT: 'var(--typography-body-1-line-height)',
 
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
-    none: 'none',
     browser: 'initial',
+    none: 'none',
     unset: 'unset',
 
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
     'display-1-xs': 'var(--typography-display-1-line-height-xs)',
     'display-1-md': 'var(--typography-display-1-line-height-md)',
     'display-2-xs': 'var(--typography-display-2-line-height-xs)',
     'display-2-md': 'var(--typography-display-2-line-height-md)',
     'display-wide-xs': 'var(--typography-display-wide-line-height-xs)',
     'display-wide-md': 'var(--typography-display-wide-line-height-md)',
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
+    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
     'heading-1-xs': 'var(--typography-heading-1-line-height-xs)',
     'heading-1-md': 'var(--typography-heading-1-line-height-md)',
     'heading-2': 'var(--typography-heading-2-line-height)',
     'heading-3': 'var(--typography-heading-3-line-height)',
     'heading-4': 'var(--typography-heading-4-line-height)',
+    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     'body-1': 'var(--typography-body-1-line-height)',
     'body-2': 'var(--typography-body-2-line-height)',
 
     caption: 'var(--typography-caption-line-height)',
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 
   maxHeight: ({ breakpoints, theme }) => ({
@@ -523,44 +516,54 @@ export const tailwindTheme: Config['theme'] = {
 
   placeholderColor: ({ theme }) => ({
     ...theme('colors'),
-    DEFAULT: 'var(--color-text-placeholder)',
     browser: 'initial',
+    DEFAULT: 'var(--color-text-placeholder)',
     unset: 'unset',
   }),
 
   ringColor: ({ theme }) => ({
     ...theme('colors'),
-    DEFAULT: 'var(--color-brand-primary)',
     browser: 'initial',
+    DEFAULT: 'var(--color-brand-primary)',
     unset: 'unset',
   }),
 
   screens: {
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
-    // Width breakpoints.
+    // Group width breakpoints.
     xs: SizeBreakpointXs,
+
     sm: SizeBreakpointSm,
+
     md: SizeBreakpointMd,
+
     lg: SizeBreakpointLg,
+
     xl: SizeBreakpointXl,
+
     xxl: SizeBreakpointXxl,
 
-    // Height breakpoints.
+    // Group height breakpoints.
     'h-xxxl': { raw: '(max-height: 800px)' },
     'h-xxxl-only': { raw: '(min-height: 751px) and (max-height: 800px)' },
+
     'h-xxl': { raw: '(max-height: 750px)' },
     'h-xxl-only': { raw: '(min-height: 701px) and (max-height: 750px)' },
+
     'h-xl': { raw: '(max-height: 700px)' },
     'h-xl-only': { raw: '(min-height: 651px) and (max-height: 700px)' },
+
     'h-lg': { raw: '(max-height: 650px)' },
     'h-lg-only': { raw: '(min-height: 601px) and (max-height: 650px)' },
+
     'h-md': { raw: '(max-height: 600px)' },
     'h-md-only': { raw: '(min-height: 551px) and (max-height: 600px)' },
+
     'h-sm': { raw: '(max-height: 550px)' },
     'h-sm-only': { raw: '(min-height: 521px) and (max-height: 550px)' },
+
     'h-xs': { raw: '(max-height: 520px)' },
     'h-xs-only': { raw: '(min-height: 501px) and (max-height: 520px)' },
+
     'h-xxs': { raw: '(max-height: 500px)' },
 
     // Other
@@ -574,16 +577,21 @@ export const tailwindTheme: Config['theme'] = {
     browser: 'initial',
     unset: 'unset',
 
-    //
     '0': 'var(--size-spacing-0)',
+
+    // 1 pixel.
     px: 'var(--size-spacing-px)',
+
+    // Quarter of the default spacing, i.e. 2 pixels.
     quarter: 'var(--size-spacing-quarter)',
-    //
+
+    // Half of the default spacing, i.e. 4 pixels.
     half: 'var(--size-spacing-half)',
-    //
-    '1': 'var(--size-spacing-1)',
+
+    // One and a half default spacing, i.e. 12
     'one-and-half': 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
-    //
+
+    '1': 'var(--size-spacing-1)',
     '2': 'var(--size-spacing-2)',
     '3': 'var(--size-spacing-3)',
     '4': 'var(--size-spacing-4)',
@@ -607,8 +615,8 @@ export const tailwindTheme: Config['theme'] = {
 
   stroke: ({ theme }) => ({
     ...theme('borderColor'),
-    DEFAULT: 'var(--color-base-grey-70)',
     browser: 'initial',
+    DEFAULT: 'var(--color-base-grey-70)',
     none: 'none',
     separator: 'var(--color-base-grey-70)',
     unset: 'unset',
@@ -616,8 +624,8 @@ export const tailwindTheme: Config['theme'] = {
 
   textColor: ({ theme }) => ({
     ...theme('colors'),
-    DEFAULT: 'var(--color-text-default)',
     dark: 'var(--color-text-dark)',
+    DEFAULT: 'var(--color-text-default)',
     disabled: 'var(--color-text-disabled)',
     error: 'var(--color-text-error)',
     light: 'var(--color-text-light)',
@@ -669,13 +677,13 @@ export const tailwindTheme: Config['theme'] = {
   },
 
   transitionProperty: {
-    DEFAULT:
-      'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
     all: 'all',
     'background-color': 'background-color',
     'border-color': 'border-color',
     colors:
       'color, background-color, border-color, text-decoration-color, fill, stroke',
+    DEFAULT:
+      'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
     margin: 'margin, margin-top, margin-bottom, margin-left, margin-right',
     'margin-bottom': 'margin-bottom',
     'margin-left': 'margin-left',

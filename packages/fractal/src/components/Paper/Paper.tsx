@@ -18,31 +18,36 @@ import {
   SizeSpacingHalf,
   SizeSpacingQuarter,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import omit from 'lodash/fp/omit'
+
 import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
+
+import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import { cn } from '@/styles/helpers'
 
-import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
 import type { PaperProps } from './Paper.types'
+
+import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
 
 const baseElevationClassNames: Record<Elevations, string> = {
   [Elevations.Bordered]: 'rounded-sm shadow-none',
+
   [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+
   [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
 }
 export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
   [Themes.Light]: {
     [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
+
     [Elevations.Elevated]: cn(
       baseElevationClassNames[Elevations.Elevated],
       'shadow-subtle-light',
     ),
+
     [Elevations.Higher]: cn(
       baseElevationClassNames[Elevations.Higher],
       'shadow-brutal-light',
@@ -51,17 +56,17 @@ export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
 
   [Themes.Dark]: {
     [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
+
     [Elevations.Elevated]: cn(
       baseElevationClassNames[Elevations.Elevated],
       'shadow-subtle-dark',
     ),
+
     [Elevations.Higher]: cn(
       baseElevationClassNames[Elevations.Higher],
       'shadow-brutal-dark',
     ),
   },
-
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 const baseElevationStyles: Record<Elevations, CSSProperties> = {
@@ -69,12 +74,14 @@ const baseElevationStyles: Record<Elevations, CSSProperties> = {
     borderRadius: SizeRadiusS,
     boxShadow: ShadowNone,
   },
+
   [Elevations.Elevated]: {
     borderRadius: SizeRadiusS,
     boxShadow: ShadowBrutal1,
     marginBottom: SizeSpacingQuarter,
     marginLeft: SizeSpacingQuarter,
   },
+
   [Elevations.Higher]: {
     borderRadius: SizeRadiusS,
     boxShadow: ShadowBrutal2,
@@ -86,14 +93,14 @@ export const elevationStyles: Record<
   Themes,
   Record<Elevations, CSSProperties>
 > = {
-  /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-
   [Themes.Light]: {
     [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
+
     [Elevations.Elevated]: {
       ...baseElevationStyles[Elevations.Elevated],
       boxShadow: ShadowBrutal1Light,
     },
+
     [Elevations.Higher]: {
       ...baseElevationStyles[Elevations.Higher],
       boxShadow: ShadowBrutal2Light,
@@ -102,17 +109,17 @@ export const elevationStyles: Record<
 
   [Themes.Dark]: {
     [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
+
     [Elevations.Elevated]: {
       ...baseElevationStyles[Elevations.Elevated],
       boxShadow: ShadowBrutal1Dark,
     },
+
     [Elevations.Higher]: {
       ...baseElevationStyles[Elevations.Higher],
       boxShadow: ShadowBrutal2Dark,
     },
   },
-
-  /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 }
 
 /**

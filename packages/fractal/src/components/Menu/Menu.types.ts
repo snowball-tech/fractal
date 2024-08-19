@@ -1,7 +1,7 @@
 import type {
   AllHTMLAttributes,
-  CSSProperties,
   ComponentProps,
+  CSSProperties,
   ReactNode,
 } from 'react'
 
@@ -98,18 +98,20 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * and `title` for the menu item.
    */
   label?: string
+  /** Indicates where you want to open the link (if a `href` is provided). */
+  target?: HTMLAnchorElement['target']
   /**
    * Event handler called when the menu item is activated (either with the mouse
    * by a click or with the keyboard by pressing enter or space).
    */
   onActivate?: () => void
-  /** Indicates where you want to open the link (if a `href` is provided). */
-  target?: HTMLAnchorElement['target']
 }
 
 export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The menu items to display inside of the group. */
   children: ReactNode
+  /** The label of the menu items group. */
+  label: string
   /**
    * Indicates if the menu item group should be condensed (less spacing in group
    * and items).
@@ -121,21 +123,12 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
   condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
-  /** The label of the menu items group. */
-  label: string
 }
 
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
 
 export interface SubMenuProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
-  /** Indicates if the sub-menu (trigger/label) is active. */
-  active?: boolean
-  /**
-   * Indicates where to align the sub-menu content relative to the trigger
-   * (label).
-   */
-  align?: ComponentProps<typeof Popover>['align']
   /**
    * The content of the sub-menu.
    *
@@ -143,6 +136,13 @@ export interface SubMenuProps
    * `MenuItemSeparator` or `SubMenu`.
    */
   children: ReactNode
+  /** Indicates if the sub-menu (trigger/label) is active. */
+  active?: boolean
+  /**
+   * Indicates where to align the sub-menu content relative to the trigger
+   * (label).
+   */
+  align?: ComponentProps<typeof Popover>['align']
   /**
    * Indicates if the sub-menu should be condensed (less spacing in sub-menu
    * trigger/label).
@@ -171,18 +171,6 @@ export interface SubMenuProps
   elevation?: `${Elevations}`
   /** An icon to display on the left of the sub-menu label. */
   icon?: ReactNode
-  /** Event handler called when the sub-menu is closed. */
-  onClose?: () => void
-  /**
-   * Event handler called when an interaction is made outside of the sub-menu.
-   */
-  onInteractOutside?: ComponentProps<typeof Popover>['onInteractOutside']
-  /** Event handler called when the submenu is opened. */
-  onOpen?: () => void
-  /**
-   * Event handler called when the sub-menu is opened or closed.
-   */
-  onSubMenuOpenChange?: ComponentProps<typeof Popover>['onOpenChange']
   /**
    * Indicates if the sub-menu is open.
    *
@@ -251,4 +239,16 @@ export interface SubMenuProps
   withIndicator?: boolean
   /** Indicates if the sub-menu should have a scroll integrated. */
   withScroll?: boolean
+  /** Event handler called when the sub-menu is closed. */
+  onClose?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the sub-menu.
+   */
+  onInteractOutside?: ComponentProps<typeof Popover>['onInteractOutside']
+  /** Event handler called when the submenu is opened. */
+  onOpen?: () => void
+  /**
+   * Event handler called when the sub-menu is opened or closed.
+   */
+  onSubMenuOpenChange?: ComponentProps<typeof Popover>['onOpenChange']
 }

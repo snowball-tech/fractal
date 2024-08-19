@@ -1,5 +1,7 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { Dropdown, DropdownRadioGroup, DropdownRadioItem } from '.'
@@ -7,14 +9,14 @@ import { Dropdown, DropdownRadioGroup, DropdownRadioItem } from '.'
 type DropdownRadioItemProps = ComponentProps<typeof DropdownRadioItem>
 
 const meta: Meta<DropdownRadioItemProps> = {
-  argTypes: {
-    asChild: { table: { disable: true } },
-  },
   args: {
     condensed: false,
     disabled: false,
     label: 'Jar Jar Binks',
     value: 'jar-jar-binks',
+  },
+  argTypes: {
+    asChild: { table: { disable: true } },
   },
   component: DropdownRadioItem,
 

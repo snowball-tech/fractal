@@ -1,17 +1,20 @@
 'use client'
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
+
+import { type ForwardedRef, forwardRef, useContext } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef, useContext } from 'react'
 
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
 import type { DropdownItemProps } from './Dropdown.types'
+
+import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 

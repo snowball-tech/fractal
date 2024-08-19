@@ -1,6 +1,8 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
 import { userEvent, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
@@ -14,15 +16,15 @@ const content =
 type TabContentProps = ComponentProps<typeof TabContent>
 
 const meta: Meta<TabContentProps> = {
-  argTypes: {
-    children: {
-      control: 'text',
-    },
-  },
   args: {
     children: content,
     forceMount: false,
     name: 'tab',
+  },
+  argTypes: {
+    children: {
+      control: 'text',
+    },
   },
   component: TabContent,
 

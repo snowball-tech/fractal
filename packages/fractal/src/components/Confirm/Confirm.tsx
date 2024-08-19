@@ -1,18 +1,21 @@
 'use client'
 
+import { type ForwardedRef, forwardRef } from 'react'
+
 import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
+
+import type { CombinedRefs } from '@/components/Dialog/Dialog.types'
 
 import { Button } from '@/components/Button'
-import type { CombinedRefs } from '@/components/Dialog/Dialog.types'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
+import type { ConfirmProps } from './Confirm.types'
+
 import { Dialog } from '../Dialog'
 import { GROUP_NAME } from './Confirm.constants'
-import type { ConfirmProps } from './Confirm.types'
 
 export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
   (

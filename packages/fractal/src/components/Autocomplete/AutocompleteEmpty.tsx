@@ -1,6 +1,7 @@
 'use client'
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
@@ -8,8 +9,9 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Autocomplete.constants'
 import type { AutocompleteEmptyProps } from './Autocomplete.types'
+
+import { GROUP_NAME } from './Autocomplete.constants'
 
 /**
  * `AutocompleteEmpty` component is used to display an empty state inside of the

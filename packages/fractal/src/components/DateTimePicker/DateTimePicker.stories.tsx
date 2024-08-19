@@ -1,9 +1,12 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
-import isArray from 'lodash/fp/isArray'
+
 import type { ComponentProps, ReactNode } from 'react'
+
+import isArray from 'lodash/fp/isArray'
 
 import { DEFAULT_THEME, Themes } from '@/constants'
 import { sleep } from '@/utils'
@@ -40,16 +43,6 @@ const frenchI18n = {
 }
 
 const meta: Meta<DateTimePickerProps> = {
-  argTypes: {
-    theme: {
-      control: 'radio',
-      options: Object.values(Themes),
-      table: {
-        defaultValue: { summary: DEFAULT_THEME },
-        type: { summary: Object.values(Themes).join('|') },
-      },
-    },
-  },
   args: {
     amPm: false,
     clearable: true,
@@ -77,6 +70,16 @@ const meta: Meta<DateTimePickerProps> = {
     withTimePicker: true,
     withToday: true,
   },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: Object.values(Themes),
+      table: {
+        defaultValue: { summary: DEFAULT_THEME },
+        type: { summary: Object.values(Themes).join('|') },
+      },
+    },
+  },
   component: DateTimePicker,
   decorators: [
     ...(isChromatic()
@@ -86,9 +89,7 @@ const meta: Meta<DateTimePickerProps> = {
           ),
         ]
       : []),
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onChange = (newDate: Date | null) => {
@@ -165,11 +166,9 @@ export const InteractiveModal: Story = {
     await sleep(500)
 
     const tabs = body.getAllByRole('tab')
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(tabs.at(1)!)
     await sleep(500)
     await userEvent.click(tabs.at(1)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 
@@ -209,7 +208,6 @@ export const InteractiveModalManipulateAndClose: Story = {
     await sleep(500)
 
     const closeButton = body.getAllByLabelText('Close').at(-1)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(closeButton!)
     await sleep(500)
   },
@@ -241,11 +239,9 @@ export const InteractiveHorizontal: Story = {
     await sleep(500)
 
     const tabs = body.getAllByRole('tab')
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(tabs.at(1)!)
     await sleep(500)
     await userEvent.click(tabs.at(1)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 
@@ -300,11 +296,9 @@ export const InteractiveVertical: Story = {
     await sleep(500)
 
     const tabs = body.getAllByRole('tab')
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(tabs.at(1)!)
     await sleep(500)
     await userEvent.click(tabs.at(1)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 
@@ -354,11 +348,9 @@ export const InteractiveStaticHorizontal: Story = {
     const canvas = within(canvasElement)
 
     const tabs = canvas.getAllByRole('tab')
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(tabs.at(1)!)
     await sleep(500)
     await userEvent.click(tabs.at(1)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 
@@ -402,11 +394,9 @@ export const InteractiveStaticVertical: Story = {
     const canvas = within(canvasElement)
 
     const tabs = canvas.getAllByRole('tab')
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     await userEvent.hover(tabs.at(1)!)
     await sleep(500)
     await userEvent.click(tabs.at(1)!)
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
   },
 }
 

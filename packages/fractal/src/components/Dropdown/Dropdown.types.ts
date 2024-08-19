@@ -1,15 +1,16 @@
 import {
-  DropdownMenuItem,
-  Root,
   type DropdownMenuContentProps as RxDropdownMenuContentProps,
   type DropdownMenuSubContentProps as RxDropdownMenuSubContentProps,
+  DropdownMenuItem,
+  Root,
   Sub,
   SubTrigger,
 } from '@radix-ui/react-dropdown-menu'
+
 import type {
   AllHTMLAttributes,
-  CSSProperties,
   ComponentProps,
+  CSSProperties,
   MouseEvent,
   ReactNode,
 } from 'react'
@@ -34,10 +35,6 @@ export type SubDropdownCombinedRefs = {
 
 export interface DropdownProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onClick'> {
-  /** Indicates where to align the dropdown relative to the trigger. */
-  align?: RxDropdownMenuContentProps['align']
-  /** Indicates if you want to display the trigger styled as an select input. */
-  asSelect?: boolean
   /**
    * The content of the dropdown menu.
    *
@@ -45,6 +42,10 @@ export interface DropdownProps
    * `DropdownItemSeparator`, `SubDropdown` or `DropdownRadioGroup` components.
    */
   children: ReactNode
+  /** Indicates where to align the dropdown relative to the trigger. */
+  align?: RxDropdownMenuContentProps['align']
+  /** Indicates if you want to display the trigger styled as an select input. */
+  asSelect?: boolean
   /**
    * Indicates if the dropdown should be condensed (less spacing in dropdown and
    * items).
@@ -80,20 +81,6 @@ export interface DropdownProps
   elevation?: `${Elevations}`
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean
-  /** The event handler triggered when the trigger is clicked. */
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
-  /** Event handler called when the dropdown is closed. */
-  onClose?: () => void
-  /**
-   * Event handler called when an interaction is made outside of the dropdown.
-   */
-  onInteractOutside?: RxDropdownMenuContentProps['onInteractOutside']
-  /**
-   * Event handler called when the dropdown is opened or closed.
-   */
-  onMenuOpenChange?: ComponentProps<typeof Root>['onOpenChange']
-  /** Event handler called when the dropdown is opened. */
-  onOpen?: () => void
   /**
    * Indicates if the dropdown menu is open.
    *
@@ -142,6 +129,20 @@ export interface DropdownProps
   withIndicator?: boolean
   /** Indicates if the dropdown should have a scroll integrated. */
   withScroll?: boolean
+  /** The event handler triggered when the trigger is clicked. */
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+  /** Event handler called when the dropdown is closed. */
+  onClose?: () => void
+  /**
+   * Event handler called when an interaction is made outside of the dropdown.
+   */
+  onInteractOutside?: RxDropdownMenuContentProps['onInteractOutside']
+  /**
+   * Event handler called when the dropdown is opened or closed.
+   */
+  onMenuOpenChange?: ComponentProps<typeof Root>['onOpenChange']
+  /** Event handler called when the dropdown is opened. */
+  onOpen?: () => void
 }
 
 export interface DropdownItemProps
@@ -184,9 +185,6 @@ export interface DropdownItemProps
    * and `title` for the item.
    */
   label?: string
-  /** The event handler to call when the item is clicked. */
-  onClick?: ComponentProps<typeof DropdownMenuItem>['onSelect']
-  onSelect?: ComponentProps<typeof DropdownMenuItem>['onSelect']
   /** Indicates where you want to open the link (if a `href` is provided). */
   target?: HTMLAnchorElement['target']
   /**
@@ -196,12 +194,17 @@ export interface DropdownItemProps
    * value.
    */
   value?: string
+  /** The event handler to call when the item is clicked. */
+  onClick?: ComponentProps<typeof DropdownMenuItem>['onSelect']
+  onSelect?: ComponentProps<typeof DropdownMenuItem>['onSelect']
 }
 
 export interface DropdownItemGroupProps
   extends AllHTMLAttributes<HTMLDivElement> {
   /** The dropdown items to display inside of the group. */
   children: ReactNode
+  /** The label of the dropdown items group. */
+  label: string
   /**
    * Indicates if the dropdown item group should be condensed (less spacing in
    * group and items).
@@ -213,8 +216,6 @@ export interface DropdownItemGroupProps
   condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
-  /** The label of the dropdown items group. */
-  label: string
 }
 
 export interface SubDropdownProps
@@ -262,6 +263,20 @@ export interface SubDropdownProps
   disabled?: boolean
   /** An icon to display on the left of the sub-dropdown label. */
   icon?: ReactNode
+  /**
+   * Indicates if the dropdown's sub-dropdown is open.
+   *
+   * Can be used to force a state of the dropdown's sub-dropdown or when using a
+   * custom (non-text) trigger.
+   */
+  open?: boolean
+  /**
+   * Indicates if the dropdown's sub-dropdown trigger should have an
+   * indicator (right chevron on the right of the label).
+   */
+  withIndicator?: boolean
+  /** Indicates if the sub-dropdown should have a scroll integrated. */
+  withScroll?: boolean
   /** The event handler to call when the sub-dropdown is clicked. */
   onClick?: ComponentProps<typeof SubTrigger>['onSelect']
   /** Event handler called when the dropdown's sub-dropdown is closed. */
@@ -277,20 +292,6 @@ export interface SubDropdownProps
    * Event handler called when the dropdown's sub-dropdown is opened or closed.
    */
   onSubMenuOpenChange?: ComponentProps<typeof Sub>['onOpenChange']
-  /**
-   * Indicates if the dropdown's sub-dropdown is open.
-   *
-   * Can be used to force a state of the dropdown's sub-dropdown or when using a
-   * custom (non-text) trigger.
-   */
-  open?: boolean
-  /**
-   * Indicates if the dropdown's sub-dropdown trigger should have an
-   * indicator (right chevron on the right of the label).
-   */
-  withIndicator?: boolean
-  /** Indicates if the sub-dropdown should have a scroll integrated. */
-  withScroll?: boolean
 }
 
 export type DropdownRadioGroupProps = {

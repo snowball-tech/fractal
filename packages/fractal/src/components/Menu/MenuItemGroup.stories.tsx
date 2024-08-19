@@ -1,11 +1,18 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { action } from '@storybook/addon-actions'
+
 import type { ComponentProps } from 'react'
 
 import { Menu, MenuItem, MenuItemGroup } from '.'
 
 type MenuItemGroupProps = ComponentProps<typeof MenuItemGroup>
 const meta: Meta<MenuItemGroupProps> = {
+  args: {
+    condensed: false,
+    disabled: false,
+    label: 'Jedis',
+  },
   argTypes: {
     children: {
       control: false,
@@ -16,11 +23,6 @@ const meta: Meta<MenuItemGroupProps> = {
         },
       },
     },
-  },
-  args: {
-    condensed: false,
-    disabled: false,
-    label: 'Jedis',
   },
   component: MenuItemGroup,
   parameters: {

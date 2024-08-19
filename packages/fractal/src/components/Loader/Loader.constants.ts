@@ -1,14 +1,23 @@
 export const GROUP_NAME = 'loader'
 
 export enum Sizes {
-  /* eslint-disable perfectionist/sort-enums */
+  // Extra Extra Small.
   XXS = 'xxs',
+
+  // Extra Small.
   XS = 'xs',
+
+  // Small.
   S = 's',
+
+  // Medium.
   M = 'm',
+
+  // Large.
   L = 'l',
+
+  // Extra Large.
   XL = 'xl',
-  /* eslint-enable perfectionist/sort-enums */
 }
 
 export const DEFAULT_SIZE = Sizes.M

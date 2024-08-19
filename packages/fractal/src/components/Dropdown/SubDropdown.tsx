@@ -3,8 +3,7 @@
 import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
+
 import {
   ForwardedRef,
   forwardRef,
@@ -15,16 +14,20 @@ import {
   useState,
 } from 'react'
 
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './Dropdown.constants'
 import type {
   DropdownProps,
   SubDropdownCombinedRefs,
   SubDropdownProps,
 } from './Dropdown.types'
+
+import { GROUP_NAME } from './Dropdown.constants'
 import { DropdownContext } from './DropdownContext'
 import { DropdownGroupContext } from './DropdownGroupContext'
 /**
@@ -106,7 +109,7 @@ export const SubDropdown = forwardRef<
       // We don't want to reopen the dropdown based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [children, open])
+    }, [hasChildren, open])
 
     const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
       useContext(DropdownContext)

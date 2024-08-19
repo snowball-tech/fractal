@@ -1,11 +1,15 @@
 import * as RxTabs from '@radix-ui/react-tabs'
+
+import { type ForwardedRef, forwardRef } from 'react'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
-import { type ForwardedRef, forwardRef } from 'react'
 
 import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+
+import type { TabProps } from './Tabs.types'
 
 import {
   DEFAULT_ORIENTATION,
@@ -16,7 +20,6 @@ import {
   Positions,
   Sizes,
 } from './Tabs.constants'
-import type { TabProps } from './Tabs.types'
 
 /**
  * `Tab` component is used to display a tab inside of a `Tabs` component.

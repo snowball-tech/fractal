@@ -1,10 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import UserProfileIcon from '@iconscout/react-unicons/icons/uil-house-user'
 import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
-import type { Meta, StoryObj } from '@storybook/react'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Avatar } from '@/components/Avatar'
@@ -76,6 +78,21 @@ const mixedMenu = (
 type DropdownProps = ComponentProps<typeof Dropdown>
 
 const meta: Meta<DropdownProps> = {
+  args: {
+    align: undefined,
+    asSelect: false,
+    children: 'Text',
+    condensed: false,
+    defaultOpen: false,
+    disabled: false,
+    elevation: DEFAULT_ELEVATION,
+    fullWidth: false,
+    open: false,
+    side: undefined,
+    trigger: 'Text',
+    width: 'fit',
+    withIndicator: true,
+  },
   argTypes: {
     align: {
       control: 'radio',
@@ -161,21 +178,6 @@ const meta: Meta<DropdownProps> = {
       ],
     },
   },
-  args: {
-    align: undefined,
-    asSelect: false,
-    children: 'Text',
-    condensed: false,
-    defaultOpen: false,
-    disabled: false,
-    elevation: DEFAULT_ELEVATION,
-    fullWidth: false,
-    open: false,
-    side: undefined,
-    trigger: 'Text',
-    width: 'fit',
-    withIndicator: true,
-  },
   component: Dropdown,
   decorators: [
     ...(isChromatic()
@@ -213,16 +215,13 @@ export const Interactive: Story = {
     const canvas = within(canvasElement)
     const body = within(canvasElement.ownerDocument.body)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
 
     const menuItems = body.getAllByRole('menuitem')
     if (menuItems.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(1)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
   render: () => (

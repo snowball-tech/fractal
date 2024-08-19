@@ -1,7 +1,9 @@
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic'
+
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
@@ -37,6 +39,19 @@ const popoverContent = (
 type PopoverProps = ComponentProps<typeof Popover>
 
 const meta: Meta<PopoverProps> = {
+  args: {
+    align: undefined,
+    children: popoverContent,
+    disabled: false,
+    elevation: DEFAULT_ELEVATION,
+    fullWidth: false,
+    side: undefined,
+    trigger: 'Text',
+    width: 'fit',
+    withArrow: true,
+    withCloseButton: false,
+    withScroll: false,
+  },
   argTypes: {
     align: {
       control: 'radio',
@@ -99,19 +114,6 @@ const meta: Meta<PopoverProps> = {
       ],
     },
   },
-  args: {
-    align: undefined,
-    children: popoverContent,
-    disabled: false,
-    elevation: DEFAULT_ELEVATION,
-    fullWidth: false,
-    side: undefined,
-    trigger: 'Text',
-    width: 'fit',
-    withArrow: true,
-    withCloseButton: false,
-    withScroll: false,
-  },
   component: Popover,
   decorators: [
     ...(isChromatic()
@@ -150,7 +152,6 @@ export const Interactive: Story = {
 
     await sleep(500)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await userEvent.click(canvas.getAllByRole('button').at(0)!)
 
     await sleep(500)

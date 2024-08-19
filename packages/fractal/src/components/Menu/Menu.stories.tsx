@@ -1,10 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import SettingsIcon from '@iconscout/react-unicons/icons/uil-cog'
 import DarkModeIcon from '@iconscout/react-unicons/icons/uil-moon'
 import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import LightModeIcon from '@iconscout/react-unicons/icons/uil-sun'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
 import { userEvent, within } from '@storybook/test'
+
 import type { ComponentProps } from 'react'
 
 import { sleep } from '@/utils'
@@ -86,6 +88,15 @@ const children = (
 type MenuProps = ComponentProps<typeof Menu>
 
 const meta: Meta<MenuProps> = {
+  args: {
+    children,
+    condensed: false,
+    disabled: false,
+    elevation: DEFAULT_ELEVATION,
+    embedded: false,
+    fullWidth: false,
+    orientation: DEFAULT_ORIENTATION,
+  },
   argTypes: {
     children: {
       control: false,
@@ -111,15 +122,6 @@ const meta: Meta<MenuProps> = {
       },
     },
   },
-  args: {
-    children,
-    condensed: false,
-    disabled: false,
-    elevation: DEFAULT_ELEVATION,
-    embedded: false,
-    fullWidth: false,
-    orientation: DEFAULT_ORIENTATION,
-  },
   component: Menu,
   parameters: {
     componentSubtitle: `🐀 And he's going to order something, something from our menu. - Linguini - Ratatouille`,
@@ -139,11 +141,9 @@ export const Interactive: Story = {
 
     const menuItems = canvas.getAllByRole('menuitem')
     if (menuItems.length > 0) {
-      /* eslint-disable @typescript-eslint/no-non-null-assertion */
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
       await userEvent.hover(menuItems.at(1)!)
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
   },
   render: () => <Menu>{children}</Menu>,

@@ -3,16 +3,12 @@
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import isInteger from 'lodash/fp/isInteger'
-import isNil from 'lodash/fp/isNil'
-import omit from 'lodash/fp/omit'
+
 import {
   type ChangeEvent,
   type ForwardedRef,
-  KeyboardEvent,
   forwardRef,
+  KeyboardEvent,
   useEffect,
   useId,
   useImperativeHandle,
@@ -20,17 +16,24 @@ import {
   useState,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import isInteger from 'lodash/fp/isInteger'
+import isNil from 'lodash/fp/isNil'
+import omit from 'lodash/fp/omit'
+
 import { InputText } from '@/components/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { GROUP_NAME } from './InputDate.constants'
 import type {
   CombinedRefs,
   DateFormat,
   InputDateProps,
 } from './InputDate.types'
+
+import { GROUP_NAME } from './InputDate.constants'
 
 function isValid(type: keyof DateFormat, value: '' | number, max?: number) {
   if (!isInteger(value) || value === '') {

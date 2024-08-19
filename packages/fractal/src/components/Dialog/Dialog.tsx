@@ -1,11 +1,10 @@
 'use client'
 
+import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
+
 import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxDialog from '@radix-ui/react-dialog'
-import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
-import isFunction from 'lodash/fp/isFunction'
-import isString from 'lodash/fp/isString'
-import omit from 'lodash/fp/omit'
+
 import {
   type ForwardedRef,
   forwardRef,
@@ -15,14 +14,19 @@ import {
   useState,
 } from 'react'
 
+import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
+import omit from 'lodash/fp/omit'
+
 import { Button } from '@/components/Button'
 import { Paper } from '@/components/Paper'
 import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
-import { DEFAULT_POSITION, GROUP_NAME } from './Dialog.constants'
 import type { CombinedRefs, DialogProps } from './Dialog.types'
+
+import { DEFAULT_POSITION, GROUP_NAME } from './Dialog.constants'
 
 /**
  * `Dialog` component allow do display dialogs to the user over the current page
@@ -107,7 +111,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       // We don't want to reopen the dialog based on the `handleOpenChange`
       // function. So we don't include it in the dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [open])
+    }, [defaultOpen, open])
 
     const handleDialogInteractOutside: DismissableLayerProps['onInteractOutside'] =
       (event) => {

@@ -5,11 +5,7 @@ import ChevronRightIcon from '@iconscout/react-unicons/icons/uil-angle-right-b'
 import CalendarIcon from '@iconscout/react-unicons/icons/uil-calendar-alt'
 import ClockIcon from '@iconscout/react-unicons/icons/uil-clock'
 import { Label as RxLabel } from '@radix-ui/react-label'
-import isDate from 'lodash/fp/isDate'
-import isEmpty from 'lodash/fp/isEmpty'
-import isFunction from 'lodash/fp/isFunction'
-import omit from 'lodash/fp/omit'
-import pick from 'lodash/fp/pick'
+
 import {
   type ForwardedRef,
   forwardRef,
@@ -24,15 +20,23 @@ import Calendar from 'react-calendar'
 import TimeKeeperImport from 'react-timekeeper'
 import type { TimeOutput } from 'react-timekeeper'
 
+import isDate from 'lodash/fp/isDate'
+import isEmpty from 'lodash/fp/isEmpty'
+import isFunction from 'lodash/fp/isFunction'
+import omit from 'lodash/fp/omit'
+import pick from 'lodash/fp/pick'
+
 import { Button } from '@/components/Button'
 import { Dialog } from '@/components/Dialog'
 import { InputText } from '@/components/InputText'
-import { Popover, type PopoverCombinedRefs } from '@/components/Popover'
+import { type PopoverCombinedRefs, Popover } from '@/components/Popover'
 import { Tab, TabContent, Tabs } from '@/components/Tabs'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import { useTheme } from '@/hooks'
 import { cj, cn } from '@/styles/helpers'
+
+import type { CombinedRefs, DateTimePickerProps } from './DateTimePicker.types'
 
 import {
   DEFAULT_PICKER_VARIANT,
@@ -42,7 +46,6 @@ import {
   PickerVariants,
   TimeVariants,
 } from './DateTimePicker.constants'
-import type { CombinedRefs, DateTimePickerProps } from './DateTimePicker.types'
 
 const TimeKeeper = isFunction(TimeKeeperImport)
   ? TimeKeeperImport
@@ -119,7 +122,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
     const uniqueId = (id ?? generatedId) || generatedId
 
     const inputRef = useRef<HTMLInputElement | null>(null)
-    const pickerRef = useRef<PopoverCombinedRefs | null>(null)
+    const pickerRef = useRef<null | PopoverCombinedRefs>(null)
     const calendarRef = useRef<HTMLDivElement | null>(null)
 
     useImperativeHandle(ref, () => ({
@@ -193,8 +196,9 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       } else {
         handlePickerOpenChange(false)
       }
-      // We don't want to reopen the dropdown based on the `handleOpenChange`
-      // function. So we don't include it in the dependencies.
+      // We don't want to reopen the dropdown based on the
+      // `handlePickerOpenChange` function. So we don't include it in the
+      // dependencies.
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [defaultOpen, open])
 

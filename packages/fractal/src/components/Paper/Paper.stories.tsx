@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import type { ComponentProps } from 'react'
 
-import ThemeProvider from '@/ThemeProvider'
 import { DEFAULT_THEME, Themes } from '@/constants'
+import ThemeProvider from '@/ThemeProvider'
 
 import { Paper, PaperElevations } from '.'
 import { DEFAULT_ELEVATION } from './Paper.constants'
@@ -10,6 +11,12 @@ import { DEFAULT_ELEVATION } from './Paper.constants'
 type PaperProps = ComponentProps<typeof Paper>
 
 const meta = {
+  args: {
+    children:
+      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
+    elevation: DEFAULT_ELEVATION,
+    theme: DEFAULT_THEME,
+  },
   argTypes: {
     children: { control: 'text' },
     elevation: {
@@ -27,12 +34,6 @@ const meta = {
         type: { summary: Object.values(Themes).join('|') },
       },
     },
-  },
-  args: {
-    children:
-      'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
-    elevation: DEFAULT_ELEVATION,
-    theme: DEFAULT_THEME,
   },
   component: Paper,
   parameters: {

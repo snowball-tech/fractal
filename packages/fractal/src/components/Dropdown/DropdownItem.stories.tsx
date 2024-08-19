@@ -1,3 +1,5 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
 import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
 import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
 import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
@@ -5,15 +7,23 @@ import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamatio
 import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
-import type { Meta, StoryObj } from '@storybook/react'
-import isEmpty from 'lodash/fp/isEmpty'
+
 import type { ComponentProps } from 'react'
+
+import isEmpty from 'lodash/fp/isEmpty'
 
 import { Dropdown, DropdownItem } from '.'
 
 type DropdownItemProps = ComponentProps<typeof DropdownItem>
 
 const meta: Meta<DropdownItemProps> = {
+  args: {
+    condensed: false,
+    disabled: false,
+    href: '',
+    icon: undefined,
+    label: 'Luke Skywalker',
+  },
   argTypes: {
     icon: {
       control: 'radio',
@@ -28,13 +38,6 @@ const meta: Meta<DropdownItemProps> = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-  },
-  args: {
-    condensed: false,
-    disabled: false,
-    href: '',
-    icon: undefined,
-    label: 'Luke Skywalker',
   },
   component: DropdownItem,
 

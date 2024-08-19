@@ -1,9 +1,12 @@
-import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
+
+import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
-import kebabCase from 'lodash/fp/kebabCase'
+
 import type { ComponentProps, ReactNode } from 'react'
+
+import kebabCase from 'lodash/fp/kebabCase'
 
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
@@ -54,6 +57,18 @@ const itemsWithGroupsAndSeparators = (
 )
 
 const meta: Meta<SelectProps> = {
+  args: {
+    autoFocus: false,
+    children: 'Simple items',
+    description: "Be careful, it's a trap!",
+    disabled: false,
+    fullWidth: false,
+    label: 'Who is the best Star Wars character?',
+    placeholder: 'May the force be with you!',
+    portalled: true,
+    readOnly: false,
+    required: false,
+  },
   argTypes: {
     autoComplete: { table: { disable: true } },
     autoFocus: { table: { disable: true } },
@@ -87,18 +102,6 @@ const meta: Meta<SelectProps> = {
     onOpen: { control: false },
     onSelect: { control: false },
   },
-  args: {
-    autoFocus: false,
-    children: 'Simple items',
-    description: "Be careful, it's a trap!",
-    disabled: false,
-    fullWidth: false,
-    label: 'Who is the best Star Wars character?',
-    placeholder: 'May the force be with you!',
-    portalled: true,
-    readOnly: false,
-    required: false,
-  },
   component: Select,
   decorators: [
     ...(isChromatic()
@@ -108,9 +111,7 @@ const meta: Meta<SelectProps> = {
           ),
         ]
       : []),
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     function WithArgs(Story, context) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
       const [, setArgs] = useArgs<typeof context.args>()
 
       const onSelect = (newValue: string) => {
