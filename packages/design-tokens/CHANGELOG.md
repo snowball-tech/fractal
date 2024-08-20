@@ -1,3 +1,7 @@
+# @snowball-tech/design-tokens [12.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.1.9...@snowball-tech/design-tokens@12.2.0) (2024-08-20)
+
+- **breakpoint:** add XXS breakpoint ([b6424da](https://github.com/snowball-tech/fractal/commit/b6424da3c3da34d9e6319d0cfe6b293c7112e492))
+
 ## @snowball-tech/design-tokens [12.1.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.1.8...@snowball-tech/design-tokens@12.1.9) (2024-08-19)
 
 ## @snowball-tech/design-tokens [12.1.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.1.7...@snowball-tech/design-tokens@12.1.8) (2024-07-05)
