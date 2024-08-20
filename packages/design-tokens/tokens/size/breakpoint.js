@@ -3,8 +3,12 @@ const isEmpty = require('lodash/fp/isEmpty')
 const { breakpoints } = require('../../src/constants')
 
 const breakpointsValues = {
-  [breakpoints.xs]: {
+  [breakpoints.xxs]: {
     value: 0,
+  },
+
+  [breakpoints.xs]: {
+    value: 350,
   },
 
   [breakpoints.sm]: {

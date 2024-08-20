@@ -52,7 +52,7 @@ module.exports = {
           value: '{font.family.normal.value}',
         },
         fontSize: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 48,
           },
@@ -69,7 +69,7 @@ module.exports = {
           value: 0,
         },
         lineHeight: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 64,
           },
@@ -88,7 +88,7 @@ module.exports = {
           value: '{font.family.normal.value}',
         },
         fontSize: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 40,
           },
@@ -105,7 +105,7 @@ module.exports = {
           value: 0,
         },
         lineHeight: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 48,
           },
@@ -124,7 +124,7 @@ module.exports = {
           value: '{font.family.wide.value}',
         },
         fontSize: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 32,
           },
@@ -141,7 +141,7 @@ module.exports = {
           value: 0,
         },
         lineHeight: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 40,
           },
@@ -162,7 +162,7 @@ module.exports = {
           value: '{font.family.normal.value}',
         },
         fontSize: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 32,
           },
@@ -179,7 +179,7 @@ module.exports = {
           value: 0,
         },
         lineHeight: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 44,
           },
@@ -198,7 +198,7 @@ module.exports = {
           value: '{font.family.normal.value}',
         },
         fontSize: {
-          [breakpoints.xs]: {
+          [breakpoints.xxs]: {
             group: 'size',
             value: 28,
           },
