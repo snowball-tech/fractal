@@ -34,6 +34,8 @@ const breakpointsValues = {
 
 const mediaQuery = {
   from: {},
+  max: {},
+  only: {},
   to: {},
 }
 Object.values(breakpoints).forEach((breakpoint, index) => {
@@ -47,19 +49,26 @@ Object.values(breakpoints).forEach((breakpoint, index) => {
           breakpointsValues[secondaryBreakpoint].value - 1
         }px)`,
       }
+
+      if (index_ === index + 1) {
+        mediaQuery.only[breakpoint] = upTo[secondaryBreakpoint]
+      }
     }
   })
 
-  mediaQuery.from[breakpoint] = {
+  mediaQuery[breakpoint] = {
     value: `(min-width: {size.breakpoint.${breakpoint}.value})`,
   }
+  mediaQuery.from[breakpoint] = mediaQuery[breakpoint]
 
   if (!isEmpty(nextBreakpoint)) {
-    mediaQuery.to[breakpoint] = {
+    mediaQuery.max[nextBreakpoint] = {
       value: `(max-width: ${breakpointsValues[nextBreakpoint].value - 1}px)`,
     }
+    mediaQuery.to[nextBreakpoint] = mediaQuery.max[nextBreakpoint]
   }
   mediaQuery[breakpoint] = { upTo }
+  console.log(mediaQuery)
 })
 
 module.exports = {

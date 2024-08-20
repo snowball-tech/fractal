@@ -532,6 +532,7 @@ export const tailwindTheme: Config['theme'] = {
   }),
 
   screens: {
+    // Group min breakpoints.
     xxs: SizeBreakpointXxs,
 
     xs: SizeBreakpointXs,
@@ -545,6 +546,102 @@ export const tailwindTheme: Config['theme'] = {
     xl: SizeBreakpointXl,
 
     xxl: SizeBreakpointXxl,
+
+    'from-xxs': SizeBreakpointXxs,
+
+    'from-xs': SizeBreakpointXs,
+
+    'from-sm': SizeBreakpointSm,
+
+    'from-md': SizeBreakpointMd,
+
+    'from-lg': SizeBreakpointLg,
+
+    'from-xl': SizeBreakpointXl,
+
+    'from-xxl': SizeBreakpointXxl,
+
+    'max-xs': {
+      max: `${Number.parseInt(SizeBreakpointXs, 10) - 1}px`,
+    },
+
+    'max-sm': {
+      max: `${Number.parseInt(SizeBreakpointSm, 10) - 1}px`,
+    },
+
+    'max-md': {
+      max: `${Number.parseInt(SizeBreakpointMd, 10) - 1}px`,
+    },
+
+    'max-lg': {
+      max: `${Number.parseInt(SizeBreakpointLg, 10) - 1}px`,
+    },
+
+    'max-xl': {
+      max: `${Number.parseInt(SizeBreakpointXl, 10) - 1}px`,
+    },
+
+    'max-xxl': {
+      max: `${Number.parseInt(SizeBreakpointXxl, 10) - 1}px`,
+    },
+
+    // Group max breakpoints.
+    'to-xs': {
+      max: `${Number.parseInt(SizeBreakpointXs, 10) - 1}px`,
+    },
+
+    'to-sm': {
+      max: `${Number.parseInt(SizeBreakpointSm, 10) - 1}px`,
+    },
+
+    'to-md': {
+      max: `${Number.parseInt(SizeBreakpointMd, 10) - 1}px`,
+    },
+
+    'to-lg': {
+      max: `${Number.parseInt(SizeBreakpointLg, 10) - 1}px`,
+    },
+
+    'to-xl': {
+      max: `${Number.parseInt(SizeBreakpointXl, 10) - 1}px`,
+    },
+
+    'to-xxl': {
+      max: `${Number.parseInt(SizeBreakpointXxl, 10) - 1}px`,
+    },
+
+    // Group range breakpoints.
+    'only-xxs': {
+      max: `${Number.parseInt(SizeBreakpointXs, 10) - 1}px`,
+      min: SizeBreakpointXxs,
+    },
+
+    'only-xs': {
+      max: `${Number.parseInt(SizeBreakpointSm, 10) - 1}px`,
+      min: SizeBreakpointXs,
+    },
+
+    'only-sm': {
+      max: `${Number.parseInt(SizeBreakpointMd, 10) - 1}px`,
+      min: SizeBreakpointSm,
+    },
+
+    'only-md': {
+      max: `${Number.parseInt(SizeBreakpointLg, 10) - 1}px`,
+      min: SizeBreakpointMd,
+    },
+
+    'only-lg': {
+      max: `${Number.parseInt(SizeBreakpointXl, 10) - 1}px`,
+      min: SizeBreakpointLg,
+    },
+
+    'only-xl': {
+      max: `${Number.parseInt(SizeBreakpointXxl, 10) - 1}px`,
+      min: SizeBreakpointXl,
+    },
+
+    'only-xxl': SizeBreakpointXl,
 
     // Group height breakpoints.
     'h-xxxl': { raw: '(max-height: 800px)' },
@@ -573,8 +670,6 @@ export const tailwindTheme: Config['theme'] = {
     // Other
     narrow: { raw: '(max-width: 333px) and (max-height: 570px)' },
     thin: { raw: '(max-width: 768px) and (max-height: 600px)' },
-
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
   },
 
   spacing: {
