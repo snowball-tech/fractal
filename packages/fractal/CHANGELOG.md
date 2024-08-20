@@ -1,3 +1,11 @@
+# @snowball-tech/fractal [11.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.3.1...@snowball-tech/fractal@11.4.0) (2024-08-20)
+
+- **breakpoint:** add XXS breakpoint ([b6424da](https://github.com/snowball-tech/fractal/commit/b6424da3c3da34d9e6319d0cfe6b293c7112e492))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.2.0
+
 ## @snowball-tech/fractal [11.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.3.0...@snowball-tech/fractal@11.3.1) (2024-08-19)
 
 ### Dependencies
