@@ -64,7 +64,7 @@
     "update-deps": "yarn run -T update-deps"
   },
   "types": "dist/web/typescript/design-tokens.d.ts",
-  "version": "12.2.0",
+  "version": "12.3.0",
   "dependencies": {
     "eslint": "^8.57.0"
   }
