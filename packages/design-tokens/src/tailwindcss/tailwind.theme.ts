@@ -7,6 +7,7 @@ import {
   SizeBreakpointXl,
   SizeBreakpointXs,
   SizeBreakpointXxl,
+  SizeBreakpointXxs,
 } from '@snowball-tech/design-tokens'
 
 import omit from 'lodash/fp/omit'
@@ -269,6 +270,8 @@ export const tailwindTheme: Config['theme'] = {
   },
 
   containers: {
+    xxs: SizeBreakpointXxs,
+
     xs: SizeBreakpointXs,
 
     sm: SizeBreakpointSm,
@@ -336,18 +339,18 @@ export const tailwindTheme: Config['theme'] = {
     'size-unset': 'unset',
 
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-    'display-1-xs': 'var(--typography-display-1-font-size-xs)',
+    'display-1-xxs': 'var(--typography-display-1-font-size-xxs)',
     'display-1-md': 'var(--typography-display-1-font-size-md)',
-    'display-2-xs': 'var(--typography-display-2-font-size-xs)',
+    'display-2-xxs': 'var(--typography-display-2-font-size-xxs)',
     'display-2-md': 'var(--typography-display-2-font-size-md)',
-    'display-wide-xs': 'var(--typography-display-wide-font-size-xs)',
+    'display-wide-xxs': 'var(--typography-display-wide-font-size-xxs)',
     'display-wide-md': 'var(--typography-display-wide-font-size-md)',
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-    'heading-1-xs': 'var(--typography-heading-1-font-size-xs)',
+    'heading-1-xxs': 'var(--typography-heading-1-font-size-xxs)',
     'heading-1-md': 'var(--typography-heading-1-font-size-md)',
-    'heading-2-xs': 'var(--typography-heading-2-font-size-xs)',
+    'heading-2-xxs': 'var(--typography-heading-2-font-size-xxs)',
     'heading-2-md': 'var(--typography-heading-2-font-size-md)',
     'heading-3': 'var(--typography-heading-3-font-size)',
     'heading-4': 'var(--typography-heading-4-font-size)',
@@ -412,7 +415,7 @@ export const tailwindTheme: Config['theme'] = {
     svh: '100svh',
     unset: 'unset',
     ...breakpoints(
-      omit(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      omit(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 
@@ -424,16 +427,16 @@ export const tailwindTheme: Config['theme'] = {
     unset: 'unset',
 
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-    'display-1-xs': 'var(--typography-display-1-line-height-xs)',
+    'display-1-xxs': 'var(--typography-display-1-line-height-xxs)',
     'display-1-md': 'var(--typography-display-1-line-height-md)',
-    'display-2-xs': 'var(--typography-display-2-line-height-xs)',
+    'display-2-xxs': 'var(--typography-display-2-line-height-xxs)',
     'display-2-md': 'var(--typography-display-2-line-height-md)',
-    'display-wide-xs': 'var(--typography-display-wide-line-height-xs)',
+    'display-wide-xxs': 'var(--typography-display-wide-line-height-xxs)',
     'display-wide-md': 'var(--typography-display-wide-line-height-md)',
     /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
 
     /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
-    'heading-1-xs': 'var(--typography-heading-1-line-height-xs)',
+    'heading-1-xxs': 'var(--typography-heading-1-line-height-xxs)',
     'heading-1-md': 'var(--typography-heading-1-line-height-md)',
     'heading-2': 'var(--typography-heading-2-line-height)',
     'heading-3': 'var(--typography-heading-3-line-height)',
@@ -460,7 +463,7 @@ export const tailwindTheme: Config['theme'] = {
     svh: '100svh',
     unset: 'unset',
     ...breakpoints(
-      omit(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      omit(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 
@@ -476,7 +479,7 @@ export const tailwindTheme: Config['theme'] = {
     screen: '100vw',
     unset: 'unset',
     ...breakpoints(
-      pick(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      pick(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 
@@ -494,7 +497,7 @@ export const tailwindTheme: Config['theme'] = {
     svh: '100svh',
     unset: 'unset',
     ...breakpoints(
-      omit(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      omit(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 
@@ -510,7 +513,7 @@ export const tailwindTheme: Config['theme'] = {
     screen: '100vw',
     unset: 'unset',
     ...breakpoints(
-      pick(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      pick(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 
@@ -529,7 +532,8 @@ export const tailwindTheme: Config['theme'] = {
   }),
 
   screens: {
-    // Group width breakpoints.
+    xxs: SizeBreakpointXxs,
+
     xs: SizeBreakpointXs,
 
     sm: SizeBreakpointSm,
@@ -711,7 +715,7 @@ export const tailwindTheme: Config['theme'] = {
     screen: '100vw',
     unset: 'unset',
     ...breakpoints(
-      pick(['xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
+      pick(['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'], theme('screens')),
     ),
   }),
 }

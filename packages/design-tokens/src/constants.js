@@ -1,5 +1,7 @@
 module.exports = {
   breakpoints: {
+    xxs: 'xxs',
+
     xs: 'xs',
 
     sm: 'sm',

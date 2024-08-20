@@ -1,5 +1,7 @@
 declare module '@snowball-tech/design-tokens/dist/web/typescript/constants' {
   export const breakpoints: {
+    xxs: 'xxs'
+
     xs: 'xs'
 
     sm: 'sm'

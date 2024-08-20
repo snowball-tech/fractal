@@ -51,31 +51,31 @@ import {
   TypographyCaptionMedianLineHeight,
   TypographyDisplay1FontFamily,
   TypographyDisplay1FontSizeMd,
-  TypographyDisplay1FontSizeXs,
+  TypographyDisplay1FontSizeXxs,
   TypographyDisplay1FontWeight,
   TypographyDisplay1LineHeightMd,
-  TypographyDisplay1LineHeightXs,
+  TypographyDisplay1LineHeightXxs,
   TypographyDisplay2FontFamily,
   TypographyDisplay2FontSizeMd,
-  TypographyDisplay2FontSizeXs,
+  TypographyDisplay2FontSizeXxs,
   TypographyDisplay2FontWeight,
   TypographyDisplay2LineHeightMd,
-  TypographyDisplay2LineHeightXs,
+  TypographyDisplay2LineHeightXxs,
   TypographyDisplayWideFontFamily,
   TypographyDisplayWideFontSizeMd,
-  TypographyDisplayWideFontSizeXs,
+  TypographyDisplayWideFontSizeXxs,
   TypographyDisplayWideFontWeight,
   TypographyDisplayWideLineHeightMd,
-  TypographyDisplayWideLineHeightXs,
+  TypographyDisplayWideLineHeightXxs,
   TypographyHeading1FontFamily,
   TypographyHeading1FontSizeMd,
-  TypographyHeading1FontSizeXs,
+  TypographyHeading1FontSizeXxs,
   TypographyHeading1FontWeight,
   TypographyHeading1LineHeightMd,
-  TypographyHeading1LineHeightXs,
+  TypographyHeading1LineHeightXxs,
   TypographyHeading2FontFamily,
   TypographyHeading2FontSizeMd,
-  TypographyHeading2FontSizeXs,
+  TypographyHeading2FontSizeXxs,
   TypographyHeading2FontWeight,
   TypographyHeading2LineHeight,
   TypographyHeading3FontFamily,
@@ -149,27 +149,27 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     let typographyClassNames = ''
     switch (variant) {
       case Variants.Display1: {
-        typographyClassNames = `tracking-normal xs:text-display-1-xs${xs ? '' : ' md:text-display-1-md md:leading-display-1-md'} font-display-1 font-weight-display-1 xs:leading-display-1-xs`
+        typographyClassNames = `tracking-normal xxs:text-display-1-xxs${xs ? '' : ' md:text-display-1-md md:leading-display-1-md'} font-display-1 font-weight-display-1 xxs:leading-display-1-xxs`
         break
       }
 
       case Variants.Display2: {
-        typographyClassNames = `tracking-normal xs:text-display-2-xs${xs ? '' : ' md:text-display-2-md md:leading-display-2-md'} font-display-2 font-weight-display-2 xs:leading-display-2-xs`
+        typographyClassNames = `tracking-normal xxs:text-display-2-xxs${xs ? '' : ' md:text-display-2-md md:leading-display-2-md'} font-display-2 font-weight-display-2 xxs:leading-display-2-xxs`
         break
       }
 
       case Variants.DisplayWide: {
-        typographyClassNames = `tracking-normal xs:text-display-wide-xs${xs ? '' : ' md:text-display-wide-md md:leading-display-wide-md'} font-display-wide font-weight-display-wide xs:leading-display-wide-xs`
+        typographyClassNames = `tracking-normal xxs:text-display-wide-xxs${xs ? '' : ' md:text-display-wide-md md:leading-display-wide-md'} font-display-wide font-weight-display-wide xxs:leading-display-wide-xxs`
         break
       }
 
       case Variants.Heading1: {
-        typographyClassNames = `tracking-normal xs:text-heading-1-xs${xs ? '' : ' md:text-heading-1-md md:leading-heading-1-md'} font-heading-1 font-weight-heading-1 xs:leading-heading-1-xs`
+        typographyClassNames = `tracking-normal xxs:text-heading-1-xxs${xs ? '' : ' md:text-heading-1-md md:leading-heading-1-md'} font-heading-1 font-weight-heading-1 xxs:leading-heading-1-xxs`
         break
       }
 
       case Variants.Heading2: {
-        typographyClassNames = `tracking-normal xs:text-heading-2-xs${xs ? '' : ' md:text-heading-2-md md:leading-heading-2-md'} font-heading-2 font-weight-heading-2 leading-heading-2`
+        typographyClassNames = `tracking-normal xxs:text-heading-2-xxs${xs ? '' : ' md:text-heading-2-md md:leading-heading-2-md'} font-heading-2 font-weight-heading-2 leading-heading-2`
         break
       }
 
@@ -275,10 +275,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         case Variants.Display1: {
           typographyStyles.fontFamily = TypographyDisplay1FontFamily
           typographyStyles.fontSize = xs
-            ? TypographyDisplay1FontSizeXs
+            ? TypographyDisplay1FontSizeXxs
             : TypographyDisplay1FontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplay1LineHeightXs
+            ? TypographyDisplay1LineHeightXxs
             : TypographyDisplay1LineHeightMd
           typographyStyles.fontWeight = TypographyDisplay1FontWeight
           break
@@ -287,10 +287,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         case Variants.Display2: {
           typographyStyles.fontFamily = TypographyDisplay2FontFamily
           typographyStyles.fontSize = xs
-            ? TypographyDisplay2FontSizeXs
+            ? TypographyDisplay2FontSizeXxs
             : TypographyDisplay2FontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplay2LineHeightXs
+            ? TypographyDisplay2LineHeightXxs
             : TypographyDisplay2LineHeightMd
           typographyStyles.fontWeight = TypographyDisplay2FontWeight
           break
@@ -299,10 +299,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         case Variants.DisplayWide: {
           typographyStyles.fontFamily = TypographyDisplayWideFontFamily
           typographyStyles.fontSize = xs
-            ? TypographyDisplayWideFontSizeXs
+            ? TypographyDisplayWideFontSizeXxs
             : TypographyDisplayWideFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplayWideLineHeightXs
+            ? TypographyDisplayWideLineHeightXxs
             : TypographyDisplayWideLineHeightMd
           typographyStyles.fontWeight = TypographyDisplayWideFontWeight
           break
@@ -311,10 +311,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         case Variants.Heading1: {
           typographyStyles.fontFamily = TypographyHeading1FontFamily
           typographyStyles.fontSize = xs
-            ? TypographyHeading1FontSizeXs
+            ? TypographyHeading1FontSizeXxs
             : TypographyHeading1FontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyHeading1LineHeightXs
+            ? TypographyHeading1LineHeightXxs
             : TypographyHeading1LineHeightMd
           typographyStyles.fontWeight = TypographyHeading1FontWeight
           break
@@ -323,7 +323,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         case Variants.Heading2: {
           typographyStyles.fontFamily = TypographyHeading2FontFamily
           typographyStyles.fontSize = xs
-            ? TypographyHeading2FontSizeXs
+            ? TypographyHeading2FontSizeXxs
             : TypographyHeading2FontSizeMd
           typographyStyles.lineHeight = TypographyHeading2LineHeight
           typographyStyles.fontWeight = TypographyHeading2FontWeight

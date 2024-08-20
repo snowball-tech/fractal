@@ -50,9 +50,10 @@ the size of the screen of the user.
         </td>
         <td>{maxWidth}</td>
         <td>
-          <code>{DesignTokens[`MediaQueryFrom${pascalCaseBreakpointName}`]}</code>
+          <code>(min-width: {minWidth})</code>
           <br />
-          <code>{DesignTokens[`MediaQueryTo${pascalCaseNextBreakpointName}`]}</code>
+          {maxWidth === '∞' ?
+          <br /> : <code>(max-width: {maxWidth})</code>}
         </td>
       </tr>
     )})}
