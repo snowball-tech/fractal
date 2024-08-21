@@ -79,9 +79,14 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    * (if provided of course).
    *
    * If you pass this to `false`, you will have to handle the opening/closing of
-   * the dropdown on your own.
+   * the dropdown on your own or use `toggleOnTriggerHover`.
    */
   toggleOnTriggerClick?: boolean
+  /**
+   * Indicates if you want to toggle the popover when hovering on the trigger
+   * (if provided of course).
+   */
+  toggleOnTriggerHover?: boolean
   /** The trigger of the popover. */
   trigger?: ReactNode
   /**

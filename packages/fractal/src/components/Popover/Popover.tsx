@@ -16,7 +16,6 @@ import {
 
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
-import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button'
@@ -54,6 +53,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       popover = {},
       side,
       toggleOnTriggerClick = true,
+      toggleOnTriggerHover = false,
       trigger,
       triggerAsButton = true,
       width = 'fit',
@@ -224,15 +224,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 : '!cursor-pointer',
               toggleOnTriggerClick ? '' : '!cursor-default',
             )}
-            disabled={!toggleOnTriggerClick}
-            onPointerDown={
-              hasTrigger
-                ? noop
-                : (event) => {
-                    event.preventDefault()
-                    event.stopPropagation()
-                  }
-            }
+            type={toggleOnTriggerClick ? 'button' : undefined}
           >
             {hasTrigger && (
               <Typography
@@ -243,8 +235,21 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                     ? `${PREFIX}-${GROUP_NAME}__trigger__content--disabled`
                     : '',
                 )}
+                disabled={triggerAsButton && !toggleOnTriggerClick}
                 element={
                   toggleOnTriggerClick && triggerAsButton ? 'button' : 'div'
+                }
+                onClick={(event) => {
+                  if (!toggleOnTriggerClick) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+                }}
+                onMouseEnter={
+                  toggleOnTriggerHover ? () => setIsOpen(true) : undefined
+                }
+                onMouseLeave={
+                  toggleOnTriggerHover ? () => setIsOpen(false) : undefined
                 }
               >
                 {trigger}
