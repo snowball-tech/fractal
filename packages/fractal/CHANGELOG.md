@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [11.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.4.1...@snowball-tech/fractal@11.5.0) (2024-08-21)
+
+- **popover:** add a trigger on hover feature ([0d06325](https://github.com/snowball-tech/fractal/commit/0d06325cd818b112d161af3a1b6632e413604a91))
+
 ## @snowball-tech/fractal [11.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.4.0...@snowball-tech/fractal@11.4.1) (2024-08-20)
 
 ### Dependencies
