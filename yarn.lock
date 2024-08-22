@@ -5013,8 +5013,8 @@ __metadata:
   linkType: soft
 
 "@snowball-tech/eslint-config@npm:^5.4.9":
-  version: 5.4.9
-  resolution: "@snowball-tech/eslint-config@npm:5.4.9"
+  version: 5.4.11
+  resolution: "@snowball-tech/eslint-config@npm:5.4.11"
   dependencies:
     "@next/eslint-plugin-next": "npm:^14.2.5"
     "@rushstack/eslint-patch": "npm:^1.10.4"
@@ -5052,7 +5052,7 @@ __metadata:
     prettier: "npm:^3.3.3"
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 10/58063bc66086b2010e4f7b70cade6fe3189246c51406a95fe9bfc820a9efc21e77fcca072db8a83c4ee3fe17e31b3281093d1039848cf2a1129a5daa72deacf5
+  checksum: 10/b6ca6cdfff1a544bf2d4df582449345a12eab5892addd70d6dfb69305f6ed9eab394d2be270cfc52fc3b27bb8a7580feb1de39dc354d7ce628ec0ac816c077cb
   languageName: node
   linkType: hard
 
