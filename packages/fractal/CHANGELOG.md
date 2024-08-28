@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [11.5.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.1...@snowball-tech/fractal@11.5.2) (2024-08-28)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.3.2
+
 ## @snowball-tech/fractal [11.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.0...@snowball-tech/fractal@11.5.1) (2024-08-28)
 
 - **icons:** use a clean version of the unicon package ([392b4cd](https://github.com/snowball-tech/fractal/commit/392b4cd3dca21e06817784e8ca947cf79b7328d2))
