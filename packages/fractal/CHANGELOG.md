@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [11.5.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.0...@snowball-tech/fractal@11.5.1) (2024-08-28)
+
+- **icons:** use a clean version of the unicon package ([392b4cd](https://github.com/snowball-tech/fractal/commit/392b4cd3dca21e06817784e8ca947cf79b7328d2))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.3.1
+
 # @snowball-tech/fractal [11.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.4.1...@snowball-tech/fractal@11.5.0) (2024-08-21)
 
 - **popover:** add a trigger on hover feature ([0d06325](https://github.com/snowball-tech/fractal/commit/0d06325cd818b112d161af3a1b6632e413604a91))
