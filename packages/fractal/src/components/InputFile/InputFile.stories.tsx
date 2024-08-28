@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilCancel as CancelIcon,
+  UilSearchAlt as SearchIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -37,10 +39,12 @@ const meta = {
   },
   component: InputFile,
   parameters: {
-    componentSubtitle:
-      "🐆 Yikes! That is the smallest case file I've ever seen. - Agent Clawhauser - Zootopia",
     controls: {
       exclude: ['triggerProps'],
+    },
+    docs: {
+      subtitle:
+        "🐆 Yikes! That is the smallest case file I've ever seen. - Agent Clawhauser - Zootopia",
     },
   },
 

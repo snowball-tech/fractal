@@ -110,8 +110,10 @@ const meta: Meta<DateTimePickerProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      "🐇 The time! The time! Who's got the time? - White Rabbit - Alice in Wonderland",
+    docs: {
+      subtitle:
+        "🐇 The time! The time! Who's got the time? - White Rabbit - Alice in Wonderland",
+    },
     mockingDate: isChromatic()
       ? new Date(2023, 4, 3, 14, 30, 42, 0)
       : undefined,

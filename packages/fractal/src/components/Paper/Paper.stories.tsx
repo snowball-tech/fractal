@@ -37,7 +37,9 @@ const meta = {
   },
   component: Paper,
   parameters: {
-    componentSubtitle: `🦸‍♂️ I've been nice, I've stood for photos, signed every scrap of paper you pushed at me... - Mr. Incredible - The Incredibles`,
+    docs: {
+      subtitle: `🦸‍♂️ I've been nice, I've stood for photos, signed every scrap of paper you pushed at me... - Mr. Incredible - The Incredibles`,
+    },
   },
 
   title: 'Molecules/Paper',

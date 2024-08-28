@@ -1,4 +1,4 @@
-import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
+import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'

@@ -1,8 +1,10 @@
 'use client'
 
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
 import { Label as RxLabel } from '@radix-ui/react-label'
+import {
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import {
   type ChangeEvent,

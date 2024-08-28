@@ -20,7 +20,9 @@ const meta = {
   },
   component: ScrollArea,
   parameters: {
-    componentSubtitle: `📣 Our next stop is the Pecs and Flex Gift where you can pick up the great hero's 30-minute work-out scroll - Tourist guide - Hercules`,
+    docs: {
+      subtitle: `📣 Our next stop is the Pecs and Flex Gift where you can pick up the great hero's 30-minute work-out scroll - Tourist guide - Hercules`,
+    },
   },
 
   title: 'Molecules/ScrollArea',

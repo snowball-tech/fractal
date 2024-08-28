@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import AlignCenterIcon from '@iconscout/react-unicons/icons/uil-align-center-alt'
-import JustifyIcon from '@iconscout/react-unicons/icons/uil-align-justify'
-import AlignLeftIcon from '@iconscout/react-unicons/icons/uil-align-left'
-import AlignRightIcon from '@iconscout/react-unicons/icons/uil-align-right'
-import BoldIcon from '@iconscout/react-unicons/icons/uil-bold'
-import ItalicIcon from '@iconscout/react-unicons/icons/uil-italic'
-import LinkIcon from '@iconscout/react-unicons/icons/uil-link-h'
-import UnderlineIcon from '@iconscout/react-unicons/icons/uil-underline'
+import {
+  UilAlignCenterAlt as AlignCenterIcon,
+  UilAlignLeft as AlignLeftIcon,
+  UilAlignRight as AlignRightIcon,
+  UilBold as BoldIcon,
+  UilItalic as ItalicIcon,
+  UilAlignJustify as JustifyIcon,
+  UilLinkH as LinkIcon,
+  UilUnderline as UnderlineIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
@@ -95,8 +97,10 @@ const meta = {
   },
   component: Toolbar,
   parameters: {
-    componentSubtitle:
-      '🧌 Drool is a tool, kids. Use it - Prof. Knight - Monsters University',
+    docs: {
+      subtitle:
+        '🧌 Drool is a tool, kids. Use it - Prof. Knight - Monsters University',
+    },
   },
 
   title: 'Molecules/Toolbar',

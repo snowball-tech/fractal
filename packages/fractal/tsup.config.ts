@@ -48,7 +48,7 @@ const commonConfig: Options = {
     // eslint-disable-next-line no-param-reassign
     options.outbase = './'
   },
-  external: ['react', 'react-dom', '@iconscout/react-unicons'],
+  external: ['react', 'react-dom', '@tooni/iconscout-unicons-react'],
   format: 'esm',
   minify: true,
   async onSuccess() {

@@ -49,10 +49,12 @@ const meta: Meta<InputPinCodeProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      '🥷 Do they have a code clearance? - Darth Vader - Star Wars: Episode VI - Return of the Jedi.',
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle:
+        '🥷 Do they have a code clearance? - Darth Vader - Star Wars: Episode VI - Return of the Jedi.',
     },
   },
 

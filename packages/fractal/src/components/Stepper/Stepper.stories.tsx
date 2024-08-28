@@ -16,7 +16,7 @@ const meta: Meta<StepperProps> = {
   },
   component: Stepper,
   parameters: {
-    componentSubtitle: '🎈 Is this step three or step five? - Russel - Up',
+    docs: { subtitle: '🎈 Is this step three or step five? - Russel - Up' },
   },
 
   title: 'Molecules/Stepper',

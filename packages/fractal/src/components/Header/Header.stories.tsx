@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import LeftIcon from '@iconscout/react-unicons/icons/uil-arrow-left'
-import HamburgerBarsIcon from '@iconscout/react-unicons/icons/uil-bars'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
+import {
+  UilBars as HamburgerBarsIcon,
+  UilArrowLeft as LeftIcon,
+  UilSearchAlt as SearchIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps, CSSProperties } from 'react'
 

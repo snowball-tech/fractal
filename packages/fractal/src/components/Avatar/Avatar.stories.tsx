@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
 import { action } from '@storybook/addon-actions'
 import { userEvent, within } from '@storybook/test'
+import { UilSignout as SignoutIcon } from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
@@ -61,7 +61,9 @@ const meta = {
   },
   component: Avatar,
   parameters: {
-    componentSubtitle: `🧑‍🔬 Jake! Listen to me! You're not used to your avatar body. This is dangerous! - Dr. Max Patel - Avatar`,
+    docs: {
+      subtitle: `🧑‍🔬 Jake! Listen to me! You're not used to your avatar body. This is dangerous! - Dr. Max Patel - Avatar`,
+    },
   },
 
   title: 'Molecules/Avatar',

@@ -51,10 +51,12 @@ const meta = {
   },
   component: InputCheckbox,
   parameters: {
-    componentSubtitle:
-      '🦜 Checking in with the morning report. - Zazu - The Lion King',
     controls: {
       exclude: ['asChild', 'checked'],
+    },
+    docs: {
+      subtitle:
+        '🦜 Checking in with the morning report. - Zazu - The Lion King',
     },
   },
 

@@ -1,8 +1,8 @@
 'use client'
 
-import AngleRightIcon from '@iconscout/react-unicons/icons/uil-angle-right'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
 import { useClickOutside } from '@react-hookz/web'
+import { UilAngleRight as AngleRightIcon } from '@tooni/iconscout-unicons-react'
 
 import {
   ForwardedRef,

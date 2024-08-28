@@ -35,7 +35,7 @@ module.exports = {
   },
 
   settings: {
-    'import/ignore': ['@iconscout/react-unicons'],
+    'import/ignore': ['@tooni/iconscout-unicons-react'],
     'import/resolver': {
       typescript: {
         project: ['./tsconfig.json'],

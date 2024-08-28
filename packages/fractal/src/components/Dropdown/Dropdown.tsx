@@ -1,8 +1,8 @@
 'use client'
 
-import AngleDownIcon from '@iconscout/react-unicons/icons/uil-angle-down'
 import * as RxDropdown from '@radix-ui/react-dropdown-menu'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
+import { UilAngleDown as AngleDownIcon } from '@tooni/iconscout-unicons-react'
 
 import {
   type CSSProperties,

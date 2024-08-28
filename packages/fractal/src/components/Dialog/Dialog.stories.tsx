@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
+import { UilEllipsisV as MoreMenuIcon } from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic'
 
 import type { ComponentProps, ReactNode } from 'react'
@@ -60,7 +60,7 @@ const meta: Meta<DialogProps> = {
     ...(isChromatic()
       ? [
           (storyFunction: () => ReactNode) => (
-            <div className="relative h-[350px] w-[500px]">
+            <div className="relative h-screen-from-xs w-[500px]">
               {storyFunction()}
             </div>
           ),
@@ -69,7 +69,9 @@ const meta: Meta<DialogProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🐑 Agent Starling. If you can't keep up with the dialog, don't try to join - Hannibal Lecter - Hannibal`,
+    docs: {
+      subtitle: `🐑 Agent Starling. If you can't keep up with the dialog, don't try to join - Hannibal Lecter - Hannibal`,
+    },
   },
 
   title: 'Molecules/Dialog',

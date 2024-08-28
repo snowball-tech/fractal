@@ -62,6 +62,8 @@ const preview: Preview = {
     pseudo: {
       rootSelector: 'body',
     },
+
+    tags: ['autodocs'],
   },
 }
 

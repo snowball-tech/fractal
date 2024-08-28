@@ -6,10 +6,10 @@
   ],
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {
-    "@snowball-tech/eslint-config": "^5.4.9",
+    "@snowball-tech/eslint-config": "^5.5.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@types/eslint": "^8",
+    "@types/eslint": "^8.56.12",
     "@types/lodash": "^4.17.7",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",

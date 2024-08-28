@@ -1,9 +1,7 @@
-import * as icons from '@iconscout/react-unicons'
 import { Meta } from '@storybook/blocks'
+import * as icons from '@tooni/iconscout-unicons-react'
 
 import { createElement } from 'react'
-
-import kebabCase from 'lodash/fp/kebabCase'
 
 <Meta title="Atoms/Iconography" />
 
@@ -16,9 +14,9 @@ Fractal uses the [Unicons icon library](https://iconscout.com/unicons) in the
 
 ## Usage
 
-It's recommended to add the `@iconscout/react-unicons` package as a dependency
-so you can import any Line icon in your React components and use it as any other
-React component.
+It's recommended to add the `@tooni/iconscout-unicons-react` package as a
+dependency so you can import any Line icon in your React components and use it
+as any other React component.
 
 > ##### 💡 Tips
 >
@@ -27,17 +25,16 @@ React component.
 > The official `react-unicons` library hasn't been updated in a while.
 > If you want to enjoy TypeScript support and tree shaking, it's recommended to
 > add the
-> [Azuky's version of the library](https://github.com/Azuky/react-unicons):
+> [Toony's version of the library](https://github.com/tooni/iconscout-unicons-react):
 >
 > ```bash
-> yarn add @iconscout/react-unicons@Azuky/react-unicons
+> yarn add @tooni/iconscout-unicons-react
 > ```
 
-A good practice is to import each single icon instead of using the barrel file
-to allow tree-shaking and reduce the size of your bundle:
+Simply import the icon you need:
 
 ```jsx
-import UilIcons from '@iconscout/react-unicons/icons/uil-icons'
+import { UilIcons } from '@tooni/iconscout-unicons-react'
 ```
 
 ## Available icons
@@ -59,18 +56,14 @@ import UilIcons from '@iconscout/react-unicons/icons/uil-icons'
       tabIndex={-1}
       title={iconName}
       onClick={() => {
-        navigator.clipboard.writeText(
-          `import ${iconName} from '@iconscout/react-unicons/icons/${kebabCase(
-            iconName,
-          )}'`,
+        navigator.clipboard?.writeText(
+          `import { ${iconName} } from '@tooni/iconscout-unicons-react'`,
         )
       }}
       onKeyDown={(event) => {
         if (event.key === 'Enter') {
-          navigator.clipboard.writeText(
-            `import ${iconName} from '@iconscout/react-unicons/icons/${kebabCase(
-              iconName,
-            )}'`,
+          navigator.clipboard?.writeText(
+            `import { ${iconName} } from '@tooni/iconscout-unicons-react'`,
           )
         }
       }}

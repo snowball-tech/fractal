@@ -38,8 +38,9 @@ const meta = {
   },
   component: Tag,
   parameters: {
-    componentSubtitle:
-      '😔 We used to play tag and stuff! - (Sad) Riley - Inside Out',
+    docs: {
+      subtitle: '😔 We used to play tag and stuff! - (Sad) Riley - Inside Out',
+    },
   },
 
   title: 'Molecules/Tag',

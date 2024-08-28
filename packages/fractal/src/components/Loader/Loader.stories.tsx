@@ -19,7 +19,7 @@ const meta = {
   },
   component: Loader,
   parameters: {
-    componentSubtitle: `👷‍♀️ Well, I can drive that loader - Ripley - Alien`,
+    docs: { subtitle: `👷‍♀️ Well, I can drive that loader - Ripley - Alien` },
   },
 
   title: 'Molecules/Loader',

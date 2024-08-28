@@ -40,7 +40,7 @@ const meta: Meta<SwitchProps> = {
   ],
 
   parameters: {
-    componentSubtitle: '🇲🇬 Just pull the switch? - Maurice - Madagascar 3',
+    docs: { subtitle: '🇲🇬 Just pull the switch? - Maurice - Madagascar 3' },
   },
 
   title: 'Molecules/Switch',

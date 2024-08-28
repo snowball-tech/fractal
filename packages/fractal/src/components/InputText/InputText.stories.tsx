@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import DizzyFaceIcon from '@iconscout/react-unicons/icons/uil-dizzy-meh'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
 import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilDizzyMeh as DizzyFaceIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
@@ -90,9 +92,11 @@ const meta: Meta<InputTextProps> = {
   ],
 
   parameters: {
-    componentSubtitle: '🤖 Malfunction, need input! - Johnny 5 - Short Circuit',
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle: '🤖 Malfunction, need input! - Johnny 5 - Short Circuit',
     },
   },
 

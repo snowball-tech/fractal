@@ -1,9 +1,11 @@
 'use client'
 
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { Label as RxLabel } from '@radix-ui/react-label'
+import {
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
+} from '@tooni/iconscout-unicons-react'
 import parsePhoneNumber, {
   type CountryCode,
   getExampleNumber,
