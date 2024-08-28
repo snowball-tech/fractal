@@ -1,3 +1,5 @@
+## @snowball-tech/design-tokens [12.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.3.1...@snowball-tech/design-tokens@12.3.2) (2024-08-28)
+
 ## @snowball-tech/design-tokens [12.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@12.3.0...@snowball-tech/design-tokens@12.3.1) (2024-08-28)
 
 - **icons:** use a clean version of the unicon package ([392b4cd](https://github.com/snowball-tech/fractal/commit/392b4cd3dca21e06817784e8ca947cf79b7328d2))
