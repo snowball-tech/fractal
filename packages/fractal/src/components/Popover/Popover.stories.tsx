@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
+import { UilEllipsisV as MoreMenuIcon } from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic'
 
 import type { ComponentProps, ReactNode } from 'react'
@@ -133,7 +133,7 @@ const meta: Meta<PopoverProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🤖 Pop. You Pop - Wall-E, talking to Eve - Wall-E`,
+    docs: { subtitle: `🤖 Pop. You Pop - Wall-E, talking to Eve - Wall-E` },
   },
 
   title: 'Molecules/Popover',

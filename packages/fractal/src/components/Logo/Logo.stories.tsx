@@ -51,7 +51,9 @@ const meta: Meta<LogoProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🦸‍♀️ What is it? - It's the SHIELD logo - Does announcing your identity on clothing help with the covert part of your job? - Carol Denver - Captain Marvel`,
+    docs: {
+      subtitle: `🦸‍♀️ What is it? - It's the SHIELD logo - Does announcing your identity on clothing help with the covert part of your job? - Carol Denver - Captain Marvel`,
+    },
   },
 
   title: 'Molecules/Logo',

@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import GlobeIcon from '@iconscout/react-unicons/icons/uil-globe'
-import HeartIcon from '@iconscout/react-unicons/icons/uil-heart-alt'
-import BrokenHeartIcon from '@iconscout/react-unicons/icons/uil-heart-break'
 import { action } from '@storybook/addon-actions'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilHeartBreak as BrokenHeartIcon,
+  UilGlobe as GlobeIcon,
+  UilHeartAlt as HeartIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
@@ -155,8 +157,10 @@ const meta: Meta<TabsProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      '👹 Stop the bar? - The car! Start the car! - Sheri Squibbles - Monsters University',
+    docs: {
+      subtitle:
+        '👹 Stop the bar? - The car! Start the car! - Sheri Squibbles - Monsters University',
+    },
   },
 
   title: 'Molecules/Tabs',

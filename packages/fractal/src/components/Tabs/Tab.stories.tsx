@@ -50,8 +50,10 @@ const meta: Meta<TabProps> = {
   component: Tab,
 
   parameters: {
-    componentSubtitle:
-      '👽 Insert tab "A" into chromosome "B." - Prof. Jumba - Stitch! The movie',
+    docs: {
+      subtitle:
+        '👽 Insert tab "A" into chromosome "B." - Prof. Jumba - Stitch! The movie',
+    },
   },
 
   title: 'Molecules/Tabs/Tab',

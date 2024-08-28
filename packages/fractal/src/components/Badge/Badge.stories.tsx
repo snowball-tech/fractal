@@ -23,8 +23,10 @@ const meta = {
   },
   component: Badge,
   parameters: {
-    componentSubtitle:
-      "🎈 You may notice one is missing. It's my Assisting the Elderly badge. - Russel - Up",
+    docs: {
+      subtitle:
+        "🎈 You may notice one is missing. It's my Assisting the Elderly badge. - Russel - Up",
+    },
   },
 
   title: 'Molecules/Badge',

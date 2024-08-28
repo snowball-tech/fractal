@@ -92,10 +92,12 @@ const meta: Meta<InputDateProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      "🧌 Well, I don't think that date could've gone any worse - Bob Razowski - Monsters, Inc.",
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle:
+        "🧌 Well, I don't think that date could've gone any worse - Bob Razowski - Monsters, Inc.",
     },
   },
 

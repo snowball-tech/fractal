@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
-import UserProfileIcon from '@iconscout/react-unicons/icons/uil-house-user'
-import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
-import UserAccountIcon from '@iconscout/react-unicons/icons/uil-user-circle'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilEllipsisV as MoreMenuIcon,
+  UilSignout as SignoutIcon,
+  UilUserCircle as UserAccountIcon,
+  UilHouseUser as UserProfileIcon,
+} from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic'
 
 import type { ComponentProps, ReactNode } from 'react'
@@ -192,7 +194,9 @@ const meta: Meta<DropdownProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
+    docs: {
+      subtitle: `🚀 Drop it down, Freddo. We're drifting - Jim Lovell - Apollo 13`,
+    },
   },
 
   title: 'Molecules/Dropdown',

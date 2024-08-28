@@ -1,8 +1,8 @@
 'use client'
 
-import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxPopover from '@radix-ui/react-popover'
 import * as RxScrollArea from '@radix-ui/react-scroll-area'
+import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
 import {
   type CSSProperties,

@@ -125,10 +125,12 @@ const meta: Meta<SelectProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      '🚀 Failure is not an option - Gene Kranz (NASA Flight Director) - Apollo 13',
     controls: {
       exclude: ['dropdown', 'open', 'value'],
+    },
+    docs: {
+      subtitle:
+        '🚀 Failure is not an option - Gene Kranz (NASA Flight Director) - Apollo 13',
     },
   },
 

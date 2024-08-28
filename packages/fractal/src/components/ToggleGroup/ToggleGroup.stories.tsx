@@ -94,10 +94,12 @@ const meta: Meta<ToggleGroupProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      "🌋 The, hum... toggle switch isn't, hum... toggling, ahah! - Stanley - Meet the Robinson",
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle:
+        "🌋 The, hum... toggle switch isn't, hum... toggling, ahah! - Stanley - Meet the Robinson",
     },
   },
 

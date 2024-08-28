@@ -1,10 +1,12 @@
 'use client'
 
-import ChevronLeftIcon from '@iconscout/react-unicons/icons/uil-angle-left-b'
-import ChevronRightIcon from '@iconscout/react-unicons/icons/uil-angle-right-b'
-import CalendarIcon from '@iconscout/react-unicons/icons/uil-calendar-alt'
-import ClockIcon from '@iconscout/react-unicons/icons/uil-clock'
 import { Label as RxLabel } from '@radix-ui/react-label'
+import {
+  UilCalendarAlt as CalendarIcon,
+  UilAngleLeftB as ChevronLeftIcon,
+  UilAngleRightB as ChevronRightIcon,
+  UilClock as ClockIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import {
   type ForwardedRef,

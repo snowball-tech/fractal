@@ -45,7 +45,7 @@ const meta = {
   },
   component: Emoji,
   parameters: {
-    componentSubtitle: '💃 Everybody, do the Emoji Pop! - The Emoji Movie',
+    docs: { subtitle: '💃 Everybody, do the Emoji Pop! - The Emoji Movie' },
   },
 
   title: 'Molecules/Emojis/Emoji',

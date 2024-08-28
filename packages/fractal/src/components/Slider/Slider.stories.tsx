@@ -37,7 +37,7 @@ const meta: Meta<SliderProps> = {
   ],
 
   parameters: {
-    componentSubtitle: '☃️ Slide, Anna! - Olaf - Frozen',
+    docs: { subtitle: '☃️ Slide, Anna! - Olaf - Frozen' },
   },
 
   title: 'Molecules/Slider',

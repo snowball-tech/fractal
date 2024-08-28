@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "jsx": "react-jsx",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "moduleResolution": "nodenext",
     "noEmit": false,
     "noErrorTruncation": true,

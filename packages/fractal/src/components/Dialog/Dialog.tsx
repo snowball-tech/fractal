@@ -2,8 +2,8 @@
 
 import type { DismissableLayerProps } from '@radix-ui/react-dismissable-layer'
 
-import CloseIcon from '@iconscout/react-unicons/icons/uil-times'
 import * as RxDialog from '@radix-ui/react-dialog'
+import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
 import {
   type ForwardedRef,

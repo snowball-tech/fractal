@@ -29,8 +29,10 @@ const meta: Meta<TabContentProps> = {
   component: TabContent,
 
   parameters: {
-    componentSubtitle:
-      '❤️‍🔥 I am the head algorithm of BuzzzTube which means I curate the content - Yesss - Ralph Breaks the Internet',
+    docs: {
+      subtitle:
+        '❤️‍🔥 I am the head algorithm of BuzzzTube which means I curate the content - Yesss - Ralph Breaks the Internet',
+    },
   },
 
   title: 'Molecules/Tabs/TabContent',

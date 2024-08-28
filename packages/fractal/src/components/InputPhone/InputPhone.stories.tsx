@@ -83,9 +83,11 @@ const meta: Meta<InputPhoneProps> = {
   ],
 
   parameters: {
-    componentSubtitle: '👽 E.T. phone home - E.T. - E.T. the Extra-Terrestrial',
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle: '👽 E.T. phone home - E.T. - E.T. the Extra-Terrestrial',
     },
   },
 

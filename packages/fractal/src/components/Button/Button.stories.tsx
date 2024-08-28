@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps, ReactNode } from 'react'
 
@@ -78,8 +80,10 @@ const meta = {
   },
   component: Button,
   parameters: {
-    componentSubtitle:
-      "🧑‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
+    docs: {
+      subtitle:
+        "🧑‍✈️ Hey, Auto, what's that flashing button? - Axiom's Captain B. McCrea - Wall-E",
+    },
   },
 
   title: 'Molecules/Button',
@@ -156,8 +160,8 @@ const displayButtons = (
 
     <Wrapper>
       <Button
-        element="p"
-        label='"Display" button as a `p` element'
+        element="div"
+        label='"Display" button as a `div` element'
         variant="display"
       />
     </Wrapper>
@@ -232,7 +236,7 @@ const primaryButtons = (
     </Wrapper>
 
     <Wrapper>
-      <Button element="p" label="Primary button as a `p` element" />
+      <Button element="div" label="Primary button as a `div` element" />
     </Wrapper>
 
     <Wrapper>
@@ -316,8 +320,8 @@ const secondaryButtons = (
 
     <Wrapper>
       <Button
-        element="p"
-        label="Secondary button as a `p` element"
+        element="div"
+        label="Secondary button as a `div` element"
         variant="secondary"
       />
     </Wrapper>
@@ -405,7 +409,11 @@ const textButtons = (
     </Wrapper>
 
     <Wrapper>
-      <Button element="p" label="Text button as a `p` element" variant="text" />
+      <Button
+        element="div"
+        label="Text button as a `div` element"
+        variant="text"
+      />
     </Wrapper>
 
     <Wrapper>

@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import AttachmentIcon from '@iconscout/react-unicons/icons/uil-paperclip'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
 import { useArgs } from '@storybook/preview-api'
 import { fn, userEvent, within } from '@storybook/test'
+import {
+  UilPaperclip as AttachmentIcon,
+  UilCancel as CancelIcon,
+  UilSearchAlt as SearchIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
@@ -83,10 +85,12 @@ const meta: Meta<TextareaProps> = {
   ],
 
   parameters: {
-    componentSubtitle:
-      '🦡 Security! Sweep the area! - Dr Madge Honey Badger - Zootopia',
     controls: {
       exclude: ['value'],
+    },
+    docs: {
+      subtitle:
+        '🦡 Security! Sweep the area! - Dr Madge Honey Badger - Zootopia',
     },
   },
 

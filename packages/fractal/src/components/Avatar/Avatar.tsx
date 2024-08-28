@@ -1,6 +1,6 @@
 'use client'
 
-import UserIcon from '@iconscout/react-unicons/icons/uil-user'
+import { UilUser as UserIcon } from '@tooni/iconscout-unicons-react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'

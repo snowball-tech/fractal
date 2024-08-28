@@ -44,8 +44,10 @@ const meta = {
   },
   component: Typography,
   parameters: {
-    componentSubtitle:
-      "🐉 No. Your scroll must have a typo. That can't be! - Mushu - Mulan II",
+    docs: {
+      subtitle:
+        "🐉 No. Your scroll must have a typo. That can't be! - Mushu - Mulan II",
+    },
   },
 
   title: 'Molecules/Typography',

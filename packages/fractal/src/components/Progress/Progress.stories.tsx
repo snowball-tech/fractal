@@ -13,8 +13,10 @@ const meta: Meta<ProgressProps> = {
   },
   component: Progress,
   parameters: {
-    componentSubtitle:
-      '🧑‍🔧 Move, move, move! This is a 54-23 in progress - 04114 - Monsters University',
+    docs: {
+      subtitle:
+        '🧑‍🔧 Move, move, move! This is a 54-23 in progress - 04114 - Monsters University',
+    },
   },
 
   title: 'Molecules/Progress',

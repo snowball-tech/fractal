@@ -123,7 +123,7 @@ const meta = {
   },
   component: EmojiPicker,
   parameters: {
-    componentSubtitle: '💃 Everybody, do the Emoji Pop! - The Emoji Movie',
+    docs: { subtitle: '💃 Everybody, do the Emoji Pop! - The Emoji Movie' },
   },
 
   title: 'Molecules/Emojis/Picker',

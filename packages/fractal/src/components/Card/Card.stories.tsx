@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
@@ -58,7 +60,9 @@ const meta = {
   },
   component: Card,
   parameters: {
-    componentSubtitle: `🐠 Let's play the "Let's Not Die" card - Marin - Finding Nemo`,
+    docs: {
+      subtitle: `🐠 Let's play the "Let's Not Die" card - Marin - Finding Nemo`,
+    },
   },
 
   title: 'Molecules/Card',

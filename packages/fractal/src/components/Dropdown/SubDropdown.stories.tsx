@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CancelIcon from '@iconscout/react-unicons/icons/uil-cancel'
-import CheckCircleIcon from '@iconscout/react-unicons/icons/uil-check-circle'
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import ExclamationCircleIcon from '@iconscout/react-unicons/icons/uil-exclamation-circle'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
-import SearchIcon from '@iconscout/react-unicons/icons/uil-search-alt'
 import { action } from '@storybook/addon-actions'
+import {
+  UilCancel as CancelIcon,
+  UilCheckCircle as CheckCircleIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+  UilSearchAlt as SearchIcon,
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 

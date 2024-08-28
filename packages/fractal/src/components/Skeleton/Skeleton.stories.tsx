@@ -38,8 +38,9 @@ const meta: Meta<StepperProps> = {
   },
   component: Skeleton,
   parameters: {
-    componentSubtitle:
-      "🦴 I'm walking like a skeleton. Blending in. - Miguel - Coco",
+    docs: {
+      subtitle: "🦴 I'm walking like a skeleton. Blending in. - Miguel - Coco",
+    },
   },
 
   title: 'Molecules/Skeleton',

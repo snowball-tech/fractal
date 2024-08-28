@@ -22,7 +22,7 @@ const meta: Meta<{ required?: boolean } & InputRadioProps> = {
   },
   component: InputRadio,
   parameters: {
-    componentSubtitle: '🎶 Video killed the radio star - The Buggles',
+    docs: { subtitle: '🎶 Video killed the radio star - The Buggles' },
   },
 
   title: 'Molecules/Input/InputRadio',

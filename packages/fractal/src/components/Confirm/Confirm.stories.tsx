@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import MoreMenuIcon from '@iconscout/react-unicons/icons/uil-ellipsis-v'
 import { fn, userEvent, within } from '@storybook/test'
+import { UilEllipsisV as MoreMenuIcon } from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic'
 
 import type { ComponentProps, ReactNode } from 'react'
@@ -70,7 +70,9 @@ const meta: Meta<ConfirmProps> = {
   ],
 
   parameters: {
-    componentSubtitle: `🧑‍✈️ Step one. Voice command, 'Confirm acquisition'. - Axiom's Captain B. McCrea - Wall-E`,
+    docs: {
+      subtitle: `🧑‍✈️ Step one. Voice command, 'Confirm acquisition'. - Axiom's Captain B. McCrea - Wall-E`,
+    },
   },
 
   title: 'Molecules/Confirm',

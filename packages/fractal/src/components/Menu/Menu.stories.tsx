@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import SettingsIcon from '@iconscout/react-unicons/icons/uil-cog'
-import DarkModeIcon from '@iconscout/react-unicons/icons/uil-moon'
-import SignoutIcon from '@iconscout/react-unicons/icons/uil-signout'
-import LightModeIcon from '@iconscout/react-unicons/icons/uil-sun'
 import { action } from '@storybook/addon-actions'
 import { userEvent, within } from '@storybook/test'
+import {
+  UilMoon as DarkModeIcon,
+  UilSun as LightModeIcon,
+  UilCog as SettingsIcon,
+  UilSignout as SignoutIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
@@ -124,7 +126,9 @@ const meta: Meta<MenuProps> = {
   },
   component: Menu,
   parameters: {
-    componentSubtitle: `🐀 And he's going to order something, something from our menu. - Linguini - Ratatouille`,
+    docs: {
+      subtitle: `🐀 And he's going to order something, something from our menu. - Linguini - Ratatouille`,
+    },
   },
 
   title: 'Molecules/Menu',

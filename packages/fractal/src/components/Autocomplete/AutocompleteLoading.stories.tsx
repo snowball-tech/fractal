@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import StarIcon from '@iconscout/react-unicons/icons/uil-envelope-star'
-import SendIcon from '@iconscout/react-unicons/icons/uil-message'
+import {
+  UilMessage as SendIcon,
+  UilEnvelopeStar as StarIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import type { ComponentProps } from 'react'
 
