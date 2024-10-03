@@ -106,7 +106,9 @@ const loadData = (
 
       if (
         (isEmpty(characters) && isEmpty(planets)) ||
-        newValue === EMPTY_SEARCH
+        EMPTY_SEARCH.startsWith(newValue) ||
+        EMPTY_SEARCH === newValue ||
+        newValue.startsWith(EMPTY_SEARCH)
       ) {
         setArgs({
           children: (
