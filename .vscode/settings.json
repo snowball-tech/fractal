@@ -2,10 +2,10 @@
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[json]": {
+  "[json5]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json5]": {
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
@@ -23,18 +23,26 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "css.validate": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.markdownlint": "explicit",
-    "source.fixAll.shellcheck": "explicit",
-    "source.fixAll.stylelint": "explicit"
-  },
+  "editor.codeActionsOnSave": [
+    "source.organizeLinkDefinitions",
+    "source.addMissingImports.ts",
+    "source.removeUnusedImports",
+    "source.removeUnused.ts",
+    "source.fixAll.eslint",
+    "source.fixAll.markdownlint",
+    "source.fixAll.shellcheck",
+    "source.fixAll.ts",
+    "source.fixAll.sortJSON",
+    "source.formatDocument"
+  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.formatOnType": true,
   "editor.quickSuggestions": {
-    "strings": "on"
+    "comments": false,
+    "other": true,
+    "strings": true
   },
   "editor.tabSize": 2,
   "eslint.lintTask.enable": true,
@@ -67,16 +75,17 @@
   "javascript.validate.enable": false,
   "less.validate": false,
   "markdownlint.config": {
-    "default": true,
     "MD001": false,
     "MD013": false,
     "MD025": false,
     "MD028": false,
     "MD029": false,
-    "MD033": false
+    "MD033": false,
+    "default": true
   },
   "scss.validate": false,
   "search.exclude": {
+    "**/*-snapshots": true,
     "**/.yarn": true,
     "**/build": true,
     "**/dist": true,
@@ -84,19 +93,24 @@
     "**/out": true,
     "**/storybook-static": true
   },
-  "tailwindCSS.rootFontSize": 8,
   "tailwindCSS.experimental.classRegex": [
-    ["\\S*[Cc]lass[nN]ame\\S* = \\[([\\s\\S]+?)(?=][\\n;.])", "'([^']*)'"],
-    ["\\S*[Cc]lass[nN]ame\\S* = {([\\s\\S]+?)}\\s", "'([^']*)'"],
-    "\\S*[Cc]lass[nN]ame\\S* ?[:=] ['`](.*)['`]",
+    [
+      "(?:\\b(?:const|let|var)\\s+)?[\\w$_]*(?:[Ss]tyles?|[Cc]lasses?|[Cc]lass[nN]ames?)[\\w\\d]*\\s*(?:=|\\+=)\\s*['\"]([^'\"]*)['\"]"
+    ],
+    [
+      "(?:[Ss]tyles?|[Cc]lasses?|[Cc]lass[nN]ames?)\\s*(?::\\s*[^=]+)?\\s*=\\s*([^;]*);",
+      "['\"`]([^'\"`]*)['\"`]"
+    ],
+    ["classList.(?:add|remove)\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+    [
+      "(?:twMerge|twJoin|cn|cj|classnames)\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*)[\"'`]"
+    ],
+    ["clsx\\(.*?\\)(?!\\])", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
     "return '(.*)'",
-    ["return \\(?{([\\s\\S]+?)}\\(?\\s", "'([^']*)'"],
-    ["twMerge\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
-    ["twJoin\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
-    ["clsx\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
-    ["cn\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"],
-    ["cj\\(([\\s\\S]+?)\\)\\s", "'([^']*)'"]
+    ["return \\(?{([\\s\\S]+?)}\\(?\\s", "'([^']*)'"]
   ],
+  "tailwindCSS.rootFontSize": 8,
   "typescript.format.enable": false,
   "typescript.preferences.quoteStyle": "single",
   "typescript.tsdk": "node_modules/typescript/lib"

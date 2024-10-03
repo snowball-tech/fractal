@@ -15,7 +15,6 @@
     "ecmel.vscode-html-css",
     "ellreka.tailwindcss-highlight",
     "esbenp.prettier-vscode",
-    "formulahendry.auto-rename-tag",
     "github.copilot",
     "github.vscode-pull-request-github",
     "gruntfuggly.todo-tree",
@@ -30,7 +29,6 @@
     "orta.vscode-jest",
     "ow.vscode-subword-navigation",
     "pustelto.bracketeer",
-    "sburg.vscode-javascript-booster",
     "sleistner.vscode-fileutils",
     "stkb.rewrap",
     "streetsidesoftware.code-spell-checker",
@@ -41,7 +39,6 @@
     "visualstudioexptteam.vscodeintellicode",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
-    "stylelint.vscode-stylelint",
     "figma.figma-vscode-extension"
   ]
 }

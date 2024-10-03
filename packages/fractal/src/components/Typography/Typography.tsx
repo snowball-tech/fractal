@@ -122,8 +122,8 @@ import {
 
 const MONOSPACED_ELEMENTS: Set<ElementType> = new Set([
   'code',
-  'pre',
   'kbd',
+  'pre',
   'samp',
 ])
 

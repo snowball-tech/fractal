@@ -6,16 +6,16 @@
   ],
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {
-    "@snowball-tech/eslint-config": "^5.5.1",
+    "@snowball-tech/eslint-config": "^5.5.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/eslint": "^8.56.12",
-    "@types/lodash": "^4.17.7",
+    "@types/lodash": "^4.17.10",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",
-    "tailwindcss": "^3.4.10",
+    "tailwindcss": "^3.4.13",
     "to-esm": "^2.27.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "engines": {
     "node": ">=18 <=20",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "main": "dist/web/typescript/design-tokens.js",
   "name": "@snowball-tech/design-tokens",
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.5.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -66,6 +66,6 @@
   "types": "dist/web/typescript/design-tokens.d.ts",
   "version": "12.3.3",
   "dependencies": {
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.1"
   }
 }
