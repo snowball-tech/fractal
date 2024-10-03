@@ -22,6 +22,7 @@ const meta: Meta<DialogProps> = {
     disabled: false,
     dismissable: true,
     modal: true,
+    overlayStyle: 'light',
     position: 'fixed',
     title: 'This is the title',
     trigger: 'Text',

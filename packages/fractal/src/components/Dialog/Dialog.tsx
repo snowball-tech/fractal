@@ -50,6 +50,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onOpen,
       onToggle,
       open,
+      overlayStyle = 'light',
       position = DEFAULT_POSITION,
       root,
       title,
@@ -171,14 +172,19 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
           <RxDialog.Portal>
             {isOpen && (
               <>
-                <RxDialog.Overlay
-                  className={cj(
-                    `${PREFIX}-${GROUP_NAME}__overlay`,
-                    'z-[9999]',
-                    'inset-0 bg-[rgba(255,251,244,0.8)]',
-                  )}
-                  style={{ position }}
-                />
+                {overlayStyle !== 'none' && (
+                  <RxDialog.Overlay
+                    className={cj(
+                      `${PREFIX}-${GROUP_NAME}__overlay`,
+                      'z-[9999]',
+                      'inset-0',
+                      overlayStyle === 'light'
+                        ? 'bg-[rgba(255,251,244,0.8)]'
+                        : 'bg-[rgba(0,0,0,0.7)]',
+                    )}
+                    style={{ position }}
+                  />
+                )}
 
                 <RxDialog.Content
                   ref={contentRef}
