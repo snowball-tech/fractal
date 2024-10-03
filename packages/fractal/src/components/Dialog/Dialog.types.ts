@@ -41,6 +41,8 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * Must be used in conjunction with `onToggle`.
    */
   open?: boolean
+  /** The color of the overlay background. */
+  overlayStyle?: 'dark' | 'light' | 'none'
   /**
    * The positioning of the modal and the overlay.
    *
