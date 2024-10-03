@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.5.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.4...@snowball-tech/fractal@11.5.5) (2024-10-03)
+
+- **autocomplete:** fix test ([a9dfef2](https://github.com/snowball-tech/fractal/commit/a9dfef2a54be9ffe8ed65a69e37ddbc94f95d906))
+
 ## @snowball-tech/fractal [11.5.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.3...@snowball-tech/fractal@11.5.4) (2024-10-03)
 
 ### Dependencies
