@@ -472,6 +472,8 @@ export const InteractiveEmptySearch: Story = {
     await sleep(500)
     await userEvent.type(input, EMPTY_SEARCH)
 
+    await sleep(1500)
+
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,
     })
