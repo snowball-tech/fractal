@@ -31,7 +31,7 @@
     "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.5.0",
   "engines": {
     "yarn": "^4.0.0",
     "node": ">=18 <=20"
@@ -66,7 +66,7 @@
     "setup": "yarn run presetup && (yarn setup-freezer & yarn setup-husky) && yarn workspaces foreach --all -p --topological-dev run setup",
     "setup-freezer": "is-ci && ./scripts/setup-freezer.sh",
     "setup-husky": "is-ci || yarn husky",
-    "setup-vercel": "yarn setup-freezer && yarn workspaces foreach --all -p run setup-vercel",
+    "setup-from-vercel": "yarn setup-freezer && yarn workspaces foreach --all -p run setup-from-vercel",
     "types-check": "yarn workspaces foreach --all -p run types-check",
     "update-deps": "yarn upgrade-interactive",
     "update-references": "workspaces-to-typescript-project-references --includesRoot"
@@ -74,19 +74,19 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
     "@qiwi/multi-semantic-release": "^7.1.2",
-    "@snowball-tech/eslint-config": "^5.5.1",
-    "@snowball-tech/prettier-config": "^1.5.1",
-    "@snowball-tech/semantic-release-config": "^2.1.14",
-    "@snowball-tech/stylelint-config": "^2.2.10",
-    "chromatic": "^11.7.1",
+    "@snowball-tech/eslint-config": "^5.5.3",
+    "@snowball-tech/prettier-config": "^1.5.3",
+    "@snowball-tech/semantic-release-config": "^2.1.16",
+    "@snowball-tech/stylelint-config": "^2.2.12",
+    "chromatic": "^11.11.0",
     "depcheck": "^1.4.7",
-    "eslint": "^8.57.0",
-    "husky": "^9.1.5",
+    "eslint": "^8.57.1",
+    "husky": "^9.1.6",
     "is-ci": "^3.0.1",
-    "lint-staged": "^15.2.9",
-    "nodemon": "^3.1.4",
+    "lint-staged": "^15.2.10",
+    "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "semantic-release": "^24.1.0",
+    "semantic-release": "^24.1.2",
     "serve": "^14.2.3",
     "stylelint": "^16.9.0"
   },

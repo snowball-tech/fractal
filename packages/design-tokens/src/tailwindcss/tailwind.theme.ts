@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import type { Config } from 'tailwindcss'
 
 import {
@@ -338,23 +341,23 @@ export const tailwindTheme: Config['theme'] = {
     'size-browser': 'initial',
     'size-unset': 'unset',
 
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-disable perfectionist/sort-objects */
     'display-1-xxs': 'var(--typography-display-1-font-size-xxs)',
     'display-1-md': 'var(--typography-display-1-font-size-md)',
     'display-2-xxs': 'var(--typography-display-2-font-size-xxs)',
     'display-2-md': 'var(--typography-display-2-font-size-md)',
     'display-wide-xxs': 'var(--typography-display-wide-font-size-xxs)',
     'display-wide-md': 'var(--typography-display-wide-font-size-md)',
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-enable perfectionist/sort-objects */
 
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-disable perfectionist/sort-objects */
     'heading-1-xxs': 'var(--typography-heading-1-font-size-xxs)',
     'heading-1-md': 'var(--typography-heading-1-font-size-md)',
     'heading-2-xxs': 'var(--typography-heading-2-font-size-xxs)',
     'heading-2-md': 'var(--typography-heading-2-font-size-md)',
     'heading-3': 'var(--typography-heading-3-font-size)',
     'heading-4': 'var(--typography-heading-4-font-size)',
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-enable perfectionist/sort-objects */
 
     'body-1': 'var(--typography-body-1-font-size)',
     'body-2': 'var(--typography-body-2-font-size)',
@@ -426,22 +429,22 @@ export const tailwindTheme: Config['theme'] = {
     none: 'none',
     unset: 'unset',
 
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-disable perfectionist/sort-objects */
     'display-1-xxs': 'var(--typography-display-1-line-height-xxs)',
     'display-1-md': 'var(--typography-display-1-line-height-md)',
     'display-2-xxs': 'var(--typography-display-2-line-height-xxs)',
     'display-2-md': 'var(--typography-display-2-line-height-md)',
     'display-wide-xxs': 'var(--typography-display-wide-line-height-xxs)',
     'display-wide-md': 'var(--typography-display-wide-line-height-md)',
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-enable perfectionist/sort-objects */
 
-    /* eslint-disable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-disable perfectionist/sort-objects */
     'heading-1-xxs': 'var(--typography-heading-1-line-height-xxs)',
     'heading-1-md': 'var(--typography-heading-1-line-height-md)',
     'heading-2': 'var(--typography-heading-2-line-height)',
     'heading-3': 'var(--typography-heading-3-line-height)',
     'heading-4': 'var(--typography-heading-4-line-height)',
-    /* eslint-enable sort-keys, sort-keys/sort-keys-fix, perfectionist/sort-objects */
+    /* eslint-enable perfectionist/sort-objects */
 
     'body-1': 'var(--typography-body-1-line-height)',
     'body-2': 'var(--typography-body-2-line-height)',
