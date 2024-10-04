@@ -407,14 +407,15 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
             : '',
           !inlineStyle && isTextVariant ? 'mt-0' : '',
           iconResponsive === false ? 'flex' : 'hidden',
-          iconResponsive === Breakpoints.xxs || iconResponsive === true
+          !iconOnly &&
+            (iconResponsive === Breakpoints.xxs || iconResponsive === true)
             ? 'xs:flex'
             : '',
-          iconResponsive === Breakpoints.xs ? 'sm:flex' : '',
-          iconResponsive === Breakpoints.sm ? 'md:flex' : '',
-          iconResponsive === Breakpoints.md ? 'lg:flex' : '',
-          iconResponsive === Breakpoints.lg ? 'xl:flex' : '',
-          iconResponsive === Breakpoints.xl ? 'xxl:flex' : '',
+          !iconOnly && iconResponsive === Breakpoints.xs ? 'sm:flex' : '',
+          !iconOnly && iconResponsive === Breakpoints.sm ? 'md:flex' : '',
+          !iconOnly && iconResponsive === Breakpoints.md ? 'lg:flex' : '',
+          !iconOnly && iconResponsive === Breakpoints.lg ? 'xl:flex' : '',
+          !iconOnly && iconResponsive === Breakpoints.xl ? 'xxl:flex' : '',
         )}
         style={
           inlineStyle
