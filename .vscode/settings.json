@@ -27,7 +27,6 @@
     "source.organizeLinkDefinitions",
     "source.addMissingImports.ts",
     "source.removeUnusedImports",
-    "source.removeUnused.ts",
     "source.fixAll.eslint",
     "source.fixAll.markdownlint",
     "source.fixAll.shellcheck",
