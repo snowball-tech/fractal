@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [11.6.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.0...@snowball-tech/fractal@11.6.1) (2024-10-04)
+
 # @snowball-tech/fractal [11.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.6...@snowball-tech/fractal@11.6.0) (2024-10-03)
 
 - **dialog:** add an overlay style prop ([b7f633d](https://github.com/snowball-tech/fractal/commit/b7f633dd36e1d0f954744782aab76916b9dcabbe))
