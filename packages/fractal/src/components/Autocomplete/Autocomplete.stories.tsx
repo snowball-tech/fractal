@@ -470,11 +470,14 @@ export const InteractiveEmptySearch: Story = {
 
     const input = canvas.getByRole('textbox')
     await userEvent.click(input)
-
     await sleep(500)
-    await userEvent.type(input, EMPTY_SEARCH)
 
-    await sleep(1500)
+    for (let index = 0; index < EMPTY_SEARCH.length; index += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await userEvent.type(input, EMPTY_SEARCH[index]!, { skipClick: true })
+      // eslint-disable-next-line no-await-in-loop
+      await sleep(50)
+    }
 
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,
