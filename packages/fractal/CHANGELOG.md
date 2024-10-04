@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [11.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.2...@snowball-tech/fractal@11.7.0) (2024-10-04)
+
+- **button:** add responsivity to the icon ([65e6061](https://github.com/snowball-tech/fractal/commit/65e6061a2cad5dd9d407205b2f42601073c3f7d4))
+- **button:** do not make the icon responsive in icon only mode ([40a731f](https://github.com/snowball-tech/fractal/commit/40a731f002a1a83f781d6c66590d8152d8f5a750))
+
 ## @snowball-tech/fractal [11.6.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.1...@snowball-tech/fractal@11.6.2) (2024-10-04)
 
 - **switch:** remove an useless warning ([fc1d92a](https://github.com/snowball-tech/fractal/commit/fc1d92a609f9616ea418cd84f534c22c86f6c923))
