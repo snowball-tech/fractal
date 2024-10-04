@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.6.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.1...@snowball-tech/fractal@11.6.2) (2024-10-04)
+
+- **switch:** remove an useless warning ([fc1d92a](https://github.com/snowball-tech/fractal/commit/fc1d92a609f9616ea418cd84f534c22c86f6c923))
+
 ## @snowball-tech/fractal [11.6.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.0...@snowball-tech/fractal@11.6.1) (2024-10-04)
 
 # @snowball-tech/fractal [11.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.5.6...@snowball-tech/fractal@11.6.0) (2024-10-03)
