@@ -44,11 +44,6 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
     ref: ForwardedRef<HTMLButtonElement>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label) && isEmpty(labels)) {
-      console.warn(
-        'You must provide `labels` or a `label` or `children` to the `Switch` component',
-      )
-    }
     if (!isEmpty(labels) && labels.length !== 2) {
       console.warn(
         'You must provide exactly two value when using `labels` in the `Switch` component',
