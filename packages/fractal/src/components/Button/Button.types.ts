@@ -5,6 +5,8 @@ import type {
   ReactNode,
 } from 'react'
 
+import type { Breakpoint } from '@/types'
+
 import { Themes } from '@/constants'
 
 import { Variants } from './Button.constants'
@@ -42,6 +44,14 @@ export interface ButtonProps
   iconOnly?: boolean
   /** The position of the icon in the button. */
   iconPosition?: 'left' | 'right'
+  /**
+   * Indicates if we want to hide the icon at a certain breakpoint.
+   *
+   * If `true`, it will only be hidden from the smallest breakpoint (xxs) and
+   * shown above (from xs).
+   * If `false`, the icon will always be shown.
+   */
+  iconResponsive?: boolean | Breakpoint
   /**
    * Indicates to inline the styles instead of using Tailwind CSS classes.
    *
