@@ -38,6 +38,7 @@
     "visualstudioexptteam.vscodeintellicode",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
-    "figma.figma-vscode-extension"
+    "figma.figma-vscode-extension",
+    "rohit-gohri.format-code-action"
   ]
 }
