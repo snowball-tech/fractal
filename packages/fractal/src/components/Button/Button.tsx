@@ -42,7 +42,7 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
-import { PREFIX, Themes } from '@/constants'
+import { Breakpoints, PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import { cj, cn } from '@/styles/helpers'
 
@@ -252,6 +252,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       icon,
       iconOnly = false,
       iconPosition = 'right',
+      iconResponsive = false,
       inlineStyle = false,
       label,
       onClick,
@@ -400,11 +401,20 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__icon`,
           `${PREFIX}-${GROUP_NAME}__icon--${iconPosition}`,
-          !inlineStyle && 'flex h-3 w-3 items-center [&>svg]:h-3',
+          !inlineStyle && 'h-3 w-3 items-center [&>svg]:h-3',
           !inlineStyle && asLink
             ? `${PREFIX}-${GROUP_NAME}__link__icon--${iconPosition}`
             : '',
           !inlineStyle && isTextVariant ? 'mt-0' : '',
+          iconResponsive === false ? 'flex' : 'hidden',
+          iconResponsive === Breakpoints.xxs || iconResponsive === true
+            ? 'xs:flex'
+            : '',
+          iconResponsive === Breakpoints.xs ? 'sm:flex' : '',
+          iconResponsive === Breakpoints.sm ? 'md:flex' : '',
+          iconResponsive === Breakpoints.md ? 'lg:flex' : '',
+          iconResponsive === Breakpoints.lg ? 'xl:flex' : '',
+          iconResponsive === Breakpoints.xl ? 'xxl:flex' : '',
         )}
         style={
           inlineStyle

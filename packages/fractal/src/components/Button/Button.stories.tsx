@@ -13,7 +13,7 @@ import {
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Paper } from '@/components/Paper'
-import { DEFAULT_THEME, Themes } from '@/constants'
+import { Breakpoints, DEFAULT_THEME, Themes } from '@/constants'
 import ThemeProvider from '@/ThemeProvider'
 
 import { Button, ButtonVariants } from '.'
@@ -29,6 +29,7 @@ const meta = {
     icon: 'Send',
     iconOnly: false,
     iconPosition: 'right',
+    iconResponsive: false,
     inlineStyle: false,
     label: 'Punch it, Chewie!',
     target: '',
@@ -61,6 +62,18 @@ const meta = {
         Star: <StarIcon />,
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
+    },
+    iconResponsive: {
+      options: [true, false, ...Object.values(Breakpoints)],
+      table: {
+        defaultValue: { summary: 'false' },
+        type: {
+          summary: [
+            'boolean',
+            ...Object.values(Breakpoints).map((value) => `"${value}"`),
+          ].join('|'),
+        },
+      },
     },
     theme: {
       control: 'radio',
