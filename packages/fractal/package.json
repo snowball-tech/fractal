@@ -109,7 +109,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@snowball-tech/fractal",
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "yarn@4.5.1",
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
