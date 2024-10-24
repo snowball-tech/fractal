@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [11.7.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.0...@snowball-tech/fractal@11.7.1) (2024-10-24)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.3.5
+
 # @snowball-tech/fractal [11.7.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.6.2...@snowball-tech/fractal@11.7.0) (2024-10-04)
 
 - **button:** add responsivity to the icon ([65e6061](https://github.com/snowball-tech/fractal/commit/65e6061a2cad5dd9d407205b2f42601073c3f7d4))
