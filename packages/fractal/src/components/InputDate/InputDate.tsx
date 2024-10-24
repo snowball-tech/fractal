@@ -243,6 +243,12 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       }
 
       switch (event.key) {
+        case 'ArrowDown':
+        case 'ArrowUp': {
+          skipFocusChange = true
+          break
+        }
+
         case 'ArrowLeft': {
           switch (type) {
             case 'month': {
@@ -267,7 +273,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           }
           break
         }
-
         case 'ArrowRight': {
           switch (type) {
             case 'day': {
@@ -290,12 +295,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               break
             }
           }
-          break
-        }
-
-        case 'ArrowUp':
-        case 'ArrowDown': {
-          skipFocusChange = true
           break
         }
 

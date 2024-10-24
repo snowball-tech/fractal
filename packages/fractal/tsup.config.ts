@@ -9,7 +9,6 @@ async function addDirectivesToChunkFiles(distPath = DIST_PATH) {
   try {
     const files = await fs.readdir(distPath)
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const file of files) {
       if (
         file.startsWith('chunk-') &&
@@ -17,25 +16,22 @@ async function addDirectivesToChunkFiles(distPath = DIST_PATH) {
       ) {
         const filePath = path.join(distPath, file)
 
-        // eslint-disable-next-line no-await-in-loop -- We need to wait for each file to be read
+        // eslint-disable-next-line no-await-in-loop
         const data = await fs.readFile(filePath, 'utf8')
         if (data.startsWith("'use client';")) {
-          // eslint-disable-next-line no-console -- We need to log the result
-          console.log(`Directive already exists in ${file}`)
+          console.info(`Directive already exists in ${file}`)
           continue
         }
 
         const updatedContent = `'use client';\n${data}`
 
-        // eslint-disable-next-line no-await-in-loop -- We need to wait for each file to be written
+        // eslint-disable-next-line no-await-in-loop
         await fs.writeFile(filePath, updatedContent, 'utf8')
 
-        // eslint-disable-next-line no-console -- We need to log the result
-        console.log(`Directive has been added to ${file}`)
+        console.info(`Directive has been added to ${file}`)
       }
     }
   } catch (error) {
-    // eslint-disable-next-line no-console -- We need to log the error
     console.error('Error:', error)
   }
 }

@@ -12,8 +12,9 @@ import isNil from 'lodash/fp/isNil'
 import isObject from 'lodash/fp/isObject'
 
 export function sleep(timeInMs: number) {
-  // eslint-disable-next-line no-promise-executor-return
-  return new Promise((resolve) => setTimeout(resolve, timeInMs))
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeInMs)
+  })
 }
 
 export function hasChildWithProps(
@@ -49,7 +50,7 @@ export function hasChildWithProps(
       (childType === '*' || child.type === childType) &&
       propsToCheck.every(
         (propertyName) =>
-          Object.prototype.hasOwnProperty.call(child.props, propertyName) &&
+          Object.hasOwn(child.props, propertyName) &&
           Boolean(child.props[propertyName]),
       )
 
@@ -62,8 +63,7 @@ export function hasChildWithProps(
       )
     } else if (hasProps && !isEmpty(propsToCheckAreNotThere)) {
       hasProps = propsToCheckAreNotThere.every(
-        (propertyName) =>
-          !Object.prototype.hasOwnProperty.call(child.props, propertyName),
+        (propertyName) => !Object.hasOwn(child.props, propertyName),
       )
     }
   })

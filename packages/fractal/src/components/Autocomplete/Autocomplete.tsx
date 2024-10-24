@@ -188,27 +188,6 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       }
 
       switch (event.key) {
-        case 'Escape': {
-          event.preventDefault()
-
-          if (isOpen) {
-            handleDropdownToggle(false)
-          } else if (inputRef?.current) {
-            setKeepFocus(false)
-            inputRef.current.blur()
-          }
-
-          break
-        }
-        case 'Enter': {
-          event.preventDefault()
-
-          if (isFunction(onChange)) {
-            onChange(null, String(value) ?? '')
-          }
-
-          break
-        }
         case 'ArrowDown':
         case 'ArrowUp': {
           if (!hasChildren) {
@@ -223,6 +202,28 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           }
 
           event.preventDefault()
+
+          break
+        }
+
+        case 'Enter': {
+          event.preventDefault()
+
+          if (isFunction(onChange)) {
+            onChange(null, String(value))
+          }
+
+          break
+        }
+        case 'Escape': {
+          event.preventDefault()
+
+          if (isOpen) {
+            handleDropdownToggle(false)
+          } else if (inputRef?.current) {
+            setKeepFocus(false)
+            inputRef.current.blur()
+          }
 
           break
         }

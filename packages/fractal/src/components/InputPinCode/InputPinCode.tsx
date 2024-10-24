@@ -148,30 +148,13 @@ export const InputPinCode = ({
     }
 
     switch (event.key) {
-      case 'ArrowLeft': {
-        if (index > 0) {
-          const previousInput = document.querySelector(
-            `#${CSS.escape(uniqueId)}-${index - 1}`,
-          ) as HTMLInputElement
-          if (previousInput) {
-            previousInput.focus()
-          }
-        }
-        event.preventDefault()
+      case 'ArrowDown':
+      case 'ArrowUp': {
+        skipFocusChange.current = true
         break
       }
 
-      case 'Backspace': {
-        if (!isEmpty(event.currentTarget.value)) {
-          handleChange(
-            event as unknown as ChangeEvent<HTMLInputElement>,
-            '',
-            index,
-          )
-
-          return
-        }
-
+      case 'ArrowLeft': {
         if (index > 0) {
           const previousInput = document.querySelector(
             `#${CSS.escape(uniqueId)}-${index - 1}`,
@@ -196,10 +179,26 @@ export const InputPinCode = ({
         event.preventDefault()
         break
       }
+      case 'Backspace': {
+        if (!isEmpty(event.currentTarget.value)) {
+          handleChange(
+            event as unknown as ChangeEvent<HTMLInputElement>,
+            '',
+            index,
+          )
 
-      case 'ArrowUp':
-      case 'ArrowDown': {
-        skipFocusChange.current = true
+          return
+        }
+
+        if (index > 0) {
+          const previousInput = document.querySelector(
+            `#${CSS.escape(uniqueId)}-${index - 1}`,
+          ) as HTMLInputElement
+          if (previousInput) {
+            previousInput.focus()
+          }
+        }
+        event.preventDefault()
         break
       }
 

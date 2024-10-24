@@ -10,11 +10,9 @@ const { defineConfig } = require(`@yarnpkg/types`)
  * @param {Context} context
  */
 function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
-  // eslint-disable-next-line no-restricted-syntax
   for (const dependency of Yarn.dependencies()) {
     if (dependency.type === `peerDependencies`) continue
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const otherDependency of Yarn.dependencies({
       ident: dependency.ident,
     })) {

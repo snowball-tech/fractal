@@ -3,6 +3,7 @@
 import fs from 'fs-extra'
 import { globSync } from 'glob'
 
+// eslint-disable-next-line import/extensions
 import _ from 'lodash/fp.js'
 
 function kebabToPascalCase(string_) {

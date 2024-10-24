@@ -83,8 +83,18 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     let inputMode = props.inputMode ?? 'text'
     switch (type) {
+      case 'email': {
+        inputMode = 'email'
+        break
+      }
+
       case 'number': {
         inputMode = 'decimal'
+        break
+      }
+
+      case 'search': {
+        inputMode = 'search'
         break
       }
 
@@ -93,18 +103,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
         break
       }
 
-      case 'email': {
-        inputMode = 'email'
-        break
-      }
-
       case 'url': {
         inputMode = 'url'
-        break
-      }
-
-      case 'search': {
-        inputMode = 'search'
         break
       }
 

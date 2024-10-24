@@ -1,5 +1,3 @@
-/* eslint-disable no-secrets/no-secrets */
-
 const { breakpoints } = require('../src/constants')
 
 module.exports = {
