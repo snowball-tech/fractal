@@ -18,9 +18,8 @@ export default {
   },
 
   plugins: [
-    // eslint-disable-next-line global-require, @typescript-eslint/no-require-imports
     require('@tailwindcss/aspect-ratio'),
-    // eslint-disable-next-line global-require, @typescript-eslint/no-require-imports
+
     require('@tailwindcss/container-queries'),
   ],
 

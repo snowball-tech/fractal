@@ -14,13 +14,16 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
+import {
+  buttonDisabledClassNames,
+  buttonVariantClassNames,
+} from '@/components/Button'
+import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
 import type { CombinedRefs, InputFileProps } from './InputFile.types'
 
-import { Typography } from '..'
-import { variantClassNames, variantDisabledClassNames } from '../Button/Button'
 import { DEFAULT_VARIANT, GROUP_NAME, Variants } from './InputFile.constants'
 
 /**
@@ -87,8 +90,8 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
         : '',
       disabled
-        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames.light[variant]}`
-        : `${variantClassNames.light[variant]} cursor-pointer`,
+        ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${buttonDisabledClassNames.light[variant]}`
+        : `${buttonVariantClassNames.light[variant]} cursor-pointer`,
       isEmpty(triggerProps.icon)
         ? ''
         : `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${triggerProps.iconPosition}`,
