@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.3.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.3.5, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4020,7 +4020,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.3.4"
+    "@snowball-tech/design-tokens": "npm:12.3.5"
     "@snowball-tech/eslint-config": "npm:^5.6.1"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
     "@storybook/addon-a11y": "npm:^8.3.6"
@@ -18500,8 +18500,8 @@ __metadata:
   linkType: hard
 
 "semantic-release@npm:^24.1.3":
-  version: 24.1.3
-  resolution: "semantic-release@npm:24.1.3"
+  version: 24.2.0
+  resolution: "semantic-release@npm:24.2.0"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^13.0.0-beta.1"
     "@semantic-release/error": "npm:^4.0.0"
@@ -18534,7 +18534,7 @@ __metadata:
     yargs: "npm:^17.5.1"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10/f18e6ce5fe671b8dcfbfe79a8fe37432f560c554b6a2180ffff96c4ab86cab80ef738bc3f7ac371d8e478dbf876787d22bcbb4c499b285528556053637e5bb72
+  checksum: 10/31baade63bfc04324b50c107dbe8f59575c112176ff27226e4e1d996f4a23d0f3cfb3651a5863ae9ffc0250a2620941a752cd2474f632ace7206fbdc84f9ec30
   languageName: node
   linkType: hard
 
