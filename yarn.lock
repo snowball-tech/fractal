@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.3.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.3.5, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4020,7 +4020,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.3.4"
+    "@snowball-tech/design-tokens": "npm:12.3.5"
     "@snowball-tech/eslint-config": "npm:^5.6.1"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
     "@storybook/addon-a11y": "npm:^8.3.6"
@@ -4058,7 +4058,7 @@ __metadata:
     postcss-import: "npm:^16.1.0"
     postcss-logical: "npm:^8.0.0"
     postcss-preset-env: "npm:^10.0.8"
-    postcss-styled-syntax: "npm:^0.6.4"
+    postcss-styled-syntax: "npm:^0.7.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.8"
     react: "npm:^18.3.1"
@@ -17172,6 +17172,17 @@ __metadata:
   peerDependencies:
     postcss: ^8.4.21
   checksum: 10/435bc414cc68d2d2297bb6354230226f554b88efb38610c0c35575eefc241edbabf12a4d4662957204e92091443fa25c85cb943916b61023c222e30a1127b1ff
+  languageName: node
+  linkType: hard
+
+"postcss-styled-syntax@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "postcss-styled-syntax@npm:0.7.0"
+  dependencies:
+    typescript: "npm:^5.6.3"
+  peerDependencies:
+    postcss: ^8.4.21
+  checksum: 10/d52b4d556baf6b3c700fbb6b71bcc5bd3787d9af05a781bc1050031f61ac8e3ac60c5f7b8e924bd7ce6f8ff6b7d3314533f1526dd804729abdd021f835e35235
   languageName: node
   linkType: hard
 
