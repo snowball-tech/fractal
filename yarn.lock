@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.3.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.3.5, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4020,7 +4020,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.3.4"
+    "@snowball-tech/design-tokens": "npm:12.3.5"
     "@snowball-tech/eslint-config": "npm:^5.6.1"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
     "@storybook/addon-a11y": "npm:^8.3.6"
@@ -7223,8 +7223,8 @@ __metadata:
   linkType: hard
 
 "chromatic@npm:^11.15.0":
-  version: 11.15.0
-  resolution: "chromatic@npm:11.15.0"
+  version: 11.18.0
+  resolution: "chromatic@npm:11.18.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7237,7 +7237,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/3d4b5702d562158b3a5144c23939dd49713d13d6437d76b77b37eed7cbaf32e15c8d67599bf82b4cfd75eb9cddced9cef15289c57a97a127a6b52e2aa26cfaa5
+  checksum: 10/bcb12db038587d41f5f29e799980ebd5cc27c6412271104b200792b48d9666c85e4240385d5958f4a537111dcef17074b5e33f6c1fe67596c7d4a0b5febaf9ee
   languageName: node
   linkType: hard
 
