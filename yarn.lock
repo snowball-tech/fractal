@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:12.3.4, @snowball-tech/design-tokens@workspace:packages/design-tokens":
+"@snowball-tech/design-tokens@npm:12.3.5, @snowball-tech/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@snowball-tech/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -4020,7 +4020,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
     "@react-hookz/web": "npm:^24.0.4"
-    "@snowball-tech/design-tokens": "npm:12.3.4"
+    "@snowball-tech/design-tokens": "npm:12.3.5"
     "@snowball-tech/eslint-config": "npm:^5.6.1"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
     "@storybook/addon-a11y": "npm:^8.3.6"
@@ -21036,8 +21036,8 @@ __metadata:
   linkType: hard
 
 "vite-tsconfig-paths@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "vite-tsconfig-paths@npm:5.0.1"
+  version: 5.1.2
+  resolution: "vite-tsconfig-paths@npm:5.1.2"
   dependencies:
     debug: "npm:^4.1.1"
     globrex: "npm:^0.1.2"
@@ -21047,7 +21047,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10/e3cf1a2b997747cec6af83c3f9acc057e7f452ef91c3f38a9e32eb2e6cc6c723f51026e38f5d114296fc499b10b36bb56d668d9613a7367f5ecf23adb78642d7
+  checksum: 10/0a46db04653b60621a5d77f2054de5c29a8a6b069535ba3137e0a466b3da0308b07efb95b52713695873e99fadf35ae8878820a7227eabf1c0c1b159d9083bc0
   languageName: node
   linkType: hard
 
