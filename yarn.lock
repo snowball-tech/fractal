@@ -3991,9 +3991,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/eslint-snowball-config@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@snowball-tech/eslint-snowball-config@npm:1.0.4"
+"@snowball-tech/eslint-snowball-config@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@snowball-tech/eslint-snowball-config@npm:1.0.5"
   dependencies:
     "@eslint/compat": "npm:^1.2.2"
     "@eslint/eslintrc": "npm:^3.1.0"
@@ -4031,7 +4031,7 @@ __metadata:
     typescript-eslint: "npm:^8.14.0"
   peerDependencies:
     eslint: ^9.0.0
-  checksum: 10/d1b4397333ebde9a58df5513136ef70653f9dfe72276ff50de3c24c4704ffb57156f2b991fd6fececf652ab1d500c1d80b995ad6eb12ac0c02e2a9e1c11355cd
+  checksum: 10/ceb0a8bc87bbd5d4c6386e27a59df0b113dc81a82a4485759a9f436ce8f0a93a0e5714b3479951c0a2c70f89b9bb59cd47dd0e91b0b82c2e9dc069da99e6295f
   languageName: node
   linkType: hard
 
@@ -10476,7 +10476,7 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": "npm:^2.10.4"
     "@qiwi/multi-semantic-release": "npm:^7.1.2"
-    "@snowball-tech/eslint-snowball-config": "npm:^1.0.4"
+    "@snowball-tech/eslint-snowball-config": "npm:^1.0.5"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
     "@snowball-tech/semantic-release-config": "npm:^2.2.3"
     "@snowball-tech/stylelint-config": "npm:^2.3.2"

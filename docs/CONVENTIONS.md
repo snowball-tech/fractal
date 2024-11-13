@@ -124,6 +124,7 @@ A good practice is to use methods offered by Lodash to ensure some conditions.
 ❌
 
 ```js
+// eslint-disable-next-line unicorn/explicit-length-check
 if (someArray.length) {
   // Do something
 }

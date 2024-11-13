@@ -28,4 +28,20 @@ export default [
   ...perfectionist,
   ...tailwind,
   ...prettier,
+
+  {
+    files: ['packages/design-tokens/src/tailwind.config.ts'],
+
+    rules: {
+      'import/no-unresolved': 'off',
+    },
+  },
+
+  {
+    files: ['**/*.md/*.{js,ts,tsx}'],
+
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
 ]
