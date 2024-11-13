@@ -29,6 +29,7 @@ export default [
 
   {
     files: ['src/tailwind.config.ts'],
+
     rules: {
       'import/no-unresolved': 'off',
     },
