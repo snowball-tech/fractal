@@ -90,7 +90,7 @@
     "stylelint": "^16.10.0"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^1.0.4",
+    "@snowball-tech/eslint-snowball-config": "^1.0.5",
     "@yarnpkg/types": "^4.0.0"
   }
 }
