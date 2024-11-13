@@ -57,7 +57,7 @@
     "lint": "yarn run -T lint-root & yarn workspaces foreach --all -p run lint",
     "lint-fix": "yarn run -T lint-root-fix & yarn workspaces foreach --all -p run lint-fix",
     "lint-root": "eslint --cache './*'",
-    "lint-root-fix": "eslint --cache --fix \"./!(apps|packages)\"",
+    "lint-root-fix": "eslint --cache --fix './*'",
     "publish-all": "multi-semantic-release",
     "publish-all-local": "CI=true yarn publish-all",
     "quality": "yarn run lint & yarn run format & yarn run types-check",
