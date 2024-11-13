@@ -127,7 +127,14 @@ export const Interactive: Story = {
     await sleep(500)
     await userEvent.click(input)
     await sleep(500)
-    await userEvent.type(input, 'Hello world!', { delay: 10 })
+
+    const text = 'Hello world!'
+    for (let index = 0; index < text.length; index += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await userEvent.type(input, text[index]!, { skipClick: true })
+      // eslint-disable-next-line no-await-in-loop
+      await sleep(50)
+    }
   },
 }
 
