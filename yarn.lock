@@ -4113,7 +4113,7 @@ __metadata:
     tailwindcss: "npm:^3.4.14"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.6.3"
-    vercel: "npm:^38.0.0"
+    vercel: "npm:^39.0.0"
     vite: "npm:^5.4.11"
     vite-tsconfig-paths: "npm:^5.1.2"
   peerDependencies:
@@ -5522,10 +5522,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/python@npm:4.4.0":
-  version: 4.4.0
-  resolution: "@vercel/python@npm:4.4.0"
-  checksum: 10/79b4db8f73c2946bc955f1569bf2a309c6b30227bcde277e9ce792b4d41f8f6fdafb26a3bae8035242fab74988ad869dce0aff8e04f5903fafd5937cbb211ee5
+"@vercel/python@npm:4.4.1":
+  version: 4.4.1
+  resolution: "@vercel/python@npm:4.4.1"
+  checksum: 10/46e2962a50d6dc821fe1422fab700ae4a9a10aff491417696b60e618dae3d15c4d66446d39b8b24e03be8434bdb36f9a2dd7305086606fce453c9cfb2b4b3ce7
   languageName: node
   linkType: hard
 
@@ -20342,9 +20342,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^38.0.0":
-  version: 38.0.0
-  resolution: "vercel@npm:38.0.0"
+"vercel@npm:^39.0.0":
+  version: 39.0.2
+  resolution: "vercel@npm:39.0.2"
   dependencies:
     "@vercel/build-utils": "npm:8.4.12"
     "@vercel/fun": "npm:1.1.0"
@@ -20352,7 +20352,7 @@ __metadata:
     "@vercel/hydrogen": "npm:1.0.9"
     "@vercel/next": "npm:4.3.19"
     "@vercel/node": "npm:3.2.24"
-    "@vercel/python": "npm:4.4.0"
+    "@vercel/python": "npm:4.4.1"
     "@vercel/redwood": "npm:2.1.8"
     "@vercel/remix-builder": "npm:2.2.13"
     "@vercel/ruby": "npm:2.1.0"
@@ -20361,7 +20361,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/2ebba2c122faf2e008be9e36cdc3473d6f4fb70b24157a05ca281ddddd07459eecd78e7662ad64693c925d89c9a64e6c354a6af35211040f3ac38edbfe2d30a2
+  checksum: 10/49b4da559444ff5989768a0316c8a66560250fa8b4001c7ab3d905716d7fda5e1319e8f3cedc483a45ac78f931a9bea2e6915ca21998e3e2915abf7e24f374c0
   languageName: node
   linkType: hard
 
