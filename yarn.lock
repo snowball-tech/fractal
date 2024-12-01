@@ -4134,9 +4134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/semantic-release-config@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "@snowball-tech/semantic-release-config@npm:2.2.3"
+"@snowball-tech/semantic-release-config@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "@snowball-tech/semantic-release-config@npm:3.0.1"
   dependencies:
     "@semantic-release/changelog": "npm:^6.0.3"
     "@semantic-release/commit-analyzer": "npm:^13.0.0"
@@ -4149,7 +4149,7 @@ __metadata:
     semantic-release: "npm:^24.2.0"
   peerDependencies:
     semantic-release: ^24.0.0
-  checksum: 10/992e29838910caeaed584b6d8f87a835c3d6965f22125828656edf861e9365859733a7b05601f77a2da55d9de15e55abcf470836a2dccafc363106d1a6a8a8d9
+  checksum: 10/b6b474325e10a13383438ae6858d2b37d3d4940441813d873a44d7c1388ff4f97805d0cb05634c9cf4adc6a728b85e5472595364dec0e4bebb18ddafc88f4fcd
   languageName: node
   linkType: hard
 
@@ -10478,7 +10478,7 @@ __metadata:
     "@qiwi/multi-semantic-release": "npm:^7.1.2"
     "@snowball-tech/eslint-snowball-config": "npm:^1.0.5"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
-    "@snowball-tech/semantic-release-config": "npm:^2.2.3"
+    "@snowball-tech/semantic-release-config": "npm:^3.0.0"
     "@snowball-tech/stylelint-config": "npm:^2.3.2"
     "@yarnpkg/types": "npm:^4.0.0"
     chromatic: "npm:^11.18.1"
