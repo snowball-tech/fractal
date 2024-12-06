@@ -7056,8 +7056,8 @@ __metadata:
   linkType: hard
 
 "chromatic@npm:^11.18.1":
-  version: 11.18.1
-  resolution: "chromatic@npm:11.18.1"
+  version: 11.20.0
+  resolution: "chromatic@npm:11.20.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7070,7 +7070,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/ef7fa3acac6bc4d7768bb829fb281b8d560445764f295af0900528b112ba97adbe19fa789aff2d737cfca346ac6e2afeb5aa03f290cc1059d7f2f9acf7697550
+  checksum: 10/9faaa07819abb3c9be8e2be479bcb6b9b47168fadad77a2d17828e74a786b7b4472fba25b0dbebc660b7f26c94736b5c77a0c116cc720e11521ed3f0e10febc8
   languageName: node
   linkType: hard
 
