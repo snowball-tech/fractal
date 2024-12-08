@@ -35,9 +35,9 @@
     "libphonenumber-js": "^1.11.14",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-calendar": "^5.1.0",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.0.0",
     "react-textarea-autosize": "^8.5.4",
     "react-timekeeper": "^2.2.1",
     "tailwind-merge": "^2.5.4",
@@ -62,8 +62,8 @@
     "@storybook/theming": "^8.4.2",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.13",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react-swc": "^3.7.1",
     "chromatic": "^11.18.1",
     "eslint": "^9.14.0",
@@ -111,8 +111,8 @@
   "name": "@snowball-tech/fractal",
   "packageManager": "yarn@4.5.1",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
   },
   "publishConfig": {
     "access": "public",
