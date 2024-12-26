@@ -3234,18 +3234,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-hookz/deep-equal@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@react-hookz/deep-equal@npm:1.0.4"
-  checksum: 10/0923e364d309e32ee54e0850471a86488faf149d7a04ee838552cf5d54f493964623a8d742880ec82410cc1105530123f056e66dfc72b7da235d4cc93fad708f
+"@react-hookz/deep-equal@npm:^3.0.1":
+  version: 3.0.3
+  resolution: "@react-hookz/deep-equal@npm:3.0.3"
+  checksum: 10/ce75463b821dd49bb5d9442bc58835b4516f838dbbbd766c5b9ad1aef9b44022d408154cd62056c1dd85f5dcafde7e39f2775569e6c094db7a40a841a8a33ae5
   languageName: node
   linkType: hard
 
-"@react-hookz/web@npm:^24.0.4":
-  version: 24.0.4
-  resolution: "@react-hookz/web@npm:24.0.4"
+"@react-hookz/web@npm:^25.0.0":
+  version: 25.0.1
+  resolution: "@react-hookz/web@npm:25.0.1"
   dependencies:
-    "@react-hookz/deep-equal": "npm:^1.0.4"
+    "@react-hookz/deep-equal": "npm:^3.0.1"
   peerDependencies:
     js-cookie: ^3.0.5
     react: ^16.8 || ^17 || ^18
@@ -3253,7 +3253,7 @@ __metadata:
   peerDependenciesMeta:
     js-cookie:
       optional: true
-  checksum: 10/6a841c648edbc54b11fd90de9bb61c3059255598fc4a714c508c269a03c4ca9bbf32cf017d3bd2b3a1bf7cd1d9bf4bb56028f64ad455f796079632f4a7cd4f00
+  checksum: 10/09472fe9ca7c0f19ab671198693245be102fe1581cff8541c92513d4d00e1490e20cb84dd6d5bc94f430f172ea86de45c695c0c258bbc77c3ff3c74589ab8857
   languageName: node
   linkType: hard
 
@@ -4059,7 +4059,7 @@ __metadata:
     "@radix-ui/react-toggle": "npm:^1.1.0"
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-toolbar": "npm:^1.1.0"
-    "@react-hookz/web": "npm:^24.0.4"
+    "@react-hookz/web": "npm:^25.0.0"
     "@snowball-tech/design-tokens": "npm:12.3.8"
     "@snowball-tech/eslint-config": "npm:^5.6.2"
     "@snowball-tech/prettier-config": "npm:^1.6.1"
