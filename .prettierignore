@@ -17,6 +17,8 @@
 !.vscode
 LICENSE
 
+mise.toml
+
 .pnp.*
 *.lock
 *.tsbuildinfo
