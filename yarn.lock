@@ -4023,7 +4023,7 @@ __metadata:
     "@react-hookz/web": "npm:^25.0.1"
     "@snowball-tech/design-tokens": "npm:12.3.9"
     "@snowball-tech/eslint-config": "npm:^5.6.2"
-    "@snowball-tech/prettier-config": "npm:^2.0.3"
+    "@snowball-tech/prettier-config": "npm:^2.1.0"
     "@storybook/addon-a11y": "npm:^8.4.7"
     "@storybook/addon-actions": "npm:^8.4.7"
     "@storybook/addon-essentials": "npm:^8.4.7"
@@ -4074,7 +4074,7 @@ __metadata:
     tailwindcss: "npm:^3.4.17"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.7.2"
-    vercel: "npm:^39.2.5"
+    vercel: "npm:^39.2.6"
     vite: "npm:^6.0.7"
     vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
@@ -4083,15 +4083,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowball-tech/prettier-config@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@snowball-tech/prettier-config@npm:2.0.3"
+"@snowball-tech/prettier-config@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@snowball-tech/prettier-config@npm:2.1.0"
   dependencies:
     prettier: "npm:^3.4.2"
     prettier-plugin-organize-attributes: "npm:^1.0.0"
     prettier-plugin-sh: "npm:^0.14.0"
     prettier-plugin-tailwindcss: "npm:^0.6.9"
-  checksum: 10/a618c3a63690e11479e0e8f49c1d0b4042d5930d1e2538f2dfbb4dfef6cf6fbf9ef84bbe1522c5261465b8b67eab9531b359f4efef6dc0c5fa35a707f4d409d5
+  checksum: 10/a862ca95729176019055dfc76403d31433f49aeb3d579db10fdbc41178e76aabe991bc829a4d1de9fe6949d3038255e678150cd4948f8a788c7b2f93315bf11f
   languageName: node
   linkType: hard
 
@@ -10377,7 +10377,7 @@ __metadata:
     "@monorepo-utils/workspaces-to-typescript-project-references": "npm:^2.10.4"
     "@qiwi/multi-semantic-release": "npm:^7.1.2"
     "@snowball-tech/eslint-snowball-config": "npm:^2.0.8"
-    "@snowball-tech/prettier-config": "npm:^2.0.3"
+    "@snowball-tech/prettier-config": "npm:^2.1.0"
     "@snowball-tech/semantic-release-config": "npm:^3.0.3"
     "@snowball-tech/stylelint-config": "npm:^2.3.2"
     "@yarnpkg/types": "npm:^4.0.0"
@@ -20570,9 +20570,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^39.2.5":
-  version: 39.2.5
-  resolution: "vercel@npm:39.2.5"
+"vercel@npm:^39.2.6":
+  version: 39.2.6
+  resolution: "vercel@npm:39.2.6"
   dependencies:
     "@vercel/build-utils": "npm:9.0.1"
     "@vercel/fun": "npm:1.1.2"
@@ -20589,7 +20589,7 @@ __metadata:
   bin:
     vc: dist/index.js
     vercel: dist/index.js
-  checksum: 10/3d09fcdad52a9b2f10e33bf0d68d04d045825af0181f0b5462efd883168f4562875bb0c55ccf28a7cd7cccd9ec2099510d44ba7f256c9d1ac69700c42014a5c8
+  checksum: 10/09a3e9283fb2881ba513ef496e59ed3476f5a0e3f2b65d2b95253271ea6c66ed125d61b33822215fb6df905d68d47101cc901c38a70cb357ade0cdef41eed8b8
   languageName: node
   linkType: hard
 
