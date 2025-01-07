@@ -23,7 +23,7 @@ export type Prefix = {
 
 export type CombinedRefs = {
   phone: HTMLInputElement | null
-  prefix: null | SelectCombinedRefs
+  prefix: SelectCombinedRefs | null
   searchPrefixInput: HTMLInputElement | null
 }
 

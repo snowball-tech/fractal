@@ -13,19 +13,14 @@ export const isValidSpacing = (value: string) => {
 }
 
 export const fractionRegex = /^\d+\/\d+$/
-export const isFraction = (value: string) => {
-  return fractionRegex.test(value)
-}
+export const isFraction = (value: string) => fractionRegex.test(value)
 
 export const tshirtUnitRegex = /^h-(x+s|sm|md|lg|x+l)$/
-export const isTshirtSize = (value: string) => {
-  return tshirtUnitRegex.test(value)
-}
+export const isTshirtSize = (value: string) => tshirtUnitRegex.test(value)
 
 export const heightTshirtUnitRegex = /^h-(x+s|sm|md|lg|x+l)$/
-export const isHeightTshirtSize = (value: string) => {
-  return heightTshirtUnitRegex.test(value)
-}
+export const isHeightTshirtSize = (value: string) =>
+  heightTshirtUnitRegex.test(value)
 
 export const customTwMerge = extendTailwindMerge({
   extend: {

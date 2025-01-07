@@ -21,8 +21,8 @@ export function hasChildWithProps(
   children: ReactNode,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   childType: '*' | JSXElementConstructor<any>,
-  propertyNames: Array<string> | string,
-  notPropertyNames?: Array<string> | string,
+  propertyNames: string | Array<string>,
+  notPropertyNames?: string | Array<string>,
 ): boolean {
   const propsToCheck = Array.isArray(propertyNames)
     ? propertyNames

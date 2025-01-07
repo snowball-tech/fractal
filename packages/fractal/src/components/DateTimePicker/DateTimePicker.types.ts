@@ -14,7 +14,7 @@ import {
 export type CombinedRefs = {
   calendar: HTMLDivElement | null
   input: HTMLInputElement | null
-  picker: null | PopoverCombinedRefs
+  picker: PopoverCombinedRefs | null
 }
 
 export interface DateTimePickerProps
@@ -297,7 +297,7 @@ export interface DateTimePickerProps
    */
   onOpenChange?: (open: boolean) => void
   /** Event handler called when the time value of the datetime is changed. */
-  onTimeChange?: (newTime: null | TimeOutput, newDateTime: Date | null) => void
+  onTimeChange?: (newTime: TimeOutput | null, newDateTime: Date | null) => void
   /** Event handler called when the "Today" button is used. */
   onToday?: () => void
 }

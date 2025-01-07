@@ -26,7 +26,7 @@ const meta: Meta<SliderProps> = {
     function WithArgs(Story, context) {
       const [, setArgs] = useArgs<typeof context.args>()
 
-      const onValueChange = (newValue: Array<number> | number) => {
+      const onValueChange = (newValue: number | Array<number>) => {
         context.args.onValueChange?.(newValue)
 
         setArgs({ value: newValue })

@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 // eslint-disable-next-line import/no-relative-packages
 import defaultConfig from '../../eslint.config.mjs'
 

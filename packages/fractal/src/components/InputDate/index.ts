@@ -1,8 +1,8 @@
 export { default as InputDate } from './InputDate.js'
 export type {
-  CombinedRefs as InputDateRefs,
   DateFormat,
   Descriptions,
   InputDateProps,
+  CombinedRefs as InputDateRefs,
   Placeholders,
 } from './InputDate.types.js'

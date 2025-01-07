@@ -99,7 +99,7 @@ const loadData = (
     }),
   )
 
-  void Promise.all(promises)
+  Promise.all(promises)
     .then(async ([charactersResponse, planetsResponse]) => {
       const { results: characters } = (await charactersResponse?.json()) ?? {}
       const { results: planets } = (await planetsResponse?.json()) ?? {}

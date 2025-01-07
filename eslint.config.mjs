@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 import base from '@snowball-tech/eslint-snowball-config/configs/base.js'
 import html from '@snowball-tech/eslint-snowball-config/configs/html.js'
 import importConfig from '@snowball-tech/eslint-snowball-config/configs/import.js'
@@ -42,6 +40,15 @@ export default [
 
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+
+  {
+    files: ['**/stories/*.mdx'],
+
+    rules: {
+      'markdown/heading-increment': 'off',
+      'markdown/no-missing-label-refs': 'off',
     },
   },
 ]

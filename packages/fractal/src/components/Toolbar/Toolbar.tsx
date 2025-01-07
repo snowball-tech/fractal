@@ -38,44 +38,42 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
       ...props
     }: ToolbarProps,
     ref: ForwardedRef<HTMLDivElement>,
-  ) => {
-    return (
-      <Paper
-        className={cj(
-          `${PREFIX}-${GROUP_NAME}__wrapper`,
-          `${PREFIX}-${GROUP_NAME}__wrapper--${orientation}`,
-          'h-5 max-h-5 min-h-5 px-half py-0',
-          fullWidth
-            ? `${PREFIX}-${GROUP_NAME}__wrapper--full-width w-full`
-            : 'w-fit',
-          disabled ? `${PREFIX}-${GROUP_NAME}__wrapper--disabled` : '',
+  ) => (
+    <Paper
+      className={cj(
+        `${PREFIX}-${GROUP_NAME}__wrapper`,
+        `${PREFIX}-${GROUP_NAME}__wrapper--${orientation}`,
+        'h-5 max-h-5 min-h-5 px-half py-0',
+        fullWidth
+          ? `${PREFIX}-${GROUP_NAME}__wrapper--full-width w-full`
+          : 'w-fit',
+        disabled ? `${PREFIX}-${GROUP_NAME}__wrapper--disabled` : '',
+      )}
+      elevation={elevation}
+    >
+      <RxToolbar.Root
+        ref={ref}
+        className={cn(
+          `${PREFIX}-${GROUP_NAME}`,
+          `${PREFIX}-${GROUP_NAME}--${orientation}`,
+          'flex items-center gap-1 p-1',
+          elevation === Elevations.Higher ? 'rounded-full' : 'rounded-sm',
+          orientation === Orientations.Horizontal ? 'flex-row' : 'flex-col',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
+          disabled
+            ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
+            : 'cursor-default',
+          props.className,
         )}
-        elevation={elevation}
+        {...(orientation === undefined ? {} : { orientation })}
+        {...omit(['className'], props)}
       >
-        <RxToolbar.Root
-          ref={ref}
-          className={cn(
-            `${PREFIX}-${GROUP_NAME}`,
-            `${PREFIX}-${GROUP_NAME}--${orientation}`,
-            'flex items-center gap-1 p-1',
-            elevation === Elevations.Higher ? 'rounded-full' : 'rounded-sm',
-            orientation === Orientations.Horizontal ? 'flex-row' : 'flex-col',
-            fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
-            disabled
-              ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
-              : 'cursor-default',
-            props.className,
-          )}
-          {...(orientation === undefined ? {} : { orientation })}
-          {...omit(['className'], props)}
-        >
-          <ToolbarContext.Provider value={{ disabled, orientation }}>
-            {children}
-          </ToolbarContext.Provider>
-        </RxToolbar.Root>
-      </Paper>
-    )
-  },
+        <ToolbarContext.Provider value={{ disabled, orientation }}>
+          {children}
+        </ToolbarContext.Provider>
+      </RxToolbar.Root>
+    </Paper>
+  ),
 )
 Toolbar.displayName = 'Toolbar'
 

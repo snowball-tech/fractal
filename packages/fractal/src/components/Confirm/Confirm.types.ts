@@ -9,22 +9,22 @@ export interface ConfirmProps
    * You must provide at least a `label` or a `children` prop.
    */
   cancel:
+    | string
     | Omit<
         ButtonProps,
         'fullWidth' | 'href' | 'onClick' | 'target' | 'type' | 'variant'
       >
-    | string
   /**
    * The configuration of the confirmation button.
    *
    * You must provide at least a `label` or a `children` prop.
    */
   confirm:
+    | string
     | Omit<
         ButtonProps,
         'fullWidth' | 'href' | 'onClick' | 'target' | 'type' | 'variant'
       >
-    | string
   /**
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.

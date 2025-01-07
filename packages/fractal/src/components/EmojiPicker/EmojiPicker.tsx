@@ -181,7 +181,6 @@ export const EmojiPicker = ({
 
       const categoriesWrappers = scrollArea.querySelectorAll('.category')
       categoriesWrappers.forEach((category) => {
-        // eslint-disable-next-line unicorn/prefer-dom-node-dataset
         const categoryId = category.getAttribute('data-id')
 
         category.setAttribute('part', `category category-${categoryId}`)
@@ -242,9 +241,7 @@ export const EmojiPicker = ({
     search,
     theme,
   ])
-  useEffect(() => {
-    return updateShadowDom()
-  }, [updateShadowDom])
+  useEffect(() => updateShadowDom(), [updateShadowDom])
 
   const styles = `
     em-emoji-picker {

@@ -121,13 +121,12 @@ const Title = ({
 }: {
   children: ReactNode
   main?: boolean
-}) => {
-  return main ? (
+}) =>
+  main ? (
     <h1 className="mt-4">{children}</h1>
   ) : (
     <h3 className="my-2">{children}</h3>
   )
-}
 
 export const Primary: Story = {
   render: () => (

@@ -22,19 +22,17 @@ export const TabContent = forwardRef<HTMLDivElement, TabContentProps>(
   (
     { children, forceMount = false, name, ...props }: TabContentProps,
     ref: ForwardedRef<HTMLDivElement>,
-  ) => {
-    return (
-      <RxTabs.Content
-        ref={ref}
-        className={cn(`${PREFIX}-${GROUP_NAME}__content`, '', props.className)}
-        {...(forceMount ? { forceMount: true } : {})}
-        value={name}
-        {...omit(['className'], props)}
-      >
-        {children}
-      </RxTabs.Content>
-    )
-  },
+  ) => (
+    <RxTabs.Content
+      ref={ref}
+      className={cn(`${PREFIX}-${GROUP_NAME}__content`, '', props.className)}
+      {...(forceMount ? { forceMount: true } : {})}
+      value={name}
+      {...omit(['className'], props)}
+    >
+      {children}
+    </RxTabs.Content>
+  ),
 )
 TabContent.displayName = 'TabContent'
 
