@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [11.7.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.6...@snowball-tech/fractal@11.7.7) (2025-01-07)
+
 ## @snowball-tech/fractal [11.7.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.5...@snowball-tech/fractal@11.7.6) (2025-01-07)
 
 ### Dependencies
