@@ -21,58 +21,56 @@ export const Header = ({
   onClick,
   right,
   ...props
-}: HeaderProps) => {
-  return (
-    <div
-      className={cn(
-        `${PREFIX}-${GROUP_NAME}`,
-        'flex h-8 w-full items-center gap-1 border-b-2 border-normal bg-primary px-3 pb-[calc(theme(spacing.1)-var(--size-border-2))] pt-1 text-dark',
-        '@md:h-10 @md:content-stretch @md:justify-stretch @md:gap-0',
-        props.className,
-      )}
-      {...(isFunction(onClick) ? { onClick } : {})}
-      {...omit(['className'], props)}
-    >
-      {left ? (
-        <div
-          className={cj(
-            `${PREFIX}-${GROUP_NAME}__left`,
-            '@md:max-h-8 @md:justify-self-start',
-          )}
-        >
-          {left}
-        </div>
-      ) : (
-        false
-      )}
-
-      <Typography
+}: HeaderProps) => (
+  <div
+    className={cn(
+      `${PREFIX}-${GROUP_NAME}`,
+      'flex h-8 w-full items-center gap-1 border-b-2 border-normal bg-primary px-3 pb-[calc(theme(spacing.1)-var(--size-border-2))] pt-1 text-dark',
+      '@md:h-10 @md:content-stretch @md:justify-stretch @md:gap-0',
+      props.className,
+    )}
+    {...(isFunction(onClick) ? { onClick } : {})}
+    {...omit(['className'], props)}
+  >
+    {left ? (
+      <div
         className={cj(
-          `${PREFIX}-${GROUP_NAME}__middle`,
-          'm-0 max-h-full w-full truncate',
-          '@md:max-h-6 @md:justify-self-center @md:text-center',
+          `${PREFIX}-${GROUP_NAME}__left`,
+          '@md:max-h-8 @md:justify-self-start',
         )}
-        element="div"
-        variant="heading-4"
       >
-        {children}
-      </Typography>
+        {left}
+      </div>
+    ) : (
+      false
+    )}
 
-      {right ? (
-        <div
-          className={cj(
-            `${PREFIX}-${GROUP_NAME}__right`,
-            '@md:max-h-6 @md:justify-self-end',
-          )}
-        >
-          {right}
-        </div>
-      ) : (
-        false
+    <Typography
+      className={cj(
+        `${PREFIX}-${GROUP_NAME}__middle`,
+        'm-0 max-h-full w-full truncate',
+        '@md:max-h-6 @md:justify-self-center @md:text-center',
       )}
-    </div>
-  )
-}
+      element="div"
+      variant="heading-4"
+    >
+      {children}
+    </Typography>
+
+    {right ? (
+      <div
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__right`,
+          '@md:max-h-6 @md:justify-self-end',
+        )}
+      >
+        {right}
+      </div>
+    ) : (
+      false
+    )}
+  </div>
+)
 Header.displayName = 'Header'
 
 export default Header

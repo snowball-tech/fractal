@@ -36,40 +36,38 @@ export const ToggleGroup = ({
   value,
   variant = DEFAULT_VARIANT,
   ...props
-}: ToggleGroupProps) => {
-  return (
-    // @ts-expect-error - I have a hard time using the proper type for the
-    // `type` property.
-    <RxToggleGroup.Root
-      aria-label={label}
-      className={cn(
-        `${PREFIX}-${GROUP_NAME}`,
-        `${PREFIX}-${GROUP_NAME}--${variant}`,
-        'flex max-w-full flex-col gap-3',
-        'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
-        disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
-        fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
-        props.className,
-      )}
-      title={label}
-      {...(defaultValue === undefined ? {} : { defaultValue })}
-      disabled={disabled}
-      {...(orientation === undefined ? {} : { orientation })}
-      type={multiple ? 'multiple' : 'single'}
-      value={value}
-      {...(isFunction(onValueChange)
-        ? {
-            onValueChange: (newValue: string) => onValueChange(newValue),
-          }
-        : {})}
-      {...omit(['className'], props)}
-    >
-      <ToggleGroupContext.Provider value={{ disabled, variant }}>
-        {children}
-      </ToggleGroupContext.Provider>
-    </RxToggleGroup.Root>
-  )
-}
+}: ToggleGroupProps) => (
+  // @ts-expect-error - I have a hard time using the proper type for the
+  // `type` property.
+  <RxToggleGroup.Root
+    aria-label={label}
+    className={cn(
+      `${PREFIX}-${GROUP_NAME}`,
+      `${PREFIX}-${GROUP_NAME}--${variant}`,
+      'flex max-w-full flex-col gap-3',
+      'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
+      disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+      fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
+      props.className,
+    )}
+    title={label}
+    {...(defaultValue === undefined ? {} : { defaultValue })}
+    disabled={disabled}
+    {...(orientation === undefined ? {} : { orientation })}
+    type={multiple ? 'multiple' : 'single'}
+    value={value}
+    {...(isFunction(onValueChange)
+      ? {
+          onValueChange: (newValue: string) => onValueChange(newValue),
+        }
+      : {})}
+    {...omit(['className'], props)}
+  >
+    <ToggleGroupContext.Provider value={{ disabled, variant }}>
+      {children}
+    </ToggleGroupContext.Provider>
+  </RxToggleGroup.Root>
+)
 ToggleGroup.displayName = 'ToggleGroup'
 
 export default ToggleGroup

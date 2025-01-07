@@ -121,7 +121,7 @@ export interface DropdownProps
    *    For example '*0.5' will make the popover width half the width of the
    *    trigger.
    */
-  width?: 'auto' | 'fit' | 'full' | 'trigger' | number | string
+  width?: number | string | 'auto' | 'fit' | 'full' | 'trigger'
   /**
    * Indicates if the trigger should have an indicator (up/down (depending on
    * the opening status of the dropdown) chevron on the right of the label).

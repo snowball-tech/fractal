@@ -18,7 +18,7 @@ export interface ToggleGroupProps
    * Pass a string for a `single` typed toggle group and an array of strings for
    * a `multiple` typed toggle group.
    */
-  defaultValue?: Array<string> | string
+  defaultValue?: string | Array<string>
   /**
    * Prevents the user from interacting with any of the toggles in the toggle
    * group.
@@ -49,14 +49,14 @@ export interface ToggleGroupProps
    * Pass a string for a `single` typed toggle group and an array of strings for
    * a `multiple` typed toggle group.
    */
-  value?: Array<string> | string
+  value?: string | Array<string>
   /** The variant of the toggles to use. */
   variant?: `${Variants}`
   /**
    * Event handler called when the value of the toggle group (i.e. the toggled
    * toggle) changes.
    */
-  onValueChange?: (value: Array<string> | string) => void
+  onValueChange?: (value: string | Array<string>) => void
 }
 
 export interface ToggleGroupItemProps extends RxToggleGroupItemProps {

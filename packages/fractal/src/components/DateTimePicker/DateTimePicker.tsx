@@ -124,7 +124,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
     const uniqueId = (id ?? generatedId) || generatedId
 
     const inputRef = useRef<HTMLInputElement | null>(null)
-    const pickerRef = useRef<null | PopoverCombinedRefs>(null)
+    const pickerRef = useRef<PopoverCombinedRefs | null>(null)
     const calendarRef = useRef<HTMLDivElement | null>(null)
 
     useImperativeHandle(ref, () => ({

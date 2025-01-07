@@ -9,7 +9,7 @@ export interface SliderProps
    *
    * Use this when you do not need to control its value.
    */
-  defaultValue?: Array<number> | number
+  defaultValue?: number | Array<number>
   /** Prevents the user from interacting with the slider. */
   disabled?: boolean
   /**
@@ -44,14 +44,14 @@ export interface SliderProps
   /** The interval between each value of the slider. */
   step?: number
   /** The current slider value. */
-  value?: Array<number> | number
+  value?: number | Array<number>
   /** Event handler called when the value of the slider changes. */
-  onValueChange?: (value: Array<number> | number) => void
+  onValueChange?: (value: number | Array<number>) => void
   /**
    * Event handler called when the value of the slider changes at the end of
    * the interaction.
    *
    * Useful when you need to capture only the final change.
    */
-  onValueCommit?: (value: Array<number> | number) => void
+  onValueCommit?: (value: number | Array<number>) => void
 }

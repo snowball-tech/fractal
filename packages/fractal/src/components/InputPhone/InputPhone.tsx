@@ -110,7 +110,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const [search, setSearch] = useState('')
     const [prefixes, setPrefixes] = useState(supportedCountries)
 
-    const [prefix, setPrefix] = useState<null | Prefix>(null)
+    const [prefix, setPrefix] = useState<Prefix | null>(null)
     const [number, setNumber] = useState<string>('')
     const [selectedCountry, setSelectedCountry] =
       useState<CountryDetails | null>(null)
@@ -201,7 +201,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const isSuccessful = hasSuccessMessage && !isInError
 
     const emitNewPhoneNumber = (
-      prefixToEmit: null | Prefix,
+      prefixToEmit: Prefix | null,
       numberToEmit: string,
     ) => {
       if (!withPrefix) {

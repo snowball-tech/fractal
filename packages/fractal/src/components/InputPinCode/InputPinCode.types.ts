@@ -66,7 +66,7 @@ export interface InputPinCodeProps
    * A string to display in each of the digit field when the value is
    * empty.
    */
-  placeholders?: Array<string> | string
+  placeholders?: string | Array<string>
   /** Prevents the user to change the value of the pin code input. */
   readOnly?: boolean
   /** Indicates if the pin code input must be filled. */

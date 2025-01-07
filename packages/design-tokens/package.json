@@ -4,21 +4,24 @@
   "contributors": [
     "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
   ],
+  "dependencies": {
+    "eslint": "^9.17.0"
+  },
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {
     "@snowball-tech/eslint-config": "^5.6.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/eslint": "^9.6.1",
-    "@types/lodash": "^4.17.13",
+    "@types/lodash": "^4.17.14",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",
-    "tailwindcss": "^3.4.14",
+    "tailwindcss": "^3.4.17",
     "to-esm": "^2.27.3",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "engines": {
-    "node": ">=18 <=20",
+    "node": ">=18 <=2",
     "yarn": "^4.0.0"
   },
   "files": [
@@ -37,7 +40,7 @@
   "license": "MIT",
   "main": "dist/web/typescript/design-tokens.js",
   "name": "@snowball-tech/design-tokens",
-  "packageManager": "yarn@4.5.1",
+  "packageManager": "yarn@4.6.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -64,8 +67,5 @@
     "update-deps": "yarn run -T update-deps"
   },
   "types": "dist/web/typescript/design-tokens.d.ts",
-  "version": "12.3.8",
-  "dependencies": {
-    "eslint": "^9.14.0"
-  }
+  "version": "12.3.8"
 }

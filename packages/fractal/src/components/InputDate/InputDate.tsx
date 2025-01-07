@@ -37,7 +37,7 @@ import type {
 
 import { GROUP_NAME } from './InputDate.constants'
 
-function isValid(type: keyof DateFormat, value: '' | number, max?: number) {
+function isValid(type: keyof DateFormat, value: number | '', max?: number) {
   if (!isInteger(value) || value === '') {
     return false
   }
