@@ -74,7 +74,7 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
     "@qiwi/multi-semantic-release": "^7.1.2",
-    "@snowball-tech/prettier-config": "^2.1.0",
+    "@snowball-tech/prettier-config": "^2.1.1",
     "@snowball-tech/semantic-release-config": "^3.0.3",
     "chromatic": "^11.25.1",
     "depcheck": "^1.4.7",
@@ -88,7 +88,7 @@
     "serve": "^14.2.4"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^2.0.8",
+    "@snowball-tech/eslint-snowball-config": "^2.0.9",
     "@yarnpkg/types": "^4.0.0"
   }
 }
