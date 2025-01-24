@@ -30,10 +30,10 @@ StyleDictionary.registerAction({
 
     execSync(`yarn run tsc --outDir ${destinationDirectory}`)
     console.log(
-      `✔︎ ${destinationDirectory}/tailwindcss/tailwind.config.js (ESM)`,
+      `✔︎ ${destinationDirectory}tailwindcss/tailwind.config.js (ESM)`,
     )
     console.log(
-      `✔︎ ${destinationDirectory}/tailwindcss/tailwind.theme.js (ESM)`,
+      `✔︎ ${destinationDirectory}tailwindcss/tailwind.theme.js (ESM)`,
     )
   },
   name: 'tailwindcss/copy-config',
