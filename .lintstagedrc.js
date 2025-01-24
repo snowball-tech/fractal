@@ -7,7 +7,6 @@ module.exports = {
     'prettier --ignore-unknown --cache --write',
   ],
   '*.{jsx,tsx,css,html}': [
-    'stylelint --cache --fix',
     'eslint --cache --fix',
     'prettier --ignore-unknown --cache --write',
   ],

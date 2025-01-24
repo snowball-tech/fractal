@@ -14,7 +14,6 @@
 
 # Cache
 **/.eslintcache
-**/.stylelintcache
 
 # Coverage
 **/coverage

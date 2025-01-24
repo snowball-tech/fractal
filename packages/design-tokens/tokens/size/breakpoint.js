@@ -68,7 +68,6 @@ Object.values(breakpoints).forEach((breakpoint, index) => {
     mediaQuery.to[nextBreakpoint] = mediaQuery.max[nextBreakpoint]
   }
   mediaQuery[breakpoint] = { upTo }
-  console.log(mediaQuery)
 })
 
 module.exports = {
