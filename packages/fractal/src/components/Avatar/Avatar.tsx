@@ -76,7 +76,7 @@ export const Avatar = ({
       aria-label={name}
       className={cj(
         baseBubbleClassName,
-        'flex items-center justify-center overflow-hidden bg-decorative-pink-70 text-dark',
+        'bg-decorative-pink-70 text-dark flex items-center justify-center overflow-hidden',
         isEmpty(initials)
           ? `${PREFIX}-${GROUP_NAME}__bubble--with-icon`
           : `${PREFIX}-${GROUP_NAME}__bubble--with-initials`,
@@ -121,7 +121,7 @@ export const Avatar = ({
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${size}`,
           `${PREFIX}-${GROUP_NAME}--with-menu`,
-          'cursor-pointer @container',
+          '@container cursor-pointer',
           size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
           props.className,
         )}
@@ -142,7 +142,7 @@ export const Avatar = ({
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
-        'cursor-default @container',
+        '@container cursor-default',
         size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         props.className,

@@ -38,7 +38,7 @@ export const SelectEmpty = ({
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
-        'pointer-events-none flex cursor-default items-center gap-1 rounded-sm p-2 outline-none',
+        'pointer-events-none flex cursor-default items-center gap-1 rounded-sm p-2 outline-hidden',
         props.className,
       )}
       title={label}

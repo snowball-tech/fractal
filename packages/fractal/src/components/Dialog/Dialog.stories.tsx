@@ -61,7 +61,7 @@ const meta: Meta<DialogProps> = {
     ...(isChromatic()
       ? [
           (storyFunction: () => ReactNode) => (
-            <div className="relative h-screen-from-xs w-[500px]">
+            <div className="h-screen-from-xs relative w-[500px]">
               {storyFunction()}
             </div>
           ),

@@ -13,10 +13,6 @@ export default {
     ),
   ],
 
-  corePlugins: {
-    columns: false,
-  },
-
   plugins: [
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('@tailwindcss/aspect-ratio'),
@@ -25,4 +21,4 @@ export default {
   ],
 
   theme: tailwindTheme,
-} satisfies Config
+} as Config

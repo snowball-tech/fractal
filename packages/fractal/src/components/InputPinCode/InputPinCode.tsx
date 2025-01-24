@@ -310,7 +310,7 @@ export const InputPinCode = ({
                   }`
                 : '',
               `${PREFIX}-${GROUP_NAME}__field--${index}`,
-              'w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
+              'w-fit !max-w-8 min-w-[20px] [&_input]:text-center',
               index === length - 1 && (isInError || isSuccessful)
                 ? '!max-w-[calc(theme(spacing.8)+theme(spacing.2)+theme(spacing.half))]'
                 : '',
@@ -370,7 +370,7 @@ export const InputPinCode = ({
         <Typography
           className={cj(
             `${PREFIX}-${GROUP_NAME}__description`,
-            'cursor-default text-dark',
+            'text-dark cursor-default',
           )}
           element="div"
           variant="caption-median"
@@ -385,7 +385,7 @@ export const InputPinCode = ({
             `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
               isInError ? 'error' : 'success'
             }`,
-            'cursor-default text-dark',
+            'text-dark cursor-default',
           )}
           element="div"
           variant="caption-median"

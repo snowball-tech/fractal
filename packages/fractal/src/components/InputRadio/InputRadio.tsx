@@ -109,10 +109,10 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           ref={combinedRef}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
+            'bg-unset px-unset py-unset h-full min-h-6 grow-0 rounded-xs border-none focus-visible:outline-hidden',
             isDisabled
               ? 'cursor-not-allowed'
-              : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight',
+              : '[&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight cursor-pointer',
           )}
           disabled={isDisabled}
           required={required}
@@ -123,7 +123,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           <div
             className={cj(
               `${PREFIX}-${GROUP_NAME}__radio__mark`,
-              'mx-2 flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-full border-2 pt-half',
+              'pt-half mx-2 flex h-3 max-h-3 min-h-3 w-3 max-w-3 min-w-3 items-center justify-center rounded-full border-2',
               isDisabled ? 'border-disabled bg-transparent' : `border-normal`,
             )}
           >
@@ -137,7 +137,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           asChild
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio__label`,
-            'flex-1 overflow-auto break-words py-2 pr-2',
+            'flex-1 overflow-auto py-2 pr-2 break-words',
             isCondensed ? 'py-1' : 'py-2',
             isDisabled ? 'cursor-not-allowed' : `cursor-pointer`,
             required

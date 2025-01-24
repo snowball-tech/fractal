@@ -37,7 +37,7 @@ export const ScrollArea = ({
           ? 'h-full max-h-full min-h-0'
           : '',
         orientation === 'horizontal' || orientation === 'both'
-          ? 'w-full min-w-0 max-w-full'
+          ? 'w-full max-w-full min-w-0'
           : '',
         props.className,
       )}

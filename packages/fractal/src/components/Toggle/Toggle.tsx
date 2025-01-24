@@ -77,7 +77,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
-          'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-none transition-colors duration-300 ease-out active:transition-none',
+          'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-hidden transition-colors duration-300 ease-out active:transition-none',
           disabled
             ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${disabledVariantClassNames[variant]}`
             : `cursor-pointer ${variantClassNames[variant]}`,
@@ -105,7 +105,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
-              'max-h-full max-w-full flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+              'max-h-full max-w-full flex-1 overflow-hidden text-center align-middle text-ellipsis whitespace-nowrap',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,

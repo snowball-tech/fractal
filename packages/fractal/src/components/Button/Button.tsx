@@ -328,7 +328,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
           (asLink && !isTextVariant) || underlined === false
             ? 'no-underline'
             : '',
-          'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
+          'flex max-w-full items-center justify-center gap-2 rounded-full outline-hidden transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
           wrap ? '' : 'max-h-6',
           isTextVariant ? 'min-h-3' : 'min-h-6',
           fullWidth && (!iconOnly || !hasIcon)
@@ -448,7 +448,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
             ? `${PREFIX}-${GROUP_NAME}__link__label ${PREFIX}-${GROUP_NAME}__link__label--${variant}`
             : '',
           !inlineStyle &&
-            'flex max-h-full max-w-full flex-1 items-center justify-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+            'flex max-h-full max-w-full flex-1 items-center justify-center gap-2 overflow-hidden text-center align-middle text-ellipsis whitespace-nowrap',
           !inlineStyle && isTextVariant ? 'pt-0' : '',
           !inlineStyle && underlined === false ? 'no-underline' : '',
         )}

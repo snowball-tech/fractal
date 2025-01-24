@@ -42,7 +42,7 @@ export const Card = ({
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
         `${PREFIX}-${GROUP_NAME}--${fontSize}`,
-        'relative flex flex-col gap-1 rounded-sm p-2 text-dark',
+        'text-dark relative flex flex-col gap-1 rounded-sm p-2',
         LIGHT_BG_COLORS_CLASSNAMES[color],
         dismissable ? `${PREFIX}-${GROUP_NAME}--dismissable pr-6` : '',
         props.className,
@@ -64,7 +64,7 @@ export const Card = ({
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__title__icon`,
                 `${PREFIX}-${GROUP_NAME}__title__icon--${color}`,
-                'h-3 w-3 text',
+                'text h-3 w-3',
                 DARK_FG_COLORS_CLASSNAMES[color],
               )}
             >
@@ -94,7 +94,7 @@ export const Card = ({
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__dismiss`,
-            'absolute right-2 top-2 h-3 w-3',
+            'absolute top-2 right-2 h-3 w-3',
           )}
         >
           <Button

@@ -19,7 +19,7 @@ export const CuteIcon = ({
     className={cn(
       `${PREFIX}-${GROUP_NAME}`,
       `${PREFIX}-${GROUP_NAME}--${color}`,
-      'inline-flex h-5 max-h-5 min-h-5 w-5 min-w-5 max-w-5 items-center justify-center rounded-full p-1',
+      'inline-flex h-5 max-h-5 min-h-5 w-5 max-w-5 min-w-5 items-center justify-center rounded-full p-1',
       LIGHT_BG_COLORS_CLASSNAMES[color],
       props.className,
     )}

@@ -8,7 +8,8 @@ import perfectionist from '@snowball-tech/eslint-snowball-config/configs/perfect
 import prettier from '@snowball-tech/eslint-snowball-config/configs/prettier.js'
 import react from '@snowball-tech/eslint-snowball-config/configs/react.js'
 import secrets from '@snowball-tech/eslint-snowball-config/configs/secrets.js'
-import tailwind from '@snowball-tech/eslint-snowball-config/configs/tailwind.js'
+// TODO: restore when Tailwind ESLint Plugin is updated for Tailwind V4
+// import tailwind from '@snowball-tech/eslint-snowball-config/configs/tailwind.js'
 import typescript from '@snowball-tech/eslint-snowball-config/configs/typescript.js'
 import yml from '@snowball-tech/eslint-snowball-config/configs/yml.js'
 
@@ -24,7 +25,7 @@ export default [
   ...react,
   ...lodash,
   ...perfectionist,
-  ...tailwind,
+  // ...tailwind,
   ...prettier,
 
   {

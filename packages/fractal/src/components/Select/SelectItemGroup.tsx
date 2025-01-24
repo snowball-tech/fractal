@@ -42,7 +42,7 @@ export const SelectItemGroup = ({
         'block py-2',
         disabled
           ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
-          : 'cursor-default text-placeholder',
+          : 'text-placeholder cursor-default',
       )}
     >
       <Typography element="label">{label}</Typography>

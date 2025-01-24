@@ -1,14 +1,20 @@
 @import url('normalize.css') layer(reset);
-@import url('tailwindcss/base') layer(base);
+@import 'tailwindcss/base' layer(base);
 @import url('./polyfills.css') layer(base);
 @import url('@snowball-tech/design-tokens/dist/web/css/fonts.css')
 layer(fractal);
 @import url('@snowball-tech/design-tokens/dist/web/css/variables.css')
 layer(fractal);
-@import url('tailwindcss/components');
-@import url('tailwindcss/utilities');
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer reset, base, fractal, tokens, recipes, utilities;
+
+@utility h-screen {
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
+}
 
 :root {
   --tw-translate-x: 0;
@@ -65,13 +71,5 @@ layer(fractal);
 
   *:focus-visible {
     outline: none;
-  }
-}
-
-@layer utilities {
-  @supports (height: 100dvh) {
-    .h-screen {
-      height: 100dvh;
-    }
   }
 }

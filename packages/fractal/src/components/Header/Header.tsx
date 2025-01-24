@@ -25,7 +25,7 @@ export const Header = ({
   <div
     className={cn(
       `${PREFIX}-${GROUP_NAME}`,
-      'flex h-8 w-full items-center gap-1 border-b-2 border-normal bg-primary px-3 pb-[calc(theme(spacing.1)-var(--size-border-2))] pt-1 text-dark',
+      'border-normal bg-primary text-dark flex h-8 w-full items-center gap-1 border-b-2 px-3 pt-1 pb-[calc(theme(spacing.1)-var(--size-border-2))]',
       '@md:h-10 @md:content-stretch @md:justify-stretch @md:gap-0',
       props.className,
     )}

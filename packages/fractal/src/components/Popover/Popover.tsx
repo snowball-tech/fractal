@@ -212,7 +212,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
             asChild={hasTrigger}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none',
+              'bg-unset px-unset py-unset text-color-unset appearance-none border-none text-left outline-hidden',
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
@@ -220,7 +220,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 ? 'flex items-center'
                 : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled text-disabled cursor-default`
                 : '!cursor-pointer',
               toggleOnTriggerClick ? '' : '!cursor-default',
             )}
@@ -334,14 +334,14 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                       <RxScrollArea.Scrollbar
                         className={cj(
                           `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y`,
-                          '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70',
+                          'bg-grey-90 p-quarter transition-background-color hover:bg-grey-70 flex touch-none rounded-r-sm duration-300 ease-out select-none [data-orientation="vertical"]:w-1',
                         )}
                         orientation="vertical"
                       >
                         <RxScrollArea.Thumb
                           className={cj(
                             `${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y__thumb`,
-                            'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                            'before:l-1/2 !w-half bg-grey-30 before:content-empty relative flex-1 rounded-sm before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
                           )}
                         />
                       </RxScrollArea.Scrollbar>

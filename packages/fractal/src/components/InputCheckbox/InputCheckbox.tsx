@@ -151,7 +151,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'mt-half h-full max-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            'mt-half bg-unset px-unset py-unset h-full max-h-6 grow-0 rounded-xs border-none',
             variant === Variants.Tertiary ? '' : 'min-h-6',
             disabled
               ? 'cursor-not-allowed'
@@ -175,10 +175,10 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
             className={cj(
               `${PREFIX}-${GROUP_NAME}__box__mark`,
               `${PREFIX}-${GROUP_NAME}__box__mark--${color}`,
-              'flex h-3 max-h-3 min-h-3 w-3 min-w-3 max-w-3 items-center justify-center rounded-xs border-2 pt-half',
+              'pt-half flex h-3 max-h-3 min-h-3 w-3 max-w-3 min-w-3 items-center justify-center rounded-xs border-2',
               variant === Variants.Tertiary ? 'mr-2' : 'mx-2',
               disabled || readOnly
-                ? 'border-disabled bg-transparent text-disabled'
+                ? 'border-disabled text-disabled bg-transparent'
                 : `border-normal text-dark`,
             )}
           >

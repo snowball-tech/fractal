@@ -371,7 +371,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             variant="caption-median"
           >
@@ -385,7 +385,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             value="caption-median"
           >

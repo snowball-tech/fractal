@@ -88,7 +88,7 @@ export const Skeleton = ({
         colorClassNames[color],
         'relative h-full overflow-hidden',
         skeletonShapeClassNames,
-        `after:absolute after:inset-0 after:-translate-x-full after:animate-wave after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent)] after:content-empty`,
+        `after:animate-wave after:content-empty after:absolute after:inset-0 after:-translate-x-full after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent)]`,
         animationColorClassNames[color],
         props.className,
       )}

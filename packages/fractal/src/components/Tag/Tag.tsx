@@ -52,7 +52,7 @@ export const Tag = ({
         color === Colors.White ? 'border-grey-70' : 'border-transparent',
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : '',
         disabled
-          ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
+          ? `${PREFIX}-${GROUP_NAME}--disabled bg-disabled-light text-disabled cursor-not-allowed`
           : `${LIGHT_BG_COLORS_CLASSNAMES[color]} cursor-default`,
         props.className,
       )}

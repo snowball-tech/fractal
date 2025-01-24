@@ -37,7 +37,7 @@ export const AutocompleteEmpty = ({
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
-        'cursor-default rounded-sm p-2 outline-none',
+        'cursor-default rounded-sm p-2 outline-hidden',
         props.className,
       )}
       title={label}

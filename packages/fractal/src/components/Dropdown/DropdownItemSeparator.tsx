@@ -22,7 +22,7 @@ export default function DropdownItemSeparator({
     <RxSelect.Separator
       className={cn(
         `${PREFIX}-${GROUP_NAME}__separator`,
-        'mx-2 my-1 h-px bg-separator',
+        'bg-separator mx-2 my-1 h-px',
         props.className,
       )}
       {...omit(['className'], props)}

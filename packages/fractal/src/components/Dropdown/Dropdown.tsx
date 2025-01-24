@@ -245,7 +245,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             asChild={hasTrigger}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'w-full appearance-none text-left text-color-unset outline-none',
+              'text-color-unset w-full appearance-none text-left outline-hidden',
               width === 'fit' || width === 'full'
                 ? ''
                 : 'max-w-[var(--radix-dropdown-menu-content-available-width)]',
@@ -254,17 +254,17 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 ? 'flex items-center'
                 : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled text-disabled cursor-default`
                 : '!cursor-pointer',
               toggleOnTriggerClick ? '' : '!cursor-default',
               asSelect
-                ? 'flex h-6 max-h-6 min-h-6 items-center rounded-sm border-1 border-normal px-2 py-unset transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder'
-                : 'border-none bg-unset px-unset py-unset',
+                ? 'border-normal py-unset transition-border-color data-with-placeholder:text-placeholder flex h-6 max-h-6 min-h-6 items-center rounded-sm border-1 px-2 duration-300 ease-out'
+                : 'bg-unset px-unset py-unset border-none',
               asSelect && !disabled
-                ? 'cursor-pointer border-normal bg-white hover:border-1 hover:shadow-hover'
+                ? 'border-normal hover:shadow-hover cursor-pointer bg-white hover:border-1'
                 : '',
               asSelect && disabled
-                ? 'cursor-not-allowed border-disabled bg-disabled-light'
+                ? 'border-disabled bg-disabled-light cursor-not-allowed'
                 : '',
               asSelect && !disabled && isOpen
                 ? 'hover:shadow-over border-primary shadow-primary'
@@ -321,7 +321,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
                   elevationClassNames[elevation],
-                  'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
+                  'border-normal pointer-events-auto relative z-50 overflow-hidden border-1 bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
                   hasChildren
                     ? ''
@@ -373,14 +373,14 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                     <RxScrollArea.Scrollbar
                       className={cj(
                         `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
-                        'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+                        'bg-grey-90 p-quarter transition-background-color hover:bg-grey-70 flex touch-none rounded-r-sm duration-300 ease-out select-none data-[orientation="vertical"]:w-1',
                       )}
                       orientation="vertical"
                     >
                       <RxScrollArea.Thumb
                         className={cj(
                           `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                          'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                          'before:l-1/2 !w-half bg-grey-30 before:content-empty relative flex-1 rounded-sm before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
                         )}
                       />
                     </RxScrollArea.Scrollbar>

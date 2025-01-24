@@ -156,13 +156,13 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
               isString(trigger)
-                ? 'appearance-none border-none bg-unset px-unset py-unset text-left text-color-unset outline-none'
+                ? 'bg-unset px-unset py-unset text-color-unset appearance-none border-none text-left outline-hidden'
                 : '',
               hasTrigger
                 ? 'flex items-center'
                 : 'invisible h-0 max-h-0 border-y-0 py-0',
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-default text-disabled`
+                ? `${PREFIX}-${GROUP_NAME}__trigger--disabled text-disabled cursor-default`
                 : 'cursor-pointer',
             )}
           >
@@ -202,7 +202,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   )}
                 >
                   <Paper
-                    className="left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
+                    className="top-1/2 left-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
                     elevation="2"
                     style={{ position }}
                   >

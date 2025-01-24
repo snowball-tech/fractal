@@ -145,7 +145,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         asChild
         className={cn(
           `${PREFIX}-${GROUP_NAME}__dropdown`,
-          'pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 border-normal bg-white p-1',
+          'border-normal pointer-events-auto relative z-50 mt-1 overflow-hidden rounded-sm border-1 bg-white p-1',
           widthClassNames,
           dropdown?.className,
         )}
@@ -188,14 +188,14 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           <RxScrollArea.Scrollbar
             className={cj(
               `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
-              '[data-orientation="vertical"]:w-1 flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70',
+              'bg-grey-90 p-quarter transition-background-color hover:bg-grey-70 flex touch-none rounded-r-sm duration-300 ease-out select-none [data-orientation="vertical"]:w-1',
             )}
             orientation="vertical"
           >
             <RxScrollArea.Thumb
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                'before:l-1/2 !w-half bg-grey-30 before:content-empty relative flex-1 rounded-sm before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
               )}
             />
           </RxScrollArea.Scrollbar>
@@ -261,13 +261,13 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             asChild
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'flex h-6 max-h-6 items-center rounded-sm border-1 border-normal px-2 py-unset text-left outline-none transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder',
+              'border-normal py-unset transition-border-color data-with-placeholder:text-placeholder flex h-6 max-h-6 items-center rounded-sm border-1 px-2 text-left outline-hidden duration-300 ease-out',
               writable
-                ? 'cursor-pointer border-normal bg-white'
+                ? 'border-normal cursor-pointer bg-white'
                 : 'border-disabled bg-disabled-light',
               disabled
                 ? `${PREFIX}-${GROUP_NAME}__trigger--disabled cursor-not-allowed`
-                : 'hover:border-1 hover:shadow-hover',
+                : 'hover:shadow-hover hover:border-1',
               !disabled && isOpen
                 ? 'hover:shadow-over border-primary shadow-primary'
                 : '',
@@ -278,7 +278,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               <div
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__value`,
-                  'w-full flex-grow self-center',
+                  'w-full grow self-center',
                 )}
               >
                 {isEmpty(displayedValue) ? (

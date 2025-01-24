@@ -43,7 +43,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
       className={cj(
         `${PREFIX}-${GROUP_NAME}__wrapper`,
         `${PREFIX}-${GROUP_NAME}__wrapper--${orientation}`,
-        'h-5 max-h-5 min-h-5 px-half py-0',
+        'px-half h-5 max-h-5 min-h-5 py-0',
         fullWidth
           ? `${PREFIX}-${GROUP_NAME}__wrapper--full-width w-full`
           : 'w-fit',
@@ -61,7 +61,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
           orientation === Orientations.Horizontal ? 'flex-row' : 'flex-col',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
           disabled
-            ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed bg-disabled-light text-disabled`
+            ? `${PREFIX}-${GROUP_NAME}--disabled bg-disabled-light text-disabled cursor-not-allowed`
             : 'cursor-default',
           props.className,
         )}

@@ -73,7 +73,7 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           'pointer-events-auto relative z-50',
-          embedded ? '' : 'rounded-sm border-1 border-normal bg-white p-1',
+          embedded ? '' : 'border-normal rounded-sm border-1 bg-white p-1',
           hasChildren ? '' : `${PREFIX}-${GROUP_NAME}__menu--empty invisible`,
           embedded ? '' : elevationClassNames[elevation],
           props.className,

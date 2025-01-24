@@ -79,14 +79,14 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}__tab`,
           'cursor-pointer border-0 bg-[unset] px-0 py-0 text-left',
-          'relative h-full flex-1 self-end text-center text-grey-30',
+          'text-grey-30 relative h-full flex-1 self-end text-center',
           isLarge ? `${PREFIX}-${GROUP_NAME}__tab--large min-h-10` : 'min-h-6',
-          'after:absolute after:block after:bg-primary after:duration-300 after:content-empty',
+          'after:bg-primary after:content-empty after:absolute after:block after:duration-300',
           indicatorClassNames,
           'aria-selected:text-secondary',
           activeIndicatorClassNames,
           isDisabled
-            ? `${PREFIX}-${GROUP_NAME}__tab--disabled cursor-not-allowed text-grey-70`
+            ? `${PREFIX}-${GROUP_NAME}__tab--disabled text-grey-70 cursor-not-allowed`
             : 'hover:text-secondary',
           orientation === Orientations.Vertical ? 'w-full px-3' : 'h-full',
           props.className,

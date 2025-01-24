@@ -92,7 +92,7 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
       `${PREFIX}-${GROUP_NAME}__button`,
       asLink ? `${PREFIX}-${GROUP_NAME}__button__link` : '',
       asLink || underlined === false ? 'no-underline' : '',
-      'flex h-3 max-h-3 min-h-3 max-w-full items-center justify-center gap-1 rounded-xs bg-transparent p-0 text-left outline-none transition-colors duration-300 ease-out active:transition-none',
+      'flex h-3 max-h-3 min-h-3 max-w-full items-center justify-center gap-1 rounded-xs bg-transparent p-0 text-left outline-hidden transition-colors duration-300 ease-out active:transition-none',
       fullWidth && !iconOnly
         ? `${PREFIX}-${GROUP_NAME}__button--full-width w-full`
         : '',
@@ -142,7 +142,7 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__button__label`,
           asLink ? `${PREFIX}-${GROUP_NAME}__button__link__label` : '',
-          'flex max-h-full max-w-full flex-1 items-center justify-center gap-half overflow-hidden text-ellipsis whitespace-nowrap pt-0 text-center align-middle',
+          'gap-half flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden pt-0 text-center align-middle text-ellipsis whitespace-nowrap',
           underlined === false ? 'no-underline' : asLink ? 'underline' : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__button__label--disabled cursor-not-allowed`

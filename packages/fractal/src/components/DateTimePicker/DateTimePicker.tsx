@@ -734,7 +734,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"
@@ -774,18 +774,18 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
           'flex flex-col gap-1',
           (isEmpty(orientation) || orientation === Orientations.Responsive) &&
             !modal
-            ? 'justify-start md:justify-between md:pb-2 md:pt-1'
+            ? 'justify-start md:justify-between md:pt-1 md:pb-2'
             : orientation === 'horizontal' && !modal
-              ? 'justify-between pb-2 pt-1'
+              ? 'justify-between pt-1 pb-2'
               : 'justify-start',
           pickerVariant === PickerVariants.SideBySide &&
             ((isEmpty(orientation) ||
               orientation === Orientations.Responsive) &&
             !modal
-              ? 'border-b-1 border-normal pb-2 md:border-b-0 md:border-r-1 md:pb-0 md:pr-2'
+              ? 'border-normal border-b-1 pb-2 md:border-r-1 md:border-b-0 md:pr-2 md:pb-0'
               : orientation === 'horizontal' && !modal
-                ? 'border-r-1 border-normal pr-2'
-                : 'border-b-1 border-normal pb-2'),
+                ? 'border-normal border-r-1 pr-2'
+                : 'border-normal border-b-1 pb-2'),
         )}
       >
         <div className="flex flex-col gap-1">
@@ -838,7 +838,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
           )}
 
           {withTimePicker && (
-            <div className="flex flex-row items-start gap-half">
+            <div className="gap-half flex flex-row items-start">
               <Typography element="div" variant="heading-1">
                 {isDate(valueToUse)
                   ? valueToUse
@@ -878,18 +878,18 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             pickerVariant === PickerVariants.SideBySide &&
             (isEmpty(orientation) || orientation === Orientations.Responsive) &&
             !modal
-            ? 'border-b-1 border-normal pb-2 md:border-b-0 md:border-r-1 md:pb-0 md:pl-2 md:pr-3'
+            ? 'border-normal border-b-1 pb-2 md:border-r-1 md:border-b-0 md:pr-3 md:pb-0 md:pl-2'
             : '',
           withTimePicker &&
             pickerVariant === PickerVariants.SideBySide &&
             orientation === Orientations.Horizontal &&
             !modal
-            ? 'border-r-1 border-normal pl-2 pr-3'
+            ? 'border-normal border-r-1 pr-3 pl-2'
             : '',
           withTimePicker &&
             pickerVariant === PickerVariants.SideBySide &&
             (orientation === Orientations.Vertical || modal)
-            ? 'border-b-1 border-normal pb-2'
+            ? 'border-normal border-b-1 pb-2'
             : '',
           fullWidth || !staticPicker ? 'w-full' : '',
         )}
@@ -1027,7 +1027,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__actions`,
-            'flex justify-between gap-3 border-t-1 border-normal pt-2',
+            'border-normal flex justify-between gap-3 border-t-1 pt-2',
           )}
         >
           {((withDatePicker && withToday) || (withTimePicker && withNow)) && (

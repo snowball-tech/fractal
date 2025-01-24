@@ -48,7 +48,7 @@ export default function MenuItemGroup({
           isCondensed ? 'py-1' : 'py-2',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
-            : 'cursor-default text-placeholder',
+            : 'text-placeholder cursor-default',
         )}
         element="label"
       >

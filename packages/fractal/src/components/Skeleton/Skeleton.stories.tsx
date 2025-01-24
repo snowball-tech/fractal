@@ -119,11 +119,11 @@ export const RealLifeExample: Story = {
     )
 
     return (
-      <div className="flex h-[550px] w-[1200px] flex-col overflow-hidden border-1 border-normal @container">
+      <div className="border-normal @container flex h-[550px] w-[1200px] flex-col overflow-hidden border-1">
         <Header className="min-h-8">Header</Header>
 
         <div className="flex h-full">
-          <div className="flex h-full w-[300px] flex-col gap-2 border-r-1 border-grey-50 p-2">
+          <div className="border-grey-50 flex h-full w-[300px] flex-col gap-2 border-r-1 p-2">
             {sidebarItem}
             {sidebarItem}
             {sidebarItem}
@@ -134,8 +134,8 @@ export const RealLifeExample: Story = {
             {sidebarItem}
           </div>
           <div className="size-full p-3">
-            <div className="flex h-[calc(100%-theme(spacing.7))] w-full flex-col rounded-sm border-1 border-grey-50">
-              <div className="flex h-10 items-center gap-2 rounded-t-md border-b-1 border-grey-50 bg-white p-2">
+            <div className="border-grey-50 flex h-[calc(100%-theme(spacing.7))] w-full flex-col rounded-sm border-1">
+              <div className="border-grey-50 flex h-10 items-center gap-2 rounded-t-md border-b-1 bg-white p-2">
                 <Skeleton className="size-5" shape="circle" />
                 <Skeleton
                   className="max-h-2 max-w-[240px]"
@@ -150,7 +150,7 @@ export const RealLifeExample: Story = {
                 {userMessage}
               </div>
 
-              <div className="flex min-h-10 items-center gap-2 rounded-b-md border-t-1 border-grey-50 bg-white p-2">
+              <div className="border-grey-50 flex min-h-10 items-center gap-2 rounded-b-md border-t-1 bg-white p-2">
                 <Skeleton
                   className="size-full"
                   color="light-grey"

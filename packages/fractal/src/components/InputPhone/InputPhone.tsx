@@ -325,7 +325,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               ref={prefixRef}
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__fields__phone-prefix`,
-                'w-[110px] min-w-[110px] max-w-[110px]',
+                'w-[110px] max-w-[110px] min-w-[110px]',
               )}
               disabled={disabled}
               displayedValue={
@@ -446,7 +446,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"
@@ -463,7 +463,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"

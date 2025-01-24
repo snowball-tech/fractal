@@ -1,8 +1,6 @@
 module.exports = {
   plugins: {
-    'postcss-import': {},
-
-    tailwindcss: {},
+    '@tailwindcss/postcss': {},
 
     ...(process.env.NODE_ENV === 'development'
       ? {}

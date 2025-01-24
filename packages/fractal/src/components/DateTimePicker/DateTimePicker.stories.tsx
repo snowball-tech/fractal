@@ -817,7 +817,7 @@ export const InPopover: Story = {
 }
 
 const StaticWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="mb-2 flex flex-wrap items-start gap-4 border-b-1 border-normal bg-white pb-1">
+  <div className="border-normal mb-2 flex flex-wrap items-start gap-4 border-b-1 bg-white pb-1">
     {children}
   </div>
 )

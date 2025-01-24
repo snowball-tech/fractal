@@ -25,7 +25,7 @@ export const Progress = ({
   <RxProgress.Root
     className={cn(
       `${PREFIX}-${GROUP_NAME}`,
-      'relative h-1 w-full max-w-full overflow-hidden rounded-full border-1 border-normal bg-highlight',
+      'border-normal bg-highlight relative h-1 w-full max-w-full overflow-hidden rounded-full border-1',
       props.className,
     )}
     max={max}
@@ -36,7 +36,7 @@ export const Progress = ({
     <RxProgress.Indicator
       className={cj(
         `${PREFIX}-${GROUP_NAME}__indicator`,
-        'h-full w-full rounded-full bg-secondary transition-transform delay-100 duration-600 [transition-property:cubic-bezier(0.65,0,0.35,1)]',
+        'bg-secondary h-full w-full rounded-full transition-transform [transition-property:cubic-bezier(0.65,0,0.35,1)] delay-100 duration-600',
         props.className,
       )}
       style={{

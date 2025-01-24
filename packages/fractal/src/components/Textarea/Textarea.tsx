@@ -97,7 +97,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       <div
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          'flex w-full max-w-full flex-col gap-1 text-dark',
+          'text-dark flex w-full max-w-full flex-col gap-1',
           `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           readOnly && !disabled ? 'cursor-default' : '',
@@ -142,12 +142,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             autoFocus={autoFocus}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__input`,
-              'box-border min-h-6 w-full max-w-full resize-none rounded-sm border-1 px-2 py-[calc(theme(spacing.1)+theme(spacing.half)+theme(spacing.quarter))] text-left leading-[inherit] outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder focus:cursor-text',
+              'py-[calc(theme(spacing.1)+theme(spacing.half)+theme(spacing.quarter))] transition-border-color placeholder:text-placeholder box-border min-h-6 w-full max-w-full resize-none rounded-sm border-1 px-2 text-left leading-[inherit] outline-hidden duration-300 ease-out focus:cursor-text',
               writable
-                ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
+                ? `${PREFIX}-${GROUP_NAME}__input--writable hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary bg-white`
                 : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light`,
               disabled
-                ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
+                ? `${PREFIX}-${GROUP_NAME}__input--disabled text-disabled cursor-not-allowed`
                 : 'text-dark',
               readOnly && !disabled
                 ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
@@ -184,14 +184,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           />
 
           {hasIcon && (
-            <div className="absolute bottom-one-and-half right-half">
+            <div className="bottom-one-and-half right-half absolute">
               {isFunction(onIconClick) && (
                 <Button
                   className={cj(
                     `${PREFIX}-${GROUP_NAME}__action`,
                     'mb-half mr-one-and-half text-grey-50',
                     isIconDisabled
-                      ? `${PREFIX}-${GROUP_NAME}__action--disabled cursor-not-allowed !text-grey-70`
+                      ? `${PREFIX}-${GROUP_NAME}__action--disabled !text-grey-70 cursor-not-allowed`
                       : 'hover:!text-dark',
                   )}
                   disabled={isIconDisabled}
@@ -209,7 +209,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                     `${PREFIX}-${GROUP_NAME}__icon`,
                     'mr-one-and-half text-grey-50',
                     isIconDisabled || disabled
-                      ? `${PREFIX}-${GROUP_NAME}__icon--disabled cursor-not-allowed !text-grey-70`
+                      ? `${PREFIX}-${GROUP_NAME}__icon--disabled !text-grey-70 cursor-not-allowed`
                       : '',
                   )}
                 >
@@ -224,7 +224,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"
@@ -239,7 +239,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"

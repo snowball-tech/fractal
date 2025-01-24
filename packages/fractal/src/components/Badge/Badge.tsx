@@ -31,10 +31,10 @@ export const Badge = ({ count, label, limit = 99, ...props }: BadgeProps) => {
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        'inline-flex shrink-0 items-center justify-center rounded-full bg-primary',
+        'bg-primary inline-flex shrink-0 items-center justify-center rounded-full',
         isNil(count) || !isNumber(count) || !isInteger(count)
-          ? `${PREFIX}-${GROUP_NAME}--empty h-2 max-h-2 min-h-2 w-2 min-w-2 max-w-2 p-0`
-          : `${PREFIX}-${GROUP_NAME}--with-count h-3 max-h-3 w-fit min-w-3 px-half py-0`,
+          ? `${PREFIX}-${GROUP_NAME}--empty h-2 max-h-2 min-h-2 w-2 max-w-2 min-w-2 p-0`
+          : `${PREFIX}-${GROUP_NAME}--with-count px-half h-3 max-h-3 w-fit min-w-3 py-0`,
         props.className,
       )}
       element="div"

@@ -46,10 +46,10 @@ export const SelectItem = ({
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item alternatee`,
-        'flex select-none items-center gap-1 rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
+        'transition-background-color flex items-center gap-1 rounded-sm p-2 outline-hidden duration-300 ease-out select-none',
         isDisabled
-          ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
-          : 'cursor-pointer text-dark',
+          ? `${PREFIX}-${GROUP_NAME}__item--disabled text-disabled cursor-not-allowed !bg-transparent`
+          : 'text-dark cursor-pointer',
         props.className,
       )}
       disabled={isDisabled}

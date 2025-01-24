@@ -68,14 +68,14 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
           `${PREFIX}-${GROUP_NAME}__item`,
           'alternatee',
           'flex items-center gap-1',
-          'rounded-sm outline-none transition-background-color duration-300 ease-out',
+          'transition-background-color rounded-sm outline-hidden duration-300 ease-out',
           isCondensed
             ? `${PREFIX}-${GROUP_NAME}__item--condensed max-h-6 px-2 py-1`
             : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}__with-icon` : '',
           isDisabled
-            ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
-            : 'cursor-pointer text-dark',
+            ? `${PREFIX}-${GROUP_NAME}__item--disabled text-disabled cursor-not-allowed !bg-transparent`
+            : 'text-dark cursor-pointer',
           isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
           props.className,
         )}

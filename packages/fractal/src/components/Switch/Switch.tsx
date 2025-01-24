@@ -74,10 +74,10 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
             className={cj(
               `${PREFIX}-${GROUP_NAME}__label`,
               `${PREFIX}-${GROUP_NAME}__label--left`,
-              'h-full max-h-full w-fit max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-middle',
+              'h-full max-h-full w-fit max-w-full overflow-hidden align-middle text-ellipsis whitespace-nowrap',
               disabled
-                ? 'cursor-not-allowed text-disabled'
-                : 'cursor-pointer text-dark',
+                ? 'text-disabled cursor-not-allowed'
+                : 'text-dark cursor-pointer',
               required
                 ? `${PREFIX}-${GROUP_NAME}__label--required ${PREFIX}-${GROUP_NAME}__label--left--required after:text-feedback-danger-50 after:content-required`
                 : '',
@@ -97,11 +97,11 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           {...(checked === undefined ? {} : { checked })}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__toggle`,
-            'relative h-1 max-h-1 w-5 max-w-4 rounded-full border-1 border-normal bg-body-light px-unset py-unset text-left text-color-unset [display:unset]',
+            'border-normal bg-body-light px-unset py-unset text-color-unset relative [display:unset] h-1 max-h-1 w-5 max-w-4 rounded-full border-1 text-left',
             '',
             disabled
-              ? `${PREFIX}-${GROUP_NAME}__toggle--disabled cursor-not-allowed !border-disabled`
-              : 'cursor-pointer data-state-checked:bg-highlight',
+              ? `${PREFIX}-${GROUP_NAME}__toggle--disabled !border-disabled cursor-not-allowed`
+              : 'data-state-checked:bg-highlight cursor-pointer',
           )}
           {...(defaultChecked === undefined ? {} : { defaultChecked })}
           disabled={disabled}
@@ -117,7 +117,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           <RxSwitch.Thumb
             className={cj(
               `${PREFIX}-${GROUP_NAME}__toggle__thumb`,
-              'block h-2 w-2 -translate-x-quarter translate-y-[-5.5px] rounded-full border-1 border-normal bg-white transition-transform duration-100',
+              '-translate-x-quarter border-normal block h-2 w-2 translate-y-[-5.5px] rounded-full border-1 bg-white transition-transform duration-100',
               'data-state-checked:translate-x-[15px]',
               disabled
                 ? '!border-disabled data-state-checked:bg-highlight'
@@ -131,10 +131,10 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           className={cj(
             `${PREFIX}-${GROUP_NAME}__label`,
             `${PREFIX}-${GROUP_NAME}__label--right`,
-            'h-full max-h-full w-fit max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-middle',
+            'h-full max-h-full w-fit max-w-full overflow-hidden align-middle text-ellipsis whitespace-nowrap',
             disabled
-              ? 'cursor-not-allowed text-disabled'
-              : 'cursor-pointer text-dark',
+              ? 'text-disabled cursor-not-allowed'
+              : 'text-dark cursor-pointer',
             required
               ? `${PREFIX}-${GROUP_NAME}__label--required ${PREFIX}-${GROUP_NAME}__label--right--required after:text-feedback-danger-50 after:content-required`
               : '',

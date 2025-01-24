@@ -126,9 +126,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const button = withButton && (
       <Button
         className={cn(
-          'rounded-0 border-1 border-l-0 hover:bg-primary hover:text-dark focus:bg-primary focus:text-dark active:border-l-0 active:!border-black active:shadow-hover',
+          'rounded-0 hover:bg-primary hover:text-dark focus:bg-primary focus:text-dark active:shadow-hover border-1 border-l-0 active:border-l-0 active:!border-black',
           isButtonDisabled
-            ? 'border-disabled hover:bg-disabled hover:text-light focus:bg-disabled focus:text-light active:border-1 active:border-l-0 active:!border-disabled active:shadow-none'
+            ? 'border-disabled hover:bg-disabled hover:text-light focus:bg-disabled focus:text-light active:!border-disabled active:border-1 active:border-l-0 active:shadow-none'
             : '',
           (disabled || readOnly) && !isButtonDisabled
             ? 'border-l-1 active:border-l-1'
@@ -152,7 +152,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       <div
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          'flex w-full max-w-full flex-col gap-1 text-dark',
+          'text-dark flex w-full max-w-full flex-col gap-1',
           `${PREFIX}-${GROUP_NAME}--${writable ? '' : 'not-'}-writable`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           readOnly && !disabled ? 'cursor-default' : '',
@@ -225,7 +225,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               autoFocus={autoFocus}
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__input`,
-                'box-border h-6 max-h-6 w-full min-w-6 max-w-full border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+                'transition-border-color placeholder:text-placeholder box-border h-6 max-h-6 w-full max-w-full min-w-6 border-1 px-2 py-1 text-left outline-hidden duration-300 ease-out',
                 withButton
                   ? `${PREFIX}-${GROUP_NAME}__input--with-button ${PREFIX}-${GROUP_NAME}__input--with-button--${buttonProps?.position ?? 'right'}`
                   : 'rounded-sm',
@@ -238,10 +238,10 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                   ? 'rounded-l-full'
                   : '',
                 writable
-                  ? `${PREFIX}-${GROUP_NAME}__input--writable bg-white hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary`
+                  ? `${PREFIX}-${GROUP_NAME}__input--writable hover:border-normal hover:shadow-hover focus:border-primary focus:shadow-primary [&:is([data-state="open"])]:bg-primary [&:is([data-state="open"])]:shadow-primary bg-white`
                   : `${PREFIX}-${GROUP_NAME}__input--not-writable border-disabled bg-disabled-light placeholder:text-transparent`,
                 disabled
-                  ? `${PREFIX}-${GROUP_NAME}__input--disabled cursor-not-allowed text-disabled`
+                  ? `${PREFIX}-${GROUP_NAME}__input--disabled text-disabled cursor-not-allowed`
                   : 'text-dark',
                 readOnly && !disabled
                   ? `${PREFIX}-${GROUP_NAME}__input--readonly cursor-default`
@@ -314,7 +314,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"
@@ -329,7 +329,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               `${PREFIX}-${GROUP_NAME}__message ${PREFIX}-${GROUP_NAME}__message--${
                 isInError ? 'error' : 'success'
               }`,
-              'cursor-default text-dark',
+              'text-dark cursor-default',
             )}
             element="div"
             variant="caption-median"

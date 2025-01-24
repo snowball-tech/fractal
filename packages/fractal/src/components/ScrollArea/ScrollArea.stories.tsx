@@ -34,7 +34,7 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   render: ({ children, orientation = 'both' }) => (
     <ScrollArea
-      className="size-[200px] bg-grey-90 p-2"
+      className="bg-grey-90 size-[200px] p-2"
       orientation={orientation}
     >
       {children}

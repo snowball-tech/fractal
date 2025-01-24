@@ -84,7 +84,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
       `${PREFIX}-${GROUP_NAME}`,
       `${PREFIX}-${GROUP_NAME}--${variant}`,
       props.required ? `${PREFIX}-${GROUP_NAME}--required` : '',
-      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none px-unset appearance-none box-border',
+      'flex max-h-6 max-w-full items-center justify-center gap-2 rounded-full outline-hidden transition-colors duration-300 ease-out active:transition-none px-unset appearance-none box-border',
       isTextVariant ? '' : 'h-6 px-3 py-1',
       triggerProps.fullWidth && !triggerProps.iconOnly
         ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
@@ -120,7 +120,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__label`,
           `${PREFIX}-${GROUP_NAME}__label--${variant}`,
-          'flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
+          'flex max-h-full max-w-full flex-1 items-center justify-center overflow-hidden text-center align-middle text-ellipsis whitespace-nowrap',
           isTextVariant ? 'pt-0' : '',
           props.required
             ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`

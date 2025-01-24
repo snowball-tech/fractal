@@ -195,12 +195,12 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__trigger`,
           'flex w-full flex-row items-center gap-1',
-          'rounded-sm outline-none transition-background-color duration-300 ease-out',
+          'transition-background-color rounded-sm outline-hidden duration-300 ease-out',
           isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
           icon ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--with-icon` : '',
           isDisabled
-            ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--disabled pointer-events-none cursor-not-allowed !bg-transparent text-disabled`
-            : 'cursor-pointer text-dark',
+            ? `${PREFIX}-${GROUP_NAME}__sub-menu__trigger--disabled text-disabled pointer-events-none cursor-not-allowed !bg-transparent`
+            : 'text-dark cursor-pointer',
           popup?.trigger?.className,
         )}
         element="div"
@@ -310,14 +310,14 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             <RxScrollArea.Scrollbar
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y`,
-                'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+                'bg-grey-90 p-quarter transition-background-color hover:bg-grey-70 flex touch-none rounded-r-sm duration-300 ease-out select-none data-[orientation="vertical"]:w-1',
               )}
               orientation="vertical"
             >
               <RxScrollArea.Thumb
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__sub-menu__content__scrollarea__scrollbar--y__thumb`,
-                  'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                  'before:l-1/2 !w-half bg-grey-30 before:content-empty relative flex-1 rounded-sm before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2',
                 )}
               />
             </RxScrollArea.Scrollbar>
@@ -385,7 +385,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup--non-popover`,
           'alternatee',
-          'relative rounded-sm outline-none transition-background-color duration-300 ease-out',
+          'transition-background-color relative rounded-sm outline-hidden duration-300 ease-out',
           props.className,
           popup?.className,
         )}
@@ -411,7 +411,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         <div
           className={cn(
             `${PREFIX}-${GROUP_NAME}__sub-menu__popup__content-positionner`,
-            'absolute left-full top-0 z-[5000] pl-2',
+            'absolute top-0 left-full z-[5000] pl-2',
             isOpen ? '' : 'hidden',
             popup?.content?.positionner?.className,
           )}

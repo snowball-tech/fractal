@@ -79,7 +79,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           className={cj(
             `${PREFIX}-${GROUP_NAME}__tabs`,
             shouldBeLarge ? `${PREFIX}-${GROUP_NAME}__tabs--large` : '',
-            'flex w-fit items-center justify-between border-normal bg-white [z-index:1]',
+            'border-normal [z-index:1] flex w-fit items-center justify-between bg-white',
             orientation === Orientations.Vertical
               ? 'h-full w-6 min-w-6 flex-col'
               : 'max-h-10 w-full',

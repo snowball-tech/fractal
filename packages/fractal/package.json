@@ -28,6 +28,7 @@
     "@snowball-tech/design-tokens": "12.3.9",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/postcss": "^4.0.0",
     "@tooni/iconscout-unicons-react": "^1.0.1",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.14",
@@ -41,7 +42,7 @@
     "react-textarea-autosize": "^8.5.7",
     "react-timekeeper": "^2.2.1",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.0.0"
   },
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "devDependencies": {
@@ -141,12 +142,10 @@
     "force-update-fonts": "yarn run clean-fonts && ../../scripts/update-fonts.sh ./public --force",
     "format": "yarn run -T prettier --cache --check .",
     "format-fix": "yarn run -T prettier --cache --write .",
-    "lint": "yarn run lint-scripts & yarn run lint-styles",
-    "lint-fix": "yarn run lint-scripts-fix & yarn run lint-styles-fix",
+    "lint": "yarn run lint-scripts",
+    "lint-fix": "yarn run lint-scripts-fix",
     "lint-scripts": "yarn run -T eslint --cache .",
     "lint-scripts-fix": "yarn run -T eslint --cache --fix .",
-    "lint-styles": "yarn run -T stylelint --cache \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
-    "lint-styles-fix": "yarn run -T stylelint --cache --fix \"./**/*.{html,css,jsx,tsx}\" \"!storybook-static\"",
     "postbuild": "yarn run build-stats",
     "prebuild": "yarn run clean-build && mkdir -p ./dist",
     "prebuild-library": "mkdir -p ./dist",

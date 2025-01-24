@@ -65,7 +65,7 @@ export const Slider = ({
       id={uniqueId}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        'relative box-border flex rounded-full border-1 border-normal',
+        'border-normal relative box-border flex rounded-full border-1',
         orientation === Orientations.Vertical
           ? 'h-full max-h-full w-1 flex-col justify-center'
           : 'h-1 w-full max-w-full items-center',
@@ -96,7 +96,7 @@ export const Slider = ({
         <RxSlider.Range
           className={cj(
             `${PREFIX}-${GROUP_NAME}__range`,
-            'absolute rounded-full bg-secondary transition-transform delay-100 duration-600 [transition-property:cubic-bezier(0.65,0,0.35,1)]',
+            'bg-secondary absolute rounded-full transition-transform [transition-property:cubic-bezier(0.65,0,0.35,1)] delay-100 duration-600',
             orientation === Orientations.Vertical ? 'w-full' : 'h-full',
           )}
         />
@@ -109,7 +109,7 @@ export const Slider = ({
           className={cj(
             `${PREFIX}-${GROUP_NAME}__thumb`,
             `${PREFIX}-${GROUP_NAME}__thumb--${index}`,
-            'block size-2 rounded-full bg-secondary',
+            'bg-secondary block size-2 rounded-full',
           )}
         />
       ))}
