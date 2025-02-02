@@ -4067,7 +4067,7 @@ __metadata:
     remark-gfm: "npm:^4.0.0"
     storybook: "npm:^8.5.1"
     storybook-addon-mock-date: "npm:^0.6.0"
-    tailwind-merge: "npm:^2.6.0"
+    tailwind-merge: "npm:^3.0.0"
     tailwindcss: "npm:^3.4.17"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.7.3"
@@ -18990,10 +18990,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "tailwind-merge@npm:2.6.0"
-  checksum: 10/a84f49d6f2cfb18ba06dc51b446b69f6b42cedcb9c9fa4e7c5f931b56e739870e513339e02b348b43f44011fa4852f02f72658a3f3e066e5101b09fc28644210
+"tailwind-merge@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "tailwind-merge@npm:3.0.1"
+  checksum: 10/bad61589b78530ce1d49a369b089ff606ed56d7d5aa67f57c04144751abbee3d844652a22595bfa21a4509d0d06946a9bc8c7e9ef74cd5fcf10c51925a2f14af
   languageName: node
   linkType: hard
 
