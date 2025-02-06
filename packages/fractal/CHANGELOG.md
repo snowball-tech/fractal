@@ -1,3 +1,11 @@
+# @snowball-tech/fractal [11.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.9...@snowball-tech/fractal@11.8.0) (2025-02-06)
+
+- **typography:** add a new param to force special typo size in emails ([60dcc20](https://github.com/snowball-tech/fractal/commit/60dcc20ec9bf02ded193a5bd82416bd86820c7b0))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 12.3.11
+
 ## @snowball-tech/fractal [11.7.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.8...@snowball-tech/fractal@11.7.9) (2025-01-24)
 
 ## @snowball-tech/fractal [11.7.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.7...@snowball-tech/fractal@11.7.8) (2025-01-24)
