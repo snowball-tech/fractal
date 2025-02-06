@@ -14,6 +14,16 @@ export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
    */
   inlineStyle?: boolean
   /** The variant of typography (style and size) to use. */
+
+  /**
+   * Indicates to use the special typography sizes for emails.
+   * Only used with `inlineStyle` enabled.
+   *
+   * If you don't pass any value, it will be enabled when `inlineStyle` is true.
+   * If you want to use `inlineStyle` but not the email variant, pass `false`.
+   */
+  emailVariant?: boolean
+
   variant?: `${Variants}`
   /**
    * Force the XS variation of typography.

@@ -139,6 +139,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     {
       children,
       element,
+      emailVariant,
       inlineStyle = false,
       variant = DEFAULT_VARIANT,
       xs = false,
@@ -146,6 +147,8 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }: TypographyProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
+    const useEmailVariant = inlineStyle && emailVariant !== false
+
     let typographyClassNames = ''
     switch (variant) {
       case Variants.Body1Bold: {
@@ -271,7 +274,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       switch (variant) {
         case Variants.Body1Bold: {
           typographyStyles.fontFamily = TypographyBody1BoldFontFamily
-          typographyStyles.fontSize = TypographyBody1BoldFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '18px'
+            : TypographyBody1BoldFontSize
           typographyStyles.lineHeight = TypographyBody1BoldLineHeight
           typographyStyles.fontWeight = TypographyBody1BoldFontWeight
           break
@@ -279,7 +284,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body1Link: {
           typographyStyles.fontFamily = TypographyBody1LinkFontFamily
-          typographyStyles.fontSize = TypographyBody1LinkFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '18px'
+            : TypographyBody1LinkFontSize
           typographyStyles.lineHeight = TypographyBody1LinkLineHeight
           typographyStyles.fontWeight = TypographyBody1LinkFontWeight
           typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
@@ -288,7 +295,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body1Median: {
           typographyStyles.fontFamily = TypographyBody1MedianFontFamily
-          typographyStyles.fontSize = TypographyBody1MedianFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '18px'
+            : TypographyBody1MedianFontSize
           typographyStyles.lineHeight = TypographyBody1MedianLineHeight
           typographyStyles.fontWeight = TypographyBody1MedianFontWeight
           break
@@ -296,7 +305,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body2: {
           typographyStyles.fontFamily = TypographyBody2FontFamily
-          typographyStyles.fontSize = TypographyBody2FontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '16px'
+            : TypographyBody2FontSize
           typographyStyles.lineHeight = TypographyBody2LineHeight
           typographyStyles.fontWeight = TypographyBody2FontWeight
           break
@@ -304,7 +315,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body2Bold: {
           typographyStyles.fontFamily = TypographyBody2BoldFontFamily
-          typographyStyles.fontSize = TypographyBody2BoldFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '16px'
+            : TypographyBody2BoldFontSize
           typographyStyles.lineHeight = TypographyBody2BoldLineHeight
           typographyStyles.fontWeight = TypographyBody2BoldFontWeight
           break
@@ -312,7 +325,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body2Link: {
           typographyStyles.fontFamily = TypographyBody2LinkFontFamily
-          typographyStyles.fontSize = TypographyBody2LinkFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '16px'
+            : TypographyBody2LinkFontSize
           typographyStyles.lineHeight = TypographyBody2LinkLineHeight
           typographyStyles.fontWeight = TypographyBody2LinkFontWeight
           typographyStyles.textDecoration = TypographyBody2LinkTextDecoration
@@ -321,7 +336,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Body2Median: {
           typographyStyles.fontFamily = TypographyBody2MedianFontFamily
-          typographyStyles.fontSize = TypographyBody2MedianFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '16px'
+            : TypographyBody2MedianFontSize
           typographyStyles.lineHeight = TypographyBody2MedianLineHeight
           typographyStyles.fontWeight = TypographyBody2MedianFontWeight
           break
@@ -329,7 +346,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.CaptionBold: {
           typographyStyles.fontFamily = TypographyCaptionBoldFontFamily
-          typographyStyles.fontSize = TypographyCaptionBoldFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '14px'
+            : TypographyCaptionBoldFontSize
           typographyStyles.lineHeight = TypographyCaptionBoldLineHeight
           typographyStyles.fontWeight = TypographyCaptionBoldFontWeight
           break
@@ -337,7 +356,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.CaptionLink: {
           typographyStyles.fontFamily = TypographyCaptionLinkFontFamily
-          typographyStyles.fontSize = TypographyCaptionLinkFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '14px'
+            : TypographyCaptionLinkFontSize
           typographyStyles.lineHeight = TypographyCaptionLinkLineHeight
           typographyStyles.fontWeight = TypographyCaptionLinkFontWeight
           typographyStyles.textDecoration = TypographyCaptionLinkTextDecoration
@@ -346,11 +367,14 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.CaptionMedian: {
           typographyStyles.fontFamily = TypographyCaptionMedianFontFamily
-          typographyStyles.fontSize = TypographyCaptionMedianFontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '14px'
+            : TypographyCaptionMedianFontSize
           typographyStyles.lineHeight = TypographyCaptionMedianLineHeight
           typographyStyles.fontWeight = TypographyCaptionMedianFontWeight
           break
         }
+
         case Variants.Display1: {
           typographyStyles.fontFamily = TypographyDisplay1FontFamily
           typographyStyles.fontSize = xs
@@ -389,61 +413,87 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
         case Variants.Heading1: {
           typographyStyles.fontFamily = TypographyHeading1FontFamily
-          typographyStyles.fontSize = xs
-            ? TypographyHeading1FontSizeXxs
-            : TypographyHeading1FontSizeMd
-          typographyStyles.lineHeight = xs
-            ? TypographyHeading1LineHeightXxs
-            : TypographyHeading1LineHeightMd
+          typographyStyles.fontSize = useEmailVariant
+            ? '32px'
+            : xs
+              ? TypographyHeading1FontSizeXxs
+              : TypographyHeading1FontSizeMd
+          typographyStyles.lineHeight = useEmailVariant
+            ? '40px'
+            : xs
+              ? TypographyHeading1LineHeightXxs
+              : TypographyHeading1LineHeightMd
           typographyStyles.fontWeight = TypographyHeading1FontWeight
           break
         }
 
         case Variants.Heading2: {
           typographyStyles.fontFamily = TypographyHeading2FontFamily
-          typographyStyles.fontSize = xs
-            ? TypographyHeading2FontSizeXxs
-            : TypographyHeading2FontSizeMd
-          typographyStyles.lineHeight = TypographyHeading2LineHeight
+          typographyStyles.fontSize = useEmailVariant
+            ? '24px'
+            : xs
+              ? TypographyHeading2FontSizeXxs
+              : TypographyHeading2FontSizeMd
+          typographyStyles.lineHeight = useEmailVariant
+            ? '32px'
+            : TypographyHeading2LineHeight
           typographyStyles.fontWeight = TypographyHeading2FontWeight
           break
         }
 
         case Variants.Heading3: {
           typographyStyles.fontFamily = TypographyHeading3FontFamily
-          typographyStyles.fontSize = TypographyHeading3FontSize
-          typographyStyles.lineHeight = TypographyHeading3LineHeight
+          typographyStyles.fontSize = useEmailVariant
+            ? '22px'
+            : TypographyHeading3FontSize
+          typographyStyles.lineHeight = useEmailVariant
+            ? '24px'
+            : TypographyHeading3LineHeight
           typographyStyles.fontWeight = TypographyHeading3FontWeight
           break
         }
 
         case Variants.Heading3Link: {
           typographyStyles.fontFamily = TypographyHeading3LinkFontFamily
-          typographyStyles.fontSize = TypographyHeading3LinkFontSize
-          typographyStyles.lineHeight = TypographyHeading3LinkLineHeight
+          typographyStyles.fontSize = useEmailVariant
+            ? '22px'
+            : TypographyHeading3LinkFontSize
+          typographyStyles.lineHeight = useEmailVariant
+            ? '24px'
+            : TypographyHeading3LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading3LinkFontWeight
           break
         }
 
         case Variants.Heading4: {
           typographyStyles.fontFamily = TypographyHeading4FontFamily
-          typographyStyles.fontSize = TypographyHeading4FontSize
-          typographyStyles.lineHeight = TypographyHeading4LineHeight
+          typographyStyles.fontSize = useEmailVariant
+            ? '20px'
+            : TypographyHeading4FontSize
+          typographyStyles.lineHeight = useEmailVariant
+            ? '22px'
+            : TypographyHeading4LineHeight
           typographyStyles.fontWeight = TypographyHeading4FontWeight
           break
         }
 
         case Variants.Heading4Link: {
           typographyStyles.fontFamily = TypographyHeading4LinkFontFamily
-          typographyStyles.fontSize = TypographyHeading4LinkFontSize
-          typographyStyles.lineHeight = TypographyHeading4LinkLineHeight
+          typographyStyles.fontSize = useEmailVariant
+            ? '20px'
+            : TypographyHeading4LinkFontSize
+          typographyStyles.lineHeight = useEmailVariant
+            ? '22px'
+            : TypographyHeading4LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading4LinkFontWeight
           break
         }
 
         default: {
           typographyStyles.fontFamily = TypographyBody1FontFamily
-          typographyStyles.fontSize = TypographyBody1FontSize
+          typographyStyles.fontSize = useEmailVariant
+            ? '18px'
+            : TypographyBody1FontSize
           typographyStyles.lineHeight = TypographyBody1LineHeight
           typographyStyles.fontWeight = TypographyBody1FontWeight
           break
