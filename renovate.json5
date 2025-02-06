@@ -5,4 +5,6 @@
   extends: [
     'github>snowball-tech/glacier//packages/renovate-config/default.json5',
   ],
+
+  enabled: false,
 }
