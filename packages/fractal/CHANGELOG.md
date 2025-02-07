@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [11.9.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.8.0...@snowball-tech/fractal@11.9.0) (2025-02-07)
+
+- **button:** allow to override label wrapper styles and classNames ([7ecb0f1](https://github.com/snowball-tech/fractal/commit/7ecb0f1ad4f8ce31e65eb42af8d3c945680c4872))
+
 # @snowball-tech/fractal [11.8.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.7.9...@snowball-tech/fractal@11.8.0) (2025-02-06)
 
 - **typography:** add a new param to force special typo size in emails ([60dcc20](https://github.com/snowball-tech/fractal/commit/60dcc20ec9bf02ded193a5bd82416bd86820c7b0))
