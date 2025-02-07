@@ -1,5 +1,6 @@
 import type {
   AllHTMLAttributes,
+  CSSProperties,
   ElementType,
   MouseEvent,
   ReactNode,
@@ -101,4 +102,10 @@ export interface ButtonProps
   wrap?: boolean
   /** Event handler called when the button is clicked. */
   onClick?: (event: MouseEvent<HTMLElement>) => void
+
+  /** The class name to apply to the wrapper element. */
+  wrapperClassName?: string
+
+  /** The styles to apply to the wrapper element. */
+  wrapperStyles?: CSSProperties
 }

@@ -263,6 +263,8 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       underlined,
       variant = DEFAULT_VARIANT,
       wrap = false,
+      wrapperClassName,
+      wrapperStyles,
       ...props
     }: ButtonProps,
     ref: ForwardedRef<HTMLElement>,
@@ -451,6 +453,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
             'flex max-h-full max-w-full flex-1 items-center justify-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-center align-middle',
           !inlineStyle && isTextVariant ? 'pt-0' : '',
           !inlineStyle && underlined === false ? 'no-underline' : '',
+          wrapperClassName,
         )}
         element="div"
         inlineStyle={inlineStyle}
@@ -470,6 +473,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                 whiteSpace: 'nowrap',
                 ...(isTextVariant ? { paddingTop: 0 } : {}),
                 ...(underlined === false ? { textDecoration: 'none' } : {}),
+                ...wrapperStyles,
               }
             : undefined
         }
