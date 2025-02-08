@@ -64,22 +64,13 @@ jobs:
 
       - if: env.SKIP_CHROMATIC != 1
         name: Setting up dependencies & workspaces
-        run: yarn install --immutable --immutable-cache && yarn run -T setup
+        run: yarn install --immutable && yarn run -T setup
 
       - if: env.SKIP_CHROMATIC != 1
         name: Setting up Git to access Freezer
         env:
           FREEZER_TOKEN: ${{ secrets.FREEZER_TOKEN }}
         run: yarn run setup-freezer
-
-      - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
-        name: Waiting for security to pass
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: Checking Yarn cache's integrity
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for quality to pass

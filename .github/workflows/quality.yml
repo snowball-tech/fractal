@@ -32,7 +32,7 @@ jobs:
           cache: yarn
 
       - name: Setting up dependencies & workspaces
-        run: yarn install --immutable --immutable-cache && yarn run -T setup
+        run: yarn install --immutable && yarn run -T setup
 
       - name: Checking linter
         run: yarn run -T lint

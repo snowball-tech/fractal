@@ -21,7 +21,6 @@
 # Dependencies
 **/node_modules
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
@@ -72,6 +71,7 @@ next-env.d.ts
 
 # Misc.
 *.bak
+scripts/tmp
 # This file is only used for the Tailwind VSCode extension.
 tailwind.config.cjs
 

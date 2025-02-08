@@ -30,21 +30,13 @@ jobs:
           cache: yarn
 
       - name: Setting up dependencies & workspaces
-        run: yarn install --immutable --immutable-cache && yarn run -T setup
+        run: yarn install --immutable && yarn run -T setup
 
       - name: Setting up Git to access Freezer
         run: yarn run setup-freezer
 
       - name: Building all packages
         run: yarn run -T build
-
-      - name: Waiting for security to pass
-        uses: lewagon/wait-on-check-action@v1.3.4
-        with:
-          ref: ${{ github.ref }}
-          check-name: Checking Yarn cache's integrity
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
 
       - name: Waiting for quality to pass
         uses: lewagon/wait-on-check-action@v1.3.4
