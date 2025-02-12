@@ -85,11 +85,8 @@
   width: 74px;
 }
 .device-iphone-14-pro .device-sensors::before {
-  background: radial-gradient(
-      farthest-corner at 20% 20%,
-      #6074bf 0,
-      transparent 40%
-    ),
+  background:
+    radial-gradient(farthest-corner at 20% 20%, #6074bf 0, transparent 40%),
     radial-gradient(
       farthest-corner at 80% 80%,
       #513785 0,
@@ -297,11 +294,8 @@
   width: 70px;
 }
 .device-iphone-14 .device-sensors::before {
-  background: radial-gradient(
-      farthest-corner at 20% 20%,
-      #6074bf 0,
-      transparent 40%
-    ),
+  background:
+    radial-gradient(farthest-corner at 20% 20%, #6074bf 0, transparent 40%),
     radial-gradient(
       farthest-corner at 80% 80%,
       #513785 0,
@@ -522,11 +516,8 @@
   width: 50px;
 }
 .device-iphone-x .device-sensors::before {
-  background: radial-gradient(
-      farthest-corner at 20% 20%,
-      #6074bf 0,
-      transparent 40%
-    ),
+  background:
+    radial-gradient(farthest-corner at 20% 20%, #6074bf 0, transparent 40%),
     radial-gradient(
       farthest-corner at 80% 80%,
       #513785 0,
@@ -922,11 +913,8 @@
   width: 206px;
 }
 .device-google-pixel-6-pro .device-sensors::before {
-  background: radial-gradient(
-      farthest-corner at 20% 20%,
-      #6074bf 0,
-      transparent 40%
-    ),
+  background:
+    radial-gradient(farthest-corner at 20% 20%, #6074bf 0, transparent 40%),
     radial-gradient(
       farthest-corner at 80% 80%,
       #513785 0,
@@ -2179,11 +2167,8 @@
   width: 10px;
 }
 .device-ipad-pro .device-sensors::before {
-  background: radial-gradient(
-      farthest-corner at 20% 20%,
-      #6074bf 0,
-      transparent 40%
-    ),
+  background:
+    radial-gradient(farthest-corner at 20% 20%, #6074bf 0, transparent 40%),
     radial-gradient(
       farthest-corner at 80% 80%,
       #513785 0,
@@ -2619,7 +2604,8 @@
   width: 320px;
 }
 .device-homepod .device-stripe {
-  background: repeating-linear-gradient(
+  background:
+    repeating-linear-gradient(
       45deg,
       rgba(141, 143, 149, 0.35) 0,
       rgba(141, 143, 149, 0.35) 2px,
