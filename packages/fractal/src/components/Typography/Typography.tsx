@@ -277,7 +277,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '18px'
             : TypographyBody1BoldFontSize
-          typographyStyles.lineHeight = TypographyBody1BoldLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.7rem'
+            : TypographyBody1BoldLineHeight
           typographyStyles.fontWeight = TypographyBody1BoldFontWeight
           break
         }
@@ -287,7 +289,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '18px'
             : TypographyBody1LinkFontSize
-          typographyStyles.lineHeight = TypographyBody1LinkLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.7rem'
+            : TypographyBody1LinkLineHeight
           typographyStyles.fontWeight = TypographyBody1LinkFontWeight
           typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
           break
@@ -298,7 +302,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '18px'
             : TypographyBody1MedianFontSize
-          typographyStyles.lineHeight = TypographyBody1MedianLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.7rem'
+            : TypographyBody1MedianLineHeight
           typographyStyles.fontWeight = TypographyBody1MedianFontWeight
           break
         }
@@ -308,7 +314,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '16px'
             : TypographyBody2FontSize
-          typographyStyles.lineHeight = TypographyBody2LineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.5rem'
+            : TypographyBody2LineHeight
           typographyStyles.fontWeight = TypographyBody2FontWeight
           break
         }
@@ -318,7 +326,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '16px'
             : TypographyBody2BoldFontSize
-          typographyStyles.lineHeight = TypographyBody2BoldLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.5rem'
+            : TypographyBody2BoldLineHeight
           typographyStyles.fontWeight = TypographyBody2BoldFontWeight
           break
         }
@@ -328,7 +338,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '16px'
             : TypographyBody2LinkFontSize
-          typographyStyles.lineHeight = TypographyBody2LinkLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.5rem'
+            : TypographyBody2LinkLineHeight
           typographyStyles.fontWeight = TypographyBody2LinkFontWeight
           typographyStyles.textDecoration = TypographyBody2LinkTextDecoration
           break
@@ -339,7 +351,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '16px'
             : TypographyBody2MedianFontSize
-          typographyStyles.lineHeight = TypographyBody2MedianLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.5rem'
+            : TypographyBody2MedianLineHeight
           typographyStyles.fontWeight = TypographyBody2MedianFontWeight
           break
         }
@@ -349,7 +363,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '14px'
             : TypographyCaptionBoldFontSize
-          typographyStyles.lineHeight = TypographyCaptionBoldLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.25rem'
+            : TypographyCaptionBoldLineHeight
           typographyStyles.fontWeight = TypographyCaptionBoldFontWeight
           break
         }
@@ -359,7 +375,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '14px'
             : TypographyCaptionLinkFontSize
-          typographyStyles.lineHeight = TypographyCaptionLinkLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.25rem'
+            : TypographyCaptionLinkLineHeight
           typographyStyles.fontWeight = TypographyCaptionLinkFontWeight
           typographyStyles.textDecoration = TypographyCaptionLinkTextDecoration
           break
@@ -370,7 +388,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '14px'
             : TypographyCaptionMedianFontSize
-          typographyStyles.lineHeight = TypographyCaptionMedianLineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.25rem'
+            : TypographyCaptionMedianLineHeight
           typographyStyles.fontWeight = TypographyCaptionMedianFontWeight
           break
         }
@@ -494,7 +514,9 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = useEmailVariant
             ? '18px'
             : TypographyBody1FontSize
-          typographyStyles.lineHeight = TypographyBody1LineHeight
+          typographyStyles.lineHeight = useEmailVariant
+            ? '1.7rem'
+            : TypographyBody1LineHeight
           typographyStyles.fontWeight = TypographyBody1FontWeight
           break
         }
