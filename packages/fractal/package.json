@@ -25,7 +25,7 @@
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@radix-ui/react-toolbar": "^1.1.2",
     "@react-hookz/web": "^25.0.1",
-    "@snowball-tech/design-tokens": "12.3.11",
+    "@snowball-tech/design-tokens": "12.3.12",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tooni/iconscout-unicons-react": "^1.0.1",
@@ -164,5 +164,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "11.10.1"
+  "version": "11.10.2"
 }
