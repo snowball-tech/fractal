@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.2...@snowball-tech/fractal@11.10.3) (2025-02-12)
+
+- **typography:** use px instead of ream in email variant inline style ([59add52](https://github.com/snowball-tech/fractal/commit/59add5290461e91f3488a42097ea4513a47465c9))
+
 ## @snowball-tech/fractal [11.10.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.1...@snowball-tech/fractal@11.10.2) (2025-02-12)
 
 ### Dependencies
