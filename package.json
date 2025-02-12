@@ -78,17 +78,17 @@
     "@snowball-tech/semantic-release-config": "^3.0.3",
     "chromatic": "^11.25.2",
     "depcheck": "^1.4.7",
-    "eslint": "^9.19.0",
+    "eslint": "^9.20.1",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^15.4.3",
     "nodemon": "^3.1.9",
-    "prettier": "^3.4.2",
-    "semantic-release": "^24.2.1",
+    "prettier": "^3.5.0",
+    "semantic-release": "^24.2.2",
     "serve": "^14.2.4"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^2.0.9",
+    "@snowball-tech/eslint-snowball-config": "^2.0.10",
     "@yarnpkg/types": "^4.0.0"
   }
 }
