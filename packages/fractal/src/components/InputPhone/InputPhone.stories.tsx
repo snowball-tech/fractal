@@ -6,6 +6,7 @@ import isChromatic from 'chromatic/isChromatic'
 
 import type { ComponentProps, ReactNode } from 'react'
 
+import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
 import type { PhoneNumber } from './InputPhone.types'
@@ -111,24 +112,13 @@ export const Interactive: Story = {
     const body = within(canvasElement.ownerDocument.body)
 
     const phoneInput = canvas.getByRole('textbox')
-    await userEvent.click(phoneInput)
-
-    await sleep(500)
-    await userEvent.type(phoneInput, '01 23 45 67 89', {
-      delay: 50,
-    })
+    await slowType('01 23 45 67 89', phoneInput)
 
     const prefixSelect = canvas.getByRole('combobox')
     await userEvent.click(prefixSelect)
 
     const searchPrefixInput = body.getByPlaceholderText(/search/u)
-
-    await sleep(500)
-    await userEvent.click(searchPrefixInput)
-    await sleep(500)
-    await userEvent.type(searchPrefixInput, 'uni', {
-      delay: 50,
-    })
+    await slowType('uni', searchPrefixInput)
 
     const menuItems = body.getAllByLabelText(/\(+/i)
     if (menuItems.length > 0) {

@@ -13,6 +13,7 @@ import {
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
+import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
 import { Textarea } from '.'
@@ -120,15 +121,11 @@ export const Interactive: Story = {
 
     await userEvent.hover(textarea)
     await sleep(500)
-    await userEvent.click(textarea)
 
-    await sleep(500)
-    await userEvent.type(textarea, 'Hello there!', { delay: 10 })
-    await userEvent.type(
+    await slowType(
+      'Nulla ad id sint ipsum magna et aliqua duis cupidatat quis exercitation quis nulla culpa. Cillum dolor pariatur velit labore proident fugiat ut enim in occaecat labore.',
       textarea,
-      'Nulla ad id sint ipsum magna et aliqua duis cupidatat quis exercitation quis nulla culpa. Cillum dolor pariatur velit labore proident fugiat ut enim in occaecat labore. Lorem fugiat commodo voluptate tempor. Ullamco cupidatat commodo qui aliqua ullamco incididunt do quis est Lorem fugiat minim laborum. Incididunt qui duis proident non duis consequat. Non ad enim fugiat labore occaecat nisi do reprehenderit.',
     )
-
     await sleep(500)
     await textarea.blur()
 

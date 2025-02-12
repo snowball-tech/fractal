@@ -10,7 +10,7 @@ import type {
   ReactNode,
 } from 'react'
 
-import { sleep } from '@/utils'
+import { slowType } from '@/tests_helpers'
 
 import { InputPinCode } from '.'
 
@@ -83,18 +83,10 @@ export const Interactive: Story = {
 
     const inputs = canvas.getAllByRole('spinbutton')
 
-    await userEvent.click(inputs.at(0)!)
-    await sleep(500)
-    await userEvent.type(inputs.at(0)!, '0')
-
-    await sleep(500)
-    await userEvent.type(inputs.at(1)!, '1')
-
-    await sleep(500)
-    await userEvent.type(inputs.at(2)!, '2')
-
-    await sleep(500)
-    await userEvent.type(inputs.at(3)!, '3')
+    await slowType('0', inputs.at(0)!)
+    await slowType('1', inputs.at(1)!)
+    await slowType('2', inputs.at(2)!)
+    await slowType('3', inputs.at(3)!)
 
     await userEvent.click(inputs.at(4)!)
   },

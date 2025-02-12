@@ -35,6 +35,7 @@ import AutocompleteItem from '@/components/Dropdown/DropdownItem'
 import AutocompleteItemGroup from '@/components/Dropdown/DropdownItemGroup'
 import AutocompleteItemSeparator from '@/components/Dropdown/DropdownItemSeparator'
 import { jedis, others, siths } from '@/mocks'
+import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
 import Autocomplete from './Autocomplete'
@@ -358,12 +359,8 @@ export const InteractiveSearching: Story = {
     const body = within(canvasElement.ownerDocument.body)
 
     const input = canvas.getByRole('textbox')
-    await userEvent.click(input)
 
-    await sleep(500)
-    await userEvent.type(input, 'an', {
-      delay: 100,
-    })
+    await slowType('an', input)
 
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,
@@ -385,12 +382,8 @@ export const InteractiveSearch: Story = {
     const body = within(canvasElement.ownerDocument.body)
 
     const input = canvas.getByRole('textbox')
-    await userEvent.click(input)
 
-    await sleep(500)
-    await userEvent.type(input, 'an', {
-      delay: 100,
-    })
+    await slowType('an', input)
 
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,
@@ -432,12 +425,8 @@ export const InteractiveSearchAndSelect: Story = {
     const body = within(canvasElement.ownerDocument.body)
 
     const input = canvas.getByRole('textbox')
-    await userEvent.click(input)
 
-    await sleep(500)
-    await userEvent.type(input, 'an', {
-      delay: 100,
-    })
+    await slowType('an', input)
 
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,
@@ -469,15 +458,8 @@ export const InteractiveEmptySearch: Story = {
     const body = within(canvasElement.ownerDocument.body)
 
     const input = canvas.getByRole('textbox')
-    await userEvent.click(input)
-    await sleep(500)
 
-    for (let index = 0; index < EMPTY_SEARCH.length; index += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await userEvent.type(input, EMPTY_SEARCH[index]!, { skipClick: true })
-      // eslint-disable-next-line no-await-in-loop
-      await sleep(50)
-    }
+    await slowType(EMPTY_SEARCH, input)
 
     await waitFor(() => body.getByText(/loading star wars/i), {
       timeout: 10_000,

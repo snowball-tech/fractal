@@ -13,6 +13,7 @@ import {
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
+import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
 import { InputText } from '.'
@@ -125,16 +126,8 @@ export const Interactive: Story = {
 
     await userEvent.hover(input)
     await sleep(500)
-    await userEvent.click(input)
-    await sleep(500)
 
-    const text = 'Hello world!'
-    for (let index = 0; index < text.length; index += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await userEvent.type(input, text[index]!, { skipClick: true })
-      // eslint-disable-next-line no-await-in-loop
-      await sleep(50)
-    }
+    await slowType('Hello world!', input)
   },
 }
 

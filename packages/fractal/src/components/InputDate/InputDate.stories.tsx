@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { useArgs } from '@storybook/preview-api'
-import { fn, userEvent, within } from '@storybook/test'
+import { fn, within } from '@storybook/test'
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
+
+import { slowType } from '@/tests_helpers'
 
 import type { DateFormat } from './InputDate.types'
 
@@ -126,16 +128,13 @@ export const Interactive: Story = {
     const canvas = within(canvasElement)
 
     const inputDay = canvas.getAllByRole('spinbutton').at(0)
-    await userEvent.click(inputDay!)
-    await userEvent.type(inputDay!, '19')
+    await slowType('19', inputDay!)
 
     const inputMonth = canvas.getAllByRole('spinbutton').at(1)
-    await userEvent.click(inputMonth!)
-    await userEvent.type(inputMonth!, '10')
+    await slowType('10', inputMonth!)
 
     const inputYear = canvas.getAllByRole('spinbutton').at(2)
-    await userEvent.click(inputYear!)
-    await userEvent.type(inputYear!, '1977')
+    await slowType('1977', inputYear!)
   },
 }
 
