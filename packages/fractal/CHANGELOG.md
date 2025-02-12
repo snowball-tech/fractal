@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [11.10.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.0...@snowball-tech/fractal@11.10.1) (2025-02-12)
+
 # @snowball-tech/fractal [11.10.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.9.0...@snowball-tech/fractal@11.10.0) (2025-02-12)
 
 - **typography:** increase line heights for email variants ([d15c239](https://github.com/snowball-tech/fractal/commit/d15c239a813998a08253de7fc835072b18986f76))
