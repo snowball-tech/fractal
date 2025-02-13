@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [12.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.4...@snowball-tech/fractal@12.0.0) (2025-02-13)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 13.0.0
+
 ## @snowball-tech/fractal [11.10.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.3...@snowball-tech/fractal@11.10.4) (2025-02-13)
 
 - **emoji-picker:** hide emoji picker until it's styled ([1eea1f4](https://github.com/snowball-tech/fractal/commit/1eea1f4304001bf81c36fce29204e99bf6af025c))
