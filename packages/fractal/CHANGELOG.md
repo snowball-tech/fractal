@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [11.10.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.3...@snowball-tech/fractal@11.10.4) (2025-02-13)
+
+- **emoji-picker:** hide emoji picker until it's styled ([1eea1f4](https://github.com/snowball-tech/fractal/commit/1eea1f4304001bf81c36fce29204e99bf6af025c))
+
 ## @snowball-tech/fractal [11.10.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@11.10.2...@snowball-tech/fractal@11.10.3) (2025-02-12)
 
 - **typography:** use px instead of ream in email variant inline style ([59add52](https://github.com/snowball-tech/fractal/commit/59add5290461e91f3488a42097ea4513a47465c9))
