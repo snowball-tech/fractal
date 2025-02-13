@@ -384,21 +384,21 @@ module.exports = {
         comment: 'Use for marketing and/or product links on body text',
 
         fontFamily: {
-          value: '{typography.body.1-bold.fontFamily.value}',
+          value: '{typography.body.1-median.fontFamily.value}',
         },
         fontSize: {
           group: 'size',
-          value: '{typography.body.1-bold.fontSize.value}',
+          value: '{typography.body.1-median.fontSize.value}',
         },
         fontWeight: {
-          value: '{typography.body.1-bold.fontWeight.value}',
+          value: '{typography.body.1-median.fontWeight.value}',
         },
         letterSpacing: {
-          value: '{typography.body.1-bold.letterSpacing.value}',
+          value: '{typography.body.1-median.letterSpacing.value}',
         },
         lineHeight: {
           group: 'size',
-          value: '{typography.body.1-bold.lineHeight.value}',
+          value: '{typography.body.1-median.lineHeight.value}',
         },
         textDecoration: {
           value: 'underline',
@@ -475,21 +475,21 @@ module.exports = {
         comment: 'Use for marketing and/or product links on low body text',
 
         fontFamily: {
-          value: '{typography.body.2-bold.fontFamily.value}',
+          value: '{typography.body.2-median.fontFamily.value}',
         },
         fontSize: {
           group: 'size',
-          value: '{typography.body.2-bold.fontSize.value}',
+          value: '{typography.body.2-median.fontSize.value}',
         },
         fontWeight: {
-          value: '{typography.body.2-bold.fontWeight.value}',
+          value: '{typography.body.2-median.fontWeight.value}',
         },
         letterSpacing: {
-          value: '{typography.body.2-bold.letterSpacing.value}',
+          value: '{typography.body.2-median.letterSpacing.value}',
         },
         lineHeight: {
           group: 'size',
-          value: '{typography.body.2-bold.lineHeight.value}',
+          value: '{typography.body.2-median.lineHeight.value}',
         },
         textDecoration: {
           value: 'underline',
@@ -570,21 +570,21 @@ module.exports = {
         'Use for marketing and/or product links on labels and/or captions',
 
       fontFamily: {
-        value: '{typography.caption-bold.fontFamily.value}',
+        value: '{typography.caption-median.fontFamily.value}',
       },
       fontSize: {
         group: 'size',
-        value: '{typography.caption-bold.fontSize.value}',
+        value: '{typography.caption-median.fontSize.value}',
       },
       fontWeight: {
-        value: '{typography.caption-bold.fontWeight.value}',
+        value: '{typography.caption-median.fontWeight.value}',
       },
       letterSpacing: {
-        value: '{typography.caption-bold.letterSpacing.value}',
+        value: '{typography.caption-median.letterSpacing.value}',
       },
       lineHeight: {
         group: 'size',
-        value: '{typography.caption-bold.lineHeight.value}',
+        value: '{typography.caption-median.lineHeight.value}',
       },
       textDecoration: {
         value: 'underline',
