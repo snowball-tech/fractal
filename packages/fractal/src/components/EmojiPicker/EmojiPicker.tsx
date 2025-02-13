@@ -81,6 +81,11 @@ export const EmojiPicker = ({
     }
 
     setRootElement(root)
+
+    // Wait for the picker to be loaded and customized before displaying it.
+    setTimeout(() => {
+      pickerRef.current?.classList?.remove('invisible')
+    }, 100)
   }, [pickerRef])
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -458,7 +463,7 @@ export const EmojiPicker = ({
   `
 
   return (
-    <div ref={pickerRef} className="min-w-[400px]">
+    <div ref={pickerRef} className="invisible min-w-[400px]">
       <style>{styles}</style>
 
       <Picker
