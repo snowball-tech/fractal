@@ -366,7 +366,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                   type="search"
                   value={search}
                   onBlur={handleSearchBlur}
-                  onChange={(_, newSearch) => handleSearch(newSearch, true)}
+                  onChange={(_event, newSearch) =>
+                    handleSearch(newSearch, true)
+                  }
                 />
 
                 {isEmpty(prefixes) && (
@@ -437,7 +439,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             }
             type="tel"
             value={number}
-            onChange={(_, newNumber) => handleNumberChange(newNumber)}
+            onChange={(_event, newNumber) => handleNumberChange(newNumber)}
             {...omit(['className'], props)}
           />
         </div>

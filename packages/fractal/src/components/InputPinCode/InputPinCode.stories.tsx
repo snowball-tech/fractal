@@ -101,7 +101,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
 export const Examples = () => {
   const [{ value = '' }, setArgs] = useArgs()
 
-  const handleChange = (_: unknown, newCode: string) => {
+  const handleChange = (_event: unknown, newCode: string) => {
     setArgs({ value: newCode })
   }
 

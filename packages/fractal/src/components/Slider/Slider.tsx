@@ -102,7 +102,7 @@ export const Slider = ({
         />
       </RxSlider.Track>
 
-      {thumbsRange.map((_, index) => (
+      {thumbsRange.map((_item, index) => (
         <RxSlider.Thumb
           key={`thumbs-${index}`}
           aria-label={label}
