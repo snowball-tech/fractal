@@ -5,7 +5,7 @@
     "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
   ],
   "dependencies": {
-    "eslint": "^9.20.1"
+    "eslint": "^9.21.0"
   },
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {
@@ -13,12 +13,12 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/eslint": "^9.6.1",
-    "@types/lodash": "^4.17.15",
+    "@types/lodash": "^4.17.16",
     "lodash": "^4.17.21",
     "style-dictionary": "^3.9.2",
     "tailwindcss": "^3.4.17",
-    "to-esm": "^2.27.4",
-    "typescript": "^5.7.3"
+    "to-esm": "^2.27.6",
+    "typescript": "^5.8.2"
   },
   "engines": {
     "node": ">=18 <=2",
