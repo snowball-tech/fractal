@@ -441,7 +441,8 @@ export const tailwindTheme: Config['theme'] = {
     /* eslint-disable perfectionist/sort-objects */
     'heading-1-xxs': 'var(--typography-heading-1-line-height-xxs)',
     'heading-1-md': 'var(--typography-heading-1-line-height-md)',
-    'heading-2': 'var(--typography-heading-2-line-height)',
+    'heading-2-xxs': 'var(--typography-heading-2-line-height-xxs)',
+    'heading-2-md': 'var(--typography-heading-2-line-height-md)',
     'heading-3': 'var(--typography-heading-3-line-height)',
     'heading-4': 'var(--typography-heading-4-line-height)',
     /* eslint-enable perfectionist/sort-objects */

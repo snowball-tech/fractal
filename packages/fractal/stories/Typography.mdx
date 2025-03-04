@@ -27,12 +27,35 @@ in both `normal` and `italic` styles.
 >
 > ```css
 > .poly-sans-fallback {
->   font-family: 'Segoe UI', 'Tahoma', sans-serif;
+>   font-family: Arial, system-ui, sans-serif;
+>   letter-spacing: 0.2px;
 > }
 > .poly-sans-wide-fallback {
->   font-family: 'Arial Black', sans-serif;
+>   font-family: 'Arial Black', system-ui, sans-serif;
+>   letter-spacing: 0.2px;
 > }
 > ```
+
+For email content, the PolySans fallback "Arial" and "system-ui" are used.
+
+> ##### ℹ️ Info
+>
+> ---
+>
+> When using the "Arial" or "Arial Black" fallback (either for emails or because
+> you don't have access to the PolySans font), you should also use a `0.2px`
+> letter spacing to improve readability.
+
+```css
+.email {
+  font-family: Arial, system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+.email-wide {
+  font-family: 'Arial Black', system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+```
 
 ## Levels
 
@@ -47,7 +70,7 @@ You can use 4 levels of typography in Fractal:
   Levels 3 and 4 are also available in `link` variations
 - **Body** are used for desktop and mobile standard paragraphs and contents.  
   It is subdivided in 2 levels _(regular and low)_.  
-  Each is available in normal, `median`, `bold` and `link` variations.
+  Each is available in "normal", `median`, `bold` and `link` variations.
 - **Caption** are used for desktop and mobile captions and small texts.
   It comes in 3 variations: `median`, `bold` and `link`.
 
@@ -62,7 +85,7 @@ You can use 4 levels of typography in Fractal:
 
 ### Display
 
-**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Weight:** `800`
 
 #### Desktop
@@ -70,7 +93,7 @@ You can use 4 levels of typography in Fractal:
 **Sizes:** `80px` (`display-1`), `72px` (`display-2`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[80, 72]}
   fontWeight={800}
   sampleText="May the force be with you!"
@@ -81,15 +104,25 @@ You can use 4 levels of typography in Fractal:
 **Sizes:** `48px` (`display-1`), `40px` (`display-2`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[48, 40]}
   fontWeight={800}
   sampleText="May the force be with you!"
 />
 
+#### Email and fallback
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[80, 72, 48, 40]}
+  fontWeight={800}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
 ### Display Wide
 
-**Font:** `PolySansWide, "Arial Black", sans-serif`  
+**Font:** `PolySansWide, "Arial Black", system-ui, sans-serif`  
 **Weight:** `800`
 
 #### Desktop
@@ -97,7 +130,7 @@ You can use 4 levels of typography in Fractal:
 **Size:** `56px`
 
 <Typeset
-  fontFamily={`PolySansWide, "Arial Black", sans-serif`}
+  fontFamily={`PolySansWide, "Arial Black", system-ui, sans-serif`}
   fontSizes={[56]}
   fontWeight={800}
   sampleText="May the force be with you!"
@@ -108,15 +141,25 @@ You can use 4 levels of typography in Fractal:
 **Size:** `32px`
 
 <Typeset
-  fontFamily={`PolySansWide, "Arial Black", sans-serif`}
+  fontFamily={`PolySansWide, "Arial Black", system-ui, sans-serif`}
   fontSizes={[32]}
   fontWeight={800}
   sampleText="May the force be with you!"
 />
 
+#### Email and fallback
+
+<Typeset
+  fontFamily={`"Arial Black", system-ui, sans-serif`}
+  fontSizes={[56, 32]}
+  fontWeight={800}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
 ### Heading
 
-**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Weight:** `800` (regular and `-link`)
 
 #### Desktop
@@ -124,7 +167,7 @@ You can use 4 levels of typography in Fractal:
 **Sizes:** `40px` (`heading-1`), `32px` (`heading-2`), `28px` (`heading-3`), `24px` (`heading-4`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[40, 32, 24, 20]}
   fontWeight={800}
   sampleText="May the force be with you!"
@@ -135,42 +178,61 @@ You can use 4 levels of typography in Fractal:
 **Sizes:** `32px` (`heading-1`), `28px` (`heading-2`), `24px` (`heading-3`), `20px` (`heading-4`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[32, 28, 24, 20]}
   fontWeight={800}
   sampleText="May the force be with you!"
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[24, 20]}
   fontWeight={800}
   data-is-link
   sampleText="May the link be with you!"
 />
 
+#### Email and fallback
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[40, 32, 28, 24, 20]}
+  fontWeight={800}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[24, 20]}
+  fontWeight={800}
+  data-is-link
+  data-fallback-letter-spacing
+  sampleText="May the link be with you!"
+/>
+
 ### Body
 
-**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Sizes:** `16px` (`body-1`), `14px` (`body-2`)  
 **Weights:** `400` (regular), `600` (`-median` and `-link`), `800` (`-bold`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[16, 14]}
   fontWeight={400}
   sampleText="May the force be with you!"
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[16, 14]}
   fontWeight={600}
   sampleText="May the force be with you!"
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[16, 14]}
   fontWeight={600}
   data-is-link
@@ -178,27 +240,62 @@ You can use 4 levels of typography in Fractal:
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[16, 14]}
   fontWeight={800}
+  sampleText="May the force be with you!"
+/>
+
+#### Email and fallback
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={400}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={600}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={600}
+  data-is-link
+  data-fallback-letter-spacing
+  sampleText="May the link be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[16, 14]}
+  fontWeight={800}
+  data-fallback-letter-spacing
   sampleText="May the force be with you!"
 />
 
 ### Caption
 
-**Font:** `PolySans, "Segoe UI", "Tahoma", sans-serif`  
+**Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Size:** `12px`  
 **Weights:** `600` (`-median` and `-link`), `800` (`-bold`)
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[12]}
   fontWeight={600}
   sampleText="May the force be with you!"
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[12]}
   fontWeight={600}
   data-is-link
@@ -206,8 +303,35 @@ You can use 4 levels of typography in Fractal:
 />
 
 <Typeset
-  fontFamily={`PolySans, "Segoe UI", "Tahoma", sans-serif`}
+  fontFamily={`PolySans, Arial, system-ui, sans-serif`}
   fontSizes={[12]}
   fontWeight={800}
+  sampleText="May the force be with you!"
+/>
+
+#### Email and fallback
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[12]}
+  fontWeight={600}
+  data-fallback-letter-spacing
+  sampleText="May the force be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[12]}
+  fontWeight={600}
+  data-is-link
+  data-fallback-letter-spacing
+  sampleText="May the link be with you!"
+/>
+
+<Typeset
+  fontFamily={`Arial, system-ui, sans-serif`}
+  fontSizes={[12]}
+  fontWeight={800}
+  data-fallback-letter-spacing
   sampleText="May the force be with you!"
 />

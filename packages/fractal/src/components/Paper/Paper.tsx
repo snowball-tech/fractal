@@ -131,6 +131,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       children,
       element = 'div',
       elevation = DEFAULT_ELEVATION,
+      fullStyle = false,
       inlineStyle = false,
       theme: themeOverride,
       ...props
@@ -154,21 +155,33 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
           !inlineStyle && props.className,
         )}
         element={element || 'div'}
+        fullStyle={fullStyle}
         inlineStyle={inlineStyle}
         style={
           inlineStyle
-            ? {
-                boxSizing: 'border-box',
-                ...elevationStyles[theme][elevation],
-                backgroundColor:
-                  theme === Themes.Light
-                    ? ColorBackgroundBodyWhite
-                    : ColorBackgroundBodyDark,
-                border: Border1,
-                color: theme === Themes.Light ? ColorTextDark : ColorTextLight,
-                padding: SizeSpacing2,
-                ...props.style,
-              }
+            ? fullStyle
+              ? {
+                  boxSizing: 'border-box',
+                  ...elevationStyles[theme][elevation],
+                  backgroundColor:
+                    theme === Themes.Light
+                      ? ColorBackgroundBodyWhite
+                      : ColorBackgroundBodyDark,
+                  border: Border1,
+                  color:
+                    theme === Themes.Light ? ColorTextDark : ColorTextLight,
+                  padding: SizeSpacing2,
+                  ...props.style,
+                }
+              : {
+                  ...elevationStyles[theme][elevation],
+                  backgroundColor:
+                    theme === Themes.Light
+                      ? undefined
+                      : ColorBackgroundBodyDark,
+                  color: theme === Themes.Light ? undefined : ColorTextLight,
+                  ...props.style,
+                }
             : props.style
         }
         {...omit(['className', 'style'], props)}

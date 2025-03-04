@@ -8,26 +8,23 @@ export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
   /** The HTML element to use to display your text. */
   element?: ElementType
   /**
-   * Indicates to inline the styles instead of using Tailwind CSS classes.
+   * Indicates to inline all styles (including resets, font, ...) or only the
+   * needed ones.
+   *
+   * Only used with `inlineStyle` enabled.
+   */
+  fullStyle?: boolean
+  /**
+   * Indicates to inline the styles instead of using any CSS classes.
    *
    * The typical usage for this is when creating HTML for an email.
    */
   inlineStyle?: boolean
   /** The variant of typography (style and size) to use. */
-
-  /**
-   * Indicates to use the special typography sizes for emails.
-   * Only used with `inlineStyle` enabled.
-   *
-   * If you don't pass any value, it will be enabled when `inlineStyle` is true.
-   * If you want to use `inlineStyle` but not the email variant, pass `false`.
-   */
-  emailVariant?: boolean
-
   variant?: `${Variants}`
   /**
    * Force the XS variation of typography.
-   * In particular of headings.
+   * In particular of headings.s
    *
    * This is useful when inlining styles.
    */

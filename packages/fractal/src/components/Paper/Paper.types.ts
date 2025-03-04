@@ -18,6 +18,13 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
    */
   elevation?: `${Elevations}`
   /**
+   * Indicates to inline all styles (including resets, font, ...) or only the
+   * needed ones.
+   *
+   * Only used with `inlineStyle` enabled.
+   */
+  fullStyle?: boolean
+  /**
    * Indicates to inline the styles instead of using Tailwind CSS classes.
    *
    * The typical usage for this is when creating HTML for an email.

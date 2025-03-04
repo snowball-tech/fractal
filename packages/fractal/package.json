@@ -151,7 +151,7 @@
     "prebuild-vercel": "yarn run update-fonts & yarn workspace @snowball-tech/design-tokens run build",
     "predev": "yarn run update-fonts",
     "preyalcpublish": "yarn build",
-    "publish-local": "yalc publish --sig",
+    "publish-local": "yalc publish --sig --push",
     "quality": "yarn run lint & yarn run format & yarn run types-check",
     "quality-fix": "yarn run lint-fix && yarn run format-fix && yarn run types-check",
     "setup": "yarn run -T is-ci || yarn install",

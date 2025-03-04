@@ -26,11 +26,11 @@ module.exports = {
   font: {
     family: {
       normal: {
-        value:
-          '"{asset.font.PolySans.value}", "Segoe UI", "Tahoma", sans-serif',
+        value: '"{asset.font.PolySans.value}", Arial, system-ui, sans-serif',
       },
       wide: {
-        value: '"{asset.font.PolySansWide.value}", "Arial Black", sans-serif',
+        value:
+          '"{asset.font.PolySansWide.value}", "Arial Black", system-ui, sans-serif',
       },
     },
 
@@ -69,12 +69,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 64,
+            value: 78,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 96,
+            value: 130,
           },
         },
       },
@@ -105,12 +105,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 48,
+            value: 65,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 80,
+            value: 117,
           },
         },
       },
@@ -141,12 +141,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 40,
+            value: 52,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 64,
+            value: 91,
           },
         },
       },
@@ -179,12 +179,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 44,
+            value: 52,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 56,
+            value: 65,
           },
         },
       },
@@ -213,8 +213,15 @@ module.exports = {
           value: 0,
         },
         lineHeight: {
-          group: 'size',
-          value: 40,
+          [breakpoints.xxs]: {
+            group: 'size',
+            value: 46,
+          },
+
+          [breakpoints.md]: {
+            group: 'size',
+            value: 52,
+          },
         },
       },
 
@@ -236,7 +243,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 32,
+          value: 39,
         },
       },
 
@@ -283,7 +290,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 24,
+          value: 33,
         },
       },
 
@@ -332,7 +339,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 24,
+          value: 26,
         },
       },
 
@@ -423,7 +430,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 20,
+          value: 23,
         },
       },
 
@@ -517,7 +524,7 @@ module.exports = {
       },
       lineHeight: {
         group: 'size',
-        value: 16,
+        value: 20,
       },
     },
 

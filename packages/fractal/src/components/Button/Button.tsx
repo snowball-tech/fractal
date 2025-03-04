@@ -247,6 +247,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       children,
       disabled = false,
       element,
+      fullStyle = false,
       fullWidth = false,
       href,
       icon,
@@ -320,7 +321,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     const isTextVariant = variant === Variants.Text
 
     const classNames = inlineStyle
-      ? `${PREFIX}-${GROUP_NAME} ${PREFIX}-${GROUP_NAME}--${variant}`
+      ? `${PREFIX}-${GROUP_NAME} ${PREFIX}-${GROUP_NAME}--${variant}${asLink ? ` ${PREFIX}-${GROUP_NAME}__link` : ''}`
       : cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -352,50 +353,85 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         )
 
     const style: CSSProperties | undefined = inlineStyle
-      ? {
-          appearance: 'none',
-          borderRadius: SizeRadiusRounded,
-          boxSizing: 'border-box',
-          display: asLink ? 'inline-block' : undefined,
-          outline: 'none',
-          paddingLeft: 'unset',
-          paddingRight: 'unset',
-          transition: 'color, background-color, border-color 300ms ease-out',
-          ...(asLink && !isTextVariant ? { textDecoration: 'none' } : {}),
-          ...(wrap ? {} : { maxHeight: SizeSpacing6 }),
-          ...(isTextVariant
-            ? { minHeight: SizeSpacing3 }
-            : { minHeight: SizeSpacing6 }),
-          ...(disabled
-            ? {
-                cursor: 'not-allowed',
-                ...variantDisabledStyles[theme][variant],
-              }
-            : { cursor: 'pointer', ...variantStyles[theme][variant] }),
-          ...(iconOnly && hasIcon
-            ? {
-                height: SizeSpacing6,
-                maxHeight: SizeSpacing6,
-                maxWidth: SizeSpacing6,
-                padding: asLink
-                  ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingQuarter})`
-                  : `${SizeSpacingHalf} 0 0 ${SizeSpacingQuarter}`,
-                width: SizeSpacing6,
-              }
-            : fullWidth
-              ? {}
-              : { width: 'fit-content' }),
-          ...(iconOnly && hasIcon && isTextVariant
-            ? {
-                height: SizeSpacing3,
-                maxHeight: SizeSpacing3,
-                maxWidth: SizeSpacing3,
-                width: SizeSpacing3,
-              }
-            : {}),
-          ...(fullWidth ? { maxWidth: '100%', width: '100%' } : {}),
-          ...(asLink && isTextVariant ? { color: ColorTextDark } : {}),
-        }
+      ? fullStyle
+        ? {
+            appearance: 'none',
+            borderRadius: SizeRadiusRounded,
+            boxSizing: 'border-box',
+            display: asLink ? 'inline-block' : undefined,
+            outline: 'none',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+            transition: 'color, background-color, border-color 300ms ease-out',
+            ...(asLink && !isTextVariant ? { textDecoration: 'none' } : {}),
+            ...(wrap ? {} : { maxHeight: SizeSpacing6 }),
+            ...(isTextVariant
+              ? { minHeight: SizeSpacing3 }
+              : { minHeight: SizeSpacing6 }),
+            ...(disabled
+              ? {
+                  cursor: 'not-allowed',
+                  ...variantDisabledStyles[theme][variant],
+                }
+              : { cursor: 'pointer', ...variantStyles[theme][variant] }),
+            ...(iconOnly && hasIcon
+              ? {
+                  height: SizeSpacing6,
+                  maxHeight: SizeSpacing6,
+                  maxWidth: SizeSpacing6,
+                  padding: asLink
+                    ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingQuarter})`
+                    : `${SizeSpacingHalf} 0 0 ${SizeSpacingQuarter}`,
+                  width: SizeSpacing6,
+                }
+              : fullWidth
+                ? {}
+                : { width: 'fit-content' }),
+            ...(iconOnly && hasIcon && isTextVariant
+              ? {
+                  height: SizeSpacing3,
+                  maxHeight: SizeSpacing3,
+                  maxWidth: SizeSpacing3,
+                  width: SizeSpacing3,
+                }
+              : {}),
+            ...(fullWidth ? { maxWidth: '100%', width: '100%' } : {}),
+            ...(asLink && isTextVariant ? { color: ColorTextDark } : {}),
+          }
+        : {
+            ...(wrap ? {} : { maxHeight: SizeSpacing6 }),
+            ...(isTextVariant
+              ? { minHeight: SizeSpacing3 }
+              : { minHeight: SizeSpacing6 }),
+            ...(disabled
+              ? {
+                  cursor: 'not-allowed',
+                  ...variantDisabledStyles[theme][variant],
+                }
+              : { ...variantStyles[theme][variant] }),
+            ...(iconOnly && hasIcon
+              ? {
+                  height: SizeSpacing6,
+                  maxHeight: SizeSpacing6,
+                  maxWidth: SizeSpacing6,
+                  padding: asLink
+                    ? `calc(${SizeSpacing1} + ${SizeSpacingQuarter}) 0 0 calc(${SizeSpacing1} + ${SizeSpacingQuarter})`
+                    : `${SizeSpacingHalf} 0 0 ${SizeSpacingQuarter}`,
+                  width: SizeSpacing6,
+                }
+              : fullWidth
+                ? {}
+                : { width: 'fit-content' }),
+            ...(iconOnly && hasIcon && isTextVariant
+              ? {
+                  height: SizeSpacing3,
+                  maxHeight: SizeSpacing3,
+                  maxWidth: SizeSpacing3,
+                  width: SizeSpacing3,
+                }
+              : {}),
+            ...(fullWidth ? { maxWidth: '100%', width: '100%' } : {}),
+          }
       : undefined
 
     const iconElement = (
@@ -421,19 +457,28 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         )}
         style={
           inlineStyle
-            ? {
-                boxSizing: 'border-box',
-                display: 'inline-block',
-                height: SizeSpacing3,
-                width: SizeSpacing3,
-                ...(isTextVariant ? { marginTop: 0 } : {}),
-                ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
-                  ? { marginRight: SizeSpacing2 }
-                  : {}),
-                ...(iconPosition === 'right' && (!iconOnly || !hasIcon)
-                  ? { marginLeft: SizeSpacing2 }
-                  : {}),
-              }
+            ? fullStyle
+              ? {
+                  boxSizing: 'border-box',
+                  display: 'inline-block',
+                  height: SizeSpacing3,
+                  width: SizeSpacing3,
+                  ...(isTextVariant ? { marginTop: 0 } : {}),
+                  ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
+                    ? { marginRight: SizeSpacing2 }
+                    : {}),
+                  ...(iconPosition === 'right' && (!iconOnly || !hasIcon)
+                    ? { marginLeft: SizeSpacing2 }
+                    : {}),
+                }
+              : {
+                  ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
+                    ? { marginRight: SizeSpacing2 }
+                    : {}),
+                  ...(iconPosition === 'right' && (!iconOnly || !hasIcon)
+                    ? { marginLeft: SizeSpacing2 }
+                    : {}),
+                }
             : undefined
         }
       >
@@ -459,22 +504,27 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         inlineStyle={inlineStyle}
         style={
           inlineStyle
-            ? {
-                boxSizing: 'border-box',
-                marginTop: isTextVariant
-                  ? '0'
-                  : `calc(${SizeSpacingHalf} + ${SizeSpacingQuarter})`,
-                maxHeight: '100%',
-                maxWidth: '100%',
-                overflow: 'hidden',
-                textAlign: 'center',
-                textOverflow: 'ellipsis',
-                verticalAlign: 'middle',
-                whiteSpace: 'nowrap',
-                ...(isTextVariant ? { paddingTop: 0 } : {}),
-                ...(underlined === false ? { textDecoration: 'none' } : {}),
-                ...wrapperStyles,
-              }
+            ? fullStyle
+              ? {
+                  boxSizing: 'border-box',
+                  marginTop: isTextVariant
+                    ? '0'
+                    : `calc(${SizeSpacingHalf} + ${SizeSpacingQuarter})`,
+                  maxHeight: '100%',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  textAlign: 'center',
+                  textOverflow: 'ellipsis',
+                  verticalAlign: 'middle',
+                  whiteSpace: 'nowrap',
+                  ...(isTextVariant ? { paddingTop: 0 } : {}),
+                  ...(underlined === false ? { textDecoration: 'none' } : {}),
+                  ...wrapperStyles,
+                }
+              : {
+                  ...(underlined === false ? { textDecoration: 'none' } : {}),
+                  ...wrapperStyles,
+                }
             : undefined
         }
         variant={isTextVariant ? 'body-1-link' : 'body-1-median'}

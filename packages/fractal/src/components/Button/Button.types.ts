@@ -31,6 +31,13 @@ export interface ButtonProps
    * `button` element.
    */
   element?: ElementType
+  /**
+   * Indicates to inline all styles (including resets, font, ...) or only the
+   * needed ones.
+   *
+   * Only used with `inlineStyle` enabled.
+   */
+  fullStyle?: boolean
   /** Indicates if the button should take all the available width. */
   fullWidth?: boolean
   /** The URL to link to when the button is clicked when `asLink` is used. */

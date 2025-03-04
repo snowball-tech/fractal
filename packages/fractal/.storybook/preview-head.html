@@ -19,7 +19,7 @@
     font-family: var(--typography-heading-2-font-family);
     font-size: var(--typography-heading-2-font-size-xxs);
     font-weight: var(--typography-heading-2-font-weight);
-    line-height: var(--typography-heading-2-line-height);
+    line-height: var(--typography-heading-2-line-height-xxs);
     letter-spacing: var(--typography-heading-2-letter-spacing);
   }
 
@@ -290,5 +290,9 @@
   .docblock-typeset[data-is-link] > div > div:last-of-type {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .docblock-typeset[data-fallback-letter-spacing] > div > div:last-of-type {
+    letter-spacing: 0.2px;
   }
 </style>
