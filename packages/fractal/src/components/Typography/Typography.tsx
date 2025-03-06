@@ -21,6 +21,7 @@ import {
   TypographyBody1MedianLineHeight,
   TypographyBody2BoldFontFamily,
   TypographyBody2BoldFontSize,
+  TypographyBody2BoldFontWeight,
   TypographyBody2BoldLineHeight,
   TypographyBody2FontFamily,
   TypographyBody2FontSize,
@@ -339,6 +340,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
           typographyStyles.fontSize = TypographyBody2BoldFontSize
           typographyStyles.lineHeight = TypographyBody2BoldLineHeight
+          typographyStyles.fontWeight = TypographyBody2BoldFontWeight
           break
         }
 
