@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [14.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@13.0.0...@snowball-tech/fractal@14.0.0) (2025-03-06)
+
+- **typography:** add missing font weight to body-2-bold inline styles ([3e23741](https://github.com/snowball-tech/fractal/commit/3e23741b6a4ae9fdd69f31ed61dc4f027cd3dae6))
+
 # @snowball-tech/fractal [13.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@12.0.1...@snowball-tech/fractal@13.0.0) (2025-03-04)
 
 ### Dependencies
