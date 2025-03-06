@@ -115,4 +115,13 @@ export interface ButtonProps
 
   /** The styles to apply to the wrapper element. */
   wrapperStyles?: CSSProperties
+
+  /**
+   * Disable Sendgrid click tracking.
+   * This will output a `clicktracking="off"` attribute to the `a` element.
+   *
+   * Of course this is only useful for a BUtton component that outputs an
+   * `a` element with an `href` attribute (i.e. a link).
+   */
+  disableClickTracking?: boolean
 }

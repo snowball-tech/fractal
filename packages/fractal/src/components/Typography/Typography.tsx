@@ -138,6 +138,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
   (
     {
       children,
+      disableClickTracking = false,
       element,
       fullStyle = false,
       inlineStyle = false,
@@ -147,6 +148,14 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }: TypographyProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
+    let actualElement = element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
+    if (!isEmpty(props.href) && isEmpty(element)) {
+      actualElement = 'a'
+    }
+    if (element === 'a' && isEmpty(props.href)) {
+      actualElement = DEFAULT_ELEMENT
+    }
+
     let typographyClassNames = ''
     switch (variant) {
       case Variants.Body1Bold: {
@@ -259,21 +268,30 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
       default: {
         typographyClassNames =
-          'tracking-normal text-body-1 font-body-1 font-weight-body-1 leading-body-1'
+          actualElement === 'a'
+            ? 'tracking-normal text-body-1 font-body-1 font-weight-body-1-link leading-body-1 underline'
+            : 'tracking-normal text-body-1 font-body-1 font-weight-body-1 leading-body-1'
         break
       }
     }
 
-    const typographyStyles: CSSProperties = fullStyle
-      ? {
-          letterSpacing: 0,
-        }
-      : {}
+    const typographyStyles: CSSProperties = {
+      letterSpacing: '0.2px',
+      margin: 0,
+    }
 
-    if (inlineStyle && fullStyle) {
+    if (fullStyle) {
+      typographyStyles.boxSizing = 'border-box'
+      typographyStyles.color = ColorTextDark
+    }
+
+    if (inlineStyle) {
       switch (variant) {
         case Variants.Body1Bold: {
-          typographyStyles.fontFamily = TypographyBody1BoldFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody1BoldFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody1BoldFontSize
           typographyStyles.lineHeight = TypographyBody1BoldLineHeight
           typographyStyles.fontWeight = TypographyBody1BoldFontWeight
@@ -281,7 +299,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Body1Link: {
-          typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody1LinkFontSize
           typographyStyles.lineHeight = TypographyBody1LinkLineHeight
           typographyStyles.fontWeight = TypographyBody1LinkFontWeight
@@ -290,7 +311,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Body1Median: {
-          typographyStyles.fontFamily = TypographyBody1MedianFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody1MedianFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody1MedianFontSize
           typographyStyles.lineHeight = TypographyBody1MedianLineHeight
           typographyStyles.fontWeight = TypographyBody1MedianFontWeight
@@ -298,22 +322,31 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Body2: {
-          typographyStyles.fontFamily = TypographyBody2FontFamily
-          typographyStyles.fontWeight = TypographyBody2FontWeight
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody2FontFamily
+            typographyStyles.fontWeight = TypographyBody2FontWeight
+          }
+
           typographyStyles.fontSize = TypographyBody2FontSize
           typographyStyles.lineHeight = TypographyBody2LineHeight
           break
         }
 
         case Variants.Body2Bold: {
-          typographyStyles.fontFamily = TypographyBody2BoldFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody2BoldFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody2BoldFontSize
           typographyStyles.lineHeight = TypographyBody2BoldLineHeight
           break
         }
 
         case Variants.Body2Link: {
-          typographyStyles.fontFamily = TypographyBody2LinkFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody2LinkFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody2LinkFontSize
           typographyStyles.lineHeight = TypographyBody2LinkLineHeight
           typographyStyles.fontWeight = TypographyBody2LinkFontWeight
@@ -322,7 +355,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Body2Median: {
-          typographyStyles.fontFamily = TypographyBody2MedianFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyBody2MedianFontFamily
+          }
+
           typographyStyles.fontSize = TypographyBody2MedianFontSize
           typographyStyles.lineHeight = TypographyBody2MedianLineHeight
           typographyStyles.fontWeight = TypographyBody2MedianFontWeight
@@ -330,7 +366,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.CaptionBold: {
-          typographyStyles.fontFamily = TypographyCaptionBoldFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyCaptionBoldFontFamily
+          }
+
           typographyStyles.fontSize = TypographyCaptionBoldFontSize
           typographyStyles.lineHeight = TypographyCaptionBoldLineHeight
           typographyStyles.fontWeight = TypographyCaptionBoldFontWeight
@@ -338,7 +377,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.CaptionLink: {
-          typographyStyles.fontFamily = TypographyCaptionLinkFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyCaptionLinkFontFamily
+          }
+
           typographyStyles.fontSize = TypographyCaptionLinkFontSize
           typographyStyles.lineHeight = TypographyCaptionLinkLineHeight
           typographyStyles.fontWeight = TypographyCaptionLinkFontWeight
@@ -347,7 +389,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.CaptionMedian: {
-          typographyStyles.fontFamily = TypographyCaptionMedianFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyCaptionMedianFontFamily
+          }
+
           typographyStyles.fontSize = TypographyCaptionMedianFontSize
           typographyStyles.lineHeight = TypographyCaptionMedianLineHeight
           typographyStyles.fontWeight = TypographyCaptionMedianFontWeight
@@ -355,7 +400,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Display1: {
-          typographyStyles.fontFamily = TypographyDisplay1FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyDisplay1FontFamily
+          }
+
           typographyStyles.fontSize = xs
             ? TypographyDisplay1FontSizeXxs
             : TypographyDisplay1FontSizeMd
@@ -367,7 +415,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Display2: {
-          typographyStyles.fontFamily = TypographyDisplay2FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyDisplay2FontFamily
+          }
+
           typographyStyles.fontSize = xs
             ? TypographyDisplay2FontSizeXxs
             : TypographyDisplay2FontSizeMd
@@ -379,7 +430,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.DisplayWide: {
-          typographyStyles.fontFamily = TypographyDisplayWideFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyDisplayWideFontFamily
+          }
+
           typographyStyles.fontSize = xs
             ? TypographyDisplayWideFontSizeXxs
             : TypographyDisplayWideFontSizeMd
@@ -391,7 +445,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading1: {
-          typographyStyles.fontFamily = TypographyHeading1FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading1FontFamily
+          }
+
           typographyStyles.fontSize = xs
             ? TypographyHeading1FontSizeXxs
             : TypographyHeading1FontSizeMd
@@ -403,7 +460,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading2: {
-          typographyStyles.fontFamily = TypographyHeading2FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading2FontFamily
+          }
+
           typographyStyles.fontSize = xs
             ? TypographyHeading2FontSizeXxs
             : TypographyHeading2FontSizeMd
@@ -415,7 +475,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading3: {
-          typographyStyles.fontFamily = TypographyHeading3FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading3FontFamily
+          }
+
           typographyStyles.fontSize = TypographyHeading3FontSize
           typographyStyles.lineHeight = TypographyHeading3LineHeight
           typographyStyles.fontWeight = TypographyHeading3FontWeight
@@ -423,7 +486,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading3Link: {
-          typographyStyles.fontFamily = TypographyHeading3LinkFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading3LinkFontFamily
+          }
+
           typographyStyles.fontSize = TypographyHeading3LinkFontSize
           typographyStyles.lineHeight = TypographyHeading3LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading3LinkFontWeight
@@ -431,7 +497,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading4: {
-          typographyStyles.fontFamily = TypographyHeading4FontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading4FontFamily
+          }
+
           typographyStyles.fontSize = TypographyHeading4FontSize
           typographyStyles.lineHeight = TypographyHeading4LineHeight
           typographyStyles.fontWeight = TypographyHeading4FontWeight
@@ -439,7 +508,10 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         case Variants.Heading4Link: {
-          typographyStyles.fontFamily = TypographyHeading4LinkFontFamily
+          if (fullStyle) {
+            typographyStyles.fontFamily = TypographyHeading4LinkFontFamily
+          }
+
           typographyStyles.fontSize = TypographyHeading4LinkFontSize
           typographyStyles.lineHeight = TypographyHeading4LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading4LinkFontWeight
@@ -447,21 +519,40 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         }
 
         default: {
-          typographyStyles.fontFamily = TypographyBody1FontFamily
-          typographyStyles.fontSize = TypographyBody1FontSize
-          typographyStyles.lineHeight = TypographyBody1LineHeight
-          typographyStyles.fontWeight = TypographyBody1FontWeight
+          if (actualElement === 'a') {
+            if (fullStyle) {
+              typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+            }
+
+            typographyStyles.fontSize = TypographyBody1LinkFontSize
+            typographyStyles.lineHeight = TypographyBody1LinkLineHeight
+            typographyStyles.fontWeight = TypographyBody1LinkFontWeight
+            typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
+          } else {
+            if (fullStyle) {
+              typographyStyles.fontFamily = TypographyBody1FontFamily
+              typographyStyles.fontWeight = TypographyBody1FontWeight
+            }
+
+            typographyStyles.fontSize = TypographyBody1FontSize
+            typographyStyles.lineHeight = TypographyBody1LineHeight
+          }
           break
         }
       }
     }
 
-    let actualElement = element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
-    if (!isEmpty(props.href) && isEmpty(element)) {
-      actualElement = 'a'
-    }
-    if (element === 'a' && isEmpty(props.href)) {
-      actualElement = DEFAULT_ELEMENT
+    const forcedStyles: CSSProperties = {}
+
+    if (actualElement === 'a') {
+      typographyStyles.color = ColorTextDark
+    } else if (MONOSPACED_ELEMENTS.has(actualElement)) {
+      forcedStyles.fontFamily = 'monospace, monospace'
+
+      if (actualElement === 'code') {
+        forcedStyles.color = ColorDecorativePurple50
+        forcedStyles.fontWeight = FontWeightMedian
+      }
     }
 
     return createElement(
@@ -475,31 +566,18 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           !inlineStyle && props.className,
         ),
         style: inlineStyle
-          ? fullStyle
-            ? {
-                // Resets
-                boxSizing: 'border-box',
-                color: ColorTextDark,
-                margin: 0,
-
-                ...typographyStyles,
-                fontFamily: MONOSPACED_ELEMENTS.has(actualElement)
-                  ? 'monospace, monospace'
-                  : typographyStyles.fontFamily,
-                ...(actualElement === 'code'
-                  ? {
-                      color: ColorDecorativePurple50,
-                      fontWeight: FontWeightMedian,
-                    }
-                  : {}),
-
-                ...props.style,
-              }
-            : {
-                ...props.style,
-              }
-          : props.style,
+          ? {
+              ...forcedStyles,
+              ...typographyStyles,
+              ...props.style,
+            }
+          : { ...forcedStyles, ...props.style },
         ...omit(['className', 'style'], props),
+        ...(actualElement === 'a' &&
+        !isEmpty(props.href) &&
+        disableClickTracking
+          ? { clicktracking: 'off' }
+          : {}),
         ref,
       },
       children,

@@ -245,6 +245,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
   (
     {
       children,
+      disableClickTracking = false,
       disabled = false,
       element,
       fullStyle = false,
@@ -603,6 +604,9 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
           title={label}
           onClick={handleClick}
           {...omit(['className', 'id', 'style'], props)}
+          {...(!isEmpty(href) && disableClickTracking
+            ? { clicktracking: 'off' }
+            : {})}
         >
           {content}
         </a>

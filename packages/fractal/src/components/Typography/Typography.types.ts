@@ -29,4 +29,13 @@ export interface TypographyProps extends AllHTMLAttributes<HTMLElement> {
    * This is useful when inlining styles.
    */
   xs?: boolean
+
+  /**
+   * Disable Sendgrid click tracking.
+   * This will output a `clicktracking="off"` attribute to the `a` element.
+   *
+   * Of course this is only useful for a Typography component that outputs an
+   * `a` element with an `href` attribute (i.e. a link).
+   */
+  disableClickTracking?: boolean
 }
