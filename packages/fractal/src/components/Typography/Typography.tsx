@@ -413,6 +413,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
             ? TypographyDisplay1LineHeightXxs
             : TypographyDisplay1LineHeightMd
           typographyStyles.fontWeight = TypographyDisplay1FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -428,6 +429,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
             ? TypographyDisplay2LineHeightXxs
             : TypographyDisplay2LineHeightMd
           typographyStyles.fontWeight = TypographyDisplay2FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -443,6 +445,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
             ? TypographyDisplayWideLineHeightXxs
             : TypographyDisplayWideLineHeightMd
           typographyStyles.fontWeight = TypographyDisplayWideFontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -458,6 +461,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
             ? TypographyHeading1LineHeightXxs
             : TypographyHeading1LineHeightMd
           typographyStyles.fontWeight = TypographyHeading1FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -473,6 +477,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
             ? TypographyHeading2LineHeightXxs
             : TypographyHeading2LineHeightMd
           typographyStyles.fontWeight = TypographyHeading2FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -484,6 +489,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = TypographyHeading3FontSize
           typographyStyles.lineHeight = TypographyHeading3LineHeight
           typographyStyles.fontWeight = TypographyHeading3FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -495,6 +501,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = TypographyHeading3LinkFontSize
           typographyStyles.lineHeight = TypographyHeading3LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading3LinkFontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -506,6 +513,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = TypographyHeading4FontSize
           typographyStyles.lineHeight = TypographyHeading4LineHeight
           typographyStyles.fontWeight = TypographyHeading4FontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
@@ -517,6 +525,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
           typographyStyles.fontSize = TypographyHeading4LinkFontSize
           typographyStyles.lineHeight = TypographyHeading4LinkLineHeight
           typographyStyles.fontWeight = TypographyHeading4LinkFontWeight
+          typographyStyles.letterSpacing = 0
           break
         }
 
