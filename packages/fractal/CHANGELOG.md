@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [15.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@15.0.0...@snowball-tech/fractal@15.0.1) (2025-03-07)
+
+- **typography:** reduce letter spacing for headings ([b7a2775](https://github.com/snowball-tech/fractal/commit/b7a2775d768a7bb856a222e2b49b3a8d47a88ce4))
+
 # @snowball-tech/fractal [15.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@14.0.0...@snowball-tech/fractal@15.0.0) (2025-03-07)
 
 ### Dependencies
