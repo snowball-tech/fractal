@@ -69,12 +69,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 78,
+            value: 67,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 130,
+            value: 112,
           },
         },
       },
@@ -105,12 +105,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 65,
+            value: 56,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 117,
+            value: 101,
           },
         },
       },
@@ -141,12 +141,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 52,
+            value: 45,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 91,
+            value: 78,
           },
         },
       },
@@ -179,12 +179,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 52,
+            value: 45,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 65,
+            value: 56,
           },
         },
       },
@@ -215,12 +215,12 @@ module.exports = {
         lineHeight: {
           [breakpoints.xxs]: {
             group: 'size',
-            value: 46,
+            value: 39,
           },
 
           [breakpoints.md]: {
             group: 'size',
-            value: 52,
+            value: 45,
           },
         },
       },
@@ -243,7 +243,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 39,
+          value: 34,
         },
       },
 
@@ -290,7 +290,7 @@ module.exports = {
         },
         lineHeight: {
           group: 'size',
-          value: 33,
+          value: 28,
         },
       },
 

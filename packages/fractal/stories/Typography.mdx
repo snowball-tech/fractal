@@ -34,9 +34,24 @@ in both `normal` and `italic` styles.
 >   font-family: 'Arial Black', system-ui, sans-serif;
 >   letter-spacing: 0.2px;
 > }
+> .poly-sans-fallback h1,
+> h2,
+> h3,
+> h4,
+> h5,
+> h6,
+> .poly-sans-wide-fallback h1,
+> h2,
+> h3,
+> h4,
+> h5,
+> h6 {
+>   letter-spacing: 0;
+> }
 > ```
 
-For email content, the PolySans fallback "Arial" and "system-ui" are used.
+For email content and if you can't use PolySans, use "Arial" and "system-ui" as
+fallbacks.
 
 > ##### ℹ️ Info
 >
@@ -44,7 +59,7 @@ For email content, the PolySans fallback "Arial" and "system-ui" are used.
 >
 > When using the "Arial" or "Arial Black" fallback (either for emails or because
 > you don't have access to the PolySans font), you should also use a `0.2px`
-> letter spacing to improve readability.
+> letter spacing to improve readability, except for headings.
 
 ```css
 .email {
@@ -54,6 +69,20 @@ For email content, the PolySans fallback "Arial" and "system-ui" are used.
 .email-wide {
   font-family: 'Arial Black', system-ui, sans-serif;
   letter-spacing: 0.2px;
+}
+.email h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.email-wide h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
 }
 ```
 
@@ -86,7 +115,8 @@ You can use 4 levels of typography in Fractal:
 ### Display
 
 **Font:** `PolySans, Arial, system-ui, sans-serif`  
-**Weight:** `800`
+**Weight:** `800`  
+**Line height:** `font-size * 1.4`
 
 #### Desktop
 
@@ -112,18 +142,21 @@ You can use 4 levels of typography in Fractal:
 
 #### Email and fallback
 
+**Font:** `Arial, system-ui, sans-serif`  
+**Letter spacing:** `0px`
+
 <Typeset
   fontFamily={`Arial, system-ui, sans-serif`}
   fontSizes={[80, 72, 48, 40]}
   fontWeight={800}
-  data-fallback-letter-spacing
   sampleText="May the force be with you!"
 />
 
 ### Display Wide
 
 **Font:** `PolySansWide, "Arial Black", system-ui, sans-serif`  
-**Weight:** `800`
+**Weight:** `800`  
+**Line height:** `font-size * 1.4`
 
 #### Desktop
 
@@ -149,18 +182,21 @@ You can use 4 levels of typography in Fractal:
 
 #### Email and fallback
 
+**Font:** `"Arial Black", system-ui, sans-serif`  
+**Letter spacing:** `0px`
+
 <Typeset
   fontFamily={`"Arial Black", system-ui, sans-serif`}
   fontSizes={[56, 32]}
   fontWeight={800}
-  data-fallback-letter-spacing
   sampleText="May the force be with you!"
 />
 
 ### Heading
 
 **Font:** `PolySans, Arial, system-ui, sans-serif`  
-**Weight:** `800` (regular and `-link`)
+**Weight:** `800` (regular and `-link`)  
+**Line height:** `font-size * 1.4`
 
 #### Desktop
 
@@ -194,11 +230,13 @@ You can use 4 levels of typography in Fractal:
 
 #### Email and fallback
 
+**Font:** `Arial, system-ui, sans-serif`  
+**Letter spacing:** `0px`
+
 <Typeset
   fontFamily={`Arial, system-ui, sans-serif`}
   fontSizes={[40, 32, 28, 24, 20]}
   fontWeight={800}
-  data-fallback-letter-spacing
   sampleText="May the force be with you!"
 />
 
@@ -215,7 +253,8 @@ You can use 4 levels of typography in Fractal:
 
 **Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Sizes:** `16px` (`body-1`), `14px` (`body-2`)  
-**Weights:** `400` (regular), `600` (`-median` and `-link`), `800` (`-bold`)
+**Weights:** `400` (regular), `600` (`-median` and `-link`), `800` (`-bold`)  
+**Line height:** `font-size * 1.625`
 
 <Typeset
   fontFamily={`PolySans, Arial, system-ui, sans-serif`}
@@ -247,6 +286,9 @@ You can use 4 levels of typography in Fractal:
 />
 
 #### Email and fallback
+
+**Font:** `Arial, system-ui, sans-serif`  
+**Letter spacing:** `0.2px`
 
 <Typeset
   fontFamily={`Arial, system-ui, sans-serif`}
@@ -285,7 +327,8 @@ You can use 4 levels of typography in Fractal:
 
 **Font:** `PolySans, Arial, system-ui, sans-serif`  
 **Size:** `12px`  
-**Weights:** `600` (`-median` and `-link`), `800` (`-bold`)
+**Weights:** `600` (`-median` and `-link`), `800` (`-bold`)  
+**Line height:** `font-size * 1.625`
 
 <Typeset
   fontFamily={`PolySans, Arial, system-ui, sans-serif`}
@@ -310,6 +353,9 @@ You can use 4 levels of typography in Fractal:
 />
 
 #### Email and fallback
+
+**Font:** `Arial, system-ui, sans-serif`  
+**Letter spacing:** `0.2px`
 
 <Typeset
   fontFamily={`Arial, system-ui, sans-serif`}
