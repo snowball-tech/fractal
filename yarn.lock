@@ -1121,6 +1121,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/config-helpers@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@eslint/config-helpers@npm:0.1.0"
+  checksum: 10/899b4783c2ecd45322b2e3b2f839c8bf687e237769aae65b1a8aa1fd90dbead3a07a37866136894b89d67c9eadece4771074f40804c6d2a864fb60870ce687f6
+  languageName: node
+  linkType: hard
+
 "@eslint/core@npm:^0.10.0":
   version: 0.10.0
   resolution: "@eslint/core@npm:0.10.0"
@@ -1180,10 +1187,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.21.0, @eslint/js@npm:^9.20.0":
-  version: 9.21.0
-  resolution: "@eslint/js@npm:9.21.0"
-  checksum: 10/6c03f96a3e7c5825e780c707edbaa211ca976007a7194794a1e0cfaba76eae8759c9076ac15cab929b57323a117a385e99711395cbb3e58b8af7e5d95097160c
+"@eslint/js@npm:9.22.0, @eslint/js@npm:^9.20.0":
+  version: 9.22.0
+  resolution: "@eslint/js@npm:9.22.0"
+  checksum: 10/2d7725f29ee4a7c85f5b5c499945d60f7701877b41b580d3f7badef43901ac98e4f8f76e4cfaef9ba116966c5f7b67132161e31e02f2eeccb0d09b548f6ea1b2
   languageName: node
   linkType: hard
 
@@ -3214,19 +3221,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-hookz/web@npm:^25.0.1":
-  version: 25.0.1
-  resolution: "@react-hookz/web@npm:25.0.1"
+"@react-hookz/web@npm:^25.1.0":
+  version: 25.1.0
+  resolution: "@react-hookz/web@npm:25.1.0"
   dependencies:
     "@react-hookz/deep-equal": "npm:^3.0.1"
   peerDependencies:
     js-cookie: ^3.0.5
-    react: ^16.8 || ^17 || ^18
-    react-dom: ^16.8 || ^17 || ^18
+    react: ^16.8 || ^17 || ^18 || ^19
+    react-dom: ^16.8 || ^17 || ^18 || ^19
   peerDependenciesMeta:
     js-cookie:
       optional: true
-  checksum: 10/09472fe9ca7c0f19ab671198693245be102fe1581cff8541c92513d4d00e1490e20cb84dd6d5bc94f430f172ea86de45c695c0c258bbc77c3ff3c74589ab8857
+  checksum: 10/939ba033c1268441b97583c53ef978d0befe1a6582cefa0535b668e1076dcc0143620cb9b7bdf3c149f45d2d052eb3ab95809fb2dbf0d24982fede6ed551b0ed
   languageName: node
   linkType: hard
 
@@ -3908,7 +3915,7 @@ __metadata:
     "@tailwindcss/container-queries": "npm:^0.1.1"
     "@types/eslint": "npm:^9.6.1"
     "@types/lodash": "npm:^4.17.16"
-    eslint: "npm:^9.21.0"
+    eslint: "npm:^9.22.0"
     lodash: "npm:^4.17.21"
     style-dictionary: "npm:^3.9.2"
     tailwindcss: "npm:^3.4.17"
@@ -4028,7 +4035,7 @@ __metadata:
     "@radix-ui/react-toggle": "npm:^1.1.2"
     "@radix-ui/react-toggle-group": "npm:^1.1.2"
     "@radix-ui/react-toolbar": "npm:^1.1.2"
-    "@react-hookz/web": "npm:^25.0.1"
+    "@react-hookz/web": "npm:^25.1.0"
     "@snowball-tech/design-tokens": "npm:15.0.0"
     "@snowball-tech/eslint-config": "npm:^5.6.2"
     "@snowball-tech/prettier-config": "npm:^2.1.2"
@@ -4056,7 +4063,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.5.18"
     emoji-mart: "npm:^5.6.0"
-    eslint: "npm:^9.21.0"
+    eslint: "npm:^9.22.0"
     fs-extra: "npm:^11.3.0"
     glob: "npm:^11.0.1"
     libphonenumber-js: "npm:^1.12.5"
@@ -4082,8 +4089,8 @@ __metadata:
     tailwindcss: "npm:^3.4.17"
     tsup: "npm:^8.4.0"
     typescript: "npm:^5.8.2"
-    vercel: "npm:^41.3.1"
-    vite: "npm:^6.2.0"
+    vercel: "npm:^41.4.0"
+    vite: "npm:^6.2.1"
     vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
     react: ^18.2.0
@@ -5313,10 +5320,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:10.3.2":
-  version: 10.3.2
-  resolution: "@vercel/build-utils@npm:10.3.2"
-  checksum: 10/b90b43cefabe72c78e0a7cecddbf298664630b06d32a45f7b38b2049a0f5accc56910fa20c386c14fd7ddde5bb8410d1600fa0ceb7af96d4b1403730f33d3481
+"@vercel/build-utils@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@vercel/build-utils@npm:10.5.0"
+  checksum: 10/9f160e1993210f059ad5749f4610e5a8c10dae769f41e12a65dd762c45b178338d7c95d0bf787ff8d343815107a4cff0c9e45860c8e3bbb755e2bd155ebb2261
   languageName: node
   linkType: hard
 
@@ -5363,16 +5370,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/gatsby-plugin-vercel-builder@npm:2.0.77":
-  version: 2.0.77
-  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.77"
+"@vercel/gatsby-plugin-vercel-builder@npm:2.0.79":
+  version: 2.0.79
+  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.79"
   dependencies:
     "@sinclair/typebox": "npm:0.25.24"
-    "@vercel/build-utils": "npm:10.3.2"
+    "@vercel/build-utils": "npm:10.5.0"
     esbuild: "npm:0.14.47"
     etag: "npm:1.8.1"
     fs-extra: "npm:11.1.0"
-  checksum: 10/16b7cdb24276fbb7a845abb4a6f9459024fcf4f0a27c3676f5614771d5ccdc7ca54095c0364ed61990acbb6608b5300e1b90a74eed22afcfb1bbb02657236d01
+  checksum: 10/6cb36e9c9acde25309b33b7b20f426617ad5d2107d0c55d367720860b1dcb8e90d365a52de5e3f627f18c6ada95b35365a01fb4ebc485a3dae5151a0895d710f
   languageName: node
   linkType: hard
 
@@ -5424,15 +5431,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/node@npm:5.1.11":
-  version: 5.1.11
-  resolution: "@vercel/node@npm:5.1.11"
+"@vercel/node@npm:5.1.13":
+  version: 5.1.13
+  resolution: "@vercel/node@npm:5.1.13"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:10.3.2"
+    "@vercel/build-utils": "npm:10.5.0"
     "@vercel/error-utils": "npm:2.0.3"
     "@vercel/nft": "npm:0.27.10"
     "@vercel/static-config": "npm:3.0.0"
@@ -5449,7 +5456,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/f8bc7b2e58100e72880368146e705f814262b60a6334af879a309504244be07088ca1ef619e8453ce0d615b04fdb9751580f46605af74397bc13d690fa3b9ddd
+  checksum: 10/91d22c703d66ed9b859903117cb3104cbd560a62f0090dacd30ae20d607f2cf8784b3e5e8f58226f3f650160dff1d3cb5a746946b7d50e239e4311e22f5d1b81
   languageName: node
   linkType: hard
 
@@ -5493,15 +5500,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/static-build@npm:2.7.3":
-  version: 2.7.3
-  resolution: "@vercel/static-build@npm:2.7.3"
+"@vercel/static-build@npm:2.7.5":
+  version: 2.7.5
+  resolution: "@vercel/static-build@npm:2.7.5"
   dependencies:
     "@vercel/gatsby-plugin-vercel-analytics": "npm:1.0.11"
-    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.77"
+    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.79"
     "@vercel/static-config": "npm:3.0.0"
     ts-morph: "npm:12.0.0"
-  checksum: 10/0de82c3f7122dde83fc6b3bf5b7eb46d4bc8a35b9808c4e3ffbf6ca8f22fd00a9019d4a0b3671af59905f5c2d36ca419b913c4db79686110f00e9b4e7134bcd3
+  checksum: 10/d93b216aa90653b8cd41dd669629150354fcf706bdd6e1ad03e5d4af31843d37fcf35cc39d1f4a307a908e6c43e0e9418034b72d4fd63b14ade60cdf26549d7b
   languageName: node
   linkType: hard
 
@@ -9583,13 +9590,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^8.2.0":
-  version: 8.2.0
-  resolution: "eslint-scope@npm:8.2.0"
+"eslint-scope@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "eslint-scope@npm:8.3.0"
   dependencies:
     esrecurse: "npm:^4.3.0"
     estraverse: "npm:^5.2.0"
-  checksum: 10/cd9ab60d5a68f3a0fcac04d1cff5a7383d0f331964d5f1c446259123caec5b3ccc542284d07846e4f4d1389da77750821cc9a6e1ce18558c674977351666f9a6
+  checksum: 10/ee1ff009e949423639a8b53453c0cb189967d9142c5d94dc3752bed9880140a0760007148ac6b0bd03557d70ede9cd7c3b1e66f9a7f3427b2dbeca2a5be22c91
   languageName: node
   linkType: hard
 
@@ -9662,16 +9669,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.20.1, eslint@npm:^9.21.0":
-  version: 9.21.0
-  resolution: "eslint@npm:9.21.0"
+"eslint@npm:^9.20.1, eslint@npm:^9.22.0":
+  version: 9.22.0
+  resolution: "eslint@npm:9.22.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.12.1"
     "@eslint/config-array": "npm:^0.19.2"
+    "@eslint/config-helpers": "npm:^0.1.0"
     "@eslint/core": "npm:^0.12.0"
     "@eslint/eslintrc": "npm:^3.3.0"
-    "@eslint/js": "npm:9.21.0"
+    "@eslint/js": "npm:9.22.0"
     "@eslint/plugin-kit": "npm:^0.2.7"
     "@humanfs/node": "npm:^0.16.6"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
@@ -9683,7 +9691,7 @@ __metadata:
     cross-spawn: "npm:^7.0.6"
     debug: "npm:^4.3.2"
     escape-string-regexp: "npm:^4.0.0"
-    eslint-scope: "npm:^8.2.0"
+    eslint-scope: "npm:^8.3.0"
     eslint-visitor-keys: "npm:^4.2.0"
     espree: "npm:^10.3.0"
     esquery: "npm:^1.5.0"
@@ -9707,7 +9715,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10/8bd8f1d26e5ddf289888f837d9eacdd841b2ae1cf4ab221f676f139b1a66367ff07d5cb2be29d2ae7c2c65c06fdf5ca9e460e4d0ee10c07bc02503706c038005
+  checksum: 10/0a21a46fb4a4d83840d60d7a3689bc1b2f6b3594a92d8fcb08b8d8f8d14be1098fa71d41b3863590af5a74fee847afa0a98d002dbbbe867cdb3b3eced3d7765e
   languageName: node
   linkType: hard
 
@@ -10271,7 +10279,7 @@ __metadata:
     "@yarnpkg/types": "npm:^4.0.1"
     chromatic: "npm:^11.27.0"
     depcheck: "npm:^1.4.7"
-    eslint: "npm:^9.21.0"
+    eslint: "npm:^9.22.0"
     husky: "npm:^9.1.7"
     is-ci: "npm:^4.1.0"
     lint-staged: "npm:^15.4.3"
@@ -20138,27 +20146,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^41.3.1":
-  version: 41.3.1
-  resolution: "vercel@npm:41.3.1"
+"vercel@npm:^41.4.0":
+  version: 41.4.0
+  resolution: "vercel@npm:41.4.0"
   dependencies:
-    "@vercel/build-utils": "npm:10.3.2"
+    "@vercel/build-utils": "npm:10.5.0"
     "@vercel/fun": "npm:1.1.5"
     "@vercel/go": "npm:3.2.1"
     "@vercel/hydrogen": "npm:1.2.0"
     "@vercel/next": "npm:4.7.3"
-    "@vercel/node": "npm:5.1.11"
+    "@vercel/node": "npm:5.1.13"
     "@vercel/python": "npm:4.7.1"
     "@vercel/redwood": "npm:2.3.0"
     "@vercel/remix-builder": "npm:5.4.2"
     "@vercel/ruby": "npm:2.2.0"
-    "@vercel/static-build": "npm:2.7.3"
+    "@vercel/static-build": "npm:2.7.5"
     chokidar: "npm:4.0.0"
     jose: "npm:5.9.6"
   bin:
     vc: dist/vc.js
     vercel: dist/vc.js
-  checksum: 10/d73139b60818f4fa1dd5c3309a377b843ec01685b16a3f9a6615376b40fcd19bf720eb78174b64fe979106342069d75bd8e9da778f8740286d0c5620ac05b496
+  checksum: 10/a49995649f2d3abfff0ed82a6d892d45b4a7f1d36ad52b863a59d7e5c7c4a1813ef35681b4c7630f21d4025cdd2207ab7a6272c5bce89de1d30e05da277d7d34
   languageName: node
   linkType: hard
 
@@ -20234,9 +20242,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "vite@npm:6.2.0"
+"vite@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "vite@npm:6.2.1"
   dependencies:
     esbuild: "npm:^0.25.0"
     fsevents: "npm:~2.3.3"
@@ -20282,7 +20290,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/5ffa8bb22881276d12cc38d15feaf7df6c95f902ac6c4cd983f27af1cdb6929cf9e3ef9d6dfe74e8af27f1c1adf4cdfeeeed7fada8a53011575241bdaf0ca6e5
+  checksum: 10/a37cbc33a3d9746434e8e96614dd6d8d45d821e61e9d266f389808da290b3128ac93ba0059ab09a098cdeab8b790d6d3ae7cdd5e1ce7d55c31b8bece650b3790
   languageName: node
   linkType: hard
 

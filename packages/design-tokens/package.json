@@ -5,7 +5,7 @@
     "Clément PRÉVOT <clement@snowball.xyz> (https://github.com/clementprevot)"
   ],
   "dependencies": {
-    "eslint": "^9.21.0"
+    "eslint": "^9.22.0"
   },
   "description": "Single source of truth repository for Fractal (Snowball's design system) design tokens",
   "devDependencies": {

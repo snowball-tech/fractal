@@ -78,7 +78,7 @@
     "@snowball-tech/semantic-release-config": "^3.0.4",
     "chromatic": "^11.27.0",
     "depcheck": "^1.4.7",
-    "eslint": "^9.21.0",
+    "eslint": "^9.22.0",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^15.4.3",
