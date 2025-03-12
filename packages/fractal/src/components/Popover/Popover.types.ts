@@ -105,12 +105,9 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
    *    option;
    *  - a number: the width of the popover will be the number of pixels
    *    provided.
-   *  - '*<number>': the width of the popover will be the provided fraction of
-   *    the width of the trigger. For example '*0.5' will make the popover
-   *    width half the width of the trigger.
-   *  - '*number' (a number prefixed with the '*' character): the width of
+   *  - '\*<number>' (a number prefixed with the '\*' character): the width of
    *    the popover will be the provided fraction of the width of the trigger.
-   *    For example '*0.5' will make the popover width half the width of the
+   *    For example '\*0.5' will make the popover width half the width of the
    *    trigger.
    */
   width?: number | string | 'auto' | 'fit' | 'full' | 'trigger'
