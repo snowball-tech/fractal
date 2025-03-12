@@ -26,11 +26,20 @@ module.exports = {
   font: {
     family: {
       normal: {
-        value: '"{asset.font.PolySans.value}", Arial, system-ui, sans-serif',
+        value: '"{asset.font.PolySans.value}", system-ui, Arial, sans-serif',
       },
       wide: {
         value:
           '"{asset.font.PolySansWide.value}", "Arial Black", system-ui, sans-serif',
+      },
+
+      email: {
+        normal: {
+          value: 'system-ui, Arial, sans-serif',
+        },
+        wide: {
+          value: '"Arial Black", system-ui, sans-serif',
+        },
       },
     },
 
@@ -38,6 +47,12 @@ module.exports = {
       bold: { value: 800 },
       median: { value: 600 },
       standard: { value: 400 },
+    },
+
+    letterSpacing: {
+      // You might set this to 0.2px if you use Arial instead of system-ui.
+      email: { value: 0 },
+      normal: { value: 0 },
     },
   },
 
@@ -64,7 +79,7 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           [breakpoints.xxs]: {
@@ -75,6 +90,41 @@ module.exports = {
           [breakpoints.md]: {
             group: 'size',
             value: 112,
+          },
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.1.fontSize.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.1.fontSize.${breakpoints.md}.value}`,
+            },
+          },
+          fontWeight: {
+            value: '{typography.display.1.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.1.lineHeight.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.1.lineHeight.${breakpoints.md}.value}`,
+            },
           },
         },
       },
@@ -100,7 +150,7 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           [breakpoints.xxs]: {
@@ -111,6 +161,41 @@ module.exports = {
           [breakpoints.md]: {
             group: 'size',
             value: 101,
+          },
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.2.fontSize.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.2.fontSize.${breakpoints.md}.value}`,
+            },
+          },
+          fontWeight: {
+            value: '{typography.display.2.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.2.lineHeight.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.2.lineHeight.${breakpoints.md}.value}`,
+            },
           },
         },
       },
@@ -136,7 +221,7 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           [breakpoints.xxs]: {
@@ -147,6 +232,41 @@ module.exports = {
           [breakpoints.md]: {
             group: 'size',
             value: 78,
+          },
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.wide.value}',
+          },
+          fontSize: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.wide.fontSize.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.wide.fontSize.${breakpoints.md}.value}`,
+            },
+          },
+          fontWeight: {
+            value: '{typography.display.wide.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.display.wide.lineHeight.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.display.wide.lineHeight.${breakpoints.md}.value}`,
+            },
           },
         },
       },
@@ -174,7 +294,7 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           [breakpoints.xxs]: {
@@ -185,6 +305,41 @@ module.exports = {
           [breakpoints.md]: {
             group: 'size',
             value: 56,
+          },
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.heading.1.fontSize.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.heading.1.fontSize.${breakpoints.md}.value}`,
+            },
+          },
+          fontWeight: {
+            value: '{typography.heading.1.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.heading.1.lineHeight.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.heading.1.lineHeight.${breakpoints.md}.value}`,
+            },
           },
         },
       },
@@ -210,7 +365,7 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           [breakpoints.xxs]: {
@@ -221,6 +376,41 @@ module.exports = {
           [breakpoints.md]: {
             group: 'size',
             value: 45,
+          },
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.heading.2.fontSize.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.heading.2.fontSize.${breakpoints.md}.value}`,
+            },
+          },
+          fontWeight: {
+            value: '{typography.heading.2.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            [breakpoints.xxs]: {
+              group: 'size',
+              value: `{typography.heading.2.lineHeight.${breakpoints.xxs}.value}`,
+            },
+
+            [breakpoints.md]: {
+              group: 'size',
+              value: `{typography.heading.2.lineHeight.${breakpoints.md}.value}`,
+            },
           },
         },
       },
@@ -239,11 +429,30 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           group: 'size',
           value: 34,
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            value: '{typography.heading.3.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.heading.3.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            value: '{typography.heading.3.lineHeight.value}',
+          },
         },
       },
 
@@ -270,6 +479,25 @@ module.exports = {
         textDecoration: {
           value: 'underline',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.heading.3.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.heading.3-link.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.heading.3-link.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            value: '{typography.heading.3-link.lineHeight.value}',
+          },
+        },
       },
 
       4: {
@@ -286,11 +514,30 @@ module.exports = {
           value: '{font.weight.bold.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           group: 'size',
           value: 28,
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            value: '{typography.heading.4.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.heading.4.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            value: '{typography.heading.4.lineHeight.value}',
+          },
         },
       },
 
@@ -317,6 +564,25 @@ module.exports = {
         textDecoration: {
           value: 'underline',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.heading.4.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.heading.4-link.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.heading.4-link.fontWeight.value}',
+          },
+          letterSpacing: {
+            // This is not a typo, all titles should have "0" letter spacing.
+            value: '{font.letterSpacing.normal.value}',
+          },
+          lineHeight: {
+            value: '{typography.heading.4-link.lineHeight.value}',
+          },
+        },
       },
     },
 
@@ -335,11 +601,29 @@ module.exports = {
           value: '{font.weight.standard.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           group: 'size',
           value: 26,
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            value: '{typography.body.1.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.1.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{font.letterSpacing.email.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.1.lineHeight.value}',
+          },
         },
       },
 
@@ -363,6 +647,24 @@ module.exports = {
           group: 'size',
           value: '{typography.body.1.lineHeight.value}',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.1.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.1-median.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.1-median.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.1.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.1-median.lineHeight.value}',
+          },
+        },
       },
 
       '1-bold': {
@@ -384,6 +686,24 @@ module.exports = {
         lineHeight: {
           group: 'size',
           value: '{typography.body.1.lineHeight.value}',
+        },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.1.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.1-bold.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.1-bold.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.1.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.1-bold.lineHeight.value}',
+          },
         },
       },
 
@@ -410,6 +730,27 @@ module.exports = {
         textDecoration: {
           value: 'underline',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.1-median.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.1-link.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.1-link.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.1-median.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.1-link.lineHeight.value}',
+          },
+          textDecoration: {
+            value: '{typography.body.1-link.textDecoration.value}',
+          },
+        },
       },
 
       2: {
@@ -426,11 +767,29 @@ module.exports = {
           value: '{font.weight.standard.value}',
         },
         letterSpacing: {
-          value: 0,
+          value: '{font.letterSpacing.normal.value}',
         },
         lineHeight: {
           group: 'size',
           value: 23,
+        },
+
+        email: {
+          fontFamily: {
+            value: '{font.family.email.normal.value}',
+          },
+          fontSize: {
+            value: '{typography.body.2.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.2.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{font.letterSpacing.email.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.2.lineHeight.value}',
+          },
         },
       },
 
@@ -454,6 +813,24 @@ module.exports = {
           group: 'size',
           value: '{typography.body.2.lineHeight.value}',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.2.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.2-median.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.2-median.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.2.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.2-median.lineHeight.value}',
+          },
+        },
       },
 
       '2-bold': {
@@ -475,6 +852,24 @@ module.exports = {
         lineHeight: {
           group: 'size',
           value: '{typography.body.2.lineHeight.value}',
+        },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.2.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.2-bold.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.2-bold.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.2.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.2-bold.lineHeight.value}',
+          },
         },
       },
 
@@ -501,6 +896,27 @@ module.exports = {
         textDecoration: {
           value: 'underline',
         },
+
+        email: {
+          fontFamily: {
+            value: '{typography.body.2-median.email.fontFamily.value}',
+          },
+          fontSize: {
+            value: '{typography.body.2-link.fontSize.value}',
+          },
+          fontWeight: {
+            value: '{typography.body.2-link.fontWeight.value}',
+          },
+          letterSpacing: {
+            value: '{typography.body.2-median.email.letterSpacing.value}',
+          },
+          lineHeight: {
+            value: '{typography.body.2-link.lineHeight.value}',
+          },
+          textDecoration: {
+            value: '{typography.body.2-link.textDecoration.value}',
+          },
+        },
       },
     },
 
@@ -526,6 +942,24 @@ module.exports = {
         group: 'size',
         value: 20,
       },
+
+      email: {
+        fontFamily: {
+          value: '{font.family.email.normal.value}',
+        },
+        fontSize: {
+          value: '{typography.caption.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.caption.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{font.letterSpacing.email.value}',
+        },
+        lineHeight: {
+          value: '{typography.caption.lineHeight.value}',
+        },
+      },
     },
 
     'caption-median': {
@@ -548,6 +982,24 @@ module.exports = {
         group: 'size',
         value: '{typography.caption.lineHeight.value}',
       },
+
+      email: {
+        fontFamily: {
+          value: '{typography.caption.email.fontFamily.value}',
+        },
+        fontSize: {
+          value: '{typography.caption-median.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.caption-median.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.caption.email.letterSpacing.value}',
+        },
+        lineHeight: {
+          value: '{typography.caption-median.lineHeight.value}',
+        },
+      },
     },
 
     'caption-bold': {
@@ -569,6 +1021,24 @@ module.exports = {
       lineHeight: {
         group: 'size',
         value: '{typography.caption.lineHeight.value}',
+      },
+
+      email: {
+        fontFamily: {
+          value: '{typography.caption.email.fontFamily.value}',
+        },
+        fontSize: {
+          value: '{typography.caption-bold.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.caption-bold.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.caption.email.letterSpacing.value}',
+        },
+        lineHeight: {
+          value: '{typography.caption-bold.lineHeight.value}',
+        },
       },
     },
 
@@ -595,6 +1065,27 @@ module.exports = {
       },
       textDecoration: {
         value: 'underline',
+      },
+
+      email: {
+        fontFamily: {
+          value: '{typography.caption-median.email.fontFamily.value}',
+        },
+        fontSize: {
+          value: '{typography.caption-link.fontSize.value}',
+        },
+        fontWeight: {
+          value: '{typography.caption-link.fontWeight.value}',
+        },
+        letterSpacing: {
+          value: '{typography.caption-median.email.letterSpacing.value}',
+        },
+        lineHeight: {
+          value: '{typography.caption-link.lineHeight.value}',
+        },
+        textDecoration: {
+          value: '{typography.caption-link.textDecoration.value}',
+        },
       },
     },
   },

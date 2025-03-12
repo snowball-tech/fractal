@@ -2,99 +2,119 @@ import {
   ColorDecorativePurple50,
   ColorTextDark,
   FontWeightMedian,
-  TypographyBody1BoldFontFamily,
-  TypographyBody1BoldFontSize,
-  TypographyBody1BoldFontWeight,
-  TypographyBody1BoldLineHeight,
-  TypographyBody1FontFamily,
-  TypographyBody1FontSize,
-  TypographyBody1FontWeight,
-  TypographyBody1LineHeight,
-  TypographyBody1LinkFontFamily,
-  TypographyBody1LinkFontSize,
-  TypographyBody1LinkFontWeight,
-  TypographyBody1LinkLineHeight,
-  TypographyBody1LinkTextDecoration,
-  TypographyBody1MedianFontFamily,
-  TypographyBody1MedianFontSize,
-  TypographyBody1MedianFontWeight,
-  TypographyBody1MedianLineHeight,
-  TypographyBody2BoldFontFamily,
-  TypographyBody2BoldFontSize,
-  TypographyBody2BoldFontWeight,
-  TypographyBody2BoldLineHeight,
-  TypographyBody2FontFamily,
-  TypographyBody2FontSize,
-  TypographyBody2FontWeight,
-  TypographyBody2LineHeight,
-  TypographyBody2LinkFontFamily,
-  TypographyBody2LinkFontSize,
-  TypographyBody2LinkFontWeight,
-  TypographyBody2LinkLineHeight,
-  TypographyBody2LinkTextDecoration,
-  TypographyBody2MedianFontFamily,
-  TypographyBody2MedianFontSize,
-  TypographyBody2MedianFontWeight,
-  TypographyBody2MedianLineHeight,
-  TypographyCaptionBoldFontFamily,
-  TypographyCaptionBoldFontSize,
-  TypographyCaptionBoldFontWeight,
-  TypographyCaptionBoldLineHeight,
-  TypographyCaptionLinkFontFamily,
-  TypographyCaptionLinkFontSize,
-  TypographyCaptionLinkFontWeight,
-  TypographyCaptionLinkLineHeight,
-  TypographyCaptionLinkTextDecoration,
-  TypographyCaptionMedianFontFamily,
-  TypographyCaptionMedianFontSize,
-  TypographyCaptionMedianFontWeight,
-  TypographyCaptionMedianLineHeight,
-  TypographyDisplay1FontFamily,
-  TypographyDisplay1FontSizeMd,
-  TypographyDisplay1FontSizeXxs,
-  TypographyDisplay1FontWeight,
-  TypographyDisplay1LineHeightMd,
-  TypographyDisplay1LineHeightXxs,
-  TypographyDisplay2FontFamily,
-  TypographyDisplay2FontSizeMd,
-  TypographyDisplay2FontSizeXxs,
-  TypographyDisplay2FontWeight,
-  TypographyDisplay2LineHeightMd,
-  TypographyDisplay2LineHeightXxs,
-  TypographyDisplayWideFontFamily,
-  TypographyDisplayWideFontSizeMd,
-  TypographyDisplayWideFontSizeXxs,
-  TypographyDisplayWideFontWeight,
-  TypographyDisplayWideLineHeightMd,
-  TypographyDisplayWideLineHeightXxs,
-  TypographyHeading1FontFamily,
-  TypographyHeading1FontSizeMd,
-  TypographyHeading1FontSizeXxs,
-  TypographyHeading1FontWeight,
-  TypographyHeading1LineHeightMd,
-  TypographyHeading1LineHeightXxs,
-  TypographyHeading2FontFamily,
-  TypographyHeading2FontSizeMd,
-  TypographyHeading2FontSizeXxs,
-  TypographyHeading2FontWeight,
-  TypographyHeading2LineHeightMd,
-  TypographyHeading2LineHeightXxs,
-  TypographyHeading3FontFamily,
-  TypographyHeading3FontSize,
-  TypographyHeading3FontWeight,
-  TypographyHeading3LineHeight,
-  TypographyHeading3LinkFontFamily,
-  TypographyHeading3LinkFontSize,
-  TypographyHeading3LinkFontWeight,
-  TypographyHeading3LinkLineHeight,
-  TypographyHeading4FontFamily,
-  TypographyHeading4FontSize,
-  TypographyHeading4FontWeight,
-  TypographyHeading4LineHeight,
-  TypographyHeading4LinkFontFamily,
-  TypographyHeading4LinkFontSize,
-  TypographyHeading4LinkFontWeight,
-  TypographyHeading4LinkLineHeight,
+  TypographyBody1BoldEmailFontFamily,
+  TypographyBody1BoldEmailFontSize,
+  TypographyBody1BoldEmailFontWeight,
+  TypographyBody1BoldEmailLetterSpacing,
+  TypographyBody1BoldEmailLineHeight,
+  TypographyBody1EmailFontFamily,
+  TypographyBody1EmailFontSize,
+  TypographyBody1EmailFontWeight,
+  TypographyBody1EmailLetterSpacing,
+  TypographyBody1EmailLineHeight,
+  TypographyBody1LinkEmailFontFamily,
+  TypographyBody1LinkEmailFontSize,
+  TypographyBody1LinkEmailFontWeight,
+  TypographyBody1LinkEmailLetterSpacing,
+  TypographyBody1LinkEmailLineHeight,
+  TypographyBody1LinkEmailTextDecoration,
+  TypographyBody1MedianEmailFontFamily,
+  TypographyBody1MedianEmailFontSize,
+  TypographyBody1MedianEmailFontWeight,
+  TypographyBody1MedianEmailLetterSpacing,
+  TypographyBody1MedianEmailLineHeight,
+  TypographyBody2BoldEmailFontFamily,
+  TypographyBody2BoldEmailFontSize,
+  TypographyBody2BoldEmailFontWeight,
+  TypographyBody2BoldEmailLetterSpacing,
+  TypographyBody2BoldEmailLineHeight,
+  TypographyBody2EmailFontFamily,
+  TypographyBody2EmailFontSize,
+  TypographyBody2EmailFontWeight,
+  TypographyBody2EmailLetterSpacing,
+  TypographyBody2EmailLineHeight,
+  TypographyBody2LinkEmailFontFamily,
+  TypographyBody2LinkEmailFontSize,
+  TypographyBody2LinkEmailFontWeight,
+  TypographyBody2LinkEmailLetterSpacing,
+  TypographyBody2LinkEmailLineHeight,
+  TypographyBody2LinkEmailTextDecoration,
+  TypographyBody2MedianEmailFontFamily,
+  TypographyBody2MedianEmailFontSize,
+  TypographyBody2MedianEmailFontWeight,
+  TypographyBody2MedianEmailLetterSpacing,
+  TypographyBody2MedianEmailLineHeight,
+  TypographyCaptionBoldEmailFontFamily,
+  TypographyCaptionBoldEmailFontSize,
+  TypographyCaptionBoldEmailFontWeight,
+  TypographyCaptionBoldEmailLetterSpacing,
+  TypographyCaptionBoldEmailLineHeight,
+  TypographyCaptionLinkEmailFontFamily,
+  TypographyCaptionLinkEmailFontSize,
+  TypographyCaptionLinkEmailFontWeight,
+  TypographyCaptionLinkEmailLetterSpacing,
+  TypographyCaptionLinkEmailLineHeight,
+  TypographyCaptionLinkEmailTextDecoration,
+  TypographyCaptionMedianEmailFontFamily,
+  TypographyCaptionMedianEmailFontSize,
+  TypographyCaptionMedianEmailFontWeight,
+  TypographyCaptionMedianEmailLetterSpacing,
+  TypographyCaptionMedianEmailLineHeight,
+  TypographyDisplay1EmailFontFamily,
+  TypographyDisplay1EmailFontSizeMd,
+  TypographyDisplay1EmailFontSizeXxs,
+  TypographyDisplay1EmailFontWeight,
+  TypographyDisplay1EmailLetterSpacing,
+  TypographyDisplay1EmailLineHeightMd,
+  TypographyDisplay1EmailLineHeightXxs,
+  TypographyDisplay2EmailFontFamily,
+  TypographyDisplay2EmailFontSizeMd,
+  TypographyDisplay2EmailFontSizeXxs,
+  TypographyDisplay2EmailFontWeight,
+  TypographyDisplay2EmailLetterSpacing,
+  TypographyDisplay2EmailLineHeightMd,
+  TypographyDisplay2EmailLineHeightXxs,
+  TypographyDisplayWideEmailFontFamily,
+  TypographyDisplayWideEmailFontSizeMd,
+  TypographyDisplayWideEmailFontSizeXxs,
+  TypographyDisplayWideEmailFontWeight,
+  TypographyDisplayWideEmailLetterSpacing,
+  TypographyDisplayWideEmailLineHeightMd,
+  TypographyDisplayWideEmailLineHeightXxs,
+  TypographyHeading1EmailFontFamily,
+  TypographyHeading1EmailFontSizeMd,
+  TypographyHeading1EmailFontSizeXxs,
+  TypographyHeading1EmailFontWeight,
+  TypographyHeading1EmailLetterSpacing,
+  TypographyHeading1EmailLineHeightMd,
+  TypographyHeading1EmailLineHeightXxs,
+  TypographyHeading2EmailFontFamily,
+  TypographyHeading2EmailFontSizeMd,
+  TypographyHeading2EmailFontSizeXxs,
+  TypographyHeading2EmailFontWeight,
+  TypographyHeading2EmailLetterSpacing,
+  TypographyHeading2EmailLineHeightMd,
+  TypographyHeading2EmailLineHeightXxs,
+  TypographyHeading3EmailFontFamily,
+  TypographyHeading3EmailFontSize,
+  TypographyHeading3EmailFontWeight,
+  TypographyHeading3EmailLetterSpacing,
+  TypographyHeading3EmailLineHeight,
+  TypographyHeading3LinkEmailFontFamily,
+  TypographyHeading3LinkEmailFontSize,
+  TypographyHeading3LinkEmailFontWeight,
+  TypographyHeading3LinkEmailLetterSpacing,
+  TypographyHeading3LinkEmailLineHeight,
+  TypographyHeading4EmailFontFamily,
+  TypographyHeading4EmailFontSize,
+  TypographyHeading4EmailFontWeight,
+  TypographyHeading4EmailLetterSpacing,
+  TypographyHeading4EmailLineHeight,
+  TypographyHeading4LinkEmailFontFamily,
+  TypographyHeading4LinkEmailFontSize,
+  TypographyHeading4LinkEmailFontWeight,
+  TypographyHeading4LinkEmailLetterSpacing,
+  TypographyHeading4LinkEmailLineHeight,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 
 import {
@@ -277,7 +297,6 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }
 
     const typographyStyles: CSSProperties = {
-      letterSpacing: '0.2px',
       margin: 0,
     }
 
@@ -290,263 +309,288 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       switch (variant) {
         case Variants.Body1Bold: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody1BoldFontFamily
+            typographyStyles.fontFamily = TypographyBody1BoldEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody1BoldFontSize
-          typographyStyles.lineHeight = TypographyBody1BoldLineHeight
-          typographyStyles.fontWeight = TypographyBody1BoldFontWeight
+          typographyStyles.fontSize = TypographyBody1BoldEmailFontSize
+          typographyStyles.lineHeight = TypographyBody1BoldEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody1BoldEmailFontWeight
+          typographyStyles.letterSpacing = TypographyBody1BoldEmailLetterSpacing
           break
         }
 
         case Variants.Body1Link: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+            typographyStyles.fontFamily = TypographyBody1LinkEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody1LinkFontSize
-          typographyStyles.lineHeight = TypographyBody1LinkLineHeight
-          typographyStyles.fontWeight = TypographyBody1LinkFontWeight
-          typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
+          typographyStyles.fontSize = TypographyBody1LinkEmailFontSize
+          typographyStyles.lineHeight = TypographyBody1LinkEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody1LinkEmailFontWeight
+          typographyStyles.letterSpacing = TypographyBody1LinkEmailLetterSpacing
+          typographyStyles.textDecoration =
+            TypographyBody1LinkEmailTextDecoration
           break
         }
 
         case Variants.Body1Median: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody1MedianFontFamily
+            typographyStyles.fontFamily = TypographyBody1MedianEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody1MedianFontSize
-          typographyStyles.lineHeight = TypographyBody1MedianLineHeight
-          typographyStyles.fontWeight = TypographyBody1MedianFontWeight
+          typographyStyles.fontSize = TypographyBody1MedianEmailFontSize
+          typographyStyles.lineHeight = TypographyBody1MedianEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody1MedianEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyBody1MedianEmailLetterSpacing
           break
         }
 
         case Variants.Body2: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody2FontFamily
-            typographyStyles.fontWeight = TypographyBody2FontWeight
+            typographyStyles.fontFamily = TypographyBody2EmailFontFamily
+            typographyStyles.fontWeight = TypographyBody2EmailFontWeight
           }
 
-          typographyStyles.fontSize = TypographyBody2FontSize
-          typographyStyles.lineHeight = TypographyBody2LineHeight
+          typographyStyles.fontSize = TypographyBody2EmailFontSize
+          typographyStyles.lineHeight = TypographyBody2EmailLineHeight
+          typographyStyles.letterSpacing = TypographyBody2EmailLetterSpacing
           break
         }
 
         case Variants.Body2Bold: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody2BoldFontFamily
+            typographyStyles.fontFamily = TypographyBody2BoldEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody2BoldFontSize
-          typographyStyles.lineHeight = TypographyBody2BoldLineHeight
-          typographyStyles.fontWeight = TypographyBody2BoldFontWeight
+          typographyStyles.fontSize = TypographyBody2BoldEmailFontSize
+          typographyStyles.lineHeight = TypographyBody2BoldEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody2BoldEmailFontWeight
+          typographyStyles.letterSpacing = TypographyBody2BoldEmailLetterSpacing
           break
         }
 
         case Variants.Body2Link: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody2LinkFontFamily
+            typographyStyles.fontFamily = TypographyBody2LinkEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody2LinkFontSize
-          typographyStyles.lineHeight = TypographyBody2LinkLineHeight
-          typographyStyles.fontWeight = TypographyBody2LinkFontWeight
-          typographyStyles.textDecoration = TypographyBody2LinkTextDecoration
+          typographyStyles.fontSize = TypographyBody2LinkEmailFontSize
+          typographyStyles.lineHeight = TypographyBody2LinkEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody2LinkEmailFontWeight
+          typographyStyles.letterSpacing = TypographyBody2LinkEmailLetterSpacing
+          typographyStyles.textDecoration =
+            TypographyBody2LinkEmailTextDecoration
           break
         }
 
         case Variants.Body2Median: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyBody2MedianFontFamily
+            typographyStyles.fontFamily = TypographyBody2MedianEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyBody2MedianFontSize
-          typographyStyles.lineHeight = TypographyBody2MedianLineHeight
-          typographyStyles.fontWeight = TypographyBody2MedianFontWeight
+          typographyStyles.fontSize = TypographyBody2MedianEmailFontSize
+          typographyStyles.lineHeight = TypographyBody2MedianEmailLineHeight
+          typographyStyles.fontWeight = TypographyBody2MedianEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyBody2MedianEmailLetterSpacing
           break
         }
 
         case Variants.CaptionBold: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyCaptionBoldFontFamily
+            typographyStyles.fontFamily = TypographyCaptionBoldEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyCaptionBoldFontSize
-          typographyStyles.lineHeight = TypographyCaptionBoldLineHeight
-          typographyStyles.fontWeight = TypographyCaptionBoldFontWeight
+          typographyStyles.fontSize = TypographyCaptionBoldEmailFontSize
+          typographyStyles.lineHeight = TypographyCaptionBoldEmailLineHeight
+          typographyStyles.fontWeight = TypographyCaptionBoldEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyCaptionBoldEmailLetterSpacing
           break
         }
 
         case Variants.CaptionLink: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyCaptionLinkFontFamily
+            typographyStyles.fontFamily = TypographyCaptionLinkEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyCaptionLinkFontSize
-          typographyStyles.lineHeight = TypographyCaptionLinkLineHeight
-          typographyStyles.fontWeight = TypographyCaptionLinkFontWeight
-          typographyStyles.textDecoration = TypographyCaptionLinkTextDecoration
+          typographyStyles.fontSize = TypographyCaptionLinkEmailFontSize
+          typographyStyles.lineHeight = TypographyCaptionLinkEmailLineHeight
+          typographyStyles.fontWeight = TypographyCaptionLinkEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyCaptionLinkEmailLetterSpacing
+          typographyStyles.textDecoration =
+            TypographyCaptionLinkEmailTextDecoration
           break
         }
 
         case Variants.CaptionMedian: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyCaptionMedianFontFamily
+            typographyStyles.fontFamily = TypographyCaptionMedianEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyCaptionMedianFontSize
-          typographyStyles.lineHeight = TypographyCaptionMedianLineHeight
-          typographyStyles.fontWeight = TypographyCaptionMedianFontWeight
+          typographyStyles.fontSize = TypographyCaptionMedianEmailFontSize
+          typographyStyles.lineHeight = TypographyCaptionMedianEmailLineHeight
+          typographyStyles.fontWeight = TypographyCaptionMedianEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyCaptionMedianEmailLetterSpacing
           break
         }
 
         case Variants.Display1: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyDisplay1FontFamily
+            typographyStyles.fontFamily = TypographyDisplay1EmailFontFamily
           }
 
           typographyStyles.fontSize = xs
-            ? TypographyDisplay1FontSizeXxs
-            : TypographyDisplay1FontSizeMd
+            ? TypographyDisplay1EmailFontSizeXxs
+            : TypographyDisplay1EmailFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplay1LineHeightXxs
-            : TypographyDisplay1LineHeightMd
-          typographyStyles.fontWeight = TypographyDisplay1FontWeight
-          typographyStyles.letterSpacing = 0
+            ? TypographyDisplay1EmailLineHeightXxs
+            : TypographyDisplay1EmailLineHeightMd
+          typographyStyles.fontWeight = TypographyDisplay1EmailFontWeight
+          typographyStyles.letterSpacing = TypographyDisplay1EmailLetterSpacing
           break
         }
 
         case Variants.Display2: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyDisplay2FontFamily
+            typographyStyles.fontFamily = TypographyDisplay2EmailFontFamily
           }
 
           typographyStyles.fontSize = xs
-            ? TypographyDisplay2FontSizeXxs
-            : TypographyDisplay2FontSizeMd
+            ? TypographyDisplay2EmailFontSizeXxs
+            : TypographyDisplay2EmailFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplay2LineHeightXxs
-            : TypographyDisplay2LineHeightMd
-          typographyStyles.fontWeight = TypographyDisplay2FontWeight
-          typographyStyles.letterSpacing = 0
+            ? TypographyDisplay2EmailLineHeightXxs
+            : TypographyDisplay2EmailLineHeightMd
+          typographyStyles.fontWeight = TypographyDisplay2EmailFontWeight
+          typographyStyles.letterSpacing = TypographyDisplay2EmailLetterSpacing
           break
         }
 
         case Variants.DisplayWide: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyDisplayWideFontFamily
+            typographyStyles.fontFamily = TypographyDisplayWideEmailFontFamily
           }
 
           typographyStyles.fontSize = xs
-            ? TypographyDisplayWideFontSizeXxs
-            : TypographyDisplayWideFontSizeMd
+            ? TypographyDisplayWideEmailFontSizeXxs
+            : TypographyDisplayWideEmailFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyDisplayWideLineHeightXxs
-            : TypographyDisplayWideLineHeightMd
-          typographyStyles.fontWeight = TypographyDisplayWideFontWeight
-          typographyStyles.letterSpacing = 0
+            ? TypographyDisplayWideEmailLineHeightXxs
+            : TypographyDisplayWideEmailLineHeightMd
+          typographyStyles.fontWeight = TypographyDisplayWideEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyDisplayWideEmailLetterSpacing
           break
         }
 
         case Variants.Heading1: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading1FontFamily
+            typographyStyles.fontFamily = TypographyHeading1EmailFontFamily
           }
 
           typographyStyles.fontSize = xs
-            ? TypographyHeading1FontSizeXxs
-            : TypographyHeading1FontSizeMd
+            ? TypographyHeading1EmailFontSizeXxs
+            : TypographyHeading1EmailFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyHeading1LineHeightXxs
-            : TypographyHeading1LineHeightMd
-          typographyStyles.fontWeight = TypographyHeading1FontWeight
-          typographyStyles.letterSpacing = 0
+            ? TypographyHeading1EmailLineHeightXxs
+            : TypographyHeading1EmailLineHeightMd
+          typographyStyles.fontWeight = TypographyHeading1EmailFontWeight
+          typographyStyles.letterSpacing = TypographyHeading1EmailLetterSpacing
           break
         }
 
         case Variants.Heading2: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading2FontFamily
+            typographyStyles.fontFamily = TypographyHeading2EmailFontFamily
           }
 
           typographyStyles.fontSize = xs
-            ? TypographyHeading2FontSizeXxs
-            : TypographyHeading2FontSizeMd
+            ? TypographyHeading2EmailFontSizeXxs
+            : TypographyHeading2EmailFontSizeMd
           typographyStyles.lineHeight = xs
-            ? TypographyHeading2LineHeightXxs
-            : TypographyHeading2LineHeightMd
-          typographyStyles.fontWeight = TypographyHeading2FontWeight
-          typographyStyles.letterSpacing = 0
+            ? TypographyHeading2EmailLineHeightXxs
+            : TypographyHeading2EmailLineHeightMd
+          typographyStyles.fontWeight = TypographyHeading2EmailFontWeight
+          typographyStyles.letterSpacing = TypographyHeading2EmailLetterSpacing
           break
         }
 
         case Variants.Heading3: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading3FontFamily
+            typographyStyles.fontFamily = TypographyHeading3EmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyHeading3FontSize
-          typographyStyles.lineHeight = TypographyHeading3LineHeight
-          typographyStyles.fontWeight = TypographyHeading3FontWeight
-          typographyStyles.letterSpacing = 0
+          typographyStyles.fontSize = TypographyHeading3EmailFontSize
+          typographyStyles.lineHeight = TypographyHeading3EmailLineHeight
+          typographyStyles.fontWeight = TypographyHeading3EmailFontWeight
+          typographyStyles.letterSpacing = TypographyHeading3EmailLetterSpacing
           break
         }
 
         case Variants.Heading3Link: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading3LinkFontFamily
+            typographyStyles.fontFamily = TypographyHeading3LinkEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyHeading3LinkFontSize
-          typographyStyles.lineHeight = TypographyHeading3LinkLineHeight
-          typographyStyles.fontWeight = TypographyHeading3LinkFontWeight
-          typographyStyles.letterSpacing = 0
+          typographyStyles.fontSize = TypographyHeading3LinkEmailFontSize
+          typographyStyles.lineHeight = TypographyHeading3LinkEmailLineHeight
+          typographyStyles.fontWeight = TypographyHeading3LinkEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyHeading3LinkEmailLetterSpacing
           break
         }
 
         case Variants.Heading4: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading4FontFamily
+            typographyStyles.fontFamily = TypographyHeading4EmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyHeading4FontSize
-          typographyStyles.lineHeight = TypographyHeading4LineHeight
-          typographyStyles.fontWeight = TypographyHeading4FontWeight
-          typographyStyles.letterSpacing = 0
+          typographyStyles.fontSize = TypographyHeading4EmailFontSize
+          typographyStyles.lineHeight = TypographyHeading4EmailLineHeight
+          typographyStyles.fontWeight = TypographyHeading4EmailFontWeight
+          typographyStyles.letterSpacing = TypographyHeading4EmailLetterSpacing
           break
         }
 
         case Variants.Heading4Link: {
           if (fullStyle) {
-            typographyStyles.fontFamily = TypographyHeading4LinkFontFamily
+            typographyStyles.fontFamily = TypographyHeading4LinkEmailFontFamily
           }
 
-          typographyStyles.fontSize = TypographyHeading4LinkFontSize
-          typographyStyles.lineHeight = TypographyHeading4LinkLineHeight
-          typographyStyles.fontWeight = TypographyHeading4LinkFontWeight
-          typographyStyles.letterSpacing = 0
+          typographyStyles.fontSize = TypographyHeading4LinkEmailFontSize
+          typographyStyles.lineHeight = TypographyHeading4LinkEmailLineHeight
+          typographyStyles.fontWeight = TypographyHeading4LinkEmailFontWeight
+          typographyStyles.letterSpacing =
+            TypographyHeading4LinkEmailLetterSpacing
           break
         }
 
         default: {
           if (actualElement === 'a') {
             if (fullStyle) {
-              typographyStyles.fontFamily = TypographyBody1LinkFontFamily
+              typographyStyles.fontFamily = TypographyBody1LinkEmailFontFamily
             }
 
-            typographyStyles.fontSize = TypographyBody1LinkFontSize
-            typographyStyles.lineHeight = TypographyBody1LinkLineHeight
-            typographyStyles.fontWeight = TypographyBody1LinkFontWeight
-            typographyStyles.textDecoration = TypographyBody1LinkTextDecoration
+            typographyStyles.fontSize = TypographyBody1LinkEmailFontSize
+            typographyStyles.lineHeight = TypographyBody1LinkEmailLineHeight
+            typographyStyles.fontWeight = TypographyBody1LinkEmailFontWeight
+            typographyStyles.letterSpacing =
+              TypographyBody1LinkEmailLetterSpacing
+            typographyStyles.textDecoration =
+              TypographyBody1LinkEmailTextDecoration
           } else {
             if (fullStyle) {
-              typographyStyles.fontFamily = TypographyBody1FontFamily
-              typographyStyles.fontWeight = TypographyBody1FontWeight
+              typographyStyles.fontFamily = TypographyBody1EmailFontFamily
+              typographyStyles.fontWeight = TypographyBody1EmailFontWeight
             }
 
-            typographyStyles.fontSize = TypographyBody1FontSize
-            typographyStyles.lineHeight = TypographyBody1LineHeight
+            typographyStyles.fontSize = TypographyBody1EmailFontSize
+            typographyStyles.lineHeight = TypographyBody1EmailLineHeight
+            typographyStyles.letterSpacing = TypographyBody1EmailLetterSpacing
           }
           break
         }
