@@ -1,3 +1,11 @@
+# @snowball-tech/fractal [16.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.0.0...@snowball-tech/fractal@16.1.0) (2025-03-13)
+
+- **tokens:** export `px` tokens ([98bcdcd](https://github.com/snowball-tech/fractal/commit/98bcdcdc2d6c825f6d36411a2442148a65ac7c08))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 16.1.0
+
 # @snowball-tech/fractal [16.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@15.0.1...@snowball-tech/fractal@16.0.0) (2025-03-12)
 
 ### Dependencies
