@@ -16,6 +16,7 @@ import {
   SizeRadiusS,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 import {
+  SizeBorder1,
   SizeSpacing2,
   SizeSpacingHalf,
   SizeSpacingQuarter,
@@ -170,6 +171,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
                       ? ColorBackgroundBodyWhite
                       : ColorBackgroundBodyDark,
                   border: Border1,
+                  borderWidth: SizeBorder1,
                   color:
                     theme === Themes.Light ? ColorTextDark : ColorTextLight,
                   padding: SizeSpacing2,
@@ -181,7 +183,10 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
                     theme === Themes.Light
                       ? undefined
                       : ColorBackgroundBodyDark,
+                  border: Border1,
+                  borderWidth: SizeBorder1,
                   color: theme === Themes.Light ? undefined : ColorTextLight,
+                  padding: SizeSpacing2,
                   ...props.style,
                 }
             : props.style

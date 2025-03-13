@@ -21,6 +21,8 @@ import {
   SizeRadiusRounded,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
 import {
+  SizeBorder1,
+  SizeBorder2,
   SizeSpacing1,
   SizeSpacing2,
   SizeSpacing3,
@@ -85,6 +87,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
       border: Border1,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowBrutal1,
       color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
@@ -93,6 +96,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
     [Variants.Primary]: {
       backgroundColor: ColorBrandSecondary,
       border: BorderTransparent2,
+      borderWidth: SizeBorder2,
       color: ColorTextLight,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
@@ -100,6 +104,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
     [Variants.Secondary]: {
       backgroundColor: ColorBaseWhite,
       border: Border1,
+      borderWidth: SizeBorder1,
       color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
@@ -114,6 +119,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
     [Variants.Display]: {
       backgroundColor: ColorBaseWhite,
       border: Border1,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowBrutal1Dark,
       color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
@@ -122,6 +128,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
     [Variants.Primary]: {
       backgroundColor: ColorBrandPrimaryDark,
       border: BorderTransparent2,
+      borderWidth: SizeBorder2,
       color: ColorTextDark,
       padding: `${SizeSpacingHalf} calc(${SizeSpacing3} - ${SizeSpacingHalf})`,
     },
@@ -130,6 +137,7 @@ export const variantStyles: Record<Themes, Record<Variants, CSSProperties>> = {
       backgroundColor: ColorBaseWhite,
       border: Border1,
       borderColor: ColorBorderLight,
+      borderWidth: SizeBorder1,
       color: ColorTextDark,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
     },
@@ -181,6 +189,7 @@ export const variantDisabledStyles: Record<
       backgroundColor: ColorBaseWhite,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowNone,
       color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
@@ -196,6 +205,7 @@ export const variantDisabledStyles: Record<
       backgroundColor: ColorBaseWhite,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowNone,
       color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
@@ -212,6 +222,7 @@ export const variantDisabledStyles: Record<
       backgroundColor: ColorBaseWhite,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowNone,
       color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
@@ -227,6 +238,7 @@ export const variantDisabledStyles: Record<
       backgroundColor: ColorBaseWhite,
       border: Border1,
       borderColor: ColorBorderDisabled,
+      borderWidth: SizeBorder1,
       boxShadow: ShadowNone,
       color: ColorTextDisabled,
       padding: `calc(${SizeSpacing1} - ${SizeSpacingQuarter}) calc(${SizeSpacing3} - ${SizeSpacingQuarter})`,
