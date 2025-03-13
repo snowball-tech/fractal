@@ -19,13 +19,15 @@ import {
   ShadowBrutal1Dark,
   ShadowNone,
   SizeRadiusRounded,
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+import {
   SizeSpacing1,
   SizeSpacing2,
   SizeSpacing3,
   SizeSpacing6,
   SizeSpacingHalf,
   SizeSpacingQuarter,
-} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens-px'
 
 import {
   type CSSProperties,

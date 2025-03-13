@@ -14,10 +14,12 @@ import {
   ShadowBrutal2Light,
   ShadowNone,
   SizeRadiusS,
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+import {
   SizeSpacing2,
   SizeSpacingHalf,
   SizeSpacingQuarter,
-} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
+} from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens-px'
 
 import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
 
