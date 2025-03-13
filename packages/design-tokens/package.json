@@ -67,5 +67,5 @@
     "update-deps": "yarn run -T update-deps"
   },
   "types": "dist/web/typescript/design-tokens.d.ts",
-  "version": "16.0.0"
+  "version": "16.1.0"
 }
