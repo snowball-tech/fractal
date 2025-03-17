@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.3...@snowball-tech/fractal@16.1.4) (2025-03-17)
+
+- allow to have given className in inline style mode ([8974ef5](https://github.com/snowball-tech/fractal/commit/8974ef5c033740997b00e36e5d700472c766c669))
+
 ## @snowball-tech/fractal [16.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.2...@snowball-tech/fractal@16.1.3) (2025-03-17)
 
 - **button:** fix height/max/min for Yahoo styles ([88513e0](https://github.com/snowball-tech/fractal/commit/88513e09b42e71425bcf43a28799cb1c16838f4f))
