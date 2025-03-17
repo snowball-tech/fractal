@@ -477,6 +477,10 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                   boxSizing: 'border-box',
                   display: 'inline-block',
                   height: SizeSpacing3,
+                  maxHeight: SizeSpacing3,
+                  maxWidth: SizeSpacing3,
+                  minHeight: SizeSpacing3,
+                  minWidth: SizeSpacing3,
                   width: SizeSpacing3,
                   ...(isTextVariant ? { marginTop: 0 } : {}),
                   ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
