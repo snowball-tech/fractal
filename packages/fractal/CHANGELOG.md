@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [16.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.1...@snowball-tech/fractal@16.1.2) (2025-03-17)
+
 ## @snowball-tech/fractal [16.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.0...@snowball-tech/fractal@16.1.1) (2025-03-13)
 
 - **button-paper:** fix size of border ([4a72c51](https://github.com/snowball-tech/fractal/commit/4a72c515b36fb72a17ec1074ad0f6583b8b2fcc0))
