@@ -155,7 +155,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
             (theme === Themes.Light
               ? 'bg-white text-dark'
               : 'bg-body-dark text-light'),
-          !inlineStyle && props.className,
+          props.className,
         )}
         element={element || 'div'}
         fullStyle={fullStyle}

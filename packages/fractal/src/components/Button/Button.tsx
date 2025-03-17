@@ -336,7 +336,10 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     const isTextVariant = variant === Variants.Text
 
     const classNames = inlineStyle
-      ? `${PREFIX}-${GROUP_NAME} ${PREFIX}-${GROUP_NAME}--${variant}${asLink ? ` ${PREFIX}-${GROUP_NAME}__link` : ''}`
+      ? cn(
+          `${PREFIX}-${GROUP_NAME} ${PREFIX}-${GROUP_NAME}--${variant}${asLink ? ` ${PREFIX}-${GROUP_NAME}__link` : ''}`,
+          props.className,
+        )
       : cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
