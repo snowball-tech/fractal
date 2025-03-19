@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [16.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.4...@snowball-tech/fractal@16.1.5) (2025-03-19)
+
 ## @snowball-tech/fractal [16.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.3...@snowball-tech/fractal@16.1.4) (2025-03-17)
 
 - allow to have given className in inline style mode ([8974ef5](https://github.com/snowball-tech/fractal/commit/8974ef5c033740997b00e36e5d700472c766c669))
