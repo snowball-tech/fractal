@@ -14,6 +14,7 @@ import {
   useState,
 } from 'react'
 
+import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
@@ -52,6 +53,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       open,
       popover = {},
       side,
+      title,
       toggleOnTriggerClick = true,
       toggleOnTriggerHover = false,
       trigger,
@@ -292,21 +294,34 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 )}
               >
                 <Paper className="relative" elevation={elevation}>
-                  {withCloseButton && (
-                    <RxPopover.Close
-                      asChild
-                      className={cj(`${PREFIX}-${GROUP_NAME}__close`)}
+                  {(withCloseButton || !isEmpty(title)) && (
+                    <div
+                      className={cj(
+                        'flex flex-row items-center justify-between',
+                        !isEmpty(title) ? 'mb-1' : '',
+                      )}
                     >
-                      <div className="flex justify-end text-right">
-                        <Button
-                          icon={<CloseIcon />}
-                          iconOnly
-                          label={closeButtonLabel}
-                          variant="text"
-                          onClick={onCloseButtonClick}
-                        />
-                      </div>
-                    </RxPopover.Close>
+                      {!isEmpty(title) && (
+                        <Typography variant="body-1-bold">{title}</Typography>
+                      )}
+
+                      {withCloseButton && (
+                        <RxPopover.Close
+                          asChild
+                          className={cj(`${PREFIX}-${GROUP_NAME}__close`)}
+                        >
+                          <div className="mt-half flex size-full items-center justify-end text-right">
+                            <Button
+                              icon={<CloseIcon />}
+                              iconOnly
+                              label={closeButtonLabel}
+                              variant="text"
+                              onClick={onCloseButtonClick}
+                            />
+                          </div>
+                        </RxPopover.Close>
+                      )}
+                    </div>
                   )}
 
                   {withScroll ? (

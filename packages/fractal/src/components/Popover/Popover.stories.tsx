@@ -48,6 +48,7 @@ const meta: Meta<PopoverProps> = {
     fullWidth: false,
     modal: false,
     side: undefined,
+    title: undefined,
     toggleOnTriggerClick: true,
     toggleOnTriggerHover: false,
     trigger: 'Text',

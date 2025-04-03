@@ -18,7 +18,8 @@ export type CombinedRefs = {
   trigger: HTMLElement | null
 }
 
-export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface PopoverProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
   /**
    * The content of the popover.
    */
@@ -74,6 +75,8 @@ export interface PopoverProps extends AllHTMLAttributes<HTMLDivElement> {
   >
   /** The preferred side of the trigger to render the popover. */
   side?: RxPopoverContentProps['side']
+  /** The title of the popover. */
+  title?: string
   /**
    * Indicates if you want to toggle the popover when clicking on the trigger
    * (if provided of course).
