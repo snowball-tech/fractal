@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [16.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.6...@snowball-tech/fractal@16.2.0) (2025-04-03)
+
+- **popover:** add a title attribute ([5e60168](https://github.com/snowball-tech/fractal/commit/5e60168753a3952f0397438818d0ceeda02de235))
+
 ## @snowball-tech/fractal [16.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.5...@snowball-tech/fractal@16.1.6) (2025-03-19)
 
 ## @snowball-tech/fractal [16.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.4...@snowball-tech/fractal@16.1.5) (2025-03-19)
