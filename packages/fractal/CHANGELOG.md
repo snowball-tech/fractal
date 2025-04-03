@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.2.0...@snowball-tech/fractal@16.2.1) (2025-04-03)
+
+- **popover:** fix display of title in popover with close button ([7e80e44](https://github.com/snowball-tech/fractal/commit/7e80e44ad9bdca4a4d6f5f7e2565fb8504e482ad))
+
 # @snowball-tech/fractal [16.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.1.6...@snowball-tech/fractal@16.2.0) (2025-04-03)
 
 - **popover:** add a title attribute ([5e60168](https://github.com/snowball-tech/fractal/commit/5e60168753a3952f0397438818d0ceeda02de235))
