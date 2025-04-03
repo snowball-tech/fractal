@@ -297,12 +297,14 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                   {(withCloseButton || !isEmpty(title)) && (
                     <div
                       className={cj(
-                        'flex flex-row items-center justify-between',
-                        !isEmpty(title) ? 'mb-1' : '',
+                        'flex flex-row items-center justify-between gap-1',
+                        !isEmpty(title) ? 'mb-2' : '',
                       )}
                     >
                       {!isEmpty(title) && (
-                        <Typography variant="body-1-bold">{title}</Typography>
+                        <Typography className="w-full" variant="body-1-bold">
+                          {title}
+                        </Typography>
                       )}
 
                       {withCloseButton && (
@@ -310,7 +312,12 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                           asChild
                           className={cj(`${PREFIX}-${GROUP_NAME}__close`)}
                         >
-                          <div className="mt-half flex size-full items-center justify-end text-right">
+                          <div
+                            className={cj(
+                              'flex items-center justify-end text-right',
+                              isEmpty(title) ? 'w-full' : '',
+                            )}
+                          >
                             <Button
                               icon={<CloseIcon />}
                               iconOnly
