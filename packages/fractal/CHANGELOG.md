@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [16.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.0...@snowball-tech/fractal@16.3.1) (2025-04-04)
+
 # @snowball-tech/fractal [16.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.2.2...@snowball-tech/fractal@16.3.0) (2025-04-04)
 
 - **tooltip:** add a tooltip component ([0d7147b](https://github.com/snowball-tech/fractal/commit/0d7147b69365d6c3901d057e0cbcef64a87c7ad5))
