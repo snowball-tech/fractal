@@ -344,7 +344,12 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                       <RxScrollArea.Viewport
                         className={cj(
                           `${PREFIX}-${GROUP_NAME}__popover__scrollarea__viewport`,
-                          `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+                          `relative h-full w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+                          withCloseButton || !isEmpty(title)
+                            ? isEmpty(title)
+                              ? 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6)-theme(spacing.6))]'
+                              : 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6)-theme(spacing.4))]'
+                            : 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6))]',
                         )}
                         style={{
                           overflowY: undefined,

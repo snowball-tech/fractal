@@ -18,7 +18,126 @@ import { DEFAULT_ELEVATION } from './Popover.constants'
 
 const popoverContent = (
   <div className="flex flex-col gap-2">
-    <Typography variant="heading-4">Behold the Popover</Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
+    <Typography>
+      What is nice with this Popover is that you can put whatever you want
+      inside of it.
+    </Typography>
     <Typography>
       What is nice with this Popover is that you can put whatever you want
       inside of it.
@@ -48,14 +167,14 @@ const meta: Meta<PopoverProps> = {
     fullWidth: false,
     modal: false,
     side: undefined,
-    title: undefined,
+    title: 'Behold the Popover',
     toggleOnTriggerClick: true,
     toggleOnTriggerHover: false,
     trigger: 'Text',
     triggerAsButton: true,
     width: 'fit',
     withArrow: true,
-    withCloseButton: false,
+    withCloseButton: true,
     withScroll: false,
   },
   argTypes: {
