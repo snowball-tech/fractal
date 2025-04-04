@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [16.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.2.2...@snowball-tech/fractal@16.3.0) (2025-04-04)
+
+- **tooltip:** add a tooltip component ([0d7147b](https://github.com/snowball-tech/fractal/commit/0d7147b69365d6c3901d057e0cbcef64a87c7ad5))
+
 ## @snowball-tech/fractal [16.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.2.1...@snowball-tech/fractal@16.2.2) (2025-04-04)
 
 - **popover:** fix size of the popover when there is a title or a close button ([ab78c99](https://github.com/snowball-tech/fractal/commit/ab78c99ba7419f0a31ad2efa4855161c1323462d))
