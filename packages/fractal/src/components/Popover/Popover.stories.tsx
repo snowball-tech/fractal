@@ -162,7 +162,11 @@ export const Interactive: Story = {
     await sleep(500)
   },
   render: () => (
-    <Popover trigger={<Button label="This is a button trigger" />}>
+    <Popover
+      title="Behold the Popover"
+      trigger={<Button label="This is a button trigger" />}
+      withCloseButton
+    >
       {popoverContent}
     </Popover>
   ),
