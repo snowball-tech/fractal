@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.3.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.5...@snowball-tech/fractal@16.3.6) (2025-04-07)
+
+- **input-radio:** fix display in all orientations ([4ee2ea3](https://github.com/snowball-tech/fractal/commit/4ee2ea383024bed592e44538b53143f4f4c03c01))
+
 ## @snowball-tech/fractal [16.3.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.4...@snowball-tech/fractal@16.3.5) (2025-04-07)
 
 - **input-radio:** anchor the radio button to the middle of the first line ([b30d090](https://github.com/snowball-tech/fractal/commit/b30d0909f53369a784304adbe242310d7646e2f1))
