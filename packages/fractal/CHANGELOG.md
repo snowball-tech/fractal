@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.3.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.1...@snowball-tech/fractal@16.3.2) (2025-04-07)
+
+- **tooltip:** change the default side of the tooltip ([8caddbe](https://github.com/snowball-tech/fractal/commit/8caddbea907d3f2dcb1d9d9b47ccc87d3654ab70))
+
 ## @snowball-tech/fractal [16.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.0...@snowball-tech/fractal@16.3.1) (2025-04-04)
 
 # @snowball-tech/fractal [16.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.2.2...@snowball-tech/fractal@16.3.0) (2025-04-04)
