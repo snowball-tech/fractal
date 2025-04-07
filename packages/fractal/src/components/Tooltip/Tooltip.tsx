@@ -17,6 +17,7 @@ export const Tooltip = ({
   children,
   content,
   disabled = false,
+  fullWidth = false,
   onDisplayChange,
   onHide,
   onInteractOutside,
@@ -42,7 +43,7 @@ export const Tooltip = ({
       align={align}
       disabled={disabled}
       elevation="1"
-      fullWidth={false}
+      fullWidth={fullWidth}
       modal={false}
       open={!isNil(show) ? show : undefined}
       popover={{
@@ -65,7 +66,10 @@ export const Tooltip = ({
       onInteractOutside={onInteractOutside}
       onOpen={onShow}
       onOpenChange={onDisplayChange}
-      {...props}
+      {...omit(
+        ['width', 'elevation', 'modal', 'open', 'popover', 'withCloseButton'],
+        props,
+      )}
     >
       <Typography element="div" variant="caption-median">
         {content}

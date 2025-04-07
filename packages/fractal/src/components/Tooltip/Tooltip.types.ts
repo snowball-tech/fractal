@@ -15,6 +15,8 @@ export interface TooltipProps
   align?: PopoverProps['align']
   /** Indicates if the tooltip is disabled (i.e. won't be displayed). */
   disabled?: PopoverProps['disabled']
+  /** Indicates if the tooltip wrapper should take all the available width. */
+  fullWidth?: boolean
   /**
    * Indicates if the tooltip is shown.
    *
