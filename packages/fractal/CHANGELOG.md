@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.3.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.3...@snowball-tech/fractal@16.3.4) (2025-04-07)
+
+- **popover:** fix full width ([d75100f](https://github.com/snowball-tech/fractal/commit/d75100f2905383f94845cfff1e0903607a65018f))
+
 ## @snowball-tech/fractal [16.3.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.2...@snowball-tech/fractal@16.3.3) (2025-04-07)
 
 - **tooltip:** support fullWidth prop ([fc6f05f](https://github.com/snowball-tech/fractal/commit/fc6f05f566ef15841a0a65455cc95e3a5a9d6323))
