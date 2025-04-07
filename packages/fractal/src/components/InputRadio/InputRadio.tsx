@@ -93,7 +93,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'group/radio',
-          'flex w-full max-w-full cursor-default items-center rounded-sm',
+          'flex w-full max-w-full cursor-default rounded-sm',
           variantClassNames[variant],
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}--disabled text-disabled`
@@ -109,7 +109,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           ref={combinedRef}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'mt-half h-full min-h-6 flex-grow-0 self-start rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
+            'self mt-half h-full min-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
               : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight',

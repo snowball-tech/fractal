@@ -46,7 +46,7 @@ export const InputRadioGroup = ({
         `${PREFIX}-${GROUP_NAME}__group`,
         `${PREFIX}-${GROUP_NAME}__group--${variant}`,
         'flex max-w-full flex-col gap-3',
-        'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
+        'data-horizontal:flex-row data-horizontal:flex-wrap data-horizontal:items-start data-vertical:justify-start sm:data-horizontal:flex-nowrap',
         disabled ? `${PREFIX}-${GROUP_NAME}__group--disabled` : '',
         fullWidth
           ? `${PREFIX}-${GROUP_NAME}__group--full-width w-full`
