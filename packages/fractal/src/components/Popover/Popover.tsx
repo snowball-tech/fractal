@@ -200,7 +200,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
             ? `${PREFIX}-${GROUP_NAME}--opened`
             : `${PREFIX}-${GROUP_NAME}--closed`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
-          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'sm:w-fit',
           props.className,
         )}
         {...omit(['className'], props)}
