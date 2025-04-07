@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [16.3.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.4...@snowball-tech/fractal@16.3.5) (2025-04-07)
+
+- **input-radio:** anchor the radio button to the middle of the first line ([b30d090](https://github.com/snowball-tech/fractal/commit/b30d0909f53369a784304adbe242310d7646e2f1))
+
 ## @snowball-tech/fractal [16.3.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.3...@snowball-tech/fractal@16.3.4) (2025-04-07)
 
 - **popover:** fix full width ([d75100f](https://github.com/snowball-tech/fractal/commit/d75100f2905383f94845cfff1e0903607a65018f))
