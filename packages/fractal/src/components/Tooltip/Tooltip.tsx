@@ -13,7 +13,7 @@ import { Typography } from '../Typography'
  * tooltip when hovered (or click).
  */
 export const Tooltip = ({
-  align,
+  align = 'center',
   children,
   content,
   disabled = false,
@@ -22,7 +22,7 @@ export const Tooltip = ({
   onInteractOutside,
   onShow,
   show,
-  side,
+  side = 'top',
   toggleOnTriggerClick = false,
   toggleOnTriggerHover = true,
   tooltip = {},

@@ -38,7 +38,7 @@ import { DEFAULT_ELEVATION, GROUP_NAME } from './Popover.constants'
 export const Popover = forwardRef<CombinedRefs, PopoverProps>(
   (
     {
-      align,
+      align = 'center',
       children,
       closeButtonLabel = 'Close',
       disabled = false,
@@ -52,7 +52,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       onOpenChange,
       open,
       popover = {},
-      side,
+      side = 'bottom',
       title,
       toggleOnTriggerClick = true,
       toggleOnTriggerHover = false,
