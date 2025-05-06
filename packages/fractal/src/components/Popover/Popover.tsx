@@ -145,7 +145,8 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       }
     }
 
-    let widthClassNames = 'max-w-[var(--radix-popper-available-width)]'
+    let widthClassNames =
+      'max-w-[calc(var(--radix-popper-available-width)-theme(spacing.2))]'
     let widthStyle: CSSProperties = {}
     if (isNumber(width)) {
       widthStyle = { minWidth: `${width}px`, width: `${width}px` }
