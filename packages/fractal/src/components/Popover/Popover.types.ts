@@ -10,6 +10,8 @@ import type {
   ReactNode,
 } from 'react'
 
+import type { PaperProps } from '../Paper/Paper.types'
+
 import { Elevations } from '../Paper/Paper.constants'
 
 export type CombinedRefs = {
@@ -57,6 +59,10 @@ export interface PopoverProps
    * (non-text) trigger.
    */
   open?: boolean
+  /**
+   * Options to tweak the style of the Paper in the popover.
+   */
+  paper?: Partial<PaperProps>
   /**
    * Options to tweak the position of the popover.
    * See https://www.radix-ui.com/primitives/docs/components/popover#content

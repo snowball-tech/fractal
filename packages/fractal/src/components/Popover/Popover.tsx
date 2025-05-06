@@ -51,6 +51,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       onOpen,
       onOpenChange,
       open,
+      paper = {},
       popover = {},
       side = 'bottom',
       title,
@@ -158,7 +159,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
             width: `calc(${widthValue} * var(--radix-popper-anchor-width))`,
           }
         } else {
-          widthClassNames = 'w-fit'
+          widthClassNames = `${widthClassNames} w-fit`
           console.warn(
             'The `width` prop is set to a fraction but no `trigger` is provided! Falling back to `auto` (which will fit the content)...',
           )
@@ -166,19 +167,21 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       } else {
         switch (width) {
           case 'fit': {
-            widthClassNames = 'w-fit'
+            widthClassNames = `${widthClassNames} w-fit`
             break
           }
 
           case 'full': {
-            widthClassNames = 'w-[var(--radix-popper-available-width)]'
+            widthClassNames = `${widthClassNames} w-[var(--radix-popper-available-width)]`
             break
           }
 
           default: {
-            widthClassNames = hasTriggerElement
-              ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
-              : 'w-fit'
+            widthClassNames = `${widthClassNames} ${
+              hasTriggerElement
+                ? 'w-[var(--radix-popper-anchor-width,"100%")] min-w-fit'
+                : 'w-fit'
+            }`
             break
           }
         }
@@ -293,7 +296,11 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                   popover,
                 )}
               >
-                <Paper className="relative" elevation={elevation}>
+                <Paper
+                  className={cn('relative', paper.className)}
+                  elevation={elevation}
+                  {...omit(['className'], paper)}
+                >
                   {(withCloseButton || !isEmpty(title)) && (
                     <div
                       className={cj(
