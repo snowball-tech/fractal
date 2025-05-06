@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [16.3.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.6...@snowball-tech/fractal@16.3.7) (2025-05-06)
+
+- **popover:** fix the max width ([1a91777](https://github.com/snowball-tech/fractal/commit/1a917776f2cafd3f248fd09497f6a0a9586a0e7c))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 16.1.1
+
 ## @snowball-tech/fractal [16.3.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.5...@snowball-tech/fractal@16.3.6) (2025-04-07)
 
 - **input-radio:** fix display in all orientations ([4ee2ea3](https://github.com/snowball-tech/fractal/commit/4ee2ea383024bed592e44538b53143f4f4c03c01))
