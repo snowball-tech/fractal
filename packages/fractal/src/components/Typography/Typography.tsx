@@ -163,13 +163,17 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       element,
       fullStyle = false,
       inlineStyle = false,
-      variant = DEFAULT_VARIANT,
+      variant,
       xs = false,
       ...props
     }: TypographyProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
-    let actualElement = element || VARIANTS_MAPPING[variant] || DEFAULT_ELEMENT
+    const actualVariant = variant || DEFAULT_VARIANT
+    const isDefaultVariant = isEmpty(variant)
+
+    let actualElement =
+      element || VARIANTS_MAPPING[actualVariant] || DEFAULT_ELEMENT
     if (!isEmpty(props.href) && isEmpty(element)) {
       actualElement = 'a'
     }
@@ -178,7 +182,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }
 
     let typographyClassNames = ''
-    switch (variant) {
+    switch (actualVariant) {
       case Variants.Body1Bold: {
         typographyClassNames =
           'tracking-normal text-body-1 font-body-1 font-weight-body-1-bold leading-body-1'
@@ -289,7 +293,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
       default: {
         typographyClassNames =
-          actualElement === 'a'
+          actualElement === 'a' && isDefaultVariant
             ? 'tracking-normal text-body-1 font-body-1 font-weight-body-1-link leading-body-1 underline'
             : 'tracking-normal text-body-1 font-body-1 font-weight-body-1 leading-body-1'
         break
@@ -306,7 +310,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
     }
 
     if (inlineStyle) {
-      switch (variant) {
+      switch (actualVariant) {
         case Variants.Body1Bold: {
           if (fullStyle) {
             typographyStyles.fontFamily = TypographyBody1BoldEmailFontFamily
@@ -616,7 +620,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
         className: cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}__${actualElement}`,
-          `${PREFIX}-${GROUP_NAME}--${variant}`,
+          `${PREFIX}-${GROUP_NAME}--${actualVariant}`,
           !inlineStyle && typographyClassNames,
           props.className,
         ),

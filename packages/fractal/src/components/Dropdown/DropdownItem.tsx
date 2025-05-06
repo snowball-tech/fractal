@@ -88,7 +88,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
         {...(isFunction(onSelect) ? { onSelect } : {})}
         {...omit(['className', 'data-value'], props)}
       >
-        <Typography element={isLink ? 'a' : 'div'}>
+        <Typography element={isLink ? 'a' : 'div'} variant="body-1">
           {icon && (
             <div
               className={cj(
