@@ -15,6 +15,12 @@
     letter-spacing: var(--typography-display-2-letter-spacing);
   }
 
+  .cover-img {
+    border: var(--border-1) !important;
+    border-radius: var(--size-radius-s) !important;
+    box-shadow: var(--shadow-brutal-1) !important;
+  }
+
   .sbdocs-content > h2 {
     font-family: var(--typography-heading-2-font-family);
     font-size: var(--typography-heading-2-font-size-xxs);
@@ -54,6 +60,13 @@
     text-decoration: var(--typography-body-1-link-text-decoration);
   }
 
+  .sbdocs-content > blockquote {
+    background-color: var(--color-base-white) !important;
+    border-radius: var(--size-radius-s) !important;
+    border: var(--border-1) !important;
+    padding: var(--size-spacing-2) !important;
+  }
+
   .sbdocs-content > blockquote > * {
     font-family: var(--typography-body-2-font-family);
     font-size: var(--typography-body-2-font-size);
@@ -77,12 +90,12 @@
   }
 
   .docblock-source {
+    background-color: var(--color-base-white) !important;
     margin: 0 0 var(--size-spacing-4) !important;
     box-shadow: var(--shadow-brutal-2) !important;
     border-radius: var(--size-radius-s) !important;
   }
 
-  .sbdocs-wrapper,
   .docblock-source button,
   .docblock-code-toggle {
     background-color: var(--color-base-white) !important;
@@ -93,14 +106,24 @@
     border-radius: var(--size-radius-s) !important;
   }
 
+  .docblock-argstable-body,
+  .docblock-argstable-body td {
+    background-color: var(--color-base-white) !important;
+  }
+
   .docblock-argstable-body > tr > td:first-of-type,
   .docblock-argstable-body > tr > td:last-of-type {
     border-radius: var(--size-radius-0) !important;
   }
 
   .sbdocs-preview {
+    background-color: var(--color-base-white) !important;
     box-shadow: var(--shadow-brutal-2) !important;
     border-radius: var(--size-radius-s) !important;
+  }
+
+  .docblock-typeset {
+    background-color: var(--color-base-white) !important;
   }
 
   hr {
@@ -113,7 +136,7 @@
   }
 
   .example-block {
-    background-color: var(--color-background-body-light) !important;
+    background-color: var(--color-base-white) !important;
     padding: 20px !important;
   }
 

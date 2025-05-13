@@ -72,23 +72,23 @@
     "update-references": "workspaces-to-typescript-project-references --includesRoot"
   },
   "devDependencies": {
-    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.10.4",
+    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.11.0",
     "@qiwi/multi-semantic-release": "^7.1.2",
-    "@snowball-tech/prettier-config": "^2.1.4",
-    "@snowball-tech/semantic-release-config": "^3.0.5",
+    "@snowball-tech/prettier-config": "^2.1.5",
+    "@snowball-tech/semantic-release-config": "^3.0.6",
     "chromatic": "^11.28.2",
     "depcheck": "^1.4.7",
     "eslint": "^9.26.0",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "lint-staged": "^15.5.1",
+    "lint-staged": "^16.0.0",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
     "semantic-release": "^24.2.3",
     "serve": "^14.2.4"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^2.0.14",
+    "@snowball-tech/eslint-snowball-config": "^2.0.15",
     "@yarnpkg/types": "^4.0.1"
   }
 }
