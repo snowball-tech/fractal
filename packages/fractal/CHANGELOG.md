@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [16.3.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.8...@snowball-tech/fractal@16.3.9) (2025-05-13)
+
 ## @snowball-tech/fractal [16.3.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.7...@snowball-tech/fractal@16.3.8) (2025-05-06)
 
 - **dropdown:** fix variant of the dropdown item when it's a link ([eddad87](https://github.com/snowball-tech/fractal/commit/eddad87a079c17cb4bb7a1815f54835146321237))
