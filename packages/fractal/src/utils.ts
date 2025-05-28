@@ -2,6 +2,7 @@ import {
   type ReactNode,
   Children,
   cloneElement,
+  Fragment,
   isValidElement,
   JSXElementConstructor,
 } from 'react'
@@ -86,7 +87,19 @@ export function extendChildren(
   props: (childProps: Record<string, unknown>) => Record<string, unknown>,
   displayName?: string,
 ): ReactNode {
-  return Children.map(children, (child) => {
+  let childrenToIterateOver = children
+  if (Children.count(children) === 0) {
+    return children
+  }
+  if (
+    Children.count(children) === 1 &&
+    isValidElement(children) &&
+    children.type === Fragment
+  ) {
+    childrenToIterateOver = children.props.children as ReactNode
+  }
+
+  return Children.map(childrenToIterateOver, (child) => {
     if (!isValidElement(child)) {
       return child
     }
