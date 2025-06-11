@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.4...@snowball-tech/fractal@17.1.5) (2025-06-11)
+
+- **dialog:** fix padding of dialog ([b91eeea](https://github.com/snowball-tech/fractal/commit/b91eeea7525eac35c8f0cb679035177f4ba63c0a))
+
 ## @snowball-tech/fractal [17.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.3...@snowball-tech/fractal@17.1.4) (2025-06-11)
 
 - **dialog:** allow to prevent closing the dialog by clicking outside ([308da38](https://github.com/snowball-tech/fractal/commit/308da3860d413b66ea8106057ac13ff1ce6799f6))
