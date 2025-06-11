@@ -49,6 +49,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onDismiss,
       onInteractOutside,
       onOpen,
+      onPointerDownOutside,
       onToggle,
       open,
       overlayStyle = 'dark',
@@ -135,6 +136,25 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
         }
       }
 
+    const handleDialogPointerDownOutside: DismissableLayerProps['onPointerDownOutside'] =
+      (event) => {
+        const { target } = event
+        if (target === window || target === null || target === undefined) {
+          return
+        }
+
+        if (
+          containerRef?.current?.contains(target as Element) ||
+          contentRef?.current?.contains(target as Element)
+        ) {
+          event.preventDefault()
+        }
+
+        if (isFunction(onPointerDownOutside)) {
+          onPointerDownOutside(event)
+        }
+      }
+
     return (
       <div
         ref={containerRef}
@@ -198,6 +218,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
+                  onPointerDownOutside={handleDialogPointerDownOutside}
                   {...omit(
                     ['className', 'onInteractOutside', 'asChild'],
                     props,
