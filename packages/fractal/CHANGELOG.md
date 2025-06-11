@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.6...@snowball-tech/fractal@17.1.7) (2025-06-11)
+
+- **pin-code:** allow to pass a boolean to error/success ([f6727ee](https://github.com/snowball-tech/fractal/commit/f6727ee9d1f9a62f48fac2395d2c62d3a2f55869))
+
 ## @snowball-tech/fractal [17.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.5...@snowball-tech/fractal@17.1.6) (2025-06-11)
 
 - **pin-code:** fix the error state ([f6a2f29](https://github.com/snowball-tech/fractal/commit/f6a2f2944bc1d6171e4fb84788ae021cf3ca549b))
