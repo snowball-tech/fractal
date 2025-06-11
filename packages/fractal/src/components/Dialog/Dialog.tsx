@@ -226,7 +226,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                 >
                   <Paper
                     className={cn(
-                      'left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-5',
+                      'left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-5 p-3',
                       fullWidth ? 'h-fit w-full' : 'size-fit to-sm:w-full',
                       wrapper?.className,
                     )}
