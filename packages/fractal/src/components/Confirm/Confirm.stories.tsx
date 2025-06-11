@@ -98,7 +98,6 @@ export const Interactive: Story = {
   render: () => (
     <Confirm
       cancel="Cancel"
-      className="min-w-[500px]"
       confirm="Confirm"
       title="Are you sure you want to test this confirm dialog"
       trigger={<Button label="Open the confirm" />}
@@ -127,7 +126,6 @@ export const InteractiveClose: Story = {
   render: () => (
     <Confirm
       cancel="Cancel"
-      className="min-w-[500px]"
       closeButtonLabel="Close"
       confirm="Confirm"
       title="This is the title"

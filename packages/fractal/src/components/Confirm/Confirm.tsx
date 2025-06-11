@@ -45,39 +45,30 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
           <div
             className={cj(
               `${PREFIX}-${GROUP_NAME}__actions`,
-              'flex flex-row justify-end gap-1',
+              'flex flex-col gap-1 md:flex-row md:justify-end to-md:items-center',
             )}
           >
+            {cancel && (
+              <Button
+                className="to-md:w-full"
+                variant="secondary"
+                onClick={onCancel}
+                {...(isString(cancel)
+                  ? { label: cancel }
+                  : omit(
+                      ['href', 'onClick', 'target', 'type', 'variant'],
+                      cancel,
+                    ))}
+              />
+            )}
+
             <Button
-              variant="secondary"
-              onClick={onCancel}
-              {...(isString(cancel)
-                ? { label: cancel }
-                : omit(
-                    [
-                      'fullWidth',
-                      'href',
-                      'onClick',
-                      'target',
-                      'type',
-                      'variant',
-                    ],
-                    cancel,
-                  ))}
-            />
-            <Button
+              className="to-md:w-full"
               onClick={onConfirm}
               {...(isString(confirm)
                 ? { label: confirm }
                 : omit(
-                    [
-                      'fullWidth',
-                      'href',
-                      'onClick',
-                      'target',
-                      'type',
-                      'variant',
-                    ],
+                    ['href', 'onClick', 'target', 'type', 'variant'],
                     confirm,
                   ))}
             />

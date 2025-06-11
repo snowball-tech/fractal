@@ -10,10 +10,8 @@ export interface ConfirmProps
    */
   cancel:
     | string
-    | Omit<
-        ButtonProps,
-        'fullWidth' | 'href' | 'onClick' | 'target' | 'type' | 'variant'
-      >
+    | false
+    | Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>
   /**
    * The configuration of the confirmation button.
    *
@@ -21,10 +19,7 @@ export interface ConfirmProps
    */
   confirm:
     | string
-    | Omit<
-        ButtonProps,
-        'fullWidth' | 'href' | 'onClick' | 'target' | 'type' | 'variant'
-      >
+    | Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>
   /**
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.
