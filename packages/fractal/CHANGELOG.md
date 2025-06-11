@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.2...@snowball-tech/fractal@17.1.3) (2025-06-11)
+
+- **dialog:** fix spacing between title and content ([47e59af](https://github.com/snowball-tech/fractal/commit/47e59af1b373ae0c7853c4e6a5b48499bf39d2d8))
+
 ## @snowball-tech/fractal [17.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.1...@snowball-tech/fractal@17.1.2) (2025-06-11)
 
 - **dialog:** further improve position of dismiss button ([e18f8b8](https://github.com/snowball-tech/fractal/commit/e18f8b86b1439b7e16c4c8094b2faad486ba051e))
