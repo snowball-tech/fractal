@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.1...@snowball-tech/fractal@17.1.2) (2025-06-11)
+
+- **dialog:** further improve position of dismiss button ([e18f8b8](https://github.com/snowball-tech/fractal/commit/e18f8b86b1439b7e16c4c8094b2faad486ba051e))
+
 ## @snowball-tech/fractal [17.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.0...@snowball-tech/fractal@17.1.1) (2025-06-11)
 
 - **dialog:** improve position of the dismiss button ([90f3353](https://github.com/snowball-tech/fractal/commit/90f33532c50a820c2d3de567c3ee1952628274e1))
