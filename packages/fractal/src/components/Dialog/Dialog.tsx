@@ -227,7 +227,9 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       {dismissable && (
                         <RxDialog.Close
                           asChild
-                          className={cj(`${PREFIX}-${GROUP_NAME}__dismiss`)}
+                          className={cj(
+                            `${PREFIX}-${GROUP_NAME}__dismiss mt-half pl-1`,
+                          )}
                         >
                           <div className="text-right">
                             <Button
