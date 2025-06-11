@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.5...@snowball-tech/fractal@17.1.6) (2025-06-11)
+
+- **pin-code:** fix the error state ([f6a2f29](https://github.com/snowball-tech/fractal/commit/f6a2f2944bc1d6171e4fb84788ae021cf3ca549b))
+
 ## @snowball-tech/fractal [17.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.4...@snowball-tech/fractal@17.1.5) (2025-06-11)
 
 - **dialog:** fix padding of dialog ([b91eeea](https://github.com/snowball-tech/fractal/commit/b91eeea7525eac35c8f0cb679035177f4ba63c0a))
