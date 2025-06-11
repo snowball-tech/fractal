@@ -84,6 +84,10 @@ export interface InputPinCodeProps
    * Must be used in conjunction with `onChange`.
    */
   value?: string
+  /** The wrapper of the pin code inputs. */
+  wrapper?: Partial<{
+    className: string
+  }>
   /**
    * Event handler called when one of the field of the pin code input is
    * blurred.

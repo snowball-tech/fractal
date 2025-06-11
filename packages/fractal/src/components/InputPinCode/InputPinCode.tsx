@@ -1,10 +1,6 @@
 'use client'
 
 import { Label as RxLabel } from '@radix-ui/react-label'
-import {
-  UilCheckCircle as CheckCircleIcon,
-  UilExclamationCircle as ExclamationCircleIcon,
-} from '@tooni/iconscout-unicons-react'
 
 import {
   type ChangeEvent,
@@ -61,6 +57,7 @@ export const InputPinCode = ({
   required = false,
   success,
   value,
+  wrapper,
   ...props
 }: InputPinCodeProps) => {
   const generatedId = useId()
@@ -264,7 +261,7 @@ export const InputPinCode = ({
     <div
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        'flex w-full max-w-full flex-col gap-1 sm:w-fit',
+        'flex w-full max-w-full flex-col gap-1 sm:w-min',
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
         readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
@@ -292,9 +289,10 @@ export const InputPinCode = ({
       )}
 
       <div
-        className={cj(
+        className={cn(
           `${PREFIX}-${GROUP_NAME}__fields`,
           'flex w-full gap-1 sm:w-fit',
+          wrapper?.className,
         )}
       >
         {range(0, length).map((index) => (
@@ -311,9 +309,6 @@ export const InputPinCode = ({
                 : '',
               `${PREFIX}-${GROUP_NAME}__field--${index}`,
               'w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
-              index === length - 1 && (isInError || isSuccessful)
-                ? '!max-w-[calc(theme(spacing.8)+theme(spacing.2)+theme(spacing.half))]'
-                : '',
             )}
             {...(isString(defaultValue)
               ? {
@@ -337,15 +332,6 @@ export const InputPinCode = ({
             required={required}
             size={1}
             success={isSuccessful}
-            suffix={
-              index === length - 1 ? (
-                isInError ? (
-                  <ExclamationCircleIcon />
-                ) : isSuccessful ? (
-                  <CheckCircleIcon />
-                ) : undefined
-              ) : undefined
-            }
             type="number"
             {...(isString(value)
               ? {
