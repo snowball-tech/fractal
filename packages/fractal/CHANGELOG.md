@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.0...@snowball-tech/fractal@17.1.1) (2025-06-11)
+
+- **dialog:** improve position of the dismiss button ([90f3353](https://github.com/snowball-tech/fractal/commit/90f33532c50a820c2d3de567c3ee1952628274e1))
+
 # @snowball-tech/fractal [17.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.0.0...@snowball-tech/fractal@17.1.0) (2025-06-11)
 
 - **confirm:** make the cancel button optional and improve behavior in responsive ([fc7dc19](https://github.com/snowball-tech/fractal/commit/fc7dc19898560a15a135460605bdf6e8fdc6d5d8))
