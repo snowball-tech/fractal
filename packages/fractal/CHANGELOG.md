@@ -1,3 +1,5 @@
+# @snowball-tech/fractal [17.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.10...@snowball-tech/fractal@17.0.0) (2025-06-11)
+
 ## @snowball-tech/fractal [16.3.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.9...@snowball-tech/fractal@16.3.10) (2025-05-28)
 
 - **tabs:** avoid to set props to fragments ([c5df54e](https://github.com/snowball-tech/fractal/commit/c5df54e7c88d5b73c6e38930701e9835b0a192e6))
