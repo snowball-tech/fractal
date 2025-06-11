@@ -43,6 +43,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       defaultOpen,
       disabled = false,
       dismissable = true,
+      fullWidth = false,
       modal = true,
       onClose,
       onDismiss,
@@ -55,6 +56,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       root,
       title,
       trigger,
+      wrapper,
       ...props
     }: DialogProps,
     ref: ForwardedRef<CombinedRefs>,
@@ -192,7 +194,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   asChild
                   className={cn(
                     `${PREFIX}-${GROUP_NAME}__content`,
-                    'z-[9999]',
+                    'z-[9999] max-w-[calc(100%-theme(spacing.4))] to-sm:w-full',
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
@@ -202,9 +204,14 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   )}
                 >
                   <Paper
-                    className="left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3"
-                    elevation="2"
-                    style={{ position }}
+                    className={cn(
+                      'left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-3',
+                      fullWidth ? 'h-fit w-full' : 'size-fit to-sm:w-full',
+                      wrapper?.className,
+                    )}
+                    elevation={wrapper?.elevation || '2'}
+                    style={{ ...wrapper?.style, position }}
+                    {...omit(['className', 'elevation', 'style'], wrapper)}
                   >
                     <div className="flex flex-row">
                       <RxDialog.Title

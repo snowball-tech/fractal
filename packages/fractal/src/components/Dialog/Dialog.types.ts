@@ -2,6 +2,8 @@ import { DialogContentProps as RxDialogContentProps } from '@radix-ui/react-dial
 
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
+import type { PaperProps } from '../Paper'
+
 import { Positions } from './Dialog.constants'
 
 export type CombinedRefs = {
@@ -28,6 +30,8 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   disabled?: boolean
   /** Indicates if we can dismiss the dialog. */
   dismissable?: boolean
+  /** Indicates if the dialog should be full width. */
+  fullWidth?: boolean
   /**
    * Indicates if the dialog is a modal.
    *
@@ -77,4 +81,9 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * If you don't pass any, you will have to handle the open state yourself.
    */
   trigger?: ReactNode
+
+  /**
+   * The props of the paper wrapper inside of the dialog.
+   */
+  wrapper?: Partial<PaperProps>
 }

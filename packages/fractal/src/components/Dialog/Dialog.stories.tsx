@@ -100,7 +100,6 @@ export const Interactive: Story = {
   },
   render: () => (
     <Dialog
-      className="min-w-[500px]"
       title="Please provide your Jedi identification"
       trigger={<Button label="Open the dialog" />}
     >
@@ -108,11 +107,6 @@ export const Interactive: Story = {
         <div className="flex flex-col gap-2">
           <InputText defaultValue="Luke" fullWidth label="First name" />
           <InputText defaultValue="Skywalker" fullWidth label="Last name" />
-        </div>
-
-        <div className="flex flex-row justify-end gap-2">
-          <Button label="Cancel" variant="secondary" />
-          <Button label="Save" />
         </div>
       </div>
     </Dialog>
@@ -140,7 +134,6 @@ export const InteractiveClose: Story = {
   },
   render: () => (
     <Dialog
-      className="min-w-[500px]"
       closeButtonLabel="Close"
       title="This is the title"
       trigger={<Button label="Open the dialog" />}
