@@ -34,6 +34,8 @@ export interface InputPinCodeProps
   /**
    * An error message to display below the pin code input if there is an
    * error.
+   * You can also pass `true` to just display the error feedback (red border)
+   * without any message.
    *
    * This will also change the display of each fields to give an error feedback
    * (red border).
@@ -41,7 +43,7 @@ export interface InputPinCodeProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: string
+  error?: boolean | string
   /**
    * A unique HTML id for the pin code input.
    *
@@ -73,11 +75,13 @@ export interface InputPinCodeProps
   required?: boolean
   /**
    * A message to display when the pin code input has a valid value.
+   * You can also pass `true` to just display the success feedback (green
+   * border) without any message.
    *
    * This will also change the display of the input to give an success feedback
    * (green border).
    */
-  success?: string
+  success?: boolean | string
   /**
    * The controlled value of the pin code input.
    *

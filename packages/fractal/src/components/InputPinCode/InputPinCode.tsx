@@ -68,8 +68,8 @@ export const InputPinCode = ({
   const hasErrorMessage = !isEmpty(error)
   const hasSuccessMessage = !isEmpty(success)
 
-  const isInError = hasErrorMessage
-  const isSuccessful = hasSuccessMessage && !isInError
+  const isInError = error === true || hasErrorMessage
+  const isSuccessful = (success === true || hasSuccessMessage) && !isInError
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement>,
@@ -320,7 +320,7 @@ export const InputPinCode = ({
                 }
               : {})}
             disabled={disabled}
-            error={hasErrorMessage}
+            error={isInError}
             inputMode="numeric"
             max={9}
             maxLength={1}
