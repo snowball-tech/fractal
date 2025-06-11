@@ -50,7 +50,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       onOpen,
       onToggle,
       open,
-      overlayStyle = 'light',
+      overlayStyle = 'dark',
       position = DEFAULT_POSITION,
       root,
       title,
