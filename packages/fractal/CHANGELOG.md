@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [17.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.0.0...@snowball-tech/fractal@17.1.0) (2025-06-11)
+
+- **confirm:** make the cancel button optional and improve behavior in responsive ([fc7dc19](https://github.com/snowball-tech/fractal/commit/fc7dc19898560a15a135460605bdf6e8fdc6d5d8))
+- **dialog:** make the dialog behave properly in responsive ([bdf6b8e](https://github.com/snowball-tech/fractal/commit/bdf6b8eef93155d2c7be3093286add742f0a6d7e))
+
 # @snowball-tech/fractal [17.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.10...@snowball-tech/fractal@17.0.0) (2025-06-11)
 
 ## @snowball-tech/fractal [16.3.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@16.3.9...@snowball-tech/fractal@16.3.10) (2025-05-28)
