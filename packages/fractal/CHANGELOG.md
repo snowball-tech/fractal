@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.2...@snowball-tech/fractal@17.2.3) (2025-06-12)
+
+- **pin-code:** fix spacing for small screens ([c66081d](https://github.com/snowball-tech/fractal/commit/c66081d11b69d22ec30589467635e838a870c9e5))
+
 ## @snowball-tech/fractal [17.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.1...@snowball-tech/fractal@17.2.2) (2025-06-12)
 
 - **pin-code:** don't automatically split field ([b32625a](https://github.com/snowball-tech/fractal/commit/b32625a7280e32f2fc2f86f46b4e4722fcc55896))
