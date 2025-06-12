@@ -381,7 +381,7 @@ export const InputPinCode = ({
             ? ''
             : split === true
               ? 'flex-col flex-wrap items-start justify-center'
-              : 'to-xs:flex-wrap',
+              : 'to-sm:flex-wrap',
         )}
       >
         {range(
