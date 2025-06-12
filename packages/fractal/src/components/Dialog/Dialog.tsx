@@ -234,7 +234,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     style={{ ...wrapper?.style, position }}
                     {...omit(['className', 'elevation', 'style'], wrapper)}
                   >
-                    <div className="flex flex-row items-center justify-between gap-1">
+                    <div className="flex flex-row justify-between gap-1">
                       <RxDialog.Title
                         asChild
                         className={cj(
@@ -250,7 +250,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                           asChild
                           className={cj(`${PREFIX}-${GROUP_NAME}__dismiss`)}
                         >
-                          <div className="mt-quarter place-items-end text-right">
+                          <div className="mt-half place-items-end text-right">
                             <Button
                               icon={<CloseIcon />}
                               iconOnly
