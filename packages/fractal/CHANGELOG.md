@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.3...@snowball-tech/fractal@17.2.4) (2025-06-12)
+
+- **pin-code:** apply the reduced gap at the right place :facepalm: ([66b80a9](https://github.com/snowball-tech/fractal/commit/66b80a93ae04c4dae514170f2a1a8763dc3c2618))
+
 ## @snowball-tech/fractal [17.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.2...@snowball-tech/fractal@17.2.3) (2025-06-12)
 
 - **pin-code:** fix spacing for small screens ([c66081d](https://github.com/snowball-tech/fractal/commit/c66081d11b69d22ec30589467635e838a870c9e5))
