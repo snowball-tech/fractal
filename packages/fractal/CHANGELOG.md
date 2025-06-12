@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.0...@snowball-tech/fractal@17.2.1) (2025-06-12)
+
+- **pin-code:** fix the breakpoint for the split ([d53189e](https://github.com/snowball-tech/fractal/commit/d53189ef4f714db77fd8607864d912a5690bcef0))
+
 # @snowball-tech/fractal [17.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.7...@snowball-tech/fractal@17.2.0) (2025-06-12)
 
 - **pin-code:** automatically wrap on small screens ([edaad4c](https://github.com/snowball-tech/fractal/commit/edaad4c822db48c3847f359c671d8e9a0d571c69))
