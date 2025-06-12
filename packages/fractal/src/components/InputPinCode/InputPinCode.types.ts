@@ -82,13 +82,13 @@ export interface InputPinCodeProps
    * provided)
    *
    * If `true`, the pin code input will never be split
-   * If `false`, the pin code input will always be split
-   * If `'auto'` (or not given), the pin code input will be split on small
+   * If `false` (or not given), the pin code input will always be split
+   * If `'auto'`, the pin code input will be split on small
    * screens (< sm) at
    */
   split?: boolean | 'auto'
   /** The index at which the pin code input must be split (if `split` is not
-   * `false`. */
+   * `false` or empty). */
   splitAt?: number
   /**
    * A message to display when the pin code input has a valid value.

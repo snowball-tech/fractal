@@ -55,7 +55,7 @@ export const InputPinCode = ({
   placeholders,
   readOnly = false,
   required = false,
-  split = 'auto',
+  split = false,
   splitAt,
   success,
   value,
@@ -281,7 +281,7 @@ export const InputPinCode = ({
       >
         {range(
           indexShift,
-          split !== false && isNumber(actualSplitAt)
+          split && isNumber(actualSplitAt)
             ? Math.min(indexShift + actualSplitAt, length)
             : length,
         ).map((index) => (
@@ -299,6 +299,7 @@ export const InputPinCode = ({
               `${PREFIX}-${GROUP_NAME}__field--${index}`,
               'w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
             )}
+            extraSmall={!split}
             {...(isString(defaultValue)
               ? {
                   defaultValue: isInteger(
@@ -377,7 +378,7 @@ export const InputPinCode = ({
       <div
         className={cj(
           'flex w-min justify-start gap-1 sm:w-fit',
-          split === false
+          !split
             ? ''
             : split === true
               ? 'flex-col flex-wrap items-start justify-center'
@@ -386,7 +387,7 @@ export const InputPinCode = ({
       >
         {range(
           0,
-          split !== false && isNumber(actualSplitAt)
+          split && isNumber(actualSplitAt)
             ? Math.ceil(length / actualSplitAt)
             : 1,
         ).map(getInputs)}

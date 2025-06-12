@@ -31,6 +31,7 @@ const meta: Meta<InputTextProps> = {
     },
     description: 'These aren’t the droids you’re looking for!',
     disabled: false,
+    extraSmall: false,
     fullWidth: false,
     label: 'You don’t need to see his identification!',
     placeholder: 'I don’t need to see his identification...',

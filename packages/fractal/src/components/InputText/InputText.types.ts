@@ -48,6 +48,13 @@ export interface InputTextProps
    * message when provided.
    */
   error?: boolean | string
+  /**
+   * Indicates if the text input can reduce its width really small on small
+   * devices.
+   *
+   * This is mainly used and possible for the `PinCodeInput` component.
+   */
+  extraSmall?: boolean
   /** Indicates if the text input should take all the available width. */
   fullWidth?: boolean
   /**

@@ -36,6 +36,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       description,
       disabled = false,
       error,
+      extraSmall = false,
       fullWidth = false,
       id,
       label,
@@ -226,6 +227,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__input`,
                 'box-border h-6 max-h-6 w-full min-w-6 max-w-full border-1 px-2 py-1 text-left outline-none transition-border-color duration-300 ease-out placeholder:text-placeholder',
+                extraSmall ? 'to-sm:min-w-5 to-sm:px-1' : '',
                 withButton
                   ? `${PREFIX}-${GROUP_NAME}__input--with-button ${PREFIX}-${GROUP_NAME}__input--with-button--${buttonProps?.position ?? 'right'}`
                   : 'rounded-sm',

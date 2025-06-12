@@ -26,7 +26,7 @@ const meta: Meta<InputPinCodeProps> = {
     placeholders: 'X',
     readOnly: false,
     required: false,
-    split: 'auto',
+    split: false,
   },
   argTypes: {
     split: {
