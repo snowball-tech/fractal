@@ -275,7 +275,7 @@ export const InputPinCode = ({
         key={row}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__fields ${PREFIX}-${GROUP_NAME}__fields--row-${row}`,
-          'flex w-min gap-1 sm:w-fit',
+          'flex w-min gap-half sm:w-fit sm:gap-1',
           wrapper?.className,
         )}
       >
@@ -348,7 +348,7 @@ export const InputPinCode = ({
     <div
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        'flex w-min max-w-full flex-col gap-half sm:w-fit sm:gap-1',
+        'flex w-min max-w-full flex-col gap-1 sm:w-fit',
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
         isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
         readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
