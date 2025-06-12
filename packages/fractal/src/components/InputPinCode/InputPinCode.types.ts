@@ -10,14 +10,17 @@ import type { InputTextProps } from '@/components/InputText/InputText.types'
 export interface InputPinCodeProps
   extends Omit<
     InputTextProps,
+    | 'button'
     | 'fullWidth'
     | 'onBlur'
+    | 'onButtonClick'
     | 'onFocus'
     | 'onKeyDown'
     | 'placeholder'
     | 'prefix'
     | 'suffix'
     | 'type'
+    | 'withButton'
   > {
   /** Indicates if the first pin code field must be focused on render. */
   autoFocus?: boolean
@@ -73,6 +76,20 @@ export interface InputPinCodeProps
   readOnly?: boolean
   /** Indicates if the pin code input must be filled. */
   required?: boolean
+  /**
+   * Indicates if the pin code input can/must be split into multiple lines at
+   * `splitAt` index (or in the middle rounded to the top if no `splitAt` is
+   * provided)
+   *
+   * If `true`, the pin code input will never be split
+   * If `false`, the pin code input will always be split
+   * If `'auto'` (or not given), the pin code input will be split on small
+   * screens (< sm) at
+   */
+  split?: boolean | 'auto'
+  /** The index at which the pin code input must be split (if `split` is not
+   * `false`. */
+  splitAt?: number
   /**
    * A message to display when the pin code input has a valid value.
    * You can also pass `true` to just display the success feedback (green

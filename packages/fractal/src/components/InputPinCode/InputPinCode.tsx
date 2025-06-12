@@ -55,6 +55,8 @@ export const InputPinCode = ({
   placeholders,
   readOnly = false,
   required = false,
+  split = 'auto',
+  splitAt,
   success,
   value,
   wrapper,
@@ -257,45 +259,32 @@ export const InputPinCode = ({
     }
   }
 
-  return (
-    <div
-      className={cn(
-        `${PREFIX}-${GROUP_NAME}`,
-        'flex w-full max-w-full flex-col gap-1 sm:w-min',
-        disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
-        isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
-        readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
-        required ? `${PREFIX}-${GROUP_NAME}--required` : '',
-        isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
-        props.className,
-      )}
-    >
-      {isEmpty(label) ? (
-        false
-      ) : (
-        <RxLabel
-          asChild
-          className={cj(
-            `${PREFIX}-${GROUP_NAME}__label`,
-            disabled ? 'cursor-default' : 'cursor-pointer',
-            required
-              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
-              : '',
-          )}
-          htmlFor={`${uniqueId}-0`}
-        >
-          <Typography element="label">{label}</Typography>
-        </RxLabel>
-      )}
+  const actualSplitAt =
+    !isNumber(splitAt) || Number.isNaN(splitAt) || splitAt <= 0
+      ? Math.ceil(length / 2)
+      : splitAt
 
+  const getInputs = (row = 0) => {
+    const indexShift = row * actualSplitAt
+    if (indexShift >= length) {
+      return null
+    }
+
+    return (
       <div
+        key={row}
         className={cn(
-          `${PREFIX}-${GROUP_NAME}__fields`,
-          'flex w-full gap-1 sm:w-fit',
+          `${PREFIX}-${GROUP_NAME}__fields ${PREFIX}-${GROUP_NAME}__fields--row-${row}`,
+          'flex w-min gap-1 sm:w-fit',
           wrapper?.className,
         )}
       >
-        {range(0, length).map((index) => (
+        {range(
+          indexShift,
+          split !== false && isNumber(actualSplitAt)
+            ? Math.min(indexShift + actualSplitAt, length)
+            : length,
+        ).map((index) => (
           <InputText
             id={`${uniqueId}-${index}`}
             key={index}
@@ -350,6 +339,57 @@ export const InputPinCode = ({
             {...omit(['className'], props)}
           />
         ))}
+      </div>
+    )
+  }
+
+  return (
+    <div
+      className={cn(
+        `${PREFIX}-${GROUP_NAME}`,
+        'flex w-min max-w-full flex-col gap-1 sm:w-fit',
+        disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
+        isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
+        readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
+        required ? `${PREFIX}-${GROUP_NAME}--required` : '',
+        isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
+        props.className,
+      )}
+    >
+      {isEmpty(label) ? (
+        false
+      ) : (
+        <RxLabel
+          asChild
+          className={cj(
+            `${PREFIX}-${GROUP_NAME}__label`,
+            disabled ? 'cursor-default' : 'cursor-pointer',
+            required
+              ? `${PREFIX}-${GROUP_NAME}__label--required after:text-feedback-danger-50 after:content-required`
+              : '',
+          )}
+          htmlFor={`${uniqueId}-0`}
+        >
+          <Typography element="label">{label}</Typography>
+        </RxLabel>
+      )}
+
+      <div
+        className={cj(
+          'flex w-min justify-start gap-1 sm:w-fit',
+          split === false
+            ? ''
+            : split === true
+              ? 'flex-col flex-wrap items-start justify-center'
+              : 'to-xs:flex-wrap',
+        )}
+      >
+        {range(
+          0,
+          split !== false && isNumber(actualSplitAt)
+            ? Math.ceil(length / actualSplitAt)
+            : 1,
+        ).map(getInputs)}
       </div>
 
       {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (

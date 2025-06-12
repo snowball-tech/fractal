@@ -26,6 +26,16 @@ const meta: Meta<InputPinCodeProps> = {
     placeholders: 'X',
     readOnly: false,
     required: false,
+    split: 'auto',
+  },
+  argTypes: {
+    split: {
+      control: 'select',
+      options: [true, false, 'auto'],
+    },
+    splitAt: {
+      control: 'number',
+    },
   },
   component: InputPinCode,
   decorators: [
