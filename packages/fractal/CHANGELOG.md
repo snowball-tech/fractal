@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.1...@snowball-tech/fractal@17.2.2) (2025-06-12)
+
+- **pin-code:** don't automatically split field ([b32625a](https://github.com/snowball-tech/fractal/commit/b32625a7280e32f2fc2f86f46b4e4722fcc55896))
+
 ## @snowball-tech/fractal [17.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.0...@snowball-tech/fractal@17.2.1) (2025-06-12)
 
 - **pin-code:** fix the breakpoint for the split ([d53189e](https://github.com/snowball-tech/fractal/commit/d53189ef4f714db77fd8607864d912a5690bcef0))
