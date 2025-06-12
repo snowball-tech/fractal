@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [17.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.7...@snowball-tech/fractal@17.2.0) (2025-06-12)
+
+- **pin-code:** automatically wrap on small screens ([edaad4c](https://github.com/snowball-tech/fractal/commit/edaad4c822db48c3847f359c671d8e9a0d571c69))
+
 ## @snowball-tech/fractal [17.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.1.6...@snowball-tech/fractal@17.1.7) (2025-06-11)
 
 - **pin-code:** allow to pass a boolean to error/success ([f6727ee](https://github.com/snowball-tech/fractal/commit/f6727ee9d1f9a62f48fac2395d2c62d3a2f55869))
