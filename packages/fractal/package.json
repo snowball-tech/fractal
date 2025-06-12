@@ -164,5 +164,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "17.2.4"
+  "version": "17.2.5"
 }

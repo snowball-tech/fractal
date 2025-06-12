@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [17.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.4...@snowball-tech/fractal@17.2.5) (2025-06-12)
+
+- **dialog:** keep the dismiss button at the start ([d928785](https://github.com/snowball-tech/fractal/commit/d928785125f2d8ce88dbc474453e499143a30660))
+
 ## @snowball-tech/fractal [17.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.3...@snowball-tech/fractal@17.2.4) (2025-06-12)
 
 - **pin-code:** apply the reduced gap at the right place :facepalm: ([66b80a9](https://github.com/snowball-tech/fractal/commit/66b80a93ae04c4dae514170f2a1a8763dc3c2618))
