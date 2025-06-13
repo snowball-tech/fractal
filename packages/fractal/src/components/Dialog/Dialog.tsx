@@ -42,7 +42,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       children,
       closeButtonLabel = 'Close',
       condensed = false,
-      content,
+      contentClassName,
       defaultOpen,
       disabled = false,
       dismissable = true,
@@ -280,7 +280,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                           condensed
                             ? 'gap-3 pr-one-and-half'
                             : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',
-                          content?.className,
+                          contentClassName,
                         )}
                         scrollbarOnHover={scrollbarOnHover}
                       >

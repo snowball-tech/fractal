@@ -12,8 +12,7 @@ export type CombinedRefs = {
   trigger: HTMLElement | null
 }
 
-export interface DialogProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
+export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The content of the dialog. */
   children: ReactNode
   /**
@@ -23,12 +22,8 @@ export interface DialogProps
   closeButtonLabel?: string
   /** Indicates if the dialog should be condensed, i.e. smaller paddings. */
   condensed?: boolean
-  /**
-   * Configure the content area of the dialog.
-   */
-  content?: {
-    className?: string
-  }
+  /** The CSS for the content of the dialog. */
+  contentClassName?: string
   /**
    * The open state of the dialog when it is initially rendered.
    *
