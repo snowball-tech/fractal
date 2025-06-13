@@ -12,7 +12,8 @@ export type CombinedRefs = {
   trigger: HTMLElement | null
 }
 
-export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface DialogProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
   /** The content of the dialog. */
   children: ReactNode
   /**
@@ -20,6 +21,14 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * dialog (if it is dismissable).
    */
   closeButtonLabel?: string
+  /** Indicates if the dialog should be condensed, i.e. smaller paddings. */
+  condensed?: boolean
+  /**
+   * Configure the content area of the dialog.
+   */
+  content?: {
+    className?: string
+  }
   /**
    * The open state of the dialog when it is initially rendered.
    *
@@ -58,8 +67,25 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   position?: `${Positions}`
   /** Options to customize the root element of the dialog. */
   root?: Partial<AllHTMLAttributes<HTMLDivElement>>
+  /**
+   * Indicates the behavior of the scrollbar in the content of the dialog.
+   *
+   * If `true`, the scrollbars will only be displayed on hover.
+   * Otherwise they will always be visible if they are present.
+   */
+  scrollbarOnHover?: boolean
   /** A title to display at the top of the dialog. */
   title?: string
+  /**
+   * The trigger of the dialog.
+   *
+   * If you don't pass any, you will have to handle the open state yourself.
+   */
+  trigger?: ReactNode
+  /**
+   * The props of the paper wrapper inside of the dialog.
+   */
+  wrapper?: Partial<PaperProps>
   /** Event handler called when the dialog is closed. */
   onClose?: () => void
   /** Event handler called when the dialog is dismissed. */
@@ -78,16 +104,4 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
    * Event handler called when the dialog is opened or closed.
    */
   onToggle?: (open: boolean) => void
-
-  /**
-   * The trigger of the dialog.
-   *
-   * If you don't pass any, you will have to handle the open state yourself.
-   */
-  trigger?: ReactNode
-
-  /**
-   * The props of the paper wrapper inside of the dialog.
-   */
-  wrapper?: Partial<PaperProps>
 }

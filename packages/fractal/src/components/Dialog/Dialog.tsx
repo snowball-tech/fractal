@@ -40,6 +40,8 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
     {
       children,
       closeButtonLabel = 'Close',
+      condensed = false,
+      content,
       defaultOpen,
       disabled = false,
       dismissable = true,
@@ -55,6 +57,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       overlayStyle = 'dark',
       position = DEFAULT_POSITION,
       root,
+      scrollbarOnHover = true,
       title,
       trigger,
       wrapper,
@@ -214,27 +217,33 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   asChild
                   className={cn(
                     `${PREFIX}-${GROUP_NAME}__content`,
-                    'z-[9999] max-w-[calc(100%-theme(spacing.4))] to-sm:w-full',
+                    'z-[9999] max-h-[calc(100%-theme(spacing.4))] max-w-[calc(100%-theme(spacing.4))] to-xs:max-h-full to-sm:max-h-[calc(100%-theme(spacing.2))] to-sm:w-full to-sm:max-w-[calc(100%-theme(spacing.2))]',
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
                   onPointerDownOutside={handleDialogPointerDownOutside}
                   {...omit(
-                    ['className', 'onInteractOutside', 'asChild'],
+                    [
+                      'className',
+                      'onInteractOutside',
+                      'onPointerDownOutside',
+                      'asChild',
+                    ],
                     props,
                   )}
                 >
                   <Paper
                     className={cn(
-                      'left-1/2 top-1/2 flex size-fit -translate-x-1/2 -translate-y-1/2 flex-col gap-5 p-3',
-                      fullWidth ? 'h-fit w-full' : 'size-fit to-sm:w-full',
+                      'left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col',
+                      condensed ? 'gap-3 pr-half' : 'gap-5 p-3 pr-half',
+                      fullWidth ? '' : 'w-fit to-sm:w-full',
                       wrapper?.className,
                     )}
                     elevation={wrapper?.elevation || '2'}
                     style={{ ...wrapper?.style, position }}
                     {...omit(['className', 'elevation', 'style'], wrapper)}
                   >
-                    <div className="flex flex-row justify-between gap-1">
+                    <div className="flex h-fit w-full flex-row justify-between gap-1">
                       <RxDialog.Title
                         asChild
                         className={cj(
@@ -263,7 +272,27 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       )}
                     </div>
 
-                    {hasChildren && children}
+                    {hasChildren && (
+                      <div
+                        className={
+                          scrollbarOnHover
+                            ? 'invisible overflow-auto transition-[visibility] duration-600 hover:visible focus:visible'
+                            : 'overflow-auto'
+                        }
+                      >
+                        <div
+                          className={cn(
+                            'visible flex flex-col',
+                            condensed
+                              ? 'gap-3 pr-one-and-half'
+                              : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',
+                            content?.className,
+                          )}
+                        >
+                          {children}
+                        </div>
+                      </div>
+                    )}
                   </Paper>
                 </RxDialog.Content>
               </>

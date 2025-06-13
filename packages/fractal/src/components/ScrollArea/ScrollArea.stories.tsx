@@ -16,6 +16,7 @@ const meta = {
           Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm.
           And well you should not.
         </Typography>
+
         <Typography>
           For my ally is the Force, and a powerful ally it is. Life creates it,
           makes it grow. Its energy surrounds us and binds us. Luminous beings
@@ -23,11 +24,13 @@ const meta = {
           here, between you, me, the tree, the rock, everywhere, yes. Even
           between the land and the ship.
         </Typography>
+
         <Typography>
           The following is just to have a
           verysuperlongworkthatwillmakethescrollareascrollhorizontaly. And we
           repeat to have a vertical scroll.
         </Typography>
+
         <Typography>
           Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm.
           And well you should not. For my ally is the Force, and a powerful ally

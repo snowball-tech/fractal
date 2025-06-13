@@ -7,7 +7,7 @@ import isChromatic from 'chromatic'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button'
-import { InputText } from '@/components/InputText'
+import { Typography } from '@/components/Typography'
 import { sleep } from '@/utils'
 
 import { Dialog, DialogPositions } from '.'
@@ -15,15 +15,50 @@ import { DEFAULT_POSITION } from './Dialog.constants'
 
 type DialogProps = ComponentProps<typeof Dialog>
 
+const content = (
+  <>
+    <Typography>
+      Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And
+      well you should not.
+    </Typography>
+
+    <Typography>
+      For my ally is the Force, and a powerful ally it is. Life creates it,
+      makes it grow. Its energy surrounds us and binds us. Luminous beings are
+      we, not this crude matter. You must feel the Force around you; here,
+      between you, me, the tree, the rock, everywhere, yes. Even between the
+      land and the ship.
+    </Typography>
+
+    <Typography>
+      The following is just to have a
+      verysuperlongworkthatwillmakethescrollareascrollhorizontaly. And we
+      repeat.
+    </Typography>
+
+    <Typography>
+      Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And
+      well you should not. For my ally is the Force, and a powerful ally it is.
+      Life creates it, makes it grow. Its energy surrounds us and binds us.
+      Luminous beings are we, not this crude matter. You must feel the Force
+      around you; here, between you, me, the tree, the rock, everywhere, yes.
+      Even between the land and the{' '}
+    </Typography>
+  </>
+)
+
 const meta: Meta<DialogProps> = {
   args: {
-    children: 'You can enter any content you want here',
+    children: content,
+    condensed: true,
     defaultOpen: false,
     disabled: false,
     dismissable: true,
+    fullWidth: false,
     modal: true,
     overlayStyle: 'light',
     position: 'fixed',
+    scrollbarOnHover: true,
     title: 'This is the title',
     trigger: 'Text',
   },
@@ -83,6 +118,19 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
 
+export const ScrollableDialog: Story = {
+  render: () => (
+    <Dialog
+      title="This dialog contains a lot of content"
+      trigger={<Button>Click me!</Button>}
+    >
+      {content}
+      {content}
+      {content}
+    </Dialog>
+  ),
+}
+
 export const Interactive: Story = {
   args: {
     onClose: fn(),
@@ -100,15 +148,11 @@ export const Interactive: Story = {
   },
   render: () => (
     <Dialog
-      title="Please provide your Jedi identification"
-      trigger={<Button label="Open the dialog" />}
+      condensed
+      title="Do or do not, there is no try"
+      trigger={<Button label="Master Yoda" />}
     >
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-2">
-          <InputText defaultValue="Luke" fullWidth label="First name" />
-          <InputText defaultValue="Skywalker" fullWidth label="Last name" />
-        </div>
-      </div>
+      {content}
     </Dialog>
   ),
 }
@@ -135,10 +179,14 @@ export const InteractiveClose: Story = {
   render: () => (
     <Dialog
       closeButtonLabel="Close"
+      scrollbarOnHover={false}
       title="This is the title"
       trigger={<Button label="Open the dialog" />}
     >
-      This is the content
+      {content}
+      {content}
+      {content}
+      {content}
     </Dialog>
   ),
 }
