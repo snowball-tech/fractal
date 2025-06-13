@@ -20,7 +20,7 @@ export const ScrollArea = ({
   orientation = 'vertical',
   scrollHideDelay = 600,
   type = 'hover',
-  viewportClassName,
+  viewport,
   ...props
 }: ScrollAreaProps) => {
   const scrollBarClassNames =
@@ -33,6 +33,7 @@ export const ScrollArea = ({
     <RxScrollArea.Root
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
+        'overflow-hidden',
         orientation === 'vertical' || orientation === 'both'
           ? 'h-full max-h-full min-h-0'
           : '',
@@ -46,9 +47,13 @@ export const ScrollArea = ({
       {...omit(['className'], props)}
     >
       <RxScrollArea.Viewport
-        className={cn('relative h-full w-full', viewportClassName)}
+        className={cn(
+          'relative size-full max-h-full max-w-full',
+          viewport?.rootClassName,
+        )}
+        {...omit(['className'], viewport)}
       >
-        {children}
+        <div className={viewport?.className}>{children}</div>
       </RxScrollArea.Viewport>
 
       {(orientation === 'both' || orientation === 'vertical') && (

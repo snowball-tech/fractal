@@ -3,7 +3,7 @@ import type {
   ScrollAreaScrollbarProps as RxScrollAreaScrollbarProps,
 } from '@radix-ui/react-scroll-area'
 
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 export interface ScrollAreaProps extends RxScrollAreaProps {
   /** The content of the scroll area. */
@@ -36,6 +36,17 @@ export interface ScrollAreaProps extends RxScrollAreaProps {
    *    and when the user is hovering over the scroll area.
    */
   type?: RxScrollAreaProps['type']
-  /** The CSS class names to apply to the scrollarea viewport element. */
-  viewportClassName?: string
+  /**
+   * The properties to pass to the viewport element of the scroll area.
+   *
+   * Note that `className` will be applied to the `<div>` that wraps the given
+   * children, while `rootClassName` will be applied to the
+   * `<RxScrollArea.Viewport>` element (that wrap the `<div>` wrapping the
+   * children).
+   */
+  viewport?: {
+    className?: string
+    rootClassName?: string
+    style?: CSSProperties
+  }
 }
