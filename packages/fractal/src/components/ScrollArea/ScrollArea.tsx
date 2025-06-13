@@ -27,13 +27,13 @@ export const ScrollArea = ({
       vertical && !horizontal ? 'overflow-y-auto' : '',
       !vertical && horizontal ? 'overflow-x-auto' : '',
       scrollbarOnHover
-        ? 'invisible transition-[visibility] duration-600 hover:visible focus:visible'
+        ? 'sm:invisible sm:transition-[visibility] sm:duration-600 sm:hover:visible sm:focus:visible'
         : '',
       props.className,
     )}
     {...omit(['className'], props)}
   >
-    <div className={cn('visible size-fit', props.contentClassName)}>
+    <div className={cn('size-fit sm:visible', props.contentClassName)}>
       {children}
     </div>
   </div>
