@@ -244,7 +244,14 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     style={{ ...wrapper?.style, position }}
                     {...omit(['className', 'elevation', 'style'], wrapper)}
                   >
-                    <div className="flex h-fit w-full flex-row justify-between gap-1">
+                    <div
+                      className={cj(
+                        'flex h-fit w-full flex-row justify-between gap-1',
+                        condensed
+                          ? 'pr-one-and-half'
+                          : 'pr-[calc(theme(spacing.3)-theme(spacing.half))]',
+                      )}
+                    >
                       <RxDialog.Title
                         asChild
                         className={cj(
@@ -258,7 +265,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       {dismissable && (
                         <RxDialog.Close
                           asChild
-                          className={cj(`${PREFIX}-${GROUP_NAME}__dismiss`)}
+                          className={`${PREFIX}-${GROUP_NAME}__dismiss`}
                         >
                           <div className="mt-half place-items-end text-right">
                             <Button
