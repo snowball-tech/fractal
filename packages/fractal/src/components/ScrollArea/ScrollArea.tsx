@@ -33,9 +33,7 @@ export const ScrollArea = ({
     )}
     {...omit(['className'], props)}
   >
-    <div className={cn('size-fit sm:visible', props.contentClassName)}>
-      {children}
-    </div>
+    <div className={cn('sm:visible', props.contentClassName)}>{children}</div>
   </div>
 )
 ScrollArea.displayName = 'ScrollArea'

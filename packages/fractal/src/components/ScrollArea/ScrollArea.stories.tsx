@@ -61,7 +61,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const contentClassNames = 'bg-grey-90 p-2 flex flex-col gap-2'
+const contentClassNames = 'bg-grey-90 p-2 flex flex-col gap-2 size-fit'
 
 export const Playground: Story = {
   render: ({ children }) => (
