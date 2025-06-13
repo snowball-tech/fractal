@@ -1,3 +1,10 @@
+# @snowball-tech/fractal [18.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.5...@snowball-tech/fractal@18.0.0) (2025-06-13)
+
+- **dialog:** fix a prop name ([74b79fc](https://github.com/snowball-tech/fractal/commit/74b79fcafe64032668dc1355dcc43737a9915b6d))
+- **dialog:** improve the sizing and the scrolling of dialog content ([7872198](https://github.com/snowball-tech/fractal/commit/78721980e0aab53ce96343f4c68cf6d3c164c2b2))
+- **scroll-area:** make it more easily usable ([bf55ba6](https://github.com/snowball-tech/fractal/commit/bf55ba6a4ebe8c45a588025b8c4bff0d78161989))
+- **scroll-area:** make the scrollbar always there when on mobile ([f10881b](https://github.com/snowball-tech/fractal/commit/f10881b188ca34554a7041194acb90f2011f37c8))
+
 ## @snowball-tech/fractal [17.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.4...@snowball-tech/fractal@17.2.5) (2025-06-12)
 
 - **dialog:** keep the dismiss button at the start ([d928785](https://github.com/snowball-tech/fractal/commit/d928785125f2d8ce88dbc474453e499143a30660))
