@@ -20,6 +20,7 @@ import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button'
 import { Paper } from '@/components/Paper'
+import { ScrollArea } from '@/components/ScrollArea'
 import { Typography } from '@/components/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
@@ -273,25 +274,18 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     </div>
 
                     {hasChildren && (
-                      <div
-                        className={
-                          scrollbarOnHover
-                            ? 'invisible overflow-auto transition-[visibility] duration-600 hover:visible focus:visible'
-                            : 'overflow-auto'
-                        }
+                      <ScrollArea
+                        contentClassName={cn(
+                          'visible flex flex-col',
+                          condensed
+                            ? 'gap-3 pr-one-and-half'
+                            : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',
+                          content?.className,
+                        )}
+                        scrollbarOnHover={scrollbarOnHover}
                       >
-                        <div
-                          className={cn(
-                            'visible flex flex-col',
-                            condensed
-                              ? 'gap-3 pr-one-and-half'
-                              : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',
-                            content?.className,
-                          )}
-                        >
-                          {children}
-                        </div>
-                      </div>
+                        {children}
+                      </ScrollArea>
                     )}
                   </Paper>
                 </RxDialog.Content>

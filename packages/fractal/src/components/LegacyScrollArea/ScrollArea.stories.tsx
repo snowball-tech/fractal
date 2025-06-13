@@ -4,7 +4,7 @@ import type { ComponentProps } from 'react'
 
 import { Typography } from '@/components/Typography'
 
-import { ScrollArea } from '.'
+import { LegacyScrollArea as ScrollArea } from '.'
 
 type ScrollAreaProps = ComponentProps<typeof ScrollArea>
 
@@ -41,11 +41,12 @@ const meta = {
         </Typography>
       </>
     ),
-    horizontal: true,
-    scrollbarOnHover: true,
-    vertical: true,
+    orientation: 'both',
+    scrollHideDelay: 600,
+    type: 'always',
   },
   argTypes: {
+    asChild: { table: { disable: true } },
     children: { control: 'text' },
   },
   component: ScrollArea,
@@ -55,37 +56,49 @@ const meta = {
     },
   },
 
-  title: 'Molecules/ScrollArea',
+  title: 'Molecules/ScrollArea/Legacy',
 } satisfies Meta<ScrollAreaProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-const contentClassNames = 'bg-grey-90 p-2 flex flex-col gap-2'
-
 export const Playground: Story = {
-  render: ({ children }) => (
-    <ScrollArea className="size-[200px]" contentClassName={contentClassNames}>
+  render: ({ children, orientation = 'both' }) => (
+    <ScrollArea
+      className="size-[200px] bg-grey-90 p-2"
+      orientation={orientation}
+      viewport={{
+        className: 'flex flex-col gap-5',
+      }}
+    >
       {children}
     </ScrollArea>
   ),
 }
 
 export const Horizontal: Story = {
-  render: ({ children }) => (
-    <ScrollArea className="w-[200px]" contentClassName={contentClassNames}>
+  render: ({ children, orientation = 'horizontal' }) => (
+    <ScrollArea
+      className="w-[200px] bg-grey-90 p-2"
+      orientation={orientation}
+      viewport={{
+        className: 'flex flex-col gap-5',
+      }}
+    >
       {children}
     </ScrollArea>
   ),
 }
 
 export const Vertical: Story = {
-  render: ({ children }) => (
-    <ScrollArea className="h-[200px]" contentClassName={contentClassNames}>
-      {children}
-      {children}
-      {children}
-      {children}
+  render: ({ children, orientation = 'vertical' }) => (
+    <ScrollArea
+      className="h-[200px] bg-grey-90 p-2"
+      orientation={orientation}
+      viewport={{
+        className: 'flex flex-col gap-5',
+      }}
+    >
       {children}
     </ScrollArea>
   ),
