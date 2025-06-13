@@ -1,3 +1,8 @@
+## @snowball-tech/fractal [18.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.0...@snowball-tech/fractal@18.0.1) (2025-06-13)
+
+- **dialog:** fix spacing of the title/close button ([2929e95](https://github.com/snowball-tech/fractal/commit/2929e95ae4904ce67042a4a7b88392e30d1a509f))
+- **scrollarea:** fix the sizing ([a8a9557](https://github.com/snowball-tech/fractal/commit/a8a95574cbc457bb9fd3fe21a3fd283de4465e8a))
+
 # @snowball-tech/fractal [18.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@17.2.5...@snowball-tech/fractal@18.0.0) (2025-06-13)
 
 - **dialog:** fix a prop name ([74b79fc](https://github.com/snowball-tech/fractal/commit/74b79fcafe64032668dc1355dcc43737a9915b6d))
