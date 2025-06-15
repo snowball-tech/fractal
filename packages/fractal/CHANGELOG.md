@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [18.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.1...@snowball-tech/fractal@18.0.2) (2025-06-15)
+
+- **dialog:** use vw and dvh for max dialog size ([44e427e](https://github.com/snowball-tech/fractal/commit/44e427eaf4e24115b8c0385aafe227cbfa096312))
+
 ## @snowball-tech/fractal [18.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.0...@snowball-tech/fractal@18.0.1) (2025-06-13)
 
 - **dialog:** fix spacing of the title/close button ([2929e95](https://github.com/snowball-tech/fractal/commit/2929e95ae4904ce67042a4a7b88392e30d1a509f))
