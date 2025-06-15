@@ -283,7 +283,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     {hasChildren && (
                       <ScrollArea
                         contentClassName={cn(
-                          'visible flex flex-col',
+                          'visible flex flex-col w-full',
                           condensed
                             ? 'gap-3 pr-one-and-half'
                             : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',

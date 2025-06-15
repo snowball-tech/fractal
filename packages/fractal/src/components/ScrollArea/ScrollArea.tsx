@@ -33,7 +33,7 @@ export const ScrollArea = ({
     )}
     {...omit(['className'], props)}
   >
-    <div className={cn('w-fit max-w-full sm:visible', props.contentClassName)}>
+    <div className={cn('w-fit sm:visible', props.contentClassName)}>
       {children}
     </div>
   </div>
