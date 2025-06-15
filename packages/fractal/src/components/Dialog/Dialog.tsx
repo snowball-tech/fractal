@@ -218,7 +218,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   asChild
                   className={cn(
                     `${PREFIX}-${GROUP_NAME}__content`,
-                    'z-[9999] max-h-[calc(100%-theme(spacing.4))] max-w-[calc(100%-theme(spacing.4))] to-xs:max-h-full to-sm:max-h-[calc(100%-theme(spacing.2))] to-sm:w-full to-sm:max-w-[calc(100%-theme(spacing.2))]',
+                    'z-[9999] max-h-[calc(100dvh-theme(spacing.4))] max-w-[calc(100vw-theme(spacing.4))] to-xs:max-h-[100dvh] to-sm:max-h-[calc(100dvh-theme(spacing.2))] to-sm:w-full to-sm:max-w-[calc(100vw-theme(spacing.2))]',
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
