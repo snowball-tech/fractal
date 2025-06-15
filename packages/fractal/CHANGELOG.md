@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [18.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.3...@snowball-tech/fractal@18.0.4) (2025-06-15)
+
+- **dialog:** properly size the scroll zone of the content of the dialog ([81f2504](https://github.com/snowball-tech/fractal/commit/81f2504b6398bb53512e86fb818d5c89393168de))
+
 ## @snowball-tech/fractal [18.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.2...@snowball-tech/fractal@18.0.3) (2025-06-15)
 
 - **scroll-area:** make the scroll area size properly ([049b52d](https://github.com/snowball-tech/fractal/commit/049b52dce80614d6e5fcae75ab675635c607b36a))
