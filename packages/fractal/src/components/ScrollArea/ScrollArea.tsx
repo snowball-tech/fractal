@@ -15,6 +15,7 @@ import { GROUP_NAME } from './ScrollArea.constants'
  */
 export const ScrollArea = ({
   children,
+  contentClassName,
   horizontal = true,
   scrollbarOnHover = true,
   vertical = true,
@@ -33,9 +34,7 @@ export const ScrollArea = ({
     )}
     {...omit(['className'], props)}
   >
-    <div className={cn('w-fit sm:visible', props.contentClassName)}>
-      {children}
-    </div>
+    <div className={cn('w-fit sm:visible', contentClassName)}>{children}</div>
   </div>
 )
 ScrollArea.displayName = 'ScrollArea'
