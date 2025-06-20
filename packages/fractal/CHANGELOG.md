@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [18.0.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.4...@snowball-tech/fractal@18.0.5) (2025-06-20)
+
+- **scroll-area:** fix a prop being spread over the div element ([6eadbf7](https://github.com/snowball-tech/fractal/commit/6eadbf75997901f651fab412639bbe954d6107e5))
+
 ## @snowball-tech/fractal [18.0.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.3...@snowball-tech/fractal@18.0.4) (2025-06-15)
 
 - **dialog:** properly size the scroll zone of the content of the dialog ([81f2504](https://github.com/snowball-tech/fractal/commit/81f2504b6398bb53512e86fb818d5c89393168de))
