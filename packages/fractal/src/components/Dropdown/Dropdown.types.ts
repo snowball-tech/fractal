@@ -11,6 +11,7 @@ import type {
   AllHTMLAttributes,
   ComponentProps,
   CSSProperties,
+  ForwardedRef,
   MouseEvent,
   ReactNode,
 } from 'react'
@@ -304,6 +305,7 @@ export type DropdownRadioGroupProps = {
    * `RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
+  ref?: ForwardedRef<HTMLElement>
 } & Omit<InputRadioGroupProps, 'fullWidth' | 'orientation' | 'variant'>
 
 export type DropdownRadioItemProps = {
@@ -316,6 +318,7 @@ export type DropdownRadioItemProps = {
    * to each RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
+  ref?: ForwardedRef<HTMLElement>
 } & Omit<InputRadioProps, 'fullWidth'>
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

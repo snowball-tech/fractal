@@ -1,6 +1,11 @@
 import type { DropdownMenuContentProps as RxDropdownMenuContentProps } from '@radix-ui/react-dropdown-menu'
 
-import type { AllHTMLAttributes, ChangeEvent, ReactNode } from 'react'
+import type {
+  AllHTMLAttributes,
+  ChangeEvent,
+  ForwardedRef,
+  ReactNode,
+} from 'react'
 
 import type {
   CombinedRefs as DropdownCombinedRefs,
@@ -40,7 +45,10 @@ export interface AutocompleteProps
    * of the dropdown.
    */
   dropdown?: Partial<
-    { className?: string } & Omit<RxDropdownMenuContentProps, 'asChild'>
+    { className?: string; ref?: ForwardedRef<HTMLDivElement> } & Omit<
+      RxDropdownMenuContentProps,
+      'asChild'
+    >
   >
   /**
    * An error message to display below the autocomplete if there is

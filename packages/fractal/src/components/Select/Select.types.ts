@@ -1,6 +1,6 @@
 import type { SelectContentProps as RxSelectContentProps } from '@radix-ui/react-select'
 
-import type { AllHTMLAttributes, ReactNode } from 'react'
+import type { AllHTMLAttributes, ForwardedRef, ReactNode } from 'react'
 
 export type CombinedRefs = {
   container: HTMLDivElement | null
@@ -40,7 +40,10 @@ export interface SelectProps
    * of the dropdown.
    */
   dropdown?: Partial<
-    { className?: string } & Omit<RxSelectContentProps, 'asChild'>
+    { className?: string; ref?: ForwardedRef<HTMLDivElement> } & Omit<
+      RxSelectContentProps,
+      'asChild'
+    >
   >
   /** Indicates if the select should take all the available width. */
   fullWidth?: boolean
