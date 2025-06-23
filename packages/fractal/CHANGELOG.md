@@ -1,3 +1,8 @@
+## @snowball-tech/fractal [18.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.5...@snowball-tech/fractal@18.0.6) (2025-06-23)
+
+- **confirm:** allow to get ref for the confirm and cancel button ([869a082](https://github.com/snowball-tech/fractal/commit/869a08278efb61af227bd93a75359d2501b76338))
+- **toolbar:** fix passing the ref to the button ([3f9b552](https://github.com/snowball-tech/fractal/commit/3f9b552ec5933fd58c3bc43eaeae73f9ad42fe4d))
+
 ## @snowball-tech/fractal [18.0.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.4...@snowball-tech/fractal@18.0.5) (2025-06-20)
 
 - **scroll-area:** fix a prop being spread over the div element ([6eadbf7](https://github.com/snowball-tech/fractal/commit/6eadbf75997901f651fab412639bbe954d6107e5))
