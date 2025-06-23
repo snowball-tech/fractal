@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [18.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.6...@snowball-tech/fractal@18.0.7) (2025-06-23)
+
+- **dialog-confirm:** fix typings of some callback triggered by buttons ([0558ecb](https://github.com/snowball-tech/fractal/commit/0558ecb7133b1bb3ae0e3a7fe8b0fc09ca4df995))
+
 ## @snowball-tech/fractal [18.0.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.5...@snowball-tech/fractal@18.0.6) (2025-06-23)
 
 - **confirm:** allow to get ref for the confirm and cancel button ([869a082](https://github.com/snowball-tech/fractal/commit/869a08278efb61af227bd93a75359d2501b76338))
