@@ -2,6 +2,7 @@ import { DialogContentProps as RxDialogContentProps } from '@radix-ui/react-dial
 
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
+import type { ButtonProps } from '../Button'
 import type { PaperProps } from '../Paper'
 
 import { Positions } from './Dialog.constants'
@@ -84,7 +85,7 @@ export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Event handler called when the dialog is closed. */
   onClose?: () => void
   /** Event handler called when the dialog is dismissed. */
-  onDismiss?: () => void
+  onDismiss?: ButtonProps['onClick']
   /**
    * Event handler called when an interaction is made outside of the dialog.
    */

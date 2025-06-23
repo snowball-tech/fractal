@@ -1,6 +1,6 @@
 'use client'
 
-import { type ForwardedRef, forwardRef } from 'react'
+import { type ForwardedRef, type MouseEvent, forwardRef } from 'react'
 
 import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
@@ -22,12 +22,12 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
     { cancel, children, confirm, onCancel, onConfirm, ...props }: ConfirmProps,
     ref: ForwardedRef<CombinedRefs>,
   ) => {
-    const handleDismiss = () => {
+    const handleDismiss = (event: MouseEvent<HTMLElement>) => {
       if (isFunction(onCancel)) {
-        onCancel()
+        onCancel(event)
       }
       if (isFunction(props.onDismiss)) {
-        props.onDismiss()
+        props.onDismiss(event)
       }
     }
 

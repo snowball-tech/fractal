@@ -30,7 +30,7 @@ export interface ConfirmProps
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.
    */
-  onCancel?: () => void
+  onCancel?: ButtonProps['onClick']
   /** The event handler called when the "Confirm" button is pressed. */
-  onConfirm?: () => void
+  onConfirm?: ButtonProps['onClick']
 }
