@@ -318,7 +318,7 @@ export type DropdownRadioItemProps = {
    * to each RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
-  ref?: ForwardedRef<HTMLElement>
+  ref?: ForwardedRef<HTMLButtonElement>
 } & Omit<InputRadioProps, 'fullWidth'>
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

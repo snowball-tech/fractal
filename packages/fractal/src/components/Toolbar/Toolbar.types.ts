@@ -1,11 +1,6 @@
 import { Root } from '@radix-ui/react-toolbar'
 
-import type {
-  AllHTMLAttributes,
-  ComponentProps,
-  ForwardedRef,
-  ReactNode,
-} from 'react'
+import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
 import type {
   CombinedRefs as DropdownCombinedRefs,
@@ -47,7 +42,6 @@ export interface ToolbarProps
 export type ToolbarButtonProps = {
   /** Indicates if the toolbar button is active. */
   active?: boolean
-  ref?: ForwardedRef<HTMLElement>
 } & Omit<ButtonProps, 'truncate' | 'variant' | 'wrap'>
 
 export type ToolbarDropdownProps = {
