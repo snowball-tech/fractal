@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [18.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.7...@snowball-tech/fractal@18.1.0) (2025-07-04)
+
+- **badge:** allow to pass custom content instead of only integer count ([751c5ee](https://github.com/snowball-tech/fractal/commit/751c5ee301638eea9bfadeabf69bbe597511788c))
+
 ## @snowball-tech/fractal [18.0.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.6...@snowball-tech/fractal@18.0.7) (2025-06-23)
 
 - **dialog-confirm:** fix typings of some callback triggered by buttons ([0558ecb](https://github.com/snowball-tech/fractal/commit/0558ecb7133b1bb3ae0e3a7fe8b0fc09ca4df995))
