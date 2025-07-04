@@ -15,7 +15,13 @@ import { GROUP_NAME } from './Badge.constants'
 /**
  * `Badge` component displays a number in a small colored bubble.
  */
-export const Badge = ({ count, label, limit = 99, ...props }: BadgeProps) => {
+export const Badge = ({
+  children,
+  count,
+  label,
+  limit = 99,
+  ...props
+}: BadgeProps) => {
   let actualCount = isNumber(count) && isInteger(count) ? `${count}` : ''
   if (
     isNumber(limit) &&
@@ -32,9 +38,14 @@ export const Badge = ({ count, label, limit = 99, ...props }: BadgeProps) => {
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'inline-flex shrink-0 items-center justify-center rounded-full bg-primary',
-        isNil(count) || !isNumber(count) || !isInteger(count)
+        (isNil(count) || !isNumber(count) || !isInteger(count)) && !children
           ? `${PREFIX}-${GROUP_NAME}--empty h-2 max-h-2 min-h-2 w-2 min-w-2 max-w-2 p-0`
-          : `${PREFIX}-${GROUP_NAME}--with-count h-3 max-h-3 w-fit min-w-3 px-half py-0`,
+          : `h-3 max-h-3 w-fit min-w-3`,
+        children
+          ? `${PREFIX}-${GROUP_NAME}--with-children p-1`
+          : isInteger(count)
+            ? `${PREFIX}-${GROUP_NAME}--with-count px-half py-0`
+            : '',
         props.className,
       )}
       element="div"
@@ -42,7 +53,7 @@ export const Badge = ({ count, label, limit = 99, ...props }: BadgeProps) => {
       variant="caption-bold"
       {...omit(['className'], props)}
     >
-      {actualCount}
+      {children ?? actualCount}
     </Typography>
   )
 }

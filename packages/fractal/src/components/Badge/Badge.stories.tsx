@@ -8,7 +8,7 @@ type BadgeProps = ComponentProps<typeof Badge>
 
 const perVariantStoriesParameters = {
   controls: {
-    include: ['count, limit = 99'],
+    include: ['children', 'count', 'limit'],
   },
 }
 
@@ -18,6 +18,7 @@ const meta = {
     limit: 99,
   },
   argTypes: {
+    children: { control: 'text' },
     count: { control: 'number' },
     limit: { control: 'number' },
   },
@@ -52,6 +53,7 @@ export const Badges: Story = {
       <Badge count={100} limit={1000} />
       <Badge count={999} limit={1000} />
       <Badge count={9999} limit={1000} />
+      <Badge>50%</Badge>
     </div>
   ),
 }
