@@ -9,7 +9,7 @@ export default {
     './src/**/*.{html,js,ts,jsx,tsx}',
     path.join(
       path.dirname(require.resolve('@snowball-tech/fractal')),
-      '**/*.{html,js,ts,jsx,tsx}',
+      '(!node_modules)/**/*.{html,js,ts,jsx,tsx}',
     ),
   ],
 
