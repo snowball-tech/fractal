@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [19.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@19.0.0...@snowball-tech/fractal@19.0.1) (2025-07-09)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 16.1.3
+
 # @snowball-tech/fractal [19.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.1.0...@snowball-tech/fractal@19.0.0) (2025-07-09)
 
 - **dropdow:** allow to disable "hover the rainbow" mode ([a901078](https://github.com/snowball-tech/fractal/commit/a9010784217d0cb596b29e149c577c3e1e3b9881))
