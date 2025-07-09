@@ -28,6 +28,7 @@ import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 import type { CombinedRefs, SelectProps } from './Select.types'
 
 import { GROUP_NAME } from './Select.constants'
+import { SelectContext } from './SelectContext'
 
 /**
  * `Select` component is used to offer the user choices they can select.
@@ -55,6 +56,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       open,
       placeholder,
       portalled = true,
+      rainbow = true,
       readOnly = false,
       required = false,
       value,
@@ -176,11 +178,13 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               }}
             >
               <Typography
-                className={alternatingBgColorLightClassNames}
+                className={rainbow ? alternatingBgColorLightClassNames : ''}
                 element="div"
                 variant="body-1"
               >
-                {children}
+                <SelectContext.Provider value={{ disabled, rainbow }}>
+                  {children}
+                </SelectContext.Provider>
               </Typography>
             </RxScrollArea.Viewport>
           </RxSelect.Viewport>
@@ -247,7 +251,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             : { dir: props.dir as RxSelect.SelectProps['dir'] })}
           disabled={!writable}
           name={name || uniqueId}
-          open={isOpen}
+          open={isOpen || true}
           required={required}
           {...(value === undefined ? {} : { value })}
           onOpenChange={handleDropdownToggle}

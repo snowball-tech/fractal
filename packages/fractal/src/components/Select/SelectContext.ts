@@ -2,7 +2,7 @@
 
 import { createContext } from 'react'
 
-export const SelectGroupContext = createContext<{
+export const SelectContext = createContext<{
   disabled: boolean
   rainbow: boolean
 }>({ disabled: false, rainbow: true })

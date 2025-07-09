@@ -12,6 +12,7 @@ const meta: Meta<SelectItemGroupProps> = {
   args: {
     disabled: false,
     label: 'Jedis',
+    rainbow: true,
   },
   argTypes: {
     children: {
@@ -33,10 +34,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ disabled = false, label }) => (
+  render: ({ disabled = false, label, rainbow = true }) => (
     <div className="h-[1200px]">
       <Select placeholder="Click to open" onSelect={action('onSelect')}>
-        <SelectItemGroup disabled={disabled} label={label}>
+        <SelectItemGroup disabled={disabled} label={label} rainbow={rainbow}>
           <SelectItem value="luke-skywalker">Luke Skywalker</SelectItem>
           <SelectItem value="obi-wan-kenobi">Obi-Wan Kenobi</SelectItem>
           <SelectItem value="yoda">Yoda</SelectItem>

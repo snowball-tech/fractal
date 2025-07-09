@@ -14,6 +14,7 @@ import { cn } from '@/styles/helpers'
 import type { SelectItemProps } from './Select.types'
 
 import { GROUP_NAME } from './Select.constants'
+import { SelectContext } from './SelectContext'
 import { SelectGroupContext } from './SelectGroupContext'
 
 /**
@@ -27,6 +28,7 @@ export const SelectItem = ({
   children,
   disabled = false,
   label,
+  rainbow = true,
   value,
   ...props
 }: SelectItemProps) => {
@@ -37,19 +39,25 @@ export const SelectItem = ({
     )
   }
 
-  const { disabled: groupDisabled } = useContext(SelectGroupContext)
+  const { disabled: groupDisabled, rainbow: groupRainbow } =
+    useContext(SelectGroupContext)
+  const { disabled: selectDisabled, rainbow: selectRainbow } =
+    useContext(SelectContext)
 
-  const isDisabled = disabled || groupDisabled
+  const isDisabled = disabled || groupDisabled || selectDisabled
+  const isRainbow = rainbow && groupRainbow && selectRainbow
 
   return (
     <RxSelect.Item
       aria-label={label}
       className={cn(
-        `${PREFIX}-${GROUP_NAME}__item alternatee`,
+        `${PREFIX}-${GROUP_NAME}__item`,
+        isRainbow ? 'alternatee' : '',
         'flex select-none items-center gap-1 rounded-sm p-2 outline-none transition-background-color duration-300 ease-out',
         isDisabled
           ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
           : 'cursor-pointer text-dark',
+        !isDisabled && !isRainbow ? 'hover:bg-decorative-pink-90' : '',
         props.className,
       )}
       disabled={isDisabled}

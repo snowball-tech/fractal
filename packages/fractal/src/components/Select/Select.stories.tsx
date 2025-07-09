@@ -66,6 +66,7 @@ const meta: Meta<SelectProps> = {
     label: 'Who is the best Star Wars character?',
     placeholder: 'May the force be with you!',
     portalled: true,
+    rainbow: true,
     readOnly: false,
     required: false,
   },

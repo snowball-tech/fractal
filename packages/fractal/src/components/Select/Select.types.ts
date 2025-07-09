@@ -79,6 +79,10 @@ export interface SelectProps
    * inserted in place after the trigger box.
    */
   portalled?: boolean
+  /**
+   * Indicates if the select items are displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
   /** Prevents the user to change the selected value. */
   readOnly?: boolean
   /** Indicates if a value must be selected. */
@@ -143,6 +147,8 @@ export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * and `title` for the item.
    */
   label?: string
+  /** Indicates if the item is displayed in "hover the rainbow" mode. */
+  rainbow?: boolean
 }
 
 export interface SelectItemGroupProps
@@ -153,6 +159,11 @@ export interface SelectItemGroupProps
   label: string
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
+  /**
+   * Indicates if the items in the group are displayed in "hover the rainbow"
+   * mode.
+   */
+  rainbow?: boolean
 }
 
 export type SelectItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

@@ -12,6 +12,7 @@ const meta: Meta<SelectItemProps> = {
   args: {
     children: 'Jar Jar Binks',
     disabled: false,
+    rainbow: true,
     value: 'jar-jar-binks',
   },
   argTypes: {
@@ -26,10 +27,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {
-  render: ({ children, disabled = false, value }) => (
+  render: ({ children, disabled = false, rainbow = true, value }) => (
     <div className="h-[1200px]">
       <Select placeholder="Click to open" onSelect={action('onSelect')}>
-        <SelectItem disabled={disabled} value={value}>
+        <SelectItem disabled={disabled} rainbow={rainbow} value={value}>
           {children}
         </SelectItem>
       </Select>

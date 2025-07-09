@@ -2,6 +2,8 @@
 
 import * as RxSelect from '@radix-ui/react-select'
 
+import { useContext } from 'react'
+
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -11,6 +13,7 @@ import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 import type { SelectItemGroupProps } from './Select.types'
 
 import { GROUP_NAME } from './Select.constants'
+import { SelectContext } from './SelectContext'
 import { SelectGroupContext } from './SelectGroupContext'
 
 /**
@@ -24,45 +27,58 @@ export const SelectItemGroup = ({
   children,
   disabled = false,
   label,
+  rainbow = true,
   ...props
-}: SelectItemGroupProps) => (
-  <RxSelect.Group
-    className={cn(
-      `${PREFIX}-${GROUP_NAME}__item-group`,
-      'p-2 py-0',
-      disabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
-      props.className,
-    )}
-    {...omit(['className'], props)}
-  >
-    <RxSelect.Label
-      asChild
-      className={cj(
-        `${PREFIX}-${GROUP_NAME}__item-group__label`,
-        'block py-2',
-        disabled
-          ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
-          : 'cursor-default text-placeholder',
-      )}
-    >
-      <Typography element="label">{label}</Typography>
-    </RxSelect.Label>
+}: SelectItemGroupProps) => {
+  const { disabled: selectDisabled, rainbow: selectRainbow } =
+    useContext(SelectContext)
 
-    <Typography
-      className={cj(
-        `${PREFIX}-${GROUP_NAME}__item-group__items`,
-        disabled
-          ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
-          : alternatingBgColorLightClassNames,
+  const isDisabled = disabled || selectDisabled
+  const isRainbow = rainbow && selectRainbow
+
+  return (
+    <RxSelect.Group
+      className={cn(
+        `${PREFIX}-${GROUP_NAME}__item-group`,
+        'p-2 py-0',
+        isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
+        props.className,
       )}
-      element="div"
+      {...omit(['className'], props)}
     >
-      <SelectGroupContext.Provider value={{ disabled }}>
-        {children}
-      </SelectGroupContext.Provider>
-    </Typography>
-  </RxSelect.Group>
-)
+      <RxSelect.Label
+        asChild
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__item-group__label`,
+          'block py-2',
+          isDisabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
+            : 'cursor-default text-placeholder',
+        )}
+      >
+        <Typography element="label">{label}</Typography>
+      </RxSelect.Label>
+
+      <Typography
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__item-group__items`,
+          isDisabled
+            ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
+            : isRainbow
+              ? alternatingBgColorLightClassNames
+              : '',
+        )}
+        element="div"
+      >
+        <SelectGroupContext.Provider
+          value={{ disabled: isDisabled, rainbow: isRainbow }}
+        >
+          {children}
+        </SelectGroupContext.Provider>
+      </Typography>
+    </RxSelect.Group>
+  )
+}
 SelectItemGroup.displayName = 'SelectItemGroup'
 
 export default SelectItemGroup
