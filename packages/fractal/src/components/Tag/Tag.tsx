@@ -36,8 +36,8 @@ export const Tag = ({
   }
 
   const sizeClassNames = {
-    [Sizes.M]: 'px-2 py-1 leading-[20px]',
-    [Sizes.S]: 'px-1 py-half',
+    [Sizes.M]: 'px-2 py-1 leading-[20px] max-h-[38px]',
+    [Sizes.S]: 'px-1 py-half max-h-[28px] leading-[18px]',
   }
 
   return (
