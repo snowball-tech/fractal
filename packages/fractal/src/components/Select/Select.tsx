@@ -251,7 +251,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             : { dir: props.dir as RxSelect.SelectProps['dir'] })}
           disabled={!writable}
           name={name || uniqueId}
-          open={isOpen || true}
+          open={isOpen}
           required={required}
           {...(value === undefined ? {} : { value })}
           onOpenChange={handleDropdownToggle}
