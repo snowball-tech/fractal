@@ -1,3 +1,14 @@
+# @snowball-tech/fractal [19.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.1.0...@snowball-tech/fractal@19.0.0) (2025-07-09)
+
+- **dropdow:** allow to disable "hover the rainbow" mode ([a901078](https://github.com/snowball-tech/fractal/commit/a9010784217d0cb596b29e149c577c3e1e3b9881))
+- **menu:** allow to disable "hover the rainbow" mode ([bef8a54](https://github.com/snowball-tech/fractal/commit/bef8a54ae4368f0a6568841cee9d522e9cdabf49))
+- **select:** allow to disable "hover the rainbow" mode ([14499c4](https://github.com/snowball-tech/fractal/commit/14499c4b0478121827855d7b179da6f93ba156ab))
+- **select:** fix a test mode ([460067d](https://github.com/snowball-tech/fractal/commit/460067d9e72dd86ce84458bb827b1016fe5811fd))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 16.1.2
+
 # @snowball-tech/fractal [18.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@18.0.7...@snowball-tech/fractal@18.1.0) (2025-07-04)
 
 - **badge:** allow to pass custom content instead of only integer count ([751c5ee](https://github.com/snowball-tech/fractal/commit/751c5ee301638eea9bfadeabf69bbe597511788c))
