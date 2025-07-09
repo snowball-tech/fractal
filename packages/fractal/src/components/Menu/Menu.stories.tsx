@@ -98,6 +98,7 @@ const meta: Meta<MenuProps> = {
     embedded: false,
     fullWidth: false,
     orientation: DEFAULT_ORIENTATION,
+    rainbow: true,
   },
   argTypes: {
     children: {

@@ -60,6 +60,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       open,
       popover = true,
       popup,
+      rainbow = true,
       side,
       triggerOnHover = true,
       withIndicator = true,
@@ -135,12 +136,17 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       condensed: menuCondensed,
       disabled: menuDisabled,
       orientation,
+      rainbow: menuRainbow,
     } = useContext(MenuContext)
-    const { condensed: groupCondensed, disabled: groupDisabled } =
-      useContext(MenuGroupContext)
+    const {
+      condensed: groupCondensed,
+      disabled: groupDisabled,
+      rainbow: groupRainbow,
+    } = useContext(MenuGroupContext)
 
     const isDisabled = disabled || groupDisabled || menuDisabled
     const isCondensed = condensed || groupCondensed || menuCondensed
+    const isRainbow = rainbow && groupRainbow && menuRainbow
 
     const handleSubMenuInteractOutside: PopoverProps['onInteractOutside'] = (
       event,
@@ -257,14 +263,20 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__items`,
           'relative overflow-hidden rounded-sm p-1',
-          disabled
+          isDisabled
             ? `${PREFIX}-${GROUP_NAME}__sub-menu__items--disabled`
-            : alternatingBgColorLightClassNames,
+            : isRainbow
+              ? alternatingBgColorLightClassNames
+              : '',
         )}
         element="div"
       >
         <MenuGroupContext.Provider
-          value={{ condensed: condensedItems, disabled: isDisabled }}
+          value={{
+            condensed: condensedItems,
+            disabled: isDisabled,
+            rainbow: isRainbow,
+          }}
         >
           {children}
         </MenuGroupContext.Provider>
@@ -340,7 +352,11 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup`,
           `${PREFIX}-${GROUP_NAME}__sub-menu__popup--popover`,
-          'alternatee',
+          isRainbow
+            ? 'alternatee'
+            : !isDisabled
+              ? 'hover:bg-decorative-pink-90'
+              : '',
           'rounded-sm',
           props.className,
         )}

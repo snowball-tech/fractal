@@ -25,6 +25,7 @@ const meta: Meta<MenuItemProps> = {
     disabled: false,
     href: '',
     label: 'Luke Skywalker',
+    rainbow: true,
   },
   argTypes: {
     icon: {
@@ -57,6 +58,7 @@ export const Playground: Story = {
     href = '',
     icon,
     label = 'Luke Skywalker',
+    rainbow = true,
   }) => (
     <div className="h-13">
       <Menu>
@@ -67,6 +69,7 @@ export const Playground: Story = {
           href={href}
           icon={icon}
           label={label}
+          rainbow={rainbow}
           target={isEmpty(href) ? undefined : '_blank'}
           onActivate={action('onActivate')}
           onClick={action('onClick')}

@@ -8,4 +8,10 @@ export const MenuContext = createContext<{
   condensed: boolean
   disabled: boolean
   orientation: `${Orientations}`
-}>({ condensed: false, disabled: false, orientation: DEFAULT_ORIENTATION })
+  rainbow: boolean
+}>({
+  condensed: false,
+  disabled: false,
+  orientation: DEFAULT_ORIENTATION,
+  rainbow: true,
+})

@@ -37,6 +37,7 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
       fullWidth = false,
       menu = {},
       orientation = DEFAULT_ORIENTATION,
+      rainbow = true,
       ...props
     }: MenuProps,
     ref: ForwardedRef<CombinedRefs>,
@@ -81,9 +82,11 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
         {...omit(['className'], props)}
       >
         <div ref={menuRef} aria-orientation={orientation} role="menu" {...menu}>
-          <MenuContext.Provider value={{ condensed, disabled, orientation }}>
+          <MenuContext.Provider
+            value={{ condensed, disabled, orientation, rainbow }}
+          >
             <Typography
-              className={alternatingBgColorLightClassNames}
+              className={rainbow ? alternatingBgColorLightClassNames : ''}
               element="div"
               variant="body-1"
             >

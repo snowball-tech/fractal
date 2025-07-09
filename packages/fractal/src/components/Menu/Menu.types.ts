@@ -61,6 +61,10 @@ export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
   }
   /** The orientations of the menu. */
   orientation?: `${Orientations}`
+  /**
+   * Indicates if the menu items are displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
 }
 
 export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
@@ -98,6 +102,10 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
    * and `title` for the menu item.
    */
   label?: string
+  /**
+   * Indicates if the menu item is displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
   /** Indicates where you want to open the link (if a `href` is provided). */
   target?: HTMLAnchorElement['target']
   /**
@@ -123,6 +131,10 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
   condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
+  /**
+   * Indicates if the menu item group is displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
 }
 
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
@@ -219,6 +231,10 @@ export interface SubMenuProps
       }
     }
   }
+  /**
+   * Indicates if the sub-menu items are displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
   /**
    * The preferred side of the trigger (label) to render the popover.
    *

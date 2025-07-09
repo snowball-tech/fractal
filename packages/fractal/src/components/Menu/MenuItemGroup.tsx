@@ -23,13 +23,18 @@ export default function MenuItemGroup({
   condensed = false,
   disabled = false,
   label,
+  rainbow = true,
   ...props
 }: MenuItemGroupProps) {
-  const { condensed: menuCondensed, disabled: menuDisabled } =
-    useContext(MenuContext)
+  const {
+    condensed: menuCondensed,
+    disabled: menuDisabled,
+    rainbow: menuRainbow,
+  } = useContext(MenuContext)
 
   const isDisabled = disabled || menuDisabled
   const isCondensed = condensed || menuCondensed
+  const isRainbow = rainbow && menuRainbow
 
   return (
     <div
@@ -60,12 +65,18 @@ export default function MenuItemGroup({
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
-            : alternatingBgColorLightClassNames,
+            : isRainbow
+              ? alternatingBgColorLightClassNames
+              : '',
         )}
         element="div"
       >
         <MenuGroupContext.Provider
-          value={{ condensed: isCondensed, disabled: isDisabled }}
+          value={{
+            condensed: isCondensed,
+            disabled: isDisabled,
+            rainbow: isRainbow,
+          }}
         >
           {children}
         </MenuGroupContext.Provider>

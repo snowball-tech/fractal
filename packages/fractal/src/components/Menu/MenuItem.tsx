@@ -40,6 +40,7 @@ export const MenuItem = forwardRef<
       onActivate,
       onClick,
       onKeyDown,
+      rainbow = true,
       target,
       ...props
     }: MenuItemProps,
@@ -52,13 +53,20 @@ export const MenuItem = forwardRef<
       )
     }
 
-    const { condensed: menuCondensed, disabled: menuDisabled } =
-      useContext(MenuContext)
-    const { condensed: groupCondensed, disabled: groupDisabled } =
-      useContext(MenuGroupContext)
+    const {
+      condensed: menuCondensed,
+      disabled: menuDisabled,
+      rainbow: menuRainbow,
+    } = useContext(MenuContext)
+    const {
+      condensed: groupCondensed,
+      disabled: groupDisabled,
+      rainbow: groupRainbow,
+    } = useContext(MenuGroupContext)
 
     const isDisabled = disabled || menuDisabled || groupDisabled
     const isCondensed = condensed || menuCondensed || groupCondensed
+    const isRainbow = rainbow && groupRainbow && menuRainbow
 
     const isLink = !isEmpty(href)
 
@@ -91,7 +99,7 @@ export const MenuItem = forwardRef<
         aria-label={label}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
-          'alternatee',
+          isRainbow ? 'alternatee' : '',
           'flex flex-row items-center gap-1 text-nowrap',
           'rounded-sm outline-none transition-background-color duration-300 ease-out',
           isCondensed ? 'max-h-6 px-2 py-1' : 'p-2',
@@ -99,6 +107,7 @@ export const MenuItem = forwardRef<
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item--disabled pointer-events-none cursor-not-allowed !bg-transparent text-disabled`
             : 'cursor-pointer text-dark',
+          !isDisabled && !isRainbow ? 'hover:bg-decorative-pink-90' : '',
           isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
           props.className,
         )}
