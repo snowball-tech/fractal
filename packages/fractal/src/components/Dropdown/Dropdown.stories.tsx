@@ -90,6 +90,7 @@ const meta: Meta<DropdownProps> = {
     elevation: DEFAULT_ELEVATION,
     fullWidth: false,
     open: false,
+    rainbow: true,
     side: undefined,
     trigger: 'Text',
     width: 'fit',

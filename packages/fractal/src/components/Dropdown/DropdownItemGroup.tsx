@@ -28,13 +28,18 @@ export default function DropdownItemGroup({
   condensed = false,
   disabled = false,
   label,
+  rainbow = true,
   ...props
 }: DropdownItemGroupProps) {
-  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
-    useContext(DropdownContext)
+  const {
+    condensed: dropdownCondensed,
+    disabled: dropdownDisabled,
+    rainbow: dropdownRainbow,
+  } = useContext(DropdownContext)
 
   const isDisabled = disabled || dropdownDisabled
   const isCondensed = condensed || dropdownCondensed
+  const isRainbow = rainbow && dropdownRainbow
 
   return (
     <RxDropdownMenu.Group
@@ -66,12 +71,18 @@ export default function DropdownItemGroup({
           `${PREFIX}-${GROUP_NAME}__item-group__items`,
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item-group__items--disabled`
-            : alternatingBgColorLightClassNames,
+            : isRainbow
+              ? alternatingBgColorLightClassNames
+              : '',
         )}
         element="div"
       >
         <DropdownGroupContext.Provider
-          value={{ condensed: isCondensed, disabled: isDisabled }}
+          value={{
+            condensed: isCondensed,
+            disabled: isDisabled,
+            rainbow: isRainbow,
+          }}
         >
           {children}
         </DropdownGroupContext.Provider>

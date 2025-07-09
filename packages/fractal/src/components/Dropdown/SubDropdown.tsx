@@ -56,6 +56,7 @@ export const SubDropdown = forwardRef<
       onOpen,
       onSubMenuOpenChange,
       open,
+      rainbow = true,
       withIndicator = true,
       withScroll = true,
       ...props
@@ -111,13 +112,20 @@ export const SubDropdown = forwardRef<
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [hasChildren, open])
 
-    const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
-      useContext(DropdownContext)
-    const { condensed: groupCondensed, disabled: groupDisabled } =
-      useContext(DropdownGroupContext)
+    const {
+      condensed: dropdownCondensed,
+      disabled: dropdownDisabled,
+      rainbow: dropdownRainbow,
+    } = useContext(DropdownContext)
+    const {
+      condensed: groupCondensed,
+      disabled: groupDisabled,
+      rainbow: groupRainbow,
+    } = useContext(DropdownGroupContext)
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
     const isCondensed = condensed || groupCondensed || dropdownCondensed
+    const isRainbow = rainbow && groupRainbow && dropdownRainbow
 
     const handleSubMenuInteractOutside: DropdownProps['onInteractOutside'] = (
       event,
@@ -145,12 +153,14 @@ export const SubDropdown = forwardRef<
           `${PREFIX}-${GROUP_NAME}__sub-menu__items`,
           disabled
             ? `${PREFIX}-${GROUP_NAME}__sub-menu__items--disabled`
-            : alternatingBgColorLightClassNames,
+            : isRainbow
+              ? alternatingBgColorLightClassNames
+              : '',
         )}
         element="div"
       >
         <DropdownGroupContext.Provider
-          value={{ condensed: condensedItems, disabled }}
+          value={{ condensed: condensedItems, disabled, rainbow: isRainbow }}
         >
           {children}
         </DropdownGroupContext.Provider>
@@ -182,11 +192,12 @@ export const SubDropdown = forwardRef<
           <div
             className={cj(
               `${PREFIX}-${GROUP_NAME}__sub-menu__label`,
-              'alternatee',
+              isRainbow ? 'alternatee' : '',
               'flex w-full flex-row items-center gap-1',
-              disabled
+              isDisabled
                 ? `${PREFIX}-${GROUP_NAME}__sub-menu__label--disabled cursor-not-allowed text-disabled`
                 : 'cursor-pointer',
+              !isDisabled && !isRainbow ? 'hover:bg-decorative-pink-90' : '',
             )}
           >
             {icon && (
@@ -203,7 +214,7 @@ export const SubDropdown = forwardRef<
             <Typography
               className={cj(
                 'flex-1',
-                disabled ? `cursor-not-allowed` : 'cursor-pointer',
+                isDisabled ? `cursor-not-allowed` : 'cursor-pointer',
               )}
               element="label"
             >

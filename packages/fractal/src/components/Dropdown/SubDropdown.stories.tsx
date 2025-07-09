@@ -25,6 +25,7 @@ const meta: Meta<SubDropdownItemProps> = {
     icon: undefined,
     label: 'Masters',
     open: false,
+    rainbow: true,
     withIndicator: true,
     withScroll: true,
   },
@@ -72,6 +73,7 @@ export const Playground: Story = {
     icon,
     label = 'Masters',
     open,
+    rainbow = true,
     withIndicator = true,
     withScroll = true,
   }) => (
@@ -85,6 +87,7 @@ export const Playground: Story = {
           icon={icon}
           label={label}
           open={open}
+          rainbow={rainbow}
           withIndicator={withIndicator}
           withScroll={withScroll}
         >

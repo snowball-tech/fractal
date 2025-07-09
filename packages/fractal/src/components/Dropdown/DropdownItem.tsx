@@ -36,6 +36,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
       label,
       onClick,
       onSelect,
+      rainbow = true,
       target,
       value,
       ...props
@@ -49,13 +50,20 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
       )
     }
 
-    const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
-      useContext(DropdownContext)
-    const { condensed: groupCondensed, disabled: groupDisabled } =
-      useContext(DropdownGroupContext)
+    const {
+      condensed: dropdownCondensed,
+      disabled: dropdownDisabled,
+      rainbow: dropdownRainbow,
+    } = useContext(DropdownContext)
+    const {
+      condensed: groupCondensed,
+      disabled: groupDisabled,
+      rainbow: groupRainbow,
+    } = useContext(DropdownGroupContext)
 
     const isDisabled = disabled || groupDisabled || dropdownDisabled
     const isCondensed = condensed || groupCondensed || dropdownCondensed
+    const isRainbow = rainbow && groupRainbow && dropdownRainbow
 
     const isLink = !isEmpty(href)
 
@@ -66,7 +74,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
         asChild
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
-          'alternatee',
+          isRainbow ? 'alternatee' : '',
           'flex items-center gap-1',
           'rounded-sm outline-none transition-background-color duration-300 ease-out',
           isCondensed
@@ -76,6 +84,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__item--disabled cursor-not-allowed !bg-transparent text-disabled`
             : 'cursor-pointer text-dark',
+          !isDisabled && !isRainbow ? 'hover:bg-decorative-pink-90' : '',
           isLink ? `${PREFIX}-${GROUP_NAME}__item__link no-underline` : '',
           props.className,
         )}

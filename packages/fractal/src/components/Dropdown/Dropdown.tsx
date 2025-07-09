@@ -53,6 +53,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       onMenuOpenChange,
       onOpen,
       open,
+      rainbow = true,
       side,
       toggleOnTriggerClick = true,
       trigger,
@@ -202,7 +203,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__dropdown__wrapper`,
-          alternatingBgColorLightClassNames,
+          rainbow ? alternatingBgColorLightClassNames : '',
           condensed
             ? `${PREFIX}-${GROUP_NAME}__dropdown__wrapper--condensed`
             : '',
@@ -214,6 +215,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
           value={{
             condensed,
             disabled,
+            rainbow,
           }}
         >
           {children}

@@ -25,6 +25,7 @@ const meta: Meta<DropdownItemProps> = {
     href: '',
     icon: undefined,
     label: 'Luke Skywalker',
+    rainbow: true,
   },
   argTypes: {
     icon: {
@@ -56,6 +57,7 @@ export const Playground: Story = {
     href = '',
     icon,
     label = 'Luke Skywalker',
+    rainbow = true,
   }) => (
     <div className="h-13">
       <Dropdown trigger="Jedi">
@@ -65,6 +67,7 @@ export const Playground: Story = {
           href={href}
           icon={icon}
           label={label}
+          rainbow={rainbow}
           target={isEmpty(href) ? undefined : '_blank'}
           onClick={action('onClick')}
         />

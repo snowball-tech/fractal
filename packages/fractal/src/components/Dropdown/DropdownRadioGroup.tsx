@@ -31,19 +31,27 @@ export const DropdownRadioGroup = ({
   defaultValue,
   disabled = false,
   onValueChange,
+  rainbow = true,
   value,
   ...props
 }: DropdownRadioGroupProps) => {
   const generatedId = useId()
   const uniqueId = (props.id ?? generatedId) || generatedId
 
-  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
-    useContext(DropdownContext)
-  const { condensed: groupCondensed, disabled: groupDisabled } =
-    useContext(DropdownGroupContext)
+  const {
+    condensed: dropdownCondensed,
+    disabled: dropdownDisabled,
+    rainbow: dropdownRainbow,
+  } = useContext(DropdownContext)
+  const {
+    condensed: groupCondensed,
+    disabled: groupDisabled,
+    rainbow: groupRainbow,
+  } = useContext(DropdownGroupContext)
 
   const isDisabled = disabled || groupDisabled || dropdownDisabled
   const isCondensed = condensed || groupCondensed || dropdownCondensed
+  const isRainbow = rainbow && groupRainbow && dropdownRainbow
 
   return (
     <InputRadioGroup
@@ -53,7 +61,9 @@ export const DropdownRadioGroup = ({
         'group/dropdown-radio-group',
         isDisabled
           ? `${PREFIX}-${GROUP_NAME}__group-radio--disabled`
-          : alternatingBgColorLightClassNames,
+          : isRainbow
+            ? alternatingBgColorLightClassNames
+            : '',
         props.className,
       )}
       condensed={isCondensed}
@@ -70,7 +80,11 @@ export const DropdownRadioGroup = ({
       {...omit(['className'], props)}
     >
       <DropdownGroupContext.Provider
-        value={{ condensed: isCondensed, disabled: isDisabled }}
+        value={{
+          condensed: isCondensed,
+          disabled: isDisabled,
+          rainbow: isRainbow,
+        }}
       >
         {dropdownRadioItems}
       </DropdownGroupContext.Provider>

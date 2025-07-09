@@ -89,6 +89,10 @@ export interface DropdownProps
    * (non-text) trigger.
    */
   open?: boolean
+  /**
+   * Indicates if the dropdown items are displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
   /** The preferred side of the trigger to render the popover. */
   side?: RxDropdownMenuContentProps['side']
   /**
@@ -186,6 +190,10 @@ export interface DropdownItemProps
    * and `title` for the item.
    */
   label?: string
+  /**
+   * Indicates if the dropdown item is displayed in "hover the rainbow" mode.
+   */
+  rainbow?: boolean
   /** Indicates where you want to open the link (if a `href` is provided). */
   target?: HTMLAnchorElement['target']
   /**
@@ -217,6 +225,11 @@ export interface DropdownItemGroupProps
   condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
+  /**
+   * Indicates if the items in the group are displayed in "hover the rainbow"
+   * mode.
+   */
+  rainbow?: boolean
 }
 
 export interface SubDropdownProps
@@ -272,6 +285,11 @@ export interface SubDropdownProps
    */
   open?: boolean
   /**
+   * Indicates if the sub-dropdown items are displayed in "hover the rainbow"
+   * mode.
+   */
+  rainbow?: boolean
+  /**
    * Indicates if the dropdown's sub-dropdown trigger should have an
    * indicator (right chevron on the right of the label).
    */
@@ -305,6 +323,11 @@ export type DropdownRadioGroupProps = {
    * `RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
+  /**
+   * Indicates if the radio group items are displayed in "hover the rainbow"
+   * mode.
+   */
+  rainbow?: boolean
   ref?: ForwardedRef<HTMLElement>
 } & Omit<InputRadioGroupProps, 'fullWidth' | 'orientation' | 'variant'>
 
@@ -318,6 +341,8 @@ export type DropdownRadioItemProps = {
    * to each RadioItem` component, they will inherit it automatically.
    */
   condensed?: boolean
+  /** Indicates if the radio item is displayed in "hover the rainbow" mode. */
+  rainbow?: boolean
   ref?: ForwardedRef<HTMLButtonElement>
 } & Omit<InputRadioProps, 'fullWidth'>
 

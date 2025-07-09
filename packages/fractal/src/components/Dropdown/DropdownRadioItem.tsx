@@ -30,32 +30,44 @@ export const DropdownRadioItem = ({
   disabled = false,
   id,
   label,
+  rainbow = true,
   value,
   ...props
 }: DropdownRadioItemProps) => {
   const generatedId = useId()
   const uniqueId = (id ?? generatedId) || generatedId
 
-  const { condensed: dropdownCondensed, disabled: dropdownDisabled } =
-    useContext(DropdownContext)
-  const { condensed: groupCondensed, disabled: groupDisabled } =
-    useContext(DropdownGroupContext)
+  const {
+    condensed: dropdownCondensed,
+    disabled: dropdownDisabled,
+    rainbow: dropdownRainbow,
+  } = useContext(DropdownContext)
+  const {
+    condensed: groupCondensed,
+    disabled: groupDisabled,
+    rainbow: groupRainbow,
+  } = useContext(DropdownGroupContext)
 
   const isDisabled = disabled || groupDisabled || dropdownDisabled
   const isCondensed = condensed || groupCondensed || dropdownCondensed
+  const isRainbow = rainbow && groupRainbow && dropdownRainbow
 
   return (
     <InputRadio
       id={uniqueId}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__radio`,
-        'alternatee',
+        isRainbow ? 'alternatee' : '',
         'group/radio-group',
-        isDisabled ? `${PREFIX}-${GROUP_NAME}__radio--disabled` : '',
+        isDisabled
+          ? `${PREFIX}-${GROUP_NAME}__radio--disabled`
+          : !isRainbow
+            ? 'hover:bg-decorative-pink-90'
+            : '',
         props.className,
       )}
       condensed={isCondensed}
-      disabled={disabled}
+      disabled={isDisabled}
       fullWidth
       label={label}
       value={value}
