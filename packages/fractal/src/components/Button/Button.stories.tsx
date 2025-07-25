@@ -27,9 +27,9 @@ const meta = {
     fullWidth: false,
     href: '',
     icon: 'Send',
+    iconHidden: false,
     iconOnly: false,
     iconPosition: 'right',
-    iconResponsive: false,
     inlineStyle: false,
     label: 'Punch it, Chewie!',
     target: '',
@@ -63,7 +63,7 @@ const meta = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
-    iconResponsive: {
+    iconHidden: {
       options: [true, false, ...Object.values(Breakpoints)],
       table: {
         defaultValue: { summary: 'false' },
@@ -71,6 +71,26 @@ const meta = {
           summary: [
             'boolean',
             ...Object.values(Breakpoints).map((value) => `"${value}"`),
+          ].join('|'),
+        },
+      },
+    },
+    iconOnly: {
+      options: [
+        true,
+        false,
+        'auto',
+        ...Object.values(Breakpoints).filter((value) => value !== 'xxs'),
+      ],
+      table: {
+        defaultValue: { summary: 'false' },
+        type: {
+          summary: [
+            'boolean',
+            'auto',
+            ...Object.values(Breakpoints)
+              .filter((value) => value !== 'xxs')
+              .map((value) => `"${value}"`),
           ].join('|'),
         },
       },
@@ -458,4 +478,344 @@ export const InteractiveText: Story = {
     await userEvent.hover(canvas.getByRole('button'))
   },
   render: () => <Button label="Text button" variant="text" />,
+}
+
+const VerticalWrapper = ({ children }: { children: ReactNode }) => (
+  <div className="mb-2 flex flex-col gap-2">{children}</div>
+)
+
+export const ResponsiveIconOnly: Story = {
+  render: () => (
+    <>
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconOnly
+          label="Always icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxs"
+          label="To XXS (=never) icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xs"
+          label="To XS icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="sm"
+          label="To SM icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="md"
+          label="To MD icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="lg"
+          label="To LG icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xl"
+          label="To XL icon only"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxl"
+          label="To XXL icon only"
+          variant="primary"
+        />
+        <Button icon={<SendIcon />} label="Never icon only" variant="primary" />
+      </VerticalWrapper>
+
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconOnly
+          label="Always icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxs"
+          label="To XXS (=never) icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xs"
+          label="To XS icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="sm"
+          label="To SM icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="md"
+          label="To MD icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="lg"
+          label="To LG icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xl"
+          label="To XL icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxl"
+          label="To XXL icon only"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          label="Never icon only"
+          variant="secondary"
+        />
+      </VerticalWrapper>
+
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconOnly
+          label="Always icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxs"
+          label="To XXS (=never) icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xs"
+          label="To XS icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="sm"
+          label="To SM icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="md"
+          label="To MD icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="lg"
+          label="To LG icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xl"
+          label="To XL icon only"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconOnly="xxl"
+          label="To XXL icon only"
+          variant="text"
+        />
+        <Button icon={<SendIcon />} label="Never icon only" variant="text" />
+      </VerticalWrapper>
+    </>
+  ),
+}
+
+export const ResponsiveIconHidden: Story = {
+  render: () => (
+    <>
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconHidden
+          label="Always icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxs"
+          label="To XXS (=always) icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xs"
+          label="To XS icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="sm"
+          label="To SM icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="md"
+          label="To MD icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="lg"
+          label="To LG icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xl"
+          label="To XL icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxl"
+          label="To XXL icon hidden"
+          variant="primary"
+        />
+        <Button
+          icon={<SendIcon />}
+          label="Never icon hidden"
+          variant="primary"
+        />
+      </VerticalWrapper>
+
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconHidden
+          label="Always icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxs"
+          label="To XXS (=always) icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xs"
+          label="To XS icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="sm"
+          label="To SM icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="md"
+          label="To MD icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="lg"
+          label="To LG icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xl"
+          label="To XL icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxl"
+          label="To XXL icon hidden"
+          variant="secondary"
+        />
+        <Button
+          icon={<SendIcon />}
+          label="Never icon hidden"
+          variant="secondary"
+        />
+      </VerticalWrapper>
+
+      <VerticalWrapper>
+        <Button
+          icon={<SendIcon />}
+          iconHidden
+          label="Always icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxs"
+          label="To XXS (=always) icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xs"
+          label="To XS icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="sm"
+          label="To SM icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="md"
+          label="To MD icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="lg"
+          label="To LG icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xl"
+          label="To XL icon hidden"
+          variant="text"
+        />
+        <Button
+          icon={<SendIcon />}
+          iconHidden="xxl"
+          label="XXL icon hidden"
+          variant="text"
+        />
+        <Button icon={<SendIcon />} label="Never icon hidden" variant="text" />
+      </VerticalWrapper>
+    </>
+  ),
 }

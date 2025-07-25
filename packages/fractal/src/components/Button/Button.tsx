@@ -266,9 +266,9 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       fullWidth = false,
       href,
       icon,
+      iconHidden = false,
       iconOnly = false,
       iconPosition = 'right',
-      iconResponsive = false,
       inlineStyle = false,
       label,
       onClick,
@@ -335,6 +335,103 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     const asLink = !isEmpty(href)
     const isTextVariant = variant === Variants.Text
 
+    const isIconOnlyActiveAtBreakpoint = (breakpoint: string) => {
+      if (iconOnly === false || iconOnly === 'xxs') return false
+      if (iconOnly === true) return true
+
+      const breakpoints = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+      const iconOnlyIndex = breakpoints.indexOf(
+        iconOnly === 'auto' ? 'md' : (iconOnly as string),
+      )
+      const currentIndex = breakpoints.indexOf(breakpoint)
+
+      return currentIndex < iconOnlyIndex
+    }
+
+    const isIconHiddenActiveAtBreakpoint = (breakpoint: string) => {
+      if (iconHidden === false) {
+        return false
+      }
+      if (iconHidden === true || iconHidden === 'xxs') {
+        return true
+      }
+
+      const breakpoints = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
+      const iconHiddenIndex = breakpoints.indexOf(iconHidden as string)
+      const currentIndex = breakpoints.indexOf(breakpoint)
+
+      return currentIndex < iconHiddenIndex
+    }
+
+    const getIconVisibilityClasses = () => {
+      const iconOnlyActive = isIconOnlyActiveAtBreakpoint('xxs')
+      const iconHiddenActive = isIconHiddenActiveAtBreakpoint('xxs')
+
+      const shouldShowIcon =
+        iconOnlyActive || (!iconOnlyActive && !iconHiddenActive)
+
+      return shouldShowIcon ? 'flex' : 'hidden'
+    }
+
+    const getIconResponsiveClasses = () => {
+      const classes: string[] = []
+      const breakpoints = [
+        { bp: 'xs', class: 'xs:flex', hideClass: 'xs:hidden' },
+        { bp: 'sm', class: 'sm:flex', hideClass: 'sm:hidden' },
+        { bp: 'md', class: 'md:flex', hideClass: 'md:hidden' },
+        { bp: 'lg', class: 'lg:flex', hideClass: 'lg:hidden' },
+        { bp: 'xl', class: 'xl:flex', hideClass: 'xl:hidden' },
+        { bp: 'xxl', class: 'xxl:flex', hideClass: 'xxl:hidden' },
+      ]
+
+      let previousShouldShow =
+        isIconOnlyActiveAtBreakpoint('xxs') ||
+        (!isIconOnlyActiveAtBreakpoint('xxs') &&
+          !isIconHiddenActiveAtBreakpoint('xxs'))
+
+      breakpoints.forEach((bp) => {
+        const iconOnlyActive = isIconOnlyActiveAtBreakpoint(bp.bp)
+        const iconHiddenActive = isIconHiddenActiveAtBreakpoint(bp.bp)
+        const shouldShow =
+          iconOnlyActive || (!iconOnlyActive && !iconHiddenActive)
+
+        if (shouldShow !== previousShouldShow) {
+          if (shouldShow) {
+            classes.push(bp.class)
+          } else {
+            classes.push(bp.hideClass)
+          }
+          previousShouldShow = shouldShow
+        }
+      })
+
+      return classes.join(' ')
+    }
+
+    const getLabelHiddenClasses = () => {
+      if (iconOnly === true) {
+        return ['hidden']
+      }
+      if (iconOnly === false || iconOnly === 'xxs') {
+        return []
+      }
+
+      const breakpointToHideClass: Record<string, string> = {
+        auto: 'to-md:hidden',
+        lg: 'to-lg:hidden',
+        md: 'to-md:hidden',
+        sm: 'to-sm:hidden',
+        xl: 'to-xl:hidden',
+        xs: 'to-xs:hidden',
+        xxl: 'to-xxl:hidden',
+        xxs: '',
+      }
+
+      const hideClass = breakpointToHideClass[iconOnly as string]
+
+      return hideClass ? [hideClass] : []
+    }
+
     const classNames = inlineStyle
       ? cn(
           `${PREFIX}-${GROUP_NAME} ${PREFIX}-${GROUP_NAME}--${variant}${asLink ? ` ${PREFIX}-${GROUP_NAME}__link` : ''}`,
@@ -352,21 +449,51 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
           'flex max-w-full items-center justify-center gap-2 rounded-full outline-none transition-colors duration-300 ease-out active:transition-none appearance-none box-border px-unset',
           wrap ? '' : 'max-h-6',
           isTextVariant ? 'min-h-3' : 'min-h-6',
-          fullWidth && (!iconOnly || !hasIcon)
-            ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
-            : '',
+          fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
           disabled
             ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${variantDisabledClassNames[theme][variant]}`
             : `${variantClassNames[theme][variant]} cursor-pointer`,
           hasIcon
-            ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
+            ? `${PREFIX}-${GROUP_NAME}--with-addendum ${PREFIX}-${GROUP_NAME}--with-icon ${PREFIX}-${GROUP_NAME}--with-addendum-${iconPosition === 'left' ? 'prefix' : 'suffix'} ${PREFIX}-${GROUP_NAME}--with-icon-${iconPosition === 'left' ? 'prefix' : 'suffix'}`
             : '',
-          iconOnly && hasIcon
-            ? `${PREFIX}-${GROUP_NAME}--icon-only w-6 max-w-6 max-h-6 h-6`
-            : fullWidth
-              ? ''
-              : 'w-fit',
-          iconOnly && hasIcon && isTextVariant ? 'w-3 max-w-3 h-3 max-h-3' : '',
+          hasIcon && iconOnly && iconOnly !== 'xxs'
+            ? iconOnly === true
+              ? `${PREFIX}-${GROUP_NAME}--icon-only`
+              : iconOnly === 'auto'
+                ? `${PREFIX}-${GROUP_NAME}--icon-only--auto ${PREFIX}-${GROUP_NAME}--icon-only--md`
+                : `${PREFIX}-${GROUP_NAME}--icon-only--${iconOnly}`
+            : '',
+          hasIcon && iconOnly && iconOnly !== 'xxs'
+            ? iconOnly === true
+              ? isTextVariant
+                ? 'w-3 max-w-3 h-3 max-h-3 px-0'
+                : 'w-6 max-w-6 max-h-6 h-6 px-0'
+              : iconOnly === Breakpoints.xs
+                ? isTextVariant
+                  ? 'to-xs:w-3 to-xs:max-w-3 to-xs:h-3 to-xs:max-h-3 to-xs:px-0'
+                  : 'to-xs:w-6 to-xs:max-w-6 to-xs:max-h-6 to-xs:h-6 to-xs:px-0'
+                : iconOnly === Breakpoints.sm
+                  ? isTextVariant
+                    ? 'to-sm:w-3 to-sm:max-w-3 to-sm:h-3 to-sm:max-h-3 to-sm:px-0'
+                    : 'to-sm:w-6 to-sm:max-w-6 to-sm:max-h-6 to-sm:h-6 to-sm:px-0'
+                  : iconOnly === 'auto' || iconOnly === Breakpoints.md
+                    ? isTextVariant
+                      ? 'to-md:w-3 to-md:max-w-3 to-md:h-3 to-md:max-h-3 to-md:px-0'
+                      : 'to-md:w-6 to-md:max-w-6 to-md:max-h-6 to-md:h-6 to-md:px-0'
+                    : iconOnly === Breakpoints.lg
+                      ? isTextVariant
+                        ? 'to-lg:w-3 to-lg:max-w-3 to-lg:h-3 to-lg:max-h-3 to-lg:px-0'
+                        : 'to-lg:w-6 to-lg:max-w-6 to-lg:max-h-6 to-lg:h-6 to-lg:px-0'
+                      : iconOnly === Breakpoints.xl
+                        ? isTextVariant
+                          ? 'to-xl:w-3 to-xl:max-w-3 to-xl:h-3 to-xl:max-h-3 to-xl:px-0'
+                          : 'to-xl:w-6 to-xl:max-w-6 to-xl:max-h-6 to-xl:h-6 to-xl:px-0'
+                        : iconOnly === Breakpoints.xxl
+                          ? isTextVariant
+                            ? 'to-xxl:w-3 to-xxl:max-w-3 to-xxl:h-3 to-xxl:max-h-3 to-xxl:px-0'
+                            : 'to-xxl:w-6 to-xxl:max-w-6 to-xxl:max-h-6 to-xxl:h-6 to-xxl:px-0'
+                          : ''
+            : '',
           props.className,
         )
 
@@ -392,7 +519,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                   ...variantDisabledStyles[theme][variant],
                 }
               : { cursor: 'pointer', ...variantStyles[theme][variant] }),
-            ...(iconOnly && hasIcon
+            ...(iconOnly && iconOnly !== 'xxs' && hasIcon
               ? {
                   height: SizeSpacing6,
                   maxHeight: SizeSpacing6,
@@ -405,7 +532,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
               : fullWidth
                 ? {}
                 : { width: 'fit-content' }),
-            ...(iconOnly && hasIcon && isTextVariant
+            ...(iconOnly && iconOnly !== 'xxs' && hasIcon && isTextVariant
               ? {
                   height: SizeSpacing3,
                   maxHeight: SizeSpacing3,
@@ -427,7 +554,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                   ...variantDisabledStyles[theme][variant],
                 }
               : { ...variantStyles[theme][variant] }),
-            ...(iconOnly && hasIcon
+            ...(iconOnly && iconOnly !== 'xxs' && hasIcon
               ? {
                   height: SizeSpacing6,
                   maxHeight: SizeSpacing6,
@@ -440,7 +567,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
               : fullWidth
                 ? {}
                 : { width: 'fit-content' }),
-            ...(iconOnly && hasIcon && isTextVariant
+            ...(iconOnly && iconOnly !== 'xxs' && hasIcon && isTextVariant
               ? {
                   height: SizeSpacing3,
                   maxHeight: SizeSpacing3,
@@ -462,16 +589,8 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
             ? `${PREFIX}-${GROUP_NAME}__link__icon--${iconPosition}`
             : '',
           !inlineStyle && isTextVariant ? 'mt-0' : '',
-          iconResponsive === false ? 'flex' : 'hidden',
-          !iconOnly &&
-            (iconResponsive === Breakpoints.xxs || iconResponsive === true)
-            ? 'xs:flex'
-            : '',
-          !iconOnly && iconResponsive === Breakpoints.xs ? 'sm:flex' : '',
-          !iconOnly && iconResponsive === Breakpoints.sm ? 'md:flex' : '',
-          !iconOnly && iconResponsive === Breakpoints.md ? 'lg:flex' : '',
-          !iconOnly && iconResponsive === Breakpoints.lg ? 'xl:flex' : '',
-          !iconOnly && iconResponsive === Breakpoints.xl ? 'xxl:flex' : '',
+          getIconVisibilityClasses(),
+          getIconResponsiveClasses(),
         )}
         style={
           inlineStyle
@@ -486,18 +605,22 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                   minWidth: SizeSpacing3,
                   width: SizeSpacing3,
                   ...(isTextVariant ? { marginTop: 0 } : {}),
-                  ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
+                  ...(iconPosition === 'left' &&
+                  (!iconOnly || !hasIcon || iconOnly === 'xxs')
                     ? { marginRight: SizeSpacing2 }
                     : {}),
-                  ...(iconPosition === 'right' && (!iconOnly || !hasIcon)
+                  ...(iconPosition === 'right' &&
+                  (!iconOnly || !hasIcon || iconOnly === 'xxs')
                     ? { marginLeft: SizeSpacing2 }
                     : {}),
                 }
               : {
-                  ...(iconPosition === 'left' && (!iconOnly || !hasIcon)
+                  ...(iconPosition === 'left' &&
+                  (!iconOnly || !hasIcon || iconOnly === 'xxs')
                     ? { marginRight: SizeSpacing2 }
                     : {}),
-                  ...(iconPosition === 'right' && (!iconOnly || !hasIcon)
+                  ...(iconPosition === 'right' &&
+                  (!iconOnly || !hasIcon || iconOnly === 'xxs')
                     ? { marginLeft: SizeSpacing2 }
                     : {}),
                 }
@@ -508,7 +631,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       </div>
     )
 
-    const labelElement = (
+    const content = (
       <Typography
         className={cj(
           `${PREFIX}-${GROUP_NAME}__label`,
@@ -552,10 +675,14 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         variant={isTextVariant ? 'body-1-link' : 'body-1-median'}
       >
         {hasIcon && iconPosition === 'left' && iconElement}
-        {iconOnly && hasIcon ? (
+        {iconOnly === true && hasIcon ? (
           false
         ) : hasChildren ? (
-          children
+          iconOnly === false || iconOnly === 'xxs' || !hasIcon ? (
+            children
+          ) : (
+            <div className={cj(...getLabelHiddenClasses())}>{children}</div>
+          )
         ) : (
           <div
             className={
@@ -565,6 +692,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
                     wrap || truncate ? 'min-w-0' : '',
                     wrap ? 'whitespace-break-spaces' : '',
                     truncate ? 'truncate' : '',
+                    ...getLabelHiddenClasses(),
                   )
             }
             style={
@@ -594,8 +722,6 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
         {hasIcon && iconPosition === 'right' && iconElement}
       </Typography>
     )
-
-    const content = iconOnly && hasIcon ? iconElement : labelElement
 
     if (element && element !== 'a' && element !== 'button' && !asLink) {
       return createElement(

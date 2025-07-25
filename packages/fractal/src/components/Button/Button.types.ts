@@ -45,21 +45,37 @@ export interface ButtonProps
   /** The icon to display in the button. */
   icon?: ReactNode
   /**
+   * Indicates if we want to hide the icon at a certain breakpoint.
+   *
+   * If `true` or `xxs`, the icon will always be hidden (you'd better not give
+   * an icon at all in this case ;-)).
+   * If `false`, the icon will always be visible.
+   * If a breakpoint is given, the icon will be hidden up to that breakpoint.
+   * E.g. `iconHidden="sm"` will hide the icon up to the `sm` breakpoint (i.e.
+   * in the `xxs` and `xs` breakpoints) then display it from the `sm`
+   * breakpoint.
+   *
+   * Note: `iconOnly` takes priority over `iconHidden`. If `iconOnly` indicates
+   * the button should be icon-only at a breakpoint, the icon will be shown
+   * regardless of `iconHidden` setting.
+   */
+  iconHidden?: boolean | Breakpoint
+  /**
    * Indicates if you want to only display the icon.
    * The label still is mandatory and will be used as an `aria-label` for
    * accessibility.
+   *
+   * If `auto` is given, then the button will be icon only up to the `md`
+   * breakpoint.
+   * If a breakpoint is given, then the button will be icon only up to that
+   * breakpoint
+   *
+   * /!\ Automatic/responsive icon only mode does not work in `inlineStyle`
+   * mode.
    */
-  iconOnly?: boolean
+  iconOnly?: boolean | 'auto' | Breakpoint
   /** The position of the icon in the button. */
   iconPosition?: 'left' | 'right'
-  /**
-   * Indicates if we want to hide the icon at a certain breakpoint.
-   *
-   * If `true`, it will only be hidden from the smallest breakpoint (xxs) and
-   * shown above (from xs).
-   * If `false`, the icon will always be shown.
-   */
-  iconResponsive?: boolean | Breakpoint
   /**
    * Indicates to inline the styles instead of using Tailwind CSS classes.
    *
