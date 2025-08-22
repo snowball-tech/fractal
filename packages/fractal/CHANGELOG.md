@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [20.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.0.0...@snowball-tech/fractal@20.0.1) (2025-08-22)
+
+- **radio:** make the radio button align to the top ([8e18e2a](https://github.com/snowball-tech/fractal/commit/8e18e2a80d8ae5642b9e586b7b0eb5972f3742e5))
+
 # @snowball-tech/fractal [20.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@19.0.1...@snowball-tech/fractal@20.0.0) (2025-07-25)
 
 ## @snowball-tech/fractal [19.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@19.0.0...@snowball-tech/fractal@19.0.1) (2025-07-09)
