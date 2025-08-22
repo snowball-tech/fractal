@@ -89,24 +89,24 @@ export const Primary: Story = {
           label="Checked primary"
           variant="primary"
         />
-        <InputCheckbox label={`Required primary`} required variant="primary" />
+        <InputCheckbox label="Required primary" required variant="primary" />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox disabled label={`Disabled primary`} variant="primary" />
+        <InputCheckbox disabled label="Disabled primary" variant="primary" />
         <InputCheckbox
           defaultChecked
           disabled
-          label={`Disabled checked primary`}
+          label="Disabled checked primary"
           variant="primary"
         />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox label={`Read-only primary`} readOnly variant="primary" />
+        <InputCheckbox label="Read-only primary" readOnly variant="primary" />
         <InputCheckbox
           defaultChecked
-          label={`Read-only checked primary`}
+          label="Read-only checked primary"
           readOnly
           variant="primary"
         />
@@ -114,6 +114,15 @@ export const Primary: Story = {
 
       <Wrapper>
         <InputCheckbox fullWidth label="Full width primary" variant="primary" />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox fullWidth variant="primary">
+          This is a<br />
+          multiline
+          <br />
+          primary checkbox label
+        </InputCheckbox>
       </Wrapper>
 
       {separator}
@@ -191,7 +200,7 @@ export const Secondary: Story = {
           variant="secondary"
         />
         <InputCheckbox
-          label={`Required secondary`}
+          label="Required secondary"
           required
           variant="secondary"
         />
@@ -200,26 +209,26 @@ export const Secondary: Story = {
       <Wrapper>
         <InputCheckbox
           disabled
-          label={`Disabled secondary`}
+          label="Disabled secondary"
           variant="secondary"
         />
         <InputCheckbox
           defaultChecked
           disabled
-          label={`Disabled checked secondary`}
+          label="Disabled checked secondary"
           variant="secondary"
         />
       </Wrapper>
 
       <Wrapper>
         <InputCheckbox
-          label={`Read-only secondary`}
+          label="Read-only secondary"
           readOnly
           variant="secondary"
         />
         <InputCheckbox
           defaultChecked
-          label={`Read-only checked secondary`}
+          label="Read-only checked secondary"
           readOnly
           variant="secondary"
         />
@@ -231,6 +240,15 @@ export const Secondary: Story = {
           label="Full width secondary"
           variant="secondary"
         />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox fullWidth variant="secondary">
+          This is a<br />
+          multiline
+          <br />
+          secondary checkbox label
+        </InputCheckbox>
       </Wrapper>
 
       {separator}
@@ -307,36 +325,24 @@ export const Tertiary: Story = {
           label="Checked tertiary"
           variant="tertiary"
         />
+        <InputCheckbox label="Required tertiary" required variant="tertiary" />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox disabled label="Disabled tertiary" variant="tertiary" />
         <InputCheckbox
-          label={`Required tertiary`}
-          required
+          defaultChecked
+          disabled
+          label="Disabled checked tertiary"
           variant="tertiary"
         />
       </Wrapper>
 
       <Wrapper>
-        <InputCheckbox
-          disabled
-          label={`Disabled tertiary`}
-          variant="tertiary"
-        />
+        <InputCheckbox label="Read-only tertiary" readOnly variant="tertiary" />
         <InputCheckbox
           defaultChecked
-          disabled
-          label={`Disabled checked tertiary`}
-          variant="tertiary"
-        />
-      </Wrapper>
-
-      <Wrapper>
-        <InputCheckbox
-          label={`Read-only tertiary`}
-          readOnly
-          variant="tertiary"
-        />
-        <InputCheckbox
-          defaultChecked
-          label={`Read-only checked tertiary`}
+          label="Read-only checked tertiary"
           readOnly
           variant="tertiary"
         />
@@ -348,6 +354,15 @@ export const Tertiary: Story = {
           label="Full width tertiary"
           variant="tertiary"
         />
+      </Wrapper>
+
+      <Wrapper>
+        <InputCheckbox fullWidth variant="tertiary">
+          This is a<br />
+          multiline
+          <br />
+          tertiary checkbox label
+        </InputCheckbox>
       </Wrapper>
 
       {separator}

@@ -141,6 +141,14 @@ export const Primary: Story = {
         variant="primary"
       >
         {jedisItems}
+
+        <InputRadio value="other">
+          Another Jedi
+          <br />
+          whose I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
 
       <Title>Who is the worst Sith?</Title>
@@ -151,6 +159,14 @@ export const Primary: Story = {
         variant="primary"
       >
         {sithsItems}
+
+        <InputRadio value="other">
+          Another Sith
+          <br />
+          whose I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
 
       <Title>Who shot first?</Title>
@@ -161,6 +177,14 @@ export const Primary: Story = {
         variant="primary"
       >
         {othersItemsFullWidth}
+
+        <InputRadio value="other">
+          Someone else
+          <br />
+          who I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
 
       <Title main>Vertical</Title>
@@ -169,6 +193,14 @@ export const Primary: Story = {
       <Title>Who is the best Jedi?</Title>
       <InputRadioGroup defaultValue="yoda" variant="primary">
         {jedisItems}
+
+        <InputRadio value="other">
+          Another Jedi
+          <br />
+          whose I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
 
       <Title>Who is the worst Sith?</Title>
@@ -178,11 +210,27 @@ export const Primary: Story = {
         variant="primary"
       >
         {sithsItemsFullWidth}
+
+        <InputRadio fullWidth value="other">
+          Another Sith
+          <br />
+          whose I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
 
       <Title>Who shot first?</Title>
       <InputRadioGroup defaultValue="han-solo" fullWidth variant="primary">
         {othersItemsFullWidth}
+
+        <InputRadio fullWidth value="other">
+          Someone else
+          <br />
+          who I can&apos;t remember
+          <br />
+          the name
+        </InputRadio>
       </InputRadioGroup>
     </>
   ),
