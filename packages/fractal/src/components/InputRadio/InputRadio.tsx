@@ -68,10 +68,17 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
+    const containerRef = useRef<HTMLDivElement>(null)
     const radioRef = useRef<HTMLButtonElement>(null)
     const combinedRef = composeRefs(ref, radioRef)
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+      if (event.target !== containerRef.current) {
+        event.stopPropagation()
+      } else {
+        radioRef.current?.click()
+      }
+
       if (event.target) {
         ;(event.target as HTMLButtonElement).blur()
       }
@@ -89,6 +96,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
 
     return (
       <Typography
+        ref={containerRef}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -103,13 +111,14 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
           props.className,
         )}
         element="div"
+        onClick={handleClick}
       >
         <RxRadio.Item
           id={uniqueId}
           ref={combinedRef}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'self mt-half h-full min-h-6 flex-grow-0 self-start rounded-xs border-none bg-unset px-unset py-unset focus-visible:outline-none',
+            'flex h-full min-h-6 flex-grow-0 self-stretch rounded-xs border-none bg-unset px-unset py-unset pt-2 focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
               : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight',
