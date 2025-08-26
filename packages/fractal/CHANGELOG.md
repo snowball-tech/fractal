@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [21.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.1.0...@snowball-tech/fractal@21.0.0) (2025-08-26)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.0.0
+
 # @snowball-tech/fractal [20.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.0.2...@snowball-tech/fractal@20.1.0) (2025-08-26)
 
 - **tabs:** add a transparent variant ([69732ea](https://github.com/snowball-tech/fractal/commit/69732ea8b27bdaf71f7d5ede919f5ca08bc5ae72))
