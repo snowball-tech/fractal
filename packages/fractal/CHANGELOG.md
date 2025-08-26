@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [20.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.0.2...@snowball-tech/fractal@20.1.0) (2025-08-26)
+
+- **tabs:** add a transparent variant ([69732ea](https://github.com/snowball-tech/fractal/commit/69732ea8b27bdaf71f7d5ede919f5ca08bc5ae72))
+
 ## @snowball-tech/fractal [20.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.0.1...@snowball-tech/fractal@20.0.2) (2025-08-22)
 
 - **radio:** fix positioning of radio button ([57f62eb](https://github.com/snowball-tech/fractal/commit/57f62eb9a8742d154b2a44668b5fddf5341498f8))
