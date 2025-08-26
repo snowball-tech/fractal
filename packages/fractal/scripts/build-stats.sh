@@ -24,14 +24,13 @@ fi
 
 # Total size
 totalSize=$(du -sh ./dist | awk '{print $1}')
-jsSize=$(du -ch ./dist/**/!(chunk).js | grep total$ | awk '{print $1}')
-cssSize=$(du -ch ./dist/**/*.css | grep total$ | awk '{print $1}')
-mapsSize=$(du -ch ./dist/**/*.map | grep total$ | awk '{print $1}')
-typesSize=$(du -ch ./dist/**/*.d.ts | grep total$ | awk '{print $1}')
-chunksSize=$(du -ch ./dist/*.js | grep total$ | awk '{print $1}')
-bundleSize=$(du -ch ./dist/*.js ./dist/*.css | grep total$ | awk '{print $1}')
+jsSize=$(du -ch ./dist/**/!(chunk).js 2> /dev/null | grep total$ | awk '{print $1}')
+cssSize=$(du -ch ./dist/**/*.css 2> /dev/null | grep total$ | awk '{print $1}')
+mapsSize=$(du -ch ./dist/**/*.map 2> /dev/null | grep total$ | awk '{print $1}')
+typesSize=$(du -ch ./dist/**/*.d.ts 2> /dev/null | grep total$ | awk '{print $1}')
+chunksSize=$(du -ch ./dist/*.js 2> /dev/null | grep total$ | awk '{print $1}')
+bundleSize=$(du -ch ./dist/*.js ./dist/*.css 2> /dev/null | grep total$ | awk '{print $1}')
 
-echo ""
 echo -e "$(bold "Total size"): $(display_number "$totalSize")"
 echo -e "\t$(underline "Package JS files"): $(display_number "$jsSize")"
 echo -e "\t$(underline "TypeScript typings"): $(display_number "$typesSize")"

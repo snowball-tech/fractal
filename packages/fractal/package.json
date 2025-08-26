@@ -138,7 +138,7 @@
     "lint-fix": "yarn run lint-scripts-fix",
     "lint-scripts": "yarn run -T eslint --cache .",
     "lint-scripts-fix": "yarn run -T eslint --cache --fix .",
-    "postbuild": "yarn run build-stats",
+    "postbuild": "echo ''; yarn run build-stats",
     "prebuild": "yarn run clean-build && mkdir -p ./dist",
     "prebuild-library": "mkdir -p ./dist",
     "prebuild-vercel": "yarn run update-fonts & yarn workspace @snowball-tech/design-tokens run build",

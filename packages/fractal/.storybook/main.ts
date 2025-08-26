@@ -1,19 +1,13 @@
-import path from 'node:path'
-
 import type { StorybookConfig } from '@storybook/react-vite'
 
 import remarkGfm from 'remark-gfm'
 
-function getAbsolutePath(value: string) {
-  return path.dirname(require.resolve(path.join(value, 'package.json')))
-}
-
 const config: StorybookConfig = {
   addons: [
-    getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-a11y'),
+    '@storybook/addon-links',
+    '@storybook/addon-a11y',
     {
-      name: getAbsolutePath('@storybook/addon-docs'),
+      name: '@storybook/addon-docs',
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
@@ -22,7 +16,7 @@ const config: StorybookConfig = {
         },
       },
     },
-    getAbsolutePath('storybook-addon-mock-date'),
+    'storybook-addon-mock-date',
   ],
 
   docs: {
@@ -30,7 +24,7 @@ const config: StorybookConfig = {
   },
 
   framework: {
-    name: getAbsolutePath('@storybook/react-vite'),
+    name: '@storybook/react-vite',
     options: {},
   },
 
