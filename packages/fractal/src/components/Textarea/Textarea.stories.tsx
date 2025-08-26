@@ -1,8 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { action } from '@storybook/addon-actions'
-import { useArgs } from '@storybook/preview-api'
-import { fn, userEvent, within } from '@storybook/test'
 import {
   UilPaperclip as AttachmentIcon,
   UilCancel as CancelIcon,
@@ -10,6 +7,9 @@ import {
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@tooni/iconscout-unicons-react'
+import { action } from 'storybook/actions'
+import { useArgs } from 'storybook/preview-api'
+import { fn, userEvent, within } from 'storybook/test'
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 

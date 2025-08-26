@@ -1,4 +1,4 @@
-import { userEvent } from '@storybook/test'
+import { userEvent } from 'storybook/test'
 
 import { sleep } from './utils'
 

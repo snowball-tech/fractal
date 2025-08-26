@@ -1,14 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { action } from '@storybook/addon-actions'
-import { useArgs } from '@storybook/preview-api'
-import {
-  fn,
-  userEvent,
-  waitFor,
-  waitForElementToBeRemoved,
-  within,
-} from '@storybook/test'
 import {
   UilCancel as CancelIcon,
   UilCheckCircle as CheckCircleIcon,
@@ -18,6 +9,15 @@ import {
   UilEnvelopeStar as StarIcon,
 } from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic/isChromatic'
+import { action } from 'storybook/actions'
+import { useArgs } from 'storybook/preview-api'
+import {
+  fn,
+  userEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+  within,
+} from 'storybook/test'
 
 import {
   type ChangeEvent,

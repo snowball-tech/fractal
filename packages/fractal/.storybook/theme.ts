@@ -1,4 +1,4 @@
-import type { ThemeVars } from '@storybook/theming'
+import type { ThemeVars } from 'storybook/theming'
 
 import {
   ColorBaseBlack as Black,
@@ -9,7 +9,7 @@ import {
   ColorBrandSecondary as SecondaryColor,
   ColorBaseWhite as White,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens'
-import { create } from '@storybook/theming/create'
+import { create } from 'storybook/theming/create'
 
 const SidebarBackgroundColor = Black
 const TopbarBackgroundColor = PrimaryColor

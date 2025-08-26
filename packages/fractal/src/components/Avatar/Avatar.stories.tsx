@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { action } from '@storybook/addon-actions'
-import { userEvent, within } from '@storybook/test'
 import { UilSignout as SignoutIcon } from '@tooni/iconscout-unicons-react'
+import { action } from 'storybook/actions'
+import { userEvent, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 

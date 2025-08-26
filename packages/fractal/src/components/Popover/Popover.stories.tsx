@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { fn, userEvent, within } from '@storybook/test'
 import { UilEllipsisV as MoreMenuIcon } from '@tooni/iconscout-unicons-react'
 import isChromatic from 'chromatic'
+import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 

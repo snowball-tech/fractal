@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { useArgs } from '@storybook/preview-api'
-import { fn, userEvent, within } from '@storybook/test'
 import isChromatic from 'chromatic/isChromatic'
+import { useArgs } from 'storybook/preview-api'
+import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 

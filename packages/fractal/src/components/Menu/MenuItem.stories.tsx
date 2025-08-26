@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { action } from '@storybook/addon-actions'
 import {
   UilCancel as CancelIcon,
   UilCheckCircle as CheckCircleIcon,
@@ -9,6 +8,7 @@ import {
   UilMessage as SendIcon,
   UilEnvelopeStar as StarIcon,
 } from '@tooni/iconscout-unicons-react'
+import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 

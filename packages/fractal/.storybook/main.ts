@@ -10,12 +10,10 @@ function getAbsolutePath(value: string) {
 
 const config: StorybookConfig = {
   addons: [
-    getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-a11y'),
     {
-      name: '@storybook/addon-docs',
+      name: getAbsolutePath('@storybook/addon-docs'),
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
@@ -24,7 +22,7 @@ const config: StorybookConfig = {
         },
       },
     },
-    'storybook-addon-mock-date',
+    getAbsolutePath('storybook-addon-mock-date'),
   ],
 
   docs: {
@@ -32,7 +30,7 @@ const config: StorybookConfig = {
   },
 
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
 

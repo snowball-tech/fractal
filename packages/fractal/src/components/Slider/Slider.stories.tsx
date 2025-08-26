@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { useArgs } from '@storybook/preview-api'
-import { fireEvent, fn, within } from '@storybook/test'
+import { useArgs } from 'storybook/preview-api'
+import { fireEvent, fn, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
