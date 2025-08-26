@@ -8,7 +8,7 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
-import { cj, cn } from '@/styles/helpers'
+import { cn } from '@/styles/helpers'
 import { extendChildren, hasChildWithProps } from '@/utils'
 
 import type { TabsProps } from './Tabs.types'
@@ -34,9 +34,11 @@ import {
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   (
     {
+      barClassName,
       children,
       defaultTab,
       disabled = false,
+      fullWidth = true,
       label,
       large = false,
       onTabChange,
@@ -80,14 +82,20 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
 
         <RxTabs.List
           aria-label={label}
-          className={cj(
+          className={cn(
             `${PREFIX}-${GROUP_NAME}__tabs`,
+            fullWidth ? `${PREFIX}-${GROUP_NAME}__tabs--full-width` : '',
             shouldBeLarge ? `${PREFIX}-${GROUP_NAME}__tabs--large` : '',
-            'flex w-fit items-center justify-between border-normal [z-index:1]',
+            'flex items-center justify-between border-normal [z-index:1]',
             variant === Variants.Plain ? 'bg-white' : 'bg-transparent',
             orientation === Orientations.Vertical
-              ? 'h-full w-6 min-w-6 flex-col'
-              : 'max-h-10 w-full',
+              ? 'w-6 min-w-6 flex-col'
+              : 'max-h-10',
+            fullWidth
+              ? orientation === Orientations.Horizontal
+                ? 'h-fit w-full'
+                : 'h-full w-fit'
+              : 'h-fit w-fit',
             !shouldBeLarge && orientation === Orientations.Horizontal
               ? 'min-h-6'
               : '',
@@ -101,6 +109,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
               : orientation === Orientations.Horizontal
                 ? 'border-t-1'
                 : 'border-l-1',
+            barClassName,
           )}
           loop
         >

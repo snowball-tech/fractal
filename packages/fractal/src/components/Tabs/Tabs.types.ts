@@ -19,6 +19,8 @@ export interface TabsProps
    * You must use `Tab` components.
    */
   tabs: ReactNode
+  /** The class name to apply to the tabs bar. */
+  barClassName?: string
   /**
    * The selected tab when tabs initially renders.
    *
@@ -29,6 +31,15 @@ export interface TabsProps
   dir?: 'ltr' | 'rtl'
   /** Prevents the user from interacting with any tab. */
   disabled?: boolean
+  /**
+   * Indicates if the tab bar should be full width.
+   *
+   * When enabled (which is the default) the tabs will split the whole available
+   * width equally for each tab.
+   * If disabled, each tab will only take the necessary space to display its
+   * label (and/or icon).
+   */
+  fullWidth?: boolean
   /** The accessible label for the tabs. */
   label?: string
   /**
