@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [21.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.0.1...@snowball-tech/fractal@21.0.2) (2025-08-26)
+
+- **storybook:** fix addons ([44d277e](https://github.com/snowball-tech/fractal/commit/44d277e6a6c6dd314b36c79ad346257073128c35))
+
 ## @snowball-tech/fractal [21.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.0.0...@snowball-tech/fractal@21.0.1) (2025-08-26)
 
 # @snowball-tech/fractal [21.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@20.1.0...@snowball-tech/fractal@21.0.0) (2025-08-26)
