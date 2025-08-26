@@ -125,6 +125,7 @@ export const Interactive: Story = {
     await slowType(
       'Nulla ad id sint ipsum magna et aliqua duis cupidatat quis exercitation quis nulla culpa. Cillum dolor pariatur velit labore proident fugiat ut enim in occaecat labore.',
       textarea,
+      { strokeDelay: 50 },
     )
     await textarea.blur()
 
