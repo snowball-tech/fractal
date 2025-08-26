@@ -5,7 +5,7 @@ import { sleep } from './utils'
 export async function slowType(
   text: string,
   target: HTMLElement,
-  { strokeDelay = 50 } = {},
+  { strokeDelay = 500 } = {},
 ) {
   await userEvent.click(target)
   await sleep(100)
@@ -16,4 +16,6 @@ export async function slowType(
     // eslint-disable-next-line no-await-in-loop
     await sleep(strokeDelay)
   }
+
+  await sleep(500)
 }

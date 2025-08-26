@@ -126,7 +126,6 @@ export const Interactive: Story = {
       'Nulla ad id sint ipsum magna et aliqua duis cupidatat quis exercitation quis nulla culpa. Cillum dolor pariatur velit labore proident fugiat ut enim in occaecat labore.',
       textarea,
     )
-    await sleep(500)
     await textarea.blur()
 
     await sleep(500)

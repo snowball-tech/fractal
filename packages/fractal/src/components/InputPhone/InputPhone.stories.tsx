@@ -124,9 +124,12 @@ export const Interactive: Story = {
     if (menuItems.length > 0) {
       await userEvent.hover(menuItems.at(0)!)
       await sleep(500)
+
       await userEvent.hover(menuItems.at(1)!)
       await sleep(500)
+
       await userEvent.hover(menuItems.at(2)!)
+      await sleep(500)
     }
   },
 }
