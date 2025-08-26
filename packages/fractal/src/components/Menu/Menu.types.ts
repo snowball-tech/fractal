@@ -140,7 +140,7 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
 
 export interface SubMenuProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content' | 'popover'> {
   /**
    * The content of the sub-menu.
    *

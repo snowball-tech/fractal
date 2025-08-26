@@ -17,6 +17,35 @@ export type CombinedRefs = {
   picker: PopoverCombinedRefs | null
 }
 
+export type DialogPropsOverride = Partial<
+  Omit<
+    DialogProps,
+    | 'children'
+    | 'defaultOpen'
+    | 'disabled'
+    | 'onDismiss'
+    | 'onToggle'
+    | 'open'
+    | 'popover'
+    | 'trigger'
+  >
+>
+
+export type PopoverPropsOverride = Partial<
+  Omit<
+    PopoverProps,
+    | 'children'
+    | 'disabled'
+    | 'onOpenChange'
+    | 'open'
+    | 'popover'
+    | 'toggleOnTriggerClick'
+    | 'trigger'
+    | 'triggerAsButton'
+    | 'withArrow'
+  >
+>
+
 export interface DateTimePickerProps
   extends Omit<
     HTMLAttributes<HTMLDivElement>,
@@ -27,6 +56,7 @@ export interface DateTimePickerProps
     | 'onKeyDown'
     | 'onKeyUp'
     | 'placeholder'
+    | 'popover'
   > {
   /**
    * Indicates if the datetime input should use a 12h (`true`) or 24h (`false`)
@@ -184,32 +214,7 @@ export interface DateTimePickerProps
    * Options to customize the popover (in non modal mode) / dialog (in modal
    * mode).
    */
-  popover?:
-    | Partial<
-        Omit<
-          DialogProps,
-          | 'children'
-          | 'defaultOpen'
-          | 'disabled'
-          | 'onDismiss'
-          | 'onToggle'
-          | 'open'
-          | 'trigger'
-        >
-      >
-    | Partial<
-        Omit<
-          PopoverProps,
-          | 'children'
-          | 'disabled'
-          | 'onOpenChange'
-          | 'open'
-          | 'toggleOnTriggerClick'
-          | 'trigger'
-          | 'triggerAsButton'
-          | 'withArrow'
-        >
-      >
+  popover?: DialogPropsOverride | PopoverPropsOverride
   /** Prevents the user to change the value of the datetime input. */
   readOnly?: boolean
   /** Indicates if the datetime input must be filled. */

@@ -3,7 +3,7 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 import type { PopoverProps } from '../Popover'
 
 export interface TooltipProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content' | 'popover'> {
   /**
    * The trigger of the tooltip (i.e. the thing that should display the tooltip
    * when hovered/clicked.

@@ -16,7 +16,7 @@ StyleDictionary.registerAction({
     )
 
     execSync(
-      `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader`,
+      `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader && yarn tsc ${destinationPath}/constants.js --allowJs --declaration --emitDeclarationOnly --skipLibCheck`,
     )
     console.log(`✔︎ ${destinationDirectory}constants.js (ESM)`)
   },

@@ -59,7 +59,8 @@ export interface ToggleGroupProps
   onValueChange?: (value: string | Array<string>) => void
 }
 
-export interface ToggleGroupItemProps extends RxToggleGroupItemProps {
+export interface ToggleGroupItemProps
+  extends Omit<RxToggleGroupItemProps, 'onToggle'> {
   /** The value submitted in the submitted form. */
   value: string
   /**

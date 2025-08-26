@@ -44,6 +44,9 @@ export const Emoji = ({
   }, [emojiRef, props.className])
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore - Despite the fact that the `em-emoji` element is defined in
+    // the global.d.ts file, Typescript keeps spitting errors... I give up.
     <em-emoji
       id={isEmpty(native) ? id : undefined}
       ref={emojiRef}

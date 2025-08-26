@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 declare module '@snowball-tech/design-tokens/dist/web/typescript/constants' {
   export const breakpoints: {
     xxs: 'xxs'
@@ -16,16 +18,21 @@ declare module '@snowball-tech/design-tokens/dist/web/typescript/constants' {
   }
 }
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    'em-emoji': {
-      fallback?: string
-      id?: string
-      native?: string
-      set?: 'apple' | 'facebook' | 'google' | 'native' | 'twitter'
-      shortcodes?: string
-      size?: number | string
-      skin?: number | string
-    } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'em-emoji': React.DetailedHTMLProps<
+        {
+          fallback?: string
+          id?: string
+          native?: string
+          set?: 'apple' | 'facebook' | 'google' | 'native' | 'twitter'
+          shortcodes?: string
+          size?: number | string
+          skin?: number | string
+        } & React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >
+    }
   }
 }

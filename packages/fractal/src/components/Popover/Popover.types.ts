@@ -21,7 +21,7 @@ export type CombinedRefs = {
 }
 
 export interface PopoverProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'popover' | 'title'> {
   /**
    * The content of the popover.
    */

@@ -90,5 +90,11 @@
   "dependencies": {
     "@snowball-tech/eslint-snowball-config": "^2.0.15",
     "@yarnpkg/types": "^4.0.1"
+  },
+  "overrides": {
+    "@emoji-mart/react": {
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
+    }
   }
 }

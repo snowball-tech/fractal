@@ -1,3 +1,5 @@
+/// <reference types="react" />
+
 module.exports = {
   breakpoints: {
     xxs: 'xxs',

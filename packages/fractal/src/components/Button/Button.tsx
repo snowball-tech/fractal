@@ -336,8 +336,13 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     const isTextVariant = variant === Variants.Text
 
     const isIconOnlyActiveAtBreakpoint = (breakpoint: string) => {
-      if (iconOnly === false || iconOnly === 'xxs') return false
-      if (iconOnly === true) return true
+      if (iconOnly === false || iconOnly === 'xxs') {
+        return false
+      }
+
+      if (iconOnly === true) {
+        return true
+      }
 
       const breakpoints = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl']
       const iconOnlyIndex = breakpoints.indexOf(
@@ -461,7 +466,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
               ? `${PREFIX}-${GROUP_NAME}--icon-only`
               : iconOnly === 'auto'
                 ? `${PREFIX}-${GROUP_NAME}--icon-only--auto ${PREFIX}-${GROUP_NAME}--icon-only--md`
-                : `${PREFIX}-${GROUP_NAME}--icon-only--${iconOnly}`
+                : `${PREFIX}-${GROUP_NAME}--icon-only--${String(iconOnly)}`
             : '',
           hasIcon && iconOnly && iconOnly !== 'xxs'
             ? iconOnly === true

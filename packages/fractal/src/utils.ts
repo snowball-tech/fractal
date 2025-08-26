@@ -47,24 +47,25 @@ export function hasChildWithProps(
       return
     }
 
+    const props = child.props as Record<string, unknown>
+
     hasProps =
       (childType === '*' || child.type === childType) &&
       propsToCheck.every(
         (propertyName) =>
-          Object.hasOwn(child.props, propertyName) &&
-          Boolean(child.props[propertyName]),
+          Object.hasOwn(props, propertyName) && Boolean(props[propertyName]),
       )
 
-    if (!hasProps && child.props.children) {
+    if (!hasProps && props.children) {
       hasProps = hasChildWithProps(
-        child.props.children,
+        props.children as ReactNode,
         childType,
         propertyNames,
         notPropertyNames,
       )
     } else if (hasProps && !isEmpty(propsToCheckAreNotThere)) {
       hasProps = propsToCheckAreNotThere.every(
-        (propertyName) => !Object.hasOwn(child.props, propertyName),
+        (propertyName) => !Object.hasOwn(props, propertyName),
       )
     }
   })
@@ -96,13 +97,16 @@ export function extendChildren(
     isValidElement(children) &&
     children.type === Fragment
   ) {
-    childrenToIterateOver = children.props.children as ReactNode
+    childrenToIterateOver = (children.props as Record<string, unknown>)
+      .children as ReactNode
   }
 
   return Children.map(childrenToIterateOver, (child) => {
     if (!isValidElement(child)) {
       return child
     }
+
+    const childProps = child.props as Record<string, unknown>
 
     if (!isEmpty(displayName)) {
       const childType = child.type
@@ -114,18 +118,18 @@ export function extendChildren(
           } & Record<string, unknown>
         ).displayName !== displayName
       ) {
-        return cloneElement(child, props(child.props))
+        return cloneElement(child, props(childProps))
       }
     }
 
-    if (!isEmpty(child.props.children) && isArray(child.props.children)) {
+    if (!isEmpty(childProps.children) && isArray(childProps.children)) {
       return cloneElement(
         child,
-        props(child.props),
-        extendChildren(child.props.children, props, displayName),
+        props(childProps),
+        extendChildren(childProps.children, props, displayName),
       )
     }
 
-    return cloneElement(child, props(child.props))
+    return cloneElement(child, props(childProps))
   })
 }

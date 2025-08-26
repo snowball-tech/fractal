@@ -38,7 +38,12 @@ import { PREFIX, Themes } from '@/constants'
 import { useTheme } from '@/hooks'
 import { cj, cn } from '@/styles/helpers'
 
-import type { CombinedRefs, DateTimePickerProps } from './DateTimePicker.types'
+import type {
+  CombinedRefs,
+  DateTimePickerProps,
+  DialogPropsOverride,
+  PopoverPropsOverride,
+} from './DateTimePicker.types'
 
 import {
   DEFAULT_PICKER_VARIANT,
@@ -1158,9 +1163,9 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                   'open',
                   'trigger',
                   'onDismiss',
-                  'onTOggle',
+                  'onToggle',
                 ],
-                popover,
+                popover as DialogPropsOverride,
               )}
             >
               {staticDisplay}
@@ -1196,7 +1201,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
                   'withArrow',
                   'onOpenChange',
                 ],
-                popover,
+                popover as PopoverPropsOverride,
               )}
             >
               {pickers}

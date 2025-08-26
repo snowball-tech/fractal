@@ -38,7 +38,7 @@
     "styleguide"
   ],
   "license": "MIT",
-  "main": "dist/web/typescript/design-tokens.js",
+  "main": "./dist/web/typescript/design-tokens.js",
   "name": "@snowball-tech/design-tokens",
   "packageManager": "yarn@4.6.0",
   "publishConfig": {

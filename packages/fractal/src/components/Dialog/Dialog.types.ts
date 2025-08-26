@@ -13,7 +13,8 @@ export type CombinedRefs = {
   trigger: HTMLElement | null
 }
 
-export interface DialogProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface DialogProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onToggle'> {
   /** The content of the dialog. */
   children: ReactNode
   /**
