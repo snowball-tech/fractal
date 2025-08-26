@@ -17,8 +17,10 @@ import { Tab, TabContent, Tabs } from '.'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
+  DEFAULT_VARIANT,
   Orientations,
   Positions,
+  Variants,
 } from './Tabs.constants'
 
 type TabsProps = ComponentProps<typeof Tabs>
@@ -96,6 +98,7 @@ const meta: Meta<TabsProps> = {
     orientation: DEFAULT_ORIENTATION,
     tabs: 'Mixed',
     tabsPosition: DEFAULT_POSITION,
+    variant: DEFAULT_VARIANT,
   },
   argTypes: {
     children: {
@@ -142,6 +145,13 @@ const meta: Meta<TabsProps> = {
       table: {
         defaultValue: { summary: DEFAULT_POSITION },
         type: { summary: Object.values(Positions).join('|') },
+      },
+    },
+    variant: {
+      options: Object.values(Variants),
+      table: {
+        defaultValue: { summary: DEFAULT_VARIANT },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

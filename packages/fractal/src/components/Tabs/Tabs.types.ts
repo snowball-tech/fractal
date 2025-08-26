@@ -1,6 +1,6 @@
 import { AllHTMLAttributes, ReactNode } from 'react'
 
-import { Orientations, Positions, Sizes } from './Tabs.constants'
+import { Orientations, Positions, Sizes, Variants } from './Tabs.constants'
 
 export interface TabsProps
   extends Omit<
@@ -51,6 +51,8 @@ export interface TabsProps
   tab?: string
   /** The positioning of the tabs in the tab bar. */
   tabsPosition?: `${Positions}`
+  /** The variant of the tabs to use. */
+  variant?: `${Variants}`
   /** Event handler called when the selected tab changes. */
   onTabChange?: (newTab: string) => void
 }
@@ -123,6 +125,7 @@ export interface TabProps
    * Any value set here will be ignored anyway.
    */
   orientation?: `${Orientations}`
+  /** The size of the tab. */
   size?: `${Sizes}`
   /**
    * The positioning of the tabs in the tab bar.

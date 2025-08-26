@@ -17,9 +17,11 @@ import Tab from './Tab'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
+  DEFAULT_VARIANT,
   GROUP_NAME,
   Orientations,
   Positions,
+  Variants,
 } from './Tabs.constants'
 
 /**
@@ -42,6 +44,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
       tab,
       tabs,
       tabsPosition = DEFAULT_POSITION,
+      variant = DEFAULT_VARIANT,
       ...props
     }: TabsProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -58,6 +61,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${orientation}`,
+          `${PREFIX}-${GROUP_NAME}--${variant}`,
           'flex',
           orientation === Orientations.Vertical ? '' : 'flex-col',
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
@@ -79,7 +83,8 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           className={cj(
             `${PREFIX}-${GROUP_NAME}__tabs`,
             shouldBeLarge ? `${PREFIX}-${GROUP_NAME}__tabs--large` : '',
-            'flex w-fit items-center justify-between border-normal bg-white [z-index:1]',
+            'flex w-fit items-center justify-between border-normal [z-index:1]',
+            variant === Variants.Plain ? 'bg-white' : 'bg-transparent',
             orientation === Orientations.Vertical
               ? 'h-full w-6 min-w-6 flex-col'
               : 'max-h-10 w-full',

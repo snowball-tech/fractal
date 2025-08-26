@@ -1,5 +1,12 @@
 export const GROUP_NAME = 'tabs'
 
+export enum Variants {
+  Plain = 'plain',
+  Transparent = 'transparent',
+}
+
+export const DEFAULT_VARIANT = Variants.Plain
+
 export enum Orientations {
   Horizontal = 'horizontal',
   Vertical = 'vertical',
