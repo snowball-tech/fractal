@@ -1,3 +1,5 @@
+# @snowball-tech/design-tokens [17.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@16.1.3...@snowball-tech/design-tokens@17.0.0) (2025-08-26)
+
 ## @snowball-tech/design-tokens [16.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@16.1.2...@snowball-tech/design-tokens@16.1.3) (2025-07-09)
 
 - **tailwind:** revert fix content config ([dce6943](https://github.com/snowball-tech/fractal/commit/dce6943129c2c5a4f0333a38473b82e2bcc53a5f))
