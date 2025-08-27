@@ -1,6 +1,6 @@
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
-import { Colors } from './Card.constants'
+import type { AlternateFontSizes, Colors, FontSizes } from './Card.constants'
 
 export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The content of the card. */
@@ -18,7 +18,7 @@ export interface CardProps extends AllHTMLAttributes<HTMLDivElement> {
    * Indicate the font size of the title and the body of the card.
    * 1 is `body-1` and 2 is `body-2`.
    */
-  fontSize?: 1 | 2
+  fontSize?: 1 | 2 | `${AlternateFontSizes}` | `${FontSizes}`
   /**
    * An icon to display at the top of the card (to the left of the title if
    * there is one).

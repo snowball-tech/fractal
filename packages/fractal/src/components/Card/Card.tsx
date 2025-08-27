@@ -2,6 +2,7 @@ import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button'
@@ -15,7 +16,13 @@ import { cj, cn } from '@/styles/helpers'
 
 import type { CardProps } from './Card.types'
 
-import { DEFAULT_COLOR, GROUP_NAME } from './Card.constants'
+import {
+  DEFAULT_COLOR,
+  DEFAULT_FONT_SIZE,
+  FONT_SIZES,
+  FontSizes,
+  GROUP_NAME,
+} from './Card.constants'
 
 /**
  * `Card` component allow to build nice interface by offering user colored
@@ -28,13 +35,21 @@ export const Card = ({
   color = DEFAULT_COLOR,
   dismissable = false,
   dismissButtonLabel = 'Close',
-  fontSize = 1,
+  fontSize = DEFAULT_FONT_SIZE,
   icon,
   onDismiss,
   title,
   ...props
 }: CardProps) => {
   const hasChildren = Boolean(children)
+
+  const convertedFontSize = isNumber(fontSize)
+    ? (String(fontSize) as FontSizes)
+    : fontSize
+  let actualFontSize = FONT_SIZES[convertedFontSize]
+  if (![FontSizes.Body1, FontSizes.Body2].includes(actualFontSize)) {
+    actualFontSize = DEFAULT_FONT_SIZE
+  }
 
   return (
     <div
@@ -57,7 +72,7 @@ export const Card = ({
             'flex items-center gap-1',
           )}
           element="div"
-          variant={`body-${fontSize}-bold`}
+          variant={`body-${actualFontSize}-bold`}
         >
           {icon && (
             <div
@@ -84,7 +99,7 @@ export const Card = ({
             'max-h-full overflow-y-auto',
           )}
           element="div"
-          variant={`body-${fontSize}`}
+          variant={`body-${actualFontSize}`}
         >
           {children}
         </Typography>
