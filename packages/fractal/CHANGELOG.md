@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [21.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.1.0...@snowball-tech/fractal@21.2.0) (2025-08-27)
+
+- **tabs:** allow to hide separator and indicator ([f069ad3](https://github.com/snowball-tech/fractal/commit/f069ad395358343d9cd1a8eda63a39e45a96a607))
+
 # @snowball-tech/fractal [21.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.0.2...@snowball-tech/fractal@21.1.0) (2025-08-26)
 
 - **tabs:** allow to have "fit" tabs bar ([3cba87c](https://github.com/snowball-tech/fractal/commit/3cba87c18ee564404fd5e22523f8ad7c4338e880))
