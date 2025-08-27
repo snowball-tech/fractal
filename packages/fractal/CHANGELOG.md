@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [21.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.3.0...@snowball-tech/fractal@21.4.0) (2025-08-27)
+
+- **card:** uniformize the font size prop ([7987ac6](https://github.com/snowball-tech/fractal/commit/7987ac629ccdc47ed20e3e2b06cead0a4339a051))
+- **paper:** uniformize the elevation prop ([25db4ea](https://github.com/snowball-tech/fractal/commit/25db4eae59f7fe53d83157de4a968d01c422c563))
+
 # @snowball-tech/fractal [21.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.2.0...@snowball-tech/fractal@21.3.0) (2025-08-27)
 
 - **tabs:** add a way to globally change the tabs size ([b56e958](https://github.com/snowball-tech/fractal/commit/b56e958da2124b8dea569bbabeb20e866c025e94))
