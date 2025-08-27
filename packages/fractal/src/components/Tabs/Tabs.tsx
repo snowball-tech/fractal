@@ -125,7 +125,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
               disabled: disabled || childProps.disabled,
               large: shouldBeLarge || childProps.large,
               orientation,
-              size: tabsSize,
+              size: childProps.size || tabsSize,
               tabsPosition,
               withIndicator,
             }),
