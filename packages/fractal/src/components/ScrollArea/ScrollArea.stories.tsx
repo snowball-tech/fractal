@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 
-import { ScrollArea } from '.'
+import { ScrollArea } from './ScrollArea'
 
 type ScrollAreaProps = ComponentProps<typeof ScrollArea>
 

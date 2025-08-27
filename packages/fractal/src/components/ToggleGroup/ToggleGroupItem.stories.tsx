@@ -12,7 +12,8 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { ToggleGroup, ToggleGroupItem } from '.'
+import { ToggleGroup } from './ToggleGroup'
+import { ToggleGroupItem } from './ToggleGroupItem'
 
 type ToggleGroupItemsProps = ComponentProps<typeof ToggleGroupItem>
 

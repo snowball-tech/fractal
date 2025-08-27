@@ -14,7 +14,8 @@ import type { ComponentProps } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 
-import { Dropdown, DropdownItem } from '.'
+import { Dropdown } from './Dropdown'
+import { DropdownItem } from './DropdownItem'
 
 type DropdownItemProps = ComponentProps<typeof DropdownItem>
 

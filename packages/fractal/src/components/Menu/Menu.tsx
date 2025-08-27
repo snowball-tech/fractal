@@ -7,9 +7,13 @@ import {
   useRef,
 } from 'react'
 
+import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
-import { Elevations } from '@/components/Paper/Paper.constants'
+import {
+  ELEVATIONS as PAPER_ELEVATIONS,
+  Elevations as PaperElevations,
+} from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cn } from '@/styles/helpers'
@@ -57,12 +61,25 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
 
     const hasChildren = Boolean(children)
 
+    const convertedElevation = isNumber(elevation)
+      ? (String(elevation) as PaperElevations)
+      : elevation
+    let actualElevation = PAPER_ELEVATIONS[convertedElevation]
+    if (
+      ![
+        PaperElevations.Bordered,
+        PaperElevations.Elevated,
+        PaperElevations.Higher,
+      ].includes(actualElevation)
+    ) {
+      actualElevation = DEFAULT_ELEVATION
+    }
     const elevationClassNames = {
-      [Elevations.Bordered]: 'rounded-sm shadow-none',
+      [PaperElevations.Bordered]: 'rounded-sm shadow-none',
 
-      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
+      [PaperElevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',
 
-      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter',
+      [PaperElevations.Higher]: 'rounded-sm shadow-brutal ml-quarter',
     }
 
     return (
@@ -70,13 +87,13 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
         ref={containerRef}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          `${PREFIX}-${GROUP_NAME}--${elevation}`,
+          `${PREFIX}-${GROUP_NAME}--${actualElevation}`,
           disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           'pointer-events-auto relative z-50',
           embedded ? '' : 'rounded-sm border-1 border-normal bg-white p-1',
           hasChildren ? '' : `${PREFIX}-${GROUP_NAME}__menu--empty invisible`,
-          embedded ? '' : elevationClassNames[elevation],
+          embedded ? '' : elevationClassNames[actualElevation],
           props.className,
         )}
         {...omit(['className'], props)}

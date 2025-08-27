@@ -2,10 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Header } from '@/components/Header'
+import { Header } from '@/components/Header/Header'
 
-import { Skeleton, SkeletonColors, SkeletonShapes } from '.'
-import { DEFAULT_COLOR } from './Skeleton.constants'
+import { Skeleton } from './Skeleton'
+import {
+  Colors,
+  DEFAULT_COLOR,
+  Shapes as SkeletonShapes,
+} from './Skeleton.constants'
 
 type StepperProps = ComponentProps<typeof Skeleton>
 
@@ -23,10 +27,10 @@ const meta: Meta<StepperProps> = {
   },
   argTypes: {
     color: {
-      options: Object.values(SkeletonColors),
+      options: Object.values(Colors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(SkeletonColors).join('|') },
+        type: { summary: Object.values(Colors).join('|') },
       },
     },
     shape: {

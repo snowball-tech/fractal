@@ -5,11 +5,13 @@ import { userEvent, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 import { sleep } from '@/utils'
 
-import { Tab, TabContent, Tabs, TabSizes } from '.'
-import { DEFAULT_SIZE } from './Tabs.constants'
+import { Tab } from './Tab'
+import { TabContent } from './TabContent'
+import { Tabs } from './Tabs'
+import { DEFAULT_SIZE, Sizes } from './Tabs.constants'
 
 const content = (
   <>
@@ -41,10 +43,10 @@ const meta: Meta<TabProps> = {
       control: 'text',
     },
     size: {
-      options: Object.values(TabSizes),
+      options: Object.values(Sizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(TabSizes).join('|') },
+        type: { summary: Object.values(Sizes).join('|') },
       },
     },
   },

@@ -12,8 +12,8 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import { InputFile, InputFileVariants } from '.'
-import { DEFAULT_VARIANT } from './InputFile.constants'
+import { InputFile } from './InputFile'
+import { DEFAULT_VARIANT, Variants } from './InputFile.constants'
 
 type InputFileProps = ComponentProps<typeof InputFile>
 
@@ -30,10 +30,10 @@ const meta = {
   },
   argTypes: {
     variant: {
-      options: Object.values(InputFileVariants),
+      options: Object.values(Variants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(InputFileVariants).join('|') },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

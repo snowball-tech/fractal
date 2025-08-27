@@ -1,7 +1,7 @@
 import type { ForwardedRef } from 'react'
 
-import { ButtonProps } from '@/components/Button/Button.types'
-import { DialogProps } from '@/components/Dialog/Dialog.types'
+import type { ButtonProps } from '@/components/Button/Button.types'
+import type { DialogProps } from '@/components/Dialog/Dialog.types'
 
 export interface ConfirmProps
   extends Omit<DialogProps, 'disabled' | 'dismissable' | 'modal'> {

@@ -1,12 +1,7 @@
-import type {
-  AllHTMLAttributes,
-  ComponentProps,
-  CSSProperties,
-  ReactNode,
-} from 'react'
+import type { AllHTMLAttributes, CSSProperties, ReactNode } from 'react'
 
-import { Elevations } from '@/components/Paper/Paper.constants'
-import { Popover } from '@/components/Popover/Popover'
+import type { PaperProps } from '@/components/Paper/Paper.types'
+import type { PopoverProps } from '@/components/Popover/Popover.types'
 
 import { Orientations } from './Menu.constants'
 
@@ -41,7 +36,7 @@ export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: `${Elevations}`
+  elevation?: PaperProps['elevation']
   /**
    * Indicates that the menu is embedded somewhere and that you would like to
    * get rid of the default styling (background, border, elevation, ...).
@@ -154,7 +149,7 @@ export interface SubMenuProps
    * Indicates where to align the sub-menu content relative to the trigger
    * (label).
    */
-  align?: ComponentProps<typeof Popover>['align']
+  align?: PopoverProps['align']
   /**
    * Indicates if the sub-menu should be condensed (less spacing in sub-menu
    * trigger/label).
@@ -180,7 +175,7 @@ export interface SubMenuProps
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: `${Elevations}`
+  elevation?: PaperProps['elevation']
   /** An icon to display on the left of the sub-menu label. */
   icon?: ReactNode
   /**
@@ -242,7 +237,7 @@ export interface SubMenuProps
    * trigger (label) on a vertical menu and on the bottom side of the trigger
    * (label) on a horizontal menu.
    */
-  side?: ComponentProps<typeof Popover>['side']
+  side?: PopoverProps['side']
   /**
    * Indicates if we want to trigger the sub-menu display when hovering the
    * trigger (label).
@@ -260,11 +255,11 @@ export interface SubMenuProps
   /**
    * Event handler called when an interaction is made outside of the sub-menu.
    */
-  onInteractOutside?: ComponentProps<typeof Popover>['onInteractOutside']
+  onInteractOutside?: PopoverProps['onInteractOutside']
   /** Event handler called when the submenu is opened. */
   onOpen?: () => void
   /**
    * Event handler called when the sub-menu is opened or closed.
    */
-  onSubMenuOpenChange?: ComponentProps<typeof Popover>['onOpenChange']
+  onSubMenuOpenChange?: PopoverProps['onOpenChange']
 }

@@ -18,7 +18,7 @@ import { MenuGroupContext } from './MenuGroupContext'
  * `ItemGroup` component is used to display `Item`s grouped under a common label
  * with nice formatting.
  */
-export default function MenuItemGroup({
+export function MenuItemGroup({
   children,
   condensed = false,
   disabled = false,
@@ -84,3 +84,6 @@ export default function MenuItemGroup({
     </div>
   )
 }
+MenuItemGroup.displayName = 'MenuItemGroup'
+
+export default MenuItemGroup

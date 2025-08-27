@@ -5,9 +5,9 @@ import { fn } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components/Button/Button'
 
-import { Tooltip } from '.'
+import { Tooltip } from './Tooltip'
 
 type TooltipProps = ComponentProps<typeof Tooltip>
 

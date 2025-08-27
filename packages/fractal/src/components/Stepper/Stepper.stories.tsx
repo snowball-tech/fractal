@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Stepper } from '.'
+import { Stepper } from './Stepper'
 
 type StepperProps = ComponentProps<typeof Stepper>
 

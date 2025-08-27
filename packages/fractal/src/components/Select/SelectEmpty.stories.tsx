@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Select, SelectEmpty } from '.'
+import { Select } from './Select'
+import { SelectEmpty } from './SelectEmpty'
 
 type SelectEmptyProps = ComponentProps<typeof SelectEmpty>
 

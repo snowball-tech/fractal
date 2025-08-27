@@ -5,7 +5,7 @@ import type {
   ReactNode,
 } from 'react'
 
-import type { ButtonProps } from '../Button/Button.types'
+import type { ButtonProps } from '@/components/Button/Button.types'
 
 export interface InputTextProps
   extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {

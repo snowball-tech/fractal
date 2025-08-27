@@ -1,6 +1,6 @@
 import type { AllHTMLAttributes } from 'react'
 
-import { ButtonProps } from '@/components/Button/Button.types'
+import type { ButtonProps } from '@/components/Button/Button.types'
 
 import { Variants } from './InputFile.constants'
 

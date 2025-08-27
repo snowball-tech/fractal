@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Dropdown, DropdownItem, DropdownItemGroup } from '.'
+import { Dropdown } from './Dropdown'
+import { DropdownItem } from './DropdownItem'
+import { DropdownItemGroup } from './DropdownItemGroup'
 
 type DropdownItemGroupProps = ComponentProps<typeof DropdownItemGroup>
 

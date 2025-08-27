@@ -10,8 +10,8 @@ import {
 
 import type { ComponentProps } from 'react'
 
-import { Card, CardColors } from '.'
-import { DEFAULT_COLOR } from './Card.constants'
+import { Card } from './Card'
+import { Colors, DEFAULT_COLOR } from './Card.constants'
 
 type CardProps = ComponentProps<typeof Card>
 
@@ -32,10 +32,10 @@ const meta = {
   argTypes: {
     children: { control: 'text' },
     color: {
-      options: Object.values(CardColors),
+      options: Object.values(Colors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(CardColors).join('|') },
+        type: { summary: Object.values(Colors).join('|') },
       },
     },
     fontSize: {

@@ -6,7 +6,7 @@ import type { ComponentProps } from 'react'
 
 import { DEFAULT_THEME, Themes } from '@/constants'
 
-import { EmojiPicker } from '.'
+import { EmojiPicker } from './EmojiPicker'
 import {
   DEFAULT_CATEGORIES,
   DEFAULT_EMOJIS_SET,

@@ -6,11 +6,11 @@ import { userEvent, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
-import { DropdownItem } from '@/components/Dropdown'
+import { DropdownItem } from '@/components/Dropdown/DropdownItem'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { Avatar, AvatarSizes } from '.'
+import { Avatar } from './Avatar'
 import { DEFAULT_SIZE, Sizes } from './Avatar.constants'
 
 type AvatarProps = ComponentProps<typeof Avatar>
@@ -52,10 +52,10 @@ const meta = {
       if: { arg: 'size', eq: Sizes.Fluid },
     },
     size: {
-      options: Object.values(AvatarSizes),
+      options: Object.values(Sizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(AvatarSizes).join('|') },
+        type: { summary: Object.values(Sizes).join('|') },
       },
     },
   },

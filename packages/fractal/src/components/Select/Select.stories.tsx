@@ -8,10 +8,13 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import kebabCase from 'lodash/fp/kebabCase'
 
+import { DropdownItemSeparator as SelectItemSeparator } from '@/components/Dropdown/DropdownItemSeparator'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { Select, SelectItem, SelectItemGroup, SelectItemSeparator } from '.'
+import { Select } from './Select'
+import { SelectItem } from './SelectItem'
+import { SelectItemGroup } from './SelectItemGroup'
 
 type SelectProps = ComponentProps<typeof Select>
 

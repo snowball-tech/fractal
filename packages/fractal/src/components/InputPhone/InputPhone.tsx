@@ -27,7 +27,7 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
-import { InputText } from '@/components/InputText'
+import { InputText } from '@/components/InputText/InputText'
 import { Select } from '@/components/Select/Select'
 import { SelectEmpty } from '@/components/Select/SelectEmpty'
 import { SelectItem } from '@/components/Select/SelectItem'

@@ -11,21 +11,19 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 
-import { Avatar } from '@/components/Avatar'
-import { Button } from '@/components/Button'
-import { Elevations } from '@/components/Paper/Paper.constants'
+import { Avatar } from '@/components/Avatar/Avatar'
+import { Button } from '@/components/Button/Button'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { avatarUrl } from '@/mocks'
 import { sleep } from '@/utils'
 
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownItemGroup,
-  DropdownItemSeparator,
-  DropdownRadioGroup,
-  DropdownRadioItem,
-} from '.'
+import { Dropdown } from './Dropdown'
 import { DEFAULT_ELEVATION } from './Dropdown.constants'
+import { DropdownItem } from './DropdownItem'
+import { DropdownItemGroup } from './DropdownItemGroup'
+import { DropdownItemSeparator } from './DropdownItemSeparator'
+import { DropdownRadioGroup } from './DropdownRadioGroup'
+import { DropdownRadioItem } from './DropdownRadioItem'
 
 const textMenu = (
   <>
@@ -127,7 +125,7 @@ const meta: Meta<DropdownProps> = {
       control: 'radio',
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(Elevations).join('|') },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
     side: {

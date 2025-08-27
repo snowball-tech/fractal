@@ -4,7 +4,9 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Select, SelectItem, SelectItemGroup } from '.'
+import { Select } from './Select'
+import { SelectItem } from './SelectItem'
+import { SelectItemGroup } from './SelectItemGroup'
 
 type SelectItemGroupProps = ComponentProps<typeof SelectItemGroup>
 

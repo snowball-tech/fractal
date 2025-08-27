@@ -20,6 +20,8 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
+import type { PopoverProps } from '@/components/Popover/Popover.types'
+
 import { Paper } from '@/components/Paper/Paper'
 import { Popover } from '@/components/Popover/Popover'
 import { Typography } from '@/components/Typography/Typography'
@@ -28,7 +30,6 @@ import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
 
 import type { SubMenuCombinedRefs, SubMenuProps } from './Menu.types'
 
-import { PopoverProps } from '../Popover'
 import {
   DEFAULT_SUB_MENU_ELEVATION,
   GROUP_NAME,

@@ -8,13 +8,13 @@ import omit from 'lodash/fp/omit'
 
 import type { CombinedRefs } from '@/components/Dialog/Dialog.types'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components/Button/Button'
+import { Dialog } from '@/components/Dialog/Dialog'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
 import type { ConfirmProps } from './Confirm.types'
 
-import { Dialog } from '../Dialog'
 import { GROUP_NAME } from './Confirm.constants'
 
 export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(

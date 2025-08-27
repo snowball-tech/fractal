@@ -15,7 +15,7 @@ import { DropdownItemSeparatorProps } from './Dropdown.types'
  * See https://www.radix-ui.com/primitives/docs/components/select#separator for
  * more information.
  */
-export default function DropdownItemSeparator({
+export function DropdownItemSeparator({
   ...props
 }: DropdownItemSeparatorProps) {
   return (
@@ -29,3 +29,6 @@ export default function DropdownItemSeparator({
     />
   )
 }
+DropdownItemSeparator.displayName = 'DropdownItemSeparator'
+
+export default DropdownItemSeparator

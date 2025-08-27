@@ -12,7 +12,9 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Dropdown, DropdownItem, SubDropdown } from '.'
+import { Dropdown } from './Dropdown'
+import { DropdownItem } from './DropdownItem'
+import { SubDropdown } from './SubDropdown'
 
 type SubDropdownItemProps = ComponentProps<typeof SubDropdown>
 

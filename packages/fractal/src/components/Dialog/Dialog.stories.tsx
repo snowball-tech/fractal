@@ -6,12 +6,12 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 
-import { Button } from '@/components/Button'
-import { Typography } from '@/components/Typography'
+import { Button } from '@/components/Button/Button'
+import { Typography } from '@/components/Typography/Typography'
 import { sleep } from '@/utils'
 
-import { Dialog, DialogPositions } from '.'
-import { DEFAULT_POSITION } from './Dialog.constants'
+import { Dialog } from './Dialog'
+import { DEFAULT_POSITION, Positions } from './Dialog.constants'
 
 type DialogProps = ComponentProps<typeof Dialog>
 
@@ -67,10 +67,10 @@ const meta: Meta<DialogProps> = {
       control: 'text',
     },
     position: {
-      options: Object.values(DialogPositions),
+      options: Object.values(Positions),
       table: {
         defaultValue: { summary: DEFAULT_POSITION },
-        type: { summary: Object.values(DialogPositions).join('|') },
+        type: { summary: Object.values(Positions).join('|') },
       },
     },
     trigger: {

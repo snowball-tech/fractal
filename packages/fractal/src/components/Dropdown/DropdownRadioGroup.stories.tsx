@@ -10,7 +10,9 @@ import noop from 'lodash/fp/noop'
 
 import { jedis, others, siths } from '@/mocks'
 
-import { Dropdown, DropdownRadioGroup, DropdownRadioItem } from '.'
+import { Dropdown } from './Dropdown'
+import { DropdownRadioGroup } from './DropdownRadioGroup'
+import { DropdownRadioItem } from './DropdownRadioItem'
 
 type DropdownRadioGroupProps = ComponentProps<typeof DropdownRadioGroup>
 

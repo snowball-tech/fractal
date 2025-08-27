@@ -19,7 +19,7 @@ import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 
-import { InputText } from '@/components/InputText'
+import { InputText } from '@/components/InputText/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'

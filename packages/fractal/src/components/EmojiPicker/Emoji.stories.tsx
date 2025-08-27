@@ -5,9 +5,9 @@ import { init } from 'emoji-mart'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 
-import { Emoji } from '.'
+import { Emoji } from './Emoji'
 import {
   DEFAULT_EMOJIS_SET,
   DEFAULT_SKIN_TONE,

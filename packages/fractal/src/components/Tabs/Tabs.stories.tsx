@@ -10,10 +10,12 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 import { sleep } from '@/utils'
 
-import { Tab, TabContent, Tabs } from '.'
+import { Tab } from './Tab'
+import { TabContent } from './TabContent'
+import { Tabs } from './Tabs'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,

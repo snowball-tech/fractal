@@ -1,4 +1,4 @@
-import { PaperElevations } from '@/components/Paper'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 
 export const GROUP_NAME = 'dropdown'
 

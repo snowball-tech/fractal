@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Toolbar, ToolbarButton, ToolbarSeparator } from '.'
+import { Toolbar } from './Toolbar'
+import { ToolbarButton } from './ToolbarButton'
+import { ToolbarSeparator } from './ToolbarSeparator'
 
 type ToolbarSeparatorProps = ComponentProps<typeof ToolbarSeparator>
 

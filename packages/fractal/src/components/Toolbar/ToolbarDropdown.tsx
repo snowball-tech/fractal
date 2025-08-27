@@ -6,8 +6,9 @@ import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
-import { Dropdown, DropdownElevations } from '@/components/Dropdown'
+import { Dropdown } from '@/components/Dropdown/Dropdown'
 import { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Dropdown.types'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
@@ -30,7 +31,7 @@ export const ToolbarDropdown = forwardRef<
       active = false,
       children,
       disabled = false,
-      elevation = DropdownElevations.Elevated,
+      elevation = PaperElevations.Elevated,
       icon,
       iconOnly = false,
       iconPosition = 'left',

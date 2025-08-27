@@ -7,12 +7,12 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import kebabCase from 'lodash/fp/kebabCase'
 
-import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { ToggleGroup, ToggleGroupItem } from '.'
-import { ToggleVariants } from '../Toggle'
+import { DEFAULT_VARIANT, Variants } from '../Toggle/Toggle.constants'
+import { ToggleGroup } from './ToggleGroup'
+import { ToggleGroupItem } from './ToggleGroupItem'
 
 type ToggleGroupProps = ComponentProps<typeof ToggleGroup>
 
@@ -67,11 +67,11 @@ const meta: Meta<ToggleGroupProps> = {
       },
     },
     variant: {
-      options: Object.values(ToggleVariants),
+      options: Object.values(Variants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
         disable: true,
-        type: { summary: Object.values(ToggleVariants).join('|') },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

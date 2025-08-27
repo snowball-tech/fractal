@@ -17,7 +17,7 @@ import { ToolbarContext } from './ToolbarContext'
  * `ToolbarSeparator` component is used to display a separator between groups or
  * items in a toolbar.
  */
-export default function ToolbarSeparator({ ...props }: ToolbarSeparatorProps) {
+export function ToolbarSeparator({ ...props }: ToolbarSeparatorProps) {
   const { orientation } = useContext(ToolbarContext)
 
   return (
@@ -34,3 +34,5 @@ export default function ToolbarSeparator({ ...props }: ToolbarSeparatorProps) {
   )
 }
 ToolbarSeparator.displayName = 'ToolbarSeparator'
+
+export default ToolbarSeparator

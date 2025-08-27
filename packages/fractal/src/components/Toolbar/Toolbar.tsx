@@ -7,7 +7,7 @@ import { type ForwardedRef, forwardRef } from 'react'
 import omit from 'lodash/fp/omit'
 
 import { Paper } from '@/components/Paper/Paper'
-import { Elevations } from '@/components/Paper/Paper.constants'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
@@ -57,7 +57,11 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${orientation}`,
           'flex items-center gap-1 p-1',
-          elevation === Elevations.Higher ? 'rounded-full' : 'rounded-sm',
+          elevation === PaperElevations.Higher ||
+            elevation === 'higher' ||
+            elevation === 3
+            ? 'rounded-full'
+            : 'rounded-sm',
           orientation === Orientations.Horizontal ? 'flex-row' : 'flex-col',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
           disabled

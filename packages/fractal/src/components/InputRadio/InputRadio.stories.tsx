@@ -4,7 +4,8 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { InputRadio, InputRadioGroup } from '.'
+import { InputRadio } from './InputRadio'
+import { InputRadioGroup } from './InputRadioGroup'
 
 type InputRadioProps = ComponentProps<typeof InputRadio>
 

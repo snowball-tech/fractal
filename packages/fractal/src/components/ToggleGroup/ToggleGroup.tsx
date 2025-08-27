@@ -5,12 +5,12 @@ import * as RxToggleGroup from '@radix-ui/react-toggle-group'
 import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 
-import { DEFAULT_VARIANT } from '@/components/Toggle/Toggle.constants'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
 
 import type { ToggleGroupProps } from './ToggleGroup.types'
 
+import { DEFAULT_VARIANT } from '../Toggle/Toggle.constants'
 import { GROUP_NAME } from './ToggleGroup.constants'
 import { ToggleGroupContext } from './ToggleGroupContext'
 

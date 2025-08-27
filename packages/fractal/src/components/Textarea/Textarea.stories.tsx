@@ -16,7 +16,7 @@ import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
-import { Textarea } from '.'
+import { Textarea } from './Textarea'
 
 type TextareaProps = ComponentProps<typeof Textarea>
 

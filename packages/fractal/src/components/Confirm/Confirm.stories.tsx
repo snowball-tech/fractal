@@ -6,11 +6,14 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components/Button/Button'
+import {
+  DEFAULT_POSITION as DEFAULT_DIALOG_POSITION,
+  Positions as DialogPositions,
+} from '@/components/Dialog/Dialog.constants'
 import { sleep } from '@/utils'
 
-import { Confirm, ConfirmPositions } from '.'
-import { DEFAULT_POSITION } from '../Dialog/Dialog.constants'
+import { Confirm } from './Confirm'
 
 type ConfirmProps = ComponentProps<typeof Confirm>
 
@@ -32,10 +35,10 @@ const meta: Meta<ConfirmProps> = {
     },
     confirm: { control: 'text' },
     position: {
-      options: Object.values(ConfirmPositions),
+      options: Object.values(DialogPositions),
       table: {
-        defaultValue: { summary: DEFAULT_POSITION },
-        type: { summary: Object.values(ConfirmPositions).join('|') },
+        defaultValue: { summary: DEFAULT_DIALOG_POSITION },
+        type: { summary: Object.values(DialogPositions).join('|') },
       },
     },
     trigger: {

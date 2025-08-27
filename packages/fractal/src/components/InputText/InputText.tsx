@@ -15,13 +15,13 @@ import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 
+import { Button } from '@/components/Button/Button'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
 import type { InputTextProps } from './InputText.types'
 
-import { Button } from '../Button/Button'
-import { Typography } from '../Typography/Typography'
 import { GROUP_NAME } from './InputText.constants'
 
 /**

@@ -4,7 +4,10 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Select, SelectItem, SelectItemSeparator } from '.'
+import { DropdownItemSeparator as SelectItemSeparator } from '@/components/Dropdown/DropdownItemSeparator'
+
+import { Select } from './Select'
+import { SelectItem } from './SelectItem'
 
 type SelectItemSeparatorProps = ComponentProps<typeof SelectItemSeparator>
 

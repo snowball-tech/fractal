@@ -9,7 +9,7 @@ import { slowType } from '@/tests_helpers'
 
 import type { DateFormat } from './InputDate.types'
 
-import { InputDate } from '.'
+import { InputDate } from './InputDate'
 
 type InputDateProps = ComponentProps<typeof InputDate>
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Progress } from '.'
+import { Progress } from './Progress'
 
 type ProgressProps = ComponentProps<typeof Progress>
 

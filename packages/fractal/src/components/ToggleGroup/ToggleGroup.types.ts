@@ -5,7 +5,7 @@ import {
 
 import type { ReactNode } from 'react'
 
-import { Variants } from '@/components/Toggle/Toggle.constants'
+import { Variants } from '../Toggle/Toggle.constants'
 
 export interface ToggleGroupProps
   extends Omit<RxToggleGroupProps, 'defaultValue' | 'type' | 'value'> {

@@ -4,7 +4,9 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Menu, MenuItem, MenuItemGroup } from '.'
+import { Menu } from './Menu'
+import { MenuItem } from './MenuItem'
+import { MenuItemGroup } from './MenuItemGroup'
 
 type MenuItemGroupProps = ComponentProps<typeof MenuItemGroup>
 const meta: Meta<MenuItemGroupProps> = {

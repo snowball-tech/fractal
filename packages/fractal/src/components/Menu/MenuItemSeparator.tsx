@@ -12,9 +12,7 @@ import { MenuItemSeparatorProps } from './Menu.types'
  * `ItemSeparator` component is used to display a separator between groups or
  * items in a menu.
  */
-export default function MenuItemSeparator({
-  ...props
-}: MenuItemSeparatorProps) {
+export function MenuItemSeparator({ ...props }: MenuItemSeparatorProps) {
   return (
     <RxSelect.Separator
       className={cn(
@@ -27,3 +25,5 @@ export default function MenuItemSeparator({
   )
 }
 MenuItemSeparator.displayName = 'MenuItemSeparator'
+
+export default MenuItemSeparator

@@ -5,7 +5,7 @@ import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
-import { Button } from '@/components/Button'
+import { Button } from '@/components/Button/Button'
 import { Typography } from '@/components/Typography/Typography'
 import {
   DARK_FG_COLORS_CLASSNAMES,

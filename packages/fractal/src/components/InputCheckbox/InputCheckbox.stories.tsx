@@ -6,11 +6,12 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { sleep } from '@/utils'
 
-import { InputCheckbox, InputCheckboxVariants } from '.'
+import { InputCheckbox } from './InputCheckbox'
 import {
   Colors,
   DEFAULT_COLOR,
   DEFAULT_VARIANT,
+  Variants,
 } from './InputCheckbox.constants'
 
 type InputCheckboxProps = ComponentProps<typeof InputCheckbox>
@@ -42,10 +43,10 @@ const meta = {
       },
     },
     variant: {
-      options: Object.values(InputCheckboxVariants),
+      options: Object.values(Variants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(InputCheckboxVariants).join('|') },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

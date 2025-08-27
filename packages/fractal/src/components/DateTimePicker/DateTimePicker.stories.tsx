@@ -11,7 +11,7 @@ import isArray from 'lodash/fp/isArray'
 import { DEFAULT_THEME, Themes } from '@/constants'
 import { sleep } from '@/utils'
 
-import { DateTimePicker } from '.'
+import { DateTimePicker } from './DateTimePicker'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_PICKER_VARIANT,

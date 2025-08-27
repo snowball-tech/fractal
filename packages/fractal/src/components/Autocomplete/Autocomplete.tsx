@@ -28,7 +28,7 @@ import type {
 } from '@/components/Dropdown/Dropdown.types'
 
 import { Dropdown } from '@/components/Dropdown/Dropdown'
-import { InputText } from '@/components/InputText'
+import { InputText } from '@/components/InputText/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'

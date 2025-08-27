@@ -11,11 +11,11 @@ import type { ComponentProps, CSSProperties } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 
-import Autocomplete from '@/components/Autocomplete/Autocomplete'
-import { Button } from '@/components/Button'
-import { Logo } from '@/components/Logo'
+import { Autocomplete } from '@/components/Autocomplete/Autocomplete'
+import { Button } from '@/components/Button/Button'
+import { Logo } from '@/components/Logo/Logo'
 
-import { Header } from '.'
+import { Header } from './Header'
 
 import '@/styles/smartphones.css'
 

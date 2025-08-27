@@ -12,7 +12,8 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Toolbar, ToolbarButton } from '.'
+import { Toolbar } from './Toolbar'
+import { ToolbarButton } from './ToolbarButton'
 
 type ToolbarButtonProps = ComponentProps<typeof ToolbarButton>
 

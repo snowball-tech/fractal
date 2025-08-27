@@ -1,12 +1,11 @@
 import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 
+import { Popover } from '@/components/Popover/Popover'
+import { Typography } from '@/components/Typography/Typography'
 import { cn } from '@/styles/helpers'
 
 import type { TooltipProps } from './Tooltip.types'
-
-import { Popover } from '../Popover'
-import { Typography } from '../Typography'
 
 /**
  * `Tooltip` component allow to wrap anything that should display an small
@@ -42,7 +41,7 @@ export const Tooltip = ({
     <Popover
       align={align}
       disabled={disabled}
-      elevation="1"
+      elevation="bordered"
       fullWidth={fullWidth}
       modal={false}
       open={!isNil(show) ? show : undefined}

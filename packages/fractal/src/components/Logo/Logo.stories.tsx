@@ -4,8 +4,8 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { cj, cn } from '@/styles/helpers'
 
-import { Logo, LogoSizes } from '.'
-import { DEFAULT_SIZE } from './Logo.constants'
+import { Logo } from './Logo'
+import { DEFAULT_SIZE, Sizes } from './Logo.constants'
 
 const note = (
   <blockquote className="mb-8 ml-0">
@@ -24,10 +24,10 @@ type LogoProps = ComponentProps<typeof Logo>
 const meta: Meta<LogoProps> = {
   argTypes: {
     size: {
-      options: Object.values(LogoSizes),
+      options: Object.values(Sizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(LogoSizes).join('|') },
+        type: { summary: Object.values(Sizes).join('|') },
       },
     },
   },

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Badge } from '.'
+import { Badge } from './Badge'
 
 type BadgeProps = ComponentProps<typeof Badge>
 

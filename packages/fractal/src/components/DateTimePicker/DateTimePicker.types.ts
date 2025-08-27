@@ -1,8 +1,12 @@
 import type { HTMLAttributes } from 'react'
 import { TimeOutput } from 'react-timekeeper'
 
-import { DialogProps } from '@/components/Dialog'
-import { PopoverCombinedRefs, PopoverProps } from '@/components/Popover'
+import type { DialogProps } from '@/components/Dialog/Dialog.types'
+import type {
+  CombinedRefs as PopoverCombinedRefs,
+  PopoverProps,
+} from '@/components/Popover/Popover.types'
+
 import { Themes } from '@/constants'
 
 import {

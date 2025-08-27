@@ -11,8 +11,8 @@ import {
 
 import type { ComponentProps } from 'react'
 
-import { CuteIcon, CuteIconColors } from '.'
-import { DEFAULT_COLOR } from './CuteIcon.constants'
+import { CuteIcon } from './CuteIcon'
+import { Colors, DEFAULT_COLOR } from './CuteIcon.constants'
 
 type CuteIconProps = ComponentProps<typeof CuteIcon>
 
@@ -22,10 +22,10 @@ const meta = {
   },
   argTypes: {
     color: {
-      options: Object.values(CuteIconColors),
+      options: Object.values(Colors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(CuteIconColors).join('|') },
+        type: { summary: Object.values(Colors).join('|') },
       },
     },
     icon: {

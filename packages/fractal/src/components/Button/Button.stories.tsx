@@ -12,12 +12,12 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 
-import { Paper } from '@/components/Paper'
+import { Paper } from '@/components/Paper/Paper'
 import { Breakpoints, DEFAULT_THEME, Themes } from '@/constants'
 import ThemeProvider from '@/ThemeProvider'
 
-import { Button, ButtonVariants } from '.'
-import { DEFAULT_VARIANT } from './Button.constants'
+import { Button } from './Button'
+import { DEFAULT_VARIANT, Variants } from './Button.constants'
 
 type ButtonProps = ComponentProps<typeof Button>
 
@@ -104,10 +104,10 @@ const meta = {
       },
     },
     variant: {
-      options: Object.values(ButtonVariants),
+      options: Object.values(Variants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(ButtonVariants).join('|') },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

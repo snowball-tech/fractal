@@ -23,7 +23,7 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#group
  * for more information.
  */
-export default function DropdownItemGroup({
+export function DropdownItemGroup({
   children,
   condensed = false,
   disabled = false,
@@ -90,3 +90,6 @@ export default function DropdownItemGroup({
     </RxDropdownMenu.Group>
   )
 }
+DropdownItemGroup.displayName = 'DropdownItemGroup'
+
+export default DropdownItemGroup

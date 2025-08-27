@@ -20,8 +20,7 @@ import type {
   InputRadioGroupProps,
   InputRadioProps,
 } from '@/components/InputRadio/InputRadio.types'
-
-import { Elevations } from '../Paper/Paper.constants'
+import type { PaperProps } from '@/components/Paper/Paper.types'
 
 export type CombinedRefs = {
   container: HTMLDivElement | null
@@ -79,7 +78,7 @@ export interface DropdownProps
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: `${Elevations}`
+  elevation?: PaperProps['elevation']
   /** Indicates if the dropdown should take all the available width. */
   fullWidth?: boolean
   /**

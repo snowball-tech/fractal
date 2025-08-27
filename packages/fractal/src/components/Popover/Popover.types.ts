@@ -10,9 +10,7 @@ import type {
   ReactNode,
 } from 'react'
 
-import type { PaperProps } from '../Paper/Paper.types'
-
-import { Elevations } from '../Paper/Paper.constants'
+import type { PaperProps } from '@/components/Paper/Paper.types'
 
 export type CombinedRefs = {
   container: HTMLDivElement | null
@@ -42,7 +40,7 @@ export interface PopoverProps
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: `${Elevations}`
+  elevation?: PaperProps['elevation']
   /** Indicates if the popover should take all the available width. */
   fullWidth?: boolean
   /**

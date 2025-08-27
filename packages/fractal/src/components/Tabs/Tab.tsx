@@ -5,7 +5,7 @@ import { type ForwardedRef, forwardRef } from 'react'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 

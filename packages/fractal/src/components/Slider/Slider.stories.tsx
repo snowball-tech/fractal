@@ -7,7 +7,7 @@ import type { ComponentProps } from 'react'
 
 import { sleep } from '@/utils'
 
-import { Slider } from '.'
+import { Slider } from './Slider'
 
 type SliderProps = ComponentProps<typeof Slider>
 

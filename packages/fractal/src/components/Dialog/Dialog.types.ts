@@ -2,8 +2,8 @@ import { DialogContentProps as RxDialogContentProps } from '@radix-ui/react-dial
 
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
-import type { ButtonProps } from '../Button'
-import type { PaperProps } from '../Paper'
+import type { ButtonProps } from '@/components/Button/Button.types'
+import type { PaperProps } from '@/components/Paper/Paper.types'
 
 import { Positions } from './Dialog.constants'
 

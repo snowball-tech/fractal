@@ -10,8 +10,9 @@ import kebabCase from 'lodash/fp/kebabCase'
 import { jedis, others, siths } from '@/mocks'
 import { sleep } from '@/utils'
 
-import { InputRadio, InputRadioGroup, InputRadioVariants } from '.'
-import { DEFAULT_VARIANT } from './InputRadio.constants'
+import { InputRadio } from './InputRadio'
+import { DEFAULT_VARIANT, Variants } from './InputRadio.constants'
+import { InputRadioGroup } from './InputRadioGroup'
 
 type InputRadioGroupProps = ComponentProps<typeof InputRadioGroup>
 
@@ -67,10 +68,10 @@ const meta: Meta<InputRadioGroupProps> = {
       },
     },
     variant: {
-      options: Object.values(InputRadioVariants),
+      options: Object.values(Variants),
       table: {
         defaultValue: { summary: DEFAULT_VARIANT },
-        type: { summary: Object.values(InputRadioVariants).join('|') },
+        type: { summary: Object.values(Variants).join('|') },
       },
     },
   },

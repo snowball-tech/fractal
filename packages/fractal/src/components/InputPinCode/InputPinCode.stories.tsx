@@ -12,7 +12,7 @@ import type {
 
 import { slowType } from '@/tests_helpers'
 
-import { InputPinCode } from '.'
+import { InputPinCode } from './InputPinCode'
 
 type InputPinCodeProps = ComponentProps<typeof InputPinCode>
 

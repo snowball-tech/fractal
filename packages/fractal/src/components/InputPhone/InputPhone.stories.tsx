@@ -11,7 +11,7 @@ import { sleep } from '@/utils'
 
 import type { PhoneNumber } from './InputPhone.types'
 
-import { InputPhone } from '.'
+import { InputPhone } from './InputPhone'
 
 type InputPhoneProps = ComponentProps<typeof InputPhone>
 

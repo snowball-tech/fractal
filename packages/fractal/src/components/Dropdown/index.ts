@@ -1,4 +1,7 @@
-export { Elevations as DropdownElevations } from '../Paper/Paper.constants.js'
+export {
+  AlternateElevations as DropdownAlternateElevations,
+  Elevations as DropdownElevations,
+} from '../Paper/Paper.constants.js'
 export { DEFAULT_ELEVATION as DEFAULT_DROPDOWN_ELEVATION } from './Dropdown.constants.js'
 export { default as Dropdown } from './Dropdown.js'
 export type {

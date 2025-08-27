@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 
-import { Menu, MenuItem, MenuItemSeparator } from '.'
+import { Menu } from './Menu'
+import { MenuItem } from './MenuItem'
+import { MenuItemSeparator } from './MenuItemSeparator'
 
 type MenuItemSeparatorProps = ComponentProps<typeof MenuItemSeparator>
 

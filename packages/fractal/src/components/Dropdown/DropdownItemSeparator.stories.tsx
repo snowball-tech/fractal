@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Typography } from '@/components/Typography'
+import { Typography } from '@/components/Typography/Typography'
 
-import { Dropdown, DropdownItem, DropdownItemSeparator } from '.'
+import { Dropdown } from './Dropdown'
+import { DropdownItem } from './DropdownItem'
+import { DropdownItemSeparator } from './DropdownItemSeparator'
 
 type DropdownItemSeparatorProps = ComponentProps<typeof DropdownItemSeparator>
 

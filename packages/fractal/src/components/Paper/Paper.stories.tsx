@@ -5,8 +5,8 @@ import type { ComponentProps } from 'react'
 import { DEFAULT_THEME, Themes } from '@/constants'
 import ThemeProvider from '@/ThemeProvider'
 
-import { Paper, PaperElevations } from '.'
-import { DEFAULT_ELEVATION } from './Paper.constants'
+import { Paper } from './Paper'
+import { DEFAULT_ELEVATION, Elevations } from './Paper.constants'
 
 type PaperProps = ComponentProps<typeof Paper>
 
@@ -23,7 +23,7 @@ const meta = {
       control: 'radio',
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(PaperElevations).join('|') },
+        type: { summary: Object.values(Elevations).join('|') },
       },
     },
     theme: {
@@ -72,16 +72,16 @@ export const Papers: Story = {
   },
   render: ({ children }) => (
     <div className="flex flex-col gap-2">
-      <Paper elevation="1">{children}</Paper>
-      <Paper elevation="2">{children}</Paper>
-      <Paper elevation="3">{children}</Paper>
+      <Paper elevation="bordered">{children}</Paper>
+      <Paper elevation="elevated">{children}</Paper>
+      <Paper elevation="higher">{children}</Paper>
 
       {separator}
 
       <ThemeProvider theme={Themes.Dark}>
-        <Paper elevation="1">{children}</Paper>
-        <Paper elevation="2">{children}</Paper>
-        <Paper elevation="3">{children}</Paper>
+        <Paper elevation="bordered">{children}</Paper>
+        <Paper elevation="elevated">{children}</Paper>
+        <Paper elevation="higher">{children}</Paper>
       </ThemeProvider>
     </div>
   ),

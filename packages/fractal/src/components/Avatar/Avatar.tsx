@@ -5,7 +5,7 @@ import { UilUser as UserIcon } from '@tooni/iconscout-unicons-react'
 import isEmpty from 'lodash/fp/isEmpty'
 import omit from 'lodash/fp/omit'
 
-import { Dropdown } from '@/components/Dropdown'
+import { Dropdown } from '@/components/Dropdown/Dropdown'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'

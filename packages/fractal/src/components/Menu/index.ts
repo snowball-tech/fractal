@@ -1,4 +1,7 @@
-export { Elevations as MenuElevations } from '../Paper/Paper.constants.js'
+export {
+  AlternateElevations as MenuAlternateElevations,
+  Elevations as MenuElevations,
+} from '../Paper/Paper.constants.js'
 export {
   DEFAULT_ELEVATION as DEFAULT_MENU_ELEVATION,
   DEFAULT_ORIENTATION as DEFAULT_MENU_ORIENTATION,

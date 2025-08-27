@@ -16,7 +16,7 @@ import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 import { slowType } from '@/tests_helpers'
 import { sleep } from '@/utils'
 
-import { InputText } from '.'
+import { InputText } from './InputText'
 
 type InputTextProps = ComponentProps<typeof InputText>
 

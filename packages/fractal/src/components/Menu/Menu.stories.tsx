@@ -11,18 +11,19 @@ import { userEvent, within } from 'storybook/test'
 
 import type { ComponentProps } from 'react'
 
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { sleep } from '@/utils'
 
+import { Menu } from './Menu'
 import {
-  Menu,
-  MenuElevations,
-  MenuItem,
-  MenuItemGroup,
-  MenuItemSeparator,
-  MenuOrientations,
-  SubMenu,
-} from '.'
-import { DEFAULT_ELEVATION, DEFAULT_ORIENTATION } from './Menu.constants'
+  DEFAULT_ELEVATION,
+  DEFAULT_ORIENTATION,
+  Orientations,
+} from './Menu.constants'
+import { MenuItem } from './MenuItem'
+import { MenuItemGroup } from './MenuItemGroup'
+import { MenuItemSeparator } from './MenuItemSeparator'
+import { SubMenu } from './SubMenu'
 
 const children = (
   <>
@@ -114,14 +115,14 @@ const meta: Meta<MenuProps> = {
       control: 'radio',
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(MenuElevations).join('|') },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
     orientation: {
-      options: Object.values(MenuOrientations),
+      options: Object.values(Orientations),
       table: {
         defaultValue: { summary: DEFAULT_ORIENTATION },
-        type: { summary: Object.values(MenuOrientations).join('|') },
+        type: { summary: Object.values(Orientations).join('|') },
       },
     },
   },

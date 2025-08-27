@@ -14,7 +14,8 @@ import type { ComponentProps } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 
-import { Menu, MenuItem } from '.'
+import { Menu } from './Menu'
+import { MenuItem } from './MenuItem'
 
 type MenuItemProps = ComponentProps<typeof MenuItem>
 

@@ -19,7 +19,7 @@ import type { ReactNode } from 'react'
 import ToolbarDropdownItem from '@/components/Dropdown/DropdownItem'
 import ToolbarDropdownItemGroup from '@/components/Dropdown/DropdownItemGroup'
 import ToolbarDropdownItemSeparator from '@/components/Dropdown/DropdownItemSeparator'
-import { Elevations } from '@/components/Paper/Paper.constants'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { cj } from '@/styles/helpers'
 import { sleep } from '@/utils'
 
@@ -73,7 +73,7 @@ const meta: Meta<ToolbarDropdownProps> = {
     children: 'Text',
     defaultOpen: false,
     disabled: false,
-    elevation: Elevations.Elevated,
+    elevation: PaperElevations.Elevated,
     fullWidth: false,
     icon: 'None',
     iconOnly: false,
@@ -113,8 +113,8 @@ const meta: Meta<ToolbarDropdownProps> = {
     elevation: {
       control: 'radio',
       table: {
-        defaultValue: { summary: Elevations.Elevated },
-        type: { summary: Object.values(Elevations).join('|') },
+        defaultValue: { summary: PaperElevations.Elevated },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
     icon: {

@@ -18,10 +18,10 @@ import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
-import { Button } from '@/components/Button'
-import { Paper } from '@/components/Paper'
-import { ScrollArea } from '@/components/ScrollArea'
-import { Typography } from '@/components/Typography'
+import { Button } from '@/components/Button/Button'
+import { Paper } from '@/components/Paper/Paper'
+import { ScrollArea } from '@/components/ScrollArea/ScrollArea'
+import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
@@ -240,7 +240,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       fullWidth ? '' : 'w-fit to-sm:w-full',
                       wrapper?.className,
                     )}
-                    elevation={wrapper?.elevation || '2'}
+                    elevation={wrapper?.elevation || 'elevated'}
                     style={{ ...wrapper?.style, position }}
                     {...omit(['className', 'elevation', 'style'], wrapper)}
                   >

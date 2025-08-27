@@ -12,7 +12,9 @@ import { action } from 'storybook/actions'
 
 import type { ComponentProps } from 'react'
 
-import { Menu, MenuItem, SubMenu } from '.'
+import { Menu } from './Menu'
+import { MenuItem } from './MenuItem'
+import { SubMenu } from './SubMenu'
 
 type SubMenuProps = ComponentProps<typeof SubMenu>
 

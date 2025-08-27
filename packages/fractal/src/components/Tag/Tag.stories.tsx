@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import type { ComponentProps } from 'react'
 
-import { Tag, TagColors, TagSizes } from '.'
-import { DEFAULT_COLOR, DEFAULT_SIZE } from './Tag.constants'
+import { Tag } from './Tag'
+import { Colors, DEFAULT_COLOR, DEFAULT_SIZE, Sizes } from './Tag.constants'
 
 type TagProps = ComponentProps<typeof Tag>
 
@@ -22,17 +22,17 @@ const meta = {
   argTypes: {
     children: { control: 'text' },
     color: {
-      options: Object.values(TagColors),
+      options: Object.values(Colors),
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
-        type: { summary: Object.values(TagColors).join('|') },
+        type: { summary: Object.values(Colors).join('|') },
       },
     },
     size: {
-      options: Object.values(TagSizes),
+      options: Object.values(Sizes),
       table: {
         defaultValue: { summary: DEFAULT_SIZE },
-        type: { summary: Object.values(TagSizes).join('|') },
+        type: { summary: Object.values(Sizes).join('|') },
       },
     },
   },

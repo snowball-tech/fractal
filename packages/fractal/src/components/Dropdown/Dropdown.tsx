@@ -19,7 +19,10 @@ import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
 
-import { Elevations } from '@/components/Paper/Paper.constants'
+import {
+  ELEVATIONS as PAPER_ELEVATIONS,
+  Elevations as PaperElevations,
+} from '@/components/Paper/Paper.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
@@ -191,12 +194,26 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       }
     }
 
+    const convertedElevation = isNumber(elevation)
+      ? (String(elevation) as PaperElevations)
+      : elevation
+    let actualElevation = PAPER_ELEVATIONS[convertedElevation]
+    if (
+      ![
+        PaperElevations.Bordered,
+        PaperElevations.Elevated,
+        PaperElevations.Higher,
+      ].includes(actualElevation)
+    ) {
+      actualElevation = DEFAULT_ELEVATION
+    }
     const elevationClassNames = {
-      [Elevations.Bordered]: 'rounded-sm shadow-none',
+      [PaperElevations.Bordered]: 'rounded-sm shadow-none',
 
-      [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
+      [PaperElevations.Elevated]:
+        'rounded-sm shadow-subtle ml-quarter mb-quarter',
 
-      [Elevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
+      [PaperElevations.Higher]: 'rounded-sm shadow-brutal ml-quarter mb-half',
     }
 
     const contentElement = (
@@ -322,7 +339,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  elevationClassNames[elevation],
+                  elevationClassNames[actualElevation],
                   'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
                   widthClassNames,
                   hasChildren

@@ -13,16 +13,18 @@ import {
 
 import type { ComponentProps } from 'react'
 
+import { DropdownItem as ToolbarDropdownItem } from '@/components/Dropdown/DropdownItem'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
+
+import { Toolbar } from './Toolbar'
 import {
-  Toolbar,
-  ToolbarButton,
-  ToolbarDropdown,
-  ToolbarDropdownItem,
-  ToolbarElevations,
-  ToolbarOrientations,
-  ToolbarSeparator,
-} from '.'
-import { DEFAULT_ELEVATION, DEFAULT_ORIENTATION } from './Toolbar.constants'
+  DEFAULT_ELEVATION,
+  DEFAULT_ORIENTATION,
+  Orientations,
+} from './Toolbar.constants'
+import { ToolbarButton } from './ToolbarButton'
+import { ToolbarDropdown } from './ToolbarDropdown'
+import { ToolbarSeparator } from './ToolbarSeparator'
 
 const tools = (
   <>
@@ -84,14 +86,14 @@ const meta = {
       control: 'radio',
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(ToolbarElevations).join('|') },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
     orientation: {
-      options: Object.values(ToolbarOrientations),
+      options: Object.values(Orientations),
       table: {
         defaultValue: { summary: DEFAULT_ORIENTATION },
-        type: { summary: Object.values(ToolbarOrientations).join('|') },
+        type: { summary: Object.values(Orientations).join('|') },
       },
     },
   },

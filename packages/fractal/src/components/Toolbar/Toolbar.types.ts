@@ -2,6 +2,7 @@ import { Root } from '@radix-ui/react-toolbar'
 
 import type { AllHTMLAttributes, ComponentProps, ReactNode } from 'react'
 
+import type { ButtonProps } from '@/components/Button/Button.types'
 import type {
   CombinedRefs as DropdownCombinedRefs,
   DropdownItemGroupProps,
@@ -9,10 +10,8 @@ import type {
   DropdownItemSeparatorProps,
   DropdownProps,
 } from '@/components/Dropdown/Dropdown.types'
-
-import { ButtonProps } from '@/components/Button'
-import { Paper } from '@/components/Paper/Paper'
-import { SelectProps } from '@/components/Select'
+import type { PaperProps } from '@/components/Paper/Paper.types'
+import type { SelectProps } from '@/components/Select/Select.types'
 
 import { Orientations } from './Toolbar.constants'
 
@@ -32,7 +31,7 @@ export interface ToolbarProps
   children?: ReactNode
   /** Indicates if the toolbar is disabled. */
   disabled?: boolean
-  elevation?: ComponentProps<typeof Paper>['elevation']
+  elevation?: PaperProps['elevation']
   /** Indicates if the toolbar should take all the available width. */
   fullWidth?: boolean
   /** The orientation of the toolbar. */

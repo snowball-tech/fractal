@@ -2,7 +2,7 @@ import isFunction from 'lodash/fp/isFunction'
 import omit from 'lodash/fp/omit'
 import range from 'lodash/fp/range'
 
-import { Progress } from '@/components/Progress'
+import { Progress } from '@/components/Progress/Progress'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 

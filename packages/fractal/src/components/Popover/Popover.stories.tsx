@@ -6,14 +6,14 @@ import { fn, userEvent, within } from 'storybook/test'
 
 import type { ComponentProps, ReactNode } from 'react'
 
-import { Button } from '@/components/Button'
-import InputFile from '@/components/InputFile/InputFile'
-import { InputText } from '@/components/InputText'
-import { Elevations } from '@/components/Paper/Paper.constants'
-import { Typography } from '@/components/Typography'
+import { Button } from '@/components/Button/Button'
+import { InputFile } from '@/components/InputFile/InputFile'
+import { InputText } from '@/components/InputText/InputText'
+import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
+import { Typography } from '@/components/Typography/Typography'
 import { sleep } from '@/utils'
 
-import { Popover } from '.'
+import { Popover } from './Popover'
 import { DEFAULT_ELEVATION } from './Popover.constants'
 
 const popoverContent = (
@@ -72,7 +72,7 @@ const meta: Meta<PopoverProps> = {
       control: 'radio',
       table: {
         defaultValue: { summary: DEFAULT_ELEVATION },
-        type: { summary: Object.values(Elevations).join('|') },
+        type: { summary: Object.values(PaperElevations).join('|') },
       },
     },
     side: {

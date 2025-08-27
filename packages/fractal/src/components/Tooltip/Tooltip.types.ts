@@ -1,6 +1,6 @@
 import type { AllHTMLAttributes, ReactNode } from 'react'
 
-import type { PopoverProps } from '../Popover'
+import type { PopoverProps } from '@/components/Popover/Popover.types'
 
 export interface TooltipProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content' | 'popover'> {
