@@ -27,28 +27,23 @@ type TabsProps = ComponentProps<typeof Tabs>
 
 const textTabs = (
   <>
-    <Tab className="min-w-10" label="Jedis" name="jedis" />
-    <Tab className="min-w-10" disabled label="Sith" name="sith" />
-    <Tab className="min-w-10" label="Planets" name="planets" />
+    <Tab label="Jedis" name="jedis" />
+    <Tab disabled label="Sith" name="sith" />
+    <Tab label="Planets" name="planets" />
   </>
 )
 const iconTabs = (
   <>
-    <Tab className="min-w-10" icon={<HeartIcon />} name="jedis" />
-    <Tab className="min-w-10" disabled icon={<BrokenHeartIcon />} name="sith" />
-    <Tab className="min-w-10" icon={<GlobeIcon />} name="planets" />
+    <Tab icon={<HeartIcon />} name="jedis" />
+    <Tab disabled icon={<BrokenHeartIcon />} name="sith" />
+    <Tab icon={<GlobeIcon />} name="planets" />
   </>
 )
 const mixedTabs = (
   <>
-    <Tab className="min-w-10" label="Jedis" name="jedis" />
-    <Tab className="min-w-10" disabled label="Sith" name="sith" />
-    <Tab
-      className="min-w-10"
-      icon={<GlobeIcon />}
-      label="Planets"
-      name="planets"
-    />
+    <Tab label="Jedis" name="jedis" />
+    <Tab disabled label="Sith" name="sith" />
+    <Tab icon={<GlobeIcon />} label="Planets" name="planets" />
   </>
 )
 
@@ -105,6 +100,8 @@ const meta: Meta<TabsProps> = {
     tabs: 'Mixed',
     tabsPosition: DEFAULT_POSITION,
     variant: DEFAULT_VARIANT,
+    withIndicator: true,
+    withSeparator: true,
   },
   argTypes: {
     children: {
@@ -164,7 +161,14 @@ const meta: Meta<TabsProps> = {
   component: Tabs,
   decorators: [
     function WithArgs(Story, context) {
-      return <Story args={{ ...context.args }} />
+      return (
+        <Story
+          args={{
+            ...context.args,
+            barClassName: 'gap-6 [&>button]:min-w-10',
+          }}
+        />
+      )
     },
   ],
 

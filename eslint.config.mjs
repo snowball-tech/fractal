@@ -44,7 +44,7 @@ export default [
   },
 
   {
-    files: ['**/stories/*.mdx'],
+    files: ['**/*.mdx'],
 
     rules: {
       'markdown/heading-increment': 'off',

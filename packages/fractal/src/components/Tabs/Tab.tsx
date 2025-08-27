@@ -40,6 +40,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       orientation = DEFAULT_ORIENTATION,
       size = DEFAULT_SIZE,
       tabsPosition = DEFAULT_POSITION,
+      withIndicator = true,
       ...props
     }: TabProps,
     ref: ForwardedRef<HTMLButtonElement>,
@@ -82,9 +83,9 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
           'relative h-full flex-1 self-end text-center text-grey-30',
           isLarge ? `${PREFIX}-${GROUP_NAME}__tab--large min-h-10` : 'min-h-6',
           'after:absolute after:block after:bg-primary after:duration-300 after:content-empty',
-          indicatorClassNames,
+          withIndicator ? indicatorClassNames : '',
           'aria-selected:text-secondary',
-          activeIndicatorClassNames,
+          withIndicator ? activeIndicatorClassNames : '',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}__tab--disabled cursor-not-allowed text-grey-70`
             : 'hover:text-secondary',

@@ -47,6 +47,8 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
       tabs,
       tabsPosition = DEFAULT_POSITION,
       variant = DEFAULT_VARIANT,
+      withIndicator = true,
+      withSeparator = true,
       ...props
     }: TabsProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -102,13 +104,15 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
             shouldBeLarge && orientation === Orientations.Horizontal
               ? 'min-h-10'
               : '',
-            tabsPosition === Positions.Start
-              ? orientation === Orientations.Horizontal
-                ? 'border-b-1'
-                : 'border-r-1'
-              : orientation === Orientations.Horizontal
-                ? 'border-t-1'
-                : 'border-l-1',
+            withSeparator
+              ? tabsPosition === Positions.Start
+                ? orientation === Orientations.Horizontal
+                  ? 'border-b-1'
+                  : 'border-r-1'
+                : orientation === Orientations.Horizontal
+                  ? 'border-t-1'
+                  : 'border-l-1'
+              : '',
             barClassName,
           )}
           loop
@@ -120,6 +124,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
               large: shouldBeLarge || childProps.large,
               orientation,
               tabsPosition,
+              withIndicator,
             }),
             'Tab',
           )}

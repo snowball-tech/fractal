@@ -31,6 +31,7 @@ type TabProps = ComponentProps<typeof Tab>
 const meta: Meta<TabProps> = {
   args: {
     disabled: false,
+    iconOnly: false,
     label: 'Jedis',
     name: 'jedis',
     size: DEFAULT_SIZE,
@@ -50,6 +51,9 @@ const meta: Meta<TabProps> = {
   component: Tab,
 
   parameters: {
+    controls: {
+      exclude: ['orientation', 'tabsPosition', 'withIndicator'],
+    },
     docs: {
       subtitle:
         '👽 Insert tab "A" into chromosome "B." - Prof. Jumba - Stitch! The movie',

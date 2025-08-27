@@ -64,6 +64,15 @@ export interface TabsProps
   tabsPosition?: `${Positions}`
   /** The variant of the tabs to use. */
   variant?: `${Variants}`
+  /**
+   * Indicates if the active tab should have an indicator (underline) at the
+   * bottom of the tabs bar.
+   */
+  withIndicator?: boolean
+  /**
+   * Indicates if the tabs bar should have a separator (border) at the bottom.
+   */
+  withSeparator?: boolean
   /** Event handler called when the selected tab changes. */
   onTabChange?: (newTab: string) => void
 }
@@ -146,6 +155,15 @@ export interface TabProps
    * Any value set here will be ignored anyway.
    */
   tabsPosition?: `${Positions}`
+  /**
+   * Indicates if the tab should have an indicator (underline) at the bottom
+   * when active.
+   *
+   * You shouldn't use this prop directly in the `Tab` component as it is
+   * automatically set by the `Tabs` component.
+   * Any value set here will be ignored anyway.
+   */
+  withIndicator?: boolean
 }
 
 export interface TabContentProps
