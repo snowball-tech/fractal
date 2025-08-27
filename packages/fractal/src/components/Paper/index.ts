@@ -1,5 +1,6 @@
 export {
   DEFAULT_ELEVATION as DEFAULT_PAPER_ELEVATION,
+  AlternateElevations as PaperAlternateElevations,
   Elevations as PaperElevations,
 } from './Paper.constants.js'
 export {

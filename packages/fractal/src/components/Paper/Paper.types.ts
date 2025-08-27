@@ -2,7 +2,7 @@ import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
 
 import { Themes } from '@/constants'
 
-import { Elevations } from './Paper.constants'
+import type { AlternateElevations, Elevations } from './Paper.constants'
 
 export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
   /** The content of the paper. */
@@ -16,7 +16,7 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: `${Elevations}`
+  elevation?: 1 | 2 | 3 | `${AlternateElevations}` | `${Elevations}`
   /**
    * Indicates to inline all styles (including resets, font, ...) or only the
    * needed ones.

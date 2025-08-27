@@ -24,6 +24,7 @@ import {
 
 import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
 
+import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -33,7 +34,12 @@ import { cn } from '@/styles/helpers'
 
 import type { PaperProps } from './Paper.types'
 
-import { DEFAULT_ELEVATION, Elevations, GROUP_NAME } from './Paper.constants'
+import {
+  DEFAULT_ELEVATION,
+  ELEVATIONS,
+  Elevations,
+  GROUP_NAME,
+} from './Paper.constants'
 
 const baseElevationClassNames: Record<Elevations, string> = {
   [Elevations.Bordered]: 'rounded-sm shadow-none',
@@ -143,14 +149,26 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
   ) => {
     const theme = useTheme(themeOverride)
 
+    const convertedElevation = isNumber(elevation)
+      ? (String(elevation) as Elevations)
+      : elevation
+    let actualElevation = ELEVATIONS[convertedElevation]
+    if (
+      ![Elevations.Bordered, Elevations.Elevated, Elevations.Higher].includes(
+        actualElevation,
+      )
+    ) {
+      actualElevation = DEFAULT_ELEVATION
+    }
+
     return (
       <Typography
         ref={ref}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
-          `${PREFIX}-${GROUP_NAME}--${elevation}`,
+          `${PREFIX}-${GROUP_NAME}--${actualElevation}`,
           !inlineStyle && 'relative flex flex-col border-1 border-normal p-2',
-          !inlineStyle && elevationClassNames[theme][elevation],
+          !inlineStyle && elevationClassNames[theme][actualElevation],
           !inlineStyle &&
             (theme === Themes.Light
               ? 'bg-white text-dark'
@@ -165,7 +183,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
             ? fullStyle
               ? {
                   boxSizing: 'border-box',
-                  ...elevationStyles[theme][elevation],
+                  ...elevationStyles[theme][actualElevation],
                   backgroundColor:
                     theme === Themes.Light
                       ? ColorBackgroundBodyWhite
@@ -178,7 +196,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
                   ...props.style,
                 }
               : {
-                  ...elevationStyles[theme][elevation],
+                  ...elevationStyles[theme][actualElevation],
                   backgroundColor:
                     theme === Themes.Light
                       ? undefined
