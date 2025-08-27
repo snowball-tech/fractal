@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [21.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.0...@snowball-tech/fractal@21.4.1) (2025-08-27)
+
+- **tabs:** fix overriding tab size ([9290ba5](https://github.com/snowball-tech/fractal/commit/9290ba5c67a663e52d83d96a90a4c28c6bb33076))
+
 # @snowball-tech/fractal [21.4.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.3.0...@snowball-tech/fractal@21.4.0) (2025-08-27)
 
 - **card:** uniformize the font size prop ([7987ac6](https://github.com/snowball-tech/fractal/commit/7987ac629ccdc47ed20e3e2b06cead0a4339a051))
