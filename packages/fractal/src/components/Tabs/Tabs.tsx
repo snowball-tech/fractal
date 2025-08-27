@@ -17,6 +17,7 @@ import Tab from './Tab'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
+  DEFAULT_SIZE,
   DEFAULT_VARIANT,
   GROUP_NAME,
   Orientations,
@@ -46,6 +47,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
       tab,
       tabs,
       tabsPosition = DEFAULT_POSITION,
+      tabsSize = DEFAULT_SIZE,
       variant = DEFAULT_VARIANT,
       withIndicator = true,
       withSeparator = true,
@@ -123,6 +125,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
               disabled: disabled || childProps.disabled,
               large: shouldBeLarge || childProps.large,
               orientation,
+              size: tabsSize,
               tabsPosition,
               withIndicator,
             }),

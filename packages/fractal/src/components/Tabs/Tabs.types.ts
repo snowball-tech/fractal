@@ -62,6 +62,8 @@ export interface TabsProps
   tab?: string
   /** The positioning of the tabs in the tab bar. */
   tabsPosition?: `${Positions}`
+  /** The size of the tabs in the tab bar. */
+  tabsSize?: `${Sizes}`
   /** The variant of the tabs to use. */
   variant?: `${Variants}`
   /**

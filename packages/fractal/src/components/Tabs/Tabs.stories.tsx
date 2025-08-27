@@ -17,9 +17,11 @@ import { Tab, TabContent, Tabs } from '.'
 import {
   DEFAULT_ORIENTATION,
   DEFAULT_POSITION,
+  DEFAULT_SIZE,
   DEFAULT_VARIANT,
   Orientations,
   Positions,
+  Sizes,
   Variants,
 } from './Tabs.constants'
 
@@ -99,6 +101,7 @@ const meta: Meta<TabsProps> = {
     orientation: DEFAULT_ORIENTATION,
     tabs: 'Mixed',
     tabsPosition: DEFAULT_POSITION,
+    tabsSize: DEFAULT_SIZE,
     variant: DEFAULT_VARIANT,
     withIndicator: true,
     withSeparator: true,
@@ -148,6 +151,13 @@ const meta: Meta<TabsProps> = {
       table: {
         defaultValue: { summary: DEFAULT_POSITION },
         type: { summary: Object.values(Positions).join('|') },
+      },
+    },
+    tabsSize: {
+      options: Object.values(Sizes),
+      table: {
+        defaultValue: { summary: DEFAULT_SIZE },
+        type: { summary: Object.values(Sizes).join('|') },
       },
     },
     variant: {
