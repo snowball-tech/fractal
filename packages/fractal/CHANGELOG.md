@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [21.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.1...@snowball-tech/fractal@21.4.2) (2025-08-27)
+
 ## @snowball-tech/fractal [21.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.0...@snowball-tech/fractal@21.4.1) (2025-08-27)
 
 - **tabs:** fix overriding tab size ([9290ba5](https://github.com/snowball-tech/fractal/commit/9290ba5c67a663e52d83d96a90a4c28c6bb33076))
