@@ -198,16 +198,14 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       ? (String(elevation) as PaperElevations)
       : elevation
     let actualElevation = PAPER_ELEVATIONS[convertedElevation]
-    if (
-      ![
-        PaperElevations.Bordered,
-        PaperElevations.Elevated,
-        PaperElevations.Higher,
-      ].includes(actualElevation)
-    ) {
+    if (!Object.keys(PAPER_ELEVATIONS).includes(actualElevation)) {
       actualElevation = DEFAULT_ELEVATION
     }
     const elevationClassNames = {
+      [PaperElevations.Flat]: 'rounded-sm shadow-none border-none',
+
+      [PaperElevations.Light]: 'rounded-sm shadow-none border-grey-70',
+
       [PaperElevations.Bordered]: 'rounded-sm shadow-none',
 
       [PaperElevations.Elevated]:
@@ -339,8 +337,8 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
                 asChild
                 className={cn(
                   `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  elevationClassNames[actualElevation],
                   'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
+                  elevationClassNames[actualElevation],
                   widthClassNames,
                   hasChildren
                     ? ''

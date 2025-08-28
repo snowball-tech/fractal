@@ -4,7 +4,8 @@ import { Themes } from '@/constants'
 
 import type { AlternateElevations, Elevations } from './Paper.constants'
 
-export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface PaperProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
   /** The content of the paper. */
   children: ReactNode
   /** The HTML element to use to display your paper. */
@@ -12,11 +13,13 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The elevation level of the paper.
    *
+   * 0 (flat) is a non elevated non-bordered block
+   * light is a non elevated block with a lighter (greyish) border
    * 1 (bordered) is a non elevated bordered block
    * 2 (elevated) is a lightly raised (small shadow) bordered block
    * 3 (higher) is a raised bordered block
    */
-  elevation?: 1 | 2 | 3 | `${AlternateElevations}` | `${Elevations}`
+  elevation?: 0 | 1 | 2 | 3 | `${AlternateElevations}` | `${Elevations}`
   /**
    * Indicates to inline all styles (including resets, font, ...) or only the
    * needed ones.
@@ -36,4 +39,8 @@ export interface PaperProps extends AllHTMLAttributes<HTMLDivElement> {
    * If none is given, it will use the one provided by the Context/Provider.
    */
   theme?: Themes
+  /** The (optional) title of the paper block. */
+  title?: ReactNode
+  /** The class name to use on the title of the paper block. */
+  titleClassName?: string
 }

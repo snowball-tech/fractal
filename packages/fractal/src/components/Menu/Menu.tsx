@@ -65,16 +65,14 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
       ? (String(elevation) as PaperElevations)
       : elevation
     let actualElevation = PAPER_ELEVATIONS[convertedElevation]
-    if (
-      ![
-        PaperElevations.Bordered,
-        PaperElevations.Elevated,
-        PaperElevations.Higher,
-      ].includes(actualElevation)
-    ) {
+    if (!Object.keys(PAPER_ELEVATIONS).includes(actualElevation)) {
       actualElevation = DEFAULT_ELEVATION
     }
     const elevationClassNames = {
+      [PaperElevations.Flat]: 'rounded-sm shadow-none border-none',
+
+      [PaperElevations.Light]: 'rounded-sm shadow-none border-grey-70',
+
       [PaperElevations.Bordered]: 'rounded-sm shadow-none',
 
       [PaperElevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter',

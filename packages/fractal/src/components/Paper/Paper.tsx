@@ -4,6 +4,8 @@ import {
   Border1,
   ColorBackgroundBodyDark,
   ColorBackgroundBodyWhite,
+  ColorBaseGrey50,
+  ColorBaseGrey70,
   ColorTextDark,
   ColorTextLight,
   ShadowBrutal1,
@@ -42,6 +44,10 @@ import {
 } from './Paper.constants'
 
 const baseElevationClassNames: Record<Elevations, string> = {
+  [Elevations.Flat]: 'rounded-sm shadow-none border-none',
+
+  [Elevations.Light]: 'rounded-sm shadow-none',
+
   [Elevations.Bordered]: 'rounded-sm shadow-none',
 
   [Elevations.Elevated]: 'rounded-sm shadow-subtle ml-quarter mb-quarter',
@@ -50,6 +56,13 @@ const baseElevationClassNames: Record<Elevations, string> = {
 }
 export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
   [Themes.Light]: {
+    [Elevations.Flat]: baseElevationClassNames[Elevations.Flat],
+
+    [Elevations.Light]: cn(
+      baseElevationClassNames[Elevations.Light],
+      'border-grey-70',
+    ),
+
     [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
 
     [Elevations.Elevated]: cn(
@@ -64,7 +77,17 @@ export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
   },
 
   [Themes.Dark]: {
-    [Elevations.Bordered]: baseElevationClassNames[Elevations.Bordered],
+    [Elevations.Flat]: baseElevationClassNames[Elevations.Flat],
+
+    [Elevations.Light]: cn(
+      baseElevationClassNames[Elevations.Light],
+      'border-grey-50',
+    ),
+
+    [Elevations.Bordered]: cn(
+      baseElevationClassNames[Elevations.Bordered],
+      'border-primary',
+    ),
 
     [Elevations.Elevated]: cn(
       baseElevationClassNames[Elevations.Elevated],
@@ -79,6 +102,17 @@ export const elevationClassNames: Record<Themes, Record<Elevations, string>> = {
 }
 
 const baseElevationStyles: Record<Elevations, CSSProperties> = {
+  [Elevations.Flat]: {
+    border: 'none',
+    borderRadius: SizeRadiusS,
+    boxShadow: ShadowNone,
+  },
+
+  [Elevations.Light]: {
+    borderRadius: SizeRadiusS,
+    boxShadow: ShadowNone,
+  },
+
   [Elevations.Bordered]: {
     borderRadius: SizeRadiusS,
     boxShadow: ShadowNone,
@@ -103,6 +137,13 @@ export const elevationStyles: Record<
   Record<Elevations, CSSProperties>
 > = {
   [Themes.Light]: {
+    [Elevations.Flat]: baseElevationStyles[Elevations.Flat],
+
+    [Elevations.Light]: {
+      ...baseElevationStyles[Elevations.Light],
+      borderColor: ColorBaseGrey70,
+    },
+
     [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
 
     [Elevations.Elevated]: {
@@ -117,6 +158,13 @@ export const elevationStyles: Record<
   },
 
   [Themes.Dark]: {
+    [Elevations.Flat]: baseElevationStyles[Elevations.Flat],
+
+    [Elevations.Light]: {
+      ...baseElevationStyles[Elevations.Light],
+      borderColor: ColorBaseGrey50,
+    },
+
     [Elevations.Bordered]: baseElevationStyles[Elevations.Bordered],
 
     [Elevations.Elevated]: {
@@ -143,6 +191,8 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       fullStyle = false,
       inlineStyle = false,
       theme: themeOverride,
+      title,
+      titleClassName,
       ...props
     }: PaperProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -153,13 +203,11 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       ? (String(elevation) as Elevations)
       : elevation
     let actualElevation = ELEVATIONS[convertedElevation]
-    if (
-      ![Elevations.Bordered, Elevations.Elevated, Elevations.Higher].includes(
-        actualElevation,
-      )
-    ) {
+    if (!Object.keys(ELEVATIONS).includes(actualElevation)) {
       actualElevation = DEFAULT_ELEVATION
     }
+
+    const hasTitle = Boolean(title)
 
     return (
       <Typography
@@ -167,7 +215,9 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${actualElevation}`,
-          !inlineStyle && 'relative flex flex-col border-1 border-normal p-2',
+          hasTitle ? `${PREFIX}-${GROUP_NAME}--with-title` : '',
+          !inlineStyle &&
+            'relative flex flex-col gap-2 border-1 border-normal p-2',
           !inlineStyle && elevationClassNames[theme][actualElevation],
           !inlineStyle &&
             (theme === Themes.Light
@@ -211,6 +261,15 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         }
         {...omit(['className', 'style'], props)}
       >
+        {hasTitle && (
+          <Typography
+            className={cn('w-full text-left', titleClassName)}
+            variant="heading-4"
+          >
+            {title}
+          </Typography>
+        )}
+
         {children}
       </Typography>
     )
