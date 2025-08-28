@@ -358,14 +358,14 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         )}
 
         {!collapsible ? (
-          children
+          <div className="flex size-full flex-col">{children}</div>
         ) : (
           <AnimatePresence>
             {!isCollapsed && (
               <motion.div
                 key="paper-content"
                 animate={{ height: 'auto', opacity: 1 }}
-                className="size-full overflow-hidden"
+                className="flex size-full flex-col overflow-hidden"
                 exit={{ height: 0, opacity: 0 }}
                 initial={{ height: 0, opacity: 0 }}
                 transition={{
