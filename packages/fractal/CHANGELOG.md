@@ -1,3 +1,5 @@
+# @snowball-tech/fractal [22.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.6.0...@snowball-tech/fractal@22.0.0) (2025-08-28)
+
 # @snowball-tech/fractal [21.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.5.0...@snowball-tech/fractal@21.6.0) (2025-08-28)
 
 - **paper:** don't add a gap to the children ([6b73cc6](https://github.com/snowball-tech/fractal/commit/6b73cc6a325bdc3984a0c052b912a013759d87c4))
