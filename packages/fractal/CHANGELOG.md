@@ -1,3 +1,11 @@
+# @snowball-tech/fractal [21.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.2...@snowball-tech/fractal@21.5.0) (2025-08-28)
+
+- **paper:** add two new elevations and a title ([41a0371](https://github.com/snowball-tech/fractal/commit/41a03714f7391411efdf67c86379cf65b3439f6b))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.0.1
+
 ## @snowball-tech/fractal [21.4.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.1...@snowball-tech/fractal@21.4.2) (2025-08-27)
 
 ## @snowball-tech/fractal [21.4.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.0...@snowball-tech/fractal@21.4.1) (2025-08-27)
