@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [21.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.5.0...@snowball-tech/fractal@21.6.0) (2025-08-28)
+
+- **paper:** don't add a gap to the children ([6b73cc6](https://github.com/snowball-tech/fractal/commit/6b73cc6a325bdc3984a0c052b912a013759d87c4))
+- **paper:** make the paper collapsible ([1f62372](https://github.com/snowball-tech/fractal/commit/1f62372998d41829085aa859950844ebedcbe324))
+
 # @snowball-tech/fractal [21.5.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.4.2...@snowball-tech/fractal@21.5.0) (2025-08-28)
 
 - **paper:** add two new elevations and a title ([41a0371](https://github.com/snowball-tech/fractal/commit/41a03714f7391411efdf67c86379cf65b3439f6b))
