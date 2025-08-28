@@ -69,7 +69,8 @@
     "setup-from-vercel": "yarn setup-freezer && yarn workspaces foreach --all -p run setup-from-vercel",
     "types-check": "yarn workspaces foreach --all -p run types-check",
     "update-deps": "yarn upgrade-interactive",
-    "update-references": "workspaces-to-typescript-project-references --includesRoot"
+    "update-references": "workspaces-to-typescript-project-references --includesRoot",
+    "restore-workspace-deps": "./scripts/restore-workspace-deps.sh"
   },
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.11.0",

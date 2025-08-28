@@ -25,7 +25,7 @@
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-toolbar": "^1.1.11",
     "@react-hookz/web": "^25.1.1",
-    "@snowball-tech/design-tokens": "17.0.1",
+    "@snowball-tech/design-tokens": "workspace:^",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tooni/iconscout-unicons-react": "^1.0.1",
