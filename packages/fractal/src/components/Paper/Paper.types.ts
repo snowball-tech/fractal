@@ -18,6 +18,8 @@ export interface PaperProps
   collapsed?: boolean
   /** Indicates if the paper can be collapsed. */
   collapsible?: boolean
+  /** The class name to use on the content of the paper. */
+  contentClassName?: string
   /** The default collapsed state of the paper. */
   defaultCollapsed?: boolean
   /** The HTML element to use to display your paper. */

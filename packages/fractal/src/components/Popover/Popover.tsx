@@ -299,8 +299,9 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
               >
                 <Paper
                   className={cn('relative', paper.className)}
+                  contentClassName={paper.contentClassName}
                   elevation={elevation}
-                  {...omit(['className'], paper)}
+                  {...omit(['className', 'contentClassName'], paper)}
                 >
                   {(withCloseButton || !isEmpty(title)) && (
                     <div

@@ -199,6 +199,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       collapseButtonLabel,
       collapsed,
       collapsible = false,
+      contentClassName,
       defaultCollapsed = false,
       element = 'div',
       elevation = DEFAULT_ELEVATION,
@@ -358,14 +359,19 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         )}
 
         {!collapsible ? (
-          <div className="flex size-full flex-col">{children}</div>
+          <div className={cn('flex size-full flex-col', contentClassName)}>
+            {children}
+          </div>
         ) : (
           <AnimatePresence>
             {!isCollapsed && (
               <motion.div
                 key="paper-content"
                 animate={{ height: 'auto', opacity: 1 }}
-                className="flex size-full flex-col overflow-hidden"
+                className={cn(
+                  'flex size-full flex-col overflow-hidden',
+                  contentClassName,
+                )}
                 exit={{ height: 0, opacity: 0 }}
                 initial={{ height: 0, opacity: 0 }}
                 transition={{

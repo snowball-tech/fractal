@@ -235,10 +235,15 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                 >
                   <Paper
                     className={cn(
-                      'left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col',
-                      condensed ? 'gap-3 pr-half' : 'gap-5 p-3 pr-half',
+                      'left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2',
+                      condensed ? 'pr-half' : 'p-3 pr-half',
                       fullWidth ? '' : 'w-fit to-sm:w-full',
                       wrapper?.className,
+                    )}
+                    contentClassName={cn(
+                      'flex w-full flex-col',
+                      condensed ? 'gap-3' : 'gap-5',
+                      wrapper?.contentClassName,
                     )}
                     elevation={wrapper?.elevation || 'elevated'}
                     style={{ ...wrapper?.style, position }}
