@@ -23,16 +23,26 @@ import {
   SizeSpacingHalf,
   SizeSpacingQuarter,
 } from '@snowball-tech/design-tokens/dist/web/typescript/design-tokens-px'
+import { UilAngleDown as ChevronIcon } from '@tooni/iconscout-unicons-react'
+import { AnimatePresence, motion } from 'motion/react'
 
-import { type CSSProperties, type ForwardedRef, forwardRef } from 'react'
+import {
+  type CSSProperties,
+  type ForwardedRef,
+  forwardRef,
+  useEffect,
+  useState,
+} from 'react'
 
+import isBoolean from 'lodash/fp/isBoolean'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
+import { Button } from '@/components/Button/Button'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
-import { cn } from '@/styles/helpers'
+import { cj, cn } from '@/styles/helpers'
 
 import type { PaperProps } from './Paper.types'
 
@@ -186,13 +196,19 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
   (
     {
       children,
+      collapseButtonLabel,
+      collapsed,
+      collapsible = false,
+      defaultCollapsed = false,
       element = 'div',
       elevation = DEFAULT_ELEVATION,
+      expandButtonLabel,
       fullStyle = false,
       inlineStyle = false,
       theme: themeOverride,
       title,
       titleClassName,
+      toggleButtonLabel,
       ...props
     }: PaperProps,
     ref: ForwardedRef<HTMLDivElement>,
@@ -209,6 +225,63 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 
     const hasTitle = Boolean(title)
 
+    const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed)
+    const toggle = () => {
+      setIsCollapsed(!isCollapsed)
+    }
+
+    useEffect(() => {
+      if (!isBoolean(collapsed)) {
+        return
+      }
+
+      setIsCollapsed(collapsed)
+    }, [collapsed])
+
+    const titleComponent = hasTitle ? (
+      <Typography
+        className={cn(
+          'w-full text-left',
+          collapsible ? 'cursor-pointer' : '',
+          titleClassName,
+        )}
+        variant="heading-4"
+      >
+        {title}
+      </Typography>
+    ) : (
+      false
+    )
+
+    const collapseButton = collapsible ? (
+      <Button
+        icon={
+          <ChevronIcon
+            className={cj(
+              'transition-transform duration-600',
+              isCollapsed ? 'rotate-180' : '',
+            )}
+          />
+        }
+        iconOnly
+        label={
+          toggleButtonLabel ||
+          (isCollapsed
+            ? expandButtonLabel || 'Déplier'
+            : collapseButtonLabel || 'Replier')
+        }
+        variant="text"
+        onClick={(event) => {
+          event.preventDefault()
+          event.stopPropagation()
+
+          toggle()
+        }}
+      />
+    ) : (
+      false
+    )
+
     return (
       <Typography
         ref={ref}
@@ -218,6 +291,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
           hasTitle ? `${PREFIX}-${GROUP_NAME}--with-title` : '',
           !inlineStyle &&
             'relative flex flex-col gap-2 border-1 border-normal p-2',
+          collapsible && !hasTitle ? 'min-h-7 pr-5' : '',
           !inlineStyle && elevationClassNames[theme][actualElevation],
           !inlineStyle &&
             (theme === Themes.Light
@@ -261,16 +335,49 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
         }
         {...omit(['className', 'style'], props)}
       >
-        {hasTitle && (
-          <Typography
-            className={cn('w-full text-left', titleClassName)}
-            variant="heading-4"
+        {collapsible ? (
+          <div
+            className={cj(
+              'flex items-center gap-1',
+              hasTitle ? 'justify-between' : 'absolute right-2 top-2',
+            )}
+            role="button"
+            tabIndex={-1}
+            onClick={toggle}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                toggle()
+              }
+            }}
           >
-            {title}
-          </Typography>
+            {titleComponent}
+            {collapseButton}
+          </div>
+        ) : (
+          titleComponent
         )}
 
-        {children}
+        {!collapsible ? (
+          children
+        ) : (
+          <AnimatePresence>
+            {!isCollapsed && (
+              <motion.div
+                key="paper-content"
+                animate={{ height: 'auto', opacity: 1 }}
+                className="size-full overflow-hidden"
+                exit={{ height: 0, opacity: 0 }}
+                initial={{ height: 0, opacity: 0 }}
+                transition={{
+                  duration: hasTitle ? 0.4 : 0.6,
+                  ease: 'easeInOut',
+                }}
+              >
+                {children}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
       </Typography>
     )
   },

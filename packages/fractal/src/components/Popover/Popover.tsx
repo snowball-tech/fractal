@@ -40,7 +40,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
     {
       align = 'center',
       children,
-      closeButtonLabel = 'Close',
+      closeButtonLabel,
       disabled = false,
       elevation = DEFAULT_ELEVATION,
       fullWidth = false,
@@ -329,7 +329,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                             <Button
                               icon={<CloseIcon />}
                               iconOnly
-                              label={closeButtonLabel}
+                              label={closeButtonLabel || 'Fermer'}
                               variant="text"
                               onClick={onCloseButtonClick}
                             />

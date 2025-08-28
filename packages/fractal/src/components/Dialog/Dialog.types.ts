@@ -20,6 +20,8 @@ export interface DialogProps
   /**
    * The label of the small "x" close button in the top right corner of the
    * dialog (if it is dismissable).
+   *
+   * This is mandatory if the dialog is dismissable.
    */
   closeButtonLabel?: string
   /** Indicates if the dialog should be condensed, i.e. smaller paddings. */

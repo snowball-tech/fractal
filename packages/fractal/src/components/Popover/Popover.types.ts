@@ -29,6 +29,9 @@ export interface PopoverProps
   /**
    * The label of the small "x" close button in the top right corner of the
    * popover.
+   *
+   * This is mandatory if the popover has the close button enabled
+   * (`withCloseButton=true`).
    */
   closeButtonLabel?: string
   /** Indicates if the popover is disabled. */

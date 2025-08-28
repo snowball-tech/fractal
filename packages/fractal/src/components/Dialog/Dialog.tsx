@@ -40,7 +40,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
   (
     {
       children,
-      closeButtonLabel = 'Close',
+      closeButtonLabel,
       condensed = false,
       contentClassName,
       defaultOpen,
@@ -271,7 +271,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                             <Button
                               icon={<CloseIcon />}
                               iconOnly
-                              label={closeButtonLabel}
+                              label={closeButtonLabel || 'Fermer'}
                               variant="text"
                               onClick={onDismiss}
                             />

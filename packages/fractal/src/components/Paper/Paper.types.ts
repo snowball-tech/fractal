@@ -8,6 +8,18 @@ export interface PaperProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
   /** The content of the paper. */
   children: ReactNode
+  /**
+   * The label of the collapse/expand button when in the expanded state.
+   *
+   * This or `toggleButtonLabel` is mandatory if the paper is collapsible.
+   */
+  collapseButtonLabel?: string
+  /** Indicates if the paper is collapsed. */
+  collapsed?: boolean
+  /** Indicates if the paper can be collapsed. */
+  collapsible?: boolean
+  /** The default collapsed state of the paper. */
+  defaultCollapsed?: boolean
   /** The HTML element to use to display your paper. */
   element?: ElementType
   /**
@@ -20,6 +32,12 @@ export interface PaperProps
    * 3 (higher) is a raised bordered block
    */
   elevation?: 0 | 1 | 2 | 3 | `${AlternateElevations}` | `${Elevations}`
+  /**
+   * The label of the collapse/expand button when in the collapsed state.
+   *
+   * This or `toggleButtonLabel` is mandatory if the paper is collapsible.
+   */
+  expandButtonLabel?: string
   /**
    * Indicates to inline all styles (including resets, font, ...) or only the
    * needed ones.
@@ -43,4 +61,12 @@ export interface PaperProps
   title?: ReactNode
   /** The class name to use on the title of the paper block. */
   titleClassName?: string
+  /**
+   * The label of the collapse/expand button whatever the state of the paper is.
+   * It takes precedence over `collapseButtonLabel` and `expandButtonLabel`.
+   *
+   * This or both `collapseButtonLabel` and `expandButtonLabel` is mandatory if
+   * the paper is collapsible.
+   */
+  toggleButtonLabel?: string
 }
