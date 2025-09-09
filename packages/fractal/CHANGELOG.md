@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [22.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.0.0...@snowball-tech/fractal@22.1.0) (2025-09-09)
+
+- **card:** add a "body" card color ([3c90b30](https://github.com/snowball-tech/fractal/commit/3c90b30e5068342e8dc62f0c504b10309cbfd67f))
+- **paper:** allow to customize the variant of the title ([53bc8de](https://github.com/snowball-tech/fractal/commit/53bc8de23ad1f59206007e7c4fb5f1e1494b11b8))
+
 # @snowball-tech/fractal [22.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.6.0...@snowball-tech/fractal@22.0.0) (2025-08-28)
 
 # @snowball-tech/fractal [21.6.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@21.5.0...@snowball-tech/fractal@21.6.0) (2025-08-28)
