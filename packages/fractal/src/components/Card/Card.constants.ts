@@ -2,6 +2,7 @@ export const GROUP_NAME = 'card'
 
 export enum Colors {
   Blue = 'blue',
+  Body = 'body',
   Error = 'error',
   Green = 'green',
   Pink = 'pink',

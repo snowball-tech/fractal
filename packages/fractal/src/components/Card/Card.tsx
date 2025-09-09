@@ -17,6 +17,7 @@ import { cj, cn } from '@/styles/helpers'
 import type { CardProps } from './Card.types'
 
 import {
+  Colors,
   DEFAULT_COLOR,
   DEFAULT_FONT_SIZE,
   FONT_SIZES,
@@ -58,7 +59,7 @@ export const Card = ({
         `${PREFIX}-${GROUP_NAME}--${color}`,
         `${PREFIX}-${GROUP_NAME}--${fontSize}`,
         'relative flex flex-col gap-1 rounded-sm p-2 text-dark',
-        LIGHT_BG_COLORS_CLASSNAMES[color],
+        color === Colors.Body ? 'bg-body' : LIGHT_BG_COLORS_CLASSNAMES[color],
         dismissable ? `${PREFIX}-${GROUP_NAME}--dismissable pr-6` : '',
         props.className,
       )}
@@ -80,7 +81,9 @@ export const Card = ({
                 `${PREFIX}-${GROUP_NAME}__title__icon`,
                 `${PREFIX}-${GROUP_NAME}__title__icon--${color}`,
                 'h-3 w-3 text',
-                DARK_FG_COLORS_CLASSNAMES[color],
+                color === Colors.Body
+                  ? 'text-black'
+                  : DARK_FG_COLORS_CLASSNAMES[color],
               )}
             >
               {icon}

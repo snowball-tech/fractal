@@ -96,6 +96,9 @@ export const BasicCards: Story = {
       <Card color="yellow" dismissable={dismissable} icon={icon} title={title}>
         {children}
       </Card>
+      <Card color="body" dismissable={dismissable} icon={icon} title={title}>
+        {children}
+      </Card>
     </div>
   ),
 }
