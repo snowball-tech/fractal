@@ -1,5 +1,7 @@
 import type { ElementType } from 'react'
 
+import { Variants as TypographyVariants } from '@/components/Typography/Typography.constants'
+
 export const GROUP_NAME = 'paper'
 
 export enum Elevations {
@@ -30,5 +32,8 @@ export const ELEVATIONS = {
   [Elevations.Higher]: Elevations.Higher,
   [Elevations.Light]: Elevations.Light,
 } as const
+
+export { Variants as TitleVariants } from '@/components/Typography/Typography.constants'
+export const DEFAULT_TITLE_VARIANT = TypographyVariants.Heading4
 
 export const DEFAULT_ELEMENT: ElementType = 'div'

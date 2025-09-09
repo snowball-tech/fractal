@@ -6,7 +6,12 @@ import { DEFAULT_THEME, Themes } from '@/constants'
 import ThemeProvider from '@/ThemeProvider'
 
 import { Paper } from './Paper'
-import { DEFAULT_ELEVATION, Elevations } from './Paper.constants'
+import {
+  DEFAULT_ELEVATION,
+  DEFAULT_TITLE_VARIANT,
+  Elevations,
+  TitleVariants,
+} from './Paper.constants'
 
 type PaperProps = ComponentProps<typeof Paper>
 
@@ -22,6 +27,7 @@ const meta = {
     expandButtonLabel: 'Expand',
     theme: DEFAULT_THEME,
     title: undefined,
+    titleVariant: 'heading-4',
   },
   argTypes: {
     children: { control: 'text' },
@@ -41,6 +47,14 @@ const meta = {
       },
     },
     title: { control: 'text' },
+    titleVariant: {
+      control: 'radio',
+      options: Object.values(TitleVariants),
+      table: {
+        defaultValue: { summary: DEFAULT_TITLE_VARIANT },
+        type: { summary: Object.values(TitleVariants).join('|') },
+      },
+    },
   },
   component: Paper,
   parameters: {
@@ -101,43 +115,47 @@ export const Papers: Story = {
 export const PapersWithTitle: Story = {
   parameters: {
     controls: {
-      include: ['children', 'title'],
+      include: ['children', 'title', 'titleVariant'],
     },
   },
-  render: ({ children, title = 'This is the title of the paper' }) => (
+  render: ({
+    children,
+    title = 'This is the title of the paper',
+    titleVariant = DEFAULT_TITLE_VARIANT,
+  }) => (
     <div className="flex flex-col gap-2">
-      <Paper elevation="flat" title={title}>
+      <Paper elevation="flat" title={title} titleVariant={titleVariant}>
         {children}
       </Paper>
-      <Paper elevation="light" title={title}>
+      <Paper elevation="light" title={title} titleVariant={titleVariant}>
         {children}
       </Paper>
-      <Paper elevation="bordered" title={title}>
+      <Paper elevation="bordered" title={title} titleVariant={titleVariant}>
         {children}
       </Paper>
-      <Paper elevation="elevated" title={title}>
+      <Paper elevation="elevated" title={title} titleVariant={titleVariant}>
         {children}
       </Paper>
-      <Paper elevation="higher" title={title}>
+      <Paper elevation="higher" title={title} titleVariant={titleVariant}>
         {children}
       </Paper>
 
       {separator}
 
       <ThemeProvider theme={Themes.Dark}>
-        <Paper elevation="flat" title={title}>
+        <Paper elevation="flat" title={title} titleVariant={titleVariant}>
           {children}
         </Paper>
-        <Paper elevation="light" title={title}>
+        <Paper elevation="light" title={title} titleVariant={titleVariant}>
           {children}
         </Paper>
-        <Paper elevation="bordered" title={title}>
+        <Paper elevation="bordered" title={title} titleVariant={titleVariant}>
           {children}
         </Paper>
-        <Paper elevation="elevated" title={title}>
+        <Paper elevation="elevated" title={title} titleVariant={titleVariant}>
           {children}
         </Paper>
-        <Paper elevation="higher" title={title}>
+        <Paper elevation="higher" title={title} titleVariant={titleVariant}>
           {children}
         </Paper>
       </ThemeProvider>
@@ -194,43 +212,97 @@ export const CollapsiblePapers: Story = {
 export const CollapsiblePapersWithTitle: Story = {
   parameters: {
     controls: {
-      include: ['children', 'title'],
+      include: ['children', 'title', 'titleVariant'],
     },
   },
-  render: ({ children, title = 'This is the title of the paper' }) => (
+  render: ({
+    children,
+    title = 'This is the title of the paper',
+    titleVariant = DEFAULT_TITLE_VARIANT,
+  }) => (
     <div className="flex flex-col gap-2">
-      <Paper collapsible elevation="flat" title={title}>
+      <Paper
+        collapsible
+        elevation="flat"
+        title={title}
+        titleVariant={titleVariant}
+      >
         {children}
       </Paper>
-      <Paper collapsible elevation="light" title={title}>
+      <Paper
+        collapsible
+        elevation="light"
+        title={title}
+        titleVariant={titleVariant}
+      >
         {children}
       </Paper>
-      <Paper collapsible elevation="bordered" title={title}>
+      <Paper
+        collapsible
+        elevation="bordered"
+        title={title}
+        titleVariant={titleVariant}
+      >
         {children}
       </Paper>
-      <Paper collapsible elevation="elevated" title={title}>
+      <Paper
+        collapsible
+        elevation="elevated"
+        title={title}
+        titleVariant={titleVariant}
+      >
         {children}
       </Paper>
-      <Paper collapsible elevation="higher" title={title}>
+      <Paper
+        collapsible
+        elevation="higher"
+        title={title}
+        titleVariant={titleVariant}
+      >
         {children}
       </Paper>
 
       {separator}
 
       <ThemeProvider theme={Themes.Dark}>
-        <Paper collapsible elevation="flat" title={title}>
+        <Paper
+          collapsible
+          elevation="flat"
+          title={title}
+          titleVariant={titleVariant}
+        >
           {children}
         </Paper>
-        <Paper collapsible elevation="light" title={title}>
+        <Paper
+          collapsible
+          elevation="light"
+          title={title}
+          titleVariant={titleVariant}
+        >
           {children}
         </Paper>
-        <Paper collapsible elevation="bordered" title={title}>
+        <Paper
+          collapsible
+          elevation="bordered"
+          title={title}
+          titleVariant={titleVariant}
+        >
           {children}
         </Paper>
-        <Paper collapsible elevation="elevated" title={title}>
+        <Paper
+          collapsible
+          elevation="elevated"
+          title={title}
+          titleVariant={titleVariant}
+        >
           {children}
         </Paper>
-        <Paper collapsible elevation="higher" title={title}>
+        <Paper
+          collapsible
+          elevation="higher"
+          title={title}
+          titleVariant={titleVariant}
+        >
           {children}
         </Paper>
       </ThemeProvider>

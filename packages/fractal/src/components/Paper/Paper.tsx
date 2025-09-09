@@ -48,6 +48,7 @@ import type { PaperProps } from './Paper.types'
 
 import {
   DEFAULT_ELEVATION,
+  DEFAULT_TITLE_VARIANT,
   ELEVATIONS,
   Elevations,
   GROUP_NAME,
@@ -209,6 +210,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       theme: themeOverride,
       title,
       titleClassName,
+      titleVariant = DEFAULT_TITLE_VARIANT,
       toggleButtonLabel,
       ...props
     }: PaperProps,
@@ -246,7 +248,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
           collapsible ? 'cursor-pointer' : '',
           titleClassName,
         )}
-        variant="heading-4"
+        variant={titleVariant || 'heading-4'}
       >
         {title}
       </Typography>

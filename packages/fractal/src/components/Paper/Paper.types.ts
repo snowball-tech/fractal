@@ -2,7 +2,11 @@ import type { AllHTMLAttributes, ElementType, ReactNode } from 'react'
 
 import { Themes } from '@/constants'
 
-import type { AlternateElevations, Elevations } from './Paper.constants'
+import type {
+  AlternateElevations,
+  Elevations,
+  TitleVariants,
+} from './Paper.constants'
 
 export interface PaperProps
   extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
@@ -63,6 +67,8 @@ export interface PaperProps
   title?: ReactNode
   /** The class name to use on the title of the paper block. */
   titleClassName?: string
+  /** The typographic variant of the paper block title. */
+  titleVariant?: `${TitleVariants}`
   /**
    * The label of the collapse/expand button whatever the state of the paper is.
    * It takes precedence over `collapseButtonLabel` and `expandButtonLabel`.
