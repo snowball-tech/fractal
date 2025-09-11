@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.0...@snowball-tech/fractal@22.1.1) (2025-09-11)
+
+- **loader:** make it start even if page is not loaded ([d15133e](https://github.com/snowball-tech/fractal/commit/d15133e68a1855e0e0a26e52ba3c745bd2536f16))
+
 # @snowball-tech/fractal [22.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.0.0...@snowball-tech/fractal@22.1.0) (2025-09-09)
 
 - **card:** add a "body" card color ([3c90b30](https://github.com/snowball-tech/fractal/commit/3c90b30e5068342e8dc62f0c504b10309cbfd67f))
