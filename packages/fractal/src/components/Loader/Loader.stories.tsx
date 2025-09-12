@@ -3,23 +3,15 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import type { ComponentProps } from 'react'
 
 import { Loader } from './Loader'
-import { DEFAULT_MODE, DEFAULT_SIZE, Modes, Sizes } from './Loader.constants'
+import { DEFAULT_SIZE, Sizes } from './Loader.constants'
 
 type LoaderProps = ComponentProps<typeof Loader>
 
 const meta = {
   args: {
-    as: DEFAULT_MODE,
     size: DEFAULT_SIZE,
   },
   argTypes: {
-    as: {
-      options: Object.values(Modes),
-      table: {
-        defaultValue: { summary: DEFAULT_MODE },
-        type: { summary: Object.values(Modes).join('|') },
-      },
-    },
     size: {
       options: Object.values(Sizes),
       table: {

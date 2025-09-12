@@ -5,22 +5,13 @@ import { cn } from '@/styles/helpers'
 
 import type { LoaderProps } from './Loader.types'
 
-import {
-  DEFAULT_MODE,
-  DEFAULT_SIZE,
-  DURATION,
-  GROUP_NAME,
-  Modes,
-  Sizes,
-} from './Loader.constants'
-import loaderGif from './loader.gif'
+import { DEFAULT_SIZE, DURATION, GROUP_NAME, Sizes } from './Loader.constants'
 
 /**
  * `Loader` component allow to build interface with level and hierarchy.
  * experience.
  */
 export const Loader = ({
-  as = DEFAULT_MODE,
   label,
   size = DEFAULT_SIZE,
   ...props
@@ -41,12 +32,11 @@ export const Loader = ({
 
   const transformDuration = Number.parseFloat(DURATION) / 4
 
-  return as === Modes.SVG ? (
+  return (
     <svg
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
-        `${PREFIX}-${GROUP_NAME}--${as}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         sizeClassNames[size],
         props.className,
@@ -119,21 +109,6 @@ export const Loader = ({
         </g>
       </g>
     </svg>
-  ) : (
-    <img
-      aria-label={label}
-      className={cn(
-        `${PREFIX}-${GROUP_NAME}`,
-        `${PREFIX}-${GROUP_NAME}--${as}`,
-        `${PREFIX}-${GROUP_NAME}--${size}`,
-        sizeClassNames[size],
-        props.className,
-      )}
-      src={loaderGif}
-      style={{ background: '0 0', display: 'block', margin: 'auto' }}
-      title={label}
-      {...omit(['className'], props)}
-    />
   )
 }
 Loader.displayName = 'Loader'
