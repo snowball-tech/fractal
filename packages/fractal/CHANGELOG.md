@@ -1,3 +1,8 @@
+## @snowball-tech/fractal [22.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.4...@snowball-tech/fractal@22.1.5) (2025-09-12)
+
+- **loader:** revert the "gif" mode ([ad3a364](https://github.com/snowball-tech/fractal/commit/ad3a3648cd571b9b8e71ab2c7c3105d3804e863f))
+- **paper:** fix the initial state of collapsible papers ([983d546](https://github.com/snowball-tech/fractal/commit/983d5466c262094d299bebfde8a7b9059da21971))
+
 ## @snowball-tech/fractal [22.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.3...@snowball-tech/fractal@22.1.4) (2025-09-12)
 
 - **loader:** fix typing of the props ([b13345e](https://github.com/snowball-tech/fractal/commit/b13345e9ec71a4ed40eeb8f976db07c5facb336a))
