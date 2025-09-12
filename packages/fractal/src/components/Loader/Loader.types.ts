@@ -1,9 +1,11 @@
 import type { AllHTMLAttributes } from 'react'
 
-import { Sizes } from './Loader.constants'
+import { Modes, Sizes } from './Loader.constants'
 
 export interface LoaderProps
   extends Omit<AllHTMLAttributes<HTMLOrSVGElement>, 'size'> {
+  /** The type of the loader. */
+  as?: `${Modes}`
   /**
    * The accessible label of the loader.
    *

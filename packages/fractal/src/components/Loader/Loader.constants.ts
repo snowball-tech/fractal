@@ -22,4 +22,10 @@ export enum Sizes {
 
 export const DEFAULT_SIZE = Sizes.M
 
+export enum Modes {
+  GIF = 'gif',
+  SVG = 'svg',
+}
+export const DEFAULT_MODE = Modes.SVG
+
 export const DURATION = '3.5s'

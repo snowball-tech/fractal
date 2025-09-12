@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
@@ -7,19 +5,26 @@ import { cn } from '@/styles/helpers'
 
 import type { LoaderProps } from './Loader.types'
 
-import { DEFAULT_SIZE, DURATION, GROUP_NAME, Sizes } from './Loader.constants'
+import {
+  DEFAULT_MODE,
+  DEFAULT_SIZE,
+  DURATION,
+  GROUP_NAME,
+  Modes,
+  Sizes,
+} from './Loader.constants'
+import loaderGif from './loader.gif'
 
 /**
  * `Loader` component allow to build interface with level and hierarchy.
  * experience.
  */
 export const Loader = ({
+  as = DEFAULT_MODE,
   label,
   size = DEFAULT_SIZE,
   ...props
 }: LoaderProps) => {
-  const [animationKey, setAnimationKey] = useState(0)
-
   const sizeClassNames = {
     [Sizes.XXS]: 'h-1 max-h-1 min-h-1 w-1 max-w-1 min-w-1',
 
@@ -36,20 +41,12 @@ export const Loader = ({
 
   const transformDuration = Number.parseFloat(DURATION) / 4
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimationKey(Date.now())
-    }, 100)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  return (
+  return as === Modes.SVG ? (
     <svg
-      key={animationKey}
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${as}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
         sizeClassNames[size],
         props.className,
@@ -122,6 +119,21 @@ export const Loader = ({
         </g>
       </g>
     </svg>
+  ) : (
+    <img
+      aria-label={label}
+      className={cn(
+        `${PREFIX}-${GROUP_NAME}`,
+        `${PREFIX}-${GROUP_NAME}--${as}`,
+        `${PREFIX}-${GROUP_NAME}--${size}`,
+        sizeClassNames[size],
+        props.className,
+      )}
+      src={loaderGif}
+      style={{ background: '0 0', display: 'block', margin: 'auto' }}
+      title={label}
+      {...omit(['className'], props)}
+    />
   )
 }
 Loader.displayName = 'Loader'
