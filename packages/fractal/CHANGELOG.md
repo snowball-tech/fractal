@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.2...@snowball-tech/fractal@22.1.3) (2025-09-12)
+
+- **loader:** add a gif alternative to workaround SVG not starting during page load ([58fe924](https://github.com/snowball-tech/fractal/commit/58fe924fcde74d09fc893a4e1711250257143a55))
+
 ## @snowball-tech/fractal [22.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.1...@snowball-tech/fractal@22.1.2) (2025-09-12)
 
 - **loader:** actually fix the svg animation start issue ([da34baf](https://github.com/snowball-tech/fractal/commit/da34baf7b867373c35723258b44ee9c223db868e))
