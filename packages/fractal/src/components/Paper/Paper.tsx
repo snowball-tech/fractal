@@ -1,5 +1,6 @@
 'use client'
 
+import { useMountEffect } from '@react-hookz/web'
 import {
   Border1,
   ColorBackgroundBodyDark,
@@ -31,6 +32,7 @@ import {
   type ForwardedRef,
   forwardRef,
   useEffect,
+  useRef,
   useState,
 } from 'react'
 
@@ -218,6 +220,11 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
   ) => {
     const theme = useTheme(themeOverride)
 
+    const firstMount = useRef(true)
+    useMountEffect(() => {
+      firstMount.current = false
+    })
+
     const convertedElevation = isNumber(elevation)
       ? (String(elevation) as Elevations)
       : elevation
@@ -369,16 +376,22 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
             {!isCollapsed && (
               <motion.div
                 key="paper-content"
-                animate={{ height: 'auto', opacity: 1 }}
+                animate="expanded"
                 className={cn(
                   'flex size-full flex-col overflow-hidden',
                   contentClassName,
                 )}
-                exit={{ height: 0, opacity: 0 }}
-                initial={{ height: 0, opacity: 0 }}
+                exit="collapsed"
+                initial={
+                  collapsed || !firstMount.current ? 'collapsed' : 'expanded'
+                }
                 transition={{
                   duration: hasTitle ? 0.4 : 0.6,
                   ease: 'easeInOut',
+                }}
+                variants={{
+                  collapsed: { height: 0, opacity: 0 },
+                  expanded: { height: 'auto', opacity: 1 },
                 }}
               >
                 {children}
