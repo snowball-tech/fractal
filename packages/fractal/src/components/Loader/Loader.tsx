@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import omit from 'lodash/fp/omit'
 
 import { PREFIX } from '@/constants'
@@ -16,6 +18,8 @@ export const Loader = ({
   size = DEFAULT_SIZE,
   ...props
 }: LoaderProps) => {
+  const [animationKey, setAnimationKey] = useState(0)
+
   const sizeClassNames = {
     [Sizes.XXS]: 'h-1 max-h-1 min-h-1 w-1 max-w-1 min-w-1',
 
@@ -32,8 +36,17 @@ export const Loader = ({
 
   const transformDuration = Number.parseFloat(DURATION) / 4
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimationKey(Date.now())
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <svg
+      key={animationKey}
       aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
@@ -53,7 +66,6 @@ export const Loader = ({
         <g>
           <animateTransform
             attributeName="transform"
-            begin="0s"
             calcMode="discrete"
             dur={DURATION}
             keyTimes="0;0.25;0.5;0.75;1"
@@ -64,7 +76,6 @@ export const Loader = ({
           <path d="M-40 0a40 40 0 1 0 80 0" fill="#ffc6e7">
             <animate
               attributeName="fill"
-              begin="0s"
               calcMode="discrete"
               dur={DURATION}
               keyTimes="0;0.24;0.49;0.74;0.99"
@@ -75,7 +86,6 @@ export const Loader = ({
           <path d="M-40 0a40 40 0 0 1 80 0" fill="#fff29b">
             <animate
               attributeName="fill"
-              begin="0s"
               calcMode="discrete"
               dur={DURATION}
               keyTimes="0;0.25;0.5;0.75;1"
@@ -86,7 +96,6 @@ export const Loader = ({
           <path d="M-39 0h78" stroke="#ff3eae" strokeWidth="2">
             <animate
               attributeName="stroke"
-              begin="0s"
               dur={DURATION}
               keyTimes="0;0.124;0.125;0.25;0.374;0.375;0.5;0.624;0.625;0.75;0.874;0.875;1"
               repeatCount="indefinite"
@@ -96,7 +105,6 @@ export const Loader = ({
           <path d="M-40 0a40 40 0 0 1 80 0Z" fill="#ff3eae">
             <animate
               attributeName="fill"
-              begin="0s"
               dur={DURATION}
               keyTimes="0;0.124;0.125;0.25;0.374;0.375;0.5;0.624;0.625;0.75;0.874;0.875;1"
               repeatCount="indefinite"
@@ -104,7 +112,6 @@ export const Loader = ({
             />
             <animateTransform
               attributeName="transform"
-              begin="0s"
               dur={`${transformDuration}s`}
               keyTimes="0;0.5;0.999;1"
               repeatCount="indefinite"
