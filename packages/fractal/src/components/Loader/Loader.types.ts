@@ -3,7 +3,7 @@ import type { AllHTMLAttributes } from 'react'
 import { Modes, Sizes } from './Loader.constants'
 
 export interface LoaderProps
-  extends Omit<AllHTMLAttributes<HTMLOrSVGElement>, 'size'> {
+  extends Omit<AllHTMLAttributes<HTMLOrSVGElement>, 'as' | 'size'> {
   /** The type of the loader. */
   as?: `${Modes}`
   /**
