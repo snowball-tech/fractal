@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.3...@snowball-tech/fractal@22.1.4) (2025-09-12)
+
+- **loader:** fix typing of the props ([b13345e](https://github.com/snowball-tech/fractal/commit/b13345e9ec71a4ed40eeb8f976db07c5facb336a))
+
 ## @snowball-tech/fractal [22.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.2...@snowball-tech/fractal@22.1.3) (2025-09-12)
 
 - **loader:** add a gif alternative to workaround SVG not starting during page load ([58fe924](https://github.com/snowball-tech/fractal/commit/58fe924fcde74d09fc893a4e1711250257143a55))
