@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.5...@snowball-tech/fractal@22.1.6) (2025-09-15)
+
+- **scroll-area:** add ref to the new implementation of the scroll area ([43c9e91](https://github.com/snowball-tech/fractal/commit/43c9e91c712fdb097e0917cfd754122312bf5287))
+
 ## @snowball-tech/fractal [22.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.4...@snowball-tech/fractal@22.1.5) (2025-09-12)
 
 - **loader:** revert the "gif" mode ([ad3a364](https://github.com/snowball-tech/fractal/commit/ad3a3648cd571b9b8e71ab2c7c3105d3804e863f))
