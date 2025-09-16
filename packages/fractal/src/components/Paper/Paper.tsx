@@ -265,6 +265,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 
     const collapseButton = collapsible ? (
       <Button
+        className="mt-half self-start"
         icon={
           <ChevronIcon
             className={cj(
