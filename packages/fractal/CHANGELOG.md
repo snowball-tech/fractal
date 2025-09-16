@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.6...@snowball-tech/fractal@22.1.7) (2025-09-16)
+
+- **paper:** fix position of toggle button in collapsible mode ([c39fb46](https://github.com/snowball-tech/fractal/commit/c39fb46e880f22574e3a46b47e70b348b9fe0567))
+
 ## @snowball-tech/fractal [22.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.5...@snowball-tech/fractal@22.1.6) (2025-09-15)
 
 - **scroll-area:** add ref to the new implementation of the scroll area ([43c9e91](https://github.com/snowball-tech/fractal/commit/43c9e91c712fdb097e0917cfd754122312bf5287))
