@@ -270,7 +270,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
           <ChevronIcon
             className={cj(
               'transition-transform duration-600',
-              isCollapsed ? 'rotate-180' : '',
+              isCollapsed ? '' : 'rotate-180',
             )}
           />
         }
