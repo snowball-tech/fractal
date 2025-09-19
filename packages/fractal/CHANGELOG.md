@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.7...@snowball-tech/fractal@22.1.8) (2025-09-19)
+
+- **paper:** fix orientation of the toggle button icon on collapsed/expanded states ([7880ae2](https://github.com/snowball-tech/fractal/commit/7880ae2656d6df5cfe6c1a45f1a3595622eb8800))
+
 ## @snowball-tech/fractal [22.1.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.6...@snowball-tech/fractal@22.1.7) (2025-09-16)
 
 - **paper:** fix position of toggle button in collapsible mode ([c39fb46](https://github.com/snowball-tech/fractal/commit/c39fb46e880f22574e3a46b47e70b348b9fe0567))
