@@ -255,6 +255,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
           collapsible ? 'cursor-pointer' : '',
           titleClassName,
         )}
+        element="div"
         variant={titleVariant || 'heading-4'}
       >
         {title}
