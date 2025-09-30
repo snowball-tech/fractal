@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.10...@snowball-tech/fractal@22.1.11) (2025-09-30)
+
+- **dialog:** fix overriding of the contentClassName ([6551081](https://github.com/snowball-tech/fractal/commit/6551081015b9268eb813f466321b98af633ba01f))
+
 ## @snowball-tech/fractal [22.1.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.9...@snowball-tech/fractal@22.1.10) (2025-09-30)
 
 - **dialog:** fix scrolling ([0acda00](https://github.com/snowball-tech/fractal/commit/0acda00290e870eeef7a45dee27b1d14bf19f4b8))
