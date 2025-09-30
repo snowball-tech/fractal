@@ -247,7 +247,10 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                     )}
                     elevation={wrapper?.elevation || 'elevated'}
                     style={{ ...wrapper?.style, position }}
-                    {...omit(['className', 'elevation', 'style'], wrapper)}
+                    {...omit(
+                      ['className', 'contentClassName', 'elevation', 'style'],
+                      wrapper,
+                    )}
                   >
                     <div
                       className={cj(
