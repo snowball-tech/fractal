@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.1.10](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.9...@snowball-tech/fractal@22.1.10) (2025-09-30)
+
+- **dialog:** fix scrolling ([0acda00](https://github.com/snowball-tech/fractal/commit/0acda00290e870eeef7a45dee27b1d14bf19f4b8))
+
 ## @snowball-tech/fractal [22.1.9](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.8...@snowball-tech/fractal@22.1.9) (2025-09-29)
 
 - **paper:** use a div as title wrapper ([2ec4f08](https://github.com/snowball-tech/fractal/commit/2ec4f084ac8f7f451e5c90eb6427ec57a3c460d2))
