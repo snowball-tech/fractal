@@ -241,7 +241,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       wrapper?.className,
                     )}
                     contentClassName={cn(
-                      'flex w-full flex-col',
+                      'flex w-full flex-col overflow-hidden',
                       condensed ? 'gap-3' : 'gap-5',
                       wrapper?.contentClassName,
                     )}
