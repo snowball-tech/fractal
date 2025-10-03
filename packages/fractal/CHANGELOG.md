@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [22.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.11...@snowball-tech/fractal@22.2.0) (2025-10-03)
+
+- **paper:** add callback for toggling a collapsible paper ([764416c](https://github.com/snowball-tech/fractal/commit/764416c2da0984fad0270720ad0b8d919bb78570))
+
 ## @snowball-tech/fractal [22.1.11](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.10...@snowball-tech/fractal@22.1.11) (2025-09-30)
 
 - **dialog:** fix overriding of the contentClassName ([6551081](https://github.com/snowball-tech/fractal/commit/6551081015b9268eb813f466321b98af633ba01f))
