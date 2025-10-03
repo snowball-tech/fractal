@@ -9,7 +9,7 @@ import type {
 } from './Paper.constants'
 
 export interface PaperProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onToggle' | 'title'> {
   /** The content of the paper. */
   children: ReactNode
   /**
@@ -77,4 +77,10 @@ export interface PaperProps
    * the paper is collapsible.
    */
   toggleButtonLabel?: string
+  /** Event handler called when the paper is collapsed. */
+  onCollapse?: () => void
+  /** Event handler called when the paper is expanded. */
+  onExpand?: () => void
+  /** Event handler called when the paper is toggled (collapsed or expanded). */
+  onToggle?: (collapsed: boolean) => void
 }

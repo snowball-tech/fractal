@@ -37,6 +37,7 @@ import {
 } from 'react'
 
 import isBoolean from 'lodash/fp/isBoolean'
+import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import omit from 'lodash/fp/omit'
 
@@ -209,6 +210,9 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       expandButtonLabel,
       fullStyle = false,
       inlineStyle = false,
+      onCollapse,
+      onExpand,
+      onToggle,
       theme: themeOverride,
       title,
       titleClassName,
@@ -237,6 +241,16 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 
     const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed)
     const toggle = () => {
+      if (isFunction(onToggle)) {
+        onToggle(!isCollapsed)
+      }
+
+      if (isCollapsed && isFunction(onExpand)) {
+        onExpand()
+      } else if (!isCollapsed && isFunction(onCollapse)) {
+        onCollapse()
+      }
+
       setIsCollapsed(!isCollapsed)
     }
 
@@ -355,9 +369,17 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
             )}
             role="button"
             tabIndex={-1}
-            onClick={toggle}
+            onClick={(event) => {
+              event.preventDefault()
+              event.stopPropagation()
+
+              toggle()
+            }}
             onKeyDown={(event) => {
               if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                event.stopPropagation()
+
                 toggle()
               }
             }}
