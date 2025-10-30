@@ -31,7 +31,7 @@
     "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.9.4",
+  "packageManager": "yarn@4.10.3",
   "engines": {
     "yarn": "^4.0.0",
     "node": ">=18 <=22"

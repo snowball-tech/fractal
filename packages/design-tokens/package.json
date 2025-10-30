@@ -40,7 +40,7 @@
   "license": "MIT",
   "main": "./dist/web/typescript/design-tokens.js",
   "name": "@snowball-tech/design-tokens",
-  "packageManager": "yarn@4.9.4",
+  "packageManager": "yarn@4.10.3",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

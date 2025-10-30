@@ -15,22 +15,29 @@ env:
   NODE_ENV: production
 
 permissions:
-  # Required for OIDC authentication to publish the package on NPM without
-  # having to rotate a token every now and then.
-  id-token: write
+  # For checkout.
   contents: read
 
 jobs:
   release:
     name: Releasing updated packages
     runs-on: ubuntu-latest
+    permissions:
+      # For publishing a GitHub release.
+      contents: write
+      # To be able to comment on released issues.
+      issues: write
+      # To be able to comment on released pull requests.
+      pull-requests: write
+      # To enable use of OIDC for trusted publishing and npm provenance.
+      id-token: write
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.MACHINE_GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22.x
           cache: yarn
@@ -45,7 +52,7 @@ jobs:
         run: yarn run -T build
 
       - name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1.3.4
+        uses: lewagon/wait-on-check-action@v1.4.1
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality
