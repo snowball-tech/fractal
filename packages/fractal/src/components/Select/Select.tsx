@@ -19,6 +19,7 @@ import {
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -55,7 +56,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       onSelect,
       open,
       placeholder,
-      portalled = true,
+      portalled,
       rainbow = true,
       readOnly = false,
       required = false,
@@ -140,6 +141,13 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
     const widthClassNames =
       'min-w-[var(--radix-popper-anchor-width,"100%")] w-[var(--radix-popper-anchor-width,"100%")]'
 
+    const isInDialog =
+      containerRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
+    const isPhonePrefix =
+      containerRef.current?.closest(
+        `.${PREFIX}-input-phone__fields__phone-prefix`,
+      ) !== null
+
     const content = (
       <RxSelect.Content
         ref={dropdownRef}
@@ -151,6 +159,32 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           widthClassNames,
           dropdown?.className,
         )}
+        collisionBoundary={
+          isInDialog
+            ? [
+                containerRef.current!.closest(`.${PREFIX}-dialog__content`)!,
+                ...(Array.isArray(dropdown.collisionBoundary)
+                  ? dropdown.collisionBoundary
+                  : isEmpty(dropdown.collisionBoundary)
+                    ? []
+                    : [dropdown.collisionBoundary]),
+              ]
+            : Array.isArray(dropdown.collisionBoundary)
+              ? dropdown.collisionBoundary
+              : isEmpty(dropdown.collisionBoundary)
+                ? []
+                : [dropdown.collisionBoundary]
+        }
+        collisionPadding={
+          (dropdown.collisionPadding ?? isInDialog)
+            ? {
+                bottom: isPhonePrefix ? 64 : 56,
+                left: 16,
+                right: 16,
+                top: isPhonePrefix ? 64 : 56,
+              }
+            : 0
+        }
         position="popper"
         side="bottom"
         style={{
@@ -158,7 +192,15 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           ...props.style,
         }}
         onPointerDownOutside={handlePointerDownOutside}
-        {...omit(['className', 'onPointerDownOutside'], dropdown)}
+        {...omit(
+          [
+            'className',
+            'onPointerDownOutside',
+            'collisionBoundary',
+            'collisionPadding',
+          ],
+          dropdown,
+        )}
       >
         <RxScrollArea.Root
           className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
@@ -206,6 +248,8 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         </RxScrollArea.Root>
       </RxSelect.Content>
     )
+
+    const isPortalled = isNil(portalled) ? !isInDialog : portalled
 
     return (
       <div
@@ -299,7 +343,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                   `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
                   'h-full self-center transition-transform duration-300 ease-out',
                   writable ? 'text-dark' : 'text-disabled',
-                  isOpen ? 'rotate-180' : '',
+                  isOpen ? 'translate-x-0 translate-y-0 rotate-180' : '',
                 )}
               >
                 <AngleDownIcon className="h-full" />
@@ -307,7 +351,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             </Typography>
           </RxSelect.Trigger>
 
-          {portalled ? <RxSelect.Portal>{content}</RxSelect.Portal> : content}
+          {isPortalled ? <RxSelect.Portal>{content}</RxSelect.Portal> : content}
         </RxSelect.Root>
 
         {!isEmpty(description) && (

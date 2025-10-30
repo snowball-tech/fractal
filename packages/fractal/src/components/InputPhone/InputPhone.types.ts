@@ -2,7 +2,10 @@ import type { CountryCode } from 'libphonenumber-js'
 
 import type { HTMLAttributes } from 'react'
 
-import type { CombinedRefs as SelectCombinedRefs } from '@/components/Select/Select.types'
+import type {
+  CombinedRefs as SelectCombinedRefs,
+  SelectProps,
+} from '@/components/Select/Select.types'
 
 export type CountryDetails = {
   countryCode: CountryCode
@@ -85,6 +88,13 @@ export interface InputPhoneProps
    * replaced by an example of a valid number format (if there is one).
    */
   placeholder?: string
+  /**
+   * Props of the `Select` component for the prefix.
+   */
+  prefixSelect?: Omit<
+    Partial<SelectProps>,
+    'children' | 'defaultValue' | 'id' | 'required' | 'value'
+  >
   /** Prevents the user to change the value of the phone input. */
   readOnly?: boolean
   /** Indicates if the phone input must be filled. */

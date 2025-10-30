@@ -7,6 +7,9 @@ import { fn, userEvent, within } from 'storybook/test'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { Button } from '@/components/Button/Button'
+import { InputPhone } from '@/components/InputPhone/InputPhone'
+import { Select } from '@/components/Select/Select'
+import { SelectItem } from '@/components/Select/SelectItem'
 import { Typography } from '@/components/Typography/Typography'
 import { sleep } from '@/utils'
 
@@ -30,11 +33,18 @@ const content = (
       land and the ship.
     </Typography>
 
+    <Select value="item-1">
+      <SelectItem value="item-1">Item 1</SelectItem>
+      <SelectItem value="item-2">Item 2</SelectItem>
+    </Select>
+
     <Typography>
       The following is just to have a
       verysuperlongworkthatwillmakethescrollareascrollhorizontaly. And we
       repeat.
     </Typography>
+
+    <InputPhone value={{ number: '+33123456789' }} />
 
     <Typography>
       Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And

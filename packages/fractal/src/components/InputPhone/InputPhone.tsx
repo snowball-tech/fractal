@@ -72,6 +72,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       name,
       onChange,
       placeholder,
+      prefixSelect = {},
       readOnly = false,
       required = false,
       searchPlaceholder,
@@ -278,6 +279,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
     const writable = !disabled && !readOnly
 
+    const isInDialog =
+      phoneRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
+
     return (
       <div
         className={cn(
@@ -323,32 +327,59 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             <Select
               id={`${uniqueId}-prefix`}
               ref={prefixRef}
-              className={cj(
+              className={cn(
                 `${PREFIX}-${GROUP_NAME}__fields__phone-prefix`,
                 'w-[110px] min-w-[110px] max-w-[110px]',
+                prefixSelect.className,
               )}
-              disabled={disabled}
+              disabled={disabled || prefixSelect.disabled}
               displayedValue={
-                <span>
-                  {selectedCountry?.flag}
-                  &nbsp;&nbsp;
-                  {selectedCountry?.countryCode}
-                </span>
+                prefixSelect.displayedValue ?? (
+                  <span>
+                    {selectedCountry?.flag}
+                    &nbsp;&nbsp;
+                    {selectedCountry?.countryCode}
+                  </span>
+                )
               }
               dropdown={{
-                className: cj(
+                className: cn(
                   `${PREFIX}-${GROUP_NAME}__fields__phone-prefix__dropdown`,
                   'max-w-full !pt-8 !w-fit',
+                  isInDialog ? 'mb-1' : '',
+                  prefixSelect.dropdown?.className,
                 ),
+                ...omit(['className'], prefixSelect.dropdown),
               }}
               name={`${name || uniqueId}-prefix`}
-              readOnly={readOnly}
+              readOnly={readOnly || prefixSelect.readOnly}
               required={required}
               value={JSON.stringify(prefix)}
-              onClose={() => handleSearch('', false)}
-              onSelect={(newPrefix) =>
+              onClose={() => {
+                handleSearch('', false)
+                prefixSelect.onClose?.()
+              }}
+              onSelect={(newPrefix) => {
                 handlePrefixChange(JSON.parse(newPrefix))
-              }
+                prefixSelect.onSelect?.(newPrefix)
+              }}
+              {...omit(
+                [
+                  'id',
+                  'children',
+                  'defaultValue',
+                  'className',
+                  'disabled',
+                  'displayedValue',
+                  'readOnly',
+                  'dropdown',
+                  'required',
+                  'value',
+                  'onClose',
+                  'onSelect',
+                ],
+                prefixSelect,
+              )}
             >
               <>
                 <InputText

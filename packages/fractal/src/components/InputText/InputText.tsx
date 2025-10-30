@@ -8,6 +8,7 @@ import {
   type ForwardedRef,
   forwardRef,
   useId,
+  useRef,
 } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
@@ -60,6 +61,8 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
+
+    const containerRef = useRef<HTMLDivElement>(null)
 
     const hasErrorMessage = !isEmpty(error)
     const isInError = hasErrorMessage || error === true
@@ -118,8 +121,13 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const hasPrefix = Boolean(prefix)
     const hasSuffix = Boolean(suffix)
 
-    const addendumClasses =
-      'flex max-w-full absolute top-1/2 -translate-y-1/2 w-fit'
+    const isInDialog =
+      containerRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
+
+    const addendumClasses = cj(
+      'flex max-w-full absolute top-1/2 w-fit',
+      isInDialog ? '-translate-y-1/2' : '-translate-y-[calc(50%-1px)]',
+    )
 
     const isButtonDisabled = isNil(buttonProps?.disabled)
       ? disabled || readOnly
@@ -151,6 +159,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     return (
       <div
+        ref={containerRef}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',
@@ -215,7 +224,13 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
                   `${PREFIX}-${GROUP_NAME}__addendum ${PREFIX}-${GROUP_NAME}__addendum--prefix`,
                   addendumClasses,
                   writable ? '' : 'text-disabled',
-                  withButton ? 'left-2' : 'left-1',
+                  withButton
+                    ? isInDialog
+                      ? 'left-4'
+                      : 'left-2'
+                    : isInDialog
+                      ? 'left-3'
+                      : 'left-1',
                 )}
               >
                 {prefix}

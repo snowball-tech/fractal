@@ -105,6 +105,7 @@ const meta: Meta<SelectProps> = {
     onClose: { control: false },
     onOpen: { control: false },
     onSelect: { control: false },
+    portalled: { defaultValue: true },
   },
   component: Select,
   decorators: [
