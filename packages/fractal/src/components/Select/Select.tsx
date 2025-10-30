@@ -162,13 +162,14 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         collisionBoundary={
           isInDialog
             ? [
-                containerRef.current!.closest(`.${PREFIX}-dialog__content`)!,
+                containerRef.current?.closest(`.${PREFIX}-dialog__content`) ??
+                  null,
                 ...(Array.isArray(dropdown.collisionBoundary)
                   ? dropdown.collisionBoundary
                   : isEmpty(dropdown.collisionBoundary)
                     ? []
                     : [dropdown.collisionBoundary]),
-              ]
+              ].filter(Boolean)
             : Array.isArray(dropdown.collisionBoundary)
               ? dropdown.collisionBoundary
               : isEmpty(dropdown.collisionBoundary)
