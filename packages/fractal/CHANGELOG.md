@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [22.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.2.0...@snowball-tech/fractal@22.2.1) (2025-10-30)
+
+- **dialog:** improve display of select, phone and input with prefix in dialogs ([f895e02](https://github.com/snowball-tech/fractal/commit/f895e02f06994b5b9f3b0606f834c98c75d9175d))
+
 # @snowball-tech/fractal [22.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.1.11...@snowball-tech/fractal@22.2.0) (2025-10-03)
 
 - **paper:** add callback for toggling a collapsible paper ([764416c](https://github.com/snowball-tech/fractal/commit/764416c2da0984fad0270720ad0b8d919bb78570))
