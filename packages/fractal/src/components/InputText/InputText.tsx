@@ -125,9 +125,17 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       containerRef.current?.closest(`.${PREFIX}-dialog__content`),
     )
 
+    const isInPhoneNumber = !isNil(
+      containerRef.current?.closest(
+        `.${PREFIX}-input-phone__fields__phone-number`,
+      ),
+    )
+
     const addendumClasses = cj(
       'flex max-w-full absolute top-1/2 w-fit',
-      isInDialog ? '-translate-y-1/2' : '-translate-y-[calc(50%-1px)]',
+      isInPhoneNumber && !isInDialog
+        ? '-translate-y-[calc(50%-1px)]'
+        : '-translate-y-1/2',
     )
 
     const isButtonDisabled = isNil(buttonProps?.disabled)

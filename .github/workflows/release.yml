@@ -52,7 +52,7 @@ jobs:
         run: yarn run -T build
 
       - name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1.4.1
+        uses: lewagon/wait-on-check-action@v1
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality

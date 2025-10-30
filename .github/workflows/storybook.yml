@@ -74,7 +74,7 @@ jobs:
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1.4.1
+        uses: lewagon/wait-on-check-action@v1
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality
