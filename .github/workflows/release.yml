@@ -41,6 +41,7 @@ jobs:
         with:
           node-version: 22.x
           cache: yarn
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Setting up dependencies & workspaces
         run: yarn install --immutable && yarn run -T setup
@@ -52,7 +53,7 @@ jobs:
         run: yarn run -T build
 
       - name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1
+        uses: lewagon/wait-on-check-action@v1.4.1
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality

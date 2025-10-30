@@ -61,6 +61,7 @@ jobs:
         with:
           node-version: 22.x
           cache: yarn
+          registry-url: 'https://registry.npmjs.org'
 
       - if: env.SKIP_CHROMATIC != 1
         name: Setting up dependencies & workspaces
@@ -74,7 +75,7 @@ jobs:
 
       - if: env.SKIP_CHROMATIC != 1 && github.event_name == 'push'
         name: Waiting for quality to pass
-        uses: lewagon/wait-on-check-action@v1
+        uses: lewagon/wait-on-check-action@v1.4.1
         with:
           ref: ${{ github.ref }}
           check-name: Checking code quality
