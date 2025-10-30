@@ -25,6 +25,7 @@ import {
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import omit from 'lodash/fp/omit'
 
 import { InputText } from '@/components/InputText/InputText'
@@ -279,8 +280,9 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
 
     const writable = !disabled && !readOnly
 
-    const isInDialog =
-      phoneRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
+    const isInDialog = !isNil(
+      phoneRef.current?.closest(`.${PREFIX}-dialog__content`),
+    )
 
     return (
       <div

@@ -141,12 +141,14 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
     const widthClassNames =
       'min-w-[var(--radix-popper-anchor-width,"100%")] w-[var(--radix-popper-anchor-width,"100%")]'
 
-    const isInDialog =
-      containerRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
-    const isPhonePrefix =
+    const isInDialog = !isNil(
+      containerRef.current?.closest(`.${PREFIX}-dialog__content`),
+    )
+    const isPhonePrefix = !isNil(
       containerRef.current?.closest(
         `.${PREFIX}-input-phone__fields__phone-prefix`,
-      ) !== null
+      ),
+    )
 
     const content = (
       <RxSelect.Content

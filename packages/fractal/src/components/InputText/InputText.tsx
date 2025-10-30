@@ -121,8 +121,9 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const hasPrefix = Boolean(prefix)
     const hasSuffix = Boolean(suffix)
 
-    const isInDialog =
-      containerRef.current?.closest(`.${PREFIX}-dialog__content`) !== null
+    const isInDialog = !isNil(
+      containerRef.current?.closest(`.${PREFIX}-dialog__content`),
+    )
 
     const addendumClasses = cj(
       'flex max-w-full absolute top-1/2 w-fit',
