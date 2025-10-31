@@ -64,10 +64,10 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       wrapper,
       ...props
     }: DialogProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const containerRef = useRef<HTMLDivElement>(null)
-    const triggerRef = useRef<HTMLElement>(null)
+    const triggerRef = useRef<HTMLButtonElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
@@ -178,6 +178,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
           onOpenChange={handleOpenChange}
         >
           <RxDialog.Trigger
+            ref={triggerRef}
             asChild={!isString(trigger)}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,

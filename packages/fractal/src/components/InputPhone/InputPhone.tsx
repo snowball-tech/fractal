@@ -83,11 +83,15 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       withPrefix = true,
       ...props
     }: InputPhoneProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     cn()
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
+
+    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(
+      null,
+    )
 
     const phoneRef = useRef<HTMLInputElement>(null)
     const prefixRef = useRef<CombinedRefs['prefix']>(null)
@@ -281,11 +285,12 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
     const writable = !disabled && !readOnly
 
     const isInDialog = !isNil(
-      phoneRef.current?.closest(`.${PREFIX}-dialog__content`),
+      containerRef?.closest(`.${PREFIX}-dialog__content`),
     )
 
     return (
       <div
+        ref={(newRef) => setContainerRef(newRef)}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex max-w-full flex-col gap-1',

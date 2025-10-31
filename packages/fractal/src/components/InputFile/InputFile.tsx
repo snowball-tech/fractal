@@ -41,7 +41,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
       variant = DEFAULT_VARIANT,
       ...props
     }: InputFileProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const triggerRef = useRef<HTMLButtonElement>(null)
     const fileInputRef = useRef<HTMLInputElement>(null)

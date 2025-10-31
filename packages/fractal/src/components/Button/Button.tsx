@@ -1,6 +1,5 @@
 'use client'
 
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import {
   Border1,
   BorderTransparent2,
@@ -38,6 +37,7 @@ import {
   type TouchEvent,
   createElement,
   forwardRef,
+  useImperativeHandle,
   useRef,
 } from 'react'
 
@@ -255,7 +255,10 @@ export const variantDisabledStyles: Record<
  * `Button` component is used to allow the user to make an interaction on either
  * a button or a link element.
  */
-export const Button = forwardRef<HTMLElement, ButtonProps>(
+export const Button = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement | HTMLElement | null,
+  ButtonProps
+>(
   (
     {
       children,
@@ -283,7 +286,9 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       wrapperStyles,
       ...props
     }: ButtonProps,
-    ref: ForwardedRef<HTMLElement>,
+    ref?: ForwardedRef<
+      HTMLAnchorElement | HTMLButtonElement | HTMLElement | null
+    >,
   ) => {
     const theme = useTheme(themeOverride)
 
@@ -295,10 +300,17 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       )
     }
 
-    const buttonRef = useRef<HTMLElement>(null)
-    const combinedRef = composeRefs(ref, buttonRef)
+    const buttonRef = useRef<
+      HTMLAnchorElement | HTMLButtonElement | HTMLElement
+    >(null)
+    useImperativeHandle<
+      HTMLAnchorElement | HTMLButtonElement | HTMLElement | null,
+      HTMLAnchorElement | HTMLButtonElement | HTMLElement | null
+    >(ref, () => buttonRef.current)
 
-    const handleClick = (event: MouseEvent<HTMLElement>) => {
+    const handleClick = (
+      event: MouseEvent<HTMLAnchorElement | HTMLButtonElement | HTMLElement>,
+    ) => {
       if (!disabled && isFunction(onClick)) {
         onClick(event)
       }
@@ -314,7 +326,9 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       }
 
       if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
-        onClick(event as unknown as MouseEvent<HTMLElement>)
+        onClick(
+          event as unknown as MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+        )
       }
     }
 
@@ -731,13 +745,17 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     if (element && element !== 'a' && element !== 'button' && !asLink) {
       return createElement(
         element,
+        // eslint-disable-next-line react-hooks/refs
         {
+          ...(props.id === undefined ? {} : { id: props.id }),
           'aria-label': label,
           className: classNames,
-          ref: combinedRef,
+          disabled,
+          onClick: handleClick,
+          ref: buttonRef as ForwardedRef<HTMLElement>,
           style: { ...style, ...props.style },
           title: label,
-          ...omit(['className', 'style'], props),
+          ...omit(['className', 'style', 'id'], props),
         },
         content,
       )
@@ -747,7 +765,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
       return (
         <a
           {...(props.id === undefined ? {} : { id: props.id })}
-          ref={combinedRef as ForwardedRef<HTMLAnchorElement>}
+          ref={buttonRef as ForwardedRef<HTMLAnchorElement>}
           aria-label={label}
           className={classNames}
           href={href}
@@ -768,7 +786,7 @@ export const Button = forwardRef<HTMLElement, ButtonProps>(
     return (
       <button
         {...(props.id === undefined ? {} : { id: props.id })}
-        ref={combinedRef as ForwardedRef<HTMLButtonElement>}
+        ref={buttonRef as ForwardedRef<HTMLButtonElement>}
         aria-label={label}
         className={classNames}
         {...(props.dir === undefined

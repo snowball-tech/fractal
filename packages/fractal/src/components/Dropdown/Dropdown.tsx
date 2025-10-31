@@ -66,10 +66,10 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       withScroll = true,
       ...props
     }: DropdownProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const containerRef = useRef<HTMLDivElement>(null)
-    const triggerRef = useRef<HTMLElement>(null)
+    const triggerRef = useRef<HTMLButtonElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
@@ -259,6 +259,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
           onOpenChange={handleOpenChange}
         >
           <RxDropdown.Trigger
+            ref={triggerRef}
             asChild={hasTrigger}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,

@@ -31,8 +31,6 @@ import {
   type CSSProperties,
   type ForwardedRef,
   forwardRef,
-  useEffect,
-  useRef,
   useState,
 } from 'react'
 
@@ -196,7 +194,7 @@ export const elevationStyles: Record<
 /**
  * `Paper` component allow to build interface with level and hierarchy.
  */
-export const Paper = forwardRef<HTMLDivElement, PaperProps>(
+export const Paper = forwardRef<HTMLElement | null, PaperProps>(
   (
     {
       children,
@@ -220,13 +218,13 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
       toggleButtonLabel,
       ...props
     }: PaperProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLElement | null>,
   ) => {
     const theme = useTheme(themeOverride)
 
-    const firstMount = useRef(true)
+    const [firstMount, setFirstMount] = useState(true)
     useMountEffect(() => {
-      firstMount.current = false
+      setFirstMount(false)
     })
 
     const convertedElevation = isNumber(elevation)
@@ -239,7 +237,13 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 
     const hasTitle = Boolean(title)
 
-    const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed)
+    const [isCollapsed, setIsCollapsed] = useState(
+      collapsed ?? defaultCollapsed,
+    )
+    if (isBoolean(collapsed) && collapsed !== isCollapsed) {
+      setIsCollapsed(collapsed)
+    }
+
     const toggle = () => {
       if (isFunction(onToggle)) {
         onToggle(!isCollapsed)
@@ -253,14 +257,6 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
 
       setIsCollapsed(!isCollapsed)
     }
-
-    useEffect(() => {
-      if (!isBoolean(collapsed)) {
-        return
-      }
-
-      setIsCollapsed(collapsed)
-    }, [collapsed])
 
     const titleComponent = hasTitle ? (
       <Typography
@@ -406,9 +402,7 @@ export const Paper = forwardRef<HTMLDivElement, PaperProps>(
                   contentClassName,
                 )}
                 exit="collapsed"
-                initial={
-                  collapsed || !firstMount.current ? 'collapsed' : 'expanded'
-                }
+                initial={collapsed || !firstMount ? 'collapsed' : 'expanded'}
                 transition={{
                   duration: hasTitle ? 0.4 : 0.6,
                   ease: 'easeInOut',

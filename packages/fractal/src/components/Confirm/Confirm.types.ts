@@ -1,7 +1,13 @@
-import type { ForwardedRef } from 'react'
-
 import type { ButtonProps } from '@/components/Button/Button.types'
-import type { DialogProps } from '@/components/Dialog/Dialog.types'
+import type {
+  CombinedRefs as DialogCombinedRefs,
+  DialogProps,
+} from '@/components/Dialog/Dialog.types'
+
+export type CombinedRefs = {
+  cancel: HTMLButtonElement | null
+  confirm: HTMLButtonElement | null
+} & DialogCombinedRefs
 
 export interface ConfirmProps
   extends Omit<DialogProps, 'disabled' | 'dismissable' | 'modal'> {
@@ -11,21 +17,17 @@ export interface ConfirmProps
    * You must provide at least a `label` or a `children` prop.
    */
   cancel:
-    | ({
-        ref?: ForwardedRef<HTMLElement>
-      } & Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>)
     | string
     | false
+    | Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>
   /**
    * The configuration of the confirmation button.
    *
    * You must provide at least a `label` or a `children` prop.
    */
   confirm:
-    | ({
-        ref?: ForwardedRef<HTMLElement>
-      } & Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>)
     | string
+    | Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>
   /**
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.

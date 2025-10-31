@@ -45,7 +45,7 @@ export interface AutocompleteProps
    * of the dropdown.
    */
   dropdown?: Partial<
-    { className?: string; ref?: ForwardedRef<HTMLDivElement> } & Omit<
+    { className?: string; ref?: ForwardedRef<HTMLDivElement | null> } & Omit<
       RxDropdownMenuContentProps,
       'asChild'
     >

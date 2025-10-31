@@ -23,7 +23,7 @@ import { GROUP_NAME } from './Switch.constants'
  * See https://www.radix-ui.com/primitives/docs/components/switch for more
  * information.
  */
-export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
+export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
   (
     {
       checked,
@@ -41,7 +41,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
       value = 'on',
       ...props
     }: SwitchProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!isEmpty(labels) && labels.length !== 2) {

@@ -24,7 +24,10 @@ import { DropdownGroupContext } from './DropdownGroupContext'
  * See https://www.radix-ui.com/primitives/docs/components/dropdown-menu#item
  * for more information.
  */
-export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
+export const DropdownItem = forwardRef<
+  HTMLDivElement | null,
+  DropdownItemProps
+>(
   (
     {
       active = false,
@@ -41,7 +44,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
       value,
       ...props
     }: DropdownItemProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLDivElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {

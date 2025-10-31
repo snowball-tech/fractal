@@ -44,7 +44,7 @@ export const Menu = forwardRef<CombinedRefs, MenuProps>(
       rainbow = true,
       ...props
     }: MenuProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const containerRef = useRef<HTMLDivElement>(null)
     const menuRef = useRef<HTMLDivElement>(null)

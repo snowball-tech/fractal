@@ -65,10 +65,10 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       withScroll = true,
       ...props
     }: PopoverProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const containerRef = useRef<HTMLDivElement>(null)
-    const triggerRef = useRef<HTMLElement>(null)
+    const triggerRef = useRef<HTMLButtonElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
@@ -215,6 +215,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
           onOpenChange={handleOpenChange}
         >
           <RxPopover.Trigger
+            ref={triggerRef}
             asChild={hasTrigger}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,

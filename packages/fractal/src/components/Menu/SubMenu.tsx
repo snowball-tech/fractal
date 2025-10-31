@@ -68,9 +68,9 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       withScroll = true,
       ...props
     }: SubMenuProps,
-    ref: ForwardedRef<SubMenuCombinedRefs>,
+    ref?: ForwardedRef<SubMenuCombinedRefs>,
   ) => {
-    const triggerRef = useRef<HTMLElement>(null)
+    const triggerRef = useRef<HTMLDivElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({

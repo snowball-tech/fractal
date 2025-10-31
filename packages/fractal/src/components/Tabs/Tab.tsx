@@ -27,7 +27,7 @@ import {
  * See https://www.radix-ui.com/primitives/docs/components/tabs#trigger for more
  * information.
  */
-export const Tab = forwardRef<HTMLButtonElement, TabProps>(
+export const Tab = forwardRef<HTMLButtonElement | null, TabProps>(
   (
     {
       children,
@@ -43,7 +43,7 @@ export const Tab = forwardRef<HTMLButtonElement, TabProps>(
       withIndicator = true,
       ...props
     }: TabProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {

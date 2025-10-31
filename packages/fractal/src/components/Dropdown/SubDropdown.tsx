@@ -61,9 +61,9 @@ export const SubDropdown = forwardRef<
       withScroll = true,
       ...props
     }: SubDropdownProps,
-    ref: ForwardedRef<SubDropdownCombinedRefs>,
+    ref?: ForwardedRef<SubDropdownCombinedRefs>,
   ) => {
-    const triggerRef = useRef<HTMLElement>(null)
+    const triggerRef = useRef<HTMLDivElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
@@ -174,6 +174,7 @@ export const SubDropdown = forwardRef<
         onOpenChange={handleOpenChange}
       >
         <RxDropdownMenu.SubTrigger
+          ref={triggerRef}
           asChild
           className={cn(
             `${PREFIX}-${GROUP_NAME}__sub-menu`,

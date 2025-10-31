@@ -18,10 +18,10 @@ import { GROUP_NAME } from './Tabs.constants'
  * See https://www.radix-ui.com/primitives/docs/components/tabs#content for more
  * information.
  */
-export const TabContent = forwardRef<HTMLDivElement, TabContentProps>(
+export const TabContent = forwardRef<HTMLDivElement | null, TabContentProps>(
   (
     { children, forceMount = false, name, ...props }: TabContentProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLDivElement | null>,
   ) => (
     <RxTabs.Content
       ref={ref}

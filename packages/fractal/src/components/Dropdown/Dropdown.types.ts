@@ -11,7 +11,6 @@ import type {
   AllHTMLAttributes,
   ComponentProps,
   CSSProperties,
-  ForwardedRef,
   MouseEvent,
   ReactNode,
 } from 'react'
@@ -25,12 +24,12 @@ import type { PaperProps } from '@/components/Paper/Paper.types'
 export type CombinedRefs = {
   container: HTMLDivElement | null
   dropdown: HTMLDivElement | null
-  trigger: HTMLElement | null
+  trigger: HTMLButtonElement | null
 }
 
 export type SubDropdownCombinedRefs = {
   content: HTMLDivElement | null
-  trigger: HTMLElement | null
+  trigger: HTMLDivElement | null
 }
 
 export interface DropdownProps
@@ -327,7 +326,6 @@ export type DropdownRadioGroupProps = {
    * mode.
    */
   rainbow?: boolean
-  ref?: ForwardedRef<HTMLElement>
 } & Omit<InputRadioGroupProps, 'fullWidth' | 'orientation' | 'variant'>
 
 export type DropdownRadioItemProps = {
@@ -342,7 +340,6 @@ export type DropdownRadioItemProps = {
   condensed?: boolean
   /** Indicates if the radio item is displayed in "hover the rainbow" mode. */
   rainbow?: boolean
-  ref?: ForwardedRef<HTMLButtonElement>
 } & Omit<InputRadioProps, 'fullWidth'>
 
 export type DropdownItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>

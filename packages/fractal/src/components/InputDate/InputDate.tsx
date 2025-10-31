@@ -96,16 +96,16 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       value,
       ...props
     }: InputDateProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
     let skipFocusChange = false
 
-    const dayRef = useRef<HTMLInputElement | null>(null)
-    const monthRef = useRef<HTMLInputElement | null>(null)
-    const yearRef = useRef<HTMLInputElement | null>(null)
+    const dayRef = useRef<HTMLInputElement>(null)
+    const monthRef = useRef<HTMLInputElement>(null)
+    const yearRef = useRef<HTMLInputElement>(null)
 
     useImperativeHandle(ref, () => ({
       get day() {

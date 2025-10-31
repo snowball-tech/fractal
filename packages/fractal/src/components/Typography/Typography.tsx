@@ -155,7 +155,7 @@ const MONOSPACED_ELEMENTS: Set<ElementType> = new Set([
  * Using this component ensure you to have a consistent and accessible
  * experience.
  */
-export const Typography = forwardRef<HTMLElement, TypographyProps>(
+export const Typography = forwardRef<HTMLElement | null, TypographyProps>(
   (
     {
       children,
@@ -167,7 +167,7 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
       xs = false,
       ...props
     }: TypographyProps,
-    ref: ForwardedRef<HTMLElement>,
+    ref?: ForwardedRef<HTMLElement | null>,
   ) => {
     const actualVariant = variant || DEFAULT_VARIANT
     const isDefaultVariant = isEmpty(variant)

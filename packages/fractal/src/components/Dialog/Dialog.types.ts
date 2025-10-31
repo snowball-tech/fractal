@@ -10,7 +10,7 @@ import { Positions } from './Dialog.constants'
 export type CombinedRefs = {
   container: HTMLDivElement | null
   content: HTMLDivElement | null
-  trigger: HTMLElement | null
+  trigger: HTMLButtonElement | null
 }
 
 export interface DialogProps

@@ -24,10 +24,7 @@ import { MenuGroupContext } from './MenuGroupContext'
 /**
  * `Item` displays items in a menu.
  */
-export const MenuItem = forwardRef<
-  HTMLDivElement | HTMLLinkElement,
-  MenuItemProps
->(
+export const MenuItem = forwardRef<HTMLElement | null, MenuItemProps>(
   (
     {
       active = false,
@@ -44,7 +41,7 @@ export const MenuItem = forwardRef<
       target,
       ...props
     }: MenuItemProps,
-    ref: ForwardedRef<HTMLDivElement | HTMLLinkElement>,
+    ref?: ForwardedRef<HTMLElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {

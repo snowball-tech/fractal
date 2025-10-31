@@ -1,6 +1,5 @@
 'use client'
 
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxRadio from '@radix-ui/react-radio-group'
 import { UilCheck as CheckIcon } from '@tooni/iconscout-unicons-react'
@@ -11,6 +10,7 @@ import {
   forwardRef,
   useContext,
   useId,
+  useImperativeHandle,
   useRef,
 } from 'react'
 
@@ -35,7 +35,7 @@ import { InputRadioContext } from './InputRadioContext'
  * See https://www.radix-ui.com/primitives/docs/components/radio-group#item for
  * more information/
  */
-export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
+export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
   (
     {
       children,
@@ -48,7 +48,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
       value,
       ...props
     }: InputRadioProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
@@ -70,7 +70,10 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
 
     const containerRef = useRef<HTMLDivElement>(null)
     const radioRef = useRef<HTMLButtonElement>(null)
-    const combinedRef = composeRefs(ref, radioRef)
+    useImperativeHandle<HTMLButtonElement | null, HTMLButtonElement | null>(
+      ref,
+      () => radioRef.current,
+    )
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
       if (event.target !== containerRef.current) {
@@ -115,7 +118,7 @@ export const InputRadio = forwardRef<HTMLButtonElement, InputRadioProps>(
       >
         <RxRadio.Item
           id={uniqueId}
-          ref={combinedRef}
+          ref={radioRef}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
             'flex h-full min-h-6 flex-grow-0 self-stretch rounded-xs border-none bg-unset px-unset py-unset pt-2 focus-visible:outline-none',

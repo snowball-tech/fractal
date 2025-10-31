@@ -1,9 +1,13 @@
 'use client'
 
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggle from '@radix-ui/react-toggle'
 
-import { type ForwardedRef, forwardRef, useRef } from 'react'
+import {
+  type ForwardedRef,
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+} from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
@@ -33,7 +37,7 @@ export const disabledVariantClassNames = {
  * See https://www.radix-ui.com/primitives/docs/components/toggle for more
  * information.
  */
-export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
+export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
   (
     {
       children,
@@ -49,7 +53,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       variant = DEFAULT_VARIANT,
       ...props
     }: ToggleProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
@@ -59,7 +63,10 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     }
 
     const buttonRef = useRef<HTMLButtonElement>(null)
-    const combinedRef = composeRefs(ref, buttonRef)
+    useImperativeHandle<HTMLButtonElement | null, HTMLButtonElement | null>(
+      ref,
+      () => buttonRef.current,
+    )
 
     const handleToggle = (newToggled: boolean) => {
       buttonRef?.current?.blur()
@@ -72,7 +79,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
     return (
       <RxToggle.Root
         {...(props.id === undefined ? {} : { id: props.id })}
-        ref={combinedRef}
+        ref={buttonRef}
         aria-label={label}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,

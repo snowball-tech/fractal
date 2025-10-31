@@ -63,18 +63,21 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       value,
       ...props
     }: SelectProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
+    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(
+      null,
+    )
+
     const triggerRef = useRef<HTMLButtonElement>(null)
-    const containerRef = useRef<HTMLDivElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
       get container() {
-        return containerRef?.current ?? null
+        return containerRef ?? null
       },
 
       get dropdown() {
@@ -131,7 +134,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         }
 
         if (
-          containerRef?.current?.contains(target as Element) ||
+          containerRef?.contains(target as Element) ||
           dropdownRef?.current?.contains(target as Element)
         ) {
           event.preventDefault()
@@ -142,12 +145,10 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       'min-w-[var(--radix-popper-anchor-width,"100%")] w-[var(--radix-popper-anchor-width,"100%")]'
 
     const isInDialog = !isNil(
-      containerRef.current?.closest(`.${PREFIX}-dialog__content`),
+      containerRef?.closest(`.${PREFIX}-dialog__content`),
     )
     const isPhonePrefix = !isNil(
-      containerRef.current?.closest(
-        `.${PREFIX}-input-phone__fields__phone-prefix`,
-      ),
+      containerRef?.closest(`.${PREFIX}-input-phone__fields__phone-prefix`),
     )
 
     const content = (
@@ -164,8 +165,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
         collisionBoundary={
           isInDialog
             ? [
-                containerRef.current?.closest(`.${PREFIX}-dialog__content`) ??
-                  null,
+                containerRef?.closest(`.${PREFIX}-dialog__content`) ?? null,
                 ...(Array.isArray(dropdown.collisionBoundary)
                   ? dropdown.collisionBoundary
                   : isEmpty(dropdown.collisionBoundary)
@@ -256,7 +256,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
 
     return (
       <div
-        ref={containerRef}
+        ref={(newRef) => setContainerRef(newRef)}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1',

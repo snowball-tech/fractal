@@ -27,7 +27,7 @@ import { ToolbarContext } from './ToolbarContext'
  * See https://www.radix-ui.com/primitives/docs/components/toolbar for more
  * information.
  */
-export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
+export const Toolbar = forwardRef<HTMLDivElement | null, ToolbarProps>(
   (
     {
       children,
@@ -37,7 +37,7 @@ export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
       orientation = DEFAULT_ORIENTATION,
       ...props
     }: ToolbarProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLDivElement | null>,
   ) => (
     <Paper
       className={cj(

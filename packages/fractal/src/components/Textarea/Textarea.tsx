@@ -30,7 +30,7 @@ import { GROUP_NAME } from './Textarea.constants'
  *
  * See https://github.com/Andarist/react-textarea-autosize for more information.
  */
-export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
   (
     {
       autoFocus = false,
@@ -58,7 +58,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       value,
       ...props
     }: TextareaProps,
-    ref: ForwardedRef<HTMLTextAreaElement>,
+    ref?: ForwardedRef<HTMLTextAreaElement | null>,
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId

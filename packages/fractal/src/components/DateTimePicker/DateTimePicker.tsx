@@ -125,16 +125,16 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       withToday = true,
       ...props
     }: DateTimePickerProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const theme = useTheme(themeOverride)
 
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
-    const inputRef = useRef<HTMLInputElement | null>(null)
-    const pickerRef = useRef<PopoverCombinedRefs | null>(null)
-    const calendarRef = useRef<HTMLDivElement | null>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
+    const pickerRef = useRef<PopoverCombinedRefs>(null)
+    const calendarRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
       get calendar() {

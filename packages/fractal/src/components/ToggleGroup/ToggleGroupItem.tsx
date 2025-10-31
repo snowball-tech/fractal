@@ -1,6 +1,5 @@
 'use client'
 
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import * as RxToggleGroup from '@radix-ui/react-toggle-group'
 
 import {
@@ -8,6 +7,7 @@ import {
   type MouseEvent,
   forwardRef,
   useContext,
+  useImperativeHandle,
   useRef,
 } from 'react'
 
@@ -39,7 +39,7 @@ import { ToggleGroupContext } from './ToggleGroupContext'
  * more information.
  */
 export const ToggleGroupItem = forwardRef<
-  HTMLButtonElement,
+  HTMLButtonElement | null,
   ToggleGroupItemProps
 >(
   (
@@ -55,7 +55,7 @@ export const ToggleGroupItem = forwardRef<
       value,
       ...props
     }: ToggleGroupItemProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
@@ -65,7 +65,10 @@ export const ToggleGroupItem = forwardRef<
     }
 
     const buttonRef = useRef<HTMLButtonElement>(null)
-    const combinedRef = composeRefs(ref, buttonRef)
+    useImperativeHandle<HTMLButtonElement | null, HTMLButtonElement | null>(
+      ref,
+      () => buttonRef.current,
+    )
 
     const variantClassNames = {
       [Variants.Primary]:
@@ -99,7 +102,7 @@ export const ToggleGroupItem = forwardRef<
     return (
       <RxToggleGroup.Item
         {...(props.id === undefined ? {} : { id: props.id })}
-        ref={combinedRef}
+        ref={buttonRef}
         aria-label={label}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,

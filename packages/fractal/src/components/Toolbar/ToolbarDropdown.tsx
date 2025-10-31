@@ -38,7 +38,7 @@ export const ToolbarDropdown = forwardRef<
       label,
       ...props
     }: ToolbarDropdownProps,
-    ref: ForwardedRef<DropdownCombinedRefs>,
+    ref?: ForwardedRef<DropdownCombinedRefs>,
   ) => {
     if (isEmpty(label)) {
       console.warn(

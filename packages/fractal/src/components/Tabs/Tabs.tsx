@@ -32,7 +32,7 @@ import {
  * See https://www.radix-ui.com/primitives/docs/components/tabs for more
  * information.
  */
-export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
+export const Tabs = forwardRef<HTMLDivElement | null, TabsProps>(
   (
     {
       barClassName,
@@ -53,7 +53,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
       withSeparator = true,
       ...props
     }: TabsProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLDivElement | null>,
   ) => {
     const shouldBeLarge =
       large ||

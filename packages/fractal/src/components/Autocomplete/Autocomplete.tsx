@@ -72,7 +72,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       value,
       ...props
     }: AutocompleteProps,
-    ref: ForwardedRef<CombinedRefs>,
+    ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId

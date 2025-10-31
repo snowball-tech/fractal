@@ -12,7 +12,7 @@ export type CombinedRefs = {
 
 export type SubMenuCombinedRefs = {
   content: HTMLDivElement | null
-  trigger: HTMLElement | null
+  trigger: HTMLDivElement | null
 }
 
 export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {

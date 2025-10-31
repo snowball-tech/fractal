@@ -8,7 +8,7 @@ import {
   type ForwardedRef,
   forwardRef,
   useId,
-  useRef,
+  useState,
 } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
@@ -28,7 +28,7 @@ import { GROUP_NAME } from './InputText.constants'
 /**
  * `InputText` component is used to allow the user to enter text values.
  */
-export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
+export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
   (
     {
       autoFocus = false,
@@ -57,12 +57,14 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
       withSpinButton = false,
       ...props
     }: InputTextProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    ref?: ForwardedRef<HTMLInputElement | null>,
   ) => {
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
-    const containerRef = useRef<HTMLDivElement>(null)
+    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(
+      null,
+    )
 
     const hasErrorMessage = !isEmpty(error)
     const isInError = hasErrorMessage || error === true
@@ -122,13 +124,11 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
     const hasSuffix = Boolean(suffix)
 
     const isInDialog = !isNil(
-      containerRef.current?.closest(`.${PREFIX}-dialog__content`),
+      containerRef?.closest(`.${PREFIX}-dialog__content`),
     )
 
     const isInPhoneNumber = !isNil(
-      containerRef.current?.closest(
-        `.${PREFIX}-input-phone__fields__phone-number`,
-      ),
+      containerRef?.closest(`.${PREFIX}-input-phone__fields__phone-number`),
     )
 
     const addendumClasses = cj(
@@ -168,7 +168,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>(
 
     return (
       <div
-        ref={containerRef}
+        ref={(newRef) => setContainerRef(newRef)}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           'flex w-full max-w-full flex-col gap-1 text-dark',

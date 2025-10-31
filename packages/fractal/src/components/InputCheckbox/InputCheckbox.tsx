@@ -1,7 +1,6 @@
 'use client'
 
 import * as RxCheckbox from '@radix-ui/react-checkbox'
-import { composeRefs } from '@radix-ui/react-compose-refs'
 import { Label as RxLabel } from '@radix-ui/react-label'
 import { UilCheck as CheckIcon } from '@tooni/iconscout-unicons-react'
 
@@ -10,6 +9,7 @@ import {
   type MouseEvent,
   forwardRef,
   useId,
+  useImperativeHandle,
   useRef,
 } from 'react'
 
@@ -37,7 +37,10 @@ import {
  * See https://www.radix-ui.com/primitives/docs/components/checkbox for more
  * information.
  */
-export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
+export const InputCheckbox = forwardRef<
+  HTMLButtonElement | null,
+  InputCheckboxProps
+>(
   (
     {
       checked,
@@ -57,7 +60,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       variant = DEFAULT_VARIANT,
       ...props
     }: InputCheckboxProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
     if (!hasChildren && isEmpty(label)) {
@@ -113,7 +116,10 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
     const uniqueId = (id ?? generatedId) || generatedId
 
     const checkboxRef = useRef<HTMLButtonElement>(null)
-    const combinedRef = composeRefs(ref, checkboxRef)
+    useImperativeHandle<HTMLButtonElement | null, HTMLButtonElement | null>(
+      ref,
+      () => checkboxRef.current,
+    )
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
       if (readOnly) {
@@ -146,7 +152,7 @@ export const InputCheckbox = forwardRef<HTMLButtonElement, InputCheckboxProps>(
       >
         <RxCheckbox.Root
           id={uniqueId}
-          ref={combinedRef}
+          ref={checkboxRef}
           {...(checked === undefined ? {} : { checked })}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,

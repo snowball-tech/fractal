@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
 
@@ -36,10 +36,10 @@ export const Emoji = ({
     actualShortCode = `${actualShortCode}:skin-tone-${skinTone}:`
   }
 
-  const emojiRef = useRef<HTMLDivElement | null>(null)
+  const [emojiRef, setEmojiRef] = useState<HTMLDivElement | null>(null)
   useEffect(() => {
-    if (emojiRef.current) {
-      emojiRef.current.setAttribute('class', cn(className, props.className))
+    if (emojiRef) {
+      emojiRef.setAttribute('class', cn(className, props.className))
     }
   }, [emojiRef, props.className])
 
@@ -49,7 +49,7 @@ export const Emoji = ({
     // the global.d.ts file, Typescript keeps spitting errors... I give up.
     <em-emoji
       id={isEmpty(native) ? id : undefined}
-      ref={emojiRef}
+      ref={(ref: HTMLDivElement) => setEmojiRef(ref)}
       native={native || undefined}
       set={set}
       shortcodes={isEmpty(native) ? actualShortCode : ''}

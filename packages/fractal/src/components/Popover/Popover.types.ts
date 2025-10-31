@@ -15,7 +15,7 @@ import type { PaperProps } from '@/components/Paper/Paper.types'
 export type CombinedRefs = {
   container: HTMLDivElement | null
   content: HTMLDivElement | null
-  trigger: HTMLElement | null
+  trigger: HTMLButtonElement | null
 }
 
 export interface PopoverProps

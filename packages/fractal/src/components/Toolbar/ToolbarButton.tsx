@@ -27,7 +27,10 @@ import { ToolbarContext } from './ToolbarContext'
  * See https://www.radix-ui.com/primitives/docs/components/toolbar#button for more
  * information.
  */
-export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
+export const ToolbarButton = forwardRef<
+  HTMLButtonElement | null,
+  ToolbarButtonProps
+>(
   (
     {
       active = false,
@@ -45,7 +48,7 @@ export const ToolbarButton = forwardRef<HTMLButtonElement, ToolbarButtonProps>(
       underlined,
       ...props
     }: ToolbarButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasIcon = Boolean(icon)
     const hasChildren = Boolean(children)

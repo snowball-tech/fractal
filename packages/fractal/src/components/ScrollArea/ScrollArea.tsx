@@ -15,7 +15,7 @@ import { GROUP_NAME } from './ScrollArea.constants'
  * See https://www.radix-ui.com/primitives/docs/components/scroll-area for more
  * information.
  */
-export const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
+export const ScrollArea = forwardRef<HTMLDivElement | null, ScrollAreaProps>(
   (
     {
       children,
@@ -25,7 +25,7 @@ export const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
       vertical = true,
       ...props
     }: ScrollAreaProps,
-    ref: ForwardedRef<HTMLDivElement>,
+    ref?: ForwardedRef<HTMLDivElement | null>,
   ) => (
     <div
       ref={ref}
