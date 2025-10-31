@@ -1,3 +1,13 @@
+# @snowball-tech/fractal [23.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.2.1...@snowball-tech/fractal@23.0.0) (2025-10-31)
+
+- fix detection of dialog ([a52e5d3](https://github.com/snowball-tech/fractal/commit/a52e5d33ec10dde635677948da9f418b48160aa2))
+- **input-text:** fix position of icon ([ddc0551](https://github.com/snowball-tech/fractal/commit/ddc0551d9bb7e85c1918592d6a05b33fc5d1d374))
+- **select:** fix an undefined check ([93870b4](https://github.com/snowball-tech/fractal/commit/93870b4e10ef4b5b0fdb24108c4d6465013c7d71))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.0.2
+
 ## @snowball-tech/fractal [22.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.2.0...@snowball-tech/fractal@22.2.1) (2025-10-30)
 
 - **dialog:** improve display of select, phone and input with prefix in dialogs ([f895e02](https://github.com/snowball-tech/fractal/commit/f895e02f06994b5b9f3b0606f834c98c75d9175d))
