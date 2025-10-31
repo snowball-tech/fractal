@@ -158,5 +158,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "23.0.1"
+  "version": "23.0.2"
 }

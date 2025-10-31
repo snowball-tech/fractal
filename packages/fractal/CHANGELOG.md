@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [23.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.1...@snowball-tech/fractal@23.0.2) (2025-10-31)
+
+- **types:** export missing types ([cbcea66](https://github.com/snowball-tech/fractal/commit/cbcea660a72808218f0fa7306e2b7f9e3c575741))
+
 ## @snowball-tech/fractal [23.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.0...@snowball-tech/fractal@23.0.1) (2025-10-31)
 
 # @snowball-tech/fractal [23.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.2.1...@snowball-tech/fractal@23.0.0) (2025-10-31)
