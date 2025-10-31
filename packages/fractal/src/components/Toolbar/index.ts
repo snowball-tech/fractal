@@ -11,7 +11,11 @@ export {
   Orientations as ToolbarOrientations,
 } from './Toolbar.constants.js'
 export { default as Toolbar } from './Toolbar.js'
-export type { ToolbarButtonProps, ToolbarProps } from './Toolbar.types.js'
+export type {
+  ToolbarButtonProps,
+  ToolbarProps,
+  CombinedRefs as ToolbarRefs,
+} from './Toolbar.types.js'
 export { default as ToolbarButton } from './ToolbarButton.js'
 export { default as ToolbarDropdown } from './ToolbarDropdown.js'
 export { default as ToolbarSeparator } from './ToolbarSeparator.js'

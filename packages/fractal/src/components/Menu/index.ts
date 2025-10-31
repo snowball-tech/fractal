@@ -14,6 +14,8 @@ export type {
   MenuItemProps,
   MenuItemSeparatorProps,
   MenuProps,
+  CombinedRefs as MenuRefs,
+  SubMenuCombinedRefs as SubMenuRefs,
 } from './Menu.types.js'
 export { default as MenuItem } from './MenuItem.js'
 export { default as MenuItemGroup } from './MenuItemGroup.js'

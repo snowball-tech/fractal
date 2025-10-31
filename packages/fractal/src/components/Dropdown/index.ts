@@ -11,6 +11,8 @@ export type {
   DropdownProps,
   DropdownRadioGroupProps,
   DropdownRadioItemProps,
+  CombinedRefs as DropdownRefs,
+  SubDropdownCombinedRefs as SubDropdownRefs,
 } from './Dropdown.types.js'
 export { default as DropdownItem } from './DropdownItem.js'
 export { default as DropdownItemGroup } from './DropdownItemGroup.js'
