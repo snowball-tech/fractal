@@ -41,12 +41,6 @@ jobs:
         with:
           node-version: 22.x
           cache: yarn
-          registry-url: 'https://registry.npmjs.org'
-          always-auth: true
-
-      # Ensure npm 11.5.1 or later is installed
-      - name: Update npm
-        run: npm install -g npm@latest
 
       - name: Setting up dependencies & workspaces
         run: yarn install --immutable && yarn run -T setup
@@ -68,6 +62,7 @@ jobs:
       - name: Publishing updated public packages to NPM, Git & GitHub
         env:
           GH_TOKEN: ${{ secrets.MACHINE_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GIT_AUTHOR_NAME: '@snowball-tech-bot'
           GIT_AUTHOR_EMAIL: snowball-bot@snowball.xyz
           GIT_COMMITTER_NAME: '@snowball-tech-bot'
