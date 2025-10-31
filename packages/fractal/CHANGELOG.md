@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [23.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.0...@snowball-tech/fractal@23.0.1) (2025-10-31)
+
 # @snowball-tech/fractal [23.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@22.2.1...@snowball-tech/fractal@23.0.0) (2025-10-31)
 
 - fix detection of dialog ([a52e5d3](https://github.com/snowball-tech/fractal/commit/a52e5d33ec10dde635677948da9f418b48160aa2))
