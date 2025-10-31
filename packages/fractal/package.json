@@ -58,7 +58,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react-swc": "^4.2.0",
-    "chromatic": "^13.3.2",
+    "chromatic": "^13.3.3",
     "eslint": "^9.38.0",
     "eslint-plugin-storybook": "10.0.2",
     "fs-extra": "^11.3.2",

@@ -17,7 +17,6 @@
     "ecmel.vscode-html-css",
     "ellreka.tailwindcss-highlight",
     "esbenp.prettier-vscode",
-    "figma.figma-vscode-extension",
     "foxundermoon.shell-format",
     "github.copilot",
     "github.vscode-pull-request-github",
@@ -49,9 +48,10 @@
     "vivek9patel.vscode-css-compatibility",
     "wmaurer.change-case",
     "yzhang.markdown-all-in-one",
-    "zengxingxin.sort-js-object-keys"
+    "zengxingxin.sort-js-object-keys",
+    "humao.rest-client"
   ],
 
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
-  "unwantedRecommendations": []
+  "unwantedRecommendations": ["GitHub.vscode-github-actions"]
 }

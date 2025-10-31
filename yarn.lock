@@ -1907,12 +1907,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^15.0.3, @next/eslint-plugin-next@npm:^15.5.6":
+"@next/eslint-plugin-next@npm:^15.0.3":
   version: 15.5.6
   resolution: "@next/eslint-plugin-next@npm:15.5.6"
   dependencies:
     fast-glob: "npm:3.3.1"
   checksum: 10/67faf90bcf5735deff9cb9c18dc521af397209976db7bf39217f0f417134da55320dd61e2a6c9094193405ebf72203b9364fef6cf600b7d8fc84a5e5f7bd4edc
+  languageName: node
+  linkType: hard
+
+"@next/eslint-plugin-next@npm:^16.0.1":
+  version: 16.0.1
+  resolution: "@next/eslint-plugin-next@npm:16.0.1"
+  dependencies:
+    fast-glob: "npm:3.3.1"
+  checksum: 10/25748f5df8a5dc5199163de3e888fd9245523ea0c1a82f19838487bd042258d6789d2b3a0362092bb585e23d2d40980e06131661343e603c61ff11ae92f93629
   languageName: node
   linkType: hard
 
@@ -4594,9 +4603,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/eslint-snowball-config@npm:^2.0.16":
-  version: 2.0.16
-  resolution: "@snowball-tech/eslint-snowball-config@npm:2.0.16"
+"@snowball-tech/eslint-snowball-config@npm:^2.0.17":
+  version: 2.0.17
+  resolution: "@snowball-tech/eslint-snowball-config@npm:2.0.17"
   dependencies:
     "@babel/core": "npm:^7.28.5"
     "@babel/eslint-parser": "npm:^7.28.5"
@@ -4605,7 +4614,7 @@ __metadata:
     "@eslint/js": "npm:^9.38.0"
     "@eslint/json": "npm:^0.13.2"
     "@eslint/markdown": "npm:^7.5.0"
-    "@next/eslint-plugin-next": "npm:^15.5.6"
+    "@next/eslint-plugin-next": "npm:^16.0.1"
     confusing-browser-globals: "npm:^1.0.11"
     eslint: "npm:^9.38.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -4633,7 +4642,7 @@ __metadata:
     prettier: "npm:^3.6.2"
     read-pkg-up: "npm:^11.0.0"
     typescript-eslint: "npm:^8.46.2"
-  checksum: 10/c3c24b5dc27420e5de053b86966944f4e8f034630435eb588268cd14173d1524ae37753d07977007d77ad2783c3faf9eb545e07fc8025395455eacb70c2b44d0
+  checksum: 10/e6a7cbb7e9d606b4dd818a1f11dfd8d40aef4b94fd200ad7d29816c59ccfcfd3b0fb728e7eb3d271e52239eafd8e4701fff66b77db5ecdc075bbb399a474ecec
   languageName: node
   linkType: hard
 
@@ -4677,7 +4686,7 @@ __metadata:
     "@types/react": "npm:^19.2.2"
     "@types/react-dom": "npm:^19.2.2"
     "@vitejs/plugin-react-swc": "npm:^4.2.0"
-    chromatic: "npm:^13.3.2"
+    chromatic: "npm:^13.3.3"
     clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.5.21"
     emoji-mart: "npm:^5.6.0"
@@ -7558,9 +7567,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^13.3.2":
-  version: 13.3.2
-  resolution: "chromatic@npm:13.3.2"
+"chromatic@npm:^13.3.3":
+  version: 13.3.3
+  resolution: "chromatic@npm:13.3.3"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7573,7 +7582,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/d4658760eb3c22c5d746744482b7c4e5f6110c977ad55e199c35e0230cbc8e17210a716b4ead38a200be90ee1814e11ba43f9f3313a6e8bebbc07ebf7782cf76
+  checksum: 10/eb720137b4b0b8d1886cf1d1c94639c1868ba9cc34a5227f00fde9bedb18f25a6aedbda9b01048ca6e6cf42fa3f90aa9ddee04848cdf4c6d47c2babf5f105435
   languageName: node
   linkType: hard
 
@@ -11260,11 +11269,11 @@ __metadata:
   dependencies:
     "@monorepo-utils/workspaces-to-typescript-project-references": "npm:^2.11.0"
     "@qiwi/multi-semantic-release": "npm:^7.1.2"
-    "@snowball-tech/eslint-snowball-config": "npm:^2.0.16"
+    "@snowball-tech/eslint-snowball-config": "npm:^2.0.17"
     "@snowball-tech/prettier-config": "npm:^2.1.6"
     "@snowball-tech/semantic-release-config": "npm:^3.0.7"
     "@yarnpkg/types": "npm:^4.0.1"
-    chromatic: "npm:^13.3.2"
+    chromatic: "npm:^13.3.3"
     depcheck: "npm:^1.4.7"
     eslint: "npm:^9.38.0"
     husky: "npm:^9.1.7"
