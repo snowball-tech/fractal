@@ -11,6 +11,7 @@ import isArray from 'lodash/fp/isArray'
 import isEmpty from 'lodash/fp/isEmpty'
 import isNil from 'lodash/fp/isNil'
 import isObject from 'lodash/fp/isObject'
+import isString from 'lodash/fp/isString'
 
 export function sleep(timeInMs: number) {
   return new Promise((resolve) => {
@@ -106,26 +107,27 @@ export function extendChildren(
       return child
     }
 
+    const childType = child.type
     const childProps = child.props as Record<string, unknown>
 
     if (!isEmpty(displayName)) {
-      const childType = child.type
       if (
-        isObject(childType) &&
-        (
-          childType as unknown as {
-            displayName: string
-          } & Record<string, unknown>
-        ).displayName !== displayName
+        (isString(childType) && childType !== displayName) ||
+        (isObject(childType) &&
+          (
+            childType as unknown as {
+              displayName: string
+            } & Record<string, unknown>
+          ).displayName !== displayName)
       ) {
-        return cloneElement(child, props(childProps))
+        return cloneElement(child, { ...childProps })
       }
     }
 
     if (!isEmpty(childProps.children) && isArray(childProps.children)) {
       return cloneElement(
         child,
-        props(childProps),
+        { ...childProps, ...props(childProps) },
         extendChildren(childProps.children, props, displayName),
       )
     }
