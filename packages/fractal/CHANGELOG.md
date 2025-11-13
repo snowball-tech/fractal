@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [23.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.2...@snowball-tech/fractal@23.0.3) (2025-11-13)
+
+- **tabs:** fix enhancing tabs children ([271a06f](https://github.com/snowball-tech/fractal/commit/271a06f928dfc6333f6db14c6b13be67f591d70d))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.0.3
+
 ## @snowball-tech/fractal [23.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.1...@snowball-tech/fractal@23.0.2) (2025-10-31)
 
 - **types:** export missing types ([cbcea66](https://github.com/snowball-tech/fractal/commit/cbcea660a72808218f0fa7306e2b7f9e3c575741))
