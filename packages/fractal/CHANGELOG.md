@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [23.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.3...@snowball-tech/fractal@23.1.0) (2025-11-19)
+
+- **dialog/confirm:** add an option to display a dialog in full height ([bb772bb](https://github.com/snowball-tech/fractal/commit/bb772bbefac5fb537495157e7f532df9cbf7f2d6))
+
 ## @snowball-tech/fractal [23.0.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.2...@snowball-tech/fractal@23.0.3) (2025-11-13)
 
 - **tabs:** fix enhancing tabs children ([271a06f](https://github.com/snowball-tech/fractal/commit/271a06f928dfc6333f6db14c6b13be67f591d70d))
