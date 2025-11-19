@@ -64,6 +64,7 @@ const meta: Meta<DialogProps> = {
     defaultOpen: false,
     disabled: false,
     dismissable: true,
+    fullHeight: false,
     fullWidth: false,
     modal: true,
     overlayStyle: 'light',

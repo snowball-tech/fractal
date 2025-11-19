@@ -24,6 +24,7 @@ const meta: Meta<ConfirmProps> = {
       'If you test this confirm dialog, you will have the overwhelming desire to use Fractal! Are you sure you want to carry on?',
     confirm: 'Oh yeah!!',
     defaultOpen: false,
+    fullHeight: false,
     position: 'fixed',
     title: 'Are you sure you want to test this confirm dialog',
     trigger: 'Text',

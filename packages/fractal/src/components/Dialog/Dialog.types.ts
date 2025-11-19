@@ -38,6 +38,8 @@ export interface DialogProps
   disabled?: boolean
   /** Indicates if we can dismiss the dialog. */
   dismissable?: boolean
+  /** Indicates if the dialog should be full height fo the screen. */
+  fullHeight?: boolean
   /** Indicates if the dialog should be full width. */
   fullWidth?: boolean
   /**

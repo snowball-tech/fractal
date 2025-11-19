@@ -46,6 +46,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       defaultOpen,
       disabled = false,
       dismissable = true,
+      fullHeight = false,
       fullWidth = false,
       modal = true,
       onClose,
@@ -220,6 +221,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                   className={cn(
                     `${PREFIX}-${GROUP_NAME}__content`,
                     'z-[9999] max-h-[calc(100dvh-theme(spacing.4))] max-w-[calc(100vw-theme(spacing.4))] to-xs:max-h-[100dvh] to-sm:max-h-[calc(100dvh-theme(spacing.2))] to-sm:w-full to-sm:max-w-[calc(100vw-theme(spacing.2))]',
+                    fullHeight ? 'h-dvh' : '',
                     props.className,
                   )}
                   onInteractOutside={handleDialogInteractOutside}
@@ -239,11 +241,13 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       'left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2',
                       condensed ? 'pr-half' : 'p-3 pr-half',
                       fullWidth ? '' : 'w-fit to-sm:w-full',
+                      fullHeight ? 'h-full' : '',
                       wrapper?.className,
                     )}
                     contentClassName={cn(
                       'flex w-full flex-col overflow-hidden',
                       condensed ? 'gap-3' : 'gap-5',
+                      fullHeight ? 'h-full' : '',
                       wrapper?.contentClassName,
                     )}
                     elevation={wrapper?.elevation || 'elevated'}
@@ -291,8 +295,10 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
 
                     {hasChildren && (
                       <ScrollArea
+                        className={fullHeight ? 'h-full' : ''}
                         contentClassName={cn(
                           'visible flex flex-col w-full',
+                          fullHeight ? 'h-full' : '',
                           condensed
                             ? 'gap-3 pr-one-and-half'
                             : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',

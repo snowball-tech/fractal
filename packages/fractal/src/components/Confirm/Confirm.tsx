@@ -25,7 +25,15 @@ import { GROUP_NAME } from './Confirm.constants'
 
 export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
   (
-    { cancel, children, confirm, onCancel, onConfirm, ...props }: ConfirmProps,
+    {
+      cancel,
+      children,
+      confirm,
+      fullHeight = false,
+      onCancel,
+      onConfirm,
+      ...props
+    }: ConfirmProps,
     ref?: ForwardedRef<CombinedRefs>,
   ) => {
     const dialogRef = useRef<DialogCombinedRefs>(null)
@@ -66,13 +74,27 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
       <Dialog
         ref={dialogRef}
         className={cn(`${PREFIX}-${GROUP_NAME}`, props.className)}
+        fullHeight={fullHeight}
         {...omit(['className', 'dismissable', 'modal', 'onDismiss'], props)}
         dismissable
         modal
         onDismiss={handleDismiss}
       >
-        <div className="flex w-full flex-col gap-5">
-          <div className={`${PREFIX}-${GROUP_NAME}__content`}>{children}</div>
+        <div
+          className={cj(
+            'flex w-full flex-col gap-5',
+            fullHeight ? 'h-full' : '',
+          )}
+        >
+          <div
+            className={cj(
+              `${PREFIX}-${GROUP_NAME}__content`,
+              fullHeight ? 'flex-1' : '',
+            )}
+          >
+            {children}
+          </div>
+
           <div
             className={cj(
               `${PREFIX}-${GROUP_NAME}__actions`,
