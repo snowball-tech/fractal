@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [23.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.1...@snowball-tech/fractal@23.1.2) (2025-11-20)
+
 ## @snowball-tech/fractal [23.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.0...@snowball-tech/fractal@23.1.1) (2025-11-20)
 
 - **confirm:** better handle the position of actions buttons ([ca8e57d](https://github.com/snowball-tech/fractal/commit/ca8e57db3f49de97ecc99e9003d0a8804c9aeb8d))
