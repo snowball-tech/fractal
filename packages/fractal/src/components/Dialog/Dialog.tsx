@@ -59,6 +59,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
       overlayStyle = 'dark',
       position = DEFAULT_POSITION,
       root,
+      scrollable = true,
       scrollbarOnHover = true,
       title,
       trigger,
@@ -293,7 +294,7 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       )}
                     </div>
 
-                    {hasChildren && (
+                    {hasChildren && scrollable ? (
                       <ScrollArea
                         className={fullHeight ? 'h-full' : ''}
                         contentClassName={cn(
@@ -308,6 +309,8 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                       >
                         {children}
                       </ScrollArea>
+                    ) : (
+                      children
                     )}
                   </Paper>
                 </RxDialog.Content>

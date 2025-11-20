@@ -16,6 +16,7 @@ import type { CombinedRefs as DialogCombinedRefs } from '@/components/Dialog/Dia
 
 import { Button } from '@/components/Button/Button'
 import { Dialog } from '@/components/Dialog/Dialog'
+import { ScrollArea } from '@/components/ScrollArea/ScrollArea'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
 
@@ -29,9 +30,11 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
       cancel,
       children,
       confirm,
+      fixedActions = true,
       fullHeight = false,
       onCancel,
       onConfirm,
+      scrollable = true,
       ...props
     }: ConfirmProps,
     ref?: ForwardedRef<CombinedRefs>,
@@ -70,65 +73,90 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
       }
     }
 
+    const actions = (
+      <div
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__actions`,
+          'flex h-fit flex-col gap-1 pb-quarter md:flex-row md:justify-end to-md:items-center',
+          fixedActions
+            ? props.condensed
+              ? 'pr-one-and-half'
+              : 'pr-[calc(theme(spacing.3)-theme(spacing.half))]'
+            : '',
+        )}
+      >
+        {cancel && (
+          <Button
+            ref={cancelRef}
+            className="to-md:w-full"
+            variant="secondary"
+            onClick={onCancel}
+            {...(isString(cancel)
+              ? { label: cancel }
+              : omit(['href', 'onClick', 'target', 'type', 'variant'], cancel))}
+          />
+        )}
+
+        <Button
+          ref={confirmRef}
+          className="to-md:w-full"
+          onClick={onConfirm}
+          {...(isString(confirm)
+            ? { label: confirm }
+            : omit(['href', 'onClick', 'target', 'type', 'variant'], confirm))}
+        />
+      </div>
+    )
+
+    const content = (
+      <div
+        className={cj(
+          `${PREFIX}-${GROUP_NAME}__content`,
+          'flex w-full flex-col gap-5',
+          fullHeight ? 'flex-1' : '',
+          fixedActions ? 'min-h-0' : '',
+        )}
+      >
+        {children}
+
+        {!fixedActions && actions}
+      </div>
+    )
+
     return (
       <Dialog
         ref={dialogRef}
         className={cn(`${PREFIX}-${GROUP_NAME}`, props.className)}
         fullHeight={fullHeight}
-        {...omit(['className', 'dismissable', 'modal', 'onDismiss'], props)}
+        {...omit(
+          ['className', 'dismissable', 'modal', 'onDismiss', 'scrollable'],
+          props,
+        )}
         dismissable
         modal
+        scrollable={false}
         onDismiss={handleDismiss}
       >
-        <div
-          className={cj(
-            'flex w-full flex-col gap-5',
-            fullHeight ? 'h-full' : '',
-          )}
-        >
-          <div
-            className={cj(
-              `${PREFIX}-${GROUP_NAME}__content`,
-              fullHeight ? 'flex-1' : '',
+        {scrollable ? (
+          <ScrollArea
+            className={fullHeight ? 'flex-1' : ''}
+            contentClassName={cn(
+              'visible flex flex-col w-full',
+              fullHeight ? 'h-full' : '',
+              props.condensed
+                ? 'gap-3 pr-one-and-half'
+                : 'gap-5 pr-[calc(theme(spacing.3)-theme(spacing.half))]',
+              props.contentClassName,
             )}
+            scrollbarOnHover={props.scrollbarOnHover}
           >
-            {children}
-          </div>
+            {content}
+          </ScrollArea>
+        ) : (
+          content
+        )}
 
-          <div
-            className={cj(
-              `${PREFIX}-${GROUP_NAME}__actions`,
-              'flex flex-col gap-1 md:flex-row md:justify-end to-md:items-center',
-            )}
-          >
-            {cancel && (
-              <Button
-                ref={cancelRef}
-                className="to-md:w-full"
-                variant="secondary"
-                onClick={onCancel}
-                {...(isString(cancel)
-                  ? { label: cancel }
-                  : omit(
-                      ['href', 'onClick', 'target', 'type', 'variant'],
-                      cancel,
-                    ))}
-              />
-            )}
-
-            <Button
-              ref={confirmRef}
-              className="to-md:w-full"
-              onClick={onConfirm}
-              {...(isString(confirm)
-                ? { label: confirm }
-                : omit(
-                    ['href', 'onClick', 'target', 'type', 'variant'],
-                    confirm,
-                  ))}
-            />
-          </div>
-        </div>
+        {fixedActions && actions}
       </Dialog>
     )
   },

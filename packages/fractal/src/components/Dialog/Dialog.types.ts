@@ -69,6 +69,11 @@ export interface DialogProps
   /** Options to customize the root element of the dialog. */
   root?: Partial<AllHTMLAttributes<HTMLDivElement>>
   /**
+   * Indicates if the dialog should be automatically wrap the children in a
+   * ScrollArea.
+   */
+  scrollable?: boolean
+  /**
    * Indicates the behavior of the scrollbar in the content of the dialog.
    *
    * If `true`, the scrollbars will only be displayed on hover.

@@ -69,6 +69,7 @@ const meta: Meta<DialogProps> = {
     modal: true,
     overlayStyle: 'light',
     position: 'fixed',
+    scrollable: true,
     scrollbarOnHover: true,
     title: 'This is the title',
     trigger: 'Text',

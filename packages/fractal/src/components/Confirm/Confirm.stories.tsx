@@ -21,9 +21,10 @@ const meta: Meta<ConfirmProps> = {
   args: {
     cancel: 'No please, it was a mistake',
     children:
-      'If you test this confirm dialog, you will have the overwhelming desire to use Fractal! Are you sure you want to carry on?',
+      'If you test this confirm dialog, you will have the overwhelming desire to use Fractal!',
     confirm: 'Oh yeah!!',
     defaultOpen: false,
+    fixedActions: true,
     fullHeight: false,
     position: 'fixed',
     title: 'Are you sure you want to test this confirm dialog',

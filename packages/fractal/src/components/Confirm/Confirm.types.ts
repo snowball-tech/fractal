@@ -29,6 +29,13 @@ export interface ConfirmProps
     | string
     | Omit<ButtonProps, 'href' | 'onClick' | 'target' | 'type' | 'variant'>
   /**
+   * Indicates if the actions should be fixed at the bottom of the dialog
+   * (`true`) or at the bottom of the content (`false`).
+   *
+   * Particularly useful with a `fullHeight` content.
+   */
+  fixedActions?: boolean
+  /**
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.
    */
