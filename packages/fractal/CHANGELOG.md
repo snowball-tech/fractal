@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [23.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.0...@snowball-tech/fractal@23.1.1) (2025-11-20)
+
+- **confirm:** better handle the position of actions buttons ([ca8e57d](https://github.com/snowball-tech/fractal/commit/ca8e57db3f49de97ecc99e9003d0a8804c9aeb8d))
+
 # @snowball-tech/fractal [23.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.0.3...@snowball-tech/fractal@23.1.0) (2025-11-19)
 
 - **dialog/confirm:** add an option to display a dialog in full height ([bb772bb](https://github.com/snowball-tech/fractal/commit/bb772bbefac5fb537495157e7f532df9cbf7f2d6))
