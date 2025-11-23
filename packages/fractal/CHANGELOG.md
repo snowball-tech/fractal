@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [23.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.2...@snowball-tech/fractal@23.1.3) (2025-11-23)
+
+- **select:** support ellipsis/truncation of trigger with fixed with select ([8c35c25](https://github.com/snowball-tech/fractal/commit/8c35c25b84b611647cad4ee7cd95d9438b9def5d))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.0.4
+
 ## @snowball-tech/fractal [23.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.1...@snowball-tech/fractal@23.1.2) (2025-11-20)
 
 ## @snowball-tech/fractal [23.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.0...@snowball-tech/fractal@23.1.1) (2025-11-20)
