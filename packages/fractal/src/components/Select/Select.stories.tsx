@@ -147,6 +147,23 @@ type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
 
+export const FixedWidthAndTruncation: Story = {
+  args: {
+    onClose: fn(),
+    onOpen: fn(),
+    onSelect: fn(),
+  },
+  render: () => (
+    <div className="w-[200px]">
+      <Select defaultValue="long-item" fullWidth>
+        <SelectItem value="long-item">
+          This is a super long item that won&apos;t fit in the Select&apos;s
+          trigger without being truncated
+        </SelectItem>
+      </Select>
+    </div>
+  ),
+}
 export const InteractiveOpen: Story = {
   args: {
     onClose: fn(),

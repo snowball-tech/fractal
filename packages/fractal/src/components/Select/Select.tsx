@@ -312,7 +312,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             asChild
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
-              'flex h-6 max-h-6 items-center rounded-sm border-1 border-normal px-2 py-unset text-left outline-none transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder',
+              'flex h-6 max-h-6 w-full min-w-0 items-center justify-between truncate rounded-sm border-1 border-normal px-2 py-unset text-left outline-none transition-border-color duration-300 ease-out data-with-placeholder:text-placeholder',
               writable
                 ? 'cursor-pointer border-normal bg-white'
                 : 'border-disabled bg-disabled-light',
@@ -329,7 +329,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               <div
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__value`,
-                  'w-full flex-grow self-center',
+                  'min-w-0 flex-1 [&>span>div]:truncate [&>span]:block',
                 )}
               >
                 {isEmpty(displayedValue) ? (
@@ -344,7 +344,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
               <RxSelect.Icon
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__indicator`,
-                  'h-full self-center transition-transform duration-300 ease-out',
+                  'h-full shrink-0 transition-transform duration-300 ease-out',
                   writable ? 'text-dark' : 'text-disabled',
                   isOpen ? 'translate-x-0 translate-y-0 rotate-180' : '',
                 )}
