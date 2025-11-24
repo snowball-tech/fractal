@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [23.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.3...@snowball-tech/fractal@23.2.0) (2025-11-24)
+
+- **phone:** add fullwidth parameter ([da4de1e](https://github.com/snowball-tech/fractal/commit/da4de1ee4dba827a074eee7e26a2b55f9dc56def))
+
 ## @snowball-tech/fractal [23.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.2...@snowball-tech/fractal@23.1.3) (2025-11-23)
 
 - **select:** support ellipsis/truncation of trigger with fixed with select ([8c35c25](https://github.com/snowball-tech/fractal/commit/8c35c25b84b611647cad4ee7cd95d9438b9def5d))
