@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [23.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.2.0...@snowball-tech/fractal@23.2.1) (2025-11-24)
+
+- **confirm:** add a way to determine if a confirm has been cancel by the "cancel" button or by dismissing it ([92b9037](https://github.com/snowball-tech/fractal/commit/92b9037bf51e750e84c7e737b115845cac7ac12b))
+
 # @snowball-tech/fractal [23.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.1.3...@snowball-tech/fractal@23.2.0) (2025-11-24)
 
 - **phone:** add fullwidth parameter ([da4de1e](https://github.com/snowball-tech/fractal/commit/da4de1ee4dba827a074eee7e26a2b55f9dc56def))
