@@ -63,6 +63,8 @@ export interface InputPhoneProps
    * message when provided.
    */
   error?: string
+  /** Indicates if the phone input should take all the available width. */
+  fullWidth?: boolean
   /**
    * A unique HTML id for the phone input.
    *

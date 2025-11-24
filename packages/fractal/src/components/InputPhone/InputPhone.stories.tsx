@@ -23,6 +23,7 @@ const meta: Meta<InputPhoneProps> = {
     description: 'This is a description',
     disabled: false,
     emptyPrefixLabel: 'There is no phone prefix matching your search...',
+    fullWidth: false,
     label: 'This is the label',
     placeholder: 'This is the placeholder',
     readOnly: false,

@@ -68,6 +68,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       disabled = false,
       emptyPrefixLabel = '-',
       error,
+      fullWidth = false,
       id,
       label,
       name,
@@ -327,7 +328,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
         <div
           className={cj(
             `${PREFIX}-${GROUP_NAME}__fields`,
-            'flex w-fit max-w-full gap-1',
+            fullWidth ? 'w-full' : 'w-fit',
+            'flex max-w-full gap-1',
           )}
         >
           {withPrefix && (
@@ -449,6 +451,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             )}
             disabled={disabled}
             error={hasErrorMessage}
+            fullWidth={fullWidth}
             name={`${name || uniqueId}-number`}
             placeholder={actualPlaceholder ?? ''}
             prefix={
