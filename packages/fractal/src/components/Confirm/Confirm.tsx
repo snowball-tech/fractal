@@ -66,7 +66,7 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
 
     const handleDismiss = (event: MouseEvent<HTMLElement>) => {
       if (isFunction(onCancel)) {
-        onCancel(event)
+        onCancel(event, true)
       }
       if (isFunction(props.onDismiss)) {
         props.onDismiss(event)
@@ -90,7 +90,7 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
             ref={cancelRef}
             className="to-md:w-full"
             variant="secondary"
-            onClick={onCancel}
+            onClick={(event) => onCancel?.(event, false)}
             {...(isString(cancel)
               ? { label: cancel }
               : omit(['href', 'onClick', 'target', 'type', 'variant'], cancel))}

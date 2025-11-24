@@ -1,3 +1,5 @@
+import type { MouseEvent } from 'react'
+
 import type { ButtonProps } from '@/components/Button/Button.types'
 import type {
   CombinedRefs as DialogCombinedRefs,
@@ -39,7 +41,7 @@ export interface ConfirmProps
    * The event handler called when the confirm dialog is dismissed or the
    * "Cancel" button is pressed.
    */
-  onCancel?: ButtonProps['onClick']
+  onCancel?: (event: MouseEvent<HTMLElement>, dismissed: boolean) => void
   /** The event handler called when the "Confirm" button is pressed. */
   onConfirm?: ButtonProps['onClick']
 }
