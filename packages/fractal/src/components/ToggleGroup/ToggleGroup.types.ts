@@ -26,6 +26,8 @@ export interface ToggleGroupProps
   disabled?: boolean
   /** Indicates if the toggle group should take all the available width. */
   fullWidth?: boolean
+  /** Indicates if the toggles should be grouped. */
+  grouped?: boolean
   /**
    * The accessible label of the toggle group.
    *

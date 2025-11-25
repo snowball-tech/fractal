@@ -55,7 +55,7 @@
     "@storybook/react-vite": "^10.0.8",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.21",
-    "@types/react": "^19.2.6",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "chromatic": "^13.3.4",
@@ -76,7 +76,7 @@
     "storybook-addon-mock-date": "^1.0.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "vercel": "^48.10.10",
+    "vercel": "^48.10.11",
     "vite": "^7.2.4",
     "vite-tsconfig-paths": "^5.1.4"
   },

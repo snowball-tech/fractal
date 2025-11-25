@@ -29,6 +29,7 @@ export const ToggleGroup = ({
   defaultValue,
   disabled = false,
   fullWidth = false,
+  grouped = false,
   label,
   multiple = false,
   onValueChange,
@@ -44,7 +45,13 @@ export const ToggleGroup = ({
     className={cn(
       `${PREFIX}-${GROUP_NAME}`,
       `${PREFIX}-${GROUP_NAME}--${variant}`,
-      'flex max-w-full flex-col gap-3',
+      grouped ? `${PREFIX}-${GROUP_NAME}--grouped` : '',
+      grouped
+        ? orientation === 'horizontal'
+          ? '[&>button:first-child]:rounded-l-full [&>button:last-child]:rounded-r-full'
+          : 'justify-stretch [&>button:first-child]:rounded-t-full [&>button:last-child]:rounded-b-full'
+        : 'gap-3',
+      'flex max-w-full flex-col',
       'data-horizontal:flex-row data-horizontal:flex-wrap sm:data-horizontal:flex-nowrap',
       disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',
       fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : 'w-fit',
@@ -63,7 +70,9 @@ export const ToggleGroup = ({
       : {})}
     {...omit(['className'], props)}
   >
-    <ToggleGroupContext.Provider value={{ disabled, variant }}>
+    <ToggleGroupContext.Provider
+      value={{ disabled, grouped, orientation, variant }}
+    >
       {children}
     </ToggleGroupContext.Provider>
   </RxToggleGroup.Root>

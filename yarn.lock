@@ -4912,7 +4912,7 @@ __metadata:
     "@tooni/iconscout-unicons-react": "npm:^1.0.1"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/lodash": "npm:^4.17.21"
-    "@types/react": "npm:^19.2.6"
+    "@types/react": "npm:^19.2.7"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react-swc": "npm:^4.2.2"
     chromatic: "npm:^13.3.4"
@@ -4947,7 +4947,7 @@ __metadata:
     tailwindcss: "npm:^3.4.18"
     tsup: "npm:^8.5.1"
     typescript: "npm:^5.9.3"
-    vercel: "npm:^48.10.10"
+    vercel: "npm:^48.10.11"
     vite: "npm:^7.2.4"
     vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
@@ -5691,12 +5691,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.6":
-  version: 19.2.6
-  resolution: "@types/react@npm:19.2.6"
+"@types/react@npm:^19.2.7":
+  version: 19.2.7
+  resolution: "@types/react@npm:19.2.7"
   dependencies:
     csstype: "npm:^3.2.2"
-  checksum: 10/d611fd7d43c9a76f4a884ac2c0da6de582db26cfbcf3b08e8214a93facb37d27d1077118e98fc7c76a2e5dd5351f58834cc4d171ef0d8d75cc95fdf4d345f576
+  checksum: 10/dc0b756eee2c9782d282ae47eaa8d537b2a569eb889a6808c4b172d70fb690b2b1d8fe6239db451aa1c90d2a947cc21c9b537ce177ba9e6121468e403e4079c5
   languageName: node
   linkType: hard
 
@@ -6111,10 +6111,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:13.1.1":
-  version: 13.1.1
-  resolution: "@vercel/build-utils@npm:13.1.1"
-  checksum: 10/8e12ce1d6c470183165a2327543ae26c48b12b7aa0bed008b2b1edf6ee6990c9808e9fa52e0b917ac0f3813cad2780633d30d3aa4dc426c8e43dd0cfa843ac98
+"@vercel/build-utils@npm:13.1.2":
+  version: 13.1.2
+  resolution: "@vercel/build-utils@npm:13.1.2"
+  checksum: 10/779cb23b83606f0e067bc939f994f3d0e0e98ff95be0653ba3e9a37a7e68c1e03d6923c679e71e0b4d5bdb97022130506ddb274c3c29e26153dfb873feed3814
   languageName: node
   linkType: hard
 
@@ -6141,13 +6141,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/elysia@npm:0.1.7":
-  version: 0.1.7
-  resolution: "@vercel/elysia@npm:0.1.7"
+"@vercel/elysia@npm:0.1.8":
+  version: 0.1.8
+  resolution: "@vercel/elysia@npm:0.1.8"
   dependencies:
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/static-config": "npm:3.1.2"
-  checksum: 10/782e80aa2149b74396755edc46de9cfab2d529e29e0d787de54d71b2ae718890a36ea050653263bb40f941a644b10af5fce54087239ab784229f27a67e15eb47
+  checksum: 10/5cda6720e64842a8b4e9375760b989e50b8e01791a25c6e874bdfe8010b62648e2523a11512ea3f52a7296cfef2599c748ba12055d8f2702d82f592a0258898c
   languageName: node
   linkType: hard
 
@@ -6158,30 +6158,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/express@npm:0.1.12":
-  version: 0.1.12
-  resolution: "@vercel/express@npm:0.1.12"
+"@vercel/express@npm:0.1.13":
+  version: 0.1.13
+  resolution: "@vercel/express@npm:0.1.13"
   dependencies:
     "@vercel/cervel": "npm:0.0.6"
     "@vercel/nft": "npm:0.30.1"
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/static-config": "npm:3.1.2"
     fs-extra: "npm:11.1.0"
     path-to-regexp: "npm:8.3.0"
     rolldown: "npm:1.0.0-beta.35"
     ts-morph: "npm:12.0.0"
     zod: "npm:3.22.4"
-  checksum: 10/9606ba321e8126411b426902aa918d52ef7d56d67d924285601951d0bd68943b5738972be3ac2c970d5428e954b62533ffc1d6b50b75e4f8835b2f44d95b634e
+  checksum: 10/716a930414a7305cb620d0eea9d5cd77208482cf70d67a6532fe5b8eac283fa28248e26bc6bf4be5d48b5d554a044a134af594bb755a10445a75e70bc43568b3
   languageName: node
   linkType: hard
 
-"@vercel/fastify@npm:0.1.10":
-  version: 0.1.10
-  resolution: "@vercel/fastify@npm:0.1.10"
+"@vercel/fastify@npm:0.1.11":
+  version: 0.1.11
+  resolution: "@vercel/fastify@npm:0.1.11"
   dependencies:
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/static-config": "npm:3.1.2"
-  checksum: 10/330ecd30fb3474e066621f3fb0968f1514224ec432e3804e06dbc29d35c5e3c54b9b74f38eed08a3127f9d53ed8462cc6546ad81ac948b9564bc460dafc183df
+  checksum: 10/1845455feb6cb771a4c576b959d4f9719c82f7f3179d700859b1b0046ae95270bce847921ba8c4e029f557d6e9dbeaba22156b428dc098fa9d6a88a905f12db7
   languageName: node
   linkType: hard
 
@@ -6220,16 +6220,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/gatsby-plugin-vercel-builder@npm:2.0.108":
-  version: 2.0.108
-  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.108"
+"@vercel/gatsby-plugin-vercel-builder@npm:2.0.109":
+  version: 2.0.109
+  resolution: "@vercel/gatsby-plugin-vercel-builder@npm:2.0.109"
   dependencies:
     "@sinclair/typebox": "npm:0.25.24"
-    "@vercel/build-utils": "npm:13.1.1"
+    "@vercel/build-utils": "npm:13.1.2"
     esbuild: "npm:0.14.47"
     etag: "npm:1.8.1"
     fs-extra: "npm:11.1.0"
-  checksum: 10/101cb49493f05afd8bb5b88b0a3e407b0ae670965ecea56fbba4ee97902a5bae6dd248fd25db1a4f15277f1f59579f3ae4cb78ac0fc7c9d28a57e107a48e0738
+  checksum: 10/2ed76390b2a9e3fda3d14b2033290b5d3c36ebef7b720864766beb094d9416b7317032adf95855bbf18f97c39677322e8659b02a5404c348dd24586abc850b2e
   languageName: node
   linkType: hard
 
@@ -6240,29 +6240,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/h3@npm:0.1.16":
-  version: 0.1.16
-  resolution: "@vercel/h3@npm:0.1.16"
+"@vercel/h3@npm:0.1.17":
+  version: 0.1.17
+  resolution: "@vercel/h3@npm:0.1.17"
   dependencies:
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/static-config": "npm:3.1.2"
-  checksum: 10/a220a654c27507918ca6a0a3f731f2c31a49f18268b040e0ed47bd7af226e37fbcdf9d05e0a252d87be998b6ce65f86e2b88b2acec25a37ff36d9b6d1f084a70
+  checksum: 10/1d3135d103b73c25f26adf7b4d811dc2c99c970d2e40dc61beeec4deb91e20dd2167a9abd6e7f816220670e5063dae40c307680b4df37d151a290421b303115e
   languageName: node
   linkType: hard
 
-"@vercel/hono@npm:0.2.10":
-  version: 0.2.10
-  resolution: "@vercel/hono@npm:0.2.10"
+"@vercel/hono@npm:0.2.11":
+  version: 0.2.11
+  resolution: "@vercel/hono@npm:0.2.11"
   dependencies:
     "@vercel/nft": "npm:0.30.1"
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/static-config": "npm:3.1.2"
     fs-extra: "npm:11.1.0"
     path-to-regexp: "npm:8.3.0"
     rolldown: "npm:1.0.0-beta.35"
     ts-morph: "npm:12.0.0"
     zod: "npm:3.22.4"
-  checksum: 10/1357e2acb741262ed84fc153caf89f75a2e5ce6a6c3616d5326efc4c09b4ebde8d3730f049b5dd7f79ae8ae8ff848f07674ab59d4d7b35400183cc26f2bca1b6
+  checksum: 10/a23985a553a774b51a8829c543d503cec37876065f0490e787d8e17198d4359a16168c39334fa69b23385be6382288e17ba94e0f3035ac46cdda24cf7f7e6f73
   languageName: node
   linkType: hard
 
@@ -6317,15 +6317,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/node@npm:5.5.9":
-  version: 5.5.9
-  resolution: "@vercel/node@npm:5.5.9"
+"@vercel/node@npm:5.5.10":
+  version: 5.5.10
+  resolution: "@vercel/node@npm:5.5.10"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:13.1.1"
+    "@vercel/build-utils": "npm:13.1.2"
     "@vercel/error-utils": "npm:2.0.3"
     "@vercel/nft": "npm:0.30.1"
     "@vercel/static-config": "npm:3.1.2"
@@ -6344,7 +6344,7 @@ __metadata:
     typescript: "npm:4.9.5"
     typescript5: "npm:typescript@5.9.3"
     undici: "npm:5.28.4"
-  checksum: 10/1e7e816dcee0670e7ec371a10568cfcef7f505b201b8827e398c85c8055c4cb1c334743a873ad8cbb1f4bd92b3d67072369f304f51bda2e68ef29f9b957a6c64
+  checksum: 10/d11f16129373538ad0da70541394ed34926dc15abe814083af1cea35964048e4d66bb8ff5ad8dd28ec4fb56e0bb09973ece81df9e4edd3da815bc21dfc386182
   languageName: node
   linkType: hard
 
@@ -6388,15 +6388,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/static-build@npm:2.8.9":
-  version: 2.8.9
-  resolution: "@vercel/static-build@npm:2.8.9"
+"@vercel/static-build@npm:2.8.10":
+  version: 2.8.10
+  resolution: "@vercel/static-build@npm:2.8.10"
   dependencies:
     "@vercel/gatsby-plugin-vercel-analytics": "npm:1.0.11"
-    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.108"
+    "@vercel/gatsby-plugin-vercel-builder": "npm:2.0.109"
     "@vercel/static-config": "npm:3.1.2"
     ts-morph: "npm:12.0.0"
-  checksum: 10/7718280449a071214e118a6a92392963351cabd2b63e80b42015733489ddcb9361ca3d058d4414aa11c54d966bfd2e71c9e50256df06ae4762ff9d7c3510528f
+  checksum: 10/b17adc81c9b079cccb809bc1a534b0fba968d19bbf96a1d5bba6857a419f0b322462e627e552c820b965c74041a8a6b0030337d98b1ed758cdd0b8b3ae846992
   languageName: node
   linkType: hard
 
@@ -21809,35 +21809,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:^48.10.10":
-  version: 48.10.10
-  resolution: "vercel@npm:48.10.10"
+"vercel@npm:^48.10.11":
+  version: 48.10.11
+  resolution: "vercel@npm:48.10.11"
   dependencies:
     "@vercel/backends": "npm:0.0.11"
     "@vercel/blob": "npm:1.0.2"
-    "@vercel/build-utils": "npm:13.1.1"
+    "@vercel/build-utils": "npm:13.1.2"
     "@vercel/detect-agent": "npm:1.0.0"
-    "@vercel/elysia": "npm:0.1.7"
-    "@vercel/express": "npm:0.1.12"
-    "@vercel/fastify": "npm:0.1.10"
+    "@vercel/elysia": "npm:0.1.8"
+    "@vercel/express": "npm:0.1.13"
+    "@vercel/fastify": "npm:0.1.11"
     "@vercel/fun": "npm:1.2.0"
     "@vercel/go": "npm:3.2.3"
-    "@vercel/h3": "npm:0.1.16"
-    "@vercel/hono": "npm:0.2.10"
+    "@vercel/h3": "npm:0.1.17"
+    "@vercel/hono": "npm:0.2.11"
     "@vercel/hydrogen": "npm:1.3.2"
     "@vercel/next": "npm:4.15.3"
-    "@vercel/node": "npm:5.5.9"
+    "@vercel/node": "npm:5.5.10"
     "@vercel/python": "npm:6.0.8"
     "@vercel/redwood": "npm:2.4.2"
     "@vercel/remix-builder": "npm:5.5.2"
     "@vercel/ruby": "npm:2.2.2"
-    "@vercel/static-build": "npm:2.8.9"
+    "@vercel/static-build": "npm:2.8.10"
     chokidar: "npm:4.0.0"
     jose: "npm:5.9.6"
   bin:
     vc: dist/vc.js
     vercel: dist/vc.js
-  checksum: 10/9c261c02e15e4ed9c95505ffdffb03c05b1f1dd664dab26464bbf11d57a46a2a7671808ff8c0c22d8235779e29dccdb015343f618b17a2938cd7276a347bbbde
+  checksum: 10/575b533c84bb162ef74c955f2d7759e25789ecee2bc525265187d549363a6af0c33177e63f84e2809a9890fe28dfa113bab10f7b14cccfb4e2c24e00a6c657a4
   languageName: node
   linkType: hard
 

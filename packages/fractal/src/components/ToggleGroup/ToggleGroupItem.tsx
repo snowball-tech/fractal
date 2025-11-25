@@ -73,14 +73,23 @@ export const ToggleGroupItem = forwardRef<
     const variantClassNames = {
       [Variants.Primary]:
         'bg-white text-dark aria-unchecked:shadow-subtle aria-unchecked:hover:shadow-brutal aria-unchecked:focus:shadow-brutal aria-unchecked:active:shadow-none border-1 border-normal aria-unchecked:active:-translate-x-quarter aria-unchecked:active:translate-y-half aria-unchecked:hover:translate-x-0 aria-unchecked:hover:-translate-y-quarter aria-unchecked:focus:translate-x-0 aria-unchecked:focus:-translate-y-quarter aria-checked:bg-secondary aria-checked:text-light',
+      [Variants.Secondary]:
+        'bg-white text-dark aria-unchecked:hover:bg-primary aria-unchecked:focus:bg-primary aria-unchecked:active:bg-black  aria-unchecked:active:text-light border-1 border-normal aria-checked:bg-secondary aria-checked:text-light',
     }
 
     const disabledVariantClassNames = {
       [Variants.Primary]:
         'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
+      [Variants.Secondary]:
+        'bg-white text-disabled shadow-none border-1 border-disabled aria-checked:bg-secondary aria-checked:text-disabled',
     }
 
-    const { disabled: groupDisabled, variant } = useContext(ToggleGroupContext)
+    const {
+      disabled: groupDisabled,
+      grouped,
+      orientation,
+      variant,
+    } = useContext(ToggleGroupContext)
 
     const handleToggle = (event: MouseEvent<HTMLButtonElement>) => {
       buttonRef?.current?.blur()
@@ -107,13 +116,17 @@ export const ToggleGroupItem = forwardRef<
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
-          'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 rounded-full text-left outline-none transition-colors duration-300 ease-out active:transition-none',
+          grouped ? `${PREFIX}-${GROUP_NAME}--grouped` : '',
+          'flex h-6 max-h-6 max-w-full items-center justify-center gap-2 text-left outline-none transition-colors duration-300 ease-out active:transition-none',
+          grouped ? '' : 'rounded-full',
           isDisabled
             ? `${PREFIX}-${GROUP_NAME}--disabled cursor-not-allowed ${disabledVariantClassNames[variant]} ${toggleDisabledVariantClassNames[variant]}`
             : `cursor-pointer ${variantClassNames[variant]} ${toggleVariantClassNames[variant]}`,
           fullWidth && !iconOnly
             ? `${PREFIX}-${GROUP_NAME}--full-width w-full`
-            : 'w-fit',
+            : grouped && orientation === 'vertical'
+              ? 'w-full'
+              : 'w-fit',
           isEmpty(icon)
             ? ''
             : `${PREFIX}-${GROUP_NAME}--addendum ${PREFIX}-${GROUP_NAME}--addendum--prefix`,
