@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [23.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.2.1...@snowball-tech/fractal@23.3.0) (2025-11-25)
+
+- **toggle-toggleGroup:** add a secondary variant and a grouped style ([3999599](https://github.com/snowball-tech/fractal/commit/3999599c2c869227c204c4e3f17a1170ecbac6e5))
+
 ## @snowball-tech/fractal [23.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.2.0...@snowball-tech/fractal@23.2.1) (2025-11-24)
 
 - **confirm:** add a way to determine if a confirm has been cancel by the "cancel" button or by dismissing it ([92b9037](https://github.com/snowball-tech/fractal/commit/92b9037bf51e750e84c7e737b115845cac7ac12b))
