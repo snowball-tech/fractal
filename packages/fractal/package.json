@@ -106,8 +106,8 @@
   "name": "@snowball-tech/fractal",
   "packageManager": "yarn@4.12.0",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "> 18",
+    "react-dom": "> 18"
   },
   "publishConfig": {
     "access": "public",
