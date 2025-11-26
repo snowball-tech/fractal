@@ -3,7 +3,10 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 import { Variants } from './Toggle.constants'
 
 export interface ToggleProps
-  extends Omit<AllHTMLAttributes<HTMLButtonElement>, 'onToggle' | 'type'> {
+  extends Omit<
+    AllHTMLAttributes<HTMLButtonElement>,
+    'label' | 'onToggle' | 'type'
+  > {
   /**
    * The content of the menu item.
    *
@@ -30,23 +33,30 @@ export interface ToggleProps
    */
   iconOnly?: boolean
   /**
-   * The content of the toggle.
+   * The label/content of the toggle.
    *
-   * Use this when you only need to display text in a toggle.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
+   * textual representation of the toggle that will be used as the `aria-label`
    * and `title` for the toggle.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /**
-   * Output the label as a `div` element instead of a `label` element.
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
    *
    * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the toggle by clicking on the label as well as the
    * accessibility improvements.
    */
-  labelAsDiv?: boolean
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The controlled toggled state of the toggle.
    *

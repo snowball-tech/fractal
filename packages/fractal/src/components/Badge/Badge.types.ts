@@ -1,11 +1,11 @@
-import type { AllHTMLAttributes } from 'react'
+import type { AllHTMLAttributes, ReactNode } from 'react'
 
 export interface BadgeProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The content of the badge. If provided, the `count` and `limit` props will
    * be ignored.
    */
-  children?: React.ReactNode
+  children?: ReactNode
   /** The number to display in the badge if no children is provided. */
   count?: number | undefined
   /**

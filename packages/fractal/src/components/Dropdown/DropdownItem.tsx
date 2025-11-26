@@ -3,9 +3,11 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import { type ForwardedRef, forwardRef, useContext } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -47,7 +49,7 @@ export const DropdownItem = forwardRef<
     ref?: ForwardedRef<HTMLDivElement | null>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `DropdownItem` component',
       )
@@ -70,10 +72,16 @@ export const DropdownItem = forwardRef<
 
     const isLink = !isEmpty(href)
 
+    const labelText = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
+
     return (
       <RxDropdownMenu.Item
         ref={ref}
-        aria-label={label}
+        aria-label={labelText}
         asChild
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
@@ -92,7 +100,7 @@ export const DropdownItem = forwardRef<
           props.className,
         )}
         disabled={isDisabled}
-        title={label}
+        title={labelText}
         {...(active ? { 'data-highlighted': active } : {})}
         {...(isLink ? { href, target } : {})}
         {...(value === undefined ? {} : { 'data-value': value })}

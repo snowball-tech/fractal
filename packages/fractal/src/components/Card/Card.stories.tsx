@@ -17,7 +17,7 @@ type CardProps = ComponentProps<typeof Card>
 
 const perCardTypesStoriesParameters = {
   controls: {
-    include: ['children', 'dismissable', 'icon', 'title'],
+    include: ['children', 'dismissable', 'icon', 'title', 'fontSize'],
   },
 }
 
@@ -27,7 +27,6 @@ const meta = {
       'Size matters not. Look at me. Judge me by my size, do you? Hmm? Hmm. And well you should not. For my ally is the Force, and a powerful ally it is. Life creates it, makes it grow. Its energy surrounds us and binds us. Luminous beings are we, not this crude matter. You must feel the Force around you; here, between you, me, the tree, the rock, everywhere, yes. Even between the land and the ship.',
     dismissable: false,
     icon: 'None',
-    title: '',
   },
   argTypes: {
     children: { control: 'text' },
@@ -57,6 +56,7 @@ const meta = {
       },
       options: ['None', 'Cancel', 'Check', 'Error', 'Send', 'Star'],
     },
+    title: { control: 'text' },
   },
   component: Card,
   parameters: {
@@ -79,24 +79,60 @@ export const Playground: Story = {
 
 export const BasicCards: Story = {
   parameters: { ...perCardTypesStoriesParameters },
-  render: ({ children, dismissable = false, icon, title = '' }) => (
+  render: ({ children, dismissable = false, fontSize, icon, title }) => (
     <div className="flex flex-col gap-2">
-      <Card color="blue" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="blue"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="green" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="green"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="pink" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="pink"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="purple" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="purple"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="yellow" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="yellow"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="body" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="body"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
     </div>
@@ -105,15 +141,321 @@ export const BasicCards: Story = {
 
 export const FeedbackCards: Story = {
   parameters: { ...perCardTypesStoriesParameters },
-  render: ({ children, dismissable = false, icon, title = '' }) => (
+  render: ({ children, dismissable = false, fontSize, icon, title }) => (
     <div className="flex flex-col gap-2">
-      <Card color="error" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="error"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="warning" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="warning"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
-      <Card color="success" dismissable={dismissable} icon={icon} title={title}>
+      <Card
+        color="success"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+    </div>
+  ),
+}
+
+export const SmallFontCards: Story = {
+  parameters: { ...perCardTypesStoriesParameters },
+  render: ({ children, dismissable = false, fontSize = 2, icon, title }) => (
+    <div className="flex flex-col gap-2">
+      <Card
+        color="blue"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="green"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="pink"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="purple"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="yellow"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="body"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+
+      <hr />
+
+      <Card
+        color="error"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="warning"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="success"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+    </div>
+  ),
+}
+
+export const CardsWithTitles: Story = {
+  parameters: { ...perCardTypesStoriesParameters },
+  render: ({
+    children,
+    dismissable = false,
+    fontSize,
+    icon,
+    title = "Yoda's wisdom",
+  }) => (
+    <div className="flex flex-col gap-2">
+      <Card
+        color="blue"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="green"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="pink"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="purple"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="yellow"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="body"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+
+      <hr />
+
+      <Card
+        color="error"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="warning"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="success"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+    </div>
+  ),
+}
+
+export const SmallFontCardsWithTitles: Story = {
+  parameters: { ...perCardTypesStoriesParameters },
+  render: ({
+    children,
+    dismissable = false,
+    fontSize = 2,
+    icon,
+    title = "Yoda's wisdom",
+  }) => (
+    <div className="flex flex-col gap-2">
+      <Card
+        color="blue"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="green"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="pink"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="purple"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="yellow"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="body"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+
+      <hr />
+
+      <Card
+        color="error"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="warning"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
+        {children}
+      </Card>
+      <Card
+        color="success"
+        dismissable={dismissable}
+        fontSize={fontSize}
+        icon={icon}
+        title={title}
+      >
         {children}
       </Card>
     </div>

@@ -15,7 +15,7 @@ import { Variants } from './Button.constants'
 export interface ButtonProps
   extends Omit<
     AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
-    'onClick' | 'wrap'
+    'label' | 'onClick' | 'wrap'
   > {
   /**
    * The content of the button.
@@ -86,18 +86,20 @@ export interface ButtonProps
    */
   inlineStyle?: boolean
   /**
-   * The label of the button.
+   * The label/content of the button.
    *
-   * Use this when you only need to display text in a button.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the button that will be used as the `aria-label`
-   * and `title` for the button.
+   * textual representation of the dropdown item that will be used as the
+   * `aria-label` and `title` for the button.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /** The `target` attribute of the `a` element (when a `href` is provided). */
-  target?: string
+  target?: HTMLAnchorElement['target']
   /**
    * Force the theme of the button.
    *

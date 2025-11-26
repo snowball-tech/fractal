@@ -1,6 +1,6 @@
 import type { CountryCode } from 'libphonenumber-js'
 
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
 import type {
   CombinedRefs as SelectCombinedRefs,
@@ -47,11 +47,11 @@ export interface InputPhoneProps
    */
   defaultValue?: PhoneNumber
   /** An helpful message to describe the phone input to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the phone input. */
   disabled?: boolean
   /** The label to display when the prefix search returns no results. */
-  emptyPrefixLabel?: string
+  emptyPrefixLabel?: ReactNode
   /**
    * An error message to display below the phone input if there is an
    * error.
@@ -62,7 +62,7 @@ export interface InputPhoneProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: string
+  error?: Error | ReactNode
   /** Indicates if the phone input should take all the available width. */
   fullWidth?: boolean
   /**
@@ -74,7 +74,19 @@ export interface InputPhoneProps
    */
   id?: string
   /** The label of the phone input. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to focus the input by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The name of the phone input.
    *
@@ -111,7 +123,7 @@ export interface InputPhoneProps
    * This will also change the display of the input to give an success feedback
    * (green border).
    */
-  success?: string
+  success?: ReactNode
   /** Indicates if you want to receive `onChange` events even if the phone
    * number is invalid.
    */

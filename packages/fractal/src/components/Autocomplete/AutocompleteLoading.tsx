@@ -2,8 +2,11 @@
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
+import { onlyText } from 'react-children-utilities'
+
 import isBoolean from 'lodash/fp/isBoolean'
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Loader } from '@/components/Loader'
@@ -30,11 +33,17 @@ export const AutocompleteLoading = ({
   ...props
 }: AutocompleteLoadingProps) => {
   const hasChildren = Boolean(children)
-  if (!hasChildren && isEmpty(label)) {
+  if (!hasChildren && !label) {
     console.warn(
       'You must provide a `label` or `children` to the `AutocompleteLoading` component',
     )
   }
+
+  const textLabel = isString(label)
+    ? label
+    : isEmpty(label)
+      ? onlyText(children)
+      : onlyText(label)
 
   return (
     <RxDropdownMenu.Item
@@ -49,8 +58,8 @@ export const AutocompleteLoading = ({
       )}
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
-      aria-label={label}
-      title={label}
+      aria-label={textLabel}
+      title={textLabel}
     >
       {icon && (
         <div
@@ -66,7 +75,7 @@ export const AutocompleteLoading = ({
           )}
         >
           &nbsp;
-          {isBoolean(icon) ? <Loader size="m" /> : icon}
+          {isBoolean(icon) ? <Loader size="s" /> : icon}
         </div>
       )}
 

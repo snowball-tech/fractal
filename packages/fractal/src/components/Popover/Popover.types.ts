@@ -83,7 +83,7 @@ export interface PopoverProps
   /** The preferred side of the trigger to render the popover. */
   side?: RxPopoverContentProps['side']
   /** The title of the popover. */
-  title?: string
+  title?: ReactNode
   /**
    * Indicates if you want to toggle the popover when clicking on the trigger
    * (if provided of course).

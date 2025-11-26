@@ -9,11 +9,13 @@ import {
   forwardRef,
   useId,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 import TextareaAutosize from 'react-textarea-autosize'
 
-import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button/Button'
@@ -44,6 +46,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
       iconDisabled,
       id,
       label,
+      labelElement,
       maxRows,
       minRows = 1,
       name,
@@ -63,9 +66,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
-    const hasErrorMessage = !isEmpty(error)
-    const isInError = hasErrorMessage || error === true
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
+
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
     const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -93,6 +99,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
 
     const hasIcon = Boolean(icon)
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <div
         className={cn(
@@ -113,7 +121,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
           props.className,
         )}
       >
-        {isEmpty(label) ? (
+        {!label ? (
           false
         ) : (
           <RxLabel
@@ -126,7 +134,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
             )}
             htmlFor={uniqueId}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
@@ -139,6 +151,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
           element="div"
         >
           <TextareaAutosize
+            aria-label={textLabel}
             autoFocus={autoFocus}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__input`,
@@ -166,6 +179,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
               hasIcon ? 'pr-6' : '',
             )}
             disabled={disabled}
+            title={textLabel}
             {...(defaultValue === undefined ? {} : { defaultValue })}
             id={uniqueId}
             ref={ref}
@@ -220,7 +234,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
           )}
         </Typography>
 
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+        {description && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
@@ -244,7 +258,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement | null, TextareaProps>(
             element="div"
             variant="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         )}
       </div>

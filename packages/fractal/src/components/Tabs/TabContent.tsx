@@ -26,8 +26,8 @@ export const TabContent = forwardRef<HTMLDivElement | null, TabContentProps>(
     <RxTabs.Content
       ref={ref}
       className={cn(`${PREFIX}-${GROUP_NAME}__content`, '', props.className)}
-      {...(forceMount ? { forceMount: true } : {})}
       value={name}
+      {...(forceMount ? { forceMount: true } : {})}
       {...omit(['className'], props)}
     >
       {children}

@@ -14,7 +14,7 @@ export type CombinedRefs = {
 }
 
 export interface DialogProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onToggle'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onToggle' | 'title'> {
   /** The content of the dialog. */
   children: ReactNode
   /**
@@ -81,7 +81,7 @@ export interface DialogProps
    */
   scrollbarOnHover?: boolean
   /** A title to display at the top of the dialog. */
-  title?: string
+  title?: ReactNode
   /**
    * The trigger of the dialog.
    *

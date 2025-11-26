@@ -3,6 +3,7 @@ import type {
   FocusEvent,
   HTMLAttributes,
   KeyboardEvent,
+  ReactNode,
 } from 'react'
 
 export type DateFormat = {
@@ -62,7 +63,7 @@ export interface InputDateProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: string
+  error?: Error | ReactNode
   /**
    * A unique HTML id for the date input.
    *
@@ -72,7 +73,19 @@ export interface InputDateProps
    */
   id?: string
   /** The label of the date input. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the date input by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /** The maximum year that can be entered. */
   maxYear?: number
   /**
@@ -98,7 +111,7 @@ export interface InputDateProps
    * This will also change the display of the input to give an success feedback
    * (green border).
    */
-  success?: string
+  success?: ReactNode
   /**
    * The controlled value of the date input.
    *

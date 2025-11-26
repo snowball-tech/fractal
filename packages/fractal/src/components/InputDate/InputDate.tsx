@@ -17,11 +17,13 @@ import {
   useRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
-import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { InputText } from '@/components/InputText/InputText'
@@ -81,6 +83,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       error,
       id,
       label,
+      labelElement,
       maxYear = 2099,
       name,
       onBlur,
@@ -128,11 +131,13 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
     }>({ day: false, month: false, year: false })
     const [autoSwitch, setAutoSwitch] = useState(true)
 
-    const hasErrorMessage = !isEmpty(error)
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
 
-    const isInError = hasErrorMessage
-    const isSuccessful = hasSuccessMessage && !isInError
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
+    const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     useEffect(() => {
       const newErrors = { ...errors }
@@ -314,6 +319,8 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
 
     const fieldClassNames = `${PREFIX}-${GROUP_NAME}__field !max-w-[100px] w-fit`
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <div
         className={cn(
@@ -327,8 +334,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
           isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
           props.className,
         )}
+        title={textLabel}
       >
-        {isEmpty(label) ? (
+        {!label ? (
           false
         ) : (
           <RxLabel
@@ -342,7 +350,11 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             )}
             htmlFor={`${uniqueId}-day`}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
@@ -358,12 +370,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:min-w-9',
             )}
-            {...(defaultValue?.day === undefined
-              ? {}
-              : { defaultValue: defaultValue.day })}
             description={descriptions?.day ?? ''}
             disabled={disabled}
-            error={errors.day || hasErrorMessage}
+            error={errors.day || isInError}
             inputMode="numeric"
             max={31}
             maxLength={2}
@@ -378,14 +387,17 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             suffix={errors.day ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.day === undefined ? {} : { value: value.day })}
+            {...(defaultValue?.day === undefined
+              ? {}
+              : { defaultValue: defaultValue.day })}
+            onChange={(event, newDay) => handleChange(event, newDay, 'day')}
+            onKeyDown={(event) => handleKeyDown(event, 'day')}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'day') }
               : {})}
-            onChange={(event, newDay) => handleChange(event, newDay, 'day')}
             {...(isFunction(onFocus)
               ? { onFocus: (event) => onFocus(event, 'year') }
               : {})}
-            onKeyDown={(event) => handleKeyDown(event, 'day')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
               : {})}
@@ -400,12 +412,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:min-w-9',
             )}
-            {...(defaultValue?.month === undefined
-              ? {}
-              : { defaultValue: defaultValue.month })}
             description={descriptions?.month ?? ''}
             disabled={disabled}
-            error={errors.month || hasErrorMessage}
+            error={errors.month || isInError}
             inputMode="numeric"
             max={12}
             maxLength={2}
@@ -420,16 +429,19 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             suffix={errors.month ? <ExclamationCircleIcon /> : undefined}
             type="number"
             {...(value?.month === undefined ? {} : { value: value.month })}
-            {...(isFunction(onBlur)
-              ? { onBlur: (event) => onBlur(event, 'month') }
-              : {})}
+            {...(defaultValue?.month === undefined
+              ? {}
+              : { defaultValue: defaultValue.month })}
             onChange={(event, newMonth) =>
               handleChange(event, newMonth, 'month')
             }
+            onKeyDown={(event) => handleKeyDown(event, 'month')}
+            {...(isFunction(onBlur)
+              ? { onBlur: (event) => onBlur(event, 'month') }
+              : {})}
             {...(isFunction(onFocus)
               ? { onFocus: (event) => onFocus(event, 'year') }
               : {})}
-            onKeyDown={(event) => handleKeyDown(event, 'month')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
               : {})}
@@ -444,12 +456,9 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               fieldClassNames,
               '[&_input]:!w-unset [&_input]:min-w-11',
             )}
-            {...(defaultValue?.year === undefined
-              ? {}
-              : { defaultValue: defaultValue.year })}
             description={descriptions?.year ?? ''}
             disabled={disabled}
-            error={errors.year || hasErrorMessage}
+            error={errors.year || isInError}
             inputMode="numeric"
             max={maxYear}
             maxLength={4}
@@ -462,7 +471,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             size={4}
             success={isSuccessful}
             suffix={
-              errors.year || hasErrorMessage ? (
+              errors.year || isInError ? (
                 <ExclamationCircleIcon />
               ) : isSuccessful ? (
                 <CheckCircleIcon />
@@ -470,14 +479,16 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             }
             type="number"
             {...(value?.year === undefined ? {} : { value: value.year })}
+            {...(defaultValue?.year === undefined
+              ? {}
+              : { defaultValue: defaultValue.year })}
+            onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'year') }
               : {})}
-            onChange={(event, newYear) => handleChange(event, newYear, 'year')}
             {...(isFunction(onFocus)
               ? { onFocus: (event) => onFocus(event, 'year') }
               : {})}
-            onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'year') }
               : {})}
@@ -496,7 +507,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             element="div"
             variant="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         )}
       </div>

@@ -33,10 +33,12 @@ import {
   forwardRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isBoolean from 'lodash/fp/isBoolean'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button/Button'
@@ -236,6 +238,7 @@ export const Paper = forwardRef<HTMLElement | null, PaperProps>(
     }
 
     const hasTitle = Boolean(title)
+    const textTitle = isString(title) ? title : onlyText(title)
 
     const [isCollapsed, setIsCollapsed] = useState(
       collapsed ?? defaultCollapsed,
@@ -265,7 +268,7 @@ export const Paper = forwardRef<HTMLElement | null, PaperProps>(
           collapsible ? 'cursor-pointer' : '',
           titleClassName,
         )}
-        element="div"
+        element={isString(title) ? undefined : 'div'}
         variant={titleVariant || 'heading-4'}
       >
         {title}
@@ -307,6 +310,7 @@ export const Paper = forwardRef<HTMLElement | null, PaperProps>(
     return (
       <Typography
         ref={ref}
+        aria-label={textTitle}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${actualElevation}`,
@@ -355,6 +359,7 @@ export const Paper = forwardRef<HTMLElement | null, PaperProps>(
                 }
             : props.style
         }
+        title={textTitle}
         {...omit(['className', 'style'], props)}
       >
         {collapsible ? (

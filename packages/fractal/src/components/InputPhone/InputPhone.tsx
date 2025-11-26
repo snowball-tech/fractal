@@ -22,10 +22,13 @@ import {
   useRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { InputText } from '@/components/InputText/InputText'
@@ -71,6 +74,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       fullWidth = false,
       id,
       label,
+      labelElement,
       name,
       onChange,
       placeholder,
@@ -201,11 +205,13 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       setNumber(parsedPhone.nationalNumber)
     }, [selectPrefix, defaultValue, value, prefix?.countryCode, withPrefix])
 
-    const hasErrorMessage = !isEmpty(error)
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
 
-    const isInError = hasErrorMessage
-    const isSuccessful = hasSuccessMessage && !isInError
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
+    const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     const emitNewPhoneNumber = (
       prefixToEmit: Prefix | null,
@@ -289,6 +295,8 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
       containerRef?.closest(`.${PREFIX}-dialog__content`),
     )
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <div
         ref={(newRef) => setContainerRef(newRef)}
@@ -305,7 +313,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           props.className,
         )}
       >
-        {isEmpty(label) ? (
+        {!label ? (
           false
         ) : (
           <RxLabel
@@ -321,7 +329,11 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             )}
             htmlFor={`${uniqueId}-number`}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
@@ -441,6 +453,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           <InputText
             id={`${uniqueId}-number`}
             ref={phoneRef}
+            aria-label={textLabel}
             autoFocus={autoFocus && !withPrefix}
             className={cj(
               `${PREFIX}-${GROUP_NAME}__fields__phone-number`,
@@ -450,7 +463,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
                 : '',
             )}
             disabled={disabled}
-            error={hasErrorMessage}
+            error={isInError}
             fullWidth={fullWidth}
             name={`${name || uniqueId}-number`}
             placeholder={actualPlaceholder ?? ''}
@@ -472,12 +485,13 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             required={required}
             success={isSuccessful}
             suffix={
-              hasErrorMessage ? (
+              isInError ? (
                 <ExclamationCircleIcon />
               ) : isSuccessful ? (
                 <CheckCircleIcon />
               ) : undefined
             }
+            title={textLabel}
             type="tel"
             value={number}
             onChange={(_event, newNumber) => handleNumberChange(newNumber)}
@@ -485,7 +499,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
           />
         </div>
 
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage ? (
+        {description && !hasErrorMessage && !hasSuccessMessage ? (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
@@ -511,7 +525,7 @@ export const InputPhone = forwardRef<CombinedRefs, InputPhoneProps>(
             element="div"
             variant="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         ) : (
           false

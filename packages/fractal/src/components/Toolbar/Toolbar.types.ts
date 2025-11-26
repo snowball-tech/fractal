@@ -54,11 +54,12 @@ export type ToolbarDropdownProps = {
   /**
    * The label of the toolbar dropdown menu.
    */
-  label: string
+  label: ReactNode
 } & Omit<
   DropdownProps,
   | 'children'
   | 'condensed'
+  | 'label'
   | 'toggleOnTriggerClick'
   | 'trigger'
   | 'triggerAsButton'

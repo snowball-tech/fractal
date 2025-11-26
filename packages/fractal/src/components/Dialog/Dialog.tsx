@@ -273,7 +273,12 @@ export const Dialog = forwardRef<CombinedRefs, DialogProps>(
                           'flex-1',
                         )}
                       >
-                        <Typography variant="heading-4">{title}</Typography>
+                        <Typography
+                          element={isString(title) ? undefined : 'div'}
+                          variant="heading-4"
+                        >
+                          {title}
+                        </Typography>
                       </RxDialog.Title>
 
                       {dismissable && (

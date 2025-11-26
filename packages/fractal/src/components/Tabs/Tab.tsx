@@ -1,8 +1,10 @@
 import * as RxTabs from '@radix-ui/react-tabs'
 
 import { type ForwardedRef, forwardRef } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -46,11 +48,17 @@ export const Tab = forwardRef<HTMLButtonElement | null, TabProps>(
     ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `Tab` component',
       )
     }
+
+    const textLabel = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
 
     const hasIcon = Boolean(icon)
 
@@ -76,7 +84,7 @@ export const Tab = forwardRef<HTMLButtonElement | null, TabProps>(
     return (
       <RxTabs.Trigger
         ref={ref}
-        aria-label={label}
+        aria-label={textLabel}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__tab`,
           'cursor-pointer border-0 bg-[unset] px-0 py-0 text-left',
@@ -93,7 +101,7 @@ export const Tab = forwardRef<HTMLButtonElement | null, TabProps>(
           props.className,
         )}
         disabled={isDisabled}
-        title={label}
+        title={textLabel}
         value={name}
         {...omit(['className', 'value'], props)}
       >

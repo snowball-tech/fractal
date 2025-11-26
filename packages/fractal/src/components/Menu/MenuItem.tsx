@@ -7,9 +7,11 @@ import {
   forwardRef,
   useContext,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -44,7 +46,7 @@ export const MenuItem = forwardRef<HTMLElement | null, MenuItemProps>(
     ref?: ForwardedRef<HTMLElement | null>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `MenuItem` component',
       )
@@ -90,10 +92,16 @@ export const MenuItem = forwardRef<HTMLElement | null, MenuItemProps>(
       }
     }
 
+    const labelText = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
+
     return (
       <Typography
         ref={ref}
-        aria-label={label}
+        aria-label={labelText}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__item`,
           isRainbow ? 'alternatee' : '',
@@ -111,7 +119,7 @@ export const MenuItem = forwardRef<HTMLElement | null, MenuItemProps>(
         element={isLink ? 'a' : 'div'}
         role="menuitem"
         tabIndex={-1}
-        title={label}
+        title={labelText}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
         {...(active ? { 'data-highlighted': active } : {})}

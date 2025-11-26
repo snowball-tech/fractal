@@ -1,4 +1,4 @@
-import type { AllHTMLAttributes } from 'react'
+import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import type { ButtonProps } from '@/components/Button/Button.types'
 
@@ -10,9 +10,9 @@ export type CombinedRefs = {
 }
 
 export interface InputFileProps
-  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'label' | 'onChange'> {
   /** The label of the trigger of the input file. */
-  label: string
+  label: ReactNode
   /** Prevents the user from interacting with the input file and the trigger. */
   disabled?: boolean
   /** The props to pass to the trigger of the input file. */

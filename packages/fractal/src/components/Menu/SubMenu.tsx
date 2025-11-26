@@ -14,10 +14,12 @@ import {
   useRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import constant from 'lodash/fp/constant'
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import type { PopoverProps } from '@/components/Popover/Popover.types'
@@ -54,6 +56,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       elevation = DEFAULT_SUB_MENU_ELEVATION,
       icon,
       label,
+      labelElement,
       onClose,
       onInteractOutside,
       onOpen,
@@ -195,10 +198,12 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
       hide()
     })
 
+    const labelText = isString(label) ? label : onlyText(label)
+
     const trigger = (
       <Typography
         ref={triggerRef}
-        aria-label={label}
+        aria-label={labelText}
         className={cj(
           `${PREFIX}-${GROUP_NAME}__sub-menu__trigger`,
           'flex w-full flex-row items-center gap-1',
@@ -213,7 +218,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
         element="div"
         role="menuitem"
         tabIndex={-1}
-        title={label}
+        title={labelText}
         {...(popover
           ? triggerOnHover
             ? {
@@ -241,7 +246,7 @@ export const SubMenu = forwardRef<SubMenuCombinedRefs, SubMenuProps>(
             'flex-1',
             disabled ? `cursor-not-allowed` : 'cursor-pointer',
           )}
-          element="label"
+          element={labelElement || (isString(label) ? 'label' : 'div')}
         >
           {label}
         </Typography>

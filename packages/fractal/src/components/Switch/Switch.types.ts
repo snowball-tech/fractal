@@ -34,24 +34,30 @@ export interface SwitchProps
    */
   id?: string
   /**
-   * The content of the switch.
+   * The label/content of the switch.
    *
-   * Use this when you only need to display text in a switch.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
+   * textual representation of the switch that will be used as the `aria-label`
    * and `title` for the switch.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /**
-   * Output the label(s) as a `div` element(s) instead of a `label` element(s).
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
    *
    * This is useful for markup validity reasons, but note that you will lose the
-   * ability to toggle the switch by clicking on the label(s) as well as the
+   * ability to toggle the switch by clicking on the label as well as the
    * accessibility improvements.
    */
-  labelAsDiv?: boolean
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The labels of the switch if you want to display two labels.
    *
@@ -59,7 +65,7 @@ export interface SwitchProps
    * (presented on the left of the switch) and the second element will be the
    * label for the checked state (presented on the right of the switch).
    */
-  labels?: Array<string>
+  labels?: Array<ReactNode>
   /**
    * The name of the switch.
    *

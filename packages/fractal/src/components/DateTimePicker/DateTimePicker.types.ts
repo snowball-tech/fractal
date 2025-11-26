@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 import { TimeOutput } from 'react-timekeeper'
 
 import type { DialogProps } from '@/components/Dialog/Dialog.types'
@@ -85,7 +85,7 @@ export interface DateTimePickerProps
    */
   defaultValue?: Date | null
   /** An helpful message to describe the datetime input to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the datetime input. */
   disabled?: boolean
   /**
@@ -98,7 +98,7 @@ export interface DateTimePickerProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: string
+  error?: Error | ReactNode
   /** Indicates if the datetime input should take all the available width. */
   fullWidth?: boolean
   /** The translated labels for all the element of the datetime picker. */
@@ -126,7 +126,19 @@ export interface DateTimePickerProps
    */
   id?: string
   /** The label of the datetime input. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the datetime picker by clicking on the label as well as
+   * the accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * Indicate the latest date pickable.
    *
@@ -235,7 +247,7 @@ export interface DateTimePickerProps
    * This will also change the display of the input to give an success feedback
    * (green border).
    */
-  success?: string
+  success?: ReactNode
   /**
    * Force the theme of the datetime picker.
    *

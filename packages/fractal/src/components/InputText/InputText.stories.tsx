@@ -102,7 +102,7 @@ const meta: Meta<InputTextProps> = {
     },
   },
 
-  title: 'Molecules/Input/InputText',
+  title: 'Molecules/Inputs/InputText',
 } satisfies Meta<InputTextProps>
 
 export default meta

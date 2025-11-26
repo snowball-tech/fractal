@@ -103,7 +103,7 @@ const meta: Meta<InputDateProps> = {
     },
   },
 
-  title: 'Molecules/Input/InputDate',
+  title: 'Molecules/Inputs/InputDate',
 } satisfies Meta<InputDateProps>
 
 export default meta

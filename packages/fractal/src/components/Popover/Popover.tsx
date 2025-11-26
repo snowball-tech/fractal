@@ -13,10 +13,11 @@ import {
   useRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
-import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button/Button'
@@ -195,6 +196,8 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
       }
     }
 
+    const textTitle = isString(title) ? title : onlyText(title)
+
     return (
       <div
         ref={containerRef}
@@ -299,20 +302,25 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                 )}
               >
                 <Paper
+                  aria-label={textTitle}
                   className={cn('relative', paper.className)}
                   contentClassName={paper.contentClassName}
                   elevation={elevation}
                   {...omit(['className', 'contentClassName'], paper)}
                 >
-                  {(withCloseButton || !isEmpty(title)) && (
+                  {(withCloseButton || title) && (
                     <div
                       className={cj(
                         'flex flex-row items-center justify-between gap-1',
-                        !isEmpty(title) ? 'mb-2' : '',
+                        title ? 'mb-2' : '',
                       )}
                     >
-                      {!isEmpty(title) && (
-                        <Typography className="w-full" variant="body-1-bold">
+                      {title && (
+                        <Typography
+                          className="w-full"
+                          element={isString(title) ? undefined : 'div'}
+                          variant="body-1-bold"
+                        >
                           {title}
                         </Typography>
                       )}
@@ -325,7 +333,7 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                           <div
                             className={cj(
                               'flex items-center justify-end text-right',
-                              isEmpty(title) ? 'w-full' : '',
+                              !title ? 'w-full' : '',
                             )}
                           >
                             <Button
@@ -355,8 +363,8 @@ export const Popover = forwardRef<CombinedRefs, PopoverProps>(
                         className={cj(
                           `${PREFIX}-${GROUP_NAME}__popover__scrollarea__viewport`,
                           `relative h-full w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__popover__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                          withCloseButton || !isEmpty(title)
-                            ? isEmpty(title)
+                          withCloseButton || title
+                            ? !title
                               ? 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6)-theme(spacing.6))]'
                               : 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6)-theme(spacing.4))]'
                             : 'max-h-[calc(var(--radix-popper-available-height)-theme(spacing.6))]',

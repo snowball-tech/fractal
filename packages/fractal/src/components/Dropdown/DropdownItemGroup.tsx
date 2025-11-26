@@ -3,7 +3,9 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import { useContext } from 'react'
+import { onlyText } from 'react-children-utilities'
 
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -28,6 +30,7 @@ export function DropdownItemGroup({
   condensed = false,
   disabled = false,
   label,
+  labelElement,
   rainbow = true,
   ...props
 }: DropdownItemGroupProps) {
@@ -41,8 +44,11 @@ export function DropdownItemGroup({
   const isCondensed = condensed || dropdownCondensed
   const isRainbow = rainbow && dropdownRainbow
 
+  const textLabel = isString(label) ? label : onlyText(label)
+
   return (
     <RxDropdownMenu.Group
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         isCondensed ? `${PREFIX}-${GROUP_NAME}__item-group--condensed` : '',
@@ -50,6 +56,7 @@ export function DropdownItemGroup({
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
+      title={textLabel}
       {...omit(['className'], props)}
     >
       <RxDropdownMenu.Label
@@ -63,7 +70,11 @@ export function DropdownItemGroup({
             : 'cursor-default text-placeholder',
         )}
       >
-        <Typography element="label">{label}</Typography>
+        <Typography
+          element={labelElement || (isString(label) ? 'label' : 'div')}
+        >
+          {label}
+        </Typography>
       </RxDropdownMenu.Label>
 
       <Typography

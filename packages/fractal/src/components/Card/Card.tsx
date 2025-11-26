@@ -1,8 +1,10 @@
 import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
-import isEmpty from 'lodash/fp/isEmpty'
+import { onlyText } from 'react-children-utilities'
+
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button/Button'
@@ -52,8 +54,11 @@ export const Card = ({
     actualFontSize = DEFAULT_FONT_SIZE
   }
 
+  const textTitle = isString(title) ? title : onlyText(title)
+
   return (
     <div
+      aria-label={textTitle}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
@@ -63,9 +68,10 @@ export const Card = ({
         dismissable ? `${PREFIX}-${GROUP_NAME}--dismissable pr-6` : '',
         props.className,
       )}
+      title={textTitle}
       {...omit(['className'], props)}
     >
-      {(!isEmpty(title) || icon) && (
+      {(title || icon) && (
         <Typography
           className={cj(
             `${PREFIX}-${GROUP_NAME}__title`,

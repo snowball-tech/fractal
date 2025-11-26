@@ -1,9 +1,10 @@
 'use client'
 
 import { type ForwardedRef, forwardRef, useContext, useState } from 'react'
+import { onlyText } from 'react-children-utilities'
 
-import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Dropdown } from '@/components/Dropdown/Dropdown'
@@ -40,7 +41,7 @@ export const ToolbarDropdown = forwardRef<
     }: ToolbarDropdownProps,
     ref?: ForwardedRef<DropdownCombinedRefs>,
   ) => {
-    if (isEmpty(label)) {
+    if (!label) {
       console.warn(
         'You must provide a `label` to the `ToolbarDropdown` component',
       )
@@ -60,10 +61,12 @@ export const ToolbarDropdown = forwardRef<
       setIsOpen(open)
     }
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <Dropdown
         ref={ref}
-        aria-label={label}
+        aria-label={textLabel}
         className={cn(
           `${PREFIX}-${GROUP_NAME}__dropdown`,
           'group h-3 max-h-3 rounded-xs',
@@ -85,7 +88,7 @@ export const ToolbarDropdown = forwardRef<
         }}
         elevation={elevation}
         open={props.open || isOpen}
-        title={label}
+        title={textLabel}
         trigger={
           <ToolbarButton
             active={active}

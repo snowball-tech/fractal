@@ -115,16 +115,18 @@ export interface TabProps
    */
   iconOnly?: boolean
   /**
-   * The content of the tab.
+   * The label/content of the tab.
    *
-   * Use this when you only need to display text in a tab.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the tab.
+   * textual representation of the tab that will be used as the `aria-label` and
+   * `title` for the tab.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /**
    * Indicates if the tab should be larger (in height) than usual.
    * Only has an effet in horizontal orientation.

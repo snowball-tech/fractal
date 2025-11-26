@@ -63,6 +63,7 @@ export const Slider = ({
   return (
     <RxSlider.Root
       id={uniqueId}
+      aria-label={label}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'relative box-border flex rounded-full border-1 border-normal',
@@ -111,6 +112,7 @@ export const Slider = ({
             `${PREFIX}-${GROUP_NAME}__thumb--${index}`,
             'block size-2 rounded-full bg-secondary',
           )}
+          title={isNumber(value) ? String(value) : undefined}
         />
       ))}
     </RxSlider.Root>

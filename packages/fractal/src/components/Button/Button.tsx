@@ -40,9 +40,11 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -294,7 +296,7 @@ export const Button = forwardRef<
 
     const hasIcon = Boolean(icon)
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `Button` component',
       )
@@ -742,19 +744,25 @@ export const Button = forwardRef<
       </Typography>
     )
 
+    const labelText = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
+
     if (element && element !== 'a' && element !== 'button' && !asLink) {
       return createElement(
         element,
         // eslint-disable-next-line react-hooks/refs
         {
           ...(props.id === undefined ? {} : { id: props.id }),
-          'aria-label': label,
+          'aria-label': labelText,
           className: classNames,
           disabled,
           onClick: handleClick,
           ref: buttonRef as ForwardedRef<HTMLElement>,
           style: { ...style, ...props.style },
-          title: label,
+          title: labelText,
           ...omit(['className', 'style', 'id'], props),
         },
         content,
@@ -766,12 +774,12 @@ export const Button = forwardRef<
         <a
           {...(props.id === undefined ? {} : { id: props.id })}
           ref={buttonRef as ForwardedRef<HTMLAnchorElement>}
-          aria-label={label}
+          aria-label={labelText}
           className={classNames}
           href={href}
           {...(isEmpty(target) ? {} : { target })}
           style={{ ...style, ...props.style }}
-          title={label}
+          title={labelText}
           onClick={handleClick}
           {...omit(['className', 'id', 'style'], props)}
           {...(!isEmpty(href) && disableClickTracking
@@ -787,14 +795,14 @@ export const Button = forwardRef<
       <button
         {...(props.id === undefined ? {} : { id: props.id })}
         ref={buttonRef as ForwardedRef<HTMLButtonElement>}
-        aria-label={label}
+        aria-label={labelText}
         className={classNames}
         {...(props.dir === undefined
           ? {}
           : { dir: props.dir as 'ltr' | 'rtl' })}
         disabled={disabled}
         style={{ ...style, ...props.style }}
-        title={label}
+        title={labelText}
         type={type}
         onClick={handleClick}
         onTouchEnd={handleTouchEnd}

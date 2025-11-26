@@ -95,7 +95,7 @@ const meta: Meta<TextareaProps> = {
     },
   },
 
-  title: 'Molecules/Textarea',
+  title: 'Molecules/Inputs/Textarea',
 } satisfies Meta<TextareaProps>
 
 export default meta

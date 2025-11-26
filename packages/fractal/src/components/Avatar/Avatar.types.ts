@@ -9,6 +9,9 @@ export interface AvatarProps
    *
    * For the best result, please use the `DropdownItem`, `DropdownItemGroup`,
    * `DropdownItemSeparator`, `SubDropdown` or `DropdownRadioGroup` components.
+   *
+   * If you want to pass your very own children apart from a dropdown menu,
+   * please set `rawChildren` to `true` and pass whatever you want here.
    */
   children?: ReactNode
   /** Indicates if the avatar menu dropdown is disabled. */
@@ -17,6 +20,11 @@ export interface AvatarProps
   imageUrl?: string
   /** The name of the person to display as the avatar. */
   name?: string
+  /**
+   * Indicates if you want to pass your very own children apart from a dropdown
+   * menu.
+   */
+  rawChildren?: boolean
   /** The wanted size of the loader. */
   size?: `${Sizes}`
 }

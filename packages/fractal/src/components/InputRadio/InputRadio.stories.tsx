@@ -26,7 +26,7 @@ const meta: Meta<{ required?: boolean } & InputRadioProps> = {
     docs: { subtitle: '🎶 Video killed the radio star - The Buggles' },
   },
 
-  title: 'Molecules/Input/InputRadio',
+  title: 'Molecules/Inputs/InputRadio',
 } satisfies Meta<{ required?: boolean } & InputRadioProps>
 
 export default meta

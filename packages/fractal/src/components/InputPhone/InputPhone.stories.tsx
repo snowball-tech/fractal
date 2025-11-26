@@ -93,7 +93,7 @@ const meta: Meta<InputPhoneProps> = {
     },
   },
 
-  title: 'Molecules/Input/InputPhone',
+  title: 'Molecules/Inputs/InputPhone',
 } satisfies Meta<InputPhoneProps>
 
 export default meta

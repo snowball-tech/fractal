@@ -1,3 +1,5 @@
+import { onlyText } from 'react-children-utilities'
+
 import isEmpty from 'lodash/fp/isEmpty'
 import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
@@ -32,9 +34,11 @@ export const Badge = ({
     actualCount = `+${limit}`
   }
 
+  const textLabel = label || onlyText(children) || actualCount
+
   return (
     <Typography
-      aria-label={label}
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         'inline-flex shrink-0 items-center justify-center rounded-full bg-primary',
@@ -49,7 +53,7 @@ export const Badge = ({
         props.className,
       )}
       element="div"
-      title={label}
+      title={textLabel}
       variant="caption-bold"
       {...omit(['className'], props)}
     >

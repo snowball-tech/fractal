@@ -29,7 +29,9 @@ export const Stepper = ({
 }: StepperProps) => {
   const label = isFunction(getValueLabel)
     ? getValueLabel(current, length)
-    : `${current} / ${length}`
+    : getValueLabel !== null
+      ? `${current} / ${length}`
+      : undefined
 
   return (
     <div
@@ -49,6 +51,7 @@ export const Stepper = ({
             <Progress
               key={index}
               className={cj(`${PREFIX}-${GROUP_NAME}__step`, 'w-full !max-w-5')}
+              getValueLabel={null}
               max={1}
               value={current > index ? 1 : 0}
               {...(current > index ? { 'data-completed': true } : {})}
@@ -66,6 +69,7 @@ export const Stepper = ({
               'w-full',
               currentAs === 'step' ? '!max-w-5' : '',
             )}
+            getValueLabel={null}
             max={currentAs === 'step' ? 5 : max}
             value={currentAs === 'step' ? 1 : value}
           />

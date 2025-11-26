@@ -9,7 +9,7 @@ export type CombinedRefs = {
 }
 
 export interface SelectProps
-  extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'onSelect'> {
+  extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'label' | 'onSelect'> {
   /** Indicates if the select must be opened on render. */
   autoFocus?: boolean
   /** The elements to display in the select dropdown. */
@@ -21,7 +21,7 @@ export interface SelectProps
    */
   defaultValue?: string
   /** An helpful message to describe the select to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the select. */
   disabled?: boolean
   /**
@@ -53,7 +53,19 @@ export interface SelectProps
    */
   id?: string
   /** The label of the select. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to click on the label to toggle the select as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The name of the select.
    *
@@ -98,7 +110,8 @@ export interface SelectProps
   onSelect?: (newValue: string) => void
 }
 
-export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface SelectEmptyProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /**
    * The content of the empty select item.
    *
@@ -107,21 +120,35 @@ export interface SelectEmptyProps extends AllHTMLAttributes<HTMLDivElement> {
    */
   children?: ReactNode
   /**
-   * The content of the empty select item.
+   * The label/content of the empty select item.
    *
-   * Use this when you only need to display text in an empty select item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the empty item.
+   * textual representation of the button that will be used as the `aria-label`
+   * and `title` for the dropdown item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /** The value of the empty element. */
   value?: string
 }
 
-export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface SelectItemProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /** The value of the select option. */
   value: string
   /**
@@ -136,26 +163,50 @@ export interface SelectItemProps extends AllHTMLAttributes<HTMLDivElement> {
   /**
    * The content of the select item.
    *
-   * Use this when you only need to display text in a select item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the item.
+   * textual representation of the button that will be used as the `aria-label`
+   * and `title` for the dropdown item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /** Indicates if the item is displayed in "hover the rainbow" mode. */
   rainbow?: boolean
 }
 
 export interface SelectItemGroupProps
-  extends AllHTMLAttributes<HTMLDivElement> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /** The select options to display inside of the group. */
   children: ReactNode
   /** The label of the select options group. */
-  label: string
+  label: ReactNode
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * Indicates if the items in the group are displayed in "hover the rainbow"
    * mode.

@@ -2,7 +2,10 @@
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
+import { onlyText } from 'react-children-utilities'
+
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -23,28 +26,43 @@ import { GROUP_NAME } from './Autocomplete.constants'
 export const AutocompleteEmpty = ({
   children,
   label,
+  labelElement,
   ...props
 }: AutocompleteEmptyProps) => {
   const hasChildren = Boolean(children)
-  if (!hasChildren && isEmpty(label)) {
+  if (!hasChildren && !label) {
     console.warn(
       'You must provide a `label` or `children` to the `AutocompleteEmpty` component',
     )
   }
 
+  const textLabel = isString(label)
+    ? label
+    : isEmpty(label)
+      ? onlyText(children)
+      : onlyText(label)
+
   return (
     <RxDropdownMenu.Item
-      aria-label={label}
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__empty`,
         'cursor-default rounded-sm p-2 outline-none',
         props.className,
       )}
-      title={label}
+      title={textLabel}
       onSelect={(event) => event.preventDefault()}
       {...omit(['className', 'disabled', 'onSelect'], props)}
     >
-      <Typography element="div">{hasChildren ? children : label}</Typography>
+      <Typography
+        element={
+          labelElement || isString(hasChildren ? children : label)
+            ? undefined
+            : 'div'
+        }
+      >
+        {hasChildren ? children : label}
+      </Typography>
     </RxDropdownMenu.Item>
   )
 }

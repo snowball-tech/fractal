@@ -42,7 +42,7 @@ const meta: Meta<ToggleGroupItemsProps> = {
   },
   component: ToggleGroupItem,
 
-  title: 'Molecules/Toggle/ToggleGroup/ToggleGroupItem',
+  title: 'Molecules/Toggles/ToggleGroup/ToggleGroupItem',
 } satisfies Meta<ToggleGroupItemsProps>
 
 export default meta

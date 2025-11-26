@@ -48,7 +48,7 @@ const meta = {
     },
   },
 
-  title: 'Molecules/Input/InputFile',
+  title: 'Molecules/Inputs/InputFile',
 } satisfies Meta<InputFileProps>
 
 export default meta

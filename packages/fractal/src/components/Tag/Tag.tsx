@@ -1,4 +1,7 @@
+import { onlyText } from 'react-children-utilities'
+
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -29,11 +32,17 @@ export const Tag = ({
   ...props
 }: TagProps) => {
   const hasChildren = Boolean(children)
-  if (!hasChildren && isEmpty(label)) {
+  if (!hasChildren && !label) {
     console.warn(
       'You must provide a `label` or `children` to the `DropdownItem` component',
     )
   }
+
+  const textLabel = isString(label)
+    ? label
+    : isEmpty(label)
+      ? onlyText(children)
+      : onlyText(label)
 
   const sizeClassNames = {
     [Sizes.M]: 'px-2 py-1 leading-[20px] max-h-[38px]',
@@ -42,7 +51,7 @@ export const Tag = ({
 
   return (
     <Typography
-      aria-label={label}
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
@@ -57,7 +66,7 @@ export const Tag = ({
         props.className,
       )}
       element="div"
-      title={label}
+      title={textLabel}
       variant={sizeToTypographyVariant[size]}
       {...omit(['className'], props)}
     >

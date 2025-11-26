@@ -12,7 +12,7 @@ export interface TextareaProps
    */
   defaultValue?: number | string
   /** An helpful message to describe the textarea to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the textarea. */
   disabled?: boolean
   /**
@@ -27,7 +27,7 @@ export interface TextareaProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: boolean | string
+  error?: Error | ReactNode
   /** Indicates if the textarea should take all the available width. */
   fullWidth?: boolean
   /**
@@ -61,7 +61,19 @@ export interface TextareaProps
    */
   id?: string
   /** The label of the textarea. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to focus the textarea by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /** The maximum number of rows the textarea can have. */
   maxRows?: number
   /** The minimum number of rows the textarea must have. */
@@ -96,7 +108,7 @@ export interface TextareaProps
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
    */
-  success?: boolean | string
+  success?: ReactNode
   /**
    * The controlled value of the textarea.
    *

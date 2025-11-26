@@ -60,7 +60,7 @@ const meta = {
     },
   },
 
-  title: 'Molecules/Toggle/Toggle',
+  title: 'Molecules/Toggles/Toggle',
 } satisfies Meta<ToggleProps>
 
 export default meta

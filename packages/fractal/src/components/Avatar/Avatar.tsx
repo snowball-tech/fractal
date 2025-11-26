@@ -27,6 +27,7 @@ export const Avatar = ({
   disabled = false,
   imageUrl,
   name,
+  rawChildren = false,
   size = DEFAULT_SIZE,
   ...props
 }: AvatarProps) => {
@@ -120,19 +121,25 @@ export const Avatar = ({
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${size}`,
-          `${PREFIX}-${GROUP_NAME}--with-menu`,
-          'cursor-pointer @container',
+          rawChildren
+            ? `${PREFIX}-${GROUP_NAME}--with-raw-children cursor-default`
+            : `${PREFIX}-${GROUP_NAME}--with-menu cursor-pointer`,
+          '@container',
           size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
           props.className,
         )}
       >
-        <Dropdown
-          className={`${PREFIX}-${GROUP_NAME}__dropdown`}
-          disabled={disabled}
-          trigger={avatarBubble}
-        >
-          {children}
-        </Dropdown>
+        {rawChildren ? (
+          children
+        ) : (
+          <Dropdown
+            className={`${PREFIX}-${GROUP_NAME}__dropdown`}
+            disabled={disabled}
+            trigger={avatarBubble}
+          >
+            {children}
+          </Dropdown>
+        )}
       </div>
     )
   }
@@ -142,6 +149,7 @@ export const Avatar = ({
       className={cn(
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
+        `${PREFIX}-${GROUP_NAME}--empty`,
         'cursor-default @container',
         size === Sizes.Fluid ? 'h-full w-full' : sizeClassNames[size],
         disabled ? `${PREFIX}-${GROUP_NAME}--disabled` : '',

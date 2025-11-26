@@ -12,6 +12,7 @@ import {
 } from 'react'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
 import isInteger from 'lodash/fp/isInteger'
 import isNumber from 'lodash/fp/isNumber'
@@ -44,6 +45,7 @@ export const InputPinCode = ({
   error,
   id,
   label,
+  labelElement,
   length = 4,
   name,
   onBlur,
@@ -67,11 +69,13 @@ export const InputPinCode = ({
 
   const skipFocusChange = useRef(false)
 
-  const hasErrorMessage = !isEmpty(error)
-  const hasSuccessMessage = !isEmpty(success)
+  const errorMessage = isError(error) ? error.message : error
+  const hasErrorMessage = error !== true && Boolean(errorMessage)
 
-  const isInError = error === true || hasErrorMessage
-  const isSuccessful = (success === true || hasSuccessMessage) && !isInError
+  const hasSuccessMessage = success !== true && Boolean(success)
+
+  const isInError = hasErrorMessage || error === true || isError(error)
+  const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement>,
@@ -299,18 +303,9 @@ export const InputPinCode = ({
               `${PREFIX}-${GROUP_NAME}__field--${index}`,
               'w-fit min-w-[20px] !max-w-8 [&_input]:text-center',
             )}
-            extraSmall={!split}
-            {...(isString(defaultValue)
-              ? {
-                  defaultValue: isInteger(
-                    Number.parseInt(defaultValue[index] ?? '', 10),
-                  )
-                    ? defaultValue[index]
-                    : '',
-                }
-              : {})}
             disabled={disabled}
             error={isInError}
+            extraSmall={!split}
             inputMode="numeric"
             max={9}
             maxLength={1}
@@ -330,13 +325,22 @@ export const InputPinCode = ({
                     : '',
                 }
               : {})}
+            {...(isString(defaultValue)
+              ? {
+                  defaultValue: isInteger(
+                    Number.parseInt(defaultValue[index] ?? '', 10),
+                  )
+                    ? defaultValue[index]
+                    : '',
+                }
+              : {})}
             onBlur={(event) => handleBlur(event, index)}
             onChange={(event, newDigit) => handleChange(event, newDigit, index)}
+            onKeyDown={(event) => handleKeyDown(event, index)}
+            onPaste={(event) => handlePaste(event, index)}
             {...(isFunction(onFocus)
               ? { onFocus: (event) => onFocus(event, index) }
               : {})}
-            onKeyDown={(event) => handleKeyDown(event, index)}
-            onPaste={(event) => handlePaste(event, index)}
             {...omit(['className'], props)}
           />
         ))}
@@ -357,7 +361,7 @@ export const InputPinCode = ({
         props.className,
       )}
     >
-      {isEmpty(label) ? (
+      {!label ? (
         false
       ) : (
         <RxLabel
@@ -371,7 +375,11 @@ export const InputPinCode = ({
           )}
           htmlFor={`${uniqueId}-0`}
         >
-          <Typography element="label">{label}</Typography>
+          <Typography
+            element={labelElement || (isString(label) ? 'label' : 'div')}
+          >
+            {label}
+          </Typography>
         </RxLabel>
       )}
 
@@ -393,7 +401,7 @@ export const InputPinCode = ({
         ).map(getInputs)}
       </div>
 
-      {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+      {description && !hasErrorMessage && !hasSuccessMessage && (
         <Typography
           className={cj(
             `${PREFIX}-${GROUP_NAME}__description`,
@@ -417,7 +425,7 @@ export const InputPinCode = ({
           element="div"
           variant="caption-median"
         >
-          {isInError ? error : success}
+          {isInError ? (isError(error) ? error.message : error) : success}
         </Typography>
       )}
     </div>

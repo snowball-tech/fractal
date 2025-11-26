@@ -62,7 +62,8 @@ export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
   rainbow?: boolean
 }
 
-export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface MenuItemProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /** Indicates if the menu item is active. */
   active?: boolean
   /**
@@ -87,16 +88,18 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
   /** An icon to display on the left of the menu item. */
   icon?: ReactNode
   /**
-   * The content of the menu item.
+   * The label/content of the menu item.
    *
-   * Use this when you only need to display text in a menu item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the menu item.
+   * textual representation of the menu item that will be used as the
+   * `aria-label` and `title` for the menu item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /**
    * Indicates if the menu item is displayed in "hover the rainbow" mode.
    */
@@ -110,11 +113,12 @@ export interface MenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
   onActivate?: () => void
 }
 
-export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface MenuItemGroupProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /** The menu items to display inside of the group. */
   children: ReactNode
   /** The label of the menu items group. */
-  label: string
+  label: ReactNode
   /**
    * Indicates if the menu item group should be condensed (less spacing in group
    * and items).
@@ -127,6 +131,17 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
   /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
+  /**
    * Indicates if the menu item group is displayed in "hover the rainbow" mode.
    */
   rainbow?: boolean
@@ -135,7 +150,10 @@ export interface MenuItemGroupProps extends AllHTMLAttributes<HTMLDivElement> {
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
 
 export interface SubMenuProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'content' | 'popover'> {
+  extends Omit<
+    AllHTMLAttributes<HTMLDivElement>,
+    'content' | 'label' | 'popover'
+  > {
   /**
    * The content of the sub-menu.
    *
@@ -178,6 +196,25 @@ export interface SubMenuProps
   elevation?: PaperProps['elevation']
   /** An icon to display on the left of the sub-menu label. */
   icon?: ReactNode
+  /**
+   * The label of the sub-menu.
+   *
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
+   */
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the sub-menu by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * Indicates if the sub-menu is open.
    *

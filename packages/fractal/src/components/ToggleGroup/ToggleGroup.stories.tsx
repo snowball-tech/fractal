@@ -105,7 +105,7 @@ const meta: Meta<ToggleGroupProps> = {
     },
   },
 
-  title: 'Molecules/Toggle/ToggleGroup',
+  title: 'Molecules/Toggles/ToggleGroup',
 } satisfies Meta<ToggleGroupProps>
 
 export default meta

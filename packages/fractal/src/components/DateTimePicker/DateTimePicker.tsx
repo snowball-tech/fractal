@@ -24,7 +24,9 @@ import type { TimeOutput } from 'react-timekeeper'
 
 import isDate from 'lodash/fp/isDate'
 import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 import pick from 'lodash/fp/pick'
 
@@ -86,6 +88,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       i18n,
       id,
       label,
+      labelElement,
       maxDate,
       maxDateTime,
       maxTime,
@@ -150,11 +153,13 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
       },
     }))
 
-    const hasErrorMessage = !isEmpty(error)
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
 
-    const isInError = hasErrorMessage
-    const isSuccessful = hasSuccessMessage && !isInError
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
+    const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     const writable = !disabled && !readOnly
 
@@ -739,7 +744,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
 
     const descriptionAndError = (
       <>
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+        {description && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
@@ -766,7 +771,7 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
             element="div"
             variant="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         )}
       </>
@@ -800,7 +805,11 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         <div className="flex flex-col gap-1">
           {!modal && (
             <RxLabel {...labelProps}>
-              <Typography element="label">{label}</Typography>
+              <Typography
+                element={labelElement || (isString(label) ? 'label' : 'div')}
+              >
+                {label}
+              </Typography>
             </RxLabel>
           )}
 
@@ -1111,11 +1120,15 @@ export const DateTimePicker = forwardRef<CombinedRefs, DateTimePickerProps>(
         )}
         {...omit(['className'], props)}
       >
-        {isEmpty(label) || staticPicker ? (
+        {!label || staticPicker ? (
           false
         ) : (
           <RxLabel {...labelProps}>
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 

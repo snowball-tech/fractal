@@ -7,9 +7,11 @@ import {
   forwardRef,
   useContext,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -52,7 +54,7 @@ export const ToolbarButton = forwardRef<
   ) => {
     const hasIcon = Boolean(icon)
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `ToolbarButton` component',
       )
@@ -166,15 +168,21 @@ export const ToolbarButton = forwardRef<
       </Typography>
     )
 
+    const textLabel = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
+
     if (asLink) {
       return (
         <a
           {...(props.id === undefined ? {} : { id: props.id })}
-          aria-label={label}
+          aria-label={textLabel}
           className={classNames}
           href={href}
           {...(isEmpty(target) ? {} : { target })}
-          title={label}
+          title={textLabel}
           {...(!disabled && isFunction(onClick) ? { onClick } : {})}
           {...omit(['className', 'id'], props)}
         >
@@ -187,13 +195,13 @@ export const ToolbarButton = forwardRef<
       <RxToolbar.Button
         {...(props.id === undefined ? {} : { id: props.id })}
         ref={ref}
-        aria-label={label}
+        aria-label={textLabel}
         className={classNames}
         {...(props.dir === undefined
           ? {}
           : { dir: props.dir as 'ltr' | 'rtl' })}
         disabled={isDisabled}
-        title={label}
+        title={textLabel}
         type={type}
         onTouchEnd={handleTouchEnd}
         onTouchStart={handleTouchStart}

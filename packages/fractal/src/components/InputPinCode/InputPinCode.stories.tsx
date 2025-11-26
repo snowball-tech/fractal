@@ -68,7 +68,7 @@ const meta: Meta<InputPinCodeProps> = {
     },
   },
 
-  title: 'Molecules/Input/InputPinCode',
+  title: 'Molecules/Inputs/InputPinCode',
 } satisfies Meta<InputPinCodeProps>
 
 export default meta

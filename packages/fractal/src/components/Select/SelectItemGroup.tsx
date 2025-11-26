@@ -3,7 +3,9 @@
 import * as RxSelect from '@radix-ui/react-select'
 
 import { useContext } from 'react'
+import { onlyText } from 'react-children-utilities'
 
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -27,6 +29,7 @@ export const SelectItemGroup = ({
   children,
   disabled = false,
   label,
+  labelElement,
   rainbow = true,
   ...props
 }: SelectItemGroupProps) => {
@@ -36,14 +39,18 @@ export const SelectItemGroup = ({
   const isDisabled = disabled || selectDisabled
   const isRainbow = rainbow && selectRainbow
 
+  const textLabel = isString(label) ? label : onlyText(label)
+
   return (
     <RxSelect.Group
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         'p-2 py-0',
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
+      title={textLabel}
       {...omit(['className'], props)}
     >
       <RxSelect.Label
@@ -56,7 +63,11 @@ export const SelectItemGroup = ({
             : 'cursor-default text-placeholder',
         )}
       >
-        <Typography element="label">{label}</Typography>
+        <Typography
+          element={labelElement || (isString(label) ? 'label' : 'div')}
+        >
+          {label}
+        </Typography>
       </RxSelect.Label>
 
       <Typography

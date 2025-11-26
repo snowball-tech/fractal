@@ -18,8 +18,9 @@ import {
   useState,
 } from 'react'
 
-import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import type {
@@ -58,6 +59,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       fullWidth = false,
       id,
       label,
+      labelElement,
       name,
       onBlur,
       onChange,
@@ -103,11 +105,13 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
       open === true || (hasChildren && open !== false),
     )
 
-    const hasErrorMessage = !isEmpty(error)
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
 
-    const isInError = hasErrorMessage
-    const isSuccessful = hasSuccessMessage && !isInError
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
+    const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     const handleInputChange = (
       event: ChangeEvent<HTMLInputElement>,
@@ -293,7 +297,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           props.className,
         )}
       >
-        {!isEmpty(label) && (
+        {label && (
           <RxLabel
             asChild
             className={cj(
@@ -307,7 +311,11 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             )}
             htmlFor={uniqueId}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? undefined : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
@@ -337,7 +345,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               className={cj(`${PREFIX}-${GROUP_NAME}__input`, 'my-1')}
               {...(defaultValue === undefined ? {} : { defaultValue })}
               disabled={disabled}
-              error={hasErrorMessage}
+              error={isInError}
               fullWidth={fullWidth}
               name={name || uniqueId}
               {...(placeholder === undefined ? {} : { placeholder })}
@@ -367,7 +375,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
           {children}
         </Dropdown>
 
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+        {description && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
@@ -389,7 +397,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
             )}
             value="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         )}
       </div>

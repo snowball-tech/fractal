@@ -152,7 +152,7 @@ export interface DropdownItemProps
   extends Omit<
     AllHTMLAttributes<HTMLAnchorElement> &
       ComponentProps<typeof DropdownMenuItem>,
-    'asChild' | 'onClick' | 'onSelect'
+    'asChild' | 'label' | 'onClick' | 'onSelect'
   > {
   /** Indicates if the item should be displayed as active. */
   active?: boolean
@@ -178,16 +178,18 @@ export interface DropdownItemProps
   /** An icon to display on the left of the item. */
   icon?: ReactNode
   /**
-   * The content of the item.
+   * The label/content of the item.
    *
-   * Use this when you only need to display text in a item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the item.
+   * textual representation of the dropdown item that will be used as the `aria-label`
+   * and `title` for the dropdown item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /**
    * Indicates if the dropdown item is displayed in "hover the rainbow" mode.
    */
@@ -207,11 +209,11 @@ export interface DropdownItemProps
 }
 
 export interface DropdownItemGroupProps
-  extends AllHTMLAttributes<HTMLDivElement> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /** The dropdown items to display inside of the group. */
   children: ReactNode
   /** The label of the dropdown items group. */
-  label: string
+  label: ReactNode
   /**
    * Indicates if the dropdown item group should be condensed (less spacing in
    * group and items).
@@ -223,6 +225,18 @@ export interface DropdownItemGroupProps
   condensed?: boolean
   /** Indicates if the whole group should be disabled. */
   disabled?: boolean
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the dropdown by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * Indicates if the items in the group are displayed in "hover the rainbow"
    * mode.

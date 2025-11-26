@@ -4,9 +4,11 @@ import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSwitch from '@radix-ui/react-switch'
 
 import { type ForwardedRef, forwardRef, useId } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -32,7 +34,7 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
       disabled = false,
       id,
       label,
-      labelAsDiv = false,
+      labelElement,
       labels = [],
       name,
       onToggle,
@@ -56,6 +58,12 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
     const hasLabels = !isEmpty(labels) && labels.length === 2
     const actualSwitchPosition =
       !isEmpty(labels) && labels.length === 2 ? 'center' : switchPosition
+
+    const textLabel = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
 
     return (
       <div
@@ -84,7 +92,10 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
             )}
             htmlFor={uniqueId}
           >
-            <Typography element="label" variant="body-2">
+            <Typography
+              element={labelElement || (isString(labels[0]) ? 'label' : 'div')}
+              variant="body-2"
+            >
               {labels[0]}
             </Typography>
           </RxLabel>
@@ -93,7 +104,7 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
         <RxSwitch.Root
           id={uniqueId}
           ref={ref}
-          aria-label={label}
+          aria-label={textLabel}
           {...(checked === undefined ? {} : { checked })}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__toggle`,
@@ -107,7 +118,7 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
           disabled={disabled}
           name={name || uniqueId}
           required={required}
-          title={label}
+          title={textLabel}
           value={value}
           {...(isFunction(onToggle)
             ? { onCheckedChange: (event) => onToggle(event) }
@@ -141,8 +152,18 @@ export const Switch = forwardRef<HTMLButtonElement | null, SwitchProps>(
           )}
           htmlFor={uniqueId}
         >
-          <Typography element={labelAsDiv ? 'div' : 'label'} variant="body-2">
-            {hasChildren && !hasLabels ? children : (labels?.[1] ?? label)}
+          <Typography
+            element={
+              labelElement ||
+              (isString(
+                hasChildren && !hasLabels ? children : labels?.[1] || label,
+              )
+                ? 'label'
+                : 'div')
+            }
+            variant="body-2"
+          >
+            {hasChildren && !hasLabels ? children : labels?.[1] || label}
           </Typography>
         </RxLabel>
       </div>

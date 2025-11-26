@@ -8,7 +8,10 @@ import type {
 import type { ButtonProps } from '@/components/Button/Button.types'
 
 export interface InputTextProps
-  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
+  extends Omit<
+    AllHTMLAttributes<HTMLInputElement>,
+    'label' | 'onChange' | 'prefix'
+  > {
   /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
   /**
@@ -32,7 +35,7 @@ export interface InputTextProps
    */
   defaultValue?: number | string
   /** An helpful message to describe the text input to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the text input. */
   disabled?: boolean
   /**
@@ -47,7 +50,7 @@ export interface InputTextProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: boolean | string
+  error?: Error | ReactNode
   /**
    * Indicates if the text input can reduce its width really small on small
    * devices.
@@ -66,7 +69,19 @@ export interface InputTextProps
    */
   id?: string
   /** The label of the text input. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to focus the input by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The name of the text input.
    *
@@ -99,7 +114,7 @@ export interface InputTextProps
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
    */
-  success?: boolean | string
+  success?: ReactNode
   /** The suffix (icon or text) to display to the right of the text input. */
   suffix?: ReactNode
   /**

@@ -10,10 +10,13 @@ import {
   useId,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Button } from '@/components/Button/Button'
@@ -41,6 +44,7 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
       fullWidth = false,
       id,
       label,
+      labelElement,
       name,
       onButtonClick,
       onChange,
@@ -66,9 +70,12 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
       null,
     )
 
-    const hasErrorMessage = !isEmpty(error)
-    const isInError = hasErrorMessage || error === true
-    const hasSuccessMessage = !isEmpty(success)
+    const errorMessage = isError(error) ? error.message : error
+    const hasErrorMessage = error !== true && Boolean(errorMessage)
+
+    const hasSuccessMessage = success !== true && Boolean(success)
+
+    const isInError = hasErrorMessage || error === true || isError(error)
     const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -166,6 +173,8 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
       />
     )
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <div
         ref={(newRef) => setContainerRef(newRef)}
@@ -188,7 +197,7 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
           props.className,
         )}
       >
-        {isEmpty(label) ? (
+        {!label ? (
           false
         ) : (
           <RxLabel
@@ -205,7 +214,11 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
             )}
             htmlFor={uniqueId}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
@@ -247,6 +260,9 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
             )}
 
             <input
+              id={uniqueId}
+              ref={ref}
+              aria-label={textLabel}
               autoFocus={autoFocus}
               className={cj(
                 `${PREFIX}-${GROUP_NAME}__input`,
@@ -293,9 +309,6 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
                   : '',
               )}
               disabled={disabled}
-              {...(defaultValue === undefined ? {} : { defaultValue })}
-              id={uniqueId}
-              ref={ref}
               inputMode={inputMode}
               name={name || uniqueId}
               pattern={
@@ -304,8 +317,10 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
               placeholder={placeholder}
               readOnly={readOnly}
               required={required}
+              title={textLabel}
               type={type}
               value={value}
+              {...(defaultValue === undefined ? {} : { defaultValue })}
               onChange={handleChange}
               onFocus={handleFocus}
               // Be careful, arguments of `omit` from lodash FP are flipped!
@@ -336,7 +351,7 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
             button}
         </Typography>
 
-        {!isEmpty(description) && !hasErrorMessage && !hasSuccessMessage && (
+        {description && !hasErrorMessage && !hasSuccessMessage && (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,
@@ -360,7 +375,7 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
             element="div"
             variant="caption-median"
           >
-            {isInError ? error : success}
+            {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
         )}
       </div>

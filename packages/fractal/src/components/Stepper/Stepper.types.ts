@@ -18,7 +18,7 @@ export interface StepperProps extends AllHTMLAttributes<HTMLDivElement> {
    *
    * If not provided, the value label will be read as "<current>/<length>".
    */
-  getValueLabel?: (current: number, length: number) => string
+  getValueLabel?: ((current: number, length: number) => string) | null
   /**
    * When displaying the current step as a progress bar, the maximum value of
    * the progress bar.

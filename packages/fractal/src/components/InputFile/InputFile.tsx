@@ -9,9 +9,11 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import {
@@ -135,6 +137,8 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
 
     const hasIcon = Boolean(triggerProps.icon)
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <>
         <button
@@ -142,10 +146,10 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
             ? {}
             : { id: triggerProps.id as string })}
           ref={triggerRef}
-          aria-label={label}
+          aria-label={textLabel}
           className={classNames}
           disabled={disabled}
-          title={label}
+          title={textLabel}
           type="button"
           onClick={handleTriggerClick}
           onTouchStart={handleTouchStart}

@@ -8,9 +8,11 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -51,7 +53,7 @@ export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
       icon,
       iconOnly = false,
       label,
-      labelAsDiv = false,
+      labelElement,
       onToggle,
       toggled,
       variant = DEFAULT_VARIANT,
@@ -60,7 +62,7 @@ export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
     ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `Toggle` component',
       )
@@ -80,11 +82,17 @@ export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
       }
     }
 
+    const textLabel = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
+
     return (
       <RxToggle.Root
         {...(props.id === undefined ? {} : { id: props.id })}
         ref={buttonRef}
-        aria-label={label}
+        aria-label={textLabel}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -105,7 +113,7 @@ export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
           ? {}
           : { defaultPressed: defaultToggled })}
         disabled={disabled}
-        title={label}
+        title={textLabel}
         {...(toggled === undefined ? {} : { pressed: toggled })}
         onPressedChange={handleToggle}
         {...omit(['className', 'id'], props)}
@@ -121,7 +129,10 @@ export const Toggle = forwardRef<HTMLButtonElement | null, ToggleProps>(
                 ? `${PREFIX}-${GROUP_NAME}__label--disabled cursor-not-allowed`
                 : `cursor-pointer`,
             )}
-            element={labelAsDiv ? 'div' : 'label'}
+            element={
+              labelElement ||
+              (isString(hasChildren ? children : label) ? 'label' : 'div')
+            }
           >
             {hasChildren ? children : label}
           </Typography>

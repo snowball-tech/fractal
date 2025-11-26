@@ -1,7 +1,9 @@
 'use client'
 
 import { useContext } from 'react'
+import { onlyText } from 'react-children-utilities'
 
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -23,6 +25,7 @@ export function MenuItemGroup({
   condensed = false,
   disabled = false,
   label,
+  labelElement,
   rainbow = true,
   ...props
 }: MenuItemGroupProps) {
@@ -36,14 +39,18 @@ export function MenuItemGroup({
   const isCondensed = condensed || menuCondensed
   const isRainbow = rainbow && menuRainbow
 
+  const textLabel = isString(label) ? label : onlyText(label)
+
   return (
     <div
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item-group`,
         'px-2',
         isDisabled ? `${PREFIX}-${GROUP_NAME}__item-group--disabled` : '',
         props.className,
       )}
+      title={textLabel}
       {...omit(['className'], props)}
     >
       <Typography
@@ -55,7 +62,7 @@ export function MenuItemGroup({
             ? `${PREFIX}-${GROUP_NAME}__item-group__label--disabled text-disabled`
             : 'cursor-default text-placeholder',
         )}
-        element="label"
+        element={labelElement || (isString(label) ? 'label' : 'div')}
       >
         {label}
       </Typography>

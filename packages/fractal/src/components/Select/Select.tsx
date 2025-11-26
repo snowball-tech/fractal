@@ -16,10 +16,12 @@ import {
   useRef,
   useState,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
 import isNil from 'lodash/fp/isNil'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -50,6 +52,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
       fullWidth = false,
       id,
       label,
+      labelElement,
       name,
       onClose,
       onOpen,
@@ -254,6 +257,8 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
 
     const isPortalled = isNil(portalled) ? !isInDialog : portalled
 
+    const textLabel = isString(label) ? label : onlyText(label)
+
     return (
       <div
         ref={(newRef) => setContainerRef(newRef)}
@@ -270,7 +275,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           props.className,
         )}
       >
-        {isEmpty(label) ? (
+        {!label ? (
           false
         ) : (
           <RxLabel
@@ -286,21 +291,25 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
             htmlFor={uniqueId}
             onClick={handleLabelClick}
           >
-            <Typography element="label">{label}</Typography>
+            <Typography
+              element={labelElement || (isString(label) ? 'label' : 'div')}
+            >
+              {label}
+            </Typography>
           </RxLabel>
         )}
 
         <RxSelect.Root
-          {...(defaultValue === undefined ? {} : { defaultValue })}
           defaultOpen={autoFocus}
-          {...(props.dir === undefined
-            ? {}
-            : { dir: props.dir as RxSelect.SelectProps['dir'] })}
           disabled={!writable}
           name={name || uniqueId}
           open={isOpen}
           required={required}
+          {...(props.dir === undefined
+            ? {}
+            : { dir: props.dir as RxSelect.SelectProps['dir'] })}
           {...(value === undefined ? {} : { value })}
+          {...(defaultValue === undefined ? {} : { defaultValue })}
           onOpenChange={handleDropdownToggle}
           onValueChange={handleSelect}
           // Be careful, arguments of `omit` from lodash FP are flipped!
@@ -309,6 +318,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           <RxSelect.Trigger
             id={uniqueId}
             ref={triggerRef}
+            aria-label={textLabel}
             asChild
             className={cj(
               `${PREFIX}-${GROUP_NAME}__trigger`,
@@ -324,12 +334,13 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
                 : '',
               readOnly ? 'cursor-default' : '',
             )}
+            title={textLabel}
           >
             <Typography element="div">
               <div
                 className={cj(
                   `${PREFIX}-${GROUP_NAME}__trigger__value`,
-                  'min-w-0 flex-1 [&>span>div]:truncate [&>span]:block',
+                  'min-w-0 flex-1 [&>span>*]:truncate [&>span]:block',
                 )}
               >
                 {isEmpty(displayedValue) ? (
@@ -357,7 +368,7 @@ export const Select = forwardRef<CombinedRefs, SelectProps>(
           {isPortalled ? <RxSelect.Portal>{content}</RxSelect.Portal> : content}
         </RxSelect.Root>
 
-        {!isEmpty(description) && (
+        {description && (
           <Typography
             className={cj(
               `${PREFIX}-${GROUP_NAME}__description`,

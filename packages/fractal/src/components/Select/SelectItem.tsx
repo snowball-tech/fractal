@@ -3,8 +3,10 @@
 import * as RxSelect from '@radix-ui/react-select'
 
 import { useContext } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -28,12 +30,13 @@ export const SelectItem = ({
   children,
   disabled = false,
   label,
+  labelElement,
   rainbow = true,
   value,
   ...props
 }: SelectItemProps) => {
   const hasChildren = Boolean(children)
-  if (!hasChildren && isEmpty(label)) {
+  if (!hasChildren && !label) {
     console.warn(
       'You must provide a `label` or `children` to the `SelectItem` component',
     )
@@ -47,9 +50,15 @@ export const SelectItem = ({
   const isDisabled = disabled || groupDisabled || selectDisabled
   const isRainbow = rainbow && groupRainbow && selectRainbow
 
+  const textLabel = isString(label)
+    ? label
+    : isEmpty(label)
+      ? onlyText(children)
+      : onlyText(label)
+
   return (
     <RxSelect.Item
-      aria-label={label}
+      aria-label={textLabel}
       className={cn(
         `${PREFIX}-${GROUP_NAME}__item`,
         isRainbow ? 'alternatee' : '',
@@ -61,12 +70,19 @@ export const SelectItem = ({
         props.className,
       )}
       disabled={isDisabled}
-      title={label}
+      title={textLabel}
       value={value}
       {...omit(['className'], props)}
     >
       <RxSelect.ItemText asChild>
-        <Typography element="div">{hasChildren ? children : label}</Typography>
+        <Typography
+          element={
+            labelElement ||
+            (isString(hasChildren ? children : label) ? undefined : 'div')
+          }
+        >
+          {hasChildren ? children : label}
+        </Typography>
       </RxSelect.ItemText>
 
       <RxSelect.ItemIndicator />

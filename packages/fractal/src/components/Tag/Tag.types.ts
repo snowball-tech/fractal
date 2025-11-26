@@ -3,7 +3,7 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 import { Colors, Sizes } from './Tag.constants'
 
 export interface TagProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'size'> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label' | 'size'> {
   /**
    * The content of the tag.
    *
@@ -18,16 +18,18 @@ export interface TagProps
   /** Indicates if the tag should take all the available width. */
   fullWidth?: boolean
   /**
-   * The content of the tag.
+   * The label/content of the tag.
    *
-   * Use this when you only need to display text in a tag.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the tag.
+   * textual representation of the tag that will be used as the `aria-label` and
+   * `title` for the tag.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /** The size of the tag. */
   size?: `${Sizes}`
 }

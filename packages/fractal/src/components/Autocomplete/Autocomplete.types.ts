@@ -34,7 +34,7 @@ export interface AutocompleteProps
    */
   defaultValue?: number | string
   /** An helpful message to describe the autocomplete to the user. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the autocomplete. */
   disabled?: boolean
   /**
@@ -60,7 +60,7 @@ export interface AutocompleteProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: string
+  error?: Error | ReactNode
   /** Indicates if the autocomplete should take all the available width. */
   fullWidth?: boolean
   /**
@@ -72,7 +72,19 @@ export interface AutocompleteProps
    */
   id?: string
   /** The label of the autocomplete. */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to toggle the autocomplete by clicking on the label as well as the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /**
    * The name of the autocomplete.
    *
@@ -100,7 +112,7 @@ export interface AutocompleteProps
    * Note that the description (if there is one) will be replaced by the success
    * message when provided.
    */
-  success?: string
+  success?: ReactNode
   /** The suffix (icon or text) to display to the right of the autocomplete. */
   suffix?: ReactNode
   /**
@@ -137,7 +149,7 @@ export interface AutocompleteProps
 }
 
 export interface AutocompleteLoadingProps
-  extends AllHTMLAttributes<HTMLDivElement> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /**
    * The content of the loading item.
    *
@@ -153,22 +165,24 @@ export interface AutocompleteLoadingProps
    */
   icon?: boolean | ReactNode
   /**
-   * The content of the loading item.
+   * The label/content of the loading item.
    *
-   * Use this when you only need to display text in a loading item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the loading item.
+   * textual representation of the loading item that will be used as the
+   * `aria-label` and `title` for the loading item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
   /** Indicates if you want the icon to spin. */
   spin?: boolean
 }
 
 export interface AutocompleteEmptyProps
-  extends AllHTMLAttributes<HTMLDivElement> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
   /**
    * The content of the empty item.
    *
@@ -177,16 +191,29 @@ export interface AutocompleteEmptyProps
    */
   children?: ReactNode
   /**
-   * The content of the empty item.
+   * The label/content of the empty item.
    *
-   * Use this when you only need to display text in an empty item.
-   * If you need more complex content, use the `children` prop.
+   * If this is a `ReactNode`, then its "text only" content will be used as the
+   * accessible label.
    *
    * When using the `children` prop, you can use this prop to set a simple
-   * textual representation of the item that will be used as the `aria-label`
-   * and `title` for the empty item.
+   * textual representation of the empty item that will be used as the
+   * `aria-label` and `title` for the empty item.
+   * Otherwise, the "text only" content of the children will be used as the
+   * accessible label.
    */
-  label?: string
+  label?: ReactNode
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * accessibility improvements.
+   */
+  labelElement?: keyof HTMLElementTagNameMap
 }
 
 export type AutocompleteItemProps = DropdownItemProps

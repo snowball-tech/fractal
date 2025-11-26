@@ -13,8 +13,10 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
+import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
+import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
@@ -44,18 +46,24 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
       fullWidth = false,
       id,
       label,
-      labelAsDiv = false,
+      labelElement,
       value,
       ...props
     }: InputRadioProps,
     ref?: ForwardedRef<HTMLButtonElement | null>,
   ) => {
     const hasChildren = Boolean(children)
-    if (!hasChildren && isEmpty(label)) {
+    if (!hasChildren && !label) {
       console.warn(
         'You must provide a `label` or `children` to the `InputRadio` component',
       )
     }
+
+    const textLabel = isString(label)
+      ? label
+      : isEmpty(label)
+        ? onlyText(children)
+        : onlyText(label)
 
     const variantClassNames = {
       [Variants.Primary]: 'bg-white shadow-subtle border-1 border-normal',
@@ -119,6 +127,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
         <RxRadio.Item
           id={uniqueId}
           ref={radioRef}
+          aria-label={textLabel}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
             'flex h-full min-h-6 flex-grow-0 self-stretch rounded-xs border-none bg-unset px-unset py-unset pt-2 focus-visible:outline-none',
@@ -128,6 +137,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           )}
           disabled={isDisabled}
           required={required}
+          title={textLabel}
           value={value}
           onClick={handleClick}
           {...omit(['className'], props)}
@@ -158,7 +168,12 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           )}
           htmlFor={uniqueId}
         >
-          <Typography element={labelAsDiv ? 'div' : 'label'}>
+          <Typography
+            element={
+              labelElement ||
+              (isString(hasChildren ? children : label) ? 'label' : 'div')
+            }
+          >
             {hasChildren ? children : label}
           </Typography>
         </RxLabel>

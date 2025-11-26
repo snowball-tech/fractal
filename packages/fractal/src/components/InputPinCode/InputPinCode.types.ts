@@ -3,6 +3,7 @@ import type {
   ClipboardEvent,
   FocusEvent,
   KeyboardEvent,
+  ReactNode,
 } from 'react'
 
 import type { InputTextProps } from '@/components/InputText/InputText.types'
@@ -31,7 +32,7 @@ export interface InputPinCodeProps
    */
   defaultValue?: string
   /** An helpful message to describe the pin code input. */
-  description?: string
+  description?: ReactNode
   /** Prevents the user from interacting with the pin code input. */
   disabled?: boolean
   /**
@@ -46,7 +47,7 @@ export interface InputPinCodeProps
    * Note that the description (if there is one) will be replaced by the error
    * message when provided.
    */
-  error?: boolean | string
+  error?: Error | ReactNode
   /**
    * A unique HTML id for the pin code input.
    *
@@ -56,7 +57,19 @@ export interface InputPinCodeProps
    */
   id?: string
   /** The label of the pin code input. */
-  label?: string
+  label?: ReactNode
+
+  /**
+   * The element to use to display the label.
+   *
+   * If none is given, it will be automatically determined based on the type of
+   * the label. A `string` label will be displayed as a `label`, anything else
+   * will be displayed as a `div`.
+   *
+   * This is useful for markup validity reasons, but note that you will lose the
+   * ability to focus the input by clicking on the label as well as the
+   */
+  labelElement?: keyof HTMLElementTagNameMap
   /** The length of the expected pin code (number of fields). */
   length?: number
   /**
@@ -98,7 +111,7 @@ export interface InputPinCodeProps
    * This will also change the display of the input to give an success feedback
    * (green border).
    */
-  success?: boolean | string
+  success?: ReactNode
   /**
    * The controlled value of the pin code input.
    *
