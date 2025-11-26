@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [24.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.0.1...@snowball-tech/fractal@24.0.2) (2025-11-26)
+
+- **logo:** fix a typo in the SVG path ([b50e9c7](https://github.com/snowball-tech/fractal/commit/b50e9c7d8c61d01063fbca565e0286115d090eb3))
+
 ## @snowball-tech/fractal [24.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.0.0...@snowball-tech/fractal@24.0.1) (2025-11-26)
 
 # @snowball-tech/fractal [24.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.3.0...@snowball-tech/fractal@24.0.0) (2025-11-26)
