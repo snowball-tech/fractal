@@ -38,6 +38,7 @@
     "normalize.css": "^8.0.1",
     "react": "^19.2.0",
     "react-calendar": "^6.0.0",
+    "react-children-utilities": "^2.10.0",
     "react-dom": "^19.2.0",
     "react-textarea-autosize": "^8.5.9",
     "react-timekeeper": "^2.2.1",
@@ -47,8 +48,8 @@
   "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "^5.0.2",
-    "@snowball-tech/eslint-config": "^5.6.2",
-    "@snowball-tech/prettier-config": "^2.1.6",
+    "@snowball-tech/eslint-snowball-config": "^2.1.0",
+    "@snowball-tech/prettier-config": "^2.2.0",
     "@storybook/addon-a11y": "^10.0.8",
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/addon-links": "^10.0.8",
@@ -76,12 +77,12 @@
     "storybook-addon-mock-date": "^1.0.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "vercel": "^48.10.11",
+    "vercel": "^48.10.14",
     "vite": "^7.2.4",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "node": ">=18 <=22",
+    "node": ">=18 <=24",
     "yarn": "^4.0.0"
   },
   "files": [
@@ -103,7 +104,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@snowball-tech/fractal",
-  "packageManager": "yarn@4.10.3",
+  "packageManager": "yarn@4.12.0",
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

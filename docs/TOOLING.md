@@ -6,9 +6,8 @@
 
 The mono-repository management is handled by Yarn v3 (Berry) workspaces.
 
-Those workspaces are defined in the root [`package.json`](./package.json) file.
-By default it defines the [`packages`](./packages) and [`apps`](./apps)
-folders as the root of the workspaces.
+Those workspaces are defined in the root [`package.json`](../package.json) file.
+By default it defines the [`packages`](../packages) folder as the root of the workspaces.
 
 You may edit this configuration to add new workspaces.
 
@@ -16,7 +15,7 @@ You may edit this configuration to add new workspaces.
 
 Every action you take at the root of the mono-repository _(e.g. `yarn install`)_
 will have an effect at the root of the mono-repository, i.e. modify the root
-[`package.json`](./package.json) file.
+[`package.json`](../package.json) file.
 
 If you need to take an action in a specific workspace, you should use the
 following syntax:
@@ -97,7 +96,7 @@ The core Renovate configuration is offered as
 in the [Glacier](https://github.com/snowball-tech/glacier) mono-repository.  
 Of course, you can configure/disable/extend the basic configuration at the whole
 repository level
-_(using the [`renovate.json5`](./renovate.json5) file at the root)_.
+_(using the [`renovate.json5`](../renovate.json5) file at the root)_.
 
 Renovate is a _(better)_ alternative to Dependabot. It brings a lot of new
 features and improvements to dependency management such as:
@@ -107,7 +106,7 @@ features and improvements to dependency management such as:
   than Dependabot
 - It supports regexes to be able to be able to parse any string as a dependency
   version and indicate to Renovate where to look for newer versions (look
-  [here](https://github.com/mkniewallner/showcase-renovate/blob/a4b294272099536a67aa8fe5122715743262ce80/.github/workflows/ci.yml#L24)
+  [at this example](https://github.com/mkniewallner/showcase-renovate/blob/a4b294272099536a67aa8fe5122715743262ce80/.github/workflows/ci.yml#L24)
   for instance)
 - It supports WAY more options and extensible rules (schedules, auto-merges,
   custom labels, … seriously,
@@ -196,21 +195,21 @@ distributed as open-source NPM packages in the `@snowball-tech` scope.
 Those package offers out of the box:
 
 - Linting based on [ESLint](https://eslint.org/) with
-  [`@snowball-tech/eslint-config`](https://www.npmjs.com/package/@snowball-tech/eslint-config).
+  [`@snowball-tech/eslint-snowball-config`](https://www.npmjs.com/package/@snowball-tech/eslint-snowball-config).
   It automatically detects your dependencies and activate rules accordingly.  
   Of course, you can still configure/disable/extend the linting configuration at
   the whole repository level
-  _(using the [`.eslintrc.js`](./.eslintrc.js) file at the root)_ or at each
+  _(using the [`eslint.config.mjs`](../eslint.config.mjs) file at the root)_ or at each
   package/app level
-  _(by adding a `.eslintrc.js` file in the appropriate folder)_.  
+  _(by adding a `eslint.config.mjs` file in the appropriate folder)_.  
   See
-  [the package documentation](https://github.com/snowball-tech/glacier/tree/main/packages/eslint-config/README.md)
+  [the package documentation](https://github.com/snowball-tech/glacier/tree/main/packages/eslint-snowball-config/README.md)
   for more information.
 - Formatting based on [Prettier](https://prettier.io) with
   [`@snowball-tech/prettier-config`](https://www.npmjs.com/package/@snowball-tech/prettier-config).
   Of course, you can still configure/disable/extend the formatting configuration
   at the whole repository level
-  _(using the [`.prettierrc.js`](./.prettierrc.js) and [`.prettierignore`](./.prettierignore) files at the root)_
+  _(using the [`.prettierrc.js`](../.prettierrc.js) and [`.prettierignore`](../.prettierignore) files at the root)_
   or at each package/app level
   _(by adding a `.prettierrc.js` and/or a `.prettierignore` file in the appropriate folder)_.  
   You can also add plugins in each of your package/app according to your needs.
@@ -221,7 +220,7 @@ Those package offers out of the box:
 We also have those conventions enforced:
 
 1. as a pre-commit hook, that check the format, errors and warning before
-   committing the code (see [.husky/pre-commit]),
+   committing the code (see [.husky/pre-commit](../.husky/pre-commit)),
 2. during Continuous Integration, by running a non-changing linting step
    (`yarn run -T lint` and `yarn run -T format`).
 
@@ -249,7 +248,7 @@ formatter during pre-commit.
 
 ### Plugins
 
-The [`.vscode/extensions.json`](.vscode/extensions.json) file contains a list of
+The [`.vscode/extensions.json`](../.vscode/extensions.json) file contains a list of
 recommended plugins for you to use. When you'll load the repository for the
 first time in VSCode, your IDE will offer you to install the one you don't have.
 
@@ -283,7 +282,7 @@ first time in VSCode, your IDE will offer you to install the one you don't have.
 
 ### Settings
 
-There is also a [`.vscode/settings.json`](.vscode/settings.json) that is used to
+There is also a [`.vscode/settings.json`](../.vscode/settings.json) that is used to
 shared the recommended setting for VSCode.
 
 Please be carefull to not add anything specific to your personal use case in

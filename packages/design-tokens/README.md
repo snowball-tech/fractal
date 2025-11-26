@@ -42,7 +42,7 @@ yarn add --dev @snowball-tech/design-tokens
 Or using NPM:
 
 ```bash
-npm install --save-dev @snowball-tech/design-tokens
+npm install --ignore-scripts --save-dev @snowball-tech/design-tokens
 ```
 
 ## Usage
@@ -59,13 +59,13 @@ If you want to contribute, update or edit the design tokens:
 - First, install the needed dependencies:
 
 ```bash
-yarn
+yarn install
 ```
 
 Or (if you use NPM):
 
 ```bash
-npm install
+npm install --ignore-scripts
 ```
 
 - Make the modifications you want in the JS files inside of the

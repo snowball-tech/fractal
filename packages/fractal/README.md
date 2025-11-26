@@ -34,7 +34,7 @@ yarn add @snowball-tech/fractal
 Or (if you use NPM):
 
 ```bash
-npm install @snowball-tech/fractal
+npm install --ignore-scripts @snowball-tech/fractal
 ```
 
 ## Usage

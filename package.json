@@ -31,10 +31,10 @@
     "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.10.3",
+  "packageManager": "yarn@4.12.0",
   "engines": {
     "yarn": "^4.0.0",
-    "node": ">=18 <=22"
+    "node": ">=18 <=24"
   },
   "workspaces": [
     "apps/*",
@@ -75,8 +75,8 @@
   "devDependencies": {
     "@monorepo-utils/workspaces-to-typescript-project-references": "^2.11.0",
     "@qiwi/multi-semantic-release": "^7.1.2",
-    "@snowball-tech/prettier-config": "^2.1.6",
-    "@snowball-tech/semantic-release-config": "^3.0.7",
+    "@snowball-tech/prettier-config": "^2.2.0",
+    "@snowball-tech/semantic-release-config": "^3.1.0",
     "chromatic": "^13.3.4",
     "depcheck": "^1.4.7",
     "eslint": "^9.39.1",
@@ -89,7 +89,7 @@
     "serve": "^14.2.5"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^2.0.19",
+    "@snowball-tech/eslint-snowball-config": "^2.1.0",
     "@yarnpkg/types": "^4.0.1"
   },
   "overrides": {
