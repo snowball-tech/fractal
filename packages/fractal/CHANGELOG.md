@@ -1,3 +1,9 @@
+# @snowball-tech/fractal [24.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.3.0...@snowball-tech/fractal@24.0.0) (2025-11-26)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.1.0
+
 # @snowball-tech/fractal [23.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@23.2.1...@snowball-tech/fractal@23.3.0) (2025-11-25)
 
 - **toggle-toggleGroup:** add a secondary variant and a grouped style ([3999599](https://github.com/snowball-tech/fractal/commit/3999599c2c869227c204c4e3f17a1170ecbac6e5))
