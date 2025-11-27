@@ -3,7 +3,6 @@
 import * as RxSelect from '@radix-ui/react-select'
 
 import { useContext } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isString from 'lodash/fp/isString'
@@ -12,6 +11,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { SelectItemProps } from './Select.types'
 

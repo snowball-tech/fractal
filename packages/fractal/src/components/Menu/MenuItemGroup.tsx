@@ -1,7 +1,6 @@
 'use client'
 
 import { useContext } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
@@ -9,6 +8,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { MenuItemGroupProps } from './Menu.types'
 

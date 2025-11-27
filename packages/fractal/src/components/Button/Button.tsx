@@ -40,7 +40,6 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
@@ -51,6 +50,7 @@ import { Typography } from '@/components/Typography/Typography'
 import { Breakpoints, PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { ButtonProps } from './Button.types'
 

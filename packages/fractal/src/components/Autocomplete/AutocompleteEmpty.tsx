@@ -2,8 +2,6 @@
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
-import { onlyText } from 'react-children-utilities'
-
 import isEmpty from 'lodash/fp/isEmpty'
 import isString from 'lodash/fp/isString'
 import omit from 'lodash/fp/omit'
@@ -11,6 +9,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { AutocompleteEmptyProps } from './Autocomplete.types'
 

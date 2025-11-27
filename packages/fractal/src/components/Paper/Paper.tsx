@@ -33,7 +33,6 @@ import {
   forwardRef,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isBoolean from 'lodash/fp/isBoolean'
 import isFunction from 'lodash/fp/isFunction'
@@ -46,6 +45,7 @@ import { Typography } from '@/components/Typography/Typography'
 import { PREFIX, Themes } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { PaperProps } from './Paper.types'
 

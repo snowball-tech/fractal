@@ -9,7 +9,6 @@ import {
   forwardRef,
   useId,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 import TextareaAutosize from 'react-textarea-autosize'
 
 import isError from 'lodash/fp/isError'
@@ -22,6 +21,7 @@ import { Button } from '@/components/Button/Button'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { TextareaProps } from './Textarea.types'
 

@@ -1,7 +1,6 @@
 import * as RxTabs from '@radix-ui/react-tabs'
 
 import { type ForwardedRef, forwardRef } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isString from 'lodash/fp/isString'
@@ -10,6 +9,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { TabProps } from './Tabs.types'
 

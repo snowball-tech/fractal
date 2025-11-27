@@ -1,7 +1,5 @@
 import { UilTimes as CloseIcon } from '@tooni/iconscout-unicons-react'
 
-import { onlyText } from 'react-children-utilities'
-
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
 import isString from 'lodash/fp/isString'
@@ -15,6 +13,7 @@ import {
   PREFIX,
 } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { CardProps } from './Card.types'
 

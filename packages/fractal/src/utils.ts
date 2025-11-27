@@ -8,8 +8,10 @@ import {
 } from 'react'
 
 import isArray from 'lodash/fp/isArray'
+import isBoolean from 'lodash/fp/isBoolean'
 import isEmpty from 'lodash/fp/isEmpty'
 import isNil from 'lodash/fp/isNil'
+import isNumber from 'lodash/fp/isNumber'
 import isObject from 'lodash/fp/isObject'
 import isString from 'lodash/fp/isString'
 
@@ -134,4 +136,32 @@ export function extendChildren(
 
     return cloneElement(child, props(childProps))
   })
+}
+
+export function onlyText(reactNode: ReactNode) {
+  try {
+    if (isNil(reactNode) || isBoolean(reactNode) || !reactNode) {
+      return ''
+    }
+
+    let string = ''
+
+    if (isString(reactNode)) {
+      string = reactNode
+    } else if (isNumber(reactNode)) {
+      string = reactNode.toString()
+    } else if (isObject(reactNode) && Symbol.iterator in reactNode) {
+      for (const child of reactNode) {
+        string += onlyText(child)
+      }
+    } else if (isValidElement(reactNode)) {
+      string += onlyText(
+        (reactNode.props as Record<string, unknown>).children as ReactNode,
+      )
+    }
+
+    return string.replaceAll('[object Object]', '').trim()
+  } catch {
+    return ''
+  }
 }

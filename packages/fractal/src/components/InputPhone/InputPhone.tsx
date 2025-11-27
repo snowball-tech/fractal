@@ -22,7 +22,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isError from 'lodash/fp/isError'
@@ -38,6 +37,7 @@ import { SelectItem } from '@/components/Select/SelectItem'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type {
   CombinedRefs,

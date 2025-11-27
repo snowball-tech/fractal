@@ -17,7 +17,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isError from 'lodash/fp/isError'
 import isFunction from 'lodash/fp/isFunction'
@@ -30,6 +29,7 @@ import { InputText } from '@/components/InputText/InputText'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type {
   CombinedRefs,

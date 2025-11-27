@@ -1,7 +1,6 @@
 'use client'
 
 import { type ForwardedRef, forwardRef, useContext, useState } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isFunction from 'lodash/fp/isFunction'
 import isString from 'lodash/fp/isString'
@@ -12,6 +11,7 @@ import { CombinedRefs as DropdownCombinedRefs } from '@/components/Dropdown/Drop
 import { Elevations as PaperElevations } from '@/components/Paper/Paper.constants'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { ToolbarDropdownProps } from './Toolbar.types'
 

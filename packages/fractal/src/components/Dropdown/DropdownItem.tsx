@@ -3,7 +3,6 @@
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import { type ForwardedRef, forwardRef, useContext } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
@@ -13,6 +12,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { DropdownItemProps } from './Dropdown.types'
 

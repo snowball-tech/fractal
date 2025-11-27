@@ -4789,7 +4789,6 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:^0.7.1"
     react: "npm:^19.2.0"
     react-calendar: "npm:^6.0.0"
-    react-children-utilities: "npm:^2.10.0"
     react-dom: "npm:^19.2.0"
     react-textarea-autosize: "npm:^8.5.9"
     react-timekeeper: "npm:^2.2.1"
@@ -17570,15 +17569,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10/ba555e280a829b84a9675636c3166ef728cb40f200cdf31696fe4f45e09a39fd73594b764e5b2793c35414e96101c472332507e5bb42e5e182d43a85b060de40
-  languageName: node
-  linkType: hard
-
-"react-children-utilities@npm:^2.10.0":
-  version: 2.10.0
-  resolution: "react-children-utilities@npm:2.10.0"
-  peerDependencies:
-    react: ">=15"
-  checksum: 10/bd45f8032cc1a2f39aa78d600ad8d905abd41c0bca387d4c6dc3d3f70dffd996935721fc746f58cb55cf8e0438d695b34e993adc3420134517b0e9cecf94e3df
   languageName: node
   linkType: hard
 

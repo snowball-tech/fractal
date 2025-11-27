@@ -2,8 +2,6 @@
 
 import * as RxDropdownMenu from '@radix-ui/react-dropdown-menu'
 
-import { onlyText } from 'react-children-utilities'
-
 import isBoolean from 'lodash/fp/isBoolean'
 import isEmpty from 'lodash/fp/isEmpty'
 import isString from 'lodash/fp/isString'
@@ -13,6 +11,7 @@ import { Loader } from '@/components/Loader'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { AutocompleteLoadingProps } from './Autocomplete.types'
 

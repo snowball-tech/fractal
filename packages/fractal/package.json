@@ -38,7 +38,6 @@
     "normalize.css": "^8.0.1",
     "react": "^19.2.0",
     "react-calendar": "^6.0.0",
-    "react-children-utilities": "^2.10.0",
     "react-dom": "^19.2.0",
     "react-textarea-autosize": "^8.5.9",
     "react-timekeeper": "^2.2.1",

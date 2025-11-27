@@ -4,7 +4,6 @@ import { Label as RxLabel } from '@radix-ui/react-label'
 import * as RxSwitch from '@radix-ui/react-switch'
 
 import { type ForwardedRef, forwardRef, useId } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isFunction from 'lodash/fp/isFunction'
@@ -14,6 +13,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { SwitchProps } from './Switch.types'
 

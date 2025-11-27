@@ -1,5 +1,3 @@
-import { onlyText } from 'react-children-utilities'
-
 import isEmpty from 'lodash/fp/isEmpty'
 import isInteger from 'lodash/fp/isInteger'
 import isNil from 'lodash/fp/isNil'
@@ -9,6 +7,7 @@ import omit from 'lodash/fp/omit'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { BadgeProps } from './Badge.types'
 

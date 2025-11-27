@@ -13,7 +13,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isFunction from 'lodash/fp/isFunction'
 import isNumber from 'lodash/fp/isNumber'
@@ -25,6 +24,7 @@ import { Paper } from '@/components/Paper/Paper'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { CombinedRefs, PopoverProps } from './Popover.types'
 

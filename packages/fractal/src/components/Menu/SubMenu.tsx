@@ -14,7 +14,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import constant from 'lodash/fp/constant'
 import isEmpty from 'lodash/fp/isEmpty'
@@ -29,6 +28,7 @@ import { Popover } from '@/components/Popover/Popover'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { alternatingBgColorLightClassNames, cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { SubMenuCombinedRefs, SubMenuProps } from './Menu.types'
 

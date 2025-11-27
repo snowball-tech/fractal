@@ -10,7 +10,6 @@ import {
   useId,
   useState,
 } from 'react'
-import { onlyText } from 'react-children-utilities'
 
 import isEmpty from 'lodash/fp/isEmpty'
 import isError from 'lodash/fp/isError'
@@ -23,6 +22,7 @@ import { Button } from '@/components/Button/Button'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
+import { onlyText } from '@/utils'
 
 import type { InputTextProps } from './InputText.types'
 
