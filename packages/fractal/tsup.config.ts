@@ -73,6 +73,7 @@ export default defineConfig([
       './src/index.ts',
       './src/constants.ts',
       './src/types.ts',
+      './src/utils.ts',
       './src/hooks/index.ts',
       './src/styles/helpers.ts',
       './src/components/index.ts',
