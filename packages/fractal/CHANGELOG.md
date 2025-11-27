@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [24.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.0...@snowball-tech/fractal@24.1.1) (2025-11-27)
+
 # @snowball-tech/fractal [24.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.0.2...@snowball-tech/fractal@24.1.0) (2025-11-27)
 
 - reimplement the lib to extract test content of react node ([30e527d](https://github.com/snowball-tech/fractal/commit/30e527d3c23eb67f4c75b428a19d41e8c5366479))
