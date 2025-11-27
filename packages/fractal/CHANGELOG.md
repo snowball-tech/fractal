@@ -1,3 +1,8 @@
+# @snowball-tech/fractal [24.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.0.2...@snowball-tech/fractal@24.1.0) (2025-11-27)
+
+- reimplement the lib to extract test content of react node ([30e527d](https://github.com/snowball-tech/fractal/commit/30e527d3c23eb67f4c75b428a19d41e8c5366479))
+- **utils:** export some utils in the library ([d43eca1](https://github.com/snowball-tech/fractal/commit/d43eca12c8ee78657b6808e9fd84897989da0b6e))
+
 ## @snowball-tech/fractal [24.0.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.0.1...@snowball-tech/fractal@24.0.2) (2025-11-26)
 
 - **logo:** fix a typo in the SVG path ([b50e9c7](https://github.com/snowball-tech/fractal/commit/b50e9c7d8c61d01063fbca565e0286115d090eb3))
