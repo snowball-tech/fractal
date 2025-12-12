@@ -97,5 +97,8 @@
       "react": "^19.0.0",
       "react-dom": "^19.0.0"
     }
+  },
+  "resolutions": {
+    "prettier": "3.6.2"
   }
 }
