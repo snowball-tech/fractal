@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [24.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.5...@snowball-tech/fractal@24.1.6) (2025-12-17)
+
+- **radio-checkbox:** fix position of the elements ([1eee53a](https://github.com/snowball-tech/fractal/commit/1eee53a6f244532dd9e8c9ebea88bac814bf72e0))
+
 ## @snowball-tech/fractal [24.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.4...@snowball-tech/fractal@24.1.5) (2025-12-17)
 
 - **radio-checkbox:** really fix toggling with complex children ([0d77585](https://github.com/snowball-tech/fractal/commit/0d77585500ec32d2b0996cf4b8b60ead2aa2d653))
