@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [24.1.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.4...@snowball-tech/fractal@24.1.5) (2025-12-17)
+
+- **radio-checkbox:** really fix toggling with complex children ([0d77585](https://github.com/snowball-tech/fractal/commit/0d77585500ec32d2b0996cf4b8b60ead2aa2d653))
+
 ## @snowball-tech/fractal [24.1.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.3...@snowball-tech/fractal@24.1.4) (2025-12-17)
 
 ### Dependencies
