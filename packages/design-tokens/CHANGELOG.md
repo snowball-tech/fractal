@@ -1,3 +1,5 @@
+## @snowball-tech/design-tokens [17.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@17.1.1...@snowball-tech/design-tokens@17.1.2) (2025-12-17)
+
 ## @snowball-tech/design-tokens [17.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@17.1.0...@snowball-tech/design-tokens@17.1.1) (2025-12-12)
 
 # @snowball-tech/design-tokens [17.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@17.0.4...@snowball-tech/design-tokens@17.1.0) (2025-11-26)
