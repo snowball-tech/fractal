@@ -136,8 +136,8 @@ export const InputCheckbox = forwardRef<
         return
       }
 
-      if (event.target) {
-        ;(event.target as HTMLButtonElement).blur()
+      if (event.currentTarget) {
+        ;(event.currentTarget as HTMLButtonElement).blur()
       }
     }
 

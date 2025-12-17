@@ -84,14 +84,17 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
     )
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-      if (event.target !== containerRef.current) {
+      if (
+        (event.currentTarget as unknown as HTMLDivElement) !==
+        containerRef.current
+      ) {
         event.stopPropagation()
       } else {
         radioRef.current?.click()
       }
 
-      if (event.target) {
-        ;(event.target as HTMLButtonElement).blur()
+      if (event.currentTarget) {
+        ;(event.currentTarget as HTMLButtonElement).blur()
       }
     }
 
