@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [24.1.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.2...@snowball-tech/fractal@24.1.3) (2025-12-17)
+
+- **radio-checkbox:** make check possible with complex children ([1a9d1b6](https://github.com/snowball-tech/fractal/commit/1a9d1b617ecb004b5822a84c43db962b6a257409))
+
 ## @snowball-tech/fractal [24.1.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.1...@snowball-tech/fractal@24.1.2) (2025-12-12)
 
 ### Dependencies
