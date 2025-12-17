@@ -184,8 +184,8 @@ export const InputCheckbox = forwardRef<
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'flex rounded-xs border-none bg-unset pt-2',
-            variant === Variants.Tertiary ? '' : 'min-h-6',
+            'flex rounded-xs border-none bg-unset p-unset',
+            variant === Variants.Tertiary ? 'pt-half' : 'min-h-6 pt-2',
             disabled
               ? 'cursor-not-allowed'
               : `${colorClassNames.checked[color]}`,

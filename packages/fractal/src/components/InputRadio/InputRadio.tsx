@@ -144,7 +144,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           aria-label={textLabel}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'flex min-h-6 rounded-xs border-none bg-unset pt-2 focus-visible:outline-none',
+            'flex min-h-6 rounded-xs border-none bg-unset p-unset pt-2 focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
               : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight',
