@@ -8,6 +8,7 @@ import {
   type ForwardedRef,
   type MouseEvent,
   forwardRef,
+  startTransition,
   useContext,
   useId,
   useImperativeHandle,
@@ -76,27 +77,11 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
-    const containerRef = useRef<HTMLDivElement>(null)
     const radioRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle<HTMLButtonElement | null, HTMLButtonElement | null>(
       ref,
       () => radioRef.current,
     )
-
-    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-      if (
-        (event.currentTarget as unknown as HTMLDivElement) !==
-        containerRef.current
-      ) {
-        event.stopPropagation()
-      } else {
-        radioRef.current?.click()
-      }
-
-      if (event.currentTarget) {
-        ;(event.currentTarget as HTMLButtonElement).blur()
-      }
-    }
 
     const {
       condensed: groupCondensed,
@@ -108,9 +93,35 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
     const isDisabled = disabled || groupDisabled
     const isCondensed = condensed || groupCondensed
 
+    const actualLabelElement =
+      labelElement ||
+      (isString(hasChildren ? children : label) ? 'label' : 'div')
+
+    const handleFocus = () => {
+      startTransition(() => {
+        radioRef.current?.blur()
+      })
+    }
+
+    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+      if (isDisabled) {
+        event.preventDefault()
+
+        return
+      }
+
+      if (
+        event.target !== radioRef.current &&
+        (event.target as HTMLElement).parentElement !== radioRef.current
+      ) {
+        radioRef.current?.click()
+      }
+
+      handleFocus()
+    }
+
     return (
       <Typography
-        ref={containerRef}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
@@ -125,7 +136,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           props.className,
         )}
         element="div"
-        onClick={handleClick}
+        onClick={actualLabelElement !== 'label' ? handleClick : undefined}
       >
         <RxRadio.Item
           id={uniqueId}
@@ -133,7 +144,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           aria-label={textLabel}
           className={cj(
             `${PREFIX}-${GROUP_NAME}__radio`,
-            'flex h-full min-h-6 flex-grow-0 self-stretch rounded-xs border-none bg-unset px-unset py-unset pt-2 focus-visible:outline-none',
+            'flex min-h-6 rounded-xs border-none bg-unset pt-2 focus-visible:outline-none',
             isDisabled
               ? 'cursor-not-allowed'
               : 'cursor-pointer [&>:first-child]:data-state-checked:bg-primary group-hover/radio:[&>:first-child]:data-state-unchecked:bg-highlight',
@@ -142,7 +153,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           required={required}
           title={textLabel}
           value={value}
-          onClick={handleClick}
+          onFocus={handleFocus}
           {...omit(['className'], props)}
         >
           <div
@@ -171,12 +182,7 @@ export const InputRadio = forwardRef<HTMLButtonElement | null, InputRadioProps>(
           )}
           htmlFor={uniqueId}
         >
-          <Typography
-            element={
-              labelElement ||
-              (isString(hasChildren ? children : label) ? 'label' : 'div')
-            }
-          >
+          <Typography element={actualLabelElement}>
             {hasChildren ? children : label}
           </Typography>
         </RxLabel>

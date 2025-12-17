@@ -8,6 +8,7 @@ import {
   type ForwardedRef,
   type MouseEvent,
   forwardRef,
+  startTransition,
   useId,
   useImperativeHandle,
   useRef,
@@ -129,26 +130,41 @@ export const InputCheckbox = forwardRef<
       () => checkboxRef.current,
     )
 
+    const actualLabelElement =
+      labelElement ||
+      (isString(hasChildren ? children : label) ? 'label' : 'div')
+
+    const handleFocus = () => {
+      startTransition(() => {
+        checkboxRef.current?.blur()
+      })
+    }
+
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-      if (readOnly) {
+      if (readOnly || disabled) {
         event.preventDefault()
 
         return
       }
 
-      if (event.currentTarget) {
-        ;(event.currentTarget as HTMLButtonElement).blur()
+      if (
+        event.target !== checkboxRef.current &&
+        (event.target as HTMLElement).parentElement !== checkboxRef.current
+      ) {
+        checkboxRef.current?.click()
       }
+
+      handleFocus()
     }
 
     return (
-      <div
+      <Typography
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           `${PREFIX}-${GROUP_NAME}--${color}`,
           `${PREFIX}-${GROUP_NAME}--${variant}`,
           'group/checkbox',
-          'flex w-full cursor-default items-start rounded-sm',
+          'flex w-full max-w-full cursor-default rounded-sm',
           variantClassNames[variant],
           disabled
             ? `${PREFIX}-${GROUP_NAME}--disabled text-disabled`
@@ -157,6 +173,8 @@ export const InputCheckbox = forwardRef<
           required ? `${PREFIX}-${GROUP_NAME}--required` : '',
           props.className,
         )}
+        element="div"
+        onClick={actualLabelElement !== 'label' ? handleClick : undefined}
       >
         <RxCheckbox.Root
           id={uniqueId}
@@ -166,7 +184,7 @@ export const InputCheckbox = forwardRef<
           className={cj(
             `${PREFIX}-${GROUP_NAME}__box`,
             `${PREFIX}-${GROUP_NAME}__box--${color}`,
-            'mt-half h-full max-h-6 flex-grow-0 rounded-xs border-none bg-unset px-unset py-unset',
+            'flex rounded-xs border-none bg-unset pt-2',
             variant === Variants.Tertiary ? '' : 'min-h-6',
             disabled
               ? 'cursor-not-allowed'
@@ -176,15 +194,15 @@ export const InputCheckbox = forwardRef<
               ? `${colorClassNames.hover[color]} cursor-pointer`
               : '',
           )}
-          disabled={disabled}
+          disabled={disabled || readOnly}
           name={name || uniqueId}
           required={required}
           title={textLabel}
           value={value}
           {...(checked === undefined ? {} : { checked })}
           {...(defaultChecked === undefined ? {} : { defaultChecked })}
-          onClick={handleClick}
           {...(isFunction(onCheckedChange) ? { onCheckedChange } : {})}
+          onFocus={handleFocus}
           {...omit(['className'], props)}
         >
           <div
@@ -220,16 +238,11 @@ export const InputCheckbox = forwardRef<
           )}
           htmlFor={uniqueId}
         >
-          <Typography
-            element={
-              labelElement ||
-              (isString(hasChildren ? children : label) ? 'label' : 'div')
-            }
-          >
+          <Typography element={actualLabelElement}>
             {hasChildren ? children : label}
           </Typography>
         </RxLabel>
-      </div>
+      </Typography>
     )
   },
 )
