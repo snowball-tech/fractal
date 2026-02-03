@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [24.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.2.0...@snowball-tech/fractal@24.2.1) (2026-02-03)
+
 # @snowball-tech/fractal [24.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.6...@snowball-tech/fractal@24.2.0) (2026-02-03)
 
 - **confirm:** allow full customization of default actions buttons ([342d8a6](https://github.com/snowball-tech/fractal/commit/342d8a609194283175b5a839f6479523b2a2e30c))
