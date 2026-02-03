@@ -19,7 +19,7 @@ export interface ConfirmProps
    * This will override the default "cancel" and "confirm" actions and the
    * `cancel` and `confirm` props will be ignored.
    */
-  actions: ReactNode
+  actions?: ReactNode
   /**
    * The configuration of the cancel button.
    *
@@ -27,7 +27,7 @@ export interface ConfirmProps
    *
    * Note: this prop is ignored if `actions` is provided.
    */
-  cancel: string | false | ButtonProps
+  cancel?: string | false | ButtonProps
   /**
    * The configuration of the confirmation button.
    *
@@ -35,7 +35,7 @@ export interface ConfirmProps
    *
    * Note: this prop is ignored if `actions` is provided.
    */
-  confirm: string | ButtonProps
+  confirm?: string | ButtonProps
   /**
    * Indicates if the actions should be fixed at the bottom of the dialog
    * (`true`) or at the bottom of the content (`false`).

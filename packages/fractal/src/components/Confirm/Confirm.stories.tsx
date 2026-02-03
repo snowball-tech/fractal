@@ -31,6 +31,21 @@ const meta: Meta<ConfirmProps> = {
     trigger: 'Text',
   },
   argTypes: {
+    actions: {
+      control: 'radio',
+      mapping: {
+        Content: (
+          <div className="flex flex-col gap-3">
+            <p>This is the custom actions zone</p>{' '}
+            <Button label="This is a custom action" />
+          </div>
+        ),
+        'Custom Button': <Button label="This is a custom action" />,
+        'Default Actions': undefined,
+        Text: 'This is the custom actions',
+      },
+      options: ['Default Actions', 'Text', 'Content', 'Custom Button'],
+    },
     cancel: { control: 'text' },
     children: {
       control: 'text',
@@ -137,6 +152,34 @@ export const InteractiveClose: Story = {
       trigger={<Button label="Open the confirm" />}
     >
       This is the content
+    </Confirm>
+  ),
+}
+
+export const InteractiveCustomActions: Story = {
+  args: {
+    onCancel: fn(),
+    onConfirm: fn(),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await sleep(500)
+
+    await userEvent.click(canvas.getAllByRole('button').at(0)!)
+  },
+  render: () => (
+    <Confirm
+      actions={
+        <div className="flex flex-col gap-3">
+          <p>This is the custom actions zone</p>{' '}
+          <Button label="This is a custom action" />
+        </div>
+      }
+      title="Are you sure you want to test this confirm dialog"
+      trigger={<Button label="Open the confirm" />}
+    >
+      <div className="flex flex-col gap-3">Do you want to confirm?</div>
     </Confirm>
   ),
 }
