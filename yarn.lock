@@ -4796,7 +4796,7 @@ __metadata:
     "@types/react": "npm:^19.2.10"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react-swc": "npm:^4.2.3"
-    chromatic: "npm:^13.3.5"
+    chromatic: "npm:^15.0.0"
     clsx: "npm:^2.1.1"
     country-flag-icons: "npm:^1.6.12"
     emoji-mart: "npm:^5.6.0"
@@ -7716,9 +7716,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^13.3.5":
-  version: 13.3.5
-  resolution: "chromatic@npm:13.3.5"
+"chromatic@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "chromatic@npm:15.0.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -7731,7 +7731,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 10/d660e926e2763158eb216c12fd443ac909235b62e0855d6485c5ec270cbde8ce6d5467fc9792a988f2cd4c32722efb9899982b26d4bd8265381846c7d7006c21
+  checksum: 10/469fb1d1ce5b9874264bf989cdf26ccdb458dc5db4e62d69fb1a9737ec7f9eb277c8ac2214ce7ec1d8e1c3103fa885d293f1ddee29ff908752046ad5192f7e92
   languageName: node
   linkType: hard
 
@@ -10898,7 +10898,7 @@ __metadata:
     "@snowball-tech/prettier-config": "npm:^2.2.0"
     "@snowball-tech/semantic-release-config": "npm:^3.1.0"
     "@yarnpkg/types": "npm:^4.0.1"
-    chromatic: "npm:^13.3.5"
+    chromatic: "npm:^15.0.0"
     depcheck: "npm:^1.4.7"
     eslint: "npm:^9.39.2"
     husky: "npm:^9.1.7"

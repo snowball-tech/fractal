@@ -77,7 +77,7 @@
     "@qiwi/multi-semantic-release": "^7.1.2",
     "@snowball-tech/prettier-config": "^2.2.0",
     "@snowball-tech/semantic-release-config": "^3.1.0",
-    "chromatic": "^13.3.5",
+    "chromatic": "^15.0.0",
     "depcheck": "^1.4.7",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
