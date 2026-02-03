@@ -27,6 +27,7 @@ import { GROUP_NAME } from './Confirm.constants'
 export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
   (
     {
+      actions: customActions,
       cancel,
       children,
       confirm,
@@ -85,26 +86,26 @@ export const Confirm = forwardRef<CombinedRefs, ConfirmProps>(
             : '',
         )}
       >
-        {cancel && (
-          <Button
-            ref={cancelRef}
-            className="to-md:w-full"
-            variant="secondary"
-            onClick={(event) => onCancel?.(event, false)}
-            {...(isString(cancel)
-              ? { label: cancel }
-              : omit(['href', 'onClick', 'target', 'type', 'variant'], cancel))}
-          />
-        )}
+        {customActions || (
+          <>
+            {cancel && (
+              <Button
+                ref={cancelRef}
+                className="to-md:w-full"
+                variant="secondary"
+                onClick={(event) => onCancel?.(event, false)}
+                {...(isString(cancel) ? { label: cancel } : cancel)}
+              />
+            )}
 
-        <Button
-          ref={confirmRef}
-          className="to-md:w-full"
-          onClick={onConfirm}
-          {...(isString(confirm)
-            ? { label: confirm }
-            : omit(['href', 'onClick', 'target', 'type', 'variant'], confirm))}
-        />
+            <Button
+              ref={confirmRef}
+              className="to-md:w-full"
+              onClick={onConfirm}
+              {...(isString(confirm) ? { label: confirm } : confirm)}
+            />
+          </>
+        )}
       </div>
     )
 
