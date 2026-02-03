@@ -1,3 +1,12 @@
+# @snowball-tech/fractal [24.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.6...@snowball-tech/fractal@24.2.0) (2026-02-03)
+
+- **confirm:** allow full customization of default actions buttons ([342d8a6](https://github.com/snowball-tech/fractal/commit/342d8a609194283175b5a839f6479523b2a2e30c))
+- **confirm:** fix typings of props ([b29892a](https://github.com/snowball-tech/fractal/commit/b29892a120c1bb6d73479e135e4216b0ddf134eb))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.1.3
+
 ## @snowball-tech/fractal [24.1.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.1.5...@snowball-tech/fractal@24.1.6) (2025-12-17)
 
 - **radio-checkbox:** fix position of the elements ([1eee53a](https://github.com/snowball-tech/fractal/commit/1eee53a6f244532dd9e8c9ebea88bac814bf72e0))
