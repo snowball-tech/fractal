@@ -15,6 +15,7 @@ import {
 } from 'react'
 
 import isFunction from 'lodash/fp/isFunction'
+import isNil from 'lodash/fp/isNil'
 import isNumber from 'lodash/fp/isNumber'
 import noop from 'lodash/fp/noop'
 import omit from 'lodash/fp/omit'
@@ -56,6 +57,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       onMenuOpenChange,
       onOpen,
       open,
+      portalled,
       rainbow = true,
       side,
       toggleOnTriggerClick = true,
@@ -68,13 +70,16 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
     }: DropdownProps,
     ref?: ForwardedRef<CombinedRefs>,
   ) => {
-    const containerRef = useRef<HTMLDivElement>(null)
+    const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(
+      null,
+    )
+
     const triggerRef = useRef<HTMLButtonElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
 
     useImperativeHandle(ref, () => ({
       get container() {
-        return containerRef?.current ?? null
+        return containerRef ?? null
       },
 
       get dropdown() {
@@ -135,7 +140,7 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       }
 
       if (
-        containerRef?.current?.contains(target as Element) ||
+        containerRef?.contains(target as Element) ||
         dropdownRef?.current?.contains(target as Element)
       ) {
         event.preventDefault()
@@ -238,9 +243,93 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
       </Typography>
     )
 
+    const isInDialog = !isNil(
+      containerRef?.closest(`.${PREFIX}-dialog__content`),
+    )
+
+    const content = isOpen && (
+      <RxDropdown.Content
+        ref={dropdownRef}
+        align={align || (withIndicator ? 'end' : 'center')}
+        asChild
+        className={cn(
+          `${PREFIX}-${GROUP_NAME}__dropdown`,
+          'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
+          elevationClassNames[actualElevation],
+          widthClassNames,
+          hasChildren
+            ? ''
+            : `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`,
+          dropdown?.className,
+        )}
+        loop
+        side={side}
+        style={{
+          display: undefined,
+          ...widthStyle,
+          ...dropdown.style,
+        }}
+        onInteractOutside={handleDropdownInteractOutside}
+        {...omit(
+          [
+            'align',
+            'asChild',
+            'className',
+            'side',
+            'style',
+            'onInteractOutside',
+          ],
+          dropdown,
+        )}
+      >
+        {withScroll ? (
+          <RxScrollArea.Root
+            className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
+            {...(props.dir === undefined
+              ? {}
+              : {
+                  dir: props.dir as RxScrollArea.ScrollAreaProps['dir'],
+                })}
+            type="hover"
+          >
+            <RxScrollArea.Viewport
+              className={cj(
+                `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
+                `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
+              )}
+              style={{
+                overflowY: undefined,
+              }}
+            >
+              {contentElement}
+            </RxScrollArea.Viewport>
+
+            <RxScrollArea.Scrollbar
+              className={cj(
+                `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
+                'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
+              )}
+              orientation="vertical"
+            >
+              <RxScrollArea.Thumb
+                className={cj(
+                  `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
+                  'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
+                )}
+              />
+            </RxScrollArea.Scrollbar>
+          </RxScrollArea.Root>
+        ) : (
+          contentElement
+        )}
+      </RxDropdown.Content>
+    )
+
+    const isPortalled = isNil(portalled) ? !isInDialog : portalled
+
     return (
       <div
-        ref={containerRef}
+        ref={(newRef) => setContainerRef(newRef)}
         className={cn(
           `${PREFIX}-${GROUP_NAME}`,
           isOpen
@@ -330,85 +419,11 @@ export const Dropdown = forwardRef<CombinedRefs, DropdownProps>(
             )}
           </RxDropdown.Trigger>
 
-          <RxDropdown.Portal>
-            {isOpen && (
-              <RxDropdown.Content
-                ref={dropdownRef}
-                align={align || (withIndicator ? 'end' : 'center')}
-                asChild
-                className={cn(
-                  `${PREFIX}-${GROUP_NAME}__dropdown`,
-                  'pointer-events-auto relative z-50 overflow-hidden border-1 border-normal bg-white p-1 data-[side="bottom"]:mt-1 data-[side="left"]:mr-1 data-[side="right"]:ml-1 data-[side="top"]:mb-1',
-                  elevationClassNames[actualElevation],
-                  widthClassNames,
-                  hasChildren
-                    ? ''
-                    : `${PREFIX}-${GROUP_NAME}__dropdown--empty invisible`,
-                  dropdown?.className,
-                )}
-                loop
-                side={side}
-                style={{
-                  display: undefined,
-                  ...widthStyle,
-                  ...dropdown.style,
-                }}
-                onInteractOutside={handleDropdownInteractOutside}
-                {...omit(
-                  [
-                    'align',
-                    'asChild',
-                    'className',
-                    'side',
-                    'style',
-                    'onInteractOutside',
-                  ],
-                  dropdown,
-                )}
-              >
-                {withScroll ? (
-                  <RxScrollArea.Root
-                    className={`${PREFIX}-${GROUP_NAME}__dropdown__scrollarea`}
-                    {...(props.dir === undefined
-                      ? {}
-                      : {
-                          dir: props.dir as RxScrollArea.ScrollAreaProps['dir'],
-                        })}
-                    type="hover"
-                  >
-                    <RxScrollArea.Viewport
-                      className={cj(
-                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__viewport`,
-                        `relative h-full max-h-[calc(var(--radix-popper-available-height)-theme(spacing.4))] w-full overflow-auto [&:has(+_.${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y)]:w-[calc(100%-theme(spacing.1)+theme(spacing.quarter))]`,
-                      )}
-                      style={{
-                        overflowY: undefined,
-                      }}
-                    >
-                      {contentElement}
-                    </RxScrollArea.Viewport>
-
-                    <RxScrollArea.Scrollbar
-                      className={cj(
-                        `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y`,
-                        'flex touch-none select-none rounded-r-sm bg-grey-90 p-quarter transition-background-color duration-300 ease-out hover:bg-grey-70 data-[orientation="vertical"]:w-1',
-                      )}
-                      orientation="vertical"
-                    >
-                      <RxScrollArea.Thumb
-                        className={cj(
-                          `${PREFIX}-${GROUP_NAME}__dropdown__scrollarea__scrollbar--y__thumb`,
-                          'before:l-1/2 relative !w-half flex-1 rounded-sm bg-grey-30 before:absolute before:top-1/2 before:h-full before:min-h-[44px] before:w-full before:min-w-[44px] before:-translate-x-1/2 before:-translate-y-1/2 before:content-empty',
-                        )}
-                      />
-                    </RxScrollArea.Scrollbar>
-                  </RxScrollArea.Root>
-                ) : (
-                  contentElement
-                )}
-              </RxDropdown.Content>
-            )}
-          </RxDropdown.Portal>
+          {isPortalled ? (
+            <RxDropdown.Portal>{content}</RxDropdown.Portal>
+          ) : (
+            content
+          )}
         </RxDropdown.Root>
       </div>
     )

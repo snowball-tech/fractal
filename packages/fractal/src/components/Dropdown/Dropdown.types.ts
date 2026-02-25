@@ -88,6 +88,11 @@ export interface DropdownProps
    */
   open?: boolean
   /**
+   * Indicates if the dropdown menu must be portalled into the body or
+   * inserted in place after the trigger box.
+   */
+  portalled?: boolean
+  /**
    * Indicates if the dropdown items are displayed in "hover the rainbow" mode.
    */
   rainbow?: boolean
