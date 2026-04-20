@@ -1,17 +1,16 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "isolatedModules": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ESNext",
+    "lib": ["DOM", "esnext"],
+    "module": "esnext",
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"]
     },
     "rootDir": "./src",
-    "target": "ESNext",
+    "target": "esnext",
     "useDefineForClassFields": true
   },
   "include": ["src/**/*.ts"],

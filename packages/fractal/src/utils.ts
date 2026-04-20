@@ -8,10 +8,8 @@ import {
 } from 'react'
 
 import isArray from 'lodash/fp/isArray'
-import isBoolean from 'lodash/fp/isBoolean'
 import isEmpty from 'lodash/fp/isEmpty'
 import isNil from 'lodash/fp/isNil'
-import isNumber from 'lodash/fp/isNumber'
 import isObject from 'lodash/fp/isObject'
 import isString from 'lodash/fp/isString'
 
@@ -138,29 +136,42 @@ export function extendChildren(
   })
 }
 
-export function onlyText(reactNode: ReactNode) {
+export function onlyText(node: ReactNode): string {
   try {
-    if (isNil(reactNode) || isBoolean(reactNode) || !reactNode) {
+    if (node == null || typeof node === 'boolean' || node === '') {
       return ''
     }
 
-    let string = ''
-
-    if (isString(reactNode)) {
-      string = reactNode
-    } else if (isNumber(reactNode)) {
-      string = reactNode.toString()
-    } else if (isObject(reactNode) && Symbol.iterator in reactNode) {
-      for (const child of reactNode) {
-        string += onlyText(child)
-      }
-    } else if (isValidElement(reactNode)) {
-      string += onlyText(
-        (reactNode.props as Record<string, unknown>).children as ReactNode,
-      )
+    if (typeof node === 'string') {
+      return node
     }
 
-    return string.replaceAll('[object Object]', '').trim()
+    if (typeof node === 'number') {
+      return String(node)
+    }
+
+    if (Array.isArray(node)) {
+      return node
+        .map(onlyText)
+        .join('')
+        .replaceAll('[object Object]', '')
+        .trim()
+    }
+
+    if (isValidElement<{ children?: ReactNode; value?: ReactNode }>(node)) {
+      const { children, value } = node.props
+
+      return onlyText(children ?? value)
+    }
+
+    if (typeof node === 'object' && Symbol.iterator in node) {
+      let out = ''
+      for (const child of node as Iterable<ReactNode>) out += onlyText(child)
+
+      return out.replaceAll('[object Object]', '').trim()
+    }
+
+    return ''
   } catch {
     return ''
   }

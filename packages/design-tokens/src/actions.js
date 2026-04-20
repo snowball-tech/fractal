@@ -16,7 +16,7 @@ StyleDictionary.registerAction({
     )
 
     execSync(
-      `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader && yarn tsc ${destinationPath}/constants.js --allowJs --declaration --emitDeclarationOnly --skipLibCheck`,
+      `yarn to-esm ${constantsPath} --output ${destinationPath} --extension .js --minify --no-comments --noHeader && yarn tsc ${destinationPath}/constants.js --allowJs --declaration --emitDeclarationOnly --skipLibCheck --ignoreConfig`,
     )
     console.log(`✔︎ ${destinationDirectory}constants.js (ESM)`)
   },
@@ -29,12 +29,8 @@ StyleDictionary.registerAction({
     const destinationDirectory = 'dist/web/'
 
     execSync(`yarn run tsc --outDir ${destinationDirectory}`)
-    console.log(
-      `✔︎ ${destinationDirectory}tailwindcss/tailwind.config.js (ESM)`,
-    )
-    console.log(
-      `✔︎ ${destinationDirectory}tailwindcss/tailwind.theme.js (ESM)`,
-    )
+    console.log(`✔︎ ${destinationDirectory}tailwindcss/tailwind.config.js (ESM)`)
+    console.log(`✔︎ ${destinationDirectory}tailwindcss/tailwind.theme.js (ESM)`)
   },
   name: 'tailwindcss/copy-config',
   undo: noop,

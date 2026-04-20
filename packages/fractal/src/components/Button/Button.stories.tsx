@@ -14,6 +14,7 @@ import type { ComponentProps, ReactNode } from 'react'
 
 import { Paper } from '@/components/Paper/Paper'
 import { Breakpoints, DEFAULT_THEME, Themes } from '@/constants'
+import { Typography } from '@/index'
 import ThemeProvider from '@/ThemeProvider'
 
 import { Button } from './Button'
@@ -147,6 +148,11 @@ const separator = (
 const displayButtons = (
   <>
     <Wrapper>
+      <Button variant="display">
+        <Typography>
+          <b>Display button</b>
+        </Typography>
+      </Button>
       <Button label='"Display" button' variant="display" />
       <Button
         icon={<StarIcon />}

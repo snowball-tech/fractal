@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": false,
     "jsx": "react-jsx",
-    "module": "NodeNext",
+    "module": "nodenext",
     "moduleResolution": "nodenext",
     "noEmit": false,
     "noErrorTruncation": true,
@@ -27,6 +27,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES6",
+    "types": ["node"],
     "useDefineForClassFields": true
   },
   "include": [],
