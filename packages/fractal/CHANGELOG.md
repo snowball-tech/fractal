@@ -1,3 +1,11 @@
+## @snowball-tech/fractal [24.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.3.0...@snowball-tech/fractal@24.3.1) (2026-04-20)
+
+- fix exports ([ddd9984](https://github.com/snowball-tech/fractal/commit/ddd9984b45fbd9cea9ddf55eec7206dd6c278c62))
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.1.5
+
 # @snowball-tech/fractal [24.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.2.1...@snowball-tech/fractal@24.3.0) (2026-02-25)
 
 - **dropdown:** allow to not portal the dropdown ([5ae3a33](https://github.com/snowball-tech/fractal/commit/5ae3a338f50b007615573882e1922c97016ab03a))
