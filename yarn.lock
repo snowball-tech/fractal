@@ -4174,22 +4174,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-hookz/web@patch:@react-hookz/web@npm%3A25.2.0#~/.yarn/patches/@react-hookz-web-npm-25.2.0-3c4342fa9f.patch":
-  version: 25.2.0
-  resolution: "@react-hookz/web@patch:@react-hookz/web@npm%3A25.2.0#~/.yarn/patches/@react-hookz-web-npm-25.2.0-3c4342fa9f.patch::version=25.2.0&hash=d60ff9"
-  dependencies:
-    "@ver0/deep-equal": "npm:^1.0.0"
-  peerDependencies:
-    js-cookie: ^3.0.5
-    react: ^16.8 || ^17 || ^18 || ^19
-    react-dom: ^16.8 || ^17 || ^18 || ^19
-  peerDependenciesMeta:
-    js-cookie:
-      optional: true
-  checksum: 10/ce9d08dc11ea9f31f653fb600505f36aa9bf32033fa847cea8130853415d33d70efc1841ddb13b5b4ccb65c99ed1bdd94a30a3d4383743a162953132cdf0d9d7
-  languageName: node
-  linkType: hard
-
 "@react-spring/animated@npm:~9.7.5":
   version: 9.7.5
   resolution: "@react-spring/animated@npm:9.7.5"
@@ -5171,7 +5155,7 @@ __metadata:
     "@radix-ui/react-toggle": "npm:1.1.10"
     "@radix-ui/react-toggle-group": "npm:1.1.11"
     "@radix-ui/react-toolbar": "npm:1.1.11"
-    "@react-hookz/web": "patch:@react-hookz/web@npm%3A25.2.0#~/.yarn/patches/@react-hookz-web-npm-25.2.0-3c4342fa9f.patch"
+    "@react-hookz/web": "npm:25.2.0"
     "@snowball-tech/design-tokens": "npm:17.1.5"
     "@snowball-tech/eslint-snowball-config": "npm:2.1.0"
     "@snowball-tech/prettier-config": "npm:2.2.0"
