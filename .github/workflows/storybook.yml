@@ -94,7 +94,7 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal build-chromatic --no-interactive
+          yarn workspace @snowball-tech/fractal build-chromatic --exit-once-uploaded --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && failure()
         uses: actions/upload-artifact@v5
