@@ -1,8 +1,7 @@
 import path from 'node:path'
 
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import { type Plugin, defineConfig } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 const muteWarningsPlugin = (warningsToIgnore: string[][]): Plugin => {
   const mutedMessages = new Set()
@@ -75,5 +74,9 @@ export default defineConfig({
     },
   },
 
-  plugins: [react(), tsconfigPaths(), muteWarningsPlugin(warningsToIgnore)],
+  plugins: [react(), muteWarningsPlugin(warningsToIgnore)],
+
+  resolve: {
+    tsconfigPaths: true,
+  },
 })

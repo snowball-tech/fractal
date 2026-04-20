@@ -31,7 +31,7 @@
     "url": "git+https://github.com/snowball-tech/fractal.git"
   },
   "bugs": "https://github.com/snowball-tech/fractal/issues",
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.14.1",
   "engines": {
     "yarn": "^4.0.0",
     "node": ">=18 <=24"
@@ -47,6 +47,7 @@
     "extends": "@snowball-tech/semantic-release-config"
   },
   "scripts": {
+    "allow-scripts": "node ./node_modules/@lavamoat/allow-scripts/src/cli.js --experimental-bins",
     "build": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build",
     "build-vercel": "NODE_ENV=production yarn workspaces foreach --all --topological-dev run build-vercel",
     "check-deps": "yarn depcheck --ignores='@snowball-tech/semantic-release-config,chromatic,lint-staged,nodemon,semantic-release,serve' & yarn workspaces foreach --all -p run check-deps",
@@ -73,24 +74,41 @@
     "restore-workspace-deps": "./scripts/restore-workspace-deps.sh"
   },
   "devDependencies": {
-    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.11.0",
-    "@qiwi/multi-semantic-release": "^7.1.2",
-    "@snowball-tech/prettier-config": "^2.2.0",
-    "@snowball-tech/semantic-release-config": "^3.1.0",
-    "chromatic": "^16.3.0",
-    "depcheck": "^1.4.7",
-    "eslint": "^9.39.4",
-    "husky": "^9.1.7",
-    "is-ci": "^4.1.0",
-    "lint-staged": "^16.4.0",
-    "nodemon": "^3.1.14",
-    "prettier": "^3.8.3",
-    "semantic-release": "^25.0.3",
-    "serve": "^14.2.6"
+    "@lavamoat/allow-scripts": "4.0.0",
+    "@lavamoat/preinstall-always-fail": "3.0.0",
+    "@monorepo-utils/workspaces-to-typescript-project-references": "2.11.0",
+    "@qiwi/multi-semantic-release": "7.1.2",
+    "@snowball-tech/prettier-config": "2.2.0",
+    "@snowball-tech/semantic-release-config": "3.1.0",
+    "chromatic": "16.3.0",
+    "depcheck": "1.4.7",
+    "eslint": "9.39.4",
+    "husky": "9.1.7",
+    "is-ci": "4.1.0",
+    "lint-staged": "16.4.0",
+    "nodemon": "3.1.14",
+    "prettier": "3.8.3",
+    "semantic-release": "25.0.3",
+    "serve": "14.2.6"
   },
   "dependencies": {
-    "@snowball-tech/eslint-snowball-config": "^2.1.0",
-    "@yarnpkg/types": "^4.0.1"
+    "@snowball-tech/eslint-snowball-config": "2.1.0",
+    "@yarnpkg/types": "4.0.1"
+  },
+  "lavamoat": {
+    "allowBins": {
+      "eslint": "node_modules/eslint/bin/eslint.js",
+      "prettier": "node_modules/prettier/bin/prettier.cjs"
+    },
+    "allowScripts": {
+      "@lavamoat/preinstall-always-fail": false,
+      "@snowball-tech/eslint-snowball-config>eslint-plugin-sql>multiline-ts": false,
+      "eslint-import-resolver-typescript>unrs-resolver": false,
+      "vercel>@vercel/express>@vercel/cervel>tsx>esbuild": false,
+      "vercel>@vercel/node>esbuild": false,
+      "vercel>@vercel/node>ts-node>@swc/core": false,
+      "vercel>esbuild": false
+    }
   },
   "overrides": {
     "@emoji-mart/react": {

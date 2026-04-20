@@ -2,8 +2,10 @@ import { AllHTMLAttributes } from 'react'
 
 import { Orientations } from './Slider.constants'
 
-export interface SliderProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'defaultValue' | 'value'> {
+export interface SliderProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'defaultValue' | 'value'
+> {
   /**
    * The current value of the slider when it is initially rendered.
    *

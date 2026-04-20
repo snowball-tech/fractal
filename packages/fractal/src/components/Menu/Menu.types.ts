@@ -62,8 +62,10 @@ export interface MenuProps extends AllHTMLAttributes<HTMLDivElement> {
   rainbow?: boolean
 }
 
-export interface MenuItemProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface MenuItemProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /** Indicates if the menu item is active. */
   active?: boolean
   /**
@@ -113,8 +115,10 @@ export interface MenuItemProps
   onActivate?: () => void
 }
 
-export interface MenuItemGroupProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface MenuItemGroupProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /** The menu items to display inside of the group. */
   children: ReactNode
   /** The label of the menu items group. */
@@ -149,11 +153,10 @@ export interface MenuItemGroupProps
 
 export type MenuItemSeparatorProps = AllHTMLAttributes<HTMLDivElement>
 
-export interface SubMenuProps
-  extends Omit<
-    AllHTMLAttributes<HTMLDivElement>,
-    'content' | 'label' | 'popover'
-  > {
+export interface SubMenuProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'content' | 'label' | 'popover'
+> {
   /**
    * The content of the sub-menu.
    *

@@ -21,8 +21,10 @@ export type CombinedRefs = {
   input: HTMLInputElement | null
 }
 
-export interface AutocompleteProps
-  extends Omit<InputTextProps, 'onBlur' | 'onSelect'> {
+export interface AutocompleteProps extends Omit<
+  InputTextProps,
+  'onBlur' | 'onSelect'
+> {
   /** Indicates if the autocomplete input must be focused on render. */
   autoFocus?: boolean
   /** The elements to display in the autocomplete dropdown. */
@@ -148,8 +150,10 @@ export interface AutocompleteProps
   onOpen?: () => void
 }
 
-export interface AutocompleteLoadingProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface AutocompleteLoadingProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /**
    * The content of the loading item.
    *
@@ -181,8 +185,10 @@ export interface AutocompleteLoadingProps
   spin?: boolean
 }
 
-export interface AutocompleteEmptyProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface AutocompleteEmptyProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /**
    * The content of the empty item.
    *

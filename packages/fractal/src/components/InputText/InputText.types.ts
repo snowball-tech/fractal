@@ -7,11 +7,10 @@ import type {
 
 import type { ButtonProps } from '@/components/Button/Button.types'
 
-export interface InputTextProps
-  extends Omit<
-    AllHTMLAttributes<HTMLInputElement>,
-    'label' | 'onChange' | 'prefix'
-  > {
+export interface InputTextProps extends Omit<
+  AllHTMLAttributes<HTMLInputElement>,
+  'label' | 'onChange' | 'prefix'
+> {
   /** Indicates if the text input must be focused on render. */
   autoFocus?: boolean
   /**

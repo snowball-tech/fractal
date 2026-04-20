@@ -3,13 +3,15 @@
 /** @type {import('@yarnpkg/types')} */
 const { defineConfig } = require(`@yarnpkg/types`)
 
+const RANGE_PREFIX_REGEX = /^[~^]/
+
+/** @param {string} range */
+const pinRange = (range) => range.replace(RANGE_PREFIX_REGEX, ``)
+
 /**
- * This rule will enforce that a workspace MUST depend on the same version of
- * a dependency as the one used by the other workspaces.
- *
  * @param {Context} context
  */
-function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
+function enforceConsistentPinnedDependencies({ Yarn }) {
   for (const dependency of Yarn.dependencies()) {
     if (dependency.type === `peerDependencies`) continue
 
@@ -18,13 +20,14 @@ function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
     })) {
       if (otherDependency.type === `peerDependencies`) continue
 
-      dependency.update(otherDependency.range)
+      dependency.update(pinRange(otherDependency.range))
     }
   }
 }
 
+/** @public */
 module.exports = defineConfig({
   constraints: async (context) => {
-    enforceConsistentDependenciesAcrossTheProject(context)
+    enforceConsistentPinnedDependencies(context)
   },
 })

@@ -1,8 +1,10 @@
 import type { ChangeEvent, ReactNode } from 'react'
 import type { TextareaAutosizeProps } from 'react-textarea-autosize'
 
-export interface TextareaProps
-  extends Omit<TextareaAutosizeProps, 'onChange' | 'onHeightChange'> {
+export interface TextareaProps extends Omit<
+  TextareaAutosizeProps,
+  'onChange' | 'onHeightChange'
+> {
   /** Indicates if the textarea must be focused on render. */
   autoFocus?: boolean
   /**

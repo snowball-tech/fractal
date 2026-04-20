@@ -17,11 +17,10 @@ import { Orientations } from './Toolbar.constants'
 
 export type CombinedRefs = DropdownCombinedRefs
 
-export interface ToolbarProps
-  extends Omit<
-    AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Root>,
-    'asChild' | 'dir' | 'loop' | 'size'
-  > {
+export interface ToolbarProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Root>,
+  'asChild' | 'dir' | 'loop' | 'size'
+> {
   /**
    * The tools to display in the toolbar.
    *

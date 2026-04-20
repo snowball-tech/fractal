@@ -7,8 +7,10 @@ import type { ReactNode } from 'react'
 
 import { Variants } from '../Toggle/Toggle.constants'
 
-export interface ToggleGroupProps
-  extends Omit<RxToggleGroupProps, 'defaultValue' | 'type' | 'value'> {
+export interface ToggleGroupProps extends Omit<
+  RxToggleGroupProps,
+  'defaultValue' | 'type' | 'value'
+> {
   /** The toggles to display inside of the toggle group. */
   children: ReactNode
   /**
@@ -61,8 +63,10 @@ export interface ToggleGroupProps
   onValueChange?: (value: string | Array<string>) => void
 }
 
-export interface ToggleGroupItemProps
-  extends Omit<RxToggleGroupItemProps, 'onToggle'> {
+export interface ToggleGroupItemProps extends Omit<
+  RxToggleGroupItemProps,
+  'onToggle'
+> {
   /** The value submitted in the submitted form. */
   value: string
   /**

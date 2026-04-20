@@ -9,8 +9,10 @@ export type CombinedRefs = {
   trigger: HTMLButtonElement | null
 }
 
-export interface InputFileProps
-  extends Omit<AllHTMLAttributes<HTMLInputElement>, 'label' | 'onChange'> {
+export interface InputFileProps extends Omit<
+  AllHTMLAttributes<HTMLInputElement>,
+  'label' | 'onChange'
+> {
   /** The label of the trigger of the input file. */
   label: ReactNode
   /** Prevents the user from interacting with the input file and the trigger. */

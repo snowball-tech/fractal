@@ -2,8 +2,10 @@ import type { AllHTMLAttributes } from 'react'
 
 import { Sizes } from './Loader.constants'
 
-export interface LoaderProps
-  extends Omit<AllHTMLAttributes<HTMLOrSVGElement>, 'size'> {
+export interface LoaderProps extends Omit<
+  AllHTMLAttributes<HTMLOrSVGElement>,
+  'size'
+> {
   /**
    * The accessible label of the loader.
    *

@@ -30,11 +30,10 @@ export type CombinedRefs = {
   searchPrefixInput: HTMLInputElement | null
 }
 
-export interface InputPhoneProps
-  extends Omit<
-    HTMLAttributes<HTMLDivElement>,
-    'defaultValue' | 'onChange' | 'placeholder'
-  > {
+export interface InputPhoneProps extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'defaultValue' | 'onChange' | 'placeholder'
+> {
   /** Indicates if the phone input must be focused on render. */
   autoFocus?: boolean
   /**

@@ -30,17 +30,16 @@ export type CombinedRefs = {
   year: HTMLInputElement | null
 }
 
-export interface InputDateProps
-  extends Omit<
-    HTMLAttributes<HTMLDivElement>,
-    | 'defaultValue'
-    | 'onBlur'
-    | 'onChange'
-    | 'onFocus'
-    | 'onKeyDown'
-    | 'onKeyUp'
-    | 'placeholder'
-  > {
+export interface InputDateProps extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  | 'defaultValue'
+  | 'onBlur'
+  | 'onChange'
+  | 'onFocus'
+  | 'onKeyDown'
+  | 'onKeyUp'
+  | 'placeholder'
+> {
   /** Indicates if the day field must be focused on render. */
   autoFocus?: boolean
   /**

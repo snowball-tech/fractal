@@ -29,8 +29,10 @@ export type Emoji = {
   keywords?: Array<string>
 }
 
-export interface EmojiPickerProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onSelect'> {
+export interface EmojiPickerProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'onSelect'
+> {
   /** The set of emoji to display in the emoji picker. */
   set: `${EmojisSets}`
   /**
@@ -114,8 +116,10 @@ export interface EmojiPickerProps
   onSelect?: (emoji: Emoji) => void
 }
 
-export interface EmojiProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'size'> {
+export interface EmojiProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'size'
+> {
   /** The set of emoji to use to display the emoji. */
   set: `${EmojisSets}`
   /**

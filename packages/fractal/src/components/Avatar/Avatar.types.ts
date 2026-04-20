@@ -2,8 +2,10 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Sizes } from './Avatar.constants'
 
-export interface AvatarProps
-  extends Omit<AllHTMLAttributes<HTMLImageElement>, 'size'> {
+export interface AvatarProps extends Omit<
+  AllHTMLAttributes<HTMLImageElement>,
+  'size'
+> {
   /**
    * The content of the dropdown menu of the avatar (if you want one).
    *

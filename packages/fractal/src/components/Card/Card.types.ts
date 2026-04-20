@@ -2,8 +2,10 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import type { AlternateFontSizes, Colors, FontSizes } from './Card.constants'
 
-export interface CardProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'title'> {
+export interface CardProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'title'
+> {
   /** The content of the card. */
   children?: ReactNode
   /** The background color of the card. */

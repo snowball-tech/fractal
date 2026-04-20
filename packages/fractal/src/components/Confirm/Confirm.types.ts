@@ -11,8 +11,10 @@ export type CombinedRefs = {
   confirm: HTMLButtonElement | null
 } & DialogCombinedRefs
 
-export interface ConfirmProps
-  extends Omit<DialogProps, 'disabled' | 'dismissable' | 'modal'> {
+export interface ConfirmProps extends Omit<
+  DialogProps,
+  'disabled' | 'dismissable' | 'modal'
+> {
   /**
    * The actions to display in the confirm dialog.
    *

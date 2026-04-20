@@ -32,8 +32,10 @@ export type SubDropdownCombinedRefs = {
   trigger: HTMLDivElement | null
 }
 
-export interface DropdownProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onClick'> {
+export interface DropdownProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'onClick'
+> {
   /**
    * The content of the dropdown menu.
    *
@@ -153,12 +155,11 @@ export interface DropdownProps
   onOpen?: () => void
 }
 
-export interface DropdownItemProps
-  extends Omit<
-    AllHTMLAttributes<HTMLAnchorElement> &
-      ComponentProps<typeof DropdownMenuItem>,
-    'asChild' | 'label' | 'onClick' | 'onSelect'
-  > {
+export interface DropdownItemProps extends Omit<
+  AllHTMLAttributes<HTMLAnchorElement> &
+    ComponentProps<typeof DropdownMenuItem>,
+  'asChild' | 'label' | 'onClick' | 'onSelect'
+> {
   /** Indicates if the item should be displayed as active. */
   active?: boolean
   /**
@@ -213,8 +214,10 @@ export interface DropdownItemProps
   onSelect?: ComponentProps<typeof DropdownMenuItem>['onSelect']
 }
 
-export interface DropdownItemGroupProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface DropdownItemGroupProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /** The dropdown items to display inside of the group. */
   children: ReactNode
   /** The label of the dropdown items group. */
@@ -249,11 +252,10 @@ export interface DropdownItemGroupProps
   rainbow?: boolean
 }
 
-export interface SubDropdownProps
-  extends Omit<
-    AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Sub>,
-    'asChild' | 'content' | 'onClick'
-  > {
+export interface SubDropdownProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement> & ComponentProps<typeof Sub>,
+  'asChild' | 'content' | 'onClick'
+> {
   /**
    * The content of the dropdown's sub-dropdown.
    *

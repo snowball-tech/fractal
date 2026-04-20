@@ -50,18 +50,17 @@ export type PopoverPropsOverride = Partial<
   >
 >
 
-export interface DateTimePickerProps
-  extends Omit<
-    HTMLAttributes<HTMLDivElement>,
-    | 'defaultValue'
-    | 'onBlur'
-    | 'onChange'
-    | 'onFocus'
-    | 'onKeyDown'
-    | 'onKeyUp'
-    | 'placeholder'
-    | 'popover'
-  > {
+export interface DateTimePickerProps extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  | 'defaultValue'
+  | 'onBlur'
+  | 'onChange'
+  | 'onFocus'
+  | 'onKeyDown'
+  | 'onKeyUp'
+  | 'placeholder'
+  | 'popover'
+> {
   /**
    * Indicates if the datetime input should use a 12h (`true`) or 24h (`false`)
    * format for the time part.

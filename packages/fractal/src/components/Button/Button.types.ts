@@ -12,11 +12,10 @@ import { Themes } from '@/constants'
 
 import { Variants } from './Button.constants'
 
-export interface ButtonProps
-  extends Omit<
-    AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
-    'label' | 'onClick' | 'wrap'
-  > {
+export interface ButtonProps extends Omit<
+  AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
+  'label' | 'onClick' | 'wrap'
+> {
   /**
    * The content of the button.
    *

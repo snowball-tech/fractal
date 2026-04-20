@@ -2,11 +2,10 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Variants } from './Toggle.constants'
 
-export interface ToggleProps
-  extends Omit<
-    AllHTMLAttributes<HTMLButtonElement>,
-    'label' | 'onToggle' | 'type'
-  > {
+export interface ToggleProps extends Omit<
+  AllHTMLAttributes<HTMLButtonElement>,
+  'label' | 'onToggle' | 'type'
+> {
   /**
    * The content of the menu item.
    *

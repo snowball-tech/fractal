@@ -8,21 +8,20 @@ import type {
 
 import type { InputTextProps } from '@/components/InputText/InputText.types'
 
-export interface InputPinCodeProps
-  extends Omit<
-    InputTextProps,
-    | 'button'
-    | 'fullWidth'
-    | 'onBlur'
-    | 'onButtonClick'
-    | 'onFocus'
-    | 'onKeyDown'
-    | 'placeholder'
-    | 'prefix'
-    | 'suffix'
-    | 'type'
-    | 'withButton'
-  > {
+export interface InputPinCodeProps extends Omit<
+  InputTextProps,
+  | 'button'
+  | 'fullWidth'
+  | 'onBlur'
+  | 'onButtonClick'
+  | 'onFocus'
+  | 'onKeyDown'
+  | 'placeholder'
+  | 'prefix'
+  | 'suffix'
+  | 'type'
+  | 'withButton'
+> {
   /** Indicates if the first pin code field must be focused on render. */
   autoFocus?: boolean
   /**

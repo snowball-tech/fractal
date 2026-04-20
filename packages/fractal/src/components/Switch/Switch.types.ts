@@ -2,8 +2,10 @@ import type { SwitchProps as RxSwitchProps } from '@radix-ui/react-switch'
 
 import type { ReactNode } from 'react'
 
-export interface SwitchProps
-  extends Omit<RxSwitchProps, 'asChild' | 'onCheckedChange' | 'onToggle'> {
+export interface SwitchProps extends Omit<
+  RxSwitchProps,
+  'asChild' | 'onCheckedChange' | 'onToggle'
+> {
   /**
    * The controlled checked state of the switch.
    *

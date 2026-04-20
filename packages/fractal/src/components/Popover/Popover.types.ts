@@ -18,8 +18,10 @@ export type CombinedRefs = {
   trigger: HTMLButtonElement | null
 }
 
-export interface PopoverProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'popover' | 'title'> {
+export interface PopoverProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'popover' | 'title'
+> {
   /**
    * The content of the popover.
    */

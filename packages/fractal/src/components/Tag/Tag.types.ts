@@ -2,8 +2,10 @@ import type { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Colors, Sizes } from './Tag.constants'
 
-export interface TagProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label' | 'size'> {
+export interface TagProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label' | 'size'
+> {
   /**
    * The content of the tag.
    *

@@ -1,0 +1,38 @@
+# Misc. MacOS
+**/*.DS_Store
+
+# Local testing
+*.tgz
+**/.yalc/*
+**/yalc.lock
+
+# Cache
+**/.eslintcache
+
+# Dependencies
+**/node_modules
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Next.JS
+**/.next
+
+# Production
+**/build
+**/out
+**/dist
+
+# Secret files
+*.pem
+
+# Storybook.
+**/storybook-static
+
+# Misc.
+*.bak
+**/tmp
+**/temp

@@ -8,8 +8,10 @@ import type {
   TitleVariants,
 } from './Paper.constants'
 
-export interface PaperProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onToggle' | 'title'> {
+export interface PaperProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'onToggle' | 'title'
+> {
   /** The content of the paper. */
   children: ReactNode
   /**

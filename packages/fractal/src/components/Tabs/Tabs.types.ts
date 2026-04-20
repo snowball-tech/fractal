@@ -2,11 +2,10 @@ import { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Orientations, Positions, Sizes, Variants } from './Tabs.constants'
 
-export interface TabsProps
-  extends Omit<
-    AllHTMLAttributes<HTMLDivElement>,
-    'defaultValue' | 'dir' | 'value'
-  > {
+export interface TabsProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'defaultValue' | 'dir' | 'value'
+> {
   /**
    * The content of the tabs.
    *
@@ -79,11 +78,10 @@ export interface TabsProps
   onTabChange?: (newTab: string) => void
 }
 
-export interface TabProps
-  extends Omit<
-    AllHTMLAttributes<HTMLButtonElement>,
-    'label' | 'size' | 'type' | 'value'
-  > {
+export interface TabProps extends Omit<
+  AllHTMLAttributes<HTMLButtonElement>,
+  'label' | 'size' | 'type' | 'value'
+> {
   /**
    * The name of the tab.
    * Must be the same as the linked content.
@@ -170,8 +168,10 @@ export interface TabProps
   withIndicator?: boolean
 }
 
-export interface TabContentProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'value'> {
+export interface TabContentProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'value'
+> {
   /** The actual content. */
   children: ReactNode
   /**

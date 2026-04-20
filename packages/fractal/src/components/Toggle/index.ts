@@ -1,5 +1,7 @@
 export {
   DEFAULT_VARIANT as DEFAULT_TOGGLE_VARIANT,
+  disabledVariantClassNames as toggleDisabledVariantClassNames,
+  variantClassNames as toggleVariantClassNames,
   Variants as ToggleVariants,
 } from './Toggle.constants.js'
 export { default as Toggle } from './Toggle.js'

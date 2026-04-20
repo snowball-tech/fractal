@@ -8,8 +8,10 @@ export type CombinedRefs = {
   trigger: HTMLButtonElement | null
 }
 
-export interface SelectProps
-  extends Omit<AllHTMLAttributes<HTMLSelectElement>, 'label' | 'onSelect'> {
+export interface SelectProps extends Omit<
+  AllHTMLAttributes<HTMLSelectElement>,
+  'label' | 'onSelect'
+> {
   /** Indicates if the select must be opened on render. */
   autoFocus?: boolean
   /** The elements to display in the select dropdown. */
@@ -110,8 +112,10 @@ export interface SelectProps
   onSelect?: (newValue: string) => void
 }
 
-export interface SelectEmptyProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface SelectEmptyProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /**
    * The content of the empty select item.
    *
@@ -147,8 +151,10 @@ export interface SelectEmptyProps
   value?: string
 }
 
-export interface SelectItemProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface SelectItemProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /** The value of the select option. */
   value: string
   /**
@@ -188,8 +194,10 @@ export interface SelectItemProps
   rainbow?: boolean
 }
 
-export interface SelectItemGroupProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'label'> {
+export interface SelectItemGroupProps extends Omit<
+  AllHTMLAttributes<HTMLDivElement>,
+  'label'
+> {
   /** The select options to display inside of the group. */
   children: ReactNode
   /** The label of the select options group. */

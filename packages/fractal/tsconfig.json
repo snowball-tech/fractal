@@ -5,6 +5,7 @@
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": false,
     "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"]

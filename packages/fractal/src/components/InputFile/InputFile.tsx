@@ -18,7 +18,7 @@ import omit from 'lodash/fp/omit'
 import {
   variantDisabledClassNames as buttonDisabledClassNames,
   variantClassNames as buttonVariantClassNames,
-} from '@/components/Button/Button'
+} from '@/components/Button/Button.constants'
 import { Typography } from '@/components/Typography/Typography'
 import { PREFIX } from '@/constants'
 import { cj, cn } from '@/styles/helpers'
