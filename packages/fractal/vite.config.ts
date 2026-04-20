@@ -64,7 +64,13 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [
+        'react',
+        'react-dom',
+        '@tooni/iconscout-unicons-react',
+        '@react-hookz/web',
+        'lodash',
+      ],
       output: {
         globals: {
           react: 'React',
