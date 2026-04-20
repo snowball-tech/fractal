@@ -26,8 +26,8 @@ import type { ToggleGroupItemProps } from './ToggleGroup.types'
 import {
   disabledVariantClassNames as toggleDisabledVariantClassNames,
   variantClassNames as toggleVariantClassNames,
-} from '../Toggle/Toggle'
-import { Variants } from '../Toggle/Toggle.constants'
+  Variants,
+} from '../Toggle/Toggle.constants'
 import { GROUP_NAME } from './ToggleGroup.constants'
 import { ToggleGroupContext } from './ToggleGroupContext'
 
