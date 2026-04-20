@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [25.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@25.0.0...@snowball-tech/fractal@25.0.1) (2026-04-20)
+
 # @snowball-tech/fractal [25.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.3.1...@snowball-tech/fractal@25.0.0) (2026-04-20)
 
 ## @snowball-tech/fractal [24.3.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.3.0...@snowball-tech/fractal@24.3.1) (2026-04-20)
