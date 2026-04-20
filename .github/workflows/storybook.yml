@@ -49,8 +49,6 @@ jobs:
             scripts/**
             .github/workflows/quality.yml
             .github/workflows/storybook.yml
-          ci: true
-          exitOnceUploaded: true
 
       - if: env.SKIP_CHROMATIC != 1 && steps.changed-files-specific.outputs.any_changed != 'true'
         name: No need to update Chromatic
@@ -96,7 +94,7 @@ jobs:
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_REACT_PROJECT_TOKEN }}
         run: |
-          yarn workspace @snowball-tech/fractal build-chromatic --no-interactive
+          yarn workspace @snowball-tech/fractal build-chromatic --exit-once-uploaded --no-interactive
 
       - if: env.SKIP_CHROMATIC != 1 && failure()
         uses: actions/upload-artifact@v5
