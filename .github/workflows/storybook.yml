@@ -49,6 +49,8 @@ jobs:
             scripts/**
             .github/workflows/quality.yml
             .github/workflows/storybook.yml
+          ci: true
+          exitOnceUploaded: true
 
       - if: env.SKIP_CHROMATIC != 1 && steps.changed-files-specific.outputs.any_changed != 'true'
         name: No need to update Chromatic
