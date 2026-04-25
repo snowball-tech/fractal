@@ -74,6 +74,3 @@ next-env.d.ts
 scripts/tmp
 # This file is only used for the Tailwind VSCode extension.
 tailwind.config.cjs
-
-# PandaCSS.
-styled-system*

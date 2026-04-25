@@ -44,7 +44,7 @@
     "tailwind-merge": "2.6.1",
     "tailwindcss": "3.4.19"
   },
-  "description": "Fractal's (Snowball's design system) React component library based on RadixUI and PandaCSS",
+  "description": "Fractal's (Snowball's design system) React component library based on RadixUI and TailwindCSS",
   "devDependencies": {
     "@csstools/postcss-cascade-layers": "6.0.0",
     "@snowball-tech/eslint-snowball-config": "2.1.0",
