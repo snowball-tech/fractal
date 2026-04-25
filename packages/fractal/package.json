@@ -52,6 +52,7 @@
     "@storybook/addon-a11y": "10.3.5",
     "@storybook/addon-docs": "10.3.5",
     "@storybook/addon-links": "10.3.5",
+    "@storybook/addon-mcp": "0.6.0",
     "@storybook/react-vite": "10.3.5",
     "@types/fs-extra": "11.0.4",
     "@types/lodash": "4.17.24",

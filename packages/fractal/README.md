@@ -72,6 +72,23 @@ yarn dev
 > pointing to `http://localhost:6006`.
 > If the tab does not open, check the terminal prompt for errors.
 
+### AI tooling
+
+The Storybook development server exposes an [MCP](https://modelcontextprotocol.io/) endpoint
+at `http://localhost:6006/mcp` when running locally, allowing AI agents to access
+your stories and component documentation.
+
+See the [Storybook MCP documentation](https://storybook.js.org/docs/ai/mcp/overview)
+for setup instructions for your agent. To register the MCP server at the project
+scope, run once at the root of the repository:
+
+```bash
+npx mcp-add --type http --url "http://localhost:6006/mcp" --scope project
+```
+
+Once the Storybook dev server is running (`yarn dev`), your AI agent will have
+access to your stories and component documentation.
+
 - Make your modifications **(don't forget the tests)**.
 - Test your updates
 - Commit and push your changes and open a Pull Request.
