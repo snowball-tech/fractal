@@ -63,6 +63,7 @@ your `AGENTS.md` or equivalent context file:
 
 ```markdown
 ## Design System
+
 Design tokens and brand guidelines are available at:
 `node_modules/@snowball-tech/design-tokens/DESIGN.md`
 Read this file before generating any UI component.
