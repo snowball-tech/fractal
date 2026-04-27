@@ -47,6 +47,28 @@ npm install --ignore-scripts --save-dev @snowball-tech/design-tokens
 
 ## Usage
 
+### AI tools
+
+This package ships a `DESIGN.md` file containing brand identity, colors,
+typography and design guidelines in a format readable by AI coding assistants.
+
+**Claude Code** — add this line to your project's `CLAUDE.md`:
+
+```markdown
+@node_modules/@snowball-tech/design-tokens/DESIGN.md
+```
+
+**Other agents** (GitHub Copilot, Cursor, Codex, Gemini CLI…) — add this to
+your `AGENTS.md` or equivalent context file:
+
+```markdown
+## Design System
+
+Design tokens and brand guidelines are available at:
+`node_modules/@snowball-tech/design-tokens/DESIGN.md`
+Read this file before generating any UI component.
+```
+
 ### Web
 
 You should not use this package directly in your web application but use the

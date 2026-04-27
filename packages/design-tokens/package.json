@@ -26,7 +26,8 @@
   },
   "files": [
     "dist/*",
-    "dist/**"
+    "dist/**",
+    "DESIGN.md"
   ],
   "homepage": "https://github.com/snowball-tech/fractal/tree/main/packages/design-tokens",
   "keywords": [
