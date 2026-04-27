@@ -251,7 +251,7 @@ There are currently **2** packages available in Fractal:
   and packages throughout the organization;
 
 - **[fractal](./packages/fractal)**: the React component library, made of
-  components, styles, icons, ... based on Radix-UI and PandaCSS and to be used
+  components, styles, icons, ... based on Radix-UI and TailwindCSS and to be used
   in web (React) applications.  
   It also contains the Storybook documentation that is uploaded to Chromatic and
   the main documentation webiste.
