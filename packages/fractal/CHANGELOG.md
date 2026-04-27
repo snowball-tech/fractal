@@ -1,3 +1,7 @@
+# @snowball-tech/fractal [25.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@25.0.1...@snowball-tech/fractal@25.1.0) (2026-04-27)
+
+- **fractal:** add storybook MCP addon and document AI tooling setup ([#409](https://github.com/snowball-tech/fractal/issues/409)) ([ce97b19](https://github.com/snowball-tech/fractal/commit/ce97b198e9413623a5c824113f8ee3eba80a9d23))
+
 ## @snowball-tech/fractal [25.0.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@25.0.0...@snowball-tech/fractal@25.0.1) (2026-04-20)
 
 # @snowball-tech/fractal [25.0.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@24.3.1...@snowball-tech/fractal@25.0.0) (2026-04-20)
