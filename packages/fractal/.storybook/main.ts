@@ -17,6 +17,7 @@ const config: StorybookConfig = {
       },
     },
     'storybook-addon-mock-date',
+    '@storybook/addon-mcp',
   ],
 
   docs: {
