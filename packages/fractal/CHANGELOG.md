@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [27.1.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.1.0...@snowball-tech/fractal@27.1.1) (2026-06-27)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.2.0
+
 # @snowball-tech/fractal [27.1.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.0.0...@snowball-tech/fractal@27.1.0) (2026-05-30)
 
 - force again NPM release ([90cdb13](https://github.com/snowball-tech/fractal/commit/90cdb135968447dcb79a8b3b5dd7009be663a0a7))
