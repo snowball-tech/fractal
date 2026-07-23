@@ -1,0 +1,917 @@
+{
+  "meta": {
+    "description": "Figma <-> code mapping for the Fractal design system. Replaces Figma Code Connect (unavailable on our Figma plan). Consumed by AI agents (e.g. the design-contributor skill) to resolve a Figma selection to the exact Fractal component and props.",
+    "generated": "2026-07-23",
+    "fractalVersion": "27.1.1",
+    "figmaLibrary": "❄️ Fractal Design System",
+    "figmaFileKey": "kDNzWqTThmFHwYyHe9Cedk",
+    "importPattern": "import { <Component> } from '@snowball-tech/fractal/dist/src/components/<Component>'",
+    "conventions": [
+      "Figma variant properties reuse the exact code prop names and values; the default Figma variant is the code default.",
+      "Figma 'state' variants mix real code props (disabled, error, success) and pure interaction pseudo-states (hover, focus, pressed, open) that have NO code prop - they map to CSS states.",
+      "Figma TEXT properties map to the component's text content props (label, placeholder, title, children...).",
+      "Swappable icon slots default to uil/snowflake (placeholder). Swap targets are the uil/* components (see iconography).",
+      "Enforced (non-toggleable) state icons in Figma may be ahead of code - flagged with designAheadOfCode.",
+      "Every Figma component description also contains its source path and divergence flags."
+    ]
+  },
+  "iconography": {
+    "figmaPattern": "uil/<kebab-name> components on the '🧊 Icons' page (24x24, fill bound to color/icon/default)",
+    "reactImport": "import { Uil<PascalName> } from '@tooni/iconscout-unicons-react'",
+    "cssClass": "uil-<kebab-name>",
+    "example": {
+      "figma": "uil/angle-down",
+      "react": "UilAngleDown",
+      "css": "uil-angle-down"
+    }
+  },
+  "components": [
+    {
+      "figmaName": "Autocomplete",
+      "figmaNodeId": "185:73",
+      "codeComponent": "Autocomplete",
+      "source": "packages/fractal/src/components/Autocomplete",
+      "propMap": {
+        "open": {
+          "mapsTo": "open",
+          "note": "Figma variant showing the dropdown; code also supports uncontrolled behavior"
+        }
+      },
+      "notes": [
+        "Field texts (label, placeholder, description) live on nested exposed instances and map to label / placeholder / description / error / success."
+      ]
+    },
+    {
+      "figmaName": "Avatar",
+      "figmaNodeId": "84:34",
+      "codeComponent": "Avatar",
+      "source": "packages/fractal/src/components/Avatar",
+      "propMap": {
+        "size": {
+          "mapsTo": "size",
+          "note": "code also has 'fluid' (w-full) - not modeled"
+        },
+        "content": {
+          "mapsTo": "name | imageUrl | children",
+          "values": {
+            "initials": "name (initials derived)",
+            "image": "imageUrl",
+            "icon": "children (icon element)"
+          }
+        },
+        "initials": {
+          "mapsTo": "name"
+        }
+      },
+      "notes": [
+        "code prop 'disabled' not modeled.",
+        "In code, Avatar renders its children inside a Dropdown (avatar menu) - not modeled."
+      ]
+    },
+    {
+      "figmaName": "Badge",
+      "figmaNodeId": "77:8",
+      "codeComponent": "Badge",
+      "source": "packages/fractal/src/components/Badge",
+      "propMap": {
+        "type": {
+          "mapsTo": "count | label | children",
+          "values": {
+            "dot": "no content",
+            "count": "count (with 'limit' capping, code-only)",
+            "label": "label"
+          }
+        },
+        "label": {
+          "mapsTo": "count | label"
+        }
+      }
+    },
+    {
+      "figmaName": "Button",
+      "figmaNodeId": "49:14",
+      "codeComponent": "Button",
+      "source": "packages/fractal/src/components/Button",
+      "propMap": {
+        "variant": {
+          "mapsTo": "variant"
+        },
+        "state": {
+          "mapsTo": "disabled (state=disabled)",
+          "note": "hover/pressed are interaction pseudo-states, no code prop"
+        },
+        "iconLeft": {
+          "mapsTo": "icon + iconPosition='left'"
+        },
+        "iconRight": {
+          "mapsTo": "icon + iconPosition='right'"
+        },
+        "iconLeftSwap": {
+          "mapsTo": "icon (element)"
+        },
+        "iconRightSwap": {
+          "mapsTo": "icon (element)"
+        }
+      },
+      "notes": [
+        "Label text node maps to 'label'.",
+        "code props fullWidth and iconOnly not modeled."
+      ]
+    },
+    {
+      "figmaName": "Card",
+      "figmaNodeId": "76:20",
+      "codeComponent": "Card",
+      "source": "packages/fractal/src/components/Card",
+      "propMap": {
+        "color": {
+          "mapsTo": "color"
+        },
+        "fontSize": {
+          "mapsTo": "fontSize"
+        },
+        "dismissable": {
+          "mapsTo": "dismissable"
+        },
+        "title": {
+          "mapsTo": "title (presence)"
+        },
+        "titleText": {
+          "mapsTo": "title"
+        },
+        "icon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        },
+        "content": {
+          "mapsTo": "children"
+        }
+      },
+      "designAheadOfCode": "Feedback variants (success/warning/error) enforce state icons (uil/check-circle, uil/exclamation-triangle, uil/exclamation-circle) for color-blind accessibility. In code the consumer must pass them (candidate PR: auto-inject).",
+      "notes": [
+        "A toast IS a Card with dismissable=true - see freezer packages/common/components/layout/Toaster.tsx (no dedicated Figma component)."
+      ]
+    },
+    {
+      "figmaName": "Confirm",
+      "figmaNodeId": "216:45",
+      "codeComponent": "Confirm",
+      "source": "packages/fractal/src/components/Confirm",
+      "propMap": {
+        "condensed": {
+          "mapsTo": "condensed (inherited from Dialog)"
+        }
+      },
+      "notes": [
+        "Exposed Button instances map to 'cancel' (secondary) and 'confirm' (primary) props.",
+        "fixedActions=true (default) modeled; mobile stacked actions (to-md) not modeled."
+      ]
+    },
+    {
+      "figmaName": "CuteIcon",
+      "figmaNodeId": "201:36",
+      "codeComponent": "CuteIcon",
+      "source": "packages/fractal/src/components/CuteIcon",
+      "propMap": {
+        "color": {
+          "mapsTo": "color"
+        },
+        "icon": {
+          "mapsTo": "icon"
+        }
+      }
+    },
+    {
+      "figmaName": "DateTimePicker",
+      "figmaNodeId": "194:169",
+      "codeComponent": "DateTimePicker",
+      "source": "packages/fractal/src/components/DateTimePicker",
+      "propMap": {
+        "picker": {
+          "mapsTo": "withDatePicker / withTimePicker",
+          "values": {
+            "date": "withDatePicker",
+            "time": "withTimePicker"
+          }
+        }
+      },
+      "notes": [
+        "Figma models the open picker (code: staticPicker story). Field props follow the InputText mapping."
+      ]
+    },
+    {
+      "figmaName": "Dialog",
+      "figmaNodeId": "167:15",
+      "codeComponent": "Dialog",
+      "source": "packages/fractal/src/components/Dialog",
+      "propMap": {
+        "condensed": {
+          "mapsTo": "condensed"
+        },
+        "title": {
+          "mapsTo": "title"
+        },
+        "content": {
+          "mapsTo": "children"
+        },
+        "showClose": {
+          "mapsTo": "dismissable"
+        }
+      }
+    },
+    {
+      "figmaName": "Dropdown",
+      "figmaNodeId": "165:42",
+      "codeComponent": "Dropdown",
+      "source": "packages/fractal/src/components/Dropdown",
+      "propMap": {
+        "elevation": {
+          "mapsTo": "elevation"
+        }
+      },
+      "notes": ["Compose with exposed DropdownItem instances (children)."]
+    },
+    {
+      "figmaName": "DropdownItem",
+      "figmaNodeId": "165:15",
+      "codeComponent": "DropdownItem",
+      "source": "packages/fractal/src/components/Dropdown",
+      "propMap": {
+        "label": {
+          "mapsTo": "label"
+        },
+        "icon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        },
+        "state": {
+          "mapsTo": "disabled (state=disabled)",
+          "note": "hover is an interaction pseudo-state"
+        }
+      }
+    },
+    {
+      "figmaName": "InputCheckbox",
+      "figmaNodeId": "92:32",
+      "codeComponent": "InputCheckbox",
+      "source": "packages/fractal/src/components/InputCheckbox",
+      "propMap": {
+        "label": {
+          "mapsTo": "label / children"
+        },
+        "variant": {
+          "mapsTo": "variant"
+        },
+        "color": {
+          "mapsTo": "color"
+        },
+        "checked": {
+          "mapsTo": "checked / defaultChecked"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        }
+      }
+    },
+    {
+      "figmaName": "InputDate",
+      "figmaNodeId": "178:37",
+      "codeComponent": "InputDate",
+      "source": "packages/fractal/src/components/InputDate",
+      "propMap": {
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "message": {
+          "mapsTo": "descriptions | error | success (per state)"
+        },
+        "state": {
+          "mapsTo": "error / success / disabled",
+          "note": "default = none of them"
+        }
+      }
+    },
+    {
+      "figmaName": "InputFile",
+      "figmaNodeId": "180:35",
+      "codeComponent": "InputFile",
+      "source": "packages/fractal/src/components/InputFile",
+      "propMap": {
+        "label": {
+          "mapsTo": "label"
+        },
+        "variant": {
+          "mapsTo": "variant (Button pass-through)"
+        },
+        "showIcon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        }
+      }
+    },
+    {
+      "figmaName": "InputPhone",
+      "figmaNodeId": "179:49",
+      "codeComponent": "InputPhone",
+      "source": "packages/fractal/src/components/InputPhone",
+      "propMap": {
+        "countryCode": {
+          "mapsTo": "countryCode",
+          "note": "display = emoji flag + ISO code (libphonenumber-js + country-flag-icons)"
+        },
+        "value": {
+          "mapsTo": "placeholder / defaultValue"
+        },
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "message": {
+          "mapsTo": "description | error | success (per state)"
+        },
+        "state": {
+          "mapsTo": "error / success / disabled"
+        }
+      }
+    },
+    {
+      "figmaName": "InputPinCode",
+      "figmaNodeId": "177:41",
+      "codeComponent": "InputPinCode",
+      "source": "packages/fractal/src/components/InputPinCode",
+      "propMap": {
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "message": {
+          "mapsTo": "description | error | success (per state)"
+        },
+        "state": {
+          "mapsTo": "error / success / disabled"
+        }
+      },
+      "notes": ["Number of digit cells is structural (code prop 'length')."]
+    },
+    {
+      "figmaName": "InputRadio",
+      "figmaNodeId": "93:45",
+      "codeComponent": "InputRadio",
+      "source": "packages/fractal/src/components/InputRadio",
+      "propMap": {
+        "label": {
+          "mapsTo": "label / children"
+        },
+        "variant": {
+          "mapsTo": "variant"
+        },
+        "checked": {
+          "mapsTo": "value / defaultValue",
+          "note": "radios come from InputRadioGroup: a radio is checked when the group value equals its value"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        }
+      }
+    },
+    {
+      "figmaName": "InputText",
+      "figmaNodeId": "57:7",
+      "codeComponent": "InputText",
+      "source": "packages/fractal/src/components/InputText",
+      "propMap": {
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "prefixIcon": {
+          "mapsTo": "prefix (presence)"
+        },
+        "prefixIconSwap": {
+          "mapsTo": "prefix"
+        },
+        "suffixIcon": {
+          "mapsTo": "suffix (presence)"
+        },
+        "suffixIconSwap": {
+          "mapsTo": "suffix"
+        },
+        "value": {
+          "mapsTo": "placeholder (filled=false) / defaultValue (filled=true)"
+        },
+        "filled": {
+          "mapsTo": "value presence"
+        },
+        "showDescription": {
+          "mapsTo": "description (presence)"
+        },
+        "description": {
+          "mapsTo": "description"
+        },
+        "message": {
+          "mapsTo": "description | error | success (per state)"
+        },
+        "state": {
+          "mapsTo": "error / success / disabled",
+          "note": "hover/focus are interaction pseudo-states"
+        }
+      },
+      "designAheadOfCode": "error/success state icons (uil/exclamation-circle red, uil/check green) are enforced in Figma; in code the consumer provides the suffix (candidate PR: auto-inject)."
+    },
+    {
+      "figmaName": "Loader",
+      "figmaNodeId": "78:33",
+      "codeComponent": "Loader",
+      "source": "packages/fractal/src/components/Loader",
+      "propMap": {
+        "size": {
+          "mapsTo": "size"
+        }
+      }
+    },
+    {
+      "figmaName": "Logo",
+      "figmaNodeId": "203:955",
+      "codeComponent": "Logo",
+      "source": "packages/fractal/src/components/Logo",
+      "propMap": {
+        "size": {
+          "mapsTo": "size",
+          "note": "code default is 'fluid' (w-full) - not modeled"
+        },
+        "brandVariant": {
+          "mapsTo": "brandVariant"
+        }
+      },
+      "designAheadOfCode": "Only the text-only logo is modeled (pictoVariant='none' baked). Frames are tightened to the glyph; the code CSS box (75/150/225/300 wide) letterboxes it."
+    },
+    {
+      "figmaName": "Menu",
+      "figmaNodeId": "163:133",
+      "codeComponent": "Menu",
+      "source": "packages/fractal/src/components/Menu",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "orientation"
+        },
+        "elevation": {
+          "mapsTo": "elevation"
+        }
+      },
+      "notes": ["Compose with exposed MenuItem instances (children)."]
+    },
+    {
+      "figmaName": "MenuItem",
+      "figmaNodeId": "158:15",
+      "codeComponent": "MenuItem",
+      "source": "packages/fractal/src/components/Menu",
+      "propMap": {
+        "label": {
+          "mapsTo": "label"
+        },
+        "icon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        },
+        "state": {
+          "mapsTo": "disabled (state=disabled)",
+          "note": "hover is an interaction pseudo-state"
+        }
+      }
+    },
+    {
+      "figmaName": "Paper",
+      "figmaNodeId": "74:18",
+      "codeComponent": "Paper",
+      "source": "packages/fractal/src/components/Paper",
+      "propMap": {
+        "elevation": {
+          "mapsTo": "elevation",
+          "note": "values are the code aliases: flat=0, light, bordered=1, elevated=2, higher=3"
+        },
+        "showTitle": {
+          "mapsTo": "title (presence)"
+        },
+        "title": {
+          "mapsTo": "title"
+        },
+        "content": {
+          "mapsTo": "children"
+        }
+      },
+      "notes": ["code collapsible/collapsed props not modeled."]
+    },
+    {
+      "figmaName": "Popover",
+      "figmaNodeId": "166:11",
+      "codeComponent": "Popover",
+      "source": "packages/fractal/src/components/Popover",
+      "propMap": {
+        "withArrow": {
+          "mapsTo": "withArrow",
+          "note": "⚠ defaults differ on purpose: Figma false (design choice), code true"
+        },
+        "elevation": {
+          "mapsTo": "elevation"
+        },
+        "content": {
+          "mapsTo": "children"
+        }
+      }
+    },
+    {
+      "figmaName": "Progress",
+      "figmaNodeId": "201:292",
+      "codeComponent": "Progress",
+      "source": "packages/fractal/src/components/Progress",
+      "propMap": {
+        "value": {
+          "mapsTo": "value / max",
+          "note": "code takes free numbers (default value=0, max=100); Figma discretizes to 0/20/60/100 (20 = Stepper current step, value 1 / max 5)"
+        }
+      }
+    },
+    {
+      "figmaName": "Select",
+      "figmaNodeId": "69:16",
+      "codeComponent": "Select",
+      "source": "packages/fractal/src/components/Select",
+      "propMap": {
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "value": {
+          "mapsTo": "placeholder (filled=false) / value-displayedValue (filled=true)"
+        },
+        "filled": {
+          "mapsTo": "value presence"
+        },
+        "state": {
+          "mapsTo": "disabled (state=disabled), open (state=open)",
+          "note": "hover is an interaction pseudo-state"
+        }
+      },
+      "notes": [
+        "Compose the open dropdown with exposed SelectItem instances (children)."
+      ]
+    },
+    {
+      "figmaName": "SelectItem",
+      "figmaNodeId": "67:9",
+      "codeComponent": "SelectItem",
+      "source": "packages/fractal/src/components/Select",
+      "propMap": {
+        "label": {
+          "mapsTo": "label / children"
+        },
+        "state": {
+          "mapsTo": "disabled (state=disabled)",
+          "note": "hover is an interaction pseudo-state"
+        }
+      }
+    },
+    {
+      "figmaName": "Skeleton",
+      "figmaNodeId": "80:43",
+      "codeComponent": "Skeleton",
+      "source": "packages/fractal/src/components/Skeleton",
+      "propMap": {
+        "shape": {
+          "mapsTo": "shape"
+        },
+        "color": {
+          "mapsTo": "color",
+          "note": "Figma pruned to actual product usage (grey, light-grey); code enum still allows 10 values (candidate PR: prune)"
+        }
+      }
+    },
+    {
+      "figmaName": "Slider",
+      "figmaNodeId": "185:19",
+      "codeComponent": "Slider",
+      "source": "packages/fractal/src/components/Slider",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "orientation"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        }
+      },
+      "notes": ["min/max/step/value/defaultValue are code-only."]
+    },
+    {
+      "figmaName": "Stepper",
+      "figmaNodeId": "201:294",
+      "codeComponent": "Stepper",
+      "source": "packages/fractal/src/components/Stepper",
+      "propMap": {},
+      "notes": [
+        "Composed of exposed Progress instances: completed step = value 100, current = value 20 (currentAs='step', i.e. 1/5), upcoming = value 0.",
+        "Add/remove instances to change 'length'; index of the 20% instance = 'current'.",
+        "currentAs='progress' renders the current step as a free-width progress bar (not modeled)."
+      ]
+    },
+    {
+      "figmaName": "Switch",
+      "figmaNodeId": "95:35",
+      "codeComponent": "Switch",
+      "source": "packages/fractal/src/components/Switch",
+      "propMap": {
+        "checked": {
+          "mapsTo": "checked / defaultChecked"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        },
+        "label": {
+          "mapsTo": "label / children"
+        },
+        "labelLeft": {
+          "mapsTo": "labels (left side)"
+        },
+        "labelPosition": {
+          "mapsTo": "switchPosition / labels",
+          "note": "right = default label placement, left/both use the 'labels' + 'switchPosition' code props"
+        },
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        }
+      }
+    },
+    {
+      "figmaName": "Tab",
+      "figmaNodeId": "205:380",
+      "codeComponent": "Tab",
+      "source": "packages/fractal/src/components/Tabs",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "orientation (inherited from Tabs)"
+        },
+        "size": {
+          "mapsTo": "size (or tabsSize on Tabs)",
+          "values": {
+            "small": "small (caption-median)",
+            "medium": "medium (body-2-median)",
+            "large": "large (body-1-median)"
+          }
+        },
+        "selected": {
+          "mapsTo": "aria-selected state",
+          "note": "driven by Tabs defaultTab/tab, not a Tab prop"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        },
+        "icon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        }
+      },
+      "notes": [
+        "Label text node maps to 'label'.",
+        "code: icon+label together forces large (min-h-10 / 80px) - not automatic in Figma.",
+        "iconOnly code-only (hide the label)."
+      ]
+    },
+    {
+      "figmaName": "Tabs",
+      "figmaNodeId": "206:74",
+      "codeComponent": "Tabs",
+      "source": "packages/fractal/src/components/Tabs",
+      "propMap": {
+        "variant": {
+          "mapsTo": "variant"
+        },
+        "orientation": {
+          "mapsTo": "orientation"
+        },
+        "withSeparator": {
+          "mapsTo": "withSeparator"
+        }
+      },
+      "notes": [
+        "Compose with exposed Tab instances (tabs prop).",
+        "fullWidth=true (code default) modeled; tabsPosition='end' and large bars not modeled."
+      ]
+    },
+    {
+      "figmaName": "Tag",
+      "figmaNodeId": "29:2",
+      "codeComponent": "Tag",
+      "source": "packages/fractal/src/components/Tag",
+      "propMap": {
+        "size": {
+          "mapsTo": "size"
+        },
+        "color": {
+          "mapsTo": "color"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        },
+        "iconLeft": {
+          "mapsTo": "(no code prop)",
+          "note": "⚠ DESIGN AHEAD OF CODE - candidate PR: add icon/iconPosition to Tag.tsx"
+        },
+        "iconRight": {
+          "mapsTo": "(no code prop)",
+          "note": "⚠ DESIGN AHEAD OF CODE"
+        }
+      },
+      "notes": ["Label text node maps to 'children'.", "fullWidth code-only."]
+    },
+    {
+      "figmaName": "Textarea",
+      "figmaNodeId": "99:87",
+      "codeComponent": "Textarea",
+      "source": "packages/fractal/src/components/Textarea",
+      "propMap": {
+        "showLabel": {
+          "mapsTo": "label (presence)"
+        },
+        "label": {
+          "mapsTo": "label"
+        },
+        "required": {
+          "mapsTo": "required"
+        },
+        "value": {
+          "mapsTo": "placeholder (filled=false) / defaultValue (filled=true)"
+        },
+        "filled": {
+          "mapsTo": "value presence"
+        },
+        "message": {
+          "mapsTo": "description | error | success (per state)"
+        },
+        "state": {
+          "mapsTo": "error / success / disabled",
+          "note": "hover/focus are interaction pseudo-states"
+        }
+      }
+    },
+    {
+      "figmaName": "Toggle",
+      "figmaNodeId": "97:51",
+      "codeComponent": "Toggle",
+      "source": "packages/fractal/src/components/Toggle",
+      "propMap": {
+        "variant": {
+          "mapsTo": "variant"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        },
+        "label": {
+          "mapsTo": "label / children"
+        },
+        "iconLeft": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconRight": {
+          "mapsTo": "(no code prop)",
+          "note": "⚠ DESIGN AHEAD OF CODE - Toggle.tsx renders its single icon slot on the left only"
+        },
+        "toggled": {
+          "mapsTo": "toggled / defaultToggled"
+        }
+      }
+    },
+    {
+      "figmaName": "ToggleGroup",
+      "figmaNodeId": "98:53",
+      "codeComponent": "ToggleGroup",
+      "source": "packages/fractal/src/components/ToggleGroup",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "orientation"
+        }
+      },
+      "notes": [
+        "Compose with exposed Toggle instances (children); set pressed/disabled per instance."
+      ]
+    },
+    {
+      "figmaName": "Toolbar",
+      "figmaNodeId": "213:408",
+      "codeComponent": "Toolbar",
+      "source": "packages/fractal/src/components/Toolbar",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "orientation"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        }
+      },
+      "designAheadOfCode": "Vertical orientation renders broken in code (wrapper h-5 clamp, candidate PR); Figma models the intended layout.",
+      "notes": [
+        "elevation baked to 'elevated' (code default); fullWidth code-only.",
+        "Compose with exposed ToolbarButton / ToolbarSeparator instances.",
+        "ToolbarDropdown = Dropdown reused inside a toolbar."
+      ]
+    },
+    {
+      "figmaName": "ToolbarButton",
+      "figmaNodeId": "213:31",
+      "codeComponent": "ToolbarButton",
+      "source": "packages/fractal/src/components/Toolbar",
+      "propMap": {
+        "active": {
+          "mapsTo": "active"
+        },
+        "disabled": {
+          "mapsTo": "disabled"
+        },
+        "iconOnly": {
+          "mapsTo": "iconOnly"
+        },
+        "icon": {
+          "mapsTo": "icon (presence)"
+        },
+        "iconSwap": {
+          "mapsTo": "icon"
+        }
+      },
+      "notes": [
+        "Label text node maps to 'label'; iconPosition code-only (reorder manually in Figma)."
+      ]
+    },
+    {
+      "figmaName": "ToolbarSeparator",
+      "figmaNodeId": "213:331",
+      "codeComponent": "ToolbarSeparator",
+      "source": "packages/fractal/src/components/Toolbar",
+      "propMap": {
+        "orientation": {
+          "mapsTo": "(inherited from the parent Toolbar in code)"
+        }
+      }
+    },
+    {
+      "figmaName": "Tooltip",
+      "figmaNodeId": "162:18",
+      "codeComponent": "Tooltip",
+      "source": "packages/fractal/src/components/Tooltip",
+      "propMap": {
+        "content": {
+          "mapsTo": "content"
+        },
+        "withArrow": {
+          "mapsTo": "withArrow"
+        },
+        "side": {
+          "mapsTo": "side"
+        }
+      }
+    }
+  ],
+  "notModeled": {
+    "EmojiPicker": "wraps the third-party emoji-mart web component - code-only",
+    "Header": "deferred - to redesign before modeling",
+    "Typography": "covered by the 26 published text styles (typography/*)",
+    "ScrollArea": "purely behavioral, nothing visual to model",
+    "Toaster (freezer)": "a toast is a Card with dismissable=true - use Card"
+  }
+}
