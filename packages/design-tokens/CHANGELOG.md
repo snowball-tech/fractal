@@ -1,3 +1,7 @@
+# @snowball-tech/design-tokens [17.3.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@17.2.0...@snowball-tech/design-tokens@17.3.0) (2026-07-29)
+
+- add icon support to Tag and fix design-token references ([#413](https://github.com/snowball-tech/fractal/issues/413)) ([892db06](https://github.com/snowball-tech/fractal/commit/892db0663f634fd557d72fb14602f25e4ed70d3b)), closes [#000000](https://github.com/snowball-tech/fractal/issues/000000)
+
 # @snowball-tech/design-tokens [17.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/design-tokens@17.1.5...@snowball-tech/design-tokens@17.2.0) (2026-06-27)
 
 - **design-tokens:** add DESIGN.md for AI agent design context ([#410](https://github.com/snowball-tech/fractal/issues/410)) ([28a0176](https://github.com/snowball-tech/fractal/commit/28a01768b4de8ecd2bbedd0670059fe2a9e940e3))
