@@ -692,7 +692,7 @@ export const tailwindTheme: Config['theme'] = {
     half: 'var(--size-spacing-half)',
 
     // One and a half default spacing, i.e. 12
-    'one-and-half': 'calc(var(--size-spacing-1) + var(--size-spacing-half))',
+    'one-and-half': 'var(--size-spacing-one-and-half)',
 
     '1': 'var(--size-spacing-1)',
     '2': 'var(--size-spacing-2)',

@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
+import {
+  UilCheckCircle as CheckCircleIcon,
+  UilEnvelope as EvenlopeIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+} from '@tooni/iconscout-unicons-react'
+
 import type { ComponentProps } from 'react'
 
 import { Tag } from './Tag'
@@ -18,6 +24,8 @@ const meta = {
     children: 'I have a very bad feeling about this!',
     disabled: false,
     fullWidth: false,
+    icon: 'None',
+    iconPosition: 'left',
   },
   argTypes: {
     children: { control: 'text' },
@@ -26,6 +34,22 @@ const meta = {
       table: {
         defaultValue: { summary: DEFAULT_COLOR },
         type: { summary: Object.values(Colors).join('|') },
+      },
+    },
+    icon: {
+      mapping: {
+        Check: <CheckCircleIcon />,
+        Envelope: <EvenlopeIcon />,
+        Error: <ExclamationCircleIcon />,
+        None: undefined,
+      },
+      options: ['None', 'Check', 'Error', 'Envelope'],
+    },
+    iconPosition: {
+      options: ['left', 'right'],
+      table: {
+        defaultValue: { summary: 'left' },
+        type: { summary: "'left'|'right'" },
       },
     },
     size: {
@@ -54,6 +78,37 @@ export const Playground: Story = {
     color: DEFAULT_COLOR,
     size: DEFAULT_SIZE,
   },
+}
+
+export const WithIcon: Story = {
+  parameters: {
+    controls: {
+      include: ['children', 'color', 'disabled', 'fullWidth', 'size'],
+    },
+  },
+  render: ({ children, color, disabled = false, fullWidth = false, size }) => (
+    <div className="flex flex-col gap-2">
+      <Tag
+        color={color}
+        disabled={disabled}
+        fullWidth={fullWidth}
+        icon={<EvenlopeIcon />}
+        size={size}
+      >
+        {children}
+      </Tag>
+      <Tag
+        color={color}
+        disabled={disabled}
+        fullWidth={fullWidth}
+        icon={<EvenlopeIcon />}
+        iconPosition="right"
+        size={size}
+      >
+        {children}
+      </Tag>
+    </div>
+  ),
 }
 
 export const SmallTags: Story = {

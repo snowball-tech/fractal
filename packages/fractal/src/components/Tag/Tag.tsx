@@ -4,7 +4,7 @@ import omit from 'lodash/fp/omit'
 
 import { Typography } from '@/components/Typography/Typography'
 import { LIGHT_BG_COLORS_CLASSNAMES, PREFIX } from '@/constants'
-import { cn } from '@/styles/helpers'
+import { cj, cn } from '@/styles/helpers'
 import { onlyText } from '@/utils'
 
 import type { TagProps } from './Tag.types'
@@ -26,6 +26,8 @@ export const Tag = ({
   color = DEFAULT_COLOR,
   disabled = false,
   fullWidth = false,
+  icon,
+  iconPosition = 'left',
   label,
   size = DEFAULT_SIZE,
   ...props
@@ -36,6 +38,25 @@ export const Tag = ({
       'You must provide a `label` or `children` to the `DropdownItem` component',
     )
   }
+
+  const iconSizeClassNames = {
+    [Sizes.M]: 'h-[20px] w-[20px] [&>svg]:h-[20px] [&>svg]:w-[20px]',
+    [Sizes.S]: 'h-2 w-2 [&>svg]:h-2 [&>svg]:w-2',
+  }
+
+  const hasIcon = Boolean(icon)
+  const iconElement = hasIcon && (
+    <div
+      className={cj(
+        `${PREFIX}-${GROUP_NAME}__icon`,
+        `${PREFIX}-${GROUP_NAME}__icon--${iconPosition}`,
+        'flex shrink-0 items-center',
+        iconSizeClassNames[size],
+      )}
+    >
+      {icon}
+    </div>
+  )
 
   const textLabel = isString(label)
     ? label
@@ -55,7 +76,7 @@ export const Tag = ({
         `${PREFIX}-${GROUP_NAME}`,
         `${PREFIX}-${GROUP_NAME}--${color}`,
         `${PREFIX}-${GROUP_NAME}--${size}`,
-        'inline-flex w-fit items-center justify-center rounded-full border-1',
+        'inline-flex w-fit items-center justify-center gap-half rounded-full border-1',
         sizeClassNames[size],
         color === Colors.White ? 'border-grey-70' : 'border-transparent',
         fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width w-full` : '',
@@ -69,7 +90,11 @@ export const Tag = ({
       variant={sizeToTypographyVariant[size]}
       {...omit(['className'], props)}
     >
+      {hasIcon && iconPosition === 'left' && iconElement}
+
       {hasChildren ? children : label}
+
+      {hasIcon && iconPosition === 'right' && iconElement}
     </Typography>
   )
 }

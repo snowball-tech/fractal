@@ -17,6 +17,10 @@ module.exports = {
         value: 4,
       },
 
+      'one-and-half': {
+        value: 12,
+      },
+
       1: {
         value: 8,
       },

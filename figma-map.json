@@ -751,12 +751,12 @@
           "mapsTo": "disabled"
         },
         "iconLeft": {
-          "mapsTo": "(no code prop)",
-          "note": "⚠ DESIGN AHEAD OF CODE - candidate PR: add icon/iconPosition to Tag.tsx"
+          "mapsTo": "icon",
+          "note": "renders when iconPosition='left' (default)"
         },
         "iconRight": {
-          "mapsTo": "(no code prop)",
-          "note": "⚠ DESIGN AHEAD OF CODE"
+          "mapsTo": "icon",
+          "note": "renders when iconPosition='right'"
         }
       },
       "notes": ["Label text node maps to 'children'.", "fullWidth code-only."]
