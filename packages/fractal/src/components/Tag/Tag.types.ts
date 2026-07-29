@@ -19,6 +19,10 @@ export interface TagProps extends Omit<
   disabled?: boolean
   /** Indicates if the tag should take all the available width. */
   fullWidth?: boolean
+  /** The icon to display in the tag. */
+  icon?: ReactNode
+  /** The position of the icon relative to the label. */
+  iconPosition?: 'left' | 'right'
   /**
    * The label/content of the tag.
    *

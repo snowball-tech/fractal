@@ -446,7 +446,9 @@
           "note": "hover/focus are interaction pseudo-states"
         }
       },
-      "designAheadOfCode": "error/success state icons (uil/exclamation-circle red, uil/check green) are enforced in Figma; in code the consumer provides the suffix (candidate PR: auto-inject)."
+      "notes": [
+        "error/success state icons (uil/exclamation-circle red, uil/check green) are auto-injected as the suffix when no suffix is provided; an explicit suffix always takes precedence."
+      ]
     },
     {
       "figmaName": "Loader",
@@ -751,12 +753,12 @@
           "mapsTo": "disabled"
         },
         "iconLeft": {
-          "mapsTo": "(no code prop)",
-          "note": "⚠ DESIGN AHEAD OF CODE - candidate PR: add icon/iconPosition to Tag.tsx"
+          "mapsTo": "icon",
+          "note": "renders when iconPosition='left' (default)"
         },
         "iconRight": {
-          "mapsTo": "(no code prop)",
-          "note": "⚠ DESIGN AHEAD OF CODE"
+          "mapsTo": "icon",
+          "note": "renders when iconPosition='right'"
         }
       },
       "notes": ["Label text node maps to 'children'.", "fullWidth code-only."]

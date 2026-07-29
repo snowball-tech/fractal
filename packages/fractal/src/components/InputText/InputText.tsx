@@ -1,6 +1,10 @@
 'use client'
 
 import { Label as RxLabel } from '@radix-ui/react-label'
+import {
+  UilCheck as CheckIcon,
+  UilExclamationCircle as ExclamationCircleIcon,
+} from '@tooni/iconscout-unicons-react'
 
 import {
   type ChangeEvent,
@@ -129,7 +133,14 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
 
     const writable = !disabled && !readOnly
     const hasPrefix = Boolean(prefix)
-    const hasSuffix = Boolean(suffix)
+
+    const stateIcon = isInError ? (
+      <ExclamationCircleIcon />
+    ) : isSuccessful ? (
+      <CheckIcon />
+    ) : null
+    const effectiveSuffix = suffix || stateIcon
+    const hasSuffix = Boolean(effectiveSuffix)
 
     const isInDialog =
       !isNil(containerRef?.closest(`.${PREFIX}-dialog__content`)) &&
@@ -187,11 +198,13 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
           readOnly && !disabled ? 'cursor-default' : '',
           fullWidth ? `${PREFIX}-${GROUP_NAME}--full-width` : 'sm:w-fit',
           isInError ? `${PREFIX}-${GROUP_NAME}--with-error` : '',
-          !isEmpty(prefix) || !isEmpty(suffix)
+          !isEmpty(prefix) || !isEmpty(effectiveSuffix)
             ? `${PREFIX}-${GROUP_NAME}--with-addendum`
             : '',
           isEmpty(prefix) ? '' : `${PREFIX}-${GROUP_NAME}--with-prefix`,
-          isEmpty(suffix) ? '' : `${PREFIX}-${GROUP_NAME}--with-suffix`,
+          isEmpty(effectiveSuffix)
+            ? ''
+            : `${PREFIX}-${GROUP_NAME}--with-suffix`,
           readOnly ? `${PREFIX}-${GROUP_NAME}--readonly` : '',
           required ? `${PREFIX}-${GROUP_NAME}--required` : '',
           isSuccessful ? `${PREFIX}-${GROUP_NAME}--with-success` : '',
@@ -341,7 +354,7 @@ export const InputText = forwardRef<HTMLInputElement | null, InputTextProps>(
                   isSuccessful ? 'text-success' : '',
                 )}
               >
-                {suffix}
+                {effectiveSuffix}
               </div>
             )}
           </div>

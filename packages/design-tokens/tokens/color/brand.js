@@ -4,7 +4,7 @@ module.exports = {
       comment: "Main Snowball's brand colors.",
 
       body: {
-        dark: { comment: 'Black', value: '{color.base.black}' },
+        dark: { comment: 'Black', value: '{color.base.black.value}' },
         light: { comment: 'Yellowish White Tone 90', value: '#FFFBF4' },
       },
 
