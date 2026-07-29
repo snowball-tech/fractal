@@ -121,13 +121,7 @@ export interface InputTextProps extends Omit<
    * message when provided.
    */
   success?: ReactNode
-  /**
-   * The suffix (icon or text) to display to the right of the text input.
-   *
-   * If none is given and the text input is in error or success, a default
-   * state icon is displayed instead (a red `exclamation-circle` for errors, a
-   * green `check` for success).
-   */
+  /** The suffix (icon or text) to display to the right of the text input. */
   suffix?: ReactNode
   /**
    * The type of the text input.

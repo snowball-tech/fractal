@@ -446,9 +446,7 @@
           "note": "hover/focus are interaction pseudo-states"
         }
       },
-      "notes": [
-        "error/success state icons (uil/exclamation-circle red, uil/check green) are auto-injected as the suffix when no suffix is provided; an explicit suffix always takes precedence."
-      ]
+      "designAheadOfCode": "error/success state icons (uil/exclamation-circle red, uil/check green) are enforced in Figma; in code the consumer provides the suffix (candidate PR: auto-inject)."
     },
     {
       "figmaName": "Loader",
