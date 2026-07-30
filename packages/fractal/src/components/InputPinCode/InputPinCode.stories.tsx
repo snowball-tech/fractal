@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { useArgs } from 'storybook/preview-api'
-import { fn, userEvent, within } from 'storybook/test'
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test'
 
 import type {
   ChangeEvent,
@@ -99,6 +99,32 @@ export const Interactive: Story = {
     await slowType('3', inputs.at(3)!)
 
     await userEvent.click(inputs.at(4)!)
+  },
+}
+
+export const PasteFullCode: Story = {
+  args: {
+    length: 6,
+    onChange: fn(),
+    onComplete: fn(),
+    value: '',
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement)
+    const inputs = canvas.getAllByRole('spinbutton')
+
+    await userEvent.click(inputs[0]!)
+    // A code copied with a separator or a trailing newline must still
+    // land cleanly across every field.
+    await userEvent.paste('856 989\n')
+
+    await waitFor(() => {
+      ;['8', '5', '6', '9', '8', '9'].forEach((digit, index) => {
+        expect(inputs[index]).toHaveValue(Number(digit))
+      })
+    })
+
+    expect(args.onComplete).toHaveBeenCalledWith('856989')
   },
 }
 
