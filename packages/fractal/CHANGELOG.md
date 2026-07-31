@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [27.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.1...@snowball-tech/fractal@27.2.2) (2026-07-31)
+
+- **pin-code:** mock every callback in the paste interaction test ([87292fb](https://github.com/snowball-tech/fractal/commit/87292fb78cc02cd494b4c36747c69675d4ba7362))
+
 ## @snowball-tech/fractal [27.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.0...@snowball-tech/fractal@27.2.1) (2026-07-31)
 
 - **pin-code:** clean up pasting a full code ([#414](https://github.com/snowball-tech/fractal/issues/414)) ([8302663](https://github.com/snowball-tech/fractal/commit/83026638c9a2b0a6fb95b6a9bcaf077dac40e6a8))
