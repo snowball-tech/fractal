@@ -1,3 +1,9 @@
+## @snowball-tech/fractal [27.2.3](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.2...@snowball-tech/fractal@27.2.3) (2026-07-31)
+
+### Dependencies
+
+- **@snowball-tech/design-tokens:** upgraded to 17.3.1
+
 ## @snowball-tech/fractal [27.2.2](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.1...@snowball-tech/fractal@27.2.2) (2026-07-31)
 
 - **pin-code:** mock every callback in the paste interaction test ([87292fb](https://github.com/snowball-tech/fractal/commit/87292fb78cc02cd494b4c36747c69675d4ba7362))
