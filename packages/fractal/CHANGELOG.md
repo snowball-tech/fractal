@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [27.2.1](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.0...@snowball-tech/fractal@27.2.1) (2026-07-31)
+
+- **pin-code:** clean up pasting a full code ([#414](https://github.com/snowball-tech/fractal/issues/414)) ([8302663](https://github.com/snowball-tech/fractal/commit/83026638c9a2b0a6fb95b6a9bcaf077dac40e6a8))
+
 # @snowball-tech/fractal [27.2.0](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.1.1...@snowball-tech/fractal@27.2.0) (2026-07-29)
 
 - add icon support to Tag and fix design-token references ([#413](https://github.com/snowball-tech/fractal/issues/413)) ([892db06](https://github.com/snowball-tech/fractal/commit/892db0663f634fd557d72fb14602f25e4ed70d3b)), closes [#000000](https://github.com/snowball-tech/fractal/issues/000000)
