@@ -105,8 +105,12 @@ export const Interactive: Story = {
 export const PasteFullCode: Story = {
   args: {
     length: 6,
+    onBlur: fn(),
     onChange: fn(),
     onComplete: fn(),
+    onFieldChange: fn(),
+    onFocus: fn(),
+    onKeyDown: fn(),
     value: '',
   },
   play: async ({ args, canvasElement }) => {
