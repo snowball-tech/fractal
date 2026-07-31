@@ -215,11 +215,15 @@ export const InputPinCode = ({
     event: ClipboardEvent<HTMLInputElement>,
     index: number,
   ) => {
+    event.preventDefault()
+
     if (isFunction(props.onPaste)) {
       props.onPaste(event)
     }
 
-    const pastedValue = event.clipboardData.getData('text/plain')
+    const pastedValue = event.clipboardData
+      .getData('text/plain')
+      .replace(/\s+/g, '')
     if (isEmpty(pastedValue)) {
       return
     }
@@ -232,9 +236,7 @@ export const InputPinCode = ({
       return
     }
 
-    const newValue = pastedValue
-      .slice(0, Math.max(0, length - index))
-      .padEnd(length - index - 1, '0')
+    const newValue = pastedValue.slice(0, Math.max(0, length - index))
 
     const oldCode = value || defaultValue || ''
     const newCode = `${oldCode.slice(0, Math.max(0, index))}${newValue}`
