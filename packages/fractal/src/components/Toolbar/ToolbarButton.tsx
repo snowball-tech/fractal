@@ -70,7 +70,11 @@ export const ToolbarButton = forwardRef<
         return
       }
 
-      if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
+      if (
+        !isDisabled &&
+        'ontouchstart' in document.documentElement &&
+        isFunction(onClick)
+      ) {
         onClick(
           event as unknown as MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
         )

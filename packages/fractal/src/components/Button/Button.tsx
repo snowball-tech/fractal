@@ -121,7 +121,11 @@ export const Button = forwardRef<
         return
       }
 
-      if ('ontouchstart' in document.documentElement && isFunction(onClick)) {
+      if (
+        !disabled &&
+        'ontouchstart' in document.documentElement &&
+        isFunction(onClick)
+      ) {
         onClick(
           event as unknown as MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
         )

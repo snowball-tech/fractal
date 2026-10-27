@@ -75,7 +75,7 @@ export const InputFile = forwardRef<CombinedRefs, InputFileProps>(
         return
       }
 
-      if ('ontouchstart' in document.documentElement) {
+      if (!disabled && 'ontouchstart' in document.documentElement) {
         handleTriggerClick(event as unknown as MouseEvent<HTMLButtonElement>)
       }
     }
