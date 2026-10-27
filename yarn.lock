@@ -5832,12 +5832,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowball-tech/design-tokens@npm:17.3.1":
-  version: 17.3.1
-  resolution: "@snowball-tech/design-tokens@npm:17.3.1"
+"@snowball-tech/design-tokens@npm:17.3.2":
+  version: 17.3.2
+  resolution: "@snowball-tech/design-tokens@npm:17.3.2"
   dependencies:
     eslint: "npm:9.39.4"
-  checksum: 10/50f974716fedf207dd11bc4144654432939629323ed474ab537db5392ef85dc5a885906713ff4d79e5b587165973ea1791410f0c680a1119b80087bced966a96
+  checksum: 10/9662b2000dfbb10fb647dc548d7ce47f5d5bdbe9b32632792254f72441a3fb3beaed9213b4a6503babbf572596e8a0dd3216c5c78135a4e07c5791db26a64162
   languageName: node
   linkType: hard
 
@@ -5929,7 +5929,7 @@ __metadata:
     "@radix-ui/react-toggle-group": "npm:1.1.19"
     "@radix-ui/react-toolbar": "npm:1.1.19"
     "@react-hookz/web": "npm:26.1.0"
-    "@snowball-tech/design-tokens": "npm:17.3.1"
+    "@snowball-tech/design-tokens": "npm:17.3.2"
     "@snowball-tech/eslint-snowball-config": "npm:2.1.0"
     "@snowball-tech/prettier-config": "npm:2.2.0"
     "@storybook/addon-a11y": "npm:10.6.0"
