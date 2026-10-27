@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [27.2.5](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.4...@snowball-tech/fractal@27.2.5) (2026-10-27)
+
+- **fractal:** ignore touches on disabled buttons ([#417](https://github.com/snowball-tech/fractal/issues/417)) ([32bdda5](https://github.com/snowball-tech/fractal/commit/32bdda524f73ad288e6e0d883c3998c5d0aebc89))
+
 ## @snowball-tech/fractal [27.2.4](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.3...@snowball-tech/fractal@27.2.4) (2026-09-09)
 
 ### Dependencies
