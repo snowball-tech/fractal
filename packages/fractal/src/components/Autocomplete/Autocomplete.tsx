@@ -395,7 +395,7 @@ export const Autocomplete = forwardRef<CombinedRefs, AutocompleteProps>(
               }`,
               'cursor-default text-dark',
             )}
-            value="caption-median"
+            variant="caption-median"
           >
             {isInError ? (isError(error) ? error.message : error) : success}
           </Typography>
