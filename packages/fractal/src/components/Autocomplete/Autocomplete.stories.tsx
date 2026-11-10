@@ -475,8 +475,8 @@ export const InteractiveEmptySearch: Story = {
 
 export const WithErrorMessage: Story = {
   args: {
+    defaultValue: 'Jar Jar Binks',
     error: 'This character does not exist',
-    value: 'Jar Jar Binks',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
