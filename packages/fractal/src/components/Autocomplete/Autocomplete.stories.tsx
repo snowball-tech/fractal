@@ -12,6 +12,7 @@ import isChromatic from 'chromatic/isChromatic'
 import { action } from 'storybook/actions'
 import { useArgs } from 'storybook/preview-api'
 import {
+  expect,
   fn,
   userEvent,
   waitFor,
@@ -469,5 +470,19 @@ export const InteractiveEmptySearch: Story = {
     await waitForElementToBeRemoved(loader, { timeout: 30_000 })
 
     await body.getByText(/nothing found/i)
+  },
+}
+
+export const WithErrorMessage: Story = {
+  args: {
+    defaultValue: 'Jar Jar Binks',
+    error: 'This character does not exist',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    await expect(canvas.getByText('This character does not exist')).toHaveClass(
+      'fractal-typography--caption-median',
+    )
   },
 }
