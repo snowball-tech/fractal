@@ -184,7 +184,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       newValue: string,
       type: keyof DateFormat,
     ) => {
-      const newValueAsInt = Number.parseInt(newValue, 10)
+      const newValueAsInt = newValue === '' ? '' : Number.parseInt(newValue, 10)
 
       if (isFunction(onChange)) {
         onChange(event, {
@@ -396,7 +396,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'day') }
               : {})}
             {...(isFunction(onFocus)
-              ? { onFocus: (event) => onFocus(event, 'year') }
+              ? { onFocus: (event) => onFocus(event, 'day') }
               : {})}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
@@ -440,7 +440,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'month') }
               : {})}
             {...(isFunction(onFocus)
-              ? { onFocus: (event) => onFocus(event, 'year') }
+              ? { onFocus: (event) => onFocus(event, 'month') }
               : {})}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
@@ -482,6 +482,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             {...(defaultValue?.year === undefined
               ? {}
               : { defaultValue: defaultValue.year })}
+            onChange={(event, newYear) => handleChange(event, newYear, 'year')}
             onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'year') }

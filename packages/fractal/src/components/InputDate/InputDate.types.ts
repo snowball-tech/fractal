@@ -127,7 +127,7 @@ export interface InputDateProps extends Omit<
   onFieldChange?: (
     event: ChangeEvent<HTMLInputElement>,
     type: keyof DateFormat,
-    newValue: number,
+    newValue: number | '',
   ) => void
   /**
    * Event handler called when one of the field of the date input is focused.
