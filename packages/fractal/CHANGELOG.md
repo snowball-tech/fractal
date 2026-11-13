@@ -1,3 +1,7 @@
+## @snowball-tech/fractal [27.2.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.6...@snowball-tech/fractal@27.2.7) (2026-11-13)
+
+- **fractal:** propagate year changes in InputDate ([#419](https://github.com/snowball-tech/fractal/issues/419)) ([a5a813c](https://github.com/snowball-tech/fractal/commit/a5a813c8bca1930f34b1798f5af01598d4118318))
+
 ## @snowball-tech/fractal [27.2.6](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.5...@snowball-tech/fractal@27.2.6) (2026-11-10)
 
 - **fractal:** apply caption typography to autocomplete message ([#418](https://github.com/snowball-tech/fractal/issues/418)) ([8d50216](https://github.com/snowball-tech/fractal/commit/8d5021671c79d2511558fe3d9d74c3441fcc0705))
