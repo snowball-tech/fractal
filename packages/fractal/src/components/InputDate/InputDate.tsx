@@ -11,7 +11,6 @@ import {
   type ForwardedRef,
   forwardRef,
   KeyboardEvent,
-  useEffect,
   useId,
   useImperativeHandle,
   useRef,
@@ -104,7 +103,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
     const generatedId = useId()
     const uniqueId = (id ?? generatedId) || generatedId
 
-    let skipFocusChange = false
+    const skipFocusChangeRef = useRef(false)
 
     const dayRef = useRef<HTMLInputElement>(null)
     const monthRef = useRef<HTMLInputElement>(null)
@@ -124,11 +123,6 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       },
     }))
 
-    const [errors, setErrors] = useState<{
-      day: boolean
-      month: boolean
-      year: boolean
-    }>({ day: false, month: false, year: false })
     const [autoSwitch, setAutoSwitch] = useState(true)
 
     const errorMessage = isError(error) ? error.message : error
@@ -139,103 +133,54 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
     const isInError = hasErrorMessage || error === true || isError(error)
     const isSuccessful = (hasSuccessMessage || success === true) && !isInError
 
-    useEffect(() => {
-      const newErrors = { ...errors }
+    const hasFieldError = (type: keyof DateFormat) => {
+      const fieldValue = value?.[type] || defaultValue?.[type]
 
-      const day = value?.day || defaultValue?.day
-      newErrors.day = !!(
-        !isNil(day) &&
-        (!isInteger(day) || !isValid('day', day))
-      )
-
-      const month = value?.month || defaultValue?.month
-      newErrors.month = !!(
-        !isNil(month) &&
-        (!isInteger(month) || !isValid('month', month))
-      )
-
-      const year = value?.year || defaultValue?.year
-      newErrors.year = !!(
-        !isNil(year) &&
-        (!isInteger(year) || !isValid('year', year, maxYear))
-      )
-
-      if (
-        newErrors.day !== errors.day ||
-        newErrors.month !== errors.month ||
-        newErrors.year !== errors.year
-      ) {
-        setErrors(newErrors)
-      }
-    }, [
-      defaultValue?.day,
-      defaultValue?.month,
-      defaultValue?.year,
-      value?.day,
-      value?.month,
-      value?.year,
-      errors,
-      setErrors,
-      maxYear,
-    ])
+      return !isNil(fieldValue) && !isValid(type, fieldValue, maxYear)
+    }
+    const errors = {
+      day: hasFieldError('day'),
+      month: hasFieldError('month'),
+      year: hasFieldError('year'),
+    }
 
     const handleChange = (
       event: ChangeEvent<HTMLInputElement>,
       newValue: string,
       type: keyof DateFormat,
     ) => {
-      const newValueAsInt = Number.parseInt(newValue, 10)
+      const parsedValue = newValue === '' ? '' : Number.parseInt(newValue, 10)
 
       if (isFunction(onChange)) {
         onChange(event, {
           ...defaultValue,
           ...value,
-          [type]: newValueAsInt,
+          [type]: parsedValue,
         })
       }
 
       if (isFunction(onFieldChange)) {
-        onFieldChange(event, type, newValueAsInt)
+        onFieldChange(event, type, parsedValue)
       }
 
-      if (skipFocusChange) {
-        skipFocusChange = false
+      if (skipFocusChangeRef.current) {
+        skipFocusChangeRef.current = false
 
         return
       }
 
       if (
-        !isNil(newValueAsInt) &&
-        isInteger(newValueAsInt) &&
-        isValid(type, newValueAsInt, maxYear) &&
-        autoSwitch
+        newValue.length !== 2 ||
+        !autoSwitch ||
+        !isValid(type, parsedValue, maxYear)
       ) {
-        switch (type) {
-          case 'day': {
-            if (newValue.length === 2 && monthRef?.current) {
-              monthRef.current.focus()
-            }
-            break
-          }
+        return
+      }
 
-          case 'month': {
-            if (newValue.length === 2 && yearRef?.current) {
-              yearRef.current.focus()
-            }
-            break
-          }
-
-          case 'year': {
-            if (newValue.length === 4 && yearRef?.current) {
-              yearRef.current.blur()
-            }
-            break
-          }
-
-          default: {
-            break
-          }
-        }
+      if (type === 'day') {
+        monthRef.current?.focus()
+      } else if (type === 'month') {
+        yearRef.current?.focus()
       }
     }
 
@@ -250,7 +195,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
       switch (event.key) {
         case 'ArrowDown':
         case 'ArrowUp': {
-          skipFocusChange = true
+          skipFocusChangeRef.current = true
           break
         }
 
@@ -396,7 +341,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'day') }
               : {})}
             {...(isFunction(onFocus)
-              ? { onFocus: (event) => onFocus(event, 'year') }
+              ? { onFocus: (event) => onFocus(event, 'day') }
               : {})}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'day') }
@@ -440,7 +385,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
               ? { onBlur: (event) => onBlur(event, 'month') }
               : {})}
             {...(isFunction(onFocus)
-              ? { onFocus: (event) => onFocus(event, 'year') }
+              ? { onFocus: (event) => onFocus(event, 'month') }
               : {})}
             {...(isFunction(onKeyUp)
               ? { onKeyUp: (event) => onKeyUp(event, 'month') }
@@ -482,6 +427,7 @@ export const InputDate = forwardRef<CombinedRefs, InputDateProps>(
             {...(defaultValue?.year === undefined
               ? {}
               : { defaultValue: defaultValue.year })}
+            onChange={(event, newYear) => handleChange(event, newYear, 'year')}
             onKeyDown={(event) => handleKeyDown(event, 'year')}
             {...(isFunction(onBlur)
               ? { onBlur: (event) => onBlur(event, 'year') }

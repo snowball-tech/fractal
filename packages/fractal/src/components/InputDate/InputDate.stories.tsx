@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { useArgs } from 'storybook/preview-api'
-import { fn, within } from 'storybook/test'
+import { expect, fn, userEvent, within } from 'storybook/test'
 
 import type { ChangeEvent, ComponentProps, ReactNode } from 'react'
 
@@ -57,7 +57,7 @@ const meta: Meta<InputDateProps> = {
       control: false,
       table: {
         type: {
-          summary: `(event: ChangeEvent<HTMLInputElement>, type: 'day' | 'month' | 'year', newValue: number) => void`,
+          summary: `(event: ChangeEvent<HTMLInputElement>, type: 'day' | 'month' | 'year', newValue: '' | number) => void`,
         },
       },
     },
@@ -124,7 +124,7 @@ export const Interactive: Story = {
     value: { day: '', month: '', year: '' },
   },
 
-  play: async ({ canvasElement }) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement)
 
     const inputDay = canvas.getAllByRole('spinbutton').at(0)
@@ -135,6 +135,26 @@ export const Interactive: Story = {
 
     const inputYear = canvas.getAllByRole('spinbutton').at(2)
     await slowType('1977', inputYear!)
+
+    await expect(inputYear).toHaveValue(1977)
+    await expect(args.onChange).toHaveBeenLastCalledWith(expect.anything(), {
+      day: 19,
+      month: 10,
+      year: 1977,
+    })
+    await expect(args.onFieldChange).toHaveBeenLastCalledWith(
+      expect.anything(),
+      'year',
+      1977,
+    )
+
+    await userEvent.clear(inputYear!)
+
+    await expect(args.onChange).toHaveBeenLastCalledWith(expect.anything(), {
+      day: 19,
+      month: 10,
+      year: '',
+    })
   },
 }
 
