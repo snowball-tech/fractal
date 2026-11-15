@@ -1,3 +1,5 @@
+## @snowball-tech/fractal [27.2.8](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.7...@snowball-tech/fractal@27.2.8) (2026-11-15)
+
 ## @snowball-tech/fractal [27.2.7](https://github.com/snowball-tech/fractal/compare/@snowball-tech/fractal@27.2.6...@snowball-tech/fractal@27.2.7) (2026-11-13)
 
 - **fractal:** propagate year changes in InputDate ([#419](https://github.com/snowball-tech/fractal/issues/419)) ([a5a813c](https://github.com/snowball-tech/fractal/commit/a5a813c8bca1930f34b1798f5af01598d4118318))
